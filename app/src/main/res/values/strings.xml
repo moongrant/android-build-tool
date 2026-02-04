@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Demo</string>
+    <string name="app_name">FF14 宏指令</string>
+    <string name="accessibility_service_description">此服务用于执行预设的触控宏指令操作</string>
+    <string name="start_floating_button">启动悬浮按钮</string>
+    <string name="stop_floating_button">关闭悬浮按钮</string>
+    <string name="permission_required">需要悬浮窗权限</string>
+    <string name="grant_permission">授予权限</string>
+    <string name="accessibility_required">需要开启无障碍服务</string>
+    <string name="open_accessibility">开启无障碍服务</string>
+    <string name="macro_editor">宏指令编辑</string>
+    <string name="add_macro">添加宏指令</string>
+    <string name="macro_name">宏名称</string>
+    <string name="tap_action">点击操作</string>
+    <string name="swipe_action">滑动操作</string>
+    <string name="delay_action">延迟</string>
+    <string name="x_coordinate">X 坐标</string>
+    <string name="y_coordinate">Y 坐标</string>
+    <string name="duration_ms">持续时间(毫秒)</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="run_macro">执行宏</string>
 </resources>
