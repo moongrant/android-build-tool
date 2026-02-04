@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:id="@+id/ivFloatingButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/floating_button_bg"
+        android:src="@drawable/ic_play"
+        android:padding="16dp"
+        android:scaleType="centerInside"
+        android:contentDescription="宏指令按钮" />
+
+</FrameLayout>
