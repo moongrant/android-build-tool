@@ -54,6 +54,7 @@ jobs:
           name: app-debug-apk
           path: "**/build/outputs/apk/debug/*.apk"
           if-no-files-found: error
+          retention-days: 3
 
       - name: Clean up - Reset to template
         if: success() && github.event_name == 'push'
