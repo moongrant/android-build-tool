@@ -7,6 +7,9 @@ on:
     branches: ['*']
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -51,3 +54,79 @@ jobs:
           name: app-debug-apk
           path: "**/build/outputs/apk/debug/*.apk"
           if-no-files-found: error
+
+      - name: Clean up - Reset to template
+        if: success() && github.event_name == 'push'
+        run: |
+          # 配置 git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 恢复 app/src 为最小 demo
+          rm -rf app/src
+          mkdir -p app/src/main/java/com/example/demo
+          mkdir -p app/src/main/res/layout
+          mkdir -p app/src/main/res/values
+
+          # 写入最小 demo 文件
+          cat > app/src/main/AndroidManifest.xml << 'MANIFEST'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+              <application
+                  android:allowBackup="true"
+                  android:icon="@android:drawable/ic_menu_compass"
+                  android:label="@string/app_name"
+                  android:theme="@style/Theme.Material3.Light.NoActionBar">
+                  <activity android:name=".MainActivity" android:exported="true">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
+                  </activity>
+              </application>
+          </manifest>
+          MANIFEST
+
+          cat > app/src/main/java/com/example/demo/MainActivity.java << 'JAVA'
+          package com.example.demo;
+          import android.app.Activity;
+          import android.os.Bundle;
+          public class MainActivity extends Activity {
+              @Override
+              protected void onCreate(Bundle savedInstanceState) {
+                  super.onCreate(savedInstanceState);
+                  setContentView(R.layout.activity_main);
+              }
+          }
+          JAVA
+
+          cat > app/src/main/res/layout/activity_main.xml << 'LAYOUT'
+          <?xml version="1.0" encoding="utf-8"?>
+          <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center">
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Template Ready"
+                  android:textSize="24sp" />
+          </LinearLayout>
+          LAYOUT
+
+          cat > app/src/main/res/values/strings.xml << 'STRINGS'
+          <?xml version="1.0" encoding="utf-8"?>
+          <resources>
+              <string name="app_name">Demo</string>
+          </resources>
+          STRINGS
+
+          # 检查是否有变化
+          if git diff --quiet; then
+            echo "No changes to commit (already clean template)"
+          else
+            git add -A
+            git commit -m "chore: reset to clean template [skip ci]"
+            git push
+            echo "Repository reset to clean template"
+          fi
