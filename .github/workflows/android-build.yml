@@ -1,0 +1,53 @@
+name: Android Build
+
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-enabled: true
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew --no-daemon assembleDebug
+
+      - name: Find APK files
+        id: find-apk
+        run: |
+          APK_PATH=$(find . -path "**/build/outputs/apk/debug/*.apk" -type f | head -1)
+          if [ -z "$APK_PATH" ]; then
+            echo "::error::APK not found! Listing build directory:"
+            find . -path "*/build/outputs*" -type f 2>/dev/null || echo "No build/outputs found"
+            ls -R app/build/outputs 2>/dev/null || echo "app/build/outputs not found"
+            exit 1
+          fi
+          echo "apk_path=$APK_PATH" >> $GITHUB_OUTPUT
+          echo "Found APK: $APK_PATH"
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: "**/build/outputs/apk/debug/*.apk"
+          if-no-files-found: error
