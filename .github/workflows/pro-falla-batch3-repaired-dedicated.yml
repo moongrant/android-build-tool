@@ -1,0 +1,66 @@
+name: Pro Falla Batch 3 repaired dedicated capture
+
+on:
+  push:
+    branches:
+      - deliver/pro-falla-pack05-20260819
+    paths:
+      - '.github/workflows/pro-falla-batch3-repaired-dedicated.yml'
+      - 'tools/pro-falla-batch3/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: deliver/pro-falla-pack05-20260819
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Build repaired archiver
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3/repair_archive.py
+          node --check tools/pro-falla-batch3/archive_selected_repaired.mjs
+      - name: Capture original SPAs and anonymous archive state
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-repaired
+          ONLINE_WAIT_MS: '5200'
+          OFFLINE_WAIT_MS: '4200'
+          ROUTE_LIMIT: '9'
+          PAGE_CONCURRENCY: '3'
+        run: node tools/pro-falla-batch3/archive_selected_repaired.mjs
+      - name: Build contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-repaired
+        run: python tools/pro-falla-batch3/contact_sheets.py
+      - name: Print summary
+        if: always()
+        run: |
+          cat artifacts/pro-falla-batch3-repaired/QA-FINAL.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-batch3-repaired || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-repaired
+          path: artifacts/pro-falla-batch3-repaired
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
