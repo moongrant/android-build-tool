@@ -28,7 +28,6 @@ jobs:
           VERSION: ${{ matrix.version }}
         run: |
           set -Eeuo pipefail
-          safe="${VERSION//./_}"
           out="artifacts/pro-yalla-three-rich/historical-apk/$VERSION"
           mkdir -p "$out" /tmp/apkeep-output /tmp/yalla-xapk /tmp/apks /tmp/decoded
           docker pull ghcr.io/efforg/apkeep:stable
@@ -69,12 +68,20 @@ jobs:
             | xargs -0 -r strings -a -n 4 2>/dev/null \
             | sort -u > /tmp/all-strings.txt
 
-          grep -Eio 'https?://[^[:space:]"'"'<>\\)]+' /tmp/all-strings.txt \
-            | sed 's/[),.;:]$//' | sort -u > "$out/all-urls.txt" || true
-          grep -Ei 'yalla|activity|campaign|event|h5|webview|template|sweet|love|lucky|carnival|treasure|tycoon|wealth|prize.?pool|activityId|h5EntranceUrl|activityUrl|GetActivityListForCenter|Yalla-Activity-Headers|GeneralTemplate' \
-            /tmp/all-strings.txt | sort -u > "$out/activity-matches.txt" || true
-          grep -Ei 'activity2\.yalla\.live|activitytest2|event\.yalla\.live|/activity/|templateActivity|GeneralTemplate' \
-            "$out/all-urls.txt" | sort -u > "$out/yalla-activity-urls.txt" || true
+          python - <<'PY'
+          from pathlib import Path
+          import os, re
+          version=os.environ['VERSION']
+          out=Path('artifacts/pro-yalla-three-rich/historical-apk')/version
+          text=Path('/tmp/all-strings.txt').read_text(errors='ignore')
+          urls=sorted(set(re.findall(r'https?://[^\s"\'<>\\)]+',text,re.I)))
+          (out/'all-urls.txt').write_text('\n'.join(u.rstrip('),.;:') for u in urls))
+          terms=re.compile(r'yalla|activity|campaign|event|h5|webview|template|sweet|love|lucky|carnival|treasure|tycoon|wealth|prize.?pool|activityId|h5EntranceUrl|activityUrl|GetActivityListForCenter|Yalla-Activity-Headers|GeneralTemplate',re.I)
+          matches=sorted({line for line in text.splitlines() if terms.search(line)})
+          (out/'activity-matches.txt').write_text('\n'.join(matches))
+          yalla=re.compile(r'activity2\.yalla\.live|activitytest2|event\.yalla\.live|/activity/|templateActivity|GeneralTemplate',re.I)
+          (out/'yalla-activity-urls.txt').write_text('\n'.join(sorted({u for u in urls if yalla.search(u)})))
+          PY
 
           find /tmp/decoded -type f \( -name 'AssetManifest.json' -o -name 'AssetManifest.bin' -o -name 'FontManifest.json' \) \
             -printf '%p\n' > "$out/flutter-manifests.txt" || true
@@ -83,7 +90,6 @@ jobs:
             | grep -Ei 'sweet|love|lucky|carnival|treasure|tycoon|wealth|prize.?pool|activity|event|campaign' \
             | sort -u > "$out/relevant-file-paths.txt" || true
 
-          # Preserve readable Flutter manifests and relevant text assets.
           mkdir -p "$out/manifests"
           while IFS= read -r file; do
             [[ -f "$file" ]] || continue
@@ -91,7 +97,6 @@ jobs:
             cp "$file" "$out/manifests/$safe" || true
           done < "$out/flutter-manifests.txt"
 
-          # Extract strings separately from native libraries because Flutter routes often live in libapp.so.
           find /tmp/decoded -type f \( -name 'libapp.so' -o -name 'libflutter.so' \) -print0 \
             | while IFS= read -r -d '' so; do
                 safe="$(printf '%s' "${so#/tmp/decoded/}" | tr '/ ' '__')"
@@ -146,10 +151,22 @@ jobs:
             "$root/com/yalla/yalla" "$root/o0OoOoo" "$root/p539o0OoOoo" 2>/dev/null \
             > "$out/request-signing-context.txt" || true
 
-          rg -o -N 'https?://[^"'"' )]+' "$root" \
-            | sed 's/[),.;:]$//' | sort -u > "$out/decompiled-urls.txt" || true
-          grep -Ei 'yalla|activity|campaign|event|h5|template' "$out/decompiled-urls.txt" \
-            | sort -u > "$out/decompiled-yalla-urls.txt" || true
+          python - <<'PY'
+          from pathlib import Path
+          import os, re
+          version=os.environ['VERSION']
+          root=Path('/tmp/jadx-out/sources')
+          out=Path('artifacts/pro-yalla-three-rich/historical-apk')/version
+          urls=set()
+          for path in root.rglob('*.java'):
+              try: text=path.read_text(errors='ignore')
+              except Exception: continue
+              urls.update(re.findall(r'https?://[^\s"\'<>\\)]+',text,re.I))
+          clean=sorted(u.rstrip('),.;:') for u in urls)
+          (out/'decompiled-urls.txt').write_text('\n'.join(clean))
+          yalla=re.compile(r'yalla|activity|campaign|event|h5|template',re.I)
+          (out/'decompiled-yalla-urls.txt').write_text('\n'.join(u for u in clean if yalla.search(u)))
+          PY
 
           rg -l -i \
             'GetActivityListForCenter|ActivityCenterItemModel|OfficialActionModel|RoomActivityModel|h5EntranceUrl|activityUrl|Yalla-Activity-Headers|ParamsWrapper' \
