@@ -1,0 +1,30 @@
+name: Temporary Pro-Yalla research probe
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - tools/pro-yalla-probe/**
+      - .github/workflows/tmp-pro-yalla-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Smoke test
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-probe
+          echo 'GitHub Actions public runner is available.' > artifacts/pro-yalla-probe/smoke.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-probe-smoke
+          path: artifacts/pro-yalla-probe
+          retention-days: 1
