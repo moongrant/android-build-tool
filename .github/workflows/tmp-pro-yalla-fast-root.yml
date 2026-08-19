@@ -1,0 +1,50 @@
+name: Temporary Pro-Yalla fast root probe
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - tools/pro-yalla-probe/trigger-fast-root.txt
+      - tools/pro-yalla-probe/root_probe.py
+      - tools/pro-yalla-probe/root_probe_fast.py
+      - .github/workflows/tmp-pro-yalla-fast-root.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lightweight dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install aiohttp requests beautifulsoup4 playwright
+      - name: Probe roots, templates, Wayback, Arquivo, and urlscan
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-yalla-probe/root_probe_fast.py
+      - name: Write summary
+        if: always()
+        run: |
+          if [[ -f artifacts/pro-yalla-three-rich/root-probe/REPORT.md ]]; then
+            cat artifacts/pro-yalla-three-rich/root-probe/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-three-rich-fast-root-probe
+          path: artifacts/pro-yalla-three-rich/root-probe
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
