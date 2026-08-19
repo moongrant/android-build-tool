@@ -60,6 +60,61 @@ jobs:
         with:
           pattern: pro-bigo-scan-*
           path: /tmp/pro-bigo-rich-scan-results
+      - name: Build compact candidate summaries
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path('/tmp/pro-bigo-rich-scan-results')
+          strict_name = re.compile(
+              r'christmas|new year|xmas|wishing|wish pool|blind box|red packet|firework|tree|'
+              r'bigo icon|icon 2025|pageant|crown|talent showcase|annual festival|festival award',
+              re.I,
+          )
+          for source in root.glob('*/valid-activities.json'):
+              rows = json.loads(source.read_text())
+              label = source.parent.name
+              compact = []
+              for row in rows:
+                  name = str(row.get('name') or '')
+                  dedicated = row.get('dedicatedUrls') or []
+                  start = str(row.get('startTime') or '')
+                  in_date_window = False
+                  if 'christmas' in label:
+                      in_date_window = ('2025-12-' in start or '2026-01-' in start)
+                  elif 'icon' in label:
+                      in_date_window = ('2025-06-' in start or '2025-07-' in start or '2025-08-' in start)
+                  if strict_name.search(name) or dedicated or in_date_window:
+                      compact.append({
+                          'id': row.get('id'),
+                          'name': name,
+                          'startTime': row.get('startTime'),
+                          'endTime': row.get('endTime'),
+                          'moduleTypes': row.get('moduleTypes') or [],
+                          'features': row.get('features') or [],
+                          'featureCount': row.get('featureCount'),
+                          'keywordHits': row.get('keywordHits') or [],
+                          'dedicatedUrls': dedicated,
+                          'score': row.get('score'),
+                      })
+              compact.sort(key=lambda x: (-int(x.get('score') or 0), int(x.get('id') or 0)))
+              (source.parent / 'compact-candidates.json').write_text(json.dumps(compact, ensure_ascii=False, indent=2))
+              with (source.parent / 'compact-candidates.tsv').open('w') as f:
+                  f.write('id\tname\tstart\tend\tfeatures\tdedicated_urls\tscore\n')
+                  for row in compact:
+                      values = [
+                          row.get('id'), row.get('name'), row.get('startTime'), row.get('endTime'),
+                          ','.join(row.get('features') or []), '|'.join(row.get('dedicatedUrls') or []), row.get('score')
+                      ]
+                      f.write('\t'.join(str(v or '').replace('\t', ' ').replace('\n', ' ') for v in values) + '\n')
+              summary_path = source.parent / 'summary.json'
+              summary = json.loads(summary_path.read_text())
+              summary['compactCandidateCount'] = len(compact)
+              summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2))
+          PY
       - name: Publish stable result branch
         shell: bash
         run: |
