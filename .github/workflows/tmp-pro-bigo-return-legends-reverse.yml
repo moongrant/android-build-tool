@@ -1,0 +1,59 @@
+name: Temporary Pro-BIGO Return Legends Reverse
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'tools/pro-bigo/reverse-return-legends.mjs'
+      - '.github/workflows/tmp-pro-bigo-return-legends-reverse.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reverse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser runtime
+        run: |
+          npm init -y
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Reverse SPA
+        run: node tools/pro-bigo/reverse-return-legends.mjs
+      - name: Upload reverse artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-bigo-return-legends-reverse
+          path: pro-bigo-return-legends-reverse
+          if-no-files-found: error
+          compression-level: 4
+          retention-days: 14
+      - name: Publish stable reverse branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/pro-bigo-return-legends-reverse-results
+          mkdir -p /tmp/pro-bigo-return-legends-reverse-results
+          if [ -d pro-bigo-return-legends-reverse ]; then cp -R pro-bigo-return-legends-reverse/. /tmp/pro-bigo-return-legends-reverse-results/; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+moongrant@users.noreply.github.com"
+          git checkout --orphan pro-bigo-return-legends-reverse-results-tmp
+          git rm -rf . >/dev/null 2>&1 || true
+          find . -mindepth 1 -maxdepth 1 -not -name .git -exec rm -rf {} +
+          cp -R /tmp/pro-bigo-return-legends-reverse-results/. .
+          printf '# Pro-BIGO Return of Legends reverse results\n' > README.md
+          git add -A
+          git commit -m "Update Return of Legends reverse results"
+          git push origin HEAD:pro-bigo-return-legends-reverse-results --force
