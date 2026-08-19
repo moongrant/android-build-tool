@@ -1,0 +1,46 @@
+name: Temporary Pro-BIGO Rich Scan
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'tools/pro-bigo/**'
+      - '.github/workflows/tmp-pro-bigo-rich-scan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: icon-2025
+            start: 66500
+            end: 72050
+          - label: christmas-2025
+            start: 77200
+            end: 79080
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Scan activity configuration range
+        run: node tools/pro-bigo/scan.mjs '${{ matrix.label }}' '${{ matrix.start }}' '${{ matrix.end }}'
+      - name: Upload scan result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-bigo-scan-${{ matrix.label }}
+          path: pro-bigo-scan-${{ matrix.label }}
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14
