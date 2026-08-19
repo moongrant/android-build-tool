@@ -1,11 +1,12 @@
-name: Temporary Pro-Yalla research probe
+name: Temporary Pro-Yalla root and archive research
 
 on:
   pull_request:
     branches:
       - main
     paths:
-      - tools/pro-yalla-probe/**
+      - tools/pro-yalla-probe/trigger-root.txt
+      - tools/pro-yalla-probe/root_probe.py
       - .github/workflows/tmp-pro-yalla-probe.yml
   workflow_dispatch:
 
@@ -15,16 +16,42 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-22.04
-    timeout-minutes: 180
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
-      - name: Smoke test
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install research dependencies
         run: |
           set -Eeuo pipefail
-          mkdir -p artifacts/pro-yalla-probe
-          echo 'GitHub Actions public runner is available.' > artifacts/pro-yalla-probe/smoke.txt
+          python -m pip install --upgrade pip
+          python -m pip install aiohttp requests beautifulsoup4 playwright pillow
+          python -m playwright install --with-deps chromium
+
+      - name: Probe dedicated roots, fixed templates, archives, and public URL indexes
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-yalla-probe/root_probe.py
+
+      - name: Write summary
+        if: always()
+        run: |
+          if [[ -f artifacts/pro-yalla-three-rich/root-probe/REPORT.md ]]; then
+            cat artifacts/pro-yalla-three-rich/root-probe/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Probe did not produce REPORT.md.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: pro-yalla-probe-smoke
-          path: artifacts/pro-yalla-probe
-          retention-days: 1
+          name: pro-yalla-three-rich-root-probe
+          path: artifacts/pro-yalla-three-rich/root-probe
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
