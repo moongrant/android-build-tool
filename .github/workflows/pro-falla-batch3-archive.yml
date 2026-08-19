@@ -7,6 +7,7 @@ on:
     paths:
       - '.github/workflows/pro-falla-batch3-archive.yml'
       - 'tools/pro-falla-batch3/archive_selected.mjs'
+      - 'tools/pro-falla-batch3/repair_archive.py'
       - 'tools/pro-falla-batch3/contact_sheets.py'
   workflow_dispatch:
 
@@ -35,6 +36,12 @@ jobs:
           python -m pip install --disable-pip-version-check pillow
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Build repaired archiver
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch3/repair_archive.py
+          python tools/pro-falla-batch3/repair_archive.py
+          node --check tools/pro-falla-batch3/archive_selected_repaired.mjs
       - name: Capture original responses and verify zero-remote replay
         env:
           OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-original-spa
@@ -44,8 +51,7 @@ jobs:
           PAGE_CONCURRENCY: '3'
         run: |
           set -Eeuo pipefail
-          node --check tools/pro-falla-batch3/archive_selected.mjs
-          node tools/pro-falla-batch3/archive_selected.mjs
+          node tools/pro-falla-batch3/archive_selected_repaired.mjs
       - name: Build campaign contact sheets
         env:
           OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-original-spa
@@ -59,11 +65,18 @@ jobs:
           if [[ -f artifacts/pro-falla-batch3-original-spa/QA-FINAL.md ]]; then
             cat artifacts/pro-falla-batch3-original-spa/QA-FINAL.md >> "$GITHUB_STEP_SUMMARY"
           fi
+          if [[ -f artifacts/pro-falla-batch3-original-spa/manifest.json ]]; then
+            python - <<'PY'
+          import json
+          p=json.load(open('artifacts/pro-falla-batch3-original-spa/manifest.json'))
+          print({k:p.get(k) for k in ['campaignCount','unitCount','pageCount','originalFileCount','originalBytes','historicalApiFixtureCount','originalStaticByteComplete','offlineReplayComplete','rawByteComplete']})
+          PY
+          fi
           du -sh artifacts/pro-falla-batch3-original-spa || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: pro-falla-batch3-original-spa
+          name: pro-falla-batch3-original-spa-repaired
           path: artifacts/pro-falla-batch3-original-spa
           if-no-files-found: error
           retention-days: 14
