@@ -1,0 +1,1228 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231",
+      "20260101",
+      "20260102",
+      "20260103"
+    ],
+    "week": [
+      "20251215",
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512",
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78236,
+      "act_name": "Holiday Gift Season: SouthEastAsiaxUSCA---Dec USCA Event",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-21 16:32:03",
+      "end_time": "2026-01-03 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vXSoX00y2TWPL00vC3BE.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "You've Signed Up",
+                  "name": "SouthEastAsia Gifting Leaderboard",
+                  "range": [
+                    22
+                  ],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Click here to sign up for leaderboards",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "SouthEastAsia Regional Leaderboard",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "9kT47",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "needGiftUidChangeReason": false,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "dailyCycleEndTime": "23:59:59",
+                    "globalinfo": 0,
+                    "section": 6,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 10000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          0
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 Diamond Gifting = 1 Point Received. Only gifts to SouthEastAsia hosts are counted.",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 22,
+                    "svip_levels": [],
+                    "endActNotEditGift": false,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/29",
+                    "frontTextAlignStyle": "left",
+                    "name": "Daily Gifting Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "PH"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500657877",
+                        "create_time": "1763775291",
+                        "utime": "2025-11-22 09:34:51",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "20251122SEA",
+                        "update_operator": "",
+                        "create_operator": "11137",
+                        "frequency": "0",
+                        "update_time": "1763775291",
+                        "black_tasks_status": "0",
+                        "filter_id": "20405",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-11-22 09:34:51",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "CA",
+                      "US"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500657877",
+                    "bottominfo": 1,
+                    "prizeType": 3,
+                    "end_time": "2026/01/01",
+                    "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+                    "dailyCycleStartTime": "00:00:00",
+                    "appoint_uid_source": 1,
+                    "appointUidChangeReason": "x",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 3,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 4000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 100000
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 1050,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 30000
+                      },
+                      {
+                        "rank_to": 30,
+                        "rank_from": 11,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 350,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 10000
+                      },
+                      {
+                        "rank_to": 50,
+                        "rank_from": 31,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 180,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 6000
+                      },
+                      {
+                        "rank_to": 80,
+                        "rank_from": 51,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 100,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 4000
+                      },
+                      {
+                        "rank_to": 99,
+                        "rank_from": 81,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 40,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 2000
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/08/12 00:00:00",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [
+            "CN",
+            "TH"
+          ],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "lottery_timerange_endTime": 1767340799,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "lottery_timerange_startTime": 1766995200,
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang441",
+              "change": 400,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 5,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "Super Lucky Gifting Spin",
+          "svip_area": "",
+          "lottery_rule": "Gifting 500 Diamonds to SouthEastAsia Host to get 1 FREE Spin🔥 Spin up to 5 times daily—don’t miss your chance to win big!",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 2,
+          "start_time_stamp": 1766995200000,
+          "selectedArea": [
+            "US"
+          ],
+          "anchor_whitelist_status": 0,
+          "start_time": "2025-12-29T08:00:00.000Z",
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "CN",
+            "HK",
+            "LA",
+            "MM",
+            "MO",
+            "TH",
+            "TW"
+          ],
+          "is_lottery_all": 1,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": false,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500657877",
+              "create_time": "1763775291",
+              "utime": "2025-11-22 09:34:51",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "20251122SEA",
+              "update_operator": "",
+              "create_operator": "11137",
+              "frequency": "0",
+              "update_time": "1763775291",
+              "black_tasks_status": "0",
+              "filter_id": "20405",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2025-11-22 09:34:51",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 347.4785,
+            "consumeCost": "0.00",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vXSsa00y2TWPL01DNqAn.jpg",
+              "theme": "A Free Spin Ticket is yours! Ready to use in the SouthEastAsia Gifting",
+              "content": "Congratulations on winning a free spin ticket by gifting! Explore more to earn additional rewards now!"
+            },
+            "list": [
+              {
+                "prizes_num": "1",
+                "rotate": "180deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/2CZ5L2.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "5.00",
+                "activity_all_cost": "250.0000",
+                "win_real_rate": 1.68,
+                "is_pay_prize": 0,
+                "prize_name": "3% Recharge Coupon",
+                "consume_num": 0,
+                "residue_num": 50,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "1762909162",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "50",
+                "valid_days": "0",
+                "used_num": 46,
+                "win_rate": "1.68",
+                "textLeft": "-35px",
+                "prize_type": "17"
+              },
+              {
+                "prizes_num": "10",
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=JxyjmpoVY7TJIlzfQleeCsTgYH3LltdJ-koV-MOxCGo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjM2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.1667",
+                "activity_all_cost": "13.3360",
+                "win_real_rate": 2.69,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond x 10",
+                "consume_num": 0,
+                "residue_num": 80,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "1",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "80",
+                "valid_days": "0",
+                "used_num": 59,
+                "win_rate": "2.69",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=JxyjmpoVY7TJIlzfQleeCsTgYH3LltdJ-koV-MOxCGo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjM2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0167",
+                "activity_all_cost": "5.0100",
+                "win_real_rate": 10.08,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond x 1",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "1",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": 0,
+                "activity_all_num": "300",
+                "valid_days": "0",
+                "used_num": 226,
+                "win_rate": "10.08",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/2CZ5L2.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "4.58",
+                "activity_all_cost": "45.8000",
+                "win_real_rate": 0.34,
+                "is_pay_prize": 0,
+                "prize_name": "5% Recharge Coupon",
+                "consume_num": 0,
+                "residue_num": 10,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "1762909138",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "10",
+                "valid_days": "0",
+                "used_num": 3,
+                "win_rate": "0.34",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "17"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vRIaH00y2TWPL00xQh86.png",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 84.03,
+                "is_pay_prize": 0,
+                "prize_name": "Entrance Effect",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "44207",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "3",
+                "used_num": 1964,
+                "win_rate": "84.03",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": "100",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=JxyjmpoVY7TJIlzfQleeCsTgYH3LltdJ-koV-MOxCGo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjM2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "1.6667",
+                "activity_all_cost": "8.3335",
+                "win_real_rate": 0.17,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond x 100",
+                "consume_num": 0,
+                "residue_num": 5,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "1",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": 0,
+                "activity_all_num": "5",
+                "valid_days": "0",
+                "used_num": 7,
+                "win_rate": "0.17",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "50",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=JxyjmpoVY7TJIlzfQleeCsTgYH3LltdJ-koV-MOxCGo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjM2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.8333",
+                "activity_all_cost": "24.9990",
+                "win_real_rate": 1.01,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond x 50",
+                "consume_num": 0,
+                "residue_num": 30,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "1",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": 0,
+                "activity_all_num": "30",
+                "valid_days": "0",
+                "used_num": 19,
+                "win_rate": "1.01",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "11"
+              }
+            ],
+            "totalCost": "347.4785"
+          },
+          "uid": "598116560",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "CA",
+            "US"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": "1500657877",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "end_time": "2026-01-01T08:00:00.000Z",
+          "dailyCycleEndTimeOrigin": "2025/04/02 23:59:59",
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 1,
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "x",
+          "end_time_stamp": 1767254400000,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 1,
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/04/02 00:00:00",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "PH"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "dailyCycleEndTime": "23:59:59",
+          "needGroupsChangeReason": true,
+          "section": 6,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang441",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                0
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "1 Diamond = 1 Point. Daily limit applies. First come, first served!",
+          "lang": [
+            "CA",
+            "US"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 2,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "end_time": "2026/01/01",
+          "level_config": [
+            {
+              "private_im_lang": "🎉 Congratulations! You’ve just earned 1 Diamond for gifting SouthEastAsia hosts!\n✨ Sign up now for the Holiday Gift Season SEAxUSCA and unlock even more rewards! https://activity.bigo.tv/live/act/act_16907/index.html?id=78236",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "3000",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "1"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 10
+            },
+            {
+              "private_im_lang": "🎉 Congratulations! You’ve just earned 5 Diamonds for gifting SouthEastAsia hosts!\n✨ Sign up now for the Holiday Gift Season:SEAxUSCA and unlock even more rewards! https://activity.bigo.tv/live/act/act_16907/index.html?id=78236",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "500",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "4"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 2,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 90
+            },
+            {
+              "private_im_lang": "🎉 Congratulations! You’ve just earned 10 Diamonds for gifting SouthEastAsia hosts!\n✨ Sign up now for the Holiday Gift Season: SEAxUSCA and unlock even more rewards! https://activity.bigo.tv/live/act/act_16907/index.html?id=78236",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "100",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "5"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 3,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 400
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 19,
+          "raskType": 1,
+          "dailyCycleEndTimeOrigin": "2025/10/02 23:59:59",
+          "dailyCycleStartTime": "00:00:00",
+          "selectedArea": [
+            "US"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "start_time": "2025/12/29",
+          "anchor_uid_info": null,
+          "name": "Daily Gifting Task",
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/10/02 00:00:00",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "CN",
+            "HK",
+            "LA",
+            "MM",
+            "MO",
+            "TH",
+            "TW"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "CN",
+            "TH"
+          ],
+          "num": 10,
+          "dailyCycleEndTime": "23:59:59",
+          "needGroupsChangeReason": true,
+          "section": 6,
+          "groupSoure": 0,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500657877",
+              "create_time": "1763775291",
+              "utime": "2025-11-22 09:34:51",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "20251122SEA",
+              "update_operator": "",
+              "create_operator": "11137",
+              "frequency": "0",
+              "update_time": "1763775291",
+              "black_tasks_status": "0",
+              "filter_id": "20405",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2025-11-22 09:34:51",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 5,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "Watch 5 minutes, earn 5 points! Collect 30 points to claim your exclusive badge!",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "CA",
+            "US"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 2,
+          "need_attend": 0,
+          "whiteUid_id": "1500657877",
+          "end_time": "2026/01/01",
+          "level_config": [
+            {
+              "private_im_lang": "🎉 Congratulations! You’ve just earned an exclusive pendant for watching SouthEastAsia hosts!\n✨ Sign up now for the Holiday Gift Season:SEAxUSCA and unlock even more rewards!👉 https://activity.bigo.tv/live/act/act_16907/index.html?id=78236",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "base_map_url": "",
+                  "reward_max_limit": "100000",
+                  "op_time": "1765494360",
+                  "offshelf_time": "2143209600",
+                  "vm_price": "0",
+                  "op_user": "直播事业部-梁钊颖",
+                  "isOnlyNeedNum": 0,
+                  "mp4_url": "",
+                  "__version": "7231464902370906659",
+                  "reward_name": "pendant",
+                  "typeid": "6",
+                  "extra_type": "0",
+                  "id": "44415",
+                  "nickname_color": "",
+                  "reward_count": null,
+                  "icon_url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTpir00y2TWPL00En1L2.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "avatar_width": "0",
+                  "sort_key": "0",
+                  "new_banner_url": "",
+                  "val_count": "0",
+                  "show_type": "0",
+                  "medal_type": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "val_count_decimal": "0",
+                  "name": "pendant",
+                  "is_lock": "0",
+                  "text_color": "",
+                  "status": "0",
+                  "pk_type": "",
+                  "desc_text": "pendant",
+                  "reward_type": "44415",
+                  "vm_price_decimal": "0",
+                  "game_type": "0",
+                  "can_vip_share": "0",
+                  "head_type": "0",
+                  "reward_expire_time": "3",
+                  "param": "",
+                  "banner_url": "",
+                  "label_name": "",
+                  "need_combine": "0",
+                  "__deleted": "0",
+                  "onshelf_time": "1765494575",
+                  "env": "1",
+                  "gif_url": "",
+                  "sale": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTpir00y2TWPL00En1L2.png",
+                  "act_url": "",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTpit00y2TWPL01wCd6U.webp"
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 30
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 20,
+          "raskType": 1,
+          "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+          "dailyCycleStartTime": "00:00:00",
+          "selectedArea": [
+            "US"
+          ],
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "x",
+          "anchor_whitelist_status": 0,
+          "start_time": "2025/12/29",
+          "anchor_uid_info": null,
+          "name": "Daily Watching Task",
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

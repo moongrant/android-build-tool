@@ -1,0 +1,593 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 06:26:08",
+    "now_zone": -1,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78712,
+      "act_name": "DACH Jan. SVIP Glücksrad",
+      "state": 1,
+      "color": 1,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2026-01-10 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "DE",
+        "CH",
+        "AT"
+      ],
+      "selectedArea": [
+        "DE"
+      ],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "🌟SVIP Glücksrad🌟",
+        "appendixDesc": "🎁 Gratis für SVIPs! Drehe & hol dir 5000 Bohnen!",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vdm9f00y2TWPL01EhfUy.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "8",
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 1,
+      "black_uids_id": "1500658408"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vdm5c00y33lYHC2IF1cZ.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "❗️Nur DACH-SVIPs mit dem Auflade-Ländercode DE/AT/CH können am Event teilnehmen❗️"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "❓Was ist SVIP❓",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77944",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "➡️Jetzt SVIP werden⬅️",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "🎁 Tägliche Belohnungen sind begrenzt – wer zuerst kommt, mahlt zuerst🏃"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [
+            "DE"
+          ],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "change": 20,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 42,
+              "score": 1,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "SVIP积分",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "SVIP Glücksrad",
+          "svip_area": "3",
+          "lottery_rule": "🎁 Ein Dreh kostet 20 SVIP-Punkte🎁",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [
+            "all"
+          ],
+          "index": 7,
+          "selectedArea": [
+            "DE"
+          ],
+          "anchor_whitelist_status": 0,
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "AT",
+            "CH",
+            "DE"
+          ],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 6.186899999999994,
+            "consumeCost": "104.29",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vdmAB00y2TWPL01wdETW.jpg",
+              "theme": "🌟SVIP Glücksrad🌟",
+              "content": "🎁 Gratis für SVIPs! Drehe & hol dir 5000 Bohnen!"
+            },
+            "list": [
+              {
+                "prizes_num": "5000",
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=C4wAzu14uJ4aYy9zmQJ0y1FWcf7ozgow12l4x68yM8I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "23.8095",
+                "activity_all_cost": "23.8095",
+                "win_real_rate": 1,
+                "is_pay_prize": 0,
+                "prize_name": "5000 Bohnen",
+                "consume_num": 1,
+                "residue_num": 0,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "4",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "1",
+                "valid_days": "0",
+                "used_num": 11,
+                "win_rate": "1",
+                "textLeft": "-35px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTen500y2TWPL00kytms.png",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 5,
+                "is_pay_prize": 0,
+                "prize_name": "2026 Avatar",
+                "consume_num": 24,
+                "residue_num": 99975,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "45003",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "3",
+                "used_num": 1415,
+                "win_rate": "5",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": "2000",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=C4wAzu14uJ4aYy9zmQJ0y1FWcf7ozgow12l4x68yM8I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "9.5238",
+                "activity_all_cost": "19.0476",
+                "win_real_rate": 4,
+                "is_pay_prize": 0,
+                "prize_name": "2000 Bohnen",
+                "consume_num": 2,
+                "residue_num": 0,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "4",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "2",
+                "valid_days": "0",
+                "used_num": 19,
+                "win_rate": "4",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "200",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=C4wAzu14uJ4aYy9zmQJ0y1FWcf7ozgow12l4x68yM8I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.9524",
+                "activity_all_cost": "9.5240",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": "200 Bohnen",
+                "consume_num": 10,
+                "residue_num": 0,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "4",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": 0,
+                "activity_all_num": "10",
+                "valid_days": "0",
+                "used_num": 105,
+                "win_rate": "30",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "500",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=C4wAzu14uJ4aYy9zmQJ0y1FWcf7ozgow12l4x68yM8I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "2.3810",
+                "activity_all_cost": "16.6670",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "500 Bohnen",
+                "consume_num": 7,
+                "residue_num": 0,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "4",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "7",
+                "valid_days": "0",
+                "used_num": 68,
+                "win_rate": "20",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "1000",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=C4wAzu14uJ4aYy9zmQJ0y1FWcf7ozgow12l4x68yM8I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "4.7619",
+                "activity_all_cost": "28.5714",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "1000 Bohnen",
+                "consume_num": 5,
+                "residue_num": 1,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "4",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": 0,
+                "activity_all_num": "6",
+                "valid_days": "0",
+                "used_num": 44,
+                "win_rate": "10",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "100",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=C4wAzu14uJ4aYy9zmQJ0y1FWcf7ozgow12l4x68yM8I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.4762",
+                "activity_all_cost": "12.8574",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": "100 Bohnen",
+                "consume_num": 24,
+                "residue_num": 3,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "4",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": 0,
+                "activity_all_num": "27",
+                "valid_days": "0",
+                "used_num": 448,
+                "win_rate": "30",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "14"
+              }
+            ],
+            "totalCost": "110.4769"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "AT",
+            "CH",
+            "DE"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "lottery_ticket_timerange_limit": 0,
+          "point_uid_lottery_ticket": 0,
+          "appoint_uid_source": 2,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "✨ Heute nichts bekommen? Kein Problem – der Gewinnpool wird täglich neu aufgefüllt! 🔄 \n\n🍀Versuch dein Glück morgen wieder! 🍀"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "💬 SVIP Kontakt 💬",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Ab SVIP 1",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "Support über das offizielle SVIP-Konto (DE)"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "formData": {
+                              "mode": 1,
+                              "uid_arr": [
+                                {
+                                  "uid": "80003",
+                                  "text": "Offizielles Konto für DACH SVIP"
+                                }
+                              ],
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Ab SVIP 2",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "Exklusiver Support über deine WA-Gruppen"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "center",
+                                  "type": "text",
+                                  "value": "SVIP 2 und höher können Privilegien einlösen. Anschließend erstellen die DACH-Admins eine exklusive WA-Gruppe für dich"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "formData": {
+                              "play": 1,
+                              "img_arr": [
+                                {
+                                  "uid": 1769632064818,
+                                  "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vlC8W00y2TWPL01TERQ3.png",
+                                  "status": "success"
+                                },
+                                {
+                                  "uid": 1769632064819,
+                                  "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vlC8d00y33lYHC0asu6f.png",
+                                  "status": "success"
+                                }
+                              ]
+                            },
+                            "type": "banner",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Alle Rechte bleiben BigoLive vorbehalten. Diese Veranstaltung steht in keinem Zusammenhang mit Apple Inc."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

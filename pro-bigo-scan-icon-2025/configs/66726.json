@@ -1,0 +1,1315 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250601",
+      "20250602",
+      "20250603",
+      "20250604"
+    ],
+    "week": [
+      "20250526",
+      "20250602"
+    ],
+    "month": [
+      "202506"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 66726,
+      "act_name": "June Gifter’s Kickoff! - Gifting Event",
+      "state": 1,
+      "color": 1,
+      "theme": "green-red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-01 00:00:00",
+      "end_time": "2025-06-04 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PH"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0,
+      "black_uids_id": ""
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uKsxh57f8e299ddbf46c1a4a502b8f4192c78ph.jpg?auth-token=jGpn-3BIA0126LE2BVu5aw2r5aw7-KHwjSTjkKLbZrI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ0MzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Task",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "KcGWL",
+                  "formData": {
+                    "group_arr": [],
+                    "scoreLang": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "change": 100,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "Enjoy live and win daily rewards!",
+                    "lang": [
+                      "PH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "999999",
+                            "op_time": "1748053927",
+                            "offshelf_time": "2063635200",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-Manuel D. Antonio III",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7160028886582715939",
+                            "reward_name": "Hero's Medal",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "40696",
+                            "nickname_color": "",
+                            "reward_count": "1",
+                            "icon_url": "http://giftesx.bigo.sg/live/g2/M0B/03/4D/LXz8GFp_rIWIei9CAAAmzmgA_mcAAN8MgHvsG8AACbm200.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "31",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Hero's Medal",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Hero Medal",
+                            "reward_type": "40696",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "param": "",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1748054435",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "http://giftesx.bigo.sg/live/g2/M0B/03/4D/LXz8GFp_rIWIei9CAAAmzmgA_mcAAN8MgHvsG8AACbm200.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "http://giftesx.bigo.sg/live/g2/M07/05/13/LXz8GFm_O32IDjYjAAAV451M2UYAAK43wHuwLEAABX7531.png"
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 1
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "5099",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "1"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 1
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "2399",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "4"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "899",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "13"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 6
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "selectedArea": [],
+                    "name": "Reward 1- Daily Task",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Notes",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "cWfo0",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uKsX4186f8656f9ff45b8ac50d1a972e68701ph.png?auth-token=nFlutHldSwZmjtaiUkZLdc-XfnXZBIxYUdkfafw7sf4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxODksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Beans Giveaway",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "j0EUo",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 1,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "change": 100,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Meet your target and WIN BEANS!",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "Daily Beans Giveaway Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "rankTo": 999,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "PH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 2,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 23,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 9
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 72,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 1,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 18
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 189,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 2,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 40
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 489,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 3,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 90
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 1111,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 4,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 190
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "prize_arr_v3": [
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 23,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 9
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 72,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 1,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 18
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 189,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 2,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 40
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 489,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 3,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 90
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 1111,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/7h1/M0C/1E/E1/s_obAFx1QsuICkySAAAhka0FwgIAAFd3gEoEpwAACGp914.png?auth-token=f47cyJH6PYhfzGPbI3SefigZpX8DmFB3qjFPtdQ0ro4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 20271,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won beans by completing daily task points requiremnet in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "gift_room_im": "1",
+                          "diamondImData": [],
+                          "giftImData": [
+                            {
+                              "zone": "default",
+                              "text": "Congrats! U won virtual items by completing daily task points requirement in June Gifter’s Kickoff! - Gifting Event (June 1-4). Keep going for more rewards! (Rewards released might be delayed)"
+                            }
+                          ],
+                          "diamond_room_im": "0",
+                          "row_index": 4,
+                          "bean_room_im": "1"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 190
+                      }
+                    ],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Notes",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "2UwQQ",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uKsXb752e6cc1571247ffad312f410fbd7835ph.png?auth-token=VmCD8eNnImhVTgvptKrun2Pnj8IA2r3sfO3RDfi3IFI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1MzUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Gifting Rebate",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "5mzHU",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "change": 100,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Gift more to win even more rebate!",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 3,
+                    "selectedArea": [],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "Gifting Rebate Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "PH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Notes",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "wo0On",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uKss1c01b3d62819a47d481e076c194c14679ph.png?auth-token=qW8TsMZC-srw83iCJoBfK_ulN3O1BbUAhRx7OU1gRK8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ0MzksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👇🏻💎 Scan & Go 💎👇🏻"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uA4XM8c32eaa8205a4fd6874048d5aafb2c34ph.png?auth-token=MHaaVq-cUpBdodmFcL5N1VL-n3iKcRPZ9udSLIRlYSg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "ALL RIGHTS RESERVED | BIGO LIVE PH"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80025"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

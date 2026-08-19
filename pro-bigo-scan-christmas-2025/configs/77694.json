@@ -1,0 +1,433 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77694,
+      "act_name": "Fiesta Lounge_Portuguese",
+      "state": 1,
+      "color": 1,
+      "theme": "white-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-08 16:50:16",
+      "end_time": "2026-01-08 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "BR",
+        "AO"
+      ],
+      "selectedArea": [
+        "PT"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vdI5T00y2TWPL001h8OP.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vdI5d00y33lYHC1iLLqr.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Candidate-se para conduzir o show",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://forms.gle/zZiZYQdQd59n7dHs7",
+              "openType": 2,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Apresentando o programa",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "3960J",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vdI6T00y33lYHC13QOev.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "40ruf",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vdI6d00y2TWPL01HmW1j.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Assistindo",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "JDLt0",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": true,
+                            "sure": "Confirm",
+                            "name": "Lucky Draw",
+                            "range": [
+                              3
+                            ],
+                            "title": "",
+                            "attendModular": 2,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Registre-se para jogar",
+                        "fn": 3,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "czd3S",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 900,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "lottery_title": "Fiesta Lounge",
+                    "svip_area": "",
+                    "lottery_rule": "A cada 15 minutos de visualização = 1 sorteio",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [
+                      "PT"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 0,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 0,
+                      "messageObj": {
+                        "imImg": "",
+                        "theme": "",
+                        "content": ""
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vRDPe00y2TWPL01LHb1e.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 9,
+                          "is_pay_prize": 0,
+                          "prize_name": "Pingente Festa",
+                          "consume_num": 200,
+                          "residue_num": 0,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "44199",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "200",
+                          "valid_days": "30",
+                          "used_num": 200,
+                          "win_rate": "9",
+                          "textLeft": "-35px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "108deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vQxxL00y33lYHC1AArLG.png",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 30,
+                          "is_pay_prize": 0,
+                          "prize_name": "Bengala de doces",
+                          "consume_num": 6191,
+                          "residue_num": 93808,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "44169",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "30",
+                          "used_num": 6191,
+                          "win_rate": "30",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "36deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vRIcb00y2TWPL01bEc03.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 10,
+                          "is_pay_prize": 0,
+                          "prize_name": "Pingente Lounge",
+                          "consume_num": 200,
+                          "residue_num": 0,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "44211",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "200",
+                          "valid_days": "30",
+                          "used_num": 200,
+                          "win_rate": "10",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-36deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/01tOQ8nDmlQE.png?auth-token=L0kCPNCBGie-NuNtHZVARkV-3ApshALAS0fTAKeTrec:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Njk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NzMxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "Luz traseira de Nata",
+                          "consume_num": 4371,
+                          "residue_num": 95628,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "44053",
+                          "textTop": "-121.12712429686843px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "30",
+                          "used_num": 4371,
+                          "win_rate": "40",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-108deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/11unvCqXzaYl.png?auth-token=WQ7dyC3KOCL72mLmb9kYMB-shN3ukyB1glPtv37ZQtg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Njk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NjQ2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 11,
+                          "is_pay_prize": 0,
+                          "prize_name": "Medalha de Outono",
+                          "consume_num": 200,
+                          "residue_num": 0,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "43809",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "200",
+                          "valid_days": "30",
+                          "used_num": 200,
+                          "win_rate": "11",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "5"
+                        }
+                      ],
+                      "totalCost": "0.0000"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "BR",
+                      "AO"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,1235 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250822",
+      "20250823",
+      "20250824",
+      "20250825",
+      "20250826"
+    ],
+    "week": [
+      "20250818",
+      "20250825"
+    ],
+    "month": [
+      "202508"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 14:26:08",
+    "now_zone": -9,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 71234,
+      "act_name": "ラッキーファミリー頂上決戦（8/22~8/26)",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-08-22 00:00:00",
+      "end_time": "2025-08-26 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "JP"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "✨ラッキーファミリー頂上決戦が開幕！✨",
+        "appendixDesc": "完全運次第のスリル満点バトル⚔",
+        "linkImg": "http://esx.bigo.sg/live/4he/11uoiUyX1Jkl.jpg?auth-token=rvOou9ryZvSAOibxHUja3-6KsuZOp64lwMseBCSqDDo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NjQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "29"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4he/01uoDumMQCOi.jpg?auth-token=hs0bUmk1YnJz_-p-f34AXWSquPmEA2SohVEK2QrQ4RY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3ODAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "イベント終了"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "イベント詳細",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "oqX0V",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "key_text",
+                        "value": "✨ ラッキーファミリー頂上決戦が開幕！ ✨\n\n🪨トーテムから現れる猛獣の価値で\nファミリー同士が【猛獣合戦】で\n熱いバトルを繰り広げます！\n優勝ファミリーには\nビーンズ・戦力ポイント・\nファミリーチャンネル使用権をプレゼント🎁\n\n\n🪨トーテムを投げて猛獣を当てた\nファミリーメンバーにも\n【猛獣狩り】ランキングをご用意！\n🦁レアな猛獣ほど高得点！\n完全運次第のスリル満点バトル⚔\n🎯大当たりを引いたメンバーには\n最大3万ビーンズをプレゼント！🎁"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vcxJ1",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "猛獣合戦",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "yUlWq",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "イベント情報"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼開催期間"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "8月22日（金）0時0分～8月26日（火）23時59分"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼対象者"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "8月21日までに作成された日本ファミリー"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼ランキング種類"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "ファミリーランキング"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼参加方法"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "指定ギフトを集めていただくと自動的に参加します。エントリー不要です。"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼イベントルール"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "①イベント指定ギフトを集めてください\n②ファミリーメンバーが指定ギフトから当選したギフトの相当ポイントでランキングの順位を決定します\n③受賞者が受賞権利を放棄した場合、順位を繰り上げて授与する場合がございます\n※受賞後、他人へ受賞権利の譲渡をすることはできません\n※イベント開始されてから、獲得した指定ギフトから当選するギフトがランキングのカウント対象となります。\n※イベント開始時間前に獲得した指定ギフトから当選するギフトはカウント対象となりません。"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "UfKTQ",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "指定ギフト"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "※指定ギフトはランキングポイントにカウントされません。指定ギフトから当選するギフトのみカウントされます。\n※指定ギフトの所在タブ：Treasure Box、イベントギフト、ラッキーファミリー頂上決戦"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "jNJ6z",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/01uoGUC9faUNA.png?auth-token=U7QRN3BShD-GmxVqrdMJ6frXdWZgEuVNCfeJ6Kow_kc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "J87db",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "当選ギフト"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "※指定ギフトを集めることで当選ギフトを獲得します。当選ギフトの相当ポイントがランキングポイントに加算されます。"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5EGCY",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4he/01uoIhgcgfVe.png?auth-token=QdAj2S0dA80nPOXbZLw_LQR5_6mIqqsqTnRtOWMwj_k:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU2NjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "IPLNn",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/01uoIhoW2xvj5.png?auth-token=vnFK9bd8esozQFnO3QcSKxyVXcto88jCRfgtQVrS3WQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwNTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5Ag3N",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "猛獣合戦の賞品"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "81bPM",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4he/21uoH9GX0MDl.png?auth-token=wLFT7vu4sCpmSlb5nWL6IXByORaJ3qv_76_fHM-RYYo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0OTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "zFNXp",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "※ビーンズボーナスの分け方"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "YRbkc",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/21up2NTW56MwT.png?auth-token=RKHeuwY365MzmmscINGui-9EXfPxYcGWS9M6jvOAKJQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Vx4KX",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "▼ファミリーチャンネルについて"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "sB6dd",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/01uoH781XSMum.png?auth-token=M_k0Ip6glYXxaV7xw56f1UhRUBK9sy7j-dh-ukfp07E:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNzcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "XcQlv",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼注意事項"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "※賞品獲得にはポイントノルマを達成する必要があります。\n※順位に相当するポイントノルマを達成できない場合、ポイントノルマを繰下げてそれに相当する賞品を獲得できます。\n例）3位のファミリーのポイントが40万ポイントの場合、4位の賞品（7000ビーンズと7万戦力ポイント）を獲得できます。\n※ビーンズボーナスはファミリーリーダーとファミリー内のTOP1〜3の方に分けて付与致します。\n※ビーンズボーナスと戦力ポイントはイベント終了後1か月以内に付与致します。\n※ファミリーチャンネルの配信申請について、入賞したファミリーリーダーがイベント終了後1か月以内にBIGO公式LINE@までご申請ください。1か月過ぎて申請される場合使用できない可能性がございますので、ご注意ください。また、直近での申請の場合、設定ができない可能性がありますので、1週間ほど余裕を持った日程でご申請ください。開催日程について、翌月末までの日程を指定可能です。\n※上記についてご不明点などがありましたら、事務所経由あるいはBIGOの公式LINE＠(@piq7164f）にお問い合わせください。"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "猛獣狩り",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "yUlWq",
+                            "formData": {
+                              "index": 0,
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "イベント情報"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼開催期間"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "8月22日（金）0時0分～8月26日（火）23時59分"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼対象者"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "日本在住のファミリーメンバー"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼ランキング種類"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "個人ランキング"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼参加方法\n"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "指定ギフトを投げていただくと自動的に参加します。エントリー不要です。"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼イベントルール"
+                                },
+                                {
+                                  "frontTextStyle": "fill",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "🦁猛獣狩りの当選ギフトポイント数は猛獣合戦より高く、レアな猛獣ほど高得点です！🐯"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "①イベント指定ギフトを投げてください\n②投げた指定ギフトから当選したギフトの相当ポイントでランキングの順位を決定します\n③受賞者が受賞権利を放棄した場合、順位を繰り上げて授与する場合がございます\n※受賞後、他人へ受賞権利の譲渡をすることはできません\n※イベント開始されてから、獲得した指定ギフトから当選するギフトがランキングのカウント対象となります。\n※イベント開始時間前に獲得した指定ギフトから当選するギフトはカウント対象となりません。"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "UfKTQ",
+                            "formData": {
+                              "index": 0,
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "指定ギフト"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "※指定ギフトはランキングポイントにカウントされません。指定ギフトから当選するギフトのみカウントされます。\n※指定ギフトの所在タブ：Treasure Box、イベントギフト、ラッキーファミリー頂上決戦"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "jNJ6z",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/01uoGUC9faUNA.png?auth-token=U7QRN3BShD-GmxVqrdMJ6frXdWZgEuVNCfeJ6Kow_kc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "index": 0,
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "J87db",
+                            "formData": {
+                              "index": 0,
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "当選ギフト"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "※指定ギフトを投げて当選するギフトの相当ポイントがランキングポイントに加算されます。猛獣狩りの当選ギフトポイント数は猛獣合戦と違いますのでご注意ください。"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5EGCY",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/11uoIhyGpouzZ.png?auth-token=UR59M0Qq3j403TSiPJDqR25aNagdRlA-nqBM241gtTM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3MjksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "index": 0,
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "IPLNn",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4hd/21uoIi54dd0LD.png?auth-token=HyW5qMPn2LYU0t-nOXjvbMCZ1zzMX-x0UGwTkP_XiQk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3MjcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "index": 0,
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5Ag3N",
+                            "formData": {
+                              "index": 0,
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "猛獣狩りの賞品"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "81bPM",
+                            "formData": {
+                              "img": "http://esx.bigo.sg/live/4he/01uoJICQUUQY.png?auth-token=w1V_1jC9F45oaVLJGr6RkO-97z_mTdL9yztJ5Gn66Dc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxMDEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "index": 0,
+                              "frontNeedBottomMargin": false
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "XcQlv",
+                            "formData": {
+                              "index": 0,
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "▼注意事項"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "※賞品獲得にはポイントノルマを達成する必要があります。\n※順位に相当するポイントノルマを達成できない場合、ポイントノルマを繰下げてそれに相当する賞品を獲得できます。\n例）3位の方が40万ポイントの場合、4位の賞品（7000ビーンズ）を獲得できます。\n※ビーンズボーナスはイベント終了後1か月以内に付与致します。\n※上記についてご不明点などがありましたら、事務所経由あるいはBIGOの公式LINE＠(@piq7164f）にお問い合わせください。"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "ランキング",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "NDWWK",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "猛獣合戦",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "zXOZh",
+                            "formData": {
+                              "scoreLang": [],
+                              "group_arr": [],
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 999,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "needGroupsChangeReason": false,
+                              "section": 4,
+                              "groupSoure": 1,
+                              "onlyCharge": false,
+                              "mode": 1,
+                              "globalrank": 10,
+                              "endActNotEdit": false,
+                              "isSearch": 0,
+                              "appType": 1,
+                              "rankinfo": 2,
+                              "groupIds": "4362\n4363\n4378\n4379\n4383\n4384\n4387\n4388\n4389\n4390\n4463\n4464\n4465\n4466\n4833\n4843\n5316\n5318\n5319\n5320\n5340\n5341\n5379\n5441\n5498\n5499\n5539\n5637\n5638\n5639\n5692\n5819\n5820\n5824\n5825\n5856\n5926\n5927\n5928\n6200\n6201\n6202\n6644\n6932\n6944\n6954\n6955\n6973\n7049\n7052\n7206\n7611\n7612\n7613\n7615\n7619\n7634\n7635\n7722\n7724\n7731\n7732\n8089\n8094\n9479\n9661\n9662\n9797\n9845\n9925\n9926\n9927\n9928\n9929\n10011\n10012\n10053\n10054\n10055\n10931\n10932\n10933\n10997\n10998\n11000\n11065\n11066\n11220\n11252\n11317\n11318\n11320\n11321\n11322\n11323\n11381\n11382\n12216\n12288\n12315\n12322\n12323\n12343\n12364\n12420\n12421\n12453\n12558\n12929\n13470\n13486\n13494\n13593\n13594\n13711\n13712\n13974\n13976\n13977\n14103\n14223\n14224\n14226\n14230\n14622\n14624\n14628\n14631\n14632\n14669\n14723\n14823\n14832\n14833\n14865\n14868\n14874\n14883\n14932\n14955\n15079\n15149\n15154\n15169\n15172\n15180\n15182\n15196\n15197\n15200\n15206\n15222\n15225\n15227\n15229\n15230\n15239\n15240\n15244\n15253\n15264\n15294\n15295\n15308\n15309\n15314\n15315\n15358\n15381\n15383\n15388\n15391\n15393\n15414\n15419\n15435\n15437\n15445\n15447\n15454\n15473\n15478\n15480\n15490\n15564\n15586\n15618\n15677\n15690\n15722\n15724\n15733\n15738\n15745\n15757\n15784\n15816\n15820\n15822\n15823\n15826\n15831\n15853\n15875\n15910\n15937\n15989\n15999\n16035\n16104\n16128\n16130\n16168\n16190\n16212\n16223\n16253\n16270\n16277\n16337\n16360\n16365\n16388\n16402\n16433\n16452\n16454\n16469\n16499\n16512\n16549\n16599\n16663\n16671\n16681\n16875\n17208\n17212\n17263\n17306\n17371\n17380\n17384\n17393\n17419\n17491\n17528\n17594\n17615\n17795\n17809\n17881\n17922\n17932\n17985\n18001\n18081\n18087\n18092\n18168\n18249\n18272\n18282\n18840\n18857\n18937\n18979\n18986\n19007\n19098\n19139\n19173\n19179\n19206\n19358\n19396\n19462\n19497\n19535\n19538\n19546\n19561\n19587\n19590\n19606\n19624\n19626\n19637\n19707\n19709\n19737\n19749\n19786\n19804\n19831\n19890\n19966\n19974\n20033\n20045\n20048\n20067\n20152\n20154\n20182\n20185\n20189\n20198\n20217\n20218\n20342\n20422\n20431\n20451\n20454\n20504\n20531\n20551\n20577\n20655\n20755\n20921\n20967\n21008\n21020\n21037\n21066\n21067\n21077\n21119\n21226\n21305\n21341\n21347\n21354\n21388\n21393\n21400\n21411\n21428\n21527\n21600\n21674\n21690\n21697\n21716\n21719\n21721\n21797\n21849\n21944\n22153\n22162\n22209\n22241\n22291\n22326\n22397\n22523\n22550\n22602\n22679\n22874\n23125\n23153\n23156\n23221\n23345\n23409\n23429\n23434\n23438\n23506\n23579\n23687\n23700\n23913\n23923\n23963\n24074\n24082\n24301\n24324\n24325\n24401\n24472\n24475\n24500\n24517\n24550\n24621\n24706\n24753\n24821\n24835\n24915\n24920\n24975\n25051\n25059\n25100\n25129\n25131\n25161\n25165\n25202\n25254\n25259\n25352\n25369\n25425\n25453\n25506\n25618\n25681\n25732\n25777\n25812\n25819\n25899\n25910\n25924\n25953\n26375\n26385\n26611\n26673\n26730\n26767\n26906\n26914\n26989\n26990\n27033\n27188\n27261\n27284\n27330\n27364\n27377\n27421\n27467\n27513\n27516\n27567\n27577\n27598\n27686\n27705\n27760\n27788\n27796\n27801\n27825\n27878\n27914\n27923\n27935\n27984\n28003\n28140\n28247\n28340\n28352\n28376\n28428\n28442\n28493\n28496\n28497\n28513\n28528\n28906\n28987\n28990\n28997\n29251\n29276\n29404\n29595\n29596\n29631\n29661\n29757\n29810\n29842\n29912\n30071\n30200\n30225\n30241\n30327\n30388\n30407\n30424\n30735\n30984\n31113\n31235\n31241\n31282\n31286\n31313\n31346\n31432\n31456\n31640\n31655\n31668\n31678\n31699\n31701\n31739\n31762\n31892\n31939\n32061\n32313\n32320\n32438\n32467\n32505\n32550\n32610\n32648\n32652\n32661\n32721\n32727\n32843\n32922\n32979\n33060\n33346\n33350\n33355\n33583\n33612\n33762\n33794\n33845\n33884\n33916\n34055\n34072\n34154\n34202\n34313\n34406\n34481\n34552\n34553\n34569\n34592\n34607\n34614\n34637\n34652\n34782\n35081\n35347\n35534\n35538\n35574\n35585\n35587\n35657\n35687\n35741\n35759\n35994\n36108\n36110\n36237\n36268\n36300\n36380\n36389\n36391\n36400\n36410\n36440\n36515\n36588\n36646\n36670\n36810\n37029\n37065\n37124\n37133\n37181\n37271\n37319\n37389\n37492\n37519\n37521\n37601\n37611\n37657\n37994\n38009\n38144\n38305\n38378\n38445\n38472\n38684\n38710\n38757\n38781\n38788\n38803\n38875\n38876\n38952\n38959\n38967\n39004\n39026\n39043\n39085\n39128\n39373\n39479\n39547\n39558\n39789\n39820\n39856\n39928\n39954\n40156\n40284\n40375\n40583\n40671\n40928\n40944\n40981\n40993\n41018\n41086\n41113\n41116\n41151\n41162\n41295\n41346\n41512\n41538\n41551\n41597\n41735\n41921\n41939\n42022\n42055\n42091\n42118\n42161\n42257\n42259\n42279\n42291\n42392\n42526\n42597\n42615\n42655\n42758\n42870\n42888\n42908\n42943\n42946\n42948\n43150\n43152\n43272\n43309\n43347\n43360\n43631\n43648\n43657\n43725\n43730\n43789\n43791\n43926\n44130\n44136\n44246\n44265\n44309\n44330\n44345\n44350\n44351\n44472\n44591\n44634\n44638\n44703\n44733\n44737\n44812\n44912\n44949\n44958\n45079\n45105\n45181\n45245\n45287\n45388\n45489\n45626\n45649\n45677\n45708\n45766\n45908\n46055\n46078\n46082\n46116\n46170\n46174\n46211\n46212\n46222\n46235\n46258\n46298\n46305\n46473\n46501\n46615\n46619\n46625\n46678\n46712\n46744\n46923\n47010\n47029\n47044\n47097\n47107\n47111\n47116\n47281\n47331\n47362\n47394\n47436\n47515\n47630\n47694\n47701\n47703\n47898\n47945\n48162\n48184\n48237\n48447\n48471\n48551\n48584\n48698\n48704\n48758\n48815\n48872\n48945\n48949\n48959\n48978\n48999\n49057\n49082\n49096\n49418\n49471\n49500\n49503\n49516\n49525\n49539\n49642\n49695\n49721\n49753\n49860\n49864\n49908\n49918\n49958\n49979\n50043\n50162\n50246\n50259\n50265\n50282\n50322\n50346\n50430\n50435\n50470\n50608\n50656\n50764\n50853\n51362\n51489\n51561\n51567\n51594\n51598\n51686\n51712\n51886\n52024\n52030\n52040\n52069\n52109\n52130\n52190\n52199\n52206\n52211\n52468\n52578\n52616\n52909\n52997\n53221\n53224\n53229\n53274\n53318\n53370\n53389\n53420\n53444\n53487\n53490\n53625\n53685\n53779\n53860\n53887\n53913\n53939\n53947\n53998\n54043\n54058\n54060\n54074\n54090\n54160\n54183\n54196\n54210\n54351\n54392\n54393\n54498\n54683\n54714\n54774\n54836\n54861\n54928\n54935\n54956\n54959\n54969\n54979\n54980\n55018\n55057\n55058\n55090\n55091\n55162\n55227\n55414\n55589\n55637\n55654\n55770\n56315\n56316\n56333\n56500\n56523\n56734\n56748\n57101\n57122\n57154\n57182\n57339\n57419\n57428\n57506\n57666\n57685\n57929\n57964\n58036\n58124\n58185\n58467\n58472\n58483\n58508\n58584\n58731\n59123\n59235\n59243\n59257\n59421\n59484\n59574\n59695\n59776\n59788\n59822\n59838\n59874\n59913\n60027\n60226\n60227\n60236\n60374\n60627\n60713\n60766\n61151\n61204\n61221\n61252\n61374\n61469\n61536\n61560\n61562\n61615\n61700\n61739\n62082\n62166\n62209\n62257\n62282\n62358\n62380\n62405\n62416\n62441\n62521\n62593\n62599\n62675\n62731\n62772\n63061\n63084\n63111\n63153\n63311\n63350\n63485\n63604\n63640\n63676\n63723\n63751\n63960\n64183\n64184\n64282\n64495\n64519\n64906\n64975\n65054\n65075\n65111\n65164\n65181\n65223\n65255\n65262\n65284\n65397\n65403\n65573\n65607\n65637\n65932\n65957\n65989\n66041\n66045\n66086\n66105\n66119\n66145\n66169\n66205\n66213\n66238\n66381\n66486\n66543\n66545\n66556\n66589\n66594\n66667\n66672\n66772\n66840\n66841\n66851\n66895\n66920\n66961\n66973\n66981\n67059\n67070\n67202\n67219\n67331\n67347\n67352\n67355\n67366\n67397\n67549\n67571\n67612\n67614\n67628\n67740\n67859\n68026\n68093\n68153\n68243\n68255\n68355\n68387\n68403\n68537\n68596\n68721\n68857\n68947\n68987\n69110\n69171\n69338\n69372\n69538\n69570\n69629\n69809\n69810\n69874\n69980\n70005\n70023\n70161\n70318\n70323\n70354\n70523\n70558\n70619\n70644\n70711\n70925\n70930\n70976\n71104\n71188\n71241\n71273\n71309\n71310\n71313\n71541\n71601\n71679\n71869\n71924\n71933\n72021\n72091\n72258\n72356\n72427\n72534\n72555\n72601\n72657\n72968\n73024\n73206\n73289\n73355\n73361\n73448\n73519\n73617\n73620\n73662\n73679\n73705\n73727\n73772\n73980\n74031\n74081\n74082\n74096\n74156\n74235\n74325\n74331\n74347\n74435\n74502\n74505\n74739\n74824\n74825\n74844\n76018\n76041\n76174\n76177\n76407\n76520\n76673\n77015\n77016\n77081\n77219\n77246\n77300\n77340\n77386\n77403\n77435\n77442\n77566\n77609\n77677\n77709\n77925\n77945\n77950\n78040\n78389\n78390\n78474\n78492\n78601\n78934\n79086\n79134\n79155\n79235\n79257\n79273\n79274\n79280\n79287\n79320\n79324\n79342\n79345\n79374\n79416\n79481\n79654\n79686\n79696\n79719\n79730\n79762\n79824\n80196\n80282\n80304\n80375\n80568\n80740\n80803\n80834\n80926\n80928\n80964\n80989\n81138\n81142\n81199\n81284\n81383\n81818\n81987\n82022\n82127\n82158\n82176\n82202\n82242\n82268\n82348\n82358\n82447\n82541\n83907\n83965\n84082\n84083\n84103\n84433\n84464\n84520\n84572\n84589\n84624\n84896\n84923\n84940\n85008\n85083\n85285\n85297\n85550\n85605\n85629\n85746\n85820\n85822\n85908\n85987\n86092\n86102\n86162\n86212\n86692\n86750\n86780\n86945\n86966\n87170\n87195\n87221\n87273\n87692\n87696\n87725\n87747\n87988\n88033\n88308\n88428\n88476\n88726\n88749\n88789\n88816\n88819\n88882\n88944\n89105\n89121\n89169\n89255\n89684\n89748\n89822\n89931\n90288\n90343\n90360\n90461\n90482\n91252\n91306\n91355\n91359\n91373\n91413\n91888\n92023\n92064\n92065\n92342\n92541\n92546\n92696\n92731\n92747\n92898\n92954\n92958\n92987\n93082\n93259\n93282\n93533\n93684\n93773\n93977\n93980\n94076\n94109\n94112\n94132\n94134\n94339\n94348\n94382\n94797\n95129\n95277\n95465\n95617\n95632\n95653\n95660\n95692\n95718\n95786\n95972\n96207\n96347\n96503\n96527\n96552\n96561\n96673\n96855\n96915\n96925\n96940\n96947\n97050\n97119\n97158\n97193\n97197\n97217\n97266\n97681\n97779\n97946\n97983\n97994\n98017\n98028\n98161\n98204\n98257\n98266\n98289\n98582\n98630\n98706\n98793\n99000\n99184\n99385\n99548\n100089\n100189\n100411\n100519\n100802\n100832\n100873\n100919\n101034\n101052\n101122\n101228\n101324\n101599\n101873\n101936\n101952\n101958\n102133\n102156\n102260\n102691\n102829\n103012\n103462\n103478\n103500\n103639\n103648\n103653\n103772\n103963\n103969\n104122\n104266\n104308\n104416\n104556\n104687\n104888\n104969\n104983\n105289\n105344\n105352\n105362\n105443\n105724\n105737\n105747\n106018\n106056\n106496\n106641\n106877\n107371\n107510\n107655\n107772\n107804\n107934\n108047\n108073\n108140\n108173\n108850\n108859\n109197\n109207\n109254\n109579\n109823\n110095\n110241\n110492\n110496\n110544\n110567\n110666\n110679\n110753\n110845\n111012\n111069\n111116\n111118\n111290\n111338\n111637\n111675\n111698\n111732\n111770\n111777\n111792\n111818\n111875\n111932\n111948\n112509\n112560\n112616\n113462\n113483\n113783\n113802\n113813\n114331\n114429\n115391\n115409\n115568\n115572\n115641\n115789\n116193\n116368\n116453\n116649\n116764\n117001\n117113\n117165\n117171\n117183\n117283\n117301\n117426\n117471\n117512\n117555\n117581\n117667\n117809\n118088\n118292\n118315\n118401\n118437\n118724\n118743\n118799\n118922\n119042\n119045\n119056\n119128\n119139\n119161\n119221\n119434\n119549\n119696\n119725\n119741\n119789\n119820\n119854\n120032\n120059\n120075\n120139\n120657\n120663\n120992\n121198\n121609\n121796\n121811\n121986\n122045\n122211\n122247\n122686\n122715\n122749\n122752\n122774\n122795\n122838\n122949\n122976\n123016\n123043\n123058\n123077\n123109\n123218\n123294\n123305\n123460\n123500\n123648\n123901\n123909\n123923\n124085\n124294\n124308\n124354\n124374\n124630\n124721\n124729\n124994\n125378\n125426\n125816\n125897\n126112\n126121\n126499\n126603\n126620\n126669\n126736\n126951\n126982\n127048\n127280\n127483\n127622\n127670\n127721\n127773\n127958\n127986\n128045\n128121\n128467\n128574\n128626\n128774\n128947\n129123\n129341\n129506\n129546\n129965\n130595\n130943\n131132\n131157\n131264\n131270\n131282\n131416\n131424\n131523\n131702\n131723\n132102\n132326\n132354\n132383\n132396\n132678\n132725\n133174\n133197\n133536\n133668\n134165\n134506\n134515\n134578\n134983\n135068\n135077\n135139\n135192\n135538\n135692\n135823\n135945\n136140\n137245\n137667\n137956\n138001\n138005\n138037\n138301\n138875\n139317\n139417\n139584\n139669\n139784\n140099\n140172\n141173\n141431\n141848\n142011\n142102\n142138\n142201\n142232\n142862\n143221\n143408\n143582\n143629\n143810\n144142\n144221\n144252\n144271\n144366\n144579\n144928\n144950\n145097\n145113\n145166\n145214\n145296\n145682\n147060\n147067\n147494\n147622\n148058\n148158\n148725\n148731\n148850\n149071\n149155\n149262\n149407\n149428\n150444\n150586\n150731\n150921\n150968\n151250\n151380\n151900\n151908\n152163\n152300\n152322\n152383\n152506\n152607\n152661\n152882\n153177\n153238\n153416\n153765\n153981\n154478\n154709\n154894\n154905\n154964\n155199\n155224\n155299\n155301\n155496\n155834\n155841\n155906\n155944\n156107\n156442\n156635\n157137\n157641\n157644\n157753\n157779\n158271\n158362\n158380\n158407\n158412\n158765\n158948\n158953\n159007\n159942\n160184\n160416\n160454\n160486\n160552\n161105\n161186\n161261\n161426\n161607\n161650\n161990\n162019\n162063\n162458\n162570\n162666\n162851\n162953\n163001\n163718\n163825\n163947\n163973\n164247\n164294\n164982\n165369\n165912\n166032\n166883\n167120\n167129\n168066\n169051\n169107\n169644\n170163\n170259\n170471\n170558\n170568\n170574\n170645\n170849\n170854\n170871\n170876\n171137\n171155\n171252\n171300\n171530\n171714\n171842\n171971\n172521\n173593\n173597\n173614\n173731\n174324\n174401\n174509\n174908\n174989\n175121\n175413\n175424\n175722\n176179\n176270\n177036\n177156\n177355\n177505\n178100\n178187\n178264\n178302\n178705\n179194\n179215\n179549\n180579\n180733\n181288\n181716\n181871\n181891\n181895\n181969\n181971\n182696\n183139\n183957\n184279\n185271\n185326\n185379\n185771\n185866\n186955\n187446\n188772\n188935\n189144\n189340\n189372\n190082\n190661\n190702\n190991\n191039\n191233\n191698\n191748\n191844\n191852\n191971\n192227\n192485\n193236\n194010\n195415\n195417\n195602\n195722\n195903\n196576\n196613\n196783\n196925\n196989\n197107\n197313\n197407\n197431\n197589\n197782\n198055\n198515\n198908\n198973\n199003\n199483\n199962\n199967\n200105\n200130\n200339\n200557\n200744\n200834\n200935\n200955\n201141\n201230\n201288\n201386\n201390\n201462\n201816\n202449\n202607\n202797\n202941\n203172\n203670\n203696\n203866\n203927\n204227\n204318\n204700\n204913\n205092\n205118\n205825\n205835\n205836\n206070\n206183\n206269\n206494\n206754\n207050\n207078\n207156\n207162\n207341\n207421\n207849\n207925\n208126\n208691\n209268\n209280\n209426\n210112\n210487\n210537\n210577\n210648\n210749\n211290\n211557\n211630\n211632\n211703\n211963\n211969\n212181\n212248\n212391\n213195\n213306\n213376\n213513\n213783\n213823\n213825\n214030\n214035\n214107\n214181\n214184\n214209\n214390\n214434\n214524\n214525\n214544\n214657\n214779\n214781\n214880\n214888\n215142\n215151\n215429\n215539\n215554\n215694\n215745\n215755\n215853\n215854\n215893\n215895\n215903\n215961\n215992\n216162\n216233\n216401\n216430\n216498\n216542\n216548\n216777\n217019\n217099\n217131\n217180\n217259\n217344\n217346\n217409\n217411\n217824\n217925\n218052\n218195\n218196\n218222\n218225\n218536\n218587\n218817\n219123\n219124\n219170\n219654\n219821\n219880\n220128\n220242\n220243\n220383\n220525\n220881\n220949\n220991\n221048\n221117\n221179\n221217\n221340\n221381\n221814\n221949\n222046\n222241\n222397\n222696\n223109\n223354\n223432\n223853\n224150\n224208\n224272\n224306\n224352\n224385\n224386\n224591\n224612\n224765\n224779\n224814\n224972\n224984\n225155\n225338\n225440\n225748\n225962\n226337\n226380\n226413\n226664",
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": "502762\n502761\n502760\n502759\n502758\n502757\n502756\n502755\n502754\n502753\n502752\n502767\n502751\n502750\n502749",
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang087",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 2,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 11,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "实收金豆",
+                                  "gameTag": []
+                                }
+                              ],
+                              "family_svip_ruleIds": [],
+                              "family_svip_levels": [],
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "dateTime",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "獲得した指定ギフトから当選するギフトの相当ポイントがカウントされます。",
+                              "linktext": "",
+                              "needAppointUidChangeReason": false,
+                              "lang": [
+                                "JP"
+                              ],
+                              "family_svip_check": false,
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "need_attend": 0,
+                              "uid_arr": [],
+                              "bottominfo": 0,
+                              "groups": [],
+                              "svip_levels": [],
+                              "index": 1,
+                              "groupFamilytype": 2,
+                              "selectedArea": [],
+                              "appoint_uid_source": 1,
+                              "family_svip_area": [],
+                              "rankStyle": "1",
+                              "weeklyConfig": 1,
+                              "frontTextAlignStyle": "left",
+                              "selectedDays": [],
+                              "name": "猛獣合戦ランキング",
+                              "linkurl": "",
+                              "countType": ""
+                            },
+                            "type": "grouprankings",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "猛獣狩り",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "bLDsa",
+                            "formData": {
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 999,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "giftUid_id": null,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502749,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 100000,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502752,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 7500,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502755,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 1100,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502750,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 40000,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502759,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 225,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502757,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 325,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502751,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 30000,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502753,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 4500,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502754,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 2250,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502767,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 12000,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502762,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 26,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502761,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 78,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502760,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 110,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502756,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 510,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 502758,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang199",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 2,
+                                  "gift_id_type": 1,
+                                  "score": 210,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出礼物",
+                                  "gameTag": []
+                                }
+                              ],
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "dateTime",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "投げた指定ギフトから当選するギフトの相当ポイントがカウントされます。猛獣狩りの当選ギフトポイント数は猛獣合戦と違いますのでご注意ください。",
+                              "linktext": "",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "voteBoardConfig": 1,
+                              "cp_rank": 0,
+                              "svip_levels": [],
+                              "index": 2,
+                              "selectedArea": [],
+                              "voteBoardTitle": "",
+                              "frontTextAlignStyle": "left",
+                              "name": "猛獣狩りランキング",
+                              "linkurl": "",
+                              "switchDisplay": false,
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "top3": 1,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": null,
+                              "voteRankBoard": 1,
+                              "manualVoteList": [],
+                              "uid": "",
+                              "isSearch": 0,
+                              "appType": 1,
+                              "giftUid_id_info": null,
+                              "divide": {
+                                "isPercent": 0,
+                                "imconf": {
+                                  "beanImData": [],
+                                  "gift_room_im": "0",
+                                  "diamondImData": [],
+                                  "giftImData": [],
+                                  "diamond_room_im": "0",
+                                  "row_index": 0,
+                                  "bean_room_im": "0"
+                                },
+                                "proportion": []
+                              },
+                              "lang": [
+                                "JP"
+                              ],
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "prizeType": 1,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "prize_arr_v2": [],
+                              "switchOrder": 1,
+                              "weeklyConfig": 1,
+                              "sendGift_uids": "",
+                              "selectedDays": [],
+                              "countType": 3,
+                              "maxManualVoteListID": 0
+                            },
+                            "type": "personrankings",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

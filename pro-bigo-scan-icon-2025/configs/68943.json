@@ -1,0 +1,437 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 08:25:36",
+    "now_zone": -3,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68943,
+      "act_name": "ТОП-ПК (07.25)",
+      "state": 1,
+      "color": 2,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-09 00:00:00",
+      "end_time": "2025-07-31 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "RU",
+        "KZ",
+        "UA",
+        "BY",
+        "KG",
+        "UZ",
+        "AZ",
+        "TJ",
+        "GE",
+        "AM",
+        "MD",
+        "TM"
+      ],
+      "selectedArea": [
+        "RU"
+      ],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "18",
+      "theme": "yellow",
+      "frontCustomBgColor": "#101340",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uYhuD9cc13483aea249a5b4d01b34c8787c65ph.jpg?auth-token=53hwakCS6OISU_R-RJY5fYP6HQXC55MuIR2x3TXspr4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4OTQzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2NzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Расписание",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VHytF",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uYn4kb73a6aaea316429bacfd6704a77f9369ph.jpg?auth-token=h9Fua4nk5X3H8ubWBJ6YKXiiVK5n4BYKGD9HQwcHVs0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4OTQzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwNDUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "C5beb",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "9 июля",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "B0QEZ",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/09 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "1891947166"
+                                  }
+                                ],
+                                "end_time": "2025/07/09 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "561949251"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "dkiML",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/09 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "471901760"
+                                  }
+                                ],
+                                "end_time": "2025/07/09 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "1575635788"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "10 июля",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "ICRQz",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/10 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "488746046"
+                                  }
+                                ],
+                                "end_time": "2025/07/10 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "458172359"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "uurR9",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/10 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "697403467"
+                                  }
+                                ],
+                                "end_time": "2025/07/10 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "554845453"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "QEOMb",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/10 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "1803625486"
+                                  }
+                                ],
+                                "end_time": "2025/07/10 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "699937910"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "11 июля",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Yn7KY",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/11 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "729015106"
+                                  }
+                                ],
+                                "end_time": "2025/07/11 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "709953154"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "eLuhh",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/07/11 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "684431917"
+                                  }
+                                ],
+                                "end_time": "2025/07/11 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "828046222"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "formData": {
+                              "mode": 5,
+                              "groupPk": {
+                                "start_time": "2025/07/11 18:30:00",
+                                "left": [
+                                  {
+                                    "uid": "1858264088"
+                                  }
+                                ],
+                                "end_time": "2025/07/11 18:40:00",
+                                "right": [
+                                  {
+                                    "uid": "622023847"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Филиппины"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Y6wUD",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Результаты",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_15180/index.html?compe_id=1751977338170156#/schedule",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Правила и награды",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "HiWgU",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "1. Длительность ПК: 10 минут;\n2. Необходимо выйти в эфир заранее, чтобы сработало автоподключение баттла. При возникновении проблем подключитесь к баттлу вручную.\n3. Для получения награды необходимо преодолеть минимальный порог по очкам ПК."
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "<style>.responsive-table{width:100%;table-layout:fixed;border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;text-align:center}.responsive-table th{border:1px solid #ccc;padding:8px;background-color:#ffa629;color:#fff;font-weight:bold;word-break:break-word}.responsive-table td{border:1px solid #ccc;padding:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media screen and (max-width:480px){.responsive-table{font-size:14px}.responsive-table th,.responsive-table td{padding:6px 4px}}</style><table class=\"responsive-table\"><thead><tr><th>Очки ПК</th><th>Награда в бобах</th><th>Награда в бобах в случае победы</th></tr></thead><tbody><tr><td>6 000 000</td><td>130 000</td><td>143 000</td></tr><tr><td>5 000 000</td><td>90 000</td><td>99 000</td></tr><tr><td>4 000 000</td><td>50 000</td><td>55 000</td></tr><tr><td>2 600 000</td><td>30 000</td><td>33 000</td></tr><tr><td>1 800 000</td><td>20 000</td><td>22 000</td></tr><tr><td>1 400 000</td><td>15 000</td><td>16 500</td></tr><tr><td>1 200 000</td><td>12 000</td><td>13 200</td></tr><tr><td>600 000</td><td>5 000</td><td>5 500</td></tr></tbody></table>"
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "<strong>Поддержи наших ведущих и помоги им победить!🔥</strong> "
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "ВСЕ ПРАВА ЗАЩИЩЕНЫ BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,238 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 14:26:08",
+    "now_zone": -9,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77443,
+      "act_name": "【百花繚乱】SpeciaL Event",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-06 00:00:00",
+      "end_time": "2025-12-13 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "JP"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "GALAファミリー戦連携マイイベント",
+        "appendixDesc": "百花繚乱SpeciaL Event",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vQNS500y33lYHC1MdQJY.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vQNR400y33lYHC0qgPRo.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "～ファミリーマイイベントが終了しました～"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "イベント情報",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "txR5b",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "イベント期間"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "12月6日0時0分～12月13日23時59分"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "stHTq",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "参加対象"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "12月5日までに「【百花繚乱】」ファミリーに加入したファミリーメンバー"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "l9KSb",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "ランキングルール"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "ファミリーメンバーのGALAギフトの獲得数及び送信数によってランキングを決定します"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "※フリーチケットもカウントされます"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "eBwWZ",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vQNOP00y2TWPL01QUJd3.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "4QF4M",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "賞品"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "出演ファミリーメンバーの各配信枠で、GALAギフトで貢献5Kした先着3名のリスナー様に、ファミリーオリジナルタオルをプレゼント予定です。賞品の付与はファミリーリーダーが発注と送付します。"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "※賞品はファミリーリーダー様より付与されます。\n※先着順のランキングは仕様的にサポートしませんので、イベントページにてランキングの設定を致しません。入賞結果はファミリーリーダー様にご確認ください。"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vDmYW",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "賞品イメージ図"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "19tRZ",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vQNY500y2TWPL02G4YTd.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

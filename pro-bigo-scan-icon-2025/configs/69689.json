@@ -1,0 +1,947 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250801",
+      "20250802",
+      "20250803",
+      "20250804",
+      "20250805",
+      "20250806"
+    ],
+    "week": [
+      "20250728",
+      "20250804"
+    ],
+    "month": [
+      "202508"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 69689,
+      "act_name": "Early Bird Auto Rebates(a-s2)",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-08-01 00:00:00",
+      "end_time": "2025-08-06 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "ID"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "#070000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "4"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1ufDhD5422acf4dec84af08d42ad8e750441e4ph.png?auth-token=FWa0LuPkekmADxiscQc2fY6bjyKoLQWfD8om5GobJKk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5Njg5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwNTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Tasks",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "0WrSc",
+                  "formData": {
+                    "scoreLang": [
+                      "ID"
+                    ],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "dailyCycleEndTime": "20:00:00",
+                    "needGroupsChangeReason": false,
+                    "section": 6,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655650",
+                      "create_time": "1753263222",
+                      "utime": "2025-07-23 17:33:42",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "202508早鸟a-s2",
+                      "update_operator": "",
+                      "create_operator": "12991",
+                      "frequency": "0",
+                      "update_time": "1753263222",
+                      "black_tasks_status": "0",
+                      "filter_id": "18086",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-07-23 17:33:42",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 2000,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 2000,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "First Come, First Serve! ",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "ID"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 2,
+                    "need_attend": 0,
+                    "whiteUid_id": "1500655650",
+                    "end_time": "2025/08/05",
+                    "level_config": [
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate] Level 1!",
+                        "anthor_room_reward": [
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "109",
+                            "op_time": "1753261805",
+                            "offshelf_time": "2071205825",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7181360356590592285",
+                            "reward_name": "Supercar Badge",
+                            "typeid": "8",
+                            "extra_type": "0",
+                            "id": "41691",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/3s4/2IOWT0.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Supercar Badge",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Gift to Early Bird Auto Rebates",
+                            "reward_type": "41691",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "3",
+                            "param": "ID-Gift to Early Bird Auto Rebates",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1753259929",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/3s4/2IOWT0.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/3s4/0KRQPO.webp"
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 1! Terima 2000 beans lagi untuk membuka hadiah tambahan 200 Beans🎁\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate]  Level 2!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "29",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "200"
+                          },
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 2! Terima 2000 beans lagi untuk membuka hadiah tambahan 200 Beans🎁\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 3!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "20",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "200"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 3! Terima 2000 beans lagi untuk membuka hadiah tambahan 200 Beans🎁dan virtual effect..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 4!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "15",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "200"
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "15",
+                            "op_time": "1753261814",
+                            "offshelf_time": "2069136197",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7181360394202370845",
+                            "reward_name": "Romantic Roadster",
+                            "typeid": "11",
+                            "extra_type": "0",
+                            "id": "41689",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/4h9/0GqPJ8.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "1",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Romantic Roadster",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Gift to Early Bird Auto Rebates",
+                            "reward_type": "41689",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "3",
+                            "param": "ID-Early Bird Auto Rebates",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1753259329",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/4h9/0GqPJ8.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/4h6/1CGpCI.mp4"
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 4! Terima 2000 beans lagi untuk membuka hadiah tambahan 200 Beans🎁..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 5!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "13",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "200"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 5! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 5,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 6!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "8",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 6! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 6,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 7!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "7",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 7! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 7,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 8!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "4",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 8! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 8,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 9!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "3",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 9! Terima 20000 beans lagi untuk membuka hadiah tambahan 6000 Beans🎁dan virtual effect..\n(1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 9,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Early Bird Auto Rebate Level 10!\n",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "1",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "6000"
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "1",
+                            "op_time": "1753261822",
+                            "offshelf_time": "2068980286",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7181360423676535587",
+                            "reward_name": "Loving Rocket",
+                            "typeid": "7",
+                            "extra_type": "0",
+                            "id": "41687",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/4hb/0XUoA5.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "1",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Loving Rocket",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Gift to Early Bird Auto Rebates",
+                            "reward_type": "41687",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "7",
+                            "param": "ID-Early Bird Auto Rebates",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1753259070",
+                            "env": "1",
+                            "gif_url": "https://giftesx.bigo.sg/live/4hb/1YfbgH.webp",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/4hb/0XUoA5.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/4hb/030Knt.webp"
+                          }
+                        ],
+                        "process_notice_lang": "Kamu telah mencapai Level 10! Segera klaim hadiahmu (1–5 Agustus🕐 Setiap hari pukul 15:00–20:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 10,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 20000
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "dailyCycleEndTimeOrigin": "2025/07/23 20:00:00",
+                    "dailyCycleStartTime": "15:00:00",
+                    "selectedArea": [],
+                    "start_time": "2025/08/01",
+                    "name": "Up to 6000 Level Reward Beans Everyday！",
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/07/23 15:00:00",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "z3I9l",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "1 Beans dari ID users  = 1 point\nHanya Beans selama 15:00-20:00 yang akan dihitung\nLive Streaming 5 menit = 2000 points, max 2000 points/hari\nSelesaikan Daily Task untuk mendapatkan rewards"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WLDAo",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1ugaXg25bfac664d474245bd1479ed01368064ph.png?auth-token=x3nyIlIZL5jJxMy8s5jyyTlrZM9D_nDRfnzIB_a8xyA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5Njg5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM4MDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "suKfq",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1ufE3e4aa7b93c442e4e16aed7d429f462a3d4ph.png?auth-token=5ViH_t0l2wRBU_gwoev4iADcW3wIPFc6JRffLxvXwto:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5Njg5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3MDEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Total Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "AFIXF",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/08/01 00:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "Total Ranking",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "ID"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655650",
+                      "create_time": "1753263222",
+                      "utime": "2025-07-23 17:33:42",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "202508早鸟a-s2",
+                      "update_operator": "",
+                      "create_operator": "12991",
+                      "frequency": "0",
+                      "update_time": "1753263222",
+                      "black_tasks_status": "0",
+                      "filter_id": "18086",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-07-23 17:33:42",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "ID"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500655650",
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/08/05 23:59:59",
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "fnJJC",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "1 Beans dari ID users  = 1 point\t\nHadiah terbuka setelah mencapai ranking dan menyelesaikan semua target"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "xL9Tq",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1ufDjB2c38041c6cc848f7b9f8c9ef06c34a1cph.png?auth-token=Vr8Iz6bSQwrA-wCo5iYlL4uMDgrAywuPbmt4t8k5SSY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5Njg5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0NTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,299 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78161,
+      "act_name": "Be a BBR Ambassador!",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-18 10:00:00",
+      "end_time": "2026-05-31 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "Be a BBR Ambassador!",
+        "appendixDesc": "a great opportunity to grow your network, support new creators, and earn extra beans along the way!",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vWIQE00y33lYHC0FS8gy.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "8",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vWIi600y33lYHC28s8a7.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "BBR Ambassador Interest Form"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "BIGO BEAN RUSH ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "BbBMB",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vWIOB00y33lYHC1xunkW.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Rules",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tyxSG",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vWIPD00y2TWPL022rihW.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "💰 What is the Ambassador Project?\n"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "As a BBR Ambassador, you’ll help us recruit new creators and get rewarded with beans incentives! Here’s how it works:\n1. Recruit new creators to join BBR Event\n2. Earn beans incentives based on the beans they earn\n3. No streaming hour requirement for recruited creators – making it easy to bring in new talent\nThis is a great opportunity to grow your network, support new creators, and earn extra beans along the way!"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "US,CA",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "US",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Want to be an Ambassador?",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "Yes",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 2,
+                    "title": "No",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Are you interested in becoming a BIGO BEAN RUSH Admin?",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 3,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 2,
+                "type": 3,
+                "title": "Do you have prior experience in BIGO agency management or recruitment? If yes, please specify the agency.",
+                "sortIdx": 2
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 4,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 3,
+                "type": 3,
+                "title": "How familiar are you with BIGO BEAN RUSH and its operations?",
+                "sortIdx": 3
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 5,
+                    "title": "Yes",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 6,
+                    "title": "No",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 4,
+                "type": 1,
+                "title": "Are you open to an online interview? If so, please provide your email and phone number.",
+                "sortIdx": 4
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 7,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 5,
+                "type": 3,
+                "title": "Please provide your email and phone number to receive the interview link and more details from us.",
+                "sortIdx": 5
+              }
+            ],
+            "description": "",
+            "startTime": "2025-12-18 11:00:00",
+            "id": 2120,
+            "endTime": "2026-12-18 11:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 2120
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Important: "
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "key_text",
+              "value": "This is an in-app application process only. Submitting an application does not guarantee approval or selection. This opportunity is for marketing and engagement purposes only and does not establish any employment, agency, or partnership relationship with BIGO."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

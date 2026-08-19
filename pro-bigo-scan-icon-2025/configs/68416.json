@@ -1,0 +1,375 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68416,
+      "act_name": "SEND TO WIN FAM.! - JULY 2025",
+      "state": 1,
+      "color": 1,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-08 00:00:11",
+      "end_time": "2025-07-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PH"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2",
+      "theme": "yellow",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWASn4b054ed1993540e8bccfbae711ff11c8ph.jpg?auth-token=7g4aXw0nBjYWDUh4bwMIUYP4og872ID6OfGzIZw9Wr8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3MzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": "3916\n501652\n7627\n2200\n4350\n502363\n502415\n502367\n502373\n501223\n502509\n502524\n502533\n502534",
+              "sourcesAction": 1,
+              "change": 100,
+              "scoreType": 1,
+              "gift_type": 2,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "score": 1,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "Gashapon",
+          "svip_area": "",
+          "lottery_rule": "    100 Task Point = 1 Free Spin - Unlimited!",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 1,
+          "selectedArea": [],
+          "is_pay_lottery": 0,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 0,
+            "consumeCost": "0.00",
+            "messageConfigure": 0,
+            "messageObj": {
+              "imImg": "",
+              "theme": "",
+              "content": ""
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hc/0YNUwf.png?auth-token=4bMXN6DyWlPw9BF0S7rluSI17y4pJSytTEwRc1q2OwM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNDQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 5,
+                "is_pay_prize": 0,
+                "prize_name": "Sunshine Carnival",
+                "consume_num": 4,
+                "residue_num": 999999995,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "33177",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": 0,
+                "activity_all_num": "999999999",
+                "valid_days": "1",
+                "used_num": 4,
+                "win_rate": "5",
+                "textLeft": "-35px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "108deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hc/16zWJJ.png?auth-token=S2mWA9FNRgrdHSkg-s4INu6yfPoS4uVcmySZDc5ESr0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0MzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": "Swimming Ring",
+                "consume_num": 35,
+                "residue_num": 999999964,
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "26698",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "999999999",
+                "valid_days": "1",
+                "used_num": 35,
+                "win_rate": "30",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "36deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hc/08699K.png?auth-token=czYZnUu5V3UuELjQu6OXjrRUJBCiCaMP8EAv0wL9QxM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": "Summer Carnival",
+                "consume_num": 44,
+                "residue_num": 999999955,
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "26627",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": 0,
+                "activity_all_num": "999999999",
+                "valid_days": "2",
+                "used_num": 44,
+                "win_rate": "30",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-36deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hb/24sIf7.png?auth-token=qBZZUFsvK9JF5BEWl573Be-ShnWXns3Rl2sQghZu_YE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 17,
+                "is_pay_prize": 0,
+                "prize_name": "Summer Carnival",
+                "consume_num": 25,
+                "residue_num": 999999974,
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "26626",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "999999999",
+                "valid_days": "2",
+                "used_num": 25,
+                "win_rate": "17",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-108deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hb/0UVbxv.png?auth-token=NoXUltJx7JGl9WUFLC4cSSUC1UCFb9cqR4DFKxaDdtU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2NTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 18,
+                "is_pay_prize": 0,
+                "prize_name": "Summer Carnival",
+                "consume_num": 24,
+                "residue_num": 999999975,
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "26629",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "999999999",
+                "valid_days": "2",
+                "used_num": 24,
+                "win_rate": "18",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "7"
+              }
+            ],
+            "totalCost": "0.0000"
+          },
+          "uid": "",
+          "appType": 1,
+          "lang": [
+            "PH"
+          ],
+          "lottery_type": 2,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "lottery_ticket_timerange_limit": 0,
+          "point_uid_lottery_ticket": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": 3,
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Rule",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "k5yoT",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uWAW8bd58d7de78994d21bab0b152189bb22dph.png?auth-token=3AB06G2Qe0IRa22f9iaCcXNfQlP0bZRvLJ6R9oRYwcY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU5OTcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Reward List",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "U3GMx",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "SEND THE NEW JULY 2025 FAMILY PRESTIGE GIFTS AND WIN ITEMS VIRTUALLY!"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "6VhMS",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uWAWNda2e1b5f924147eebe02f0e45772d7c3ph.png?auth-token=n0sW3ld9mevzQNR-bGgWBzHrqSVySyZcY00vpkF1j90:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDE2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU5NjMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "ALL RIGHTS RESERVED | BIGO LIVE PH"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80024"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

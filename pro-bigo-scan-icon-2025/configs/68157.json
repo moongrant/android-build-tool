@@ -1,0 +1,511 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250701",
+      "20250702",
+      "20250703",
+      "20250704",
+      "20250705",
+      "20250706",
+      "20250707",
+      "20250708",
+      "20250709",
+      "20250710",
+      "20250711",
+      "20250712",
+      "20250713",
+      "20250714",
+      "20250715",
+      "20250716",
+      "20250717",
+      "20250718",
+      "20250719",
+      "20250720",
+      "20250721",
+      "20250722",
+      "20250723",
+      "20250724",
+      "20250725",
+      "20250726",
+      "20250727",
+      "20250728",
+      "20250729",
+      "20250730",
+      "20250731",
+      "20250801"
+    ],
+    "week": [
+      "20250630",
+      "20250707",
+      "20250714",
+      "20250721",
+      "20250728"
+    ],
+    "month": [
+      "202507",
+      "202508"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 02:27:12",
+    "now_zone": 3,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68157,
+      "act_name": "Dia louco-07/2025",
+      "state": 1,
+      "color": 1,
+      "theme": "pink",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-01 00:00:00",
+      "end_time": "2025-08-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "BR",
+        "AO"
+      ],
+      "selectedArea": [
+        "PT"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uUgV572583d703174434cb3b00b0062ab35abph.png?auth-token=5VkIZw19pG_BaEpedXQr6lMI5RY8kL7fqtxfMst9-fk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MTU3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwNTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Sucesso!",
+                  "name": "Tarefa diária de Dia Louco",
+                  "range": [
+                    1,
+                    2
+                  ],
+                  "title": "Inscrever-se com sucesso!",
+                  "attendModular": 0,
+                  "desc": "Inscrever-se com sucesso!"
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "🔥Inscreva-se!",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👆Atenção! Tem que inscrever-se para participar do evento!👆"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Regras"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Só os hosts contratdos do Brasil conseguem participar.\n2. Tempo do evento: 17:00-24:00 de julho, durante esse período, cada dia tem prêmios!\n4. 1 bean recebido em PK=1 ponto, só os beans recebidos em PK no período do evento vão ser contabilizados.\n4. Os prêmios de cada dia são limitados, quem completa a tarefa primeiro vai ganhar!"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Tarefa diária 17:00 - 24:00",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "yiY4y",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "dailyCycleEndTime": "23:59:59",
+                    "needGroupsChangeReason": false,
+                    "section": 6,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          10000
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang873",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 75,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "PK收礼金豆数",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "1 bean recebido em PK=1 ponto",
+                    "lang": [
+                      "BR",
+                      "AO"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 2,
+                    "need_attend": 1,
+                    "whiteUid_id": null,
+                    "end_time": "2025/07/31",
+                    "level_config": [
+                      {
+                        "private_im_lang": "Parabéns por completar a tarefa diária de Dia Louco!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "12",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "500"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": false,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 3000
+                      },
+                      {
+                        "private_im_lang": "Parabéns por completar a tarefa diária de Dia Louco!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "5",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "1500"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": false,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 7000
+                      },
+                      {
+                        "private_im_lang": "Parabéns por completar a tarefa diária de Dia Louco!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "3",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "2500"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": false,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 10000
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "dailyCycleEndTimeOrigin": "2025/05/09 23:59:59",
+                    "dailyCycleStartTime": "17:00:00",
+                    "selectedArea": [
+                      "PT"
+                    ],
+                    "start_time": "2025/07/01",
+                    "name": "Tarefa Diária de Dia Louco",
+                    "countType": 5,
+                    "dailyCycleStartTimeOrigin": "2025/05/09 17:00:00",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Ranking diário de 17:00-24:00",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "0A9NN",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "dailyCycleEndTime": "23:59:59",
+                    "globalinfo": 0,
+                    "section": 6,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          10000
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang873",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 75,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "PK收礼金豆数",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 bean recebido em PK=1 ponto",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "PT"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/07/01",
+                    "frontTextAlignStyle": "left",
+                    "name": "Ranking de 17:00-24:00",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "BR",
+                      "AO"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/07/31",
+                    "dailyCycleEndTimeOrigin": "2025/05/08 23:59:59",
+                    "dailyCycleStartTime": "17:00:00",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": 5,
+                    "dailyCycleStartTimeOrigin": "2025/05/08 17:00:00",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Todos os direitos reservados por BIGOLIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,588 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 16:25:36",
+    "now_zone": -11,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77760,
+      "act_name": "PRE SVIP Event Draft",
+      "state": 1,
+      "color": 1,
+      "theme": "green-red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-18 00:00:00",
+      "end_time": "2025-12-25 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTDwt00y33lYHC1rjoe5.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "AU"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang199",
+              "change": 50,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 2,
+              "gift_id_type": 1,
+              "score": 50,
+              "cameraEnable": 0,
+              "roomTypes": [
+                4
+              ],
+              "speakTime": 1,
+              "limit": 50,
+              "auto_name": "送出礼物",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "Riddle \"Tap me once, and someone else becomes brighter.\"",
+          "lang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "You have successfully completed the task!",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Your progress is increasing!",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": true,
+              "target": 1
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 1,
+          "raskType": 1,
+          "selectedArea": [
+            "AU"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "Day 1 Riddle Christmas Task",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "AU"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 600,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 600,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 600,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "Riddle \"The longer you chill in the live, the more festive I become.\"",
+          "lang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "You have successfully completed the task!",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 1
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 2,
+          "raskType": 1,
+          "selectedArea": [
+            "AU"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "2nd day of the Riddle Challenge",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "AU"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": true,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                3
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 10000,
+              "threeRechage": [
+                [
+                  "AU",
+                  "adyen",
+                  "scheme_au"
+                ],
+                [
+                  "AU",
+                  "airwallex",
+                  "card_au"
+                ]
+              ],
+              "threeSource": [
+                0
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 10000,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 10000,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "I disappear faster than your crush replying, but one button makes me rich again.",
+          "lang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "You have successfully completed the task!",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 1
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 3,
+          "raskType": 1,
+          "selectedArea": [
+            "AU"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "Day 3 Riddle ",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

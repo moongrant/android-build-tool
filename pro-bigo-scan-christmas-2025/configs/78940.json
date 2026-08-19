@@ -1,0 +1,712 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 00:25:36",
+    "now_zone": 5,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78940,
+      "act_name": "🎆 Gran Batalla de Año Nuevo",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "JM",
+        "TT",
+        "KY",
+        "BS",
+        "BB",
+        "CO",
+        "MX",
+        "AR",
+        "UY",
+        "PE",
+        "CL",
+        "PY",
+        "EC",
+        "CR",
+        "BO",
+        "CU",
+        "DO",
+        "GT",
+        "HN",
+        "NI",
+        "PA",
+        "PR",
+        "SV",
+        "VE"
+      ],
+      "selectedArea": [
+        "ES"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "🌠Milagros en ENERO",
+        "appendixDesc": "¡Recoge las estrellas, traza tu camino de milagros!",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vPujU00y2TWPL00eIkQ9.png"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaplC00y33lYHC2E96BL.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "actLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AR",
+            "BB",
+            "BO",
+            "BS",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "JM",
+            "KY",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "TT",
+            "UY",
+            "VE"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "ES"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 5,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "🥇 Nivel 1: Mirar 15 min LIVE = Marco de Año Nuevo",
+          "lang": [
+            "AR",
+            "BB",
+            "BO",
+            "BS",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "JM",
+            "KY",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "TT",
+            "UY",
+            "VE"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "🎉 ¡Felicidades!\nHas completado la tarea de ver la transmisión en vivo durante más de 15 minutos. 🎁\n\n⚠️ El Marco de Año Nuevo se enviará automáticamente por orden de llegada.\n\n📅 ¡No olvides unirte mañana!\n🔔 Comprueba el progreso de tu tarea en la zona de Eventos de Recarga.",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "base_map_url": "",
+                  "reward_max_limit": "300000",
+                  "op_time": "1766512397",
+                  "offshelf_time": "2143152000",
+                  "vm_price": "0",
+                  "op_user": "直播事业部-Jia Zeng",
+                  "isOnlyNeedNum": 0,
+                  "mp4_url": "",
+                  "__version": "7235634779162743069",
+                  "reward_name": "Hello 2026",
+                  "typeid": "6",
+                  "extra_type": "0",
+                  "id": "44747",
+                  "nickname_color": "",
+                  "reward_count": null,
+                  "icon_url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vY6YK00y2TWPL00grNOK.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "avatar_width": "0",
+                  "sort_key": "0",
+                  "new_banner_url": "",
+                  "val_count": "0",
+                  "show_type": "0",
+                  "medal_type": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "val_count_decimal": "0",
+                  "name": "Hello 2026",
+                  "is_lock": "0",
+                  "text_color": "",
+                  "status": "0",
+                  "pk_type": "",
+                  "desc_text": "New Year Pendant",
+                  "reward_type": "44747",
+                  "vm_price_decimal": "0",
+                  "game_type": "0",
+                  "can_vip_share": "0",
+                  "head_type": "0",
+                  "reward_expire_time": "1",
+                  "param": "",
+                  "banner_url": "",
+                  "label_name": "",
+                  "need_combine": "0",
+                  "__deleted": "0",
+                  "onshelf_time": "1766455543",
+                  "env": "1",
+                  "gif_url": "",
+                  "sale": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vY6YK00y2TWPL00grNOK.png",
+                  "act_url": "",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vY6YT00y33lYHC0BT5Pk.webp"
+                }
+              ],
+              "process_notice_lang": "Tu progreso en la tarea de Lv [002] del evento [001] ha llegado a [003]. Completa [004] para obtener el Marco de Año Nuevo.",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 15
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 3,
+          "raskType": 1,
+          "selectedArea": [
+            "ES"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "🥇 Nivel 1",
+          "countType": 9,
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "actLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AR",
+            "BB",
+            "BO",
+            "BS",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "JM",
+            "KY",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "TT",
+            "UY",
+            "VE"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "ES"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": true,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "🥈 Nivel 2: Recarga ≥ 60 diamantes = 3 Semillas; 🥉 Nivel 3: Acumula otros 300 diamantes = 30 Semillas; 🏅 Nivel 4: Alcanza otros 600 diamantes = 66 Semillas; 👑 Nivel 5: Supera otros 1000 diamantes = 120 Semillas",
+          "lang": [
+            "AR",
+            "BB",
+            "BO",
+            "BS",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "JM",
+            "KY",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "TT",
+            "UY",
+            "VE"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "🎉 ¡Felicidades!\nHas completado la tarea de recargar 60 diamantes🎁\n💪 ¡Sigue esforzándote para alcanzar la siguiente etapa!\n\n⚠️ Las recompensas son limitadas y se enviarán automáticamente por orden de llegada.\n📅 ¡No olvides unirte mañana!\n\n🔔 Comprueba el progreso de tu tarea en la zona de Eventos de Recarga.",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "10000",
+                  "reward_name": "beans",
+                  "free_level": null,
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": -1,
+                  "reward_id": null,
+                  "id": 4,
+                  "reward_count": "3"
+                },
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Tu progreso en la tarea de nivel [002] del evento [001] ha llegado a [003]. Completa [004] para seguir subiendo de nivel.",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 60
+            },
+            {
+              "private_im_lang": "🎉 ¡Felicidades!\nHas completado la tarea de recargar 300 diamantes🎁\n💪 ¡Sigue esforzándote para alcanzar la siguiente etapa!\n\n⚠️ Las recompensas son limitadas y se enviarán automáticamente por orden de llegada.\n📅 ¡No olvides unirte mañana!\n\n🔔 Comprueba el progreso de tu tarea en la zona de Eventos de Recarga.",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "3000",
+                  "reward_name": "beans",
+                  "free_level": null,
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": -1,
+                  "reward_id": null,
+                  "id": 4,
+                  "reward_count": "30"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Tu progreso en la tarea de nivel [002] del evento [001] ha llegado a [003]. Completa [004] para seguir subiendo de nivel.",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 300
+            },
+            {
+              "private_im_lang": "🎉 ¡Felicidades!\nHas completado la tarea de recargar 600 diamantes🎁\n💪 ¡Sigue esforzándote para alcanzar la siguiente etapa!\n\n⚠️ Las recompensas son limitadas y se enviarán automáticamente por orden de llegada.\n📅 ¡No olvides unirte mañana!\n\n🔔 Comprueba el progreso de tu tarea en la zona de Eventos de Recarga.",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "1500",
+                  "reward_name": "beans",
+                  "free_level": null,
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": -1,
+                  "reward_id": null,
+                  "id": 4,
+                  "reward_count": "66"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Tu progreso en la tarea de nivel [002] del evento [001] ha llegado a [003]. Completa [004] para seguir subiendo de nivel.",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 600
+            },
+            {
+              "private_im_lang": "🎉 ¡Felicidades!\nHas completado la tarea de recargar 1000 diamantes🎁\n\n⚠️ Las recompensas son limitadas y se enviarán automáticamente por orden de llegada.\n📅 ¡No olvides unirte mañana!\n\n🔔 Comprueba el progreso de tu tarea en la zona de Eventos de Recarga.",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "700",
+                  "reward_name": "beans",
+                  "free_level": null,
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": -1,
+                  "reward_id": null,
+                  "id": 4,
+                  "reward_count": "120"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Tu progreso en la misión de nivel [002] de la actividad [001] ha llegado a [003]. Completa [004] para obtener más semillas.",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 4,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 1000
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 4,
+          "raskType": 1,
+          "selectedArea": [
+            "ES"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "Misión avanzada",
+          "countType": 9,
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "¡Recarga Ahora!",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://diamonds",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Reglas"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Horas válidas de evento: 1 de enero, 00:00:00 al 31 de enero, 23:59:59 (GMT-5)."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2. Los puntos se calculan en horario de Colombia y los participantes solo pueden participar en la misión una vez durante el período del evento."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "3. *Válido para usuarios sin recargas este trimestre. "
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "4. En el caso de que varios IDs pertenezcan al mismo equipo, se otorgará el premio a uno solo de esos UIDs."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "5. Bigo Live Latam reserva el derecho de interpretación final.🪂"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "6.Distribución de premios del evento:\nNivel 1: Recompensas ilimitadas\nNivel 2: Máximo 10,000 unidades\nNivel 3: Máximo 3,000 unidades\nNivel 4: Máximo 1,500 unidades\nNivel 5: Máximo 700 unidades\n⚠️ Nota: Las recompensas son limitadas, se entregan por orden de llegada."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "⬇️Evento Para SVIP⬇️"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaqQv00y2TWPL00HBJNN.png",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77771",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Mi nivel actual de SVIP",
+              "fn": 1,
+              "style": 1,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,783 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231",
+      "20260101",
+      "20260102"
+    ],
+    "week": [
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512",
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78309,
+      "act_name": "KH Cheers to New Year - User",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-26 00:00:00",
+      "end_time": "2026-01-02 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "KH"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vYLHL00y33lYHC08HWiK.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Top-up Ranking Reward",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vYLEv00y33lYHC1XnBDU.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tGeIm",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Start from 26/12/25 - 02/01/2026",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/26 00:00:00",
+                    "frontTextAlignStyle": "center",
+                    "name": "Top up to win your Diamond reward!",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "rankTo": 20,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "KH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 2,
+                    "end_time": "2026/01/02 23:59:59",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "prize_arr_v3": [],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Gifter Ranking Reward",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vYLGV00y33lYHC0KAMu5.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "TBtjA",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": "503585\n503586\n503588\n503590\n503592\n503594\n503595\n503597\n503599\n503601",
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 2,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 2,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503585,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 2,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503586,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 200,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503588,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 2000,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503590,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 10000,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503592,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 20000,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503594,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 2,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503595,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 200,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503597,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 2000,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503599,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 10000,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503601,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 20000,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Start from 26/12/25 - 02/01/2026",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "svip_levels": [],
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/26 00:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "Lower target, higher reward, win your 16000 dia",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "KH"
+                    ],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "rankTo": 30,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "KH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 2,
+                    "end_time": "2026/01/02 23:59:59",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "prize_arr_v3": [],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vYLGm00y2TWPL00V4trg.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Zar20",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": "503585\n503586\n503588\n503590\n503592\n503594\n503595\n503597\n503599\n503601",
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 2,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "18:00-24:00 31st Dec",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/31 18:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "New Year Countdown Night",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "KH"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "KH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 1,
+                    "end_time": "2025/12/31 23:59:59",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "👇For more information👇",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tQiSB",
+                  "formData": {
+                    "mode": 2,
+                    "uid_arr": [
+                      {
+                        "uid": "1885990591",
+                        "text": ""
+                      },
+                      {
+                        "uid": "1792745242",
+                        "text": ""
+                      }
+                    ],
+                    "priority": false
+                  },
+                  "type": "anchor",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

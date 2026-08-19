@@ -1,0 +1,410 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 15:25:52",
+    "now_zone": -10,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 67075,
+      "act_name": "ANZ BUY 100 GET 100🎁",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-19 19:00:00",
+      "end_time": "2025-08-15 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5",
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uRpx770d7890f61314af4bd2297fd94b760ffph.png?auth-token=4oMpk7nRO7ESQ1zjxPextiCBXdulgqpwf9decXEnL1I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3MDc1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxNTcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👇"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Confirm to Join the Event",
+                  "name": "Buy 100 and Get 100 Back!",
+                  "range": [
+                    1
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "【Click to Register the Event】",
+              "fn": 3,
+              "style": 1,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👆"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Rules and Rewards",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tSAm1",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "How to Join: \nClick the bottom above to sign up for this Event!\nRecharge 100 diamonds and win 100 beans BACK! "
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "Limited Rewards per day\nFirst come, first serve!!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Check Task Progression",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "NN0q8",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Daily Task"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "Rewards are limited, first come first served."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "u8yTu",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": true,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": true,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          4,
+                          8,
+                          7,
+                          6
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 100,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "buy 100 diamonds and get 100 beans back! Limited Rewards, first come, first serve!",
+                    "lang": [
+                      "PG",
+                      "TO",
+                      "WS",
+                      "FJ",
+                      "GU",
+                      "SB",
+                      "NC",
+                      "PF",
+                      "PW",
+                      "AS",
+                      "FM",
+                      "TK",
+                      "MP",
+                      "CK",
+                      "VU",
+                      "MH",
+                      "KI",
+                      "NR",
+                      "TV",
+                      "NU",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "AU",
+                      "NZ"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 1,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "200",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "100"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 100
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "name": "Daily Recharge Task",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Event End in"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event End in"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "All Rights Reserved by BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

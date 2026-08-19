@@ -1,0 +1,263 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 07:25:52",
+    "now_zone": -2,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 69149,
+      "act_name": "FRBE - Le tour mondial de Dino - Page de pré-remplissage",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-11 04:09:39",
+      "end_time": "2025-08-31 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "FR",
+        "BE"
+      ],
+      "selectedArea": [
+        "FR"
+      ],
+      "frontCustomBgColor": "#3E041E",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZwLN53f87644d29e45409016aee2651b49c0ph.jpg?auth-token=wNh4gFZi04Q5PqnAjs_WQuJMvtWNWxDd_qshI0PSfR4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxNzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "ZA,VN,VE,UY,US,UA,UZ,TJ,TW,TM,TR,TK,TH,TG,TD,TC,TL,SZ,SY,SV,ST,SS,SR,SO,SN,SM,SL,SK,SI,SG,SE,SD,SC,SB,SA,RW,RU,RS,RO,RE,QA,PY,PW,PT,PS,PR,PL,PK,PH,PG,PF,PE,PA,OM,NZ,NU,NR,NP,NO,NL,NI,NG,NE,NC,NA,MZ,MY,MX,MW,MV,MU,MT,MS,MR,MQ,MO,MN,MM,ML,MK,MH,MG,ME,MD,MC,MA,LY,LV,LU,LT,LS,LR,LK,LI,LC,LB,LA,KZ,KY,KW,KR,KN,KM,KI,KH,KG,KE,JP,JO,JM,JE,IT,IS,IR,IQ,IN,IM,IL,IE,ID,HU,HT,HR,HN,HK,GY,GW,GU,GT,GR,GQ,GP,GN,GM,GL,GI,GH,GE,GD,GB,GA,FR,FO,FM,FJ,FI,FA,ET,ES,ER,EG,EE,EC,DZ,DU,DO,DM,DK,DJ,DE,CZ,CY,CX,CW,CV,CU,CR,CO,CN,CM,CL,CK,CI,CH,CG,CF,CD,CC,CA,BZ,BY,BW,BT,BS,BR,BO,BN,BM,BJ,BI,BH,BG,BF,BE,BD,BB,BA,AZ,AX,AW,AU,AT,AS,AR,AO,AN,AM,AL,AI,AG,AF,AE,AD,TN,YE,TZ,UG,ZW,ZR,ZM,SH,YT,TO,WS,MP,VU,TV,NF,WF,PN,BL,BIGO",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "AR,PT,ES,RU,CN,AU,US,MY,TH,FZ,NLSE,DE,FR,GB,OTHER",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Gala Istanbul 2025 - Page de Pré-remplissage",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "Oui",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 2,
+                    "title": "Non",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 3,
+                    "title": "Je suis pas sûr pour le moment",
+                    "sortIdx": 3
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Êtes-vous disponible pour assister au Gala qui se tiendra à Istanbul, en Turquie, du 25 au 27 août ?",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 4,
+                    "title": "France",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 5,
+                    "title": "Belgium",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 2,
+                "type": 1,
+                "title": "Votre nationalité",
+                "sortIdx": 2
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 6,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 3,
+                "type": 3,
+                "title": "Votre ville de résidence (pour faciliter l'achat de vos billets d'avion)",
+                "sortIdx": 3
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 7,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 4,
+                "type": 3,
+                "title": "Autres demandes",
+                "sortIdx": 4
+              }
+            ],
+            "description": "Istanbul, Turquie, du 25 au 27 août",
+            "startTime": "2025-07-10 00:00:00",
+            "id": 1319,
+            "endTime": "2025-07-31 00:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 1319
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZwXwe5d663918f114f45b4074d5d8758d397ph.jpg?auth-token=_lFhqd_Aum2GCSJQ0sihTnjmQJPxOz8byrr9DDfFOJ8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0NzYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZxXq2b189130f4fe4f7e89885b9b79b6c4a2ph.jpg?auth-token=Bh3DePEv4E9ya6LeDgR7gDiLRtRfkX8Y0j_X9FuO-r4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzNjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=67842",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZxTt282f1ee5b2d449ebb16a6a4a3543dd12ph.jpg?auth-token=El0OhnIa6ajEpXGD-XSVsYJn1Dod4gCYfjhpeWWqwfY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyMjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uUTRo423bbdc413ae41c5aa1d8d1ce32fb542ph.jpg?auth-token=azX6fmoqwNow72JGJ1XD916impwWSsaVH5BhCMJRrNQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1MzYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "video",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWHIr4ed4b3deee0744e38b77648a7e51ad68ph.jpeg?auth-token=bR9gwT2-4Ktl2O7EpTHph8JBU7k1xcahDYEoET02VXs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0NzYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "autoPlayAndLoop": false,
+          "url": "http://esx.bigo.sg/live/4hd/01uWGcyRxUGuv.mp4?crc=2359928319&type=5&auth-token=cPl95vJFmgDE0J1eTW-I_00pVjSyP7X24hAYzd2ye24:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTQ5LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU3NTgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "BIGOLIVE se réserve le droit d'interpréter l'événement"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80092"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

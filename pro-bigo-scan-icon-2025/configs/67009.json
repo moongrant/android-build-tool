@@ -1,0 +1,104 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 67009,
+      "act_name": "Mid Year GALA Recharge Ranking Registration Form",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-03 16:00:00",
+      "end_time": "2025-06-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "#EAE8C0",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5"
+    },
+    "act_modular": [
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "MY,BN,SG",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "MY",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Mid Year GALA Recharge Ranking Registration Form",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "Yes",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Agree to participate?",
+                "sortIdx": 1
+              }
+            ],
+            "description": "❗User MUST register to be entitled for rewards   ❗Maximum of 3 winners from each Family is allowed for each ranking.",
+            "startTime": "2025-06-01 00:00:00",
+            "id": 1231,
+            "endTime": "2025-06-30 23:59:59",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 1231
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

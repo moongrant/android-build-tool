@@ -1,0 +1,443 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 70293,
+      "act_name": "User Survey ",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 1,
+      "start_time": "2025-08-01 13:55:00",
+      "end_time": "2025-08-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "Recharge Preference Survey",
+        "appendixDesc": "Let us know you better and offer you better deals!",
+        "linkImg": "https://esx.bigo.sg/live/4hp/1ucA5Ze92152596812480f9663133b27f150f0ph.png?auth-token=RQlXWFk9QIkyPEtBn8iUvDvwcxIwEHc3kDuPKaaaGFc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMjkzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwNjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1ucA5j1c7a642faef14b7dacd81ee894a0b66eph.png?auth-token=MEJjZS1GY_MP-NDiZDf41nuT_KShMu4lOCviNdHPozs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMjkzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ4MzYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "US,CA",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "US",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Recharge Preference Survey",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 3,
+                    "title": "Less than 1 Month ",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 4,
+                    "title": "1–3 months",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 5,
+                    "title": "3 months - 1 year",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 6,
+                    "title": "Over 1 year",
+                    "sortIdx": 4
+                  }
+                ],
+                "id": 2,
+                "type": 1,
+                "title": "How long have you been in your current Family?",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "To participate in more or a wider variety of events",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 2,
+                    "title": "To earn more rewards through events",
+                    "sortIdx": 2
+                  },
+                  {
+                    "id": null,
+                    "title": "To feel part of a group/community",
+                    "sortIdx": 3
+                  },
+                  {
+                    "id": null,
+                    "title": "For more guidance and support",
+                    "sortIdx": 4
+                  },
+                  {
+                    "id": null,
+                    "title": "To get noticed by the platform ",
+                    "sortIdx": 5
+                  },
+                  {
+                    "id": null,
+                    "title": "I didn’t know, just joined",
+                    "sortIdx": 6
+                  }
+                ],
+                "id": 1,
+                "type": 2,
+                "title": "What made you want to join a Family?",
+                "sortIdx": 2
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 7,
+                    "title": "Earning rewards",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 8,
+                    "title": "Participation in family-exclusive events",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 9,
+                    "title": "Support from Family leader or members",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 10,
+                    "title": "Making new friends",
+                    "sortIdx": 4
+                  },
+                  {
+                    "showId": "5",
+                    "id": 11,
+                    "title": "Growing my live stream",
+                    "sortIdx": 5
+                  },
+                  {
+                    "showId": "6",
+                    "id": 12,
+                    "title": "Supporting my favorite live streamer",
+                    "sortIdx": 6
+                  }
+                ],
+                "id": 3,
+                "type": 2,
+                "title": "What motivates you to stay active in your Family? ",
+                "sortIdx": 3
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 13,
+                    "title": "Stars & Stripes PK",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 14,
+                    "title": "Mission to Ohana",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 15,
+                    "title": "Family Rush Week",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 16,
+                    "title": "Tournament PK",
+                    "sortIdx": 4
+                  },
+                  {
+                    "id": null,
+                    "title": "BBR Family Builder",
+                    "sortIdx": 5
+                  },
+                  {
+                    "id": null,
+                    "title": "3v3 - BIGO Super Smash Tournament",
+                    "sortIdx": 6
+                  },
+                  {
+                    "id": null,
+                    "title": "Spin Fest: 10 Days of Luck",
+                    "sortIdx": 7
+                  },
+                  {
+                    "id": null,
+                    "title": "Legend of the tide",
+                    "sortIdx": 8
+                  },
+                  {
+                    "id": null,
+                    "title": "Snorkel Showdown",
+                    "sortIdx": 9
+                  }
+                ],
+                "id": 4,
+                "type": 2,
+                "title": "Which family event did you enjoy the most in July? ",
+                "sortIdx": 4
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 17,
+                    "title": "Beans",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 18,
+                    "title": "Dino",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 19,
+                    "title": " Apple pay/ Google Pay",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 20,
+                    "title": " BIGO Official Website  ",
+                    "sortIdx": 4
+                  },
+                  {
+                    "showId": "5",
+                    "id": 21,
+                    "title": " Prefer not to say",
+                    "sortIdx": 5
+                  }
+                ],
+                "id": 5,
+                "type": 2,
+                "title": "What type of rewards are you most interested in? ",
+                "sortIdx": 5
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 22,
+                    "title": " Often",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 23,
+                    "title": " Occasionally",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 24,
+                    "title": " Never",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 25,
+                    "title": " Feel free to describe your issue in the \"Others\" below",
+                    "sortIdx": 4
+                  }
+                ],
+                "id": 6,
+                "type": 2,
+                "title": "Have you ever experienced failed or inconvenient recharge attempts?",
+                "sortIdx": 6
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 26,
+                    "title": " Yes, tell me more!",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 27,
+                    "title": " No, I am not interested.",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 7,
+                "type": 1,
+                "title": "Would you like to know more about exclusive deals?",
+                "sortIdx": 7
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 28,
+                    "title": " Email",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 29,
+                    "title": " Text Message",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 8,
+                "type": 1,
+                "title": "How do you prefer to receive notifications about new deals or events?",
+                "sortIdx": 8
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 30,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 9,
+                "type": 3,
+                "title": "Enter your email, phone, or both, based on your selected preference above. By providing your contact information, you agree to receive marketing messages and calls from us via email, text, or phone, including via autodialer or live agent, based on your preference. Msg and data rates may apply. Consent is not a condition of purchase. ",
+                "sortIdx": 9
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 31,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 10,
+                "type": 3,
+                "title": "Do you have any suggestions that could help us improve your recharge experience or content recommendations?",
+                "sortIdx": 10
+              }
+            ],
+            "description": "Thank you for taking 1–3 minutes to help us get to know you better and offer you better deals! 🎁 All participants will receive a Speech Bubble 🎈 and a chance to win a $5 Target gift card or Dino Keychain. Don't miss out on this opportunity to connect and unlock exclusive offers!",
+            "startTime": "2025-05-01 00:00:00",
+            "id": 1398,
+            "endTime": "2025-08-31 23:59:59",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 1398
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uc63Cf7564fe5298c438cbc6cf67ea83a41f8ph.png?auth-token=-8HtJt7mkk1xp5R3qbSAyHz5nIfiQ300ED13zRYk24A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMjkzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5MjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://www.bigo.tv/privacyPolicy.html",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

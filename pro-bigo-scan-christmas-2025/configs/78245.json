@@ -1,0 +1,866 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260201",
+      "20260202",
+      "20260203",
+      "20260204",
+      "20260205",
+      "20260206"
+    ],
+    "week": [
+      "20260126",
+      "20260202"
+    ],
+    "month": [
+      "202602"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 16:25:36",
+    "now_zone": -11,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78245,
+      "act_name": "February Recharge KickOff!",
+      "state": 1,
+      "color": 4,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2026-02-01 17:15:00",
+      "end_time": "2026-02-06 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "act_ver": 1,
+      "version_id": "4",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vlKvU00y2TWPL01kkMq3.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👇"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Click to Join!",
+                  "name": "Click to Join!",
+                  "range": [
+                    1,
+                    2
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Click to Join the Event!【Click】",
+              "fn": 3,
+              "style": 1,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👆"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Recharge Rewards Pool",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "rZybA",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Rules and Rewards",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "JNnQL",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "1.Rewards are limited, first come, first serve!"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "2.Daily Rewards will distributed automatically! "
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "3.Rewards per level cannot be overlapped and users will be rewarded based on their task achievement in task points everyday."
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "sub_title",
+                                  "value": "4.Task points would only be calculated for selected top up channels, for more details please contact ANZ Svip(80048) Team."
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "NvY9P",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vlNix00y2TWPL01QfZ8z.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Check Your Task Point",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "PDZuI",
+                            "formData": {
+                              "scoreLang": [],
+                              "group_arr": [],
+                              "raskValueSelect": 1,
+                              "scoreSelectedArea": [],
+                              "num": 10,
+                              "needGroupsChangeReason": true,
+                              "section": 1,
+                              "groupSoure": 0,
+                              "whiteUid_id_info": null,
+                              "onlyCharge": true,
+                              "mode": 1,
+                              "uid": "",
+                              "endActNotEdit": false,
+                              "appType": 1,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [
+                                    3,
+                                    5
+                                  ],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang086",
+                                  "change": 1,
+                                  "threeSource": [
+                                    0
+                                  ],
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 10,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 99999999,
+                                  "auto_name": "充值金额",
+                                  "gameTag": []
+                                }
+                              ],
+                              "groupIds": "",
+                              "anchor_uids": "",
+                              "anchor_whitelist_id": null,
+                              "text": "1 diamond recharged from selected channels= 1 point",
+                              "lang": [
+                                "PG",
+                                "TO",
+                                "WS",
+                                "FJ",
+                                "GU",
+                                "SB",
+                                "NC",
+                                "PF",
+                                "PW",
+                                "AS",
+                                "FM",
+                                "TK",
+                                "MP",
+                                "CK",
+                                "VU",
+                                "MH",
+                                "KI",
+                                "NR",
+                                "TV",
+                                "NU",
+                                "NF",
+                                "WF",
+                                "PN",
+                                "AU",
+                                "NZ"
+                              ],
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "need_attend": 1,
+                              "whiteUid_id": null,
+                              "level_config": [
+                                {
+                                  "private_im_lang": "Congratulations! You have completed Level 1 Task by recharging 100 diamonds. Recharge More to win reward for next stage!  ",
+                                  "anthor_room_reward": [
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "free_level": null,
+                                      "reward_image": null,
+                                      "reward_id": null,
+                                      "reward_count": null
+                                    },
+                                    {
+                                      "base_map_url": "",
+                                      "reward_max_limit": "1800",
+                                      "op_time": "1769672926",
+                                      "offshelf_time": "2143209600",
+                                      "vm_price": "0",
+                                      "op_user": "澳新 - Nicolas Gabrielle V. Musngi",
+                                      "isOnlyNeedNum": 0,
+                                      "mp4_url": "",
+                                      "__version": "7248580307224469789",
+                                      "reward_name": "Guardian Knight",
+                                      "typeid": "6",
+                                      "extra_type": "0",
+                                      "id": "45597",
+                                      "nickname_color": "",
+                                      "reward_count": null,
+                                      "icon_url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vlMl000y33lYHC1Ilrwp.png",
+                                      "svga_url": "",
+                                      "ext": "",
+                                      "avatar_width": "0",
+                                      "sort_key": "0",
+                                      "new_banner_url": "",
+                                      "val_count": "0",
+                                      "show_type": "0",
+                                      "medal_type": "0",
+                                      "model_code": "",
+                                      "val_typeid": "0",
+                                      "val_count_decimal": "0",
+                                      "name": "Guardian Knight",
+                                      "is_lock": "0",
+                                      "text_color": "",
+                                      "status": "0",
+                                      "pk_type": "",
+                                      "desc_text": "ANZ Event Reward",
+                                      "reward_type": "45597",
+                                      "vm_price_decimal": "0",
+                                      "game_type": "0",
+                                      "can_vip_share": "0",
+                                      "head_type": "0",
+                                      "reward_expire_time": "7",
+                                      "param": "",
+                                      "banner_url": "",
+                                      "label_name": "",
+                                      "need_combine": "0",
+                                      "__deleted": "0",
+                                      "onshelf_time": "1769673316",
+                                      "env": "1",
+                                      "gif_url": "",
+                                      "sale": "0",
+                                      "permanent": "0",
+                                      "vm_typeid": "0",
+                                      "extra_value": "0",
+                                      "reward_image": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vlMl000y33lYHC1Ilrwp.png",
+                                      "act_url": "",
+                                      "medal_jump_url": "",
+                                      "supported_buy": "0",
+                                      "show_url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vlMl500y2TWPL01aBGwd.webp"
+                                    }
+                                  ],
+                                  "process_notice_lang": "Dear BIGOer, you can finish level 1 task by recharging 100 diamonds!",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": true,
+                                  "send_im": true,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": true,
+                                  "target": 100
+                                },
+                                {
+                                  "private_im_lang": "Congratulations! You have completed Level 2 Task by recharging 3500 diamonds. Recharge More to win reward for next stage! ",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "57",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": 3,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "200"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "Dear BIGOer, you can finish level 2 task by recharging 3500 diamonds!",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": true,
+                                  "level": 2,
+                                  "process_notice": true,
+                                  "send_im": true,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": true,
+                                  "target": 3500
+                                },
+                                {
+                                  "private_im_lang": "Congratulations! You have completed Level 3 Task by recharging 8000 diamonds. Recharge More to win reward for next stage! ",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "5",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": 3,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "700"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "Dear BIGOer, you can finish level 3 task by recharging 8000 diamonds!",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": true,
+                                  "level": 3,
+                                  "process_notice": true,
+                                  "send_im": true,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": true,
+                                  "target": 8000
+                                },
+                                {
+                                  "private_im_lang": "Congratulations! You have completed Level 4 Task by recharging 22000 diamonds. Recharge More to win reward for next stage!  ",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "5",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": 3,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "2000"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "Dear BIGOer, you can finish level 4 task by recharging 22000 diamonds!",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": true,
+                                  "level": 4,
+                                  "process_notice": true,
+                                  "send_im": true,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": true,
+                                  "target": 22000
+                                },
+                                {
+                                  "private_im_lang": "Congratulations! You have completed Level 5 Task by recharging 85000 diamonds. Recharge More to win reward for next stage! ",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "1",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": 3,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "8500"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "Dear BIGOer, you can finish level 5 task by recharging 85000 diamonds!",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": true,
+                                  "level": 5,
+                                  "process_notice": true,
+                                  "send_im": true,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": true,
+                                  "target": 85000
+                                }
+                              ],
+                              "groups": [],
+                              "index": 1,
+                              "svip_levels": [],
+                              "raskType": 1,
+                              "selectedArea": [
+                                "AU"
+                              ],
+                              "appoint_uid_source": 1,
+                              "anchor_whitelist_status": 0,
+                              "anchor_uid_info": null,
+                              "name": "Check Your Daily Task",
+                              "countType": "",
+                              "level_config_2": [],
+                              "level_config_3": [],
+                              "white_version_id": null,
+                              "_afterSaveFinished": null,
+                              "level_config_4": []
+                            },
+                            "type": "dailyLevelTask",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Overall Recharge Perks",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "fOwfN",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Rules and Rewards",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5AyEm",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "This month we offer our special HIP-HOP Dino"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "center",
+                                  "type": "sub_title",
+                                  "value": "ATTENTION! \nSelected Top Up Channels ONLY!"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Tiam2",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vlNqU00y33lYHC1Pmjix.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Check your recharge rank",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "aATcm",
+                            "formData": {
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 999,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "giftUid_id": null,
+                              "downloadNum": 20000,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [
+                                    3,
+                                    5
+                                  ],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang086",
+                                  "change": 1,
+                                  "threeSource": [
+                                    0
+                                  ],
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 10,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 99999999,
+                                  "auto_name": "充值金额",
+                                  "gameTag": []
+                                }
+                              ],
+                              "anchor_uids": "",
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "dateTime",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "1 diamond recharged= 1 point; Selected Top-Up Channels Only",
+                              "linktext": "",
+                              "need_attend": 1,
+                              "prize_arr": [],
+                              "voteBoardConfig": 1,
+                              "cp_rank": 0,
+                              "index": 2,
+                              "svip_levels": [],
+                              "selectedArea": [
+                                "AU"
+                              ],
+                              "anchor_whitelist_status": 0,
+                              "voteBoardTitle": "",
+                              "frontTextAlignStyle": "center",
+                              "name": "Overall Recharge Rank",
+                              "linkurl": "",
+                              "switchDisplay": false,
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "top3": 1,
+                              "onlyCharge": true,
+                              "whiteUid_id_info": null,
+                              "voteRankBoard": 1,
+                              "manualVoteList": [],
+                              "uid": "",
+                              "isSearch": 0,
+                              "appType": 1,
+                              "giftUid_id_info": null,
+                              "anchor_whitelist_id": null,
+                              "divide": {
+                                "isPercent": 0,
+                                "imconf": {
+                                  "beanImData": [],
+                                  "gift_room_im": "0",
+                                  "diamondImData": [],
+                                  "giftImData": [],
+                                  "diamond_room_im": "0",
+                                  "row_index": 0,
+                                  "bean_room_im": "0"
+                                },
+                                "proportion": []
+                              },
+                              "lang": [
+                                "PG",
+                                "TO",
+                                "WS",
+                                "FJ",
+                                "GU",
+                                "SB",
+                                "NC",
+                                "PF",
+                                "PW",
+                                "AS",
+                                "FM",
+                                "TK",
+                                "MP",
+                                "CK",
+                                "VU",
+                                "MH",
+                                "KI",
+                                "NR",
+                                "TV",
+                                "NU",
+                                "NF",
+                                "WF",
+                                "PN",
+                                "AU",
+                                "NZ"
+                              ],
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "prizeType": 1,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "prize_arr_v2": [],
+                              "switchOrder": 1,
+                              "weeklyConfig": 1,
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "selectedDays": [],
+                              "countType": "",
+                              "maxManualVoteListID": 0
+                            },
+                            "type": "personrankings",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "Event End in"
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event End in"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "All Rights Reserved by BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

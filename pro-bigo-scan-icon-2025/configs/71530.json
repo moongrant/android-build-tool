@@ -1,0 +1,464 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 71530,
+      "act_name": "KH New Family Challenge (September 2025)",
+      "state": 1,
+      "color": 1,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-09-01 00:00:00",
+      "end_time": "2025-09-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "KH"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "act_ver": 1,
+      "version_id": "6",
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "yellow",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/21v08Ew5eqFs8.jpg?auth-token=AEP0SsLeqFCaubioMkrqWxalrgXwQOI_JkNJpS-7Ygg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxNTMwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU5NTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "👪Family Daily Task",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "mpcuU",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hd/21tbEzn4bcBJb.jpg?auth-token=jrs87zEjmU7kKm2Ob_RUxVIPc413uQvd89CfDg-RSSA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxNTMwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1MjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "skin": "0",
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 1,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": "3867\n2463\n1935\n3394\n3954\n8820\n5970\n501213\n501214\n503024\n503026\n503028\n503030\n503032",
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 2,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "score": 1,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "Beans actually received",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": "3867\n2463\n1935\n3394\n3954\n8820\n5970\n501213\n501214\n503024\n503026\n503028\n503030\n503032",
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 2,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "score": 1,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sourcesAction": 1,
+              "change": 2,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "score": 1,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "Recharge amount",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "222911\n222942\n223161\n223286\n223319\n223324\n223441\n223582\n223714\n223731\n223747\n223760\n223811\n223891\n223921\n223945\n224019\n224204\n224302\n224467\n224497\n224510\n224519\n224524\n224527\n224566\n224569\n224592\n224712\n224732\n224743\n224745\n224758\n224815\n224955\n225064\n225194\n225206\n225308\n225548\n225658\n225689\n225957\n225983\n226039\n226111\n226229\n226268\n226443\n226510\n226575\n226855\n226856\n226903\n227021\n227156\n227224\n227307\n227353",
+          "text": "Send/Receive Family Gift 1 dia = 1 point/Topup 2 dia = 1 point",
+          "lang": [
+            "KH"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "🎉អបអរសាទរ ពួកយើងនឹងផ្តល់រង្វាន់ Bean*20 សម្រាប់ការឈានដល់ Lv.1។\n🚩 ប្រសិនបើអ្នកបន្តទទួលបាន [400] ពិន្ទុ អ្នកអាចឈ្នះរង្វាន់ Bean*40!\n🌟សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "50",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "20"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "💪 សូមអបអរសាទរ [001] ដល់ Lv.[002] កិច្ចការនឹងផ្តល់រង្វាន់ដល់ Bean*20។\n⏰ ប្រសិនបើអ្នកបន្តប្រមូលពិន្ទុ [004] អ្នកនឹងឈ្នះ Bean*40!\n💓សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "groupTaskValue": 1,
+              "private_send_im": true,
+              "target": 100
+            },
+            {
+              "private_im_lang": "🎉អបអរសាទរ Bean*40 រង្វាន់សម្រាប់ការឈានដល់កម្រិត Lv.2 ។\n🚩 ប្រសិនបើអ្នកបន្តទទួលបាន [500] ពិន្ទុ អ្នកនឹងឈ្នះរង្វាន់ Bean*200!\n🌟សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "40",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "40"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "💪 សូមអបអរសាទរ [001] ដល់ Lv.[002] កិច្ចការនឹងផ្តល់រង្វាន់ដល់ Bean*40។\n⏰ ប្រសិនបើអ្នកបន្តប្រមូលពិន្ទុ [004] អ្នកនឹងឈ្នះ Bean*200!\n💓សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "groupTaskValue": 1,
+              "private_send_im": false,
+              "target": 400
+            },
+            {
+              "private_im_lang": "🎉អបអរសាទរ Bean*200 រង្វាន់សម្រាប់ការឈានដល់ Lv.3 ។\n🚩 ប្រសិនបើអ្នកបន្តប្រមូលពិន្ទុ [9000] អ្នកនឹងឈ្នះ Bean*800!\n🌟សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "10",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "200"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "💪 សូមអបអរសាទរ [001] ដល់ Lv.[002] កិច្ចការនឹងផ្តល់រង្វាន់ដល់ Bean*200។\n⏰ ប្រសិនបើអ្នកបន្តប្រមូលពិន្ទុ [004] អ្នកនៅតែអាចឈ្នះ Bean*800!\n💓សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "groupTaskValue": 1,
+              "private_send_im": false,
+              "target": 500
+            },
+            {
+              "private_im_lang": "🎉អបអរសាទរ បានឈានដល់ Lv.4 រង្វាន់ Bean*800 ដែលបានបញ្ជូន។\n🚩 ជួបគ្នាថ្ងៃស្អែក!\n💎សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "1",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "800"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "💪 សូមអបអរសាទរ [001] ដល់ Lv. [002] Task នឹងផ្តល់រង្វាន់ដល់ Bean*800។\n⏰ កិច្ចការកម្រិតថ្ងៃនេះនឹងត្រូវបានបញ្ចប់ដោយជោគជ័យ!\n💓សម្រាប់ព័ត៌មានលម្អិត >>> https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1612242209",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 4,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "groupTaskValue": 1,
+              "private_send_im": false,
+              "target": 9000
+            }
+          ],
+          "groups": [],
+          "index": 1,
+          "svip_levels": [],
+          "raskType": 2,
+          "selectedArea": [],
+          "appoint_uid_source": 1,
+          "name": "បង្កើតគ្រួសារថ្មី 👪",
+          "countType": 3,
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "តស់បង្កើតFamily👪",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vQgoN",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 1,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "👉បង្កើតគ្រួសារ",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_26289/index.html",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      },
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 1,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "🔥Family Power",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_14587/?area=KH",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "JfqDy",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hd/01tbEzt4YTkm1.jpg?auth-token=ucKY-xBFp_dSzmn_aceWtgl5oQEtDPGPWefKoWtJusE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxNTMwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyOTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "For more Information",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "XAMWf",
+                  "formData": {
+                    "mode": 2,
+                    "uid_arr": [
+                      {
+                        "uid": "1885990591",
+                        "text": "KH SVIP"
+                      },
+                      {
+                        "uid": "1792745242",
+                        "text": ""
+                      }
+                    ],
+                    "priority": false
+                  },
+                  "type": "anchor",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

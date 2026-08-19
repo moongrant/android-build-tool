@@ -1,0 +1,1614 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251209",
+      "20251210",
+      "20251211",
+      "20251212",
+      "20251213",
+      "20251214",
+      "20251215",
+      "20251216",
+      "20251217",
+      "20251218",
+      "20251219",
+      "20251220",
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228"
+    ],
+    "week": [
+      "20251208",
+      "20251215",
+      "20251222"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77626,
+      "act_name": "Welcome to BIGOPAY - Dec",
+      "state": 1,
+      "color": 1,
+      "theme": "orange",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-09 00:00:00",
+      "end_time": "2025-12-28 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": "http://esx.bigo.sg/live/4hd/21ujouf5eZRt8.jpg?auth-token=e4Wk5TfsxDdc_SpjEr0Bf3Rz5svVH98esK81vg3vs0I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0NTk1LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "16"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vSmpx00y33lYHC1cebWw.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vH8Sk00y33lYHC0faJB4.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vH8Vm00y33lYHC1hgTeM.png",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "https://mobile.bigo.tv/live/bigolivepay/index.html#/home",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Confirm & Join the Leaderboards",
+                  "name": "Daily & Grand Leaderboards",
+                  "range": [
+                    8,
+                    7
+                  ],
+                  "title": "Complete Sign-up to Participate",
+                  "attendModular": 1,
+                  "desc": "Once registered, your BIGOPAY recharge will be counted automatically toward both Daily & Grand Leaderboards. No recharge threshold — compete freely and climb the chart!"
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Sign Up & Start Competing",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Win Coupon Daily",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VCtVB",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vSjaG00y2TWPL01QfPVX.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "SyK17",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "needGiftUidChangeReason": false,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "dailyCycleEndTime": "23:59:59",
+                    "globalinfo": 0,
+                    "section": 6,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": "",
+                    "downloadNum": 999999,
+                    "globalrank": 10,
+                    "coupon_arr": [
+                      {
+                        "start_num": 5000,
+                        "coupon_id": "1765236636",
+                        "person_limit": 1,
+                        "conpon_desc": {
+                          "max_diamond_count": "5500",
+                          "min_diamond_count": "500",
+                          "first_percent": "0",
+                          "name": "BIGOPAY Dec-5%-1day-500/5500 D",
+                          "id": "1765236636",
+                          "percent": "5",
+                          "second_reward_interval": "0",
+                          "coupon_type": "1"
+                        },
+                        "index": 1,
+                        "rank": 50,
+                        "region_type": 2,
+                        "end_num": 1,
+                        "coupon_type": "",
+                        "total_limit": 1
+                      }
+                    ],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          3
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 Diamond recharged via m.bigopay.tv = 1 point",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 8,
+                    "endActNotEditGift": false,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/09",
+                    "frontTextAlignStyle": "left",
+                    "name": "Daily Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 2,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500658241",
+                        "create_time": "1765237422",
+                        "utime": "2025-12-09 07:43:42",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "Dec-BIGOPAY-WL",
+                        "update_operator": "",
+                        "create_operator": "12625",
+                        "frequency": "0",
+                        "update_time": "1765237422",
+                        "black_tasks_status": "0",
+                        "filter_id": "20788",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-12-09 07:43:42",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "rankTo": 999,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "US"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500658241",
+                    "bottominfo": 0,
+                    "prizeType": 2,
+                    "end_time": "2025/12/28",
+                    "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+                    "dailyCycleStartTime": "00:00:00",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+                    "prize_arr_v3": [],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Win Newest Dino!",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "F7wKx",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vSjaQ00y2TWPL02JqxjI.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "s4IVr",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 999999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          3
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 Diamond recharged via m.bigopay.tv = 1 point 🎁 Compete with other top rechargers through m.bigopay.tv and take home the newest Dino",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 7,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/09 00:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "Grand Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500658241",
+                        "create_time": "1765237422",
+                        "utime": "2025-12-09 07:43:42",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "Dec-BIGOPAY-WL",
+                        "update_operator": "",
+                        "create_operator": "12625",
+                        "frequency": "0",
+                        "update_time": "1765237422",
+                        "black_tasks_status": "0",
+                        "filter_id": "20788",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-12-09 07:43:42",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "US"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500658241",
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/12/28 23:59:59",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "lottery_timerange_endTime": 1766995199,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "lottery_timerange_startTime": 1765267200,
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                3
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 200,
+              "threeSource": [
+                0
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 5,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "Win Your Welcome Gift!",
+          "svip_area": "",
+          "lottery_rule": "Recharge 200 Diamonds via m.bigopay.tv = 1 ticket \nUp to 5 times per day\nWin 💎, 24-hour Coupon, and Royal Pendant",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "start_time_stamp": 1765267200000,
+          "index": 1,
+          "selectedArea": [],
+          "anchor_whitelist_status": 0,
+          "start_time": "2025-12-09T08:00:00.000Z",
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 1,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": true,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500658241",
+              "create_time": "1765237422",
+              "utime": "2025-12-09 07:43:42",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "Dec-BIGOPAY-WL",
+              "update_operator": "",
+              "create_operator": "12625",
+              "frequency": "0",
+              "update_time": "1765237422",
+              "black_tasks_status": "0",
+              "filter_id": "20788",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2025-12-09 07:43:42",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 43.502,
+            "consumeCost": "0.00",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "http://esx.bigo.sg/live/4hd/11vC27r9i3ODk.png?auth-token=7QQ3afY5beIE1eLH-mFl4gM9bIdF2-MFSeDwKRXT7WE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1MTU2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+              "theme": "Welcome Bonus Unlocked 🎁",
+              "content": "Your BIGOPAY recharge comes with a free spin — go see what surprise awaits!"
+            },
+            "list": [
+              {
+                "prizes_num": "3",
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=uwP_P5oGKH7--sKrqU0Vs3c82vGyBLPWMs1fF8Rc5xE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0500",
+                "activity_all_cost": "2.5000",
+                "win_real_rate": 25,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 3",
+                "consume_num": 0,
+                "residue_num": 50,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "1",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "50",
+                "valid_days": "0",
+                "used_num": 18,
+                "win_rate": "25",
+                "textLeft": "-35px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "10",
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=uwP_P5oGKH7--sKrqU0Vs3c82vGyBLPWMs1fF8Rc5xE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.1667",
+                "activity_all_cost": "8.3350",
+                "win_real_rate": 25,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 10",
+                "consume_num": 0,
+                "residue_num": 50,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "1",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "50",
+                "valid_days": "0",
+                "used_num": 15,
+                "win_rate": "25",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "25",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=uwP_P5oGKH7--sKrqU0Vs3c82vGyBLPWMs1fF8Rc5xE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.4167",
+                "activity_all_cost": "8.3340",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 25",
+                "consume_num": 0,
+                "residue_num": 20,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "1",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "20",
+                "valid_days": "0",
+                "used_num": 3,
+                "win_rate": "10",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "50",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=uwP_P5oGKH7--sKrqU0Vs3c82vGyBLPWMs1fF8Rc5xE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.8333",
+                "activity_all_cost": "9.9996",
+                "win_real_rate": 6,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 50",
+                "consume_num": 0,
+                "residue_num": 12,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "1",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "12",
+                "valid_days": "0",
+                "used_num": 1,
+                "win_rate": "6",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "100",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "1.6667",
+                "activity_all_cost": "3.3334",
+                "win_real_rate": 1,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 100",
+                "consume_num": 0,
+                "residue_num": 2,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "1",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "2",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "1",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/2CZ5L2.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "2.75",
+                "activity_all_cost": "11.0000",
+                "win_real_rate": 2,
+                "is_pay_prize": 0,
+                "prize_name": "3% Coupon",
+                "consume_num": 0,
+                "residue_num": 4,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "1765236611",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "4",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "2",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "17"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://esx.bigo.sg/live/4he/01uhk8rBzEKg.png?auth-token=kOhkOw22gVTnxz8WXqomwJCiyXw5N-mtPTwnGXm5PoY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NjIxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 31,
+                "is_pay_prize": 0,
+                "prize_name": "Royal Pendant",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "41891",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "5",
+                "used_num": 0,
+                "win_rate": "31",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "6"
+              }
+            ],
+            "totalCost": "43.5020"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "US"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": "1500658241",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "end_time": "2025-12-28T08:00:00.000Z",
+          "dailyCycleEndTimeOrigin": "2025/08/06 23:59:59",
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "Dec BIGOPAY event WL",
+          "end_time_stamp": 1766908800000,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 1,
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/21vC0Or6f1drc.jpg?auth-token=7LzDhkxmUZLwGp_W213HXujvKOME9JtlvDE0ZzzXAbg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0MzUwLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "bigolive://diamonds",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4he/21vC0P1owflH.jpg?auth-token=9AJwL091dyFg0i5FiI2TOrkMae9oF3blhfuf_FQ4Pe0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzNzA1LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "bigolive://diamonds",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "lottery_timerange_endTime": 1766995199,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "lottery_timerange_startTime": 1765267200,
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 3600,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "Viewer Spin Wheel",
+          "svip_area": "",
+          "lottery_rule": "👀 Watch live for 60 minutes to unlock a FREE Spin daily! 🎡\nDon't miss your chance! 🔥",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "start_time_stamp": 1765267200000,
+          "index": 5,
+          "selectedArea": [],
+          "anchor_whitelist_status": 0,
+          "start_time": "2025-12-09T08:00:00.000Z",
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": false,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500658241",
+              "create_time": "1765237422",
+              "utime": "2025-12-09 07:43:42",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "Dec-BIGOPAY-WL",
+              "update_operator": "",
+              "create_operator": "12625",
+              "frequency": "0",
+              "update_time": "1765237422",
+              "black_tasks_status": "0",
+              "filter_id": "20788",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2025-12-09 07:43:42",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 75.065,
+            "consumeCost": "0.00",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "http://esx.bigo.sg/live/4he/01vC2dqYHctZ.png?auth-token=m07qLx-iXFp70PJ7JwdPnNkabDxjng2assQ60HN3OZ8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzODAwLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+              "theme": "Free Spin Unlocked! 🎁",
+              "content": "Congrats! You’ve unlocked a spin for watching 60 minutes. 💎 Want more rewards? Recharge with BIGOPAY to earn extra Diamonds instantly!"
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1u61Un33ecc2835aaa4c4580521fcaf4a79a7bph.png?auth-token=gmPXVOzWNPUqlUqye24gmaLgXqFSiI8eR2XsJQMTX9E:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzODkxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond Badge",
+                "consume_num": 0,
+                "residue_num": 99999,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "39918",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "1",
+                "used_num": 44,
+                "win_rate": "22",
+                "textLeft": "-35px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "108deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0167",
+                "activity_all_cost": "33.4000",
+                "win_real_rate": 40,
+                "is_pay_prize": 0,
+                "prize_name": "💎 * 1",
+                "consume_num": 0,
+                "residue_num": 2000,
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "1",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "2000",
+                "valid_days": "0",
+                "used_num": 60,
+                "win_rate": "40",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "36deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1u61ew3fea9c592b864930ad83808ab22a288dph.png?auth-token=zhvt1O6wR7VATWZgD_kG2fdknksUTs5i9g6tkVc2tic:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MTc3LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond Pendant",
+                "consume_num": 0,
+                "residue_num": 99999,
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "39924",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "1",
+                "used_num": 28,
+                "win_rate": "22",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": "5",
+                "rotate": "-36deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0833",
+                "activity_all_cost": "4.1650",
+                "win_real_rate": 1,
+                "is_pay_prize": 0,
+                "prize_name": "💎 * 5",
+                "consume_num": 0,
+                "residue_num": 50,
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "1",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "50",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "1",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "3",
+                "rotate": "-108deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0500",
+                "activity_all_cost": "37.5000",
+                "win_real_rate": 15,
+                "is_pay_prize": 0,
+                "prize_name": "💎 * 3",
+                "consume_num": 0,
+                "residue_num": 750,
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "1",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "750",
+                "valid_days": "0",
+                "used_num": 23,
+                "win_rate": "15",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "11"
+              }
+            ],
+            "totalCost": "75.0650"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "US"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": "1500658241",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "end_time": "2025-12-28T08:00:00.000Z",
+          "dailyCycleEndTimeOrigin": "2025/10/23 23:59:59",
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "Dec. BIGOPAY new users",
+          "end_time_stamp": 1766908800000,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 1,
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/10/23 00:00:00",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "lottery_timerange_endTime": 1766995199,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "lottery_timerange_startTime": 1765267200,
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang441",
+              "change": 1000,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                0
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "Gifter Spin Wheel",
+          "svip_area": "",
+          "lottery_rule": "💎 Send 1,000 Diamonds to any host to unlock a FREE Spin daily! 🎡\nDon’t miss your chance — try DinoPay to earn even more 💎",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "start_time_stamp": 1765267200000,
+          "index": 6,
+          "selectedArea": [],
+          "anchor_whitelist_status": 0,
+          "start_time": "2025-12-09T08:00:00.000Z",
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": false,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500658241",
+              "create_time": "1765237422",
+              "utime": "2025-12-09 07:43:42",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "Dec-BIGOPAY-WL",
+              "update_operator": "",
+              "create_operator": "12625",
+              "frequency": "0",
+              "update_time": "1765237422",
+              "black_tasks_status": "0",
+              "filter_id": "20788",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2025-12-09 07:43:42",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 18.3308,
+            "consumeCost": "0.00",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "http://esx.bigo.sg/live/4hd/11vC34v1avHWm.png?auth-token=o-7Oh4tdmhxkXxPNBjadAAcW2GJT_xxciPZ07-TeQUQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0OTQxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+              "theme": "You’ve Unlocked a Free Spin! 🎡",
+              "content": "Thanks for gifting 1,000 Diamonds! Your spin is ready — try BIGOPAY to get even more Diamonds instantly! 💎"
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://esx.bigo.sg/live/4he/01uhk8rBzEKg.png?auth-token=kOhkOw22gVTnxz8WXqomwJCiyXw5N-mtPTwnGXm5PoY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NjIxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 24,
+                "is_pay_prize": 0,
+                "prize_name": "Royal Pendant",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "41891",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "2",
+                "used_num": 11,
+                "win_rate": "24",
+                "textLeft": "-35px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": "5",
+                "rotate": "108deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0833",
+                "activity_all_cost": "4.1650",
+                "win_real_rate": 50,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 5 ",
+                "consume_num": 0,
+                "residue_num": 50,
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "1",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "50",
+                "valid_days": "0",
+                "used_num": 37,
+                "win_rate": "50",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "200",
+                "rotate": "36deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "3.3333",
+                "activity_all_cost": "3.3333",
+                "win_real_rate": 1,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 200",
+                "consume_num": 0,
+                "residue_num": 1,
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "1",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "1",
+                "valid_days": "0",
+                "used_num": 1,
+                "win_rate": "1",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "50",
+                "rotate": "-36deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.8333",
+                "activity_all_cost": "4.1665",
+                "win_real_rate": 5,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 50",
+                "consume_num": 0,
+                "residue_num": 5,
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "1",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "5",
+                "valid_days": "0",
+                "used_num": 4,
+                "win_rate": "5",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "20",
+                "rotate": "-108deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.3333",
+                "activity_all_cost": "6.6660",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 20",
+                "consume_num": 0,
+                "residue_num": 20,
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "1",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "20",
+                "valid_days": "0",
+                "used_num": 12,
+                "win_rate": "20",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "11"
+              }
+            ],
+            "totalCost": "18.3308"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "US"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": "1500658241",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "end_time": "2025-12-28T08:00:00.000Z",
+          "dailyCycleEndTimeOrigin": "2025/10/23 23:59:59",
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "Dec BIGOPAY new users",
+          "end_time_stamp": 1766908800000,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 1,
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/10/23 00:00:00",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "US",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "actIndex": null,
+            "wjName": "BIGOPAY Survey",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "id": 1,
+                    "title": "Yes, I just tried",
+                    "sortIdx": 1
+                  },
+                  {
+                    "id": 2,
+                    "title": "I’ve visited but didn’t use it",
+                    "sortIdx": 2
+                  },
+                  {
+                    "id": 3,
+                    "title": "First time hearing about it",
+                    "sortIdx": 3
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Have you ever visited or used the BIGO PAY website (m.bigopay.tv)?",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "id": 4,
+                    "title": "Didn’t have time to explore it yet",
+                    "sortIdx": 1
+                  },
+                  {
+                    "id": 5,
+                    "title": "Didn’t know how much I could actually save",
+                    "sortIdx": 2
+                  },
+                  {
+                    "id": 6,
+                    "title": "Discounts don’t matter much to me — I just want an easy way",
+                    "sortIdx": 3
+                  },
+                  {
+                    "id": 7,
+                    "title": "Jumping outside the app feels less convenient",
+                    "sortIdx": 4
+                  },
+                  {
+                    "id": 8,
+                    "title": "Concerned about payment security / privacy",
+                    "sortIdx": 5
+                  },
+                  {
+                    "id": 9,
+                    "title": "Faced some technical issues when trying",
+                    "sortIdx": 6
+                  }
+                ],
+                "id": 2,
+                "type": 2,
+                "title": "What are the main reasons you haven’t used BIGO PAY before? (Select all that apply)",
+                "sortIdx": 2
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "id": 10,
+                    "title": "My card / bank got declined",
+                    "sortIdx": 1
+                  },
+                  {
+                    "id": 11,
+                    "title": "Verification didn’t go through",
+                    "sortIdx": 2
+                  },
+                  {
+                    "id": 12,
+                    "title": "Large payment got declined",
+                    "sortIdx": 3
+                  },
+                  {
+                    "id": 13,
+                    "title": "My payment never go through",
+                    "sortIdx": 4
+                  },
+                  {
+                    "id": 14,
+                    "title": "No issues so far",
+                    "sortIdx": 5
+                  }
+                ],
+                "id": 3,
+                "type": 2,
+                "title": "Have you experienced any problems or difficulties when using the BIGO PAY website? (Select all that apply. You can share details under “Other” — we’re here to help!)",
+                "sortIdx": 3
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "id": 15,
+                    "title": "Extra rewards for first-time users",
+                    "sortIdx": 1
+                  },
+                  {
+                    "id": 16,
+                    "title": "Step-by-step tutorial",
+                    "sortIdx": 2
+                  },
+                  {
+                    "id": 17,
+                    "title": "Customer support assistance",
+                    "sortIdx": 3
+                  },
+                  {
+                    "id": 18,
+                    "title": "Trusted users / hosts / family recommendations",
+                    "sortIdx": 4
+                  },
+                  {
+                    "id": 19,
+                    "title": "Official redirect notification / announcement",
+                    "sortIdx": 5
+                  }
+                ],
+                "id": 4,
+                "type": 2,
+                "title": "What would most encourage you to try the BIGO PAY website? (Select all that apply)",
+                "sortIdx": 4
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "id": 20,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 5,
+                "type": 3,
+                "title": "Enter your email / phone to get early access to deals and special rewards. By providing your contact information, you agree to receive our promotion messages via email, text. Msg and data rates may apply. Consent is not a condition of purchase. ",
+                "sortIdx": 5
+              },
+              {
+                "isRequired": 0,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "id": 21,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 6,
+                "type": 3,
+                "title": "Got any tips or suggestions to improve your BIGOPAY experience?",
+                "sortIdx": 6
+              }
+            ],
+            "description": "We invite you to explore our official site and take a 1–2 minute survey to help us improve your experience! We truly value your feedback — thoughtful responses may receive a Target Gift Card as appreciation.",
+            "startTime": "2025-12-09 00:00:00",
+            "id": 2047,
+            "endTime": "2025-12-31 00:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 2047
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/21v6LO6Aj0Zrd.png?auth-token=DY8XS0eBA57nEJzkBM5zsfWfLdSU3DWbb3Nv5O2Yqoc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjI2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1MTQ1LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://www.bigo.tv/privacyPolicy.html",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

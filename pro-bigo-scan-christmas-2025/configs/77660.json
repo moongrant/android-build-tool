@@ -1,0 +1,373 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77660,
+      "act_name": "Juicy-每日等级任务-月榜",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-08 15:20:14",
+      "end_time": "2025-12-13 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "BIGO"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "BIGO"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "648680172\n1005000141\n648680176\n648680181\n648680185\n648680189\n648680174\n674889445\n674889700\n674929915\n674967137\n676094762\n675081498\n648680338",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                400,
+                4
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 60,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang778",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 33,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [
+                4,
+                400
+              ],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "直播间观看人数",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                4,
+                400
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang783",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 46,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "ACU【新】",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                400,
+                4
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang782",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 45,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "PCU【新】",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                4,
+                400
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang785",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 29,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "上麦时长",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                4,
+                400
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang784",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 28,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "上麦人数",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang801",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 302,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [
+                4,
+                400
+              ],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "房间充值金额",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang800",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 301,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [
+                4,
+                400
+              ],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "房间充值人数",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "Juicy-每日等级任务-月榜单",
+          "needAppointUidChangeReason": true,
+          "lang": [
+            "BIGO"
+          ],
+          "appoint_uid": 1,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "100000",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "1"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 1
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 3,
+          "raskType": 1,
+          "selectedArea": [],
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "测试",
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "Juicy-每日等级任务-月榜单",
+          "countType": "",
+          "level_config_2": [
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "isPercent": false,
+                  "reward_type": 1,
+                  "reward_max_limit": null,
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": 3,
+                  "reward_count": null
+                },
+                {
+                  "isPercent": false,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": "1"
+            }
+          ],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,606 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260106",
+      "20260107",
+      "20260108"
+    ],
+    "week": [
+      "20260105"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 14:26:08",
+    "now_zone": -9,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78441,
+      "act_name": "チャージボーナスDays",
+      "state": 1,
+      "color": 3,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2026-01-06 00:00:00",
+      "end_time": "2026-01-08 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "JP"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "チャージボーナスDays",
+        "appendixDesc": "チャージタスクをクリアすると、ビーンズ賞品を獲得できます。",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vYbFT00y33lYHC1ITT1s.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1",
+      "is_go_onelink": 0,
+      "theme": "red",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vYbFs00y2TWPL014xDYi.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "～イベント終了～"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "確認",
+                  "name": "ランキング",
+                  "range": [
+                    2
+                  ],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "ランキングエントリー＞＞＞",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "イベントルール",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "P5WM8",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vYboR00y2TWPL0130aa4.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Z8oaZ",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vYboc00y2TWPL00nmspS.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "毎日タスク",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "YXozj",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": true,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "anchor_uids": "",
+                    "anchor_whitelist_id": null,
+                    "text": "チャージタスクをクリアすると、ビーンズ賞品を獲得できます。 1ダイヤチャージ＝1タスクポイント",
+                    "lang": [
+                      "JP"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "99999",
+                            "op_time": "1742456414",
+                            "offshelf_time": "2061528919",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-何晓林",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7137101475647186471",
+                            "reward_name": "Divination Crystal",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "39135",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/3s1/0w5k4z.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Divination Crystal",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Giftin more to win!",
+                            "reward_type": "39135",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "1",
+                            "param": "ph复用",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1742456934",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/3s1/0w5k4z.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/3s2/04HR7lD.png"
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 2
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_expire_time": null,
+                            "reward_type": 4,
+                            "reward_max_limit": "2000",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "reward_id": null,
+                            "typeid": -1,
+                            "id": 4,
+                            "reward_count": "5"
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": null,
+                            "op_time": "1730105688",
+                            "offshelf_time": "2106357625",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-邵晋",
+                            "isOnlyNeedNum": 1,
+                            "mp4_url": "",
+                            "__version": "7086512900219953958",
+                            "reward_name": null,
+                            "typeid": "1",
+                            "extra_type": "0",
+                            "id": "36544",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/4h3/M00/2E/A0/SBIRAF8ragmIMsdCAACJpFbOu2wAAZywgLr7hYAAIm8163.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "6",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Rowing boy",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Free gifts",
+                            "reward_type": "",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": null,
+                            "param": "发奖复制上架",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1730109794",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": null,
+                            "act_url": "",
+                            "reward_id": null,
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4he/21t5LVmwqW6I.png"
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 27
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "1500",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "30"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 271
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "700",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "180"
+                          },
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 1200
+                      }
+                    ],
+                    "groups": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "raskType": 1,
+                    "selectedArea": [],
+                    "appoint_uid_source": 1,
+                    "anchor_whitelist_status": 0,
+                    "anchor_uid_info": null,
+                    "name": "毎日タスク",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "ランキング",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "QkoGx",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 2000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "ランキング期間： 1月8日0時～1月8時24時",
+                    "linktext": "",
+                    "switchStyle": 3,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "svip_levels": [],
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "left",
+                    "name": "ランキング",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "JP"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

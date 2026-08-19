@@ -1,0 +1,272 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68626,
+      "act_name": "Family Rush Week August 2025",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-08-01 17:00:00",
+      "end_time": "2025-08-18 23:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "19",
+      "black_uids_flag": 0,
+      "black_uids_id": ""
+    },
+    "act_modular": [
+      {
+        "type": "banner",
+        "formData": {
+          "play": 0,
+          "img_arr": [
+            {
+              "uid": 1755224333818,
+              "url": "http://esx.bigo.sg/live/4he/21umk1qnDdkT.jpg?auth-token=V_JxSW05A_NEEog3jUWVqNxlfiV-aZb2J91FglrcuWM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3NTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "status": "success"
+            },
+            {
+              "uid": 1755224333819,
+              "url": "http://esx.bigo.sg/live/4hd/11umk1uuTRxwU.jpg?auth-token=hJJRWKWV6TDDg9TltLq5F7pC7zWkUI9FsJRY_sIAXb4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcyMDAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "status": "success"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "US,CA",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "US",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Sign Up For The Family Rush Week Exclusive Raffle Now",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "Yes, I will join a Family—or sign up if I’m already in one—to enter the Dino Raffle!",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Do you want to join a family & sign up for the Dino Raffle? If you’re already in one, just sign up to join the fun!",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 2,
+                    "title": "Family Rush Week! Love Dino 🦕",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 3,
+                    "title": "Family-exclusive events",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 4,
+                    "title": "Invited by a Family Lead",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 5,
+                    "title": "Wanted more support ",
+                    "sortIdx": 4
+                  },
+                  {
+                    "showId": "5",
+                    "id": 6,
+                    "title": "To reach level or contract goals",
+                    "sortIdx": 5
+                  },
+                  {
+                    "showId": "6",
+                    "id": 7,
+                    "title": "Looking for an active community",
+                    "sortIdx": 6
+                  }
+                ],
+                "id": 2,
+                "type": 2,
+                "title": "What motivated you to join a Family? (Check all that apply)",
+                "sortIdx": 2
+              }
+            ],
+            "description": "Only users who sign up and successfully join (or are already in) a Family are eligible for the Dino Raffle. Don’t miss out—sign up now and start your Family journey!",
+            "startTime": "2025-08-01 00:00:00",
+            "id": 1312,
+            "endTime": "2025-09-01 00:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 1312
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/21uvfX4W5DkxH.jpg?auth-token=ObOUCmjQ3FHFk5RBs7CdoiD56O6PJ3VNiRH9mafPOn4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY2NTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Dino Raffle winners will be announced in early August 2025. Stay in your US/CA Family to remain eligible for the Raffle! 🎁"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "NOT IN A FAMILY YET? FIND ONE TO JOIN NOW!",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/family-detail/index.html#/family/list?firstpage=true",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Family Joining Tutorial"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "video",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1u0oiS6372b4c07cf0481bb74e04476716b083ph.png?auth-token=3X4ZC3QaCmDdbW0jtyqwIm1zRciCBA7I59dr8-4hRmc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNzAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "autoPlayAndLoop": true,
+          "url": "http://esx.bigo.sg/live/4he/01u0Pglg1MEL.mp4?crc=4103227410&type=5&auth-token=Ly-MNUt6mikTl-Y-aP_iCcjsOVPxFSIRa65GJAwtoy8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/01ulcghRxpexv.jpg?auth-token=i5WshvyAx002KQed8PZMSIlDsFtZsxQVGKNBXbuKCME:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjI2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

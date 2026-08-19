@@ -1,0 +1,811 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260101",
+      "20260102",
+      "20260103"
+    ],
+    "week": [
+      "20251229"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 06:26:08",
+    "now_zone": -1,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78726,
+      "act_name": "Recarga Invernal",
+      "state": 1,
+      "color": 2,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-03 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PT",
+        "ES",
+        "AD",
+        "GI"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "Impulsa el ranking con tus recargas y llévate premios increíbles ⚡🏆",
+        "appendixDesc": "llena tu cartera con todo esto y mucho más ",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaf2200y33lYHC1rSIMK.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "4",
+      "is_go_onelink": 0,
+      "theme": "green",
+      "frontCustomBgColor": "#222923",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0,
+      "black_uids_id": ""
+    },
+    "act_modular": [
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "ESPAÑA",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "CDQZW",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaf1e00y2TWPL012uR22.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "PORTUGAL",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "YVAB2",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaf1r00y33lYHC1hdjZo.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "fill",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "Evento válido solo para usuarios de España, Portugal, Andorra y Gibraltar.\t\t"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Sí",
+                  "name": "报名1",
+                  "range": [
+                    10,
+                    8,
+                    9
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Inscríbete primero aqui y gana premios en el ranking",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Recarga por aquí >>",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://diamonds",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "tutorial de recarga",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=64424",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": true,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "For the top 30 users who sign up and recharge daily",
+          "lang": [
+            "ES",
+            "PT",
+            "AD",
+            "GI"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 1,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "20",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "40"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 2000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "15",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "90"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 2,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 5000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "8",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "170"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 3,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 10000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "8",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "335"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 4,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 20000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "5",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "800"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 5,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 50000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "2",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "1500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 6,
+              "process_notice": true,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 100000
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 10,
+          "raskType": 1,
+          "selectedArea": [
+            "ES_PT"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "anchor_uid_info": null,
+          "name": "Daily Task",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "ranking diario",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "DrH4N",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 1,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 diamante recargado=1 punto",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 8,
+                    "svip_levels": [],
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "ranking diario de recarga 💎",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "ES",
+                      "PT",
+                      "AD",
+                      "GI"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "ranking total",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vhfJ5",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 diamante recargado =1 punto",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 9,
+                    "svip_levels": [],
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "ranking total de recarga 💎",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "PT",
+                      "ES",
+                      "AD",
+                      "GI"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "Cualquier duda puedes escribirnos por WhatsApp +65 31065079 "
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "VIP chat >>",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://wa.me/6582400238?from_source=3",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Las recompensas llegarán entre 15 y 30 días después del evento. BIGO LIVE reserva la interpretación final."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

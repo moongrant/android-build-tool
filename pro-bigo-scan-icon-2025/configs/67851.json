@@ -1,0 +1,1153 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250622",
+      "20250623",
+      "20250624",
+      "20250625",
+      "20250626",
+      "20250627",
+      "20250628",
+      "20250629",
+      "20250630",
+      "20250701",
+      "20250702",
+      "20250703",
+      "20250704",
+      "20250705"
+    ],
+    "week": [
+      "20250616",
+      "20250623",
+      "20250630"
+    ],
+    "month": [
+      "202506",
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 07:25:52",
+    "now_zone": -2,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 67851,
+      "act_name": "اهلا بالصيف",
+      "state": 1,
+      "color": 1,
+      "theme": "green-red",
+      "is_ar": 1,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-22 11:00:00",
+      "end_time": "2025-07-05 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "DE",
+        "CH",
+        "AT"
+      ],
+      "selectedArea": [
+        "DE"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "7"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uSexZ55659b9b496e40d9945d923c02e00adeph.jpg?auth-token=-zgoXPJlHal9QugXiG1mNlqNJwgVytP_YaCvNX7OfsU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2ODAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "🎉 أهلاً بالصيف مع مجتمع الشرق الأوسط وشمال إفريقيا (MENA) ☀️"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "🗓️ من 22 يونيو الساعة 11:00 صباحًا حتى 4 يوليو الساعة 11:59 (UTC+2)"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "🏆 جوائز الصيف للنخبة",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "aifDb",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "key_text",
+                        "value": "🗓️ من 22 يونيو الساعة 11:00 صباحًا حتى 4 يوليو الساعة 11:59 (UTC+2)"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "a2oQ1",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [
+                          {
+                            "type": "title",
+                            "value": "DACH الفعالية متاحة لجميع المستخدمين في منطقة"
+                          },
+                          {
+                            "type": "title",
+                            "value": "يحصل المستخدمون على نقاط الصيف عند إرسال الهدايا إلى المذيعين من منطقة الشرق الأوسط وشمال إفريقيا. كل 1 ماسة = 1 نقطة صيف. عند الوصول إلى الأهداف، سيتم فتح جوائز صيفية فريدة"
+                          },
+                          {
+                            "type": "title",
+                            "value": "في حال كان عدد الماسات المرسلة ≠ عدد الفاصوليا المستلمة، يتم احتساب النقاط على لوحة الصدارة بناءً على عدد الفاصوليا الفعلي المستلم"
+                          },
+                          {
+                            "type": "title",
+                            "value": "يتم إصدار الجوائز خلال 7 أيام عمل بعد انتهاء الفعالية"
+                          }
+                        ],
+                        "share_title": "",
+                        "name": ": قواعد الفعالية",
+                        "fn": 0,
+                        "style": 0,
+                        "share_img": "",
+                        "url": ": قواعد الفعالية",
+                        "openType": 1,
+                        "layer_title": ": قواعد الفعالية",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "5XHk8",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uSg6g8790caccfb654c19b826cb65fadaa38fph.jpg?auth-token=L4zVRZXx--9phnq-R2fQRhqqrwYI7d12ZBH2K_ZVGU8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcyMDEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "kM1uz",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AR"
+                    ],
+                    "num": 100,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang510",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 15,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出金豆价值",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "يحصل المستخدمون على نقاط الصيف عند إرسال الهدايا إلى المذيعين من منطقة الشرق الأوسط وشمال إفريقيا. كل 1 ماسة = 1 نقطة صيف. عند الوصول إلى الأهداف، سيتم فتح جوائز صيفية فريدة",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 1,
+                    "selectedArea": [
+                      "DE"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/06/22 11:00:00",
+                    "frontTextAlignStyle": "center",
+                    "name": "قائمة قادة النخبة",
+                    "linkurl": "",
+                    "switchDisplay": true,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/07/04 23:59:59",
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "🎁مكافآت نسمات الصيف",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "QXlqn",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "🎯 أرسل الهدايا إلى مذيعي الشرق الأوسط وشمال إفريقيا للحصول على العناصر الحصرية التالية"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "🗓️ من 22 يونيو الساعة 11:00 صباحًا حتى 4 يوليو الساعة 11:59 (UTC+2)"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "kND6j",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uT2CQ7691ea4cd1e945128b7b0319c1fc0bb6ph.jpg?auth-token=Yd_lJ8MUrv_9QhZjim2O0GkAfKLRQ_X_1Q1ZkpnlsLA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "c8ReN",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AR"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang510",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 15,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出金豆价值",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "يحصل المستخدمون على نقاط الصيف عند إرسال الهدايا إلى المذيعين من منطقة الشرق الأوسط وشمال إفريقيا. كل 1 ماسة = 1 نقطة صيف. عند الوصول إلى الأهداف، سيتم فتح جوائز صيفية فريدة",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "DE"
+                    ],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "🎁 مكافآت الصيف المميزة",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "rankTo": 999,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 1,
+                    "prizeType": 2,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/4hc/0YNUwf.png?auth-token=HuHzKD0hyJAIGUzqMxnKaktDwfcjz4TSI_xhLdHUB_4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNDQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 41049,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 90,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 499
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/4hc/08699K.png?auth-token=pWlOXGLZaU-GgPcs2XxnpBpijwq5AXchv7pdlDnKFgs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 41051,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 15,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 999
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/4hd/29ky3c.png?auth-token=ASOz_XD0hnjHs-0bTY1LdY75lLhz1bXOtnF4WGDbTyw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU3NTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 28376,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 10,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 4999
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "prize_arr_v3": [
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/4hc/0YNUwf.png?auth-token=HuHzKD0hyJAIGUzqMxnKaktDwfcjz4TSI_xhLdHUB_4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNDQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 41049,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 90,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 499
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/4hc/08699K.png?auth-token=pWlOXGLZaU-GgPcs2XxnpBpijwq5AXchv7pdlDnKFgs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 41051,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 15,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 999
+                      },
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://giftesx.bigo.sg/live/4hd/29ky3c.png?auth-token=ASOz_XD0hnjHs-0bTY1LdY75lLhz1bXOtnF4WGDbTyw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU3NTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 28376,
+                            "num": 1,
+                            "free_level": "",
+                            "days": 10,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 4999
+                      }
+                    ],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "🎊مفاجآت الصيف اليومية",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "aXV8d",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "📅 أكمل المهام اليومية واحصل على الجوائز فورًا"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "key_text",
+                        "value": "🗓️ من 22 يونيو الساعة 11:00 صباحًا حتى 4 يوليو الساعة 11:59 (UTC+2)"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "BvuR1",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uT2Kifec20d4afc2b4128a49d2c27d034b54eph.jpg?auth-token=_aayjVZ2IYWcDsdQG7YNUefttkDgGBF0D4YJK1Oawg8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3ODUxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQzNTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "scoreLang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [
+                      "AR"
+                    ],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "كل يوم، أرسل هدايا إلى المذيعين في منطقة الشرق الأوسط وشمال إفريقيا للحصول على الجوائز التالية",
+                    "lang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "50000",
+                            "op_time": "1749114376",
+                            "offshelf_time": "2101455414",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-钱超杰",
+                            "isOnlyNeedNum": 1,
+                            "mp4_url": "",
+                            "__version": "7164372486680264995",
+                            "reward_name": "Schwimmring",
+                            "typeid": "1",
+                            "extra_type": "0",
+                            "id": "41053",
+                            "nickname_color": "",
+                            "reward_count": "1",
+                            "icon_url": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "1",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Schwimmring",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Sommer-Schwimmspaß",
+                            "reward_type": "41053",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "param": "夏季活动",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1749114856",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/4hc/075781.png"
+                          }
+                        ],
+                        "process_notice_lang": "📢 [مفاجآت الصيف اليومية]\n🎉 مبروك! لقد حصلت على طوافة ×1 في الفعالية.\n🌴✨ اكتشف المزيد من ميداليات الصيف، قلائد الصيف، وجوائز الألماس من خلال هذا الرابط:\n🔗 https://sl.bigo.tv/VGPxqs",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 1
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "50000",
+                            "op_time": "1749113859",
+                            "offshelf_time": "2075009975",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-钱超杰",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7164370367802340638",
+                            "reward_name": "Sommertraum",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "41049",
+                            "nickname_color": "",
+                            "reward_count": "2",
+                            "icon_url": "https://giftesx.bigo.sg/live/4hc/0YNUwf.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "1",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Sommertraum",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Mach deinen Sommertraum wahr",
+                            "reward_type": "41049",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "param": "DACH Summer daily task",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1749114482",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/4hc/0YNUwf.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/4hb/23jC5O.png"
+                          }
+                        ],
+                        "process_notice_lang": "📢 [مفاجآت الصيف اليومية]\n🎉 مبروك! لقد حصلت على ميدالية الصيف ×1 في الفعالية.\n🌴✨ اكتشف المزيد من ميداليات الصيف، قلائد الصيف، وجوائز الألماس من خلال هذا الرابط:\n🔗 https://sl.bigo.tv/VGPxqs",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 10
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "50000",
+                            "op_time": "1749114156",
+                            "offshelf_time": "2101455849",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-钱超杰",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7164371584087450141",
+                            "reward_name": "Lässiger Sommer",
+                            "typeid": "6",
+                            "extra_type": "0",
+                            "id": "41051",
+                            "nickname_color": "",
+                            "reward_count": "1",
+                            "icon_url": "https://giftesx.bigo.sg/live/4hc/08699K.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Lässiger Sommer",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Sieh, wie eine Welle einen Lichtstrahl reflektiert",
+                            "reward_type": "41051",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "param": "DACH 2025 Summer daily  task",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1749114529",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/4hc/08699K.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/4hc/17Oe6P.webp"
+                          }
+                        ],
+                        "process_notice_lang": "📢 [مفاجآت الصيف اليومية]\n🎉 مبروك! لقد حصلت على قلادة الصيف ×1 في الفعالية.\n🌴✨ اكتشف المزيد من ميداليات الصيف، قلائد الصيف، وجوائز الألماس من خلال هذا الرابط:\n🔗 https://sl.bigo.tv/VGPxqs",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 50
+                      }
+                    ],
+                    "groups": [],
+                    "index": 3,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "DE"
+                    ],
+                    "name": "🎊 مفاجآت الصيف اليومية",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

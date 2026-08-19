@@ -1,0 +1,962 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250704",
+      "20250705",
+      "20250706",
+      "20250707",
+      "20250708",
+      "20250709",
+      "20250710"
+    ],
+    "week": [
+      "20250630",
+      "20250707"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 08:25:36",
+    "now_zone": -3,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68654,
+      "act_name": "Summer Party ",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 1,
+      "is_ar_domain": 1,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-04 00:00:00",
+      "end_time": "2025-07-10 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "SA",
+        "IQ",
+        "MA",
+        "KW",
+        "EG",
+        "QA",
+        "DZ",
+        "AE",
+        "JO",
+        "LB",
+        "BH",
+        "OM",
+        "LY",
+        "PS",
+        "YE",
+        "TN",
+        "SY",
+        "SD",
+        "DJ",
+        "SO",
+        "BL"
+      ],
+      "selectedArea": [
+        "AR"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigolive.tv/live/4hp/1uWscua11af529d39e48e683908aa3cb4316e1ph.png?auth-token=JFL_n1LMeUWAGuU3cD3S4a4JSOoITu1R7dBNpLbbdNY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjU0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM4MjksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "right",
+              "type": "text",
+              "value": "انضم إلى حفلة الصيف الآن! العب إما 'فواكه' أو 'خضار'، وحقق نقاطًا بناءً على عدد الألماس الذي تنفقه في الألعاب. سيحصل أفضل 20 لاعبًا في كل من الترتيب اليومي والترتيب الاجمالي على كوبونات ألعاب مجانية عالية القيمة كمكافآت!\nملاحظات\n1.يتم احتساب النقاط على أساس: 1 ألماسة = 1 نقطة\n2- الجوائز سيتم اضافتها بشكل تلقائي في حسابك.\n3- كوبونات اللعبة صالحة لمدة 48 ساعة"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": " الترتيب اليومي ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dihAN",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AR"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 1,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 2000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 1,
+                    "auto_arr": [
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 1,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 2,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [
+                        {
+                          "startDateTime": "",
+                          "endDate": "",
+                          "originEndTime": "23:59:59",
+                          "originStartTime": "00:00:00",
+                          "startTime": "05:00:00",
+                          "endTime": "04:59:59",
+                          "originStartDateTime": "",
+                          "endDateTime": "",
+                          "originEndDateTime": "",
+                          "startDate": ""
+                        }
+                      ],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 1,
+                    "selectedArea": [
+                      "AR"
+                    ],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "right",
+                    "name": " الترتيب اليومي ",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655192",
+                      "create_time": "1750596584",
+                      "utime": "2025-06-22 20:49:44",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "小游戏白名单（all622）",
+                      "update_operator": "",
+                      "create_operator": "G6368",
+                      "frequency": "0",
+                      "update_time": "1750596584",
+                      "black_tasks_status": "0",
+                      "filter_id": "17618",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-06-22 20:49:44",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500655192",
+                    "bottominfo": 1,
+                    "prizeType": 3,
+                    "appointUidChangeReason": "11",
+                    "rankStyle": "2",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 75,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 60000000
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 50,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 30000000
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 25,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 15000000
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 5,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 8000000
+                      },
+                      {
+                        "rank_to": 20,
+                        "rank_from": 11,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 4,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 5000000
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "الترتيب الاجمالي",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "p6OMb",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AR"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 2000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 1,
+                    "auto_arr": [
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 1,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 2,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [
+                        {
+                          "startDateTime": "2025-05-20 03:27:55",
+                          "endDate": "2025-06-01",
+                          "originEndTime": "",
+                          "originStartTime": "",
+                          "startTime": "03:27:55",
+                          "endTime": "04:59:59",
+                          "originStartDateTime": "2025-05-19 22:27:55",
+                          "endDateTime": "2025-06-01 04:59:59",
+                          "originEndDateTime": "2025-05-31 23:59:59",
+                          "startDate": "2025-05-20"
+                        }
+                      ],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 3,
+                    "selectedArea": [
+                      "AR"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/07/04 00:00:00",
+                    "frontTextAlignStyle": "right",
+                    "name": " الترتيب الاجمالي",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655192",
+                      "create_time": "1750596584",
+                      "utime": "2025-06-22 20:49:44",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "小游戏白名单（all622）",
+                      "update_operator": "",
+                      "create_operator": "G6368",
+                      "frequency": "0",
+                      "update_time": "1750596584",
+                      "black_tasks_status": "0",
+                      "filter_id": "17618",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-06-22 20:49:44",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AE",
+                      "BH",
+                      "BL",
+                      "DJ",
+                      "DZ",
+                      "EG",
+                      "IQ",
+                      "JO",
+                      "KW",
+                      "LB",
+                      "LY",
+                      "MA",
+                      "OM",
+                      "PS",
+                      "QA",
+                      "SA",
+                      "SD",
+                      "SO",
+                      "SY",
+                      "TN",
+                      "YE"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500655192",
+                    "bottominfo": 1,
+                    "prizeType": 3,
+                    "end_time": "2025/07/10 23:59:59",
+                    "appointUidChangeReason": "11",
+                    "rankStyle": "2",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy2000.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 150,
+                            "free_level": 2000,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 200000000
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy500.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 240,
+                            "free_level": 500,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 150000000
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy500.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 100,
+                            "free_level": 500,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 100000000
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 40,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 30000000
+                      },
+                      {
+                        "rank_to": 20,
+                        "rank_from": 11,
+                        "prizes": [
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy200.png",
+                            "disabledID": false,
+                            "items_id": 5,
+                            "num": 15,
+                            "free_level": 200,
+                            "days": 2,
+                            "disabledNum": false,
+                            "isDayType": true,
+                            "type": 41
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 20000000
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,145 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 71367,
+      "act_name": "Vote for Next Month’s New Prestige Gift",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 1,
+      "start_time": "2025-08-21 13:55:00",
+      "end_time": "2025-09-01 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "Vote for Next Month’s New Prestige Gift!",
+        "appendixDesc": "Help us choose a new Prestige Gift for next month! The top pick will be celebrated with a special bonus of extra Prestige Points. Something exciting is on the way 👀",
+        "linkImg": "http://esx.bigo.sg/live/4he/01up950iootX.jpg?auth-token=BhPGKzewU74tF13oP1k2AUaVet7LlNzhLFjyrJ-Ve34:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1ODIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4he/01up95MNTTZQ.jpg?auth-token=Ipy8VCJL1P5PMORaEziH3qmVdCUwk1rq_4EkuX-lpOQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0NTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "US,CA",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "US",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Vote for Next Month’s New Prestige Gift",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 45,
+                    "title": "Golden Rose -- 100💎",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 46,
+                    "title": "Love Letter -- 10💎",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 47,
+                    "title": "Magic Ball -- 10💎",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 48,
+                    "title": "Dance with the Knight -- 1000💎",
+                    "sortIdx": 4
+                  },
+                  {
+                    "showId": "5",
+                    "id": 49,
+                    "title": "Family Treasure Box -- 99💎",
+                    "sortIdx": 5
+                  },
+                  {
+                    "showId": "6",
+                    "id": 50,
+                    "title": "Fountain -- 20💎",
+                    "sortIdx": 6
+                  }
+                ],
+                "id": 10,
+                "type": 1,
+                "title": "Vote for Next Month’s New Prestige Gift!",
+                "sortIdx": 1
+              }
+            ],
+            "description": "Help us choose a new Prestige Gift for next month! The top pick will be celebrated with a special bonus of extra Prestige Points. Something exciting is on the way 👀",
+            "startTime": "2025-08-21 00:00:00",
+            "id": 1443,
+            "endTime": "2025-09-01 00:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 1443
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

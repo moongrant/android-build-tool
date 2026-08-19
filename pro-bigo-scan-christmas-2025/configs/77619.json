@@ -1,0 +1,984 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251208",
+      "20251209",
+      "20251210",
+      "20251211",
+      "20251212",
+      "20251213",
+      "20251214",
+      "20251215",
+      "20251216",
+      "20251217",
+      "20251218",
+      "20251219",
+      "20251220",
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231",
+      "20260101",
+      "20260102",
+      "20260103",
+      "20260104",
+      "20260105",
+      "20260106",
+      "20260107",
+      "20260108"
+    ],
+    "week": [
+      "20251208",
+      "20251215",
+      "20251222",
+      "20251229",
+      "20260105"
+    ],
+    "month": [
+      "202512",
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77619,
+      "act_name": "Fiesta Lounge",
+      "state": 1,
+      "color": 1,
+      "theme": "white-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-08 00:00:00",
+      "end_time": "2026-01-08 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "30"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vb5qj00y33lYHC1YQWnr.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vb5Ye00y2TWPL01Ic7SA.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Apply to Host the Show",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://forms.gle/45HV4YjgFpExa1WZ6",
+              "openType": 2,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Hosting the Show",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "3960J",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vb5Ys00y2TWPL00wQgcm.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "40ruf",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vb5Z400y2TWPL01fAWoP.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Gifting",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "bgmLp",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "layer_content": [],
+                        "fn": 3,
+                        "popUpSure": "Confirm",
+                        "url": "",
+                        "openType": 1,
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": true,
+                            "sure": "",
+                            "name": "Top USCA Gifter Leaderboard",
+                            "range": [
+                              1
+                            ],
+                            "title": "",
+                            "attendModular": 1,
+                            "desc": ""
+                          },
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "Gifters' Lottery",
+                            "range": [
+                              4
+                            ],
+                            "title": "",
+                            "attendModular": 2,
+                            "desc": ""
+                          },
+                          {
+                            "checkAll": true,
+                            "sure": "",
+                            "name": "Lucky Draw (on \"Watching\" Tab)",
+                            "range": [
+                              3
+                            ],
+                            "title": "",
+                            "attendModular": 2,
+                            "desc": ""
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Sign Up to Join",
+                        "style": 0,
+                        "share_img": "",
+                        "layer_title": "",
+                        "canSignNum": 1
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "kBWUY",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vdZVR00y33lYHC185SSm.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "8x2Wi",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "PT",
+                      "ES"
+                    ],
+                    "num": 100,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 2,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "weekTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 diamond = 1 point ",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "Top USCA Gifter Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AO",
+                      "AR",
+                      "BB",
+                      "BO",
+                      "BR",
+                      "BS",
+                      "CL",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "DO",
+                      "EC",
+                      "GT",
+                      "HN",
+                      "JM",
+                      "KY",
+                      "MX",
+                      "NI",
+                      "PA",
+                      "PE",
+                      "PR",
+                      "PY",
+                      "SV",
+                      "TT",
+                      "UY",
+                      "VE"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "CA",
+                      "US"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "EqQvC",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [
+                      "PT",
+                      "ES"
+                    ],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 500,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "lottery_title": "Gifters' Lottery",
+                    "svip_area": "",
+                    "lottery_rule": "Give 500 Diamonds to LATAM Hosts = 1 Draw",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 4,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AO",
+                      "AR",
+                      "BB",
+                      "BO",
+                      "BR",
+                      "BS",
+                      "CL",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "DO",
+                      "EC",
+                      "GT",
+                      "HN",
+                      "JM",
+                      "KY",
+                      "MX",
+                      "NI",
+                      "PA",
+                      "PE",
+                      "PR",
+                      "PY",
+                      "SV",
+                      "TT",
+                      "UY",
+                      "VE"
+                    ],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 61.8856,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 0,
+                      "messageObj": {
+                        "imImg": "",
+                        "theme": "",
+                        "content": ""
+                      },
+                      "list": [
+                        {
+                          "prizes_num": "999",
+                          "rotate": "180deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "4.7571",
+                          "activity_all_cost": "14.2713",
+                          "win_real_rate": 9,
+                          "is_pay_prize": 0,
+                          "prize_name": "999 Beans",
+                          "consume_num": 0,
+                          "residue_num": 3,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "4",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "3",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "9",
+                          "textLeft": "-35px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "9999",
+                          "rotate": "108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "47.6143",
+                          "activity_all_cost": "47.6143",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "9999 Beans",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "4",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "1",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "36deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaOAQ00y33lYHC07yvq1.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 30,
+                          "is_pay_prize": 0,
+                          "prize_name": "DJ Dino",
+                          "consume_num": 0,
+                          "residue_num": 3,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "7",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "3",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "30",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "15"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-36deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vY6YK00y2TWPL00grNOK.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 30,
+                          "is_pay_prize": 0,
+                          "prize_name": "Fiesta Pendant",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "44747",
+                          "textTop": "-121.12712429686843px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "30",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-108deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vY6c800y2TWPL014mQ0J.png",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 30,
+                          "is_pay_prize": 0,
+                          "prize_name": "Fiesta Badge",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "44749",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "30",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "8"
+                        }
+                      ],
+                      "totalCost": "61.8856"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "CA",
+                      "US"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Watching",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "czd3S",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 900,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "lottery_title": "Fiesta Lounge",
+                    "svip_area": "",
+                    "lottery_rule": "Every 15 Minutes of Watching = 1 Draw",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 0,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 0,
+                      "messageObj": {
+                        "imImg": "",
+                        "theme": "",
+                        "content": ""
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vY6YK00y2TWPL00grNOK.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 9,
+                          "is_pay_prize": 0,
+                          "prize_name": "Fiesta Pendant",
+                          "consume_num": 0,
+                          "residue_num": 200,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "44747",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "200",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "9",
+                          "textLeft": "-35px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "108deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vQxxL00y33lYHC1AArLG.png",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "Candy Cane",
+                          "consume_num": 0,
+                          "residue_num": 99999,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "44169",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "40",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "36deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vRIcb00y2TWPL01bEc03.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 10,
+                          "is_pay_prize": 0,
+                          "prize_name": "Lounge Pendant",
+                          "consume_num": 0,
+                          "residue_num": 200,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "44211",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "200",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "10",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-36deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/01tOQ8nDmlQE.png?auth-token=UY-1HYAZ9pBvNTbxqlTD8schhf08dSlTYkXmKCXU_O0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NjE5LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NzMxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "Christmas Taillight",
+                          "consume_num": 0,
+                          "residue_num": 99999,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "44053",
+                          "textTop": "-121.12712429686843px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "40",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "-108deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vReur00y2TWPL011tFFG.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "Dino Coin Purse",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "7",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "30",
+                          "used_num": 0,
+                          "win_rate": "1",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "15"
+                        }
+                      ],
+                      "totalCost": "0.0000"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "US",
+                      "CA"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Fiesta Lounge Ambassadors"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 4,
+          "uid_arr": [
+            {
+              "uid": "690578408",
+              "text": ""
+            },
+            {
+              "uid": "856635789",
+              "text": ""
+            },
+            {
+              "uid": "862525498",
+              "text": ""
+            },
+            {
+              "uid": "401446365",
+              "text": ""
+            },
+            {
+              "uid": "667424173",
+              "text": ""
+            },
+            {
+              "uid": "856085201",
+              "text": ""
+            }
+          ],
+          "priority": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

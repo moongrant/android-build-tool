@@ -1,0 +1,480 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 70372,
+      "act_name": "Daily Recharge Shimmer Diamond Hunt",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-08-01 00:00:00",
+      "end_time": "2025-08-10 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PH"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "3"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/01uhPbULrdAo4.jpg?auth-token=e7vArWTBbqfyVnP4i4UPydBdjIDDqVXBl5gcHAxMnso:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzcyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1OTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Diamond Task",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "uR2WF",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          3,
+                          5
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 100,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "Recharge 100 Diamonds = 1 Task Point",
+                    "lang": [
+                      "PH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "999999",
+                            "op_time": "0",
+                            "offshelf_time": "1918004681",
+                            "vm_price": "0",
+                            "op_user": "",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "6563725051760206908",
+                            "reward_name": "Love Medal",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "22781",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/3s2/0AqxMI.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "1",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Love Medal",
+                            "is_lock": "0",
+                            "text_color": "",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Obtained through the Beating Heart event.",
+                            "reward_type": "22781",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "1",
+                            "param": "多人房活动",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1602471877",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/3s2/0AqxMI.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://giftesx.bigo.sg/live/3s2/0L18cu.png"
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 1
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": 1,
+                            "reward_max_limit": "3199",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "typeid": -1,
+                            "reward_count": "2"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 4
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": 1,
+                            "reward_max_limit": "1099",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "typeid": -1,
+                            "reward_count": "7"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 7
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": 1,
+                            "reward_max_limit": "199",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "typeid": -1,
+                            "reward_count": "30"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 36
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": 1,
+                            "reward_max_limit": "59",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "typeid": -1,
+                            "reward_count": "70"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 5,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 46
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": 1,
+                            "reward_max_limit": "29",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "typeid": -1,
+                            "reward_count": "150"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": true,
+                        "level": 6,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 86
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "selectedArea": [],
+                    "name": "Daily Shimmer Diamond Hunt",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Rewards & Mechanics",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Lox95",
+                  "formData": {
+                    "img": "http://esx.bigo.sg/live/4hd/01uhNa45bNrf8.png?auth-token=auxVTuWOrglRmMVnhI8q4dDjv3s8uOQLWVOwBXymvXc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzcyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwNTgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "👇🏻💎 Scan & Go 💎👇🏻"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uhNDMd38a03440756414d814c398d49678b54ph.png?auth-token=Ak7yXUh0VoMzthpszMKz9eMFYKpYSiPN5jXUSxEax38:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzcyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "BIGOLIVE reserves the right of final interpretation for this event. This event has nothing to do with Apple Inc."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80025"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

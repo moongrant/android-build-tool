@@ -1,0 +1,882 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 14:26:08",
+    "now_zone": -9,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1,
+        2,
+        3
+      ],
+      "id": 68604,
+      "act_name": "2025年 Mid-Year GALA　ライバー戦攻略本",
+      "state": 1,
+      "color": 1,
+      "theme": "white-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-04 00:00:00",
+      "end_time": "2025-07-12 16:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "JP"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "#cda87e",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "40"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWczT29f25efc355d4e6c9010ebc21cf28c4aph.jpg?auth-token=3-bOfbC4hG2hZX-8W03hNMgu_tie1d6jaWRQKfM02BA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5NjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "スケジュール",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "uac7B",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "開催期間"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "hfYP2",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uX1FDae1259ab52024f1c951c882016bfb6e0ph.png?auth-token=VJpAgZCDh6BM-q88xnzLG3_V09_TX6Cfhu4v23TzDgI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4MjEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "IkxFt",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "スケジュール"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "DfzJR",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uX0dz11b83730314e46df9be95fb5d3823b3eph.png?auth-token=t6DX9vJnQbDZdaEI-5bbwHq_2wUmKoSgZOk_llQx6ok:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1NTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "詳細",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "szvPk",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "参加対象・方法",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "osRNd",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "参加対象者"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "t6KQS",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uX0lx59121c5faf674acbba6fb569003b9d09ph.png?auth-token=LLbNDnXjThwYX7jlLx0LL5qMi65VVd_nPd_Obz_g15E:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQzNjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "wNMIe",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "参加方法"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "LyyRe",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uX0n6ace66e891b9e46e3869dab3d08b5f214ph.png?auth-token=onzywhNx-AVPqiygpZaLu4D0K5-TVlxPcaQgdNzXWc4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "e6Hwv",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "対象ギフトについて"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "h6K4g",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uX0nE0019a4487df742a9a560346b5db799bbph.png?auth-token=caM38wv9XueaBJIvT5e05NX-qUCXlrYK1lXtlqRSTjY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5MDQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "syAja",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uWdk189b024a75e8348caa71c93e3dab029d3ph.png?auth-token=fVCwPWRkBhb2PMikRrteAKaztv0_SH9EUEs2t-WNFQs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "faDnC",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uWdkDf3bb7aa0649346e489989552db6965f2ph.png?auth-token=BhigJDdbMCmWboLbokpPfvkro82lY3gA71QEmKc8wu0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQyOTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "2sAPZ",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uWdlSac1768de3d384c619cab5d30502ad5d0ph.png?auth-token=hIxfux0XFlKVVSIm2saHowUVGjKlQSd6VCycLpSQ-V0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4MDEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "進出人数",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "BAIWG",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "各レースの進出人数"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "pj7zv",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uX0oXf14b05bd42904e458adad1b710bbe3d8ph.png?auth-token=vis7vtZu1WcgI66HmAEG83--xAK8jK_cdQyour05a-E:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzNzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ノルマ・報酬",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Y9JQL",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "決勝以外",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "6wxTd",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "進出戦ラウンド1"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "WgxQc",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0pD2e36f80593474bf391e9c13323768d78ph.png?auth-token=2Xnq3E7iD7JwA9ijTKgnAaGz1_EuBk_pcD2CJA-nb4k:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwMTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "LlBYW",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "進出戦ラウンド2"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "mo4Fa",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0pN9ecc36c304434378beb4f73a1c0445f1ph.png?auth-token=DXm9GzkKOmnqmwbdbT9x5pDlJytBa2i9u6FWTNBQz08:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU2NzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "ujSui",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "スプリント戦"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "1jXdJ",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0pZ5c79d5661bbc40c88a437f883beeebb4ph.png?auth-token=jOYcocIJy23csPdqdx99BUDiYHiArnydYX_VpWmkQIc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1MjQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "PrIZn",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "復活戦"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "v687W",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0pg0776f32955bd4e91921de4453505a834ph.png?auth-token=2k_eJlmK4vz7THOh7gBT2Kcoch9JAFAvGEk_ugG68nc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcyMzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "KRzDH",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "準決勝戦ラウンド1"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "tJlNQ",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0pxc4a2445525e6447b9df060a5f0359401ph.png?auth-token=6gYSfX1acMCTtP_oWhuE_TeOpABB4jrc49TVcto4DWE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2NTcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "oRw5M",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "準決勝戦ラウンド2"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "nKVcn",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0q364b3f63b7e0f4fb5b0dfb093831e57dbph.png?auth-token=10edXlXAHbZyWYk2cJJzPrCAeOvOwPArTSox400uVu4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2NDAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "決勝・グローバル",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "XLvho",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "地域決勝戦注意事項"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "vYgat",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0r573117f7812494edc8bd2affd0a46ac64ph.png?auth-token=AuRgMm4_fx0PRaM5f7jJhYQyHR5DRIZ2anN7Z7arAG4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4ODYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "98P4f",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "地域決勝戦（基本ノルマ・報酬）"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "elLxk",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0t8ca69e96d2edf4efb9e787938a1f886e9ph.png?auth-token=CqRIQLW7sD0jdRj2t4y0mUR5_yMv6Ie2UzVyK7trtjQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ0ODUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "yiH3j",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "地域決勝戦追加報酬"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "jhpAX",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0tFfd8f36fa1b2c4502803fbf82951a2adeph.png?auth-token=_wsz1SSQNCSIIQdAp0oyE60oyjyfp4KftnbRf2cliHI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1ODIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "kx4oD",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "大陸間チャレンジランキング"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "gZqdN",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0tT2ac1918e1a6e45bbb55ee4e2dfce2370ph.png?auth-token=4LGvevxMKIjhksNTHcGa2OwYM0ZgPxnQ4Au3ObtRUC4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NDMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "hTHqF",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": "グローバル戦ランキング"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "Wucev",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX0te09a9d229786e429ab552ff639e55531aph.png?auth-token=2_3j8R-6iVkAV-RVP6742lzBTLo-XcFd7LvqKVLB4S0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxMTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "その他",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "h8tKN",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "サブ遊び方",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "gtxGh",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "ライバー向け",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "WLqhk",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX1BP5fc15fab317b497c84b30cd3d3bcadc5ph.png?auth-token=4y7T93UJntMftxWZ6nPSQAugL5HeTS1ffsb0culWhRY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3MzAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "ZDSZk",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX1Kce82f7f5726a44b40885e34fb06082d48ph.png?auth-token=-dI5K-JOAUCyjCsgZmF6XXExPzv643avbI_KChtbhwo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2NjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "リスナー向け",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "0mgEL",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX1D13809d19e5bcc4bfcb8401ef3ef0532c1ph.png?auth-token=x1nu_l5jkuI5i_n4TCubcqy_6hOoZsnl3_EbOM7kPMA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1MDMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "cLesZ",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uX1D845d9784f176d44608e3658ff3498da1cph.png?auth-token=mWeJPUssnfFMzc-aoekio8TDtaYzkHPz0jBi7aBEJ64:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3MzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "特典展示",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "wDI7n",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "イベント特典（一部紹介）"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "hgRDV",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uWeH5f909a8d8217c4d17b4c6c330cab63893ph.png?auth-token=oI1krt_RwYqLlKwNORrkyoaq3j4O9oGrSwlSuVAFPr8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzMDYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "xXdFQ",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uX1Dk103cd52de57141cd85ba8367ff9c4084ph.png?auth-token=4wzy0qpZJ6Mwm61XZvCsaTJlRkMjkYS4h-ausMsYvsw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "iOOSA",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": "注意事項"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "t7fCS",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uX1E0026fad8697bd4ceabf9e103c9c5d1e79ph.png?auth-token=c20vPb4IkSGs-w216SZfCA0TURmRwelPIji0MPasLW0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NjA0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxMjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

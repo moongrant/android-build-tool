@@ -1,0 +1,124 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 05:26:24",
+    "now_zone": 0,
+    "leave_time": 8879616,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78358,
+      "act_name": "UK Hostspotlight Event",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-24 00:00:00",
+      "end_time": "2026-11-30 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "GB",
+        "IE"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "3"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vY1RA00y2TWPL023BkWW.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Sign up for Weekday UK Hostspotlight",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/act-49334/index.html#/apply49334/1950",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "Registration does not guarantee a slot. Please wait for the official confirmation, which will be sent to your agency group.\n"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,452 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260204",
+      "20260205",
+      "20260206",
+      "20260207",
+      "20260208",
+      "20260209",
+      "20260210",
+      "20260211",
+      "20260212",
+      "20260213",
+      "20260214",
+      "20260215",
+      "20260216",
+      "20260217",
+      "20260218",
+      "20260219",
+      "20260220",
+      "20260221",
+      "20260222",
+      "20260223",
+      "20260224",
+      "20260225",
+      "20260226",
+      "20260227",
+      "20260228"
+    ],
+    "week": [
+      "20260202",
+      "20260209",
+      "20260216",
+      "20260223"
+    ],
+    "month": [
+      "202602"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78957,
+      "act_name": "🎬 才藝出擊｜發帖金豆挑戰賽",
+      "state": 0,
+      "color": 1,
+      "theme": "pink",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-02-04 00:00:00",
+      "end_time": "2026-02-28 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PH",
+        "TW",
+        "CN",
+        "HK",
+        "MO"
+      ],
+      "selectedArea": [
+        "CN"
+      ],
+      "frontCustomBgColor": "#ff3b88",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "🎬 才藝出擊｜發帖金豆挑戰賽",
+        "appendixDesc": "等你挑戰",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaqYc00y33lYHC1ZXvLw.png"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "3"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vn6Rr00y2TWPL01kemLl.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "🎉來發帖賺金豆",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "IqEvb",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "歡迎主播來挑戰！"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "s4qMp",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "發帖也能賺金豆？你的才藝值得全場看見！"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "🎯 活動說明:\n無論你會唱歌、跳舞、樂器、搞笑、化妝、變裝……發帖也能成為焦點！\n\n所有主播（總策五除外） ！只要在活動期間內上傳才藝影片，就有機會登上排行榜，贏得金豆獎勵！\n\n***如沒有發帖權限，請聯繫官方人員開通～\n\n📋 活動規則\n參與對象：所有主播（總策五除外） \n\n▶️ 統計維度：\n貼子點讚數1人=1分 \n貼子分享數1人=1分\n\n⚠️點擊個人頁面右下角，如果有+號按鈕，則表示可以發帖，如果無法發帖請聯繫官方人員開通權限！\n\n⬇️也可以點擊下面的立刻發帖，看一下是否有發帖的資格哦⬇️"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Zms2I",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "👉 點擊立刻發帖",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "bigolive://myposts",
+                        "layer_title": "",
+                        "canSignNum": 0,
+                        "openType": 1
+                      },
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "發帖例子查看👈",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://static-fed.bigolive.tv/live/pages/bigolive/act-85008-TgX2wL/index.html",
+                        "layer_title": "",
+                        "canSignNum": 0,
+                        "openType": 1
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "💰 發帖獎勵",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Hdapr",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "*有效上榜人數需>=50人，才可解鎖獎勵TOP11～20名，否則只會獎勵TOP10\n*主播榜單分數至少>=5 才可視為有效上榜，才可領獎\n\n⚠️ 發帖子的時間必須是活動開始後的時間，才會計為有效帖子喔～\n最終會看加總排名喔～\n\n"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ra8fY",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1ubFSU5262a1fceaee44c6aabc3804d983f392ph.png?auth-token=ApyN0VNWEq0CaTDoTVPM9UnSZpm1TGLhm4SjGgNS3Lg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4OTU3LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0NTU2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "主播排名",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "DsyLW",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "⚠️投稿條件：\n1）發佈 20～60 秒 的 直式影片（720p 以上）\n2）題材不限才藝類，如：唱跳、樂器、脫口秀、變裝、教學等\n3）不可使用浮水印、過濾過重、螢幕錄影、雜音影片\n4）背景需乾淨明亮\n5）需帶上話題 #才藝SHOW  "
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "記得發帖的時間必須是活動開始之後才計算為有效帖子喔！"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "DZV8k",
+                  "formData": {
+                    "rankType": 1,
+                    "onlyCharge": true,
+                    "mode": 1,
+                    "isOnScore": 1,
+                    "dateType": 4,
+                    "appType": 1,
+                    "rankName": "帖子金豆挑戰賽",
+                    "rank": 999,
+                    "text": "發帖需帶上話題👉 #才藝SHOW",
+                    "info": [
+                      {
+                        "max": 100000,
+                        "from": 1,
+                        "to": 1,
+                        "type": 1
+                      },
+                      {
+                        "max": 100000,
+                        "from": 1,
+                        "to": 1,
+                        "type": 3
+                      }
+                    ],
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "postType": [
+                      1,
+                      2,
+                      5
+                    ],
+                    "index": 1,
+                    "postId": "6949086897349226052",
+                    "selectedArea": [
+                      "CN"
+                    ],
+                    "countryList": [
+                      "TW",
+                      "CN",
+                      "HK",
+                      "MO"
+                    ],
+                    "tieba_font_num": 999,
+                    "isSign": 0,
+                    "isDepu": 2,
+                    "weeklyConfig": 1,
+                    "userFansNumsRange": [],
+                    "circleId": "",
+                    "countType": "",
+                    "isOnUserInfo": 0
+                  },
+                  "type": "tieba",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "發帖需添加 👉 #才藝SHOW",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "M5kDH",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uggXX6b49e0851c134a33bbf124540dae7c33ph.jpg?auth-token=fkoTti9OF418-F9RooSXDbZxL0rSoi4qHnFlRe45Tl8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4OTU3LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2OTA5LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ZLZCP",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uggXo84f11ff5e8c142ba837688e499881f8fph.jpg?auth-token=FBVVA746xcmHCG-bSqVK13Kz09mZ_vRZgWWm6HY1VF0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4OTU3LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NjY5LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "⚠️特別注意",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "rcNvs",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "❗ 禁止事項包括但不限於：抄襲、重複洗稿、使用濾鏡過重、誘導性內容、假人操作、浮水印影片、內容無關才藝等\n🔔 違規通知將透過系統即時發送，請務必遵守平台規範\n"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": ""
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

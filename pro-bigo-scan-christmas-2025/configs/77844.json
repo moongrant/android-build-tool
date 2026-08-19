@@ -1,0 +1,703 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229"
+    ],
+    "week": [
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 16:25:36",
+    "now_zone": -11,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77844,
+      "act_name": "PRE SVIP Exclusive Event: Level UP!",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-24 00:00:00",
+      "end_time": "2025-12-29 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "#F8FAFF",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "12"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTa1R00y2TWPL0233bJo.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "👑 Level UP! 👑",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "65qbu",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Event Instructions "
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "🌟 Each PRE-SVIP user can use their SVIP Points to spin.\n🌟 Every 5 SVIP Points = 1 spin.\n🌟 Each spin you make, earns you a spot on the ranking board.\n\n✨ The Top 5 PRE-SVIP users will take home the top rewards! "
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "xBvwW",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTcNr00y2TWPL012U4Ao.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "IBnJV",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AU"
+                    ],
+                    "num": 100,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Users' ranking placement will be based on the number of spins!",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "svip_area": "9",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [
+                      "0"
+                    ],
+                    "index": 2,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "left",
+                    "name": "Ranking Leaderboard ",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AS",
+                      "AU",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GU",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AS",
+                      "AU",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GU",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "appoint_uid_source": 2,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [
+            "AU"
+          ],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang626",
+              "change": 5,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 42,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 1000,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "SVIP积分",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "👑 Level UP! 👑",
+          "svip_area": "9",
+          "lottery_rule": "5 SVIP Points = 1 Spin",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [
+            "0"
+          ],
+          "index": 1,
+          "selectedArea": [
+            "AU"
+          ],
+          "anchor_whitelist_status": 0,
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 0,
+            "consumeCost": "0.00",
+            "messageConfigure": 0,
+            "messageObj": {
+              "imImg": "",
+              "theme": "",
+              "content": ""
+            },
+            "list": [
+              {
+                "prizes_num": "300",
+                "rotate": "180deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTbZw00y33lYHC1T2pxt.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "Christmas Pendant",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "23150",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "300",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "-35px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "300",
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTbaw00y33lYHC0OPD4A.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "Christmas Skin",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "25880",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "300",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "300",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTbdr00y2TWPL01sFn7t.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "Winter Pendant",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "44387",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "300",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "300",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/03BAUx.png?auth-token=jEvoSbZbWiH5eMVYu52lb1cJdaXyYXm5YKcrJZLdx64:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3ODQ0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MzM2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "Merry Christmas",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "23151",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "300",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": "300",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTbfi00y2TWPL01gGkA1.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "Winter Pendant 2",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "44389",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "300",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "300",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTbic00y2TWPL01ZPsOC.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "Christmas Bubble",
+                "consume_num": 0,
+                "residue_num": 300,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "25883",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "300",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "300",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTbl800y2TWPL00iZaQq.png",
+                "is_bottom_prize": 1,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "ANZ Sticker",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "44385",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "15"
+              }
+            ],
+            "totalCost": "0.0000"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "AS",
+            "AU",
+            "CK",
+            "FJ",
+            "FM",
+            "GU",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 2,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Event Countdown",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "SWqvu",
+                  "formData": {
+                    "end_desc": "Good luck and thank you for participating!"
+                  },
+                  "type": "countdown",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "活动最终解释权归BIGOLIVE所有, 本次活动与Apple Inc.无关。"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

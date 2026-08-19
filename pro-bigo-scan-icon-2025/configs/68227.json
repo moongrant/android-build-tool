@@ -1,0 +1,837 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68227,
+      "act_name": "BBR - July Massive 59% Auto Rebate",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-01 00:00:00",
+      "end_time": "2025-07-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1tlbt172cf30acf3854eeb864e9d85396be750ph.jpg?auth-token=RifCb8HV_fjH-ymbPeM3ezmWesxEtxQMZYitbrSw-08:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjI3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2MTUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Exclusive Rewards - Massive 59% Auto Rebate"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "💥 Important: This exclusive event is only for selected BIGO BEAN RUSH creators!  \n\nBefore joining, please confirm your participation with your BIGO Admin to ensure your rewards are processed smoothly. Unconfirmed participants may not receive rewards. "
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "📅 Event run dates: 07/01-07/31\n⏰ Event run time: 00:00 AM PDT - 11:59 PM PDT.\n\n🟡 Rewards Structure \nLv. 1 – If 5,000 beans received, get 2,950 beans reward.\nLv. 2 – If 12,500 beans received, get extra 4,425 beans reward.\nLv. 3 – If 20,000 beans received, get extra 4,425 beans reward.\nLv. 4 – If 30,000 beans received, get extra 5,900 beans reward.\nLv. 5 – If 40,000 beans received, get extra 5,900 beans reward.\nLv. 6 – If 50,000 beans received, get extra 5,900 beans reward.\nLv. 7 – If 80,000 beans received, get extra 17,700 beans reward.\nLv. 8 – If 100,000 beans received, get extra 11,800 beans reward.\nLv. 9 – If 200,000 beans received, get extra 59,000 beans reward.\nLv. 10 – If 300,000 beans received, get extra 59,000 beans reward."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "800403739",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 300000,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "This exclusive event is available only to selected creators from BIGO BEAN RUSH.  ",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "US",
+            "CA"
+          ],
+          "appoint_uid": 1,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "Congrats for completing Lv1!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "2950"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.1! Receive 7,500 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 5000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv2!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "4425"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.2! Receive 7,500 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 7500
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv3!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "4425"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.3! Receive 10,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 7500
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv4!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "5900"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.4! Receive 10,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 4,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 10000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv5!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "5900"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.5! Receive 10,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 5,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 10000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv6!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "5900"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.6! Receive 30,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 6,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 10000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv7!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "17700"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.7! Receive 20,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 7,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 30000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv8!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "11800"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.8! Receive 100,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 8,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 20000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv9!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "59000"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.9! Receive 100,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 9,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 100000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv10!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "59000"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.10! Receive 120,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 10,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 100000
+            }
+          ],
+          "groups": [],
+          "index": 1,
+          "raskType": 1,
+          "selectedArea": [
+            "US"
+          ],
+          "name": "Massive 59% Auto Rebate",
+          "countType": 5,
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Exclusive Rewards - 59% Auto Rebate"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "🟡 Rewards Structure 2:\nLv. 1 – If 420,000 beans received, get extra 70,800 beans reward.\nLv. 2 – If 550,000 beans received, get extra 76,700 beans reward.\nLv. 3 – If 750,000 beans received, get extra 118,000 beans reward.\nLv. 4 – If 1,000,000 beans received, get extra 147,500 beans reward.\nLv. 5 – If 1,250,000 beans received, get extra 147,500 beans reward.\nLv. 6 – If 1,500,000 beans received, get extra 147,500 beans reward.\nLv. 7 – If 1,750,000 beans received, get extra 147,500 beans reward.\nLv. 8 – If 2,000,000 beans received, get extra 147,500 beans reward.\n\nThe maximum reward you can receive is 1,180,000 beans."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "800403739",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "This exclusive event is available only to selected creators from BIGO BEAN RUSH.  ",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "US",
+            "CA"
+          ],
+          "appoint_uid": 1,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "70800"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.1! Receive 130,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 420000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "76700"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.2! Receive 200,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 130000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "118000"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.3! Receive 250,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 200000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "147500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.4! Receive 250,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 4,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 250000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "147500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.5! Receive 250,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 5,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 250000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "147500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.6! Receive 250,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 6,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 250000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "147500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.7! Receive 250,000 more beans to unlock more rewards. ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 7,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 250000
+            },
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "999",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "147500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "You've reached Lv.8! ",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 8,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 250000
+            }
+          ],
+          "groups": [],
+          "index": 2,
+          "raskType": 1,
+          "selectedArea": [
+            "US"
+          ],
+          "name": " Exclusive Rewards - 59% Auto Rebate",
+          "countType": 5,
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,1431 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250715",
+      "20250716",
+      "20250717",
+      "20250718",
+      "20250719",
+      "20250720"
+    ],
+    "week": [
+      "20250714"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 69196,
+      "act_name": "Recharge Bonus",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-15 00:00:00",
+      "end_time": "2025-07-20 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "25",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 1,
+      "black_uids_id": "1500655487"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1ubSaec9884fc989d749a7a02cedd6bc0be8c8ph.jpg?auth-token=8oT9cd-M3vEhhlhxchrlzf4h-nBWcdiUljcIGR8Mi6s:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1NzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Thank you for Sign up",
+                  "name": "Leaderboards",
+                  "range": [
+                    6,
+                    12
+                  ],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Sign Up Here",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "1 💎 Recharge = 1 Point on leaderboard"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Recharge Leaderboard",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Qcmxh",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "🏆 Top 1 on Daily Leaderboard will receive a DINO T-Shirt! \n1 Diamond Recharge = 1 Point Received on Leaderboard"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "itjPc",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 100,
+                    "threeRechage": [],
+                    "dailyCycleEndTime": "23:59:59",
+                    "globalinfo": 0,
+                    "section": 6,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 30000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          5
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "threeRechage": [],
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 6,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/07/15",
+                    "frontTextAlignStyle": "left",
+                    "name": "Daily Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "rankTo": 10,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "CA",
+                      "US"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 2,
+                    "end_time": "2025/07/18",
+                    "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+                    "dailyCycleStartTime": "00:00:00",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 500,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 100000
+                      },
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 3000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 300000
+                      },
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 15000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 800000
+                      },
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 20000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 1000000
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": 6,
+                    "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+                    "prize_arr_v3": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 500,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 100000
+                      },
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 3000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 300000
+                      },
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 15000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 800000
+                      },
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 20000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 1000000
+                      }
+                    ],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Grand Recharge Leaderboard",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "KBtcU",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 100,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          5
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "🏆  Top 1–3 on Grand Leaderboard can get an extra Rockstar Dino! Top 4–5  will receive a Dino Coffee Cup!",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 12,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/07/15 00:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "Personal leaderboard title",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "CA",
+                      "US"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 1,
+                    "end_time": "2025/07/18 23:59:59",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 5000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 4000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 3000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 4,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 2000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 5,
+                        "rank_from": 5,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 1000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": 6,
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Lucky Spin Wheel",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Zqcyf",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "lottery_timerange_endTime": 1752908399,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "lottery_timerange_startTime": 1752562800,
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          5
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 8000,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "lottery_title": "Lucky Spin Wheel",
+                    "svip_area": "",
+                    "lottery_rule": "8,000 Diamonds recharge = 1 Free Spin Wheel Ticket\nMaximum 10 plays per day.",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 13,
+                    "start_time_stamp": 1752562800000,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "start_time": "2025-07-15T07:00:00.000Z",
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 329.505,
+                      "consumeCost": "20.50",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://esx.bigo.sg/live/4hp/1ubSfibb349d8ca1e341ce9cbe39162be4d2d3ph.jpg?auth-token=6nwzpwJXRUfn-q5uuw6zmFoiwK5CR_qXuWI4KIUfr5A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNDYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                        "theme": "Spin to Win Rewards Now!",
+                        "content": "Congratulations! You have just won a free spinning wheel ticket from the BIGOPay Bonus event!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1ua4vSf656ef6b1dac4e9a9d0cbe1cc7c84eb7ph.png?auth-token=LxB6m3lm5LbieYwfOOAbPqZKwNrpEDZQ20MQknu0z6A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU2MjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "Gala Crown",
+                          "consume_num": 32,
+                          "residue_num": 99967,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "41539",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 32,
+                          "win_rate": "40",
+                          "textLeft": "-35px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": "10",
+                          "rotate": "108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.1667",
+                          "activity_all_cost": "83.3500",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 10",
+                          "consume_num": 38,
+                          "residue_num": 462,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "1",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "500",
+                          "valid_days": "0",
+                          "used_num": 38,
+                          "win_rate": "40",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "20",
+                          "rotate": "36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.3333",
+                          "activity_all_cost": "99.9900",
+                          "win_real_rate": 14.000000000000002,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 20",
+                          "consume_num": 15,
+                          "residue_num": 285,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "1",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "300",
+                          "valid_days": "0",
+                          "used_num": 15,
+                          "win_rate": "14",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "50",
+                          "rotate": "-36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.8333",
+                          "activity_all_cost": "83.3300",
+                          "win_real_rate": 4,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 50",
+                          "consume_num": 5,
+                          "residue_num": 95,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "1",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "100",
+                          "valid_days": "0",
+                          "used_num": 5,
+                          "win_rate": "4",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "100",
+                          "rotate": "-108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "1.6667",
+                          "activity_all_cost": "83.3350",
+                          "win_real_rate": 2,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 100",
+                          "consume_num": 3,
+                          "residue_num": 47,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "1",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "50",
+                          "valid_days": "0",
+                          "used_num": 3,
+                          "win_rate": "2",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "11"
+                        }
+                      ],
+                      "totalCost": "350.0050"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "lang": [
+                      "US",
+                      "CA"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "end_time": "2025-07-18T07:00:00.000Z",
+                    "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "end_time_stamp": 1752822000000,
+                    "rankStyle": "1",
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 1,
+                    "countType": 6,
+                    "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Recharge Spin Wheel",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Sf8sU",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "lottery_timerange_endTime": 1752908399,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "lottery_timerange_startTime": 1752562800,
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          5
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 30000,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 5,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "lottery_title": "Recharge Spin Wheel",
+                    "svip_area": "",
+                    "lottery_rule": "30,000 Diamonds recharge = 1 Free Spin Wheel Ticket\nMaximum 5 plays per day.",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 14,
+                    "start_time_stamp": 1752562800000,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "start_time": "2025-07-15T07:00:00.000Z",
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 9550.4897,
+                      "consumeCost": "31.67",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://esx.bigo.sg/live/4hp/1ubSfve77e926e019a4f89900c2bb4b072ee9aph.jpg?auth-token=K5ko1_bfcoCetNyIE6Dy8JnC3Oa9UBPN2QobyRPh6oY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwNTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                        "theme": "Spin to Win Rewards Now!",
+                        "content": "Congratulations! You have just won a free spinning wheel ticket from the BIGOPay Bonus event!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": "50",
+                          "rotate": "180deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 1,
+                          "prize_cost": "0.8333",
+                          "activity_all_cost": "8332.1667",
+                          "win_real_rate": 60,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 50",
+                          "consume_num": 4,
+                          "residue_num": 9995,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "1",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "0",
+                          "used_num": 4,
+                          "win_rate": "60",
+                          "textLeft": "-35px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "200",
+                          "rotate": "108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "3.3333",
+                          "activity_all_cost": "199.9980",
+                          "win_real_rate": 23,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 200",
+                          "consume_num": 4,
+                          "residue_num": 196,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "1",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "60",
+                          "valid_days": "0",
+                          "used_num": 4,
+                          "win_rate": "23",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "300",
+                          "rotate": "36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "5.0000",
+                          "activity_all_cost": "150.0000",
+                          "win_real_rate": 12,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 300",
+                          "consume_num": 3,
+                          "residue_num": 97,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "1",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "30",
+                          "valid_days": "0",
+                          "used_num": 3,
+                          "win_rate": "12",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "500",
+                          "rotate": "-36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=f00V3-UqtPEorQxzrfLzJfLhChnpmM76Uoi1sUA-_7Q:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "8.3333",
+                          "activity_all_cost": "41.6665",
+                          "win_real_rate": 4,
+                          "is_pay_prize": 0,
+                          "prize_name": "💎 X 500",
+                          "consume_num": 0,
+                          "residue_num": 10,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "1",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "5",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "4",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "-108deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1ubPuWa60820f5e4ea410ea8a0cae00dcf1750ph.png?auth-token=tnz4jotiOwQQFUNIo0LFhVCwNMcE1s6kaqgLtSj0g48:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTk2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1MzksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "Blue Shaved Ice",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "11234",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "",
+                          "used_num": 0,
+                          "win_rate": "1",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "15"
+                        }
+                      ],
+                      "totalCost": "8723.8312"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "lang": [
+                      "US",
+                      "CA"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "end_time": "2025-07-18T07:00:00.000Z",
+                    "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "end_time_stamp": 1752822000000,
+                    "rankStyle": "1",
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 1,
+                    "countType": 6,
+                    "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,901 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68033,
+      "act_name": "BIGO BEAN RUSH - Bean to Win Dino Raffle",
+      "state": 1,
+      "color": 6,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-07-01 00:00:00",
+      "end_time": "2025-07-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "28",
+      "is_go_onelink": 0,
+      "theme": "red",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1udxi5972be4649d7142c2bdf4caafd0ee8f3eph.jpg?auth-token=ezGGLhWqLlFsL3bG6lRPG2-L8ntebcx9Au1bQEpQldQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3MjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=69388&slink_hash=oeDVG7",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1udxiWd1f118ae484949149ab00d292ab595d1ph.png?auth-token=KCQPdykVxqD5lNKpLH9m6JUqFWjNaJciMLKHmGkMxzo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxMzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Bean-to-Win Dino Raffle"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "text",
+              "value": "For Selected BIGO BEAN RUSH Creators Only"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "📅 Event run dates: 07/21-07/31\n"
+            },
+            {
+              "frontTextStyle": "fill",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "1000 Beans Received = 1 Raffle Ticket"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "Earn 1 raffle ticket for every 1,000 beans you collect during the event period. Each ticket gives you a chance to win exclusive Dino merch and bonus beans in our lucky draw!"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "Prize Pool"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "text",
+              "value": "Pride Dino x 1\nBlue Dino x 2 \nDino Key Chain x 5\n1000 Beans x 5\n100 Beans x 160\nDino Entrance Effect x 200\nVirtual Pendant – Ocean Mystery x 500\n"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "lottery_timerange_endTime": 1754031599,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "lottery_timerange_startTime": 1753081200,
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang087",
+              "change": 1000,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            }
+          ],
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": true,
+          "lottery_title": "Bean-to-Win Dino Raffle",
+          "svip_area": "",
+          "lottery_rule": "1000 Beans Earned = 1 Spin",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "start_time_stamp": 1753081200000,
+          "index": 3,
+          "selectedArea": [
+            "US"
+          ],
+          "start_time": "2025-07-21T07:00:00.000Z",
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": false,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500655623",
+            "create_time": "1752886835",
+            "utime": "2025-07-19 09:00:35",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "BBR Rebate1000 7/20",
+            "update_operator": "",
+            "create_operator": "12512",
+            "frequency": "0",
+            "update_time": "1752886835",
+            "black_tasks_status": "0",
+            "filter_id": "18058",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-07-19 09:00:35",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 9.521499999999989,
+            "consumeCost": "90.48",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://esx.bigo.sg/live/4hp/1ucttPba57acf786ad42738096fd208798fa28ph.jpg?auth-token=auwVfm3WEJI6obxuHBiq2CyJU4ijpn2OyNkAQLioy0k:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ4NzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "theme": "🎉 Congratulations!",
+              "content": "You’ve earned 1 raffle ticket and a chance to win exclusive Dino merch and beans! Keep streaming to collect more chances!"
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://esx.bigo.sg/live/4hd/11tVoooRyaLAL.png?auth-token=qFX6Ob9gmQW-blekXAyjq4JyWQJG8GDVa-YhFFPDmVU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5OTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 45.44,
+                "is_pay_prize": 0,
+                "prize_name": "Ocean Mystery",
+                "consume_num": 615,
+                "residue_num": 9384,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "39129",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "7",
+                "used_num": 615,
+                "win_rate": "45.44",
+                "textLeft": "-35px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1twvWJ94d0c8a0478345468f301b17ff7511c3ph.png?auth-token=dTApLOFUWUvHHKopaMka81-K4e5h1MjenmOZwBkk4o0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyMDksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 35,
+                "is_pay_prize": 0,
+                "prize_name": "Dino Entrance Effect",
+                "consume_num": 392,
+                "residue_num": 2608,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "39185",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "3000",
+                "valid_days": "7",
+                "used_num": 392,
+                "win_rate": "35",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": "1000",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=Y86GiCNlWRIP2IKTbJukMLm-UR5Rz1mvNewkGvoQvaE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "4.7619",
+                "activity_all_cost": "23.8095",
+                "win_real_rate": 0.56,
+                "is_pay_prize": 0,
+                "prize_name": "1000 Beans",
+                "consume_num": 3,
+                "residue_num": 2,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "4",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "5",
+                "valid_days": "0",
+                "used_num": 3,
+                "win_rate": "0.56",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "100",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=Y86GiCNlWRIP2IKTbJukMLm-UR5Rz1mvNewkGvoQvaE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.4762",
+                "activity_all_cost": "76.1920",
+                "win_real_rate": 18.1,
+                "is_pay_prize": 0,
+                "prize_name": "100 Beans",
+                "consume_num": 160,
+                "residue_num": 0,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "4",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "160",
+                "valid_days": "0",
+                "used_num": 160,
+                "win_rate": "18.1",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uctsped725488eb664ab9b81ce20447bffff5ph.png?auth-token=p2cwLwfuu6o90Wt923nfR4G3T23CvHZok3O9rtJO0s4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwNjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0.1,
+                "is_pay_prize": 0,
+                "prize_name": "Pride Dino x 1",
+                "consume_num": 1,
+                "residue_num": 0,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "1",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "1",
+                "valid_days": "",
+                "used_num": 1,
+                "win_rate": "0.1",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uctsueedd97e63a104f2897a33be65617fc91ph.png?auth-token=o8gwWetw2Ew_0TnFu6SDoCwQ1wl0DcJccrehr3Zpd2s:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwNTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0.22,
+                "is_pay_prize": 0,
+                "prize_name": "Blue Dino x 1",
+                "consume_num": 1,
+                "residue_num": 1,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "2",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "2",
+                "valid_days": "",
+                "used_num": 1,
+                "win_rate": "0.22",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uctt2b9974874e76f46b4bb4183d85e682512ph.png?auth-token=Zvz7MhH74zG2ExCBCaK7LnqpF9yj0txDuTD4Wws2_NI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU3MDYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0.58,
+                "is_pay_prize": 0,
+                "prize_name": "Dino Key Chain x 1",
+                "consume_num": 5,
+                "residue_num": 0,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "3",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": "",
+                "activity_all_num": "5",
+                "valid_days": "",
+                "used_num": 5,
+                "win_rate": "0.58",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "15"
+              }
+            ],
+            "totalCost": "100.0015"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "lang": [
+            "US",
+            "CA"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": "1500655623",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "end_time": "2025-07-31T07:00:00.000Z",
+          "dailyCycleEndTimeOrigin": "2025/07/18 23:59:59",
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "rebate 1000",
+          "end_time_stamp": 1753945200000,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 1,
+          "countType": 5,
+          "dailyCycleStartTimeOrigin": "2025/07/18 00:00:00",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uHtTgfab6638e0ed54229bcd79ec98ca8c19bph.png?auth-token=1uc4EJyW4KjifFZSO-AyZ6Lu1WSC5WFP81hWlyvUVhQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUyNTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=67957",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uUUCfe006a1573b404aa89e0ff3ffdc74fe57ph.jpg?auth-token=587v6qV5me-2y6OLgsiZalyjKnGYgOhByLvQ27rC98c:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NTMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=68112",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uUDAwba0415cf44614621ba3a8b411e71d587ph.png?auth-token=GtNLukGfATAYx0lCVBJyIFgg8m-nZt-hs1QI9rb2hAI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ0MzcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://d1c56af02uk9yt.cloudfront.net/activity2020/Act_machineV2_share/share?id=55668",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "⬆️ Sign up for General Events"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "sub_title",
+              "value": "BIGO BEAN RUSH hosts can also sign up for general events to help maximize your beans earnings. \n\nYou can tap on the \"Other May Events\" banner above to view and sign up events."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Ended Events"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZxmX7b0af34ddedb4b76b93b92449f7611e6ph.png?auth-token=vvJzWVqWfU8XB4niXWDsxXqZ17Jkf9u42dR7UeAZD4o:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2MzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=68229&slink_hash=eFjB1k",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1ueiMq1e75795be1ff4b1eb51b62c2eefba78aph.png?auth-token=pZHwmUCFrUDTe7jruRoc1NJZlUEBZ8W1rvrBxD9TEyc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1MjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=68035&slink_hash=b1FOba",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1ubTDo1f902a682f834ab8b0f99863b8d1a7c0ph.png?auth-token=72P_2yjodbar_gc2tq1QjDkOxEd1FMhoa2rybhyhanU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUyNDcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=68035&slink_hash=b1FOba",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uX4P1ecdf6430f4c3473288f1aea843904767ph.jpg?auth-token=uuIzgXkyoSB4qZ_Q_tKDEHogYHVIFqRlOge64Mybiwk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU3ODksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=68787&slink_hash=2G0vVu",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4he/11ttE7RJbhYD.jpg?auth-token=wSTI4x6o52KURgZLRZ5j-HHkNlQVJxYs0zta_Q7uVNg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM4NTIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "BIGO BEAN RUSH - 50% Auto Rebate"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "📅 Event run dates: 07/01-07/20"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "key_text",
+              "value": "🟡 Rewards Structure"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "lv.1 - if 1,000 beans received, get 500 beans reward\n\nlv.2 - if 2,000 beans received, get extra 500 beans reward\n\nlv.3 - if 3,000 beans received, get extra 500 beans reward\n\nThe maximum reward you can receive daily is 1,500 beans"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "dailyCycleEndTime": "23:59:59",
+          "needGroupsChangeReason": true,
+          "section": 6,
+          "groupSoure": 0,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500654890",
+            "create_time": "1748664160",
+            "utime": "2025-05-31 12:02:40",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "BBR Non-Kol 50% AR",
+            "update_operator": "",
+            "create_operator": "12512",
+            "frequency": "0",
+            "update_time": "1748664160",
+            "black_tasks_status": "0",
+            "filter_id": "17306",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-05-31 12:02:40",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "Come and check your progress! ",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "US",
+            "CA"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 2,
+          "need_attend": 0,
+          "whiteUid_id": "1500654890",
+          "end_time": "2025/07/20",
+          "level_config": [
+            {
+              "private_im_lang": "Congrats for completing Lv1!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "2000",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 1000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv2!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "2000",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 1000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv3!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "2000",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "500"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 1000
+            }
+          ],
+          "groups": [],
+          "index": 1,
+          "raskType": 1,
+          "dailyCycleEndTimeOrigin": "2025/06/24 23:59:59",
+          "dailyCycleStartTime": "00:00:00",
+          "selectedArea": [
+            "US"
+          ],
+          "start_time": "2025/07/01",
+          "name": "BIGO BEAN RUSH - 50% Auto Rebate",
+          "countType": 5,
+          "dailyCycleStartTimeOrigin": "2025/06/24 00:00:00",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4he/21taOVHHSGNQ.jpg?auth-token=9Ri15VqczkJeaPeQMpyNAJuRGdxncd93y17eBVd6L7A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYzODIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "More Details",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=53080&slink_hash=qwEEA3",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Stay in the loop! Win a Dino!"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "Follow us on Instagram @bigobeanrush"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontAlignStyle": "center",
+              "type": "text",
+              "value": "This activity/event is not associated with Apple Inc."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

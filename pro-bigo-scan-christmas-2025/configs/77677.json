@@ -1,0 +1,913 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251209",
+      "20251210",
+      "20251211",
+      "20251212",
+      "20251213",
+      "20251214"
+    ],
+    "week": [
+      "20251208"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77677,
+      "act_name": "GALA Hidden Treasure Quest",
+      "state": 1,
+      "color": 1,
+      "theme": "pink",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-09 00:00:00",
+      "end_time": "2025-12-14 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "Ring the bell, pop the bubbles",
+        "appendixDesc": "High return!",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vKwJ000y33lYHC1Is1RG.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "3"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vSrFe00y2TWPL00gVGc3.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "GALA Treasure Box",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vSrEi00y33lYHC0W7sOI.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "HpWzW",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Event Time: Dec 09 - 14"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "FLr9v",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AR",
+                      "PT",
+                      "ES",
+                      "ES_PT",
+                      "RU",
+                      "CN",
+                      "AU",
+                      "US",
+                      "MY",
+                      "TH",
+                      "FZ",
+                      "NLSE",
+                      "DE",
+                      "FR",
+                      "GB",
+                      "OTHER"
+                    ],
+                    "num": 50,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503363,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 399,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 503362,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 199,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 502379,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 330,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 502378,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 220,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 502377,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 110,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 502376,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang199",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 2,
+                        "gift_id_type": 1,
+                        "score": 90,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出礼物",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Send event gifts, 1 diamond = 1 point",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 4,
+                    "selectedArea": [
+                      "MY"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "User sending ranking",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AD",
+                      "AE",
+                      "AF",
+                      "AG",
+                      "AI",
+                      "AL",
+                      "AM",
+                      "AN",
+                      "AO",
+                      "AR",
+                      "AS",
+                      "AT",
+                      "AU",
+                      "AW",
+                      "AX",
+                      "AZ",
+                      "BA",
+                      "BB",
+                      "BD",
+                      "BE",
+                      "BF",
+                      "BG",
+                      "BH",
+                      "BI",
+                      "BIGO",
+                      "BJ",
+                      "BL",
+                      "BM",
+                      "BN",
+                      "BO",
+                      "BR",
+                      "BS",
+                      "BT",
+                      "BW",
+                      "BY",
+                      "BZ",
+                      "CA",
+                      "CC",
+                      "CD",
+                      "CF",
+                      "CG",
+                      "CH",
+                      "CI",
+                      "CK",
+                      "CL",
+                      "CM",
+                      "CN",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "CV",
+                      "CW",
+                      "CX",
+                      "CY",
+                      "CZ",
+                      "DE",
+                      "DJ",
+                      "DK",
+                      "DM",
+                      "DO",
+                      "DU",
+                      "DZ",
+                      "EC",
+                      "EE",
+                      "EG",
+                      "ER",
+                      "ES",
+                      "ET",
+                      "FA",
+                      "FI",
+                      "FJ",
+                      "FM",
+                      "FO",
+                      "FR",
+                      "GA",
+                      "GB",
+                      "GD",
+                      "GE",
+                      "GH",
+                      "GI",
+                      "GL",
+                      "GM",
+                      "GN",
+                      "GP",
+                      "GQ",
+                      "GR",
+                      "GT",
+                      "GU",
+                      "GW",
+                      "GY",
+                      "HK",
+                      "HN",
+                      "HR",
+                      "HT",
+                      "HU",
+                      "ID",
+                      "IE",
+                      "IL",
+                      "IM",
+                      "IN",
+                      "IQ",
+                      "IR",
+                      "IS",
+                      "IT",
+                      "JE",
+                      "JM",
+                      "JO",
+                      "JP",
+                      "KE",
+                      "KG",
+                      "KH",
+                      "KI",
+                      "KM",
+                      "KN",
+                      "KR",
+                      "KW",
+                      "KY",
+                      "KZ",
+                      "LA",
+                      "LB",
+                      "LC",
+                      "LI",
+                      "LK",
+                      "LR",
+                      "LS",
+                      "LT",
+                      "LU",
+                      "LV",
+                      "LY",
+                      "MA",
+                      "MC",
+                      "MD",
+                      "ME",
+                      "MG",
+                      "MH",
+                      "MK",
+                      "ML",
+                      "MM",
+                      "MN",
+                      "MO",
+                      "MP",
+                      "MQ",
+                      "MR",
+                      "MS",
+                      "MT",
+                      "MU",
+                      "MV",
+                      "MW",
+                      "MX",
+                      "MY",
+                      "MZ",
+                      "NA",
+                      "NC",
+                      "NE",
+                      "NF",
+                      "NG",
+                      "NI",
+                      "NL",
+                      "NO",
+                      "NP",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "OM",
+                      "PA",
+                      "PE",
+                      "PF",
+                      "PG",
+                      "PH",
+                      "PK",
+                      "PL",
+                      "PN",
+                      "PR",
+                      "PS",
+                      "PT",
+                      "PW",
+                      "PY",
+                      "QA",
+                      "RE",
+                      "RO",
+                      "RS",
+                      "RU",
+                      "RW",
+                      "SA",
+                      "SB",
+                      "SC",
+                      "SD",
+                      "SE",
+                      "SG",
+                      "SH",
+                      "SI",
+                      "SK",
+                      "SL",
+                      "SM",
+                      "SN",
+                      "SO",
+                      "SR",
+                      "SS",
+                      "ST",
+                      "SV",
+                      "SY",
+                      "SZ",
+                      "TC",
+                      "TD",
+                      "TG",
+                      "TH",
+                      "TJ",
+                      "TK",
+                      "TL",
+                      "TM",
+                      "TN",
+                      "TO",
+                      "TR",
+                      "TT",
+                      "TV",
+                      "TW",
+                      "TZ",
+                      "UA",
+                      "UG",
+                      "US",
+                      "UY",
+                      "UZ",
+                      "VE",
+                      "VN",
+                      "VU",
+                      "WF",
+                      "WS",
+                      "YE",
+                      "YT",
+                      "ZA",
+                      "ZM",
+                      "ZR",
+                      "ZW"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "BN",
+                      "MY",
+                      "SG"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 3,
+                    "prizeType": 3,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 8888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 100000
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 6888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 80000
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 5888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 70000
+                      },
+                      {
+                        "rank_to": 4,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 3888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 60000
+                      },
+                      {
+                        "rank_to": 5,
+                        "rank_from": 5,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 2888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 50000
+                      },
+                      {
+                        "rank_to": 8,
+                        "rank_from": 6,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 1888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 40000
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "SIGN UP",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "829ex",
+                  "formData": {
+                    "fromTabCopy": false,
+                    "questionnaireData": {
+                      "conditionList": [
+                        {
+                          "conditionStr": "MY,BN,SG",
+                          "id": null,
+                          "type": 1
+                        },
+                        {
+                          "conditionStr": "MY",
+                          "id": null,
+                          "type": 2
+                        }
+                      ],
+                      "wjName": "SIGNUP to get reward",
+                      "topics": [
+                        {
+                          "isRequired": 0,
+                          "addExtra": 0,
+                          "options": [
+                            {
+                              "showId": "1",
+                              "id": null,
+                              "title": "YES",
+                              "sortIdx": 1
+                            }
+                          ],
+                          "id": null,
+                          "type": 1,
+                          "title": "SIGN UP",
+                          "sortIdx": 1
+                        }
+                      ],
+                      "description": "SIGNUP to get reward",
+                      "startTime": "2025-12-09 00:00:00",
+                      "id": null,
+                      "endTime": "2025-12-14 23:59:59",
+                      "multipleTimes": 1
+                    },
+                    "questionnaireId": 2053
+                  },
+                  "type": "questionnaire",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event ends:"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "517059840"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

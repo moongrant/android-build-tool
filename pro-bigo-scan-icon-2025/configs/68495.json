@@ -1,0 +1,558 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250701",
+      "20250702",
+      "20250703",
+      "20250704",
+      "20250705"
+    ],
+    "week": [
+      "20250630"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68495,
+      "act_name": "July - Special Golden Rush ✨",
+      "state": 1,
+      "color": 4,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-07-01 07:00:00",
+      "end_time": "2025-07-05 06:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "GB",
+        "IE"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "7",
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4he/01tnv4Ue7NOj.jpg?auth-token=XiYLx2TRwNhKS7iUbOrhR10NS6aQGkavFk9YsVArxnI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDk1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQyNDgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [
+            "AS",
+            "AU",
+            "CA",
+            "CK",
+            "FJ",
+            "FM",
+            "GB",
+            "GU",
+            "IE",
+            "KI",
+            "MH",
+            "MP",
+            "NC",
+            "NF",
+            "NR",
+            "NU",
+            "NZ",
+            "PF",
+            "PG",
+            "PN",
+            "PW",
+            "SB",
+            "TK",
+            "TO",
+            "TV",
+            "US",
+            "VU",
+            "WF",
+            "WS"
+          ],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "GB",
+            "US",
+            "AU"
+          ],
+          "num": 10,
+          "dailyCycleEndTime": "07:00:00",
+          "skin": "1",
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "score": 1,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 60001,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "Come and check your progress! ",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "GB",
+            "IE"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": "",
+          "end_time": "2024/10/01",
+          "level_config": [
+            {
+              "private_im_lang": "Congrats for completing Lv1!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "80",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "380"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 1000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv2!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "50",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "875"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 2500
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv3!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "30",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "1920"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 6000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv4!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "10",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "3960"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 4,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 12000
+            },
+            {
+              "private_im_lang": "Congrats for completing Lv5!",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "5",
+                  "reward_name": "beans",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": 3,
+                  "id": 4,
+                  "reward_count": "6300"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "Keep up the good work!",
+              "user_room_rewards": [],
+              "user_finish_room": true,
+              "level": 5,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 18000
+            }
+          ],
+          "groups": [],
+          "index": 1,
+          "raskType": 1,
+          "dailyCycleEndTimeOrigin": "2024/01/01 07:00:00",
+          "dailyCycleStartTime": "19:00:00",
+          "selectedArea": [
+            "GB"
+          ],
+          "appointUidChangeReason": "adding ids",
+          "start_time": "2024/09/16",
+          "name": "Special Golden Rush✨",
+          "countType": 5,
+          "dailyCycleStartTimeOrigin": "2024/01/01 19:00:00",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dCMVb",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "GB",
+                      "US",
+                      "AU"
+                    ],
+                    "num": 50,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 50,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "From July 1 to July 4, the top host with the highest beans received will receive an extra 5000 beans reward!",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 3,
+                    "selectedArea": [
+                      "GB"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/07/01 07:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "July - Special golden rush",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AS",
+                      "AU",
+                      "CA",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GB",
+                      "GU",
+                      "IE",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "US",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "GB",
+                      "IE"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/07/05 06:59:59",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWLaOcd7281a133594ca7978f5a3965c88890ph.png?auth-token=XZInthgrL70unvK_KC4PsMmvoKRxaU7vmbawV6_JWWA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDk1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3OTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "🔵 Kind reminder ✨"
+            },
+            {
+              "type": "sub_title",
+              "value": "📌 Activity Details\nThis task-based auto-reward event is open to all signed local hosts. By reaching specific bean thresholds during public live streams, hosts can unlock tiered rewards of up to 38% cashback.\n\n • From July 1 to July 4, the top host with the highest beans received will receive an extra 5000 beans reward\n\n🔁 Daily Limits:\n • Each host may complete up to 5 rewards per day\n • Maximum daily reward:  13435 beans\n\n⚠️ Notes\n• Due to a system update, the task rewards from the auto-reward event will be distributed gradually starting July 4. Thank you for your patience.\n• Rewards are distributed on a first-come, first-served basis until the daily quota for each tier is reached\n• Task levels are non-cumulative. For example, if you reach Lv. 1 (1000 beans), you need then collect an additional 2500 beans (total 3500) to claim Lv. 2.\n• Rewards reset daily and do not carry over to the next day\n• Even if you meet the task target, no reward will be given once a tier’s stock is depleted—no system alert will be issued\n• Only beans received from the following regions will be counted:\nUnited Kingdom, Ireland, Australia, New Zealand, United States, and Canada\n\n🎁 Ranking rewards will be distributed within 5–10 working days after the event ends.\n\n🚫 BIGO LIVE UK Team reserves the right to disqualify participants involved in cheating, malicious behavior, or fraudulent activities."
+            },
+            {
+              "type": "text",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

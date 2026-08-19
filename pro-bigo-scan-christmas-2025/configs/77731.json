@@ -1,0 +1,155 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 06:26:08",
+    "now_zone": -1,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77731,
+      "act_name": "EXTRA BONUS per Famiglie di Galaxy!",
+      "state": 1,
+      "color": 1,
+      "theme": "green",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-12 14:00:00",
+      "end_time": "2025-12-14 09:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "IT"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1"
+    },
+    "act_modular": [
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "🔥Extra beans premi solo per le famiglie TOP1-TOP5 sulla regionale finale di Galassia Divisione🔥"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "📝I beans saranno emessi al capofamiglia dopo il gala."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vSwvL00y2TWPL01dFOD9.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "REGOLE DI GALA",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://docs.google.com/spreadsheets/d/13rwoY7pRqL0AQz8V_R9Eu5swRwc-hahpFIY0E6d40R8/edit?gid=1935435532#gid=1935435532",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "RICARICA BONUS DI FAMIGLIA",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77448",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

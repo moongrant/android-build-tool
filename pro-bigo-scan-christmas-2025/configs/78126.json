@@ -1,0 +1,143 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 02:27:12",
+    "now_zone": 3,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78126,
+      "act_name": "TOP Família-Amor&Lealdade ♡†",
+      "state": 1,
+      "color": 1,
+      "theme": "pink",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-19 12:46:07",
+      "end_time": "2025-12-31 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "BR",
+        "AO"
+      ],
+      "selectedArea": [
+        "PT"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1",
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "header-image",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vWPVY00y33lYHC0Vk9ed.jpg",
+          "videoUrl": "",
+          "videoPlayType": 1,
+          "type": 1,
+          "videoPoster": "",
+          "imgPos": 300
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Amor&Lealdade ♡†",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "kHk4l",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Clique para ver Amor&Lealdade ♡†",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://static-fed.bigolive.tv/live/pages/bigolive/family-detail/index.html?familyId=210026",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "mcN1T",
+                  "formData": {
+                    "mode": 1,
+                    "uid_arr": [
+                      {
+                        "uid": "796627919",
+                        "text": "Dono da Família"
+                      }
+                    ],
+                    "priority": false
+                  },
+                  "type": "anchor",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "796627919"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

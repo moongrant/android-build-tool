@@ -1,0 +1,1609 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250613",
+      "20250614",
+      "20250615",
+      "20250616",
+      "20250617",
+      "20250618",
+      "20250619"
+    ],
+    "week": [
+      "20250609",
+      "20250616"
+    ],
+    "month": [
+      "202506"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 67387,
+      "act_name": "JUNE Casual Game SPIN&RANK",
+      "state": 1,
+      "color": 1,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-06-13 00:00:00",
+      "end_time": "2025-06-19 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "BN",
+        "MY"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "10",
+      "is_go_onelink": 1,
+      "theme": "yellow",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uOtFo5d27d5d9d61a42fda7c78f1c1419a96bph.jpg?auth-token=eSgdwxyx9OEQCoKhq_svHoLg2kByLtL3aXHaM23Dcho:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5MTIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event ends"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Reward distribute after event ends."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "SPIN",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "myTBp",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [
+                      "MY"
+                    ],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 1,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 2,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 3,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 4,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 7,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "lottery_title": "SPIN",
+                    "svip_area": "",
+                    "lottery_rule": "Selected Users ONLY. Spend 60 Diamonds in Greedy&yummy&fisher&multi-fish&catdog = 1 Spin. \nMax 10 spin/day",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 4,
+                    "selectedArea": [
+                      "MY"
+                    ],
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655065",
+                      "create_time": "1749715944",
+                      "utime": "2025-06-12 16:12:24",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "MY Casual Game一个月内未活跃",
+                      "update_operator": "",
+                      "create_operator": "09751",
+                      "frequency": "0",
+                      "update_time": "1749715944",
+                      "black_tasks_status": "0",
+                      "filter_id": "17487",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-06-12 16:12:24",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": -1922.6455000000003,
+                      "consumeCost": "2136.01",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://esx.bigo.sg/live/4hp/1uFq6R861bd9f798ba46c0aaf8dfd353acb5e3ph.png?auth-token=k5nSuvf1B3xw_RvWgsN87u_VSxfj6xlLJZh6S93PJZs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NDcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                        "theme": "Congratulations on entering the Wheel of Fortune",
+                        "content": "Play more to get a chance to win up to 2,000 diamonds!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy1.png",
+                          "single_prize_cost": 0.016666666666666666,
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0167",
+                          "activity_all_cost": "16.7000",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "1 diamond",
+                          "consume_num": 61,
+                          "residue_num": 939,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": 5,
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": 1,
+                          "activity_all_num": "1000",
+                          "valid_days": "2",
+                          "used_num": 61,
+                          "win_rate": "20",
+                          "textLeft": "-35px",
+                          "prize_type": "41"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy20.png",
+                          "single_prize_cost": 0.3333333333333333,
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.3333",
+                          "activity_all_cost": "16.6650",
+                          "win_real_rate": 15,
+                          "is_pay_prize": 0,
+                          "prize_name": "20 diamond",
+                          "consume_num": 61,
+                          "residue_num": -11,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": 5,
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": 20,
+                          "activity_all_num": "50",
+                          "valid_days": "2",
+                          "used_num": 61,
+                          "win_rate": "15",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "41"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy80.png",
+                          "single_prize_cost": 1.3333333333333333,
+                          "is_bottom_prize": 0,
+                          "prize_cost": "1.3333",
+                          "activity_all_cost": "13.3330",
+                          "win_real_rate": 10,
+                          "is_pay_prize": 0,
+                          "prize_name": "80 diamond",
+                          "consume_num": 61,
+                          "residue_num": -51,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": 5,
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": 80,
+                          "activity_all_num": "10",
+                          "valid_days": "2",
+                          "used_num": 61,
+                          "win_rate": "10",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "41"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/86793/yummy/yummy2000.png",
+                          "single_prize_cost": 33.333333333333336,
+                          "is_bottom_prize": 0,
+                          "prize_cost": "33.3333",
+                          "activity_all_cost": "166.6665",
+                          "win_real_rate": 5,
+                          "is_pay_prize": 0,
+                          "prize_name": "2000 diamond",
+                          "consume_num": 61,
+                          "residue_num": -56,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": 5,
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": 2000,
+                          "activity_all_num": "5",
+                          "valid_days": "2",
+                          "used_num": 61,
+                          "win_rate": "5",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "41"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s1/1Ei25k.png?auth-token=bO12mNsBUKY9FJ1UPgpkAl8_0cyhJtGrg0d5RxZ75JM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3ODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 1,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 50,
+                          "is_pay_prize": 0,
+                          "prize_name": "Thanks",
+                          "consume_num": 137,
+                          "residue_num": 9999862,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "10001000",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "9999999",
+                          "valid_days": "0",
+                          "used_num": 137,
+                          "win_rate": "50",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "16"
+                        }
+                      ],
+                      "totalCost": "213.3645"
+                    },
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "lang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 2,
+                    "lottery_stock_type": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500655065",
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Chinese Users Rank",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "lbkh3",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "MY"
+                    ],
+                    "num": 20,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 999999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 1,
+                    "auto_arr": [
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 1,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 2,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 3,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 4,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 7,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Greedy&yummy&fisher&multi-fish&catdog Spend; Only selected users can join",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "MY"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/06/13 00:00:00",
+                    "frontTextAlignStyle": "center",
+                    "name": "Chinese Users Rank",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500654653",
+                      "create_time": "1747304442",
+                      "utime": "2025-05-15 18:20:42",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "Alpha Chinese",
+                      "update_operator": "",
+                      "create_operator": "09751",
+                      "frequency": "0",
+                      "update_time": "1747304442",
+                      "black_tasks_status": "0",
+                      "filter_id": "17056",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-05-15 18:20:42",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500654653",
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/06/19 23:59:59",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 5888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 3888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 2888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 1888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Malay Users Rank",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "t7SLh",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "MY"
+                    ],
+                    "num": 20,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 999999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 1,
+                    "auto_arr": [
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 1,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 2,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 3,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 4,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 7,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Greedy&yummy&fisher&multi-fish&catdog Spend; Only selected users can join",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 3,
+                    "selectedArea": [
+                      "MY"
+                    ],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/06/13 00:00:00",
+                    "frontTextAlignStyle": "center",
+                    "name": "Malay Users Rank",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500654655",
+                      "create_time": "1747306464",
+                      "utime": "2025-05-15 18:54:24",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "Alpha Malay",
+                      "update_operator": "",
+                      "create_operator": "09751",
+                      "frequency": "0",
+                      "update_time": "1747306464",
+                      "black_tasks_status": "0",
+                      "filter_id": "17058",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-05-15 18:54:24",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500654655",
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/06/19 23:59:59",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 5888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 3888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 2888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                            "disabledID": true,
+                            "items_id": 1,
+                            "num": 1888,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 1
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Family Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "yayiM",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uOtWk6d822be920b740d5918b2a2dae631b50ph.png?auth-token=chMEZpySU9Tj-a-Bfb0dF9bHSjJN4Yq4sREHBN7ka_U:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0OTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "FbUEo",
+                  "formData": {
+                    "group_arr": [
+                      {
+                        "score": 0,
+                        "name": "CIKBOSS EMPIRE",
+                        "logourl": "https://esx.bigo.sg/live/4he/21tIk0PRsiRq.png?auth-token=jxo7ZhjbNZ2YGdQiFgKPzqbQIuTHRYeiAPneT9BPLT0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NjcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+                      },
+                      {
+                        "score": 0,
+                        "name": "3͎3͎9͎9͎ 俱乐部",
+                        "logourl": "https://esx.bigo.sg/live/4he/21tIjyqCdSUo.jpg?auth-token=5tmapYAbnTy1kOEnR7eT-ISz0OqUTMhNddkgtiO41f4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1MTgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+                      },
+                      {
+                        "score": 0,
+                        "name": "RΞDROSE CITY",
+                        "logourl": "https://esx.bigo.sg/live/4he/01tIk1Y79aM0.jpg?auth-token=yjvDNKRns09oHuNLnJkHZrwTOi1HoulkkaJ7fD5RCGY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5MzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+                      },
+                      {
+                        "score": 0,
+                        "name": "Lightning Star (MY)",
+                        "logourl": "https://esx.bigo.sg/live/4he/01tIk2BBDeiW.jpeg?auth-token=8dV_NIXj6QIo4RhWFECuIjoqlOaH2XGR50TSKoyj4Wk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzMTMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+                      },
+                      {
+                        "score": 0,
+                        "name": "🎪DV🎪",
+                        "logourl": "https://esx.bigo.sg/live/4hd/21tIk2aGmIp7x.jpg?auth-token=aPQb_aZcddYLkqTMuu8zG2GpriUwIlHey1QLc_p-3lg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mzg3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5ODUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+                      }
+                    ],
+                    "scoreLang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "MY"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "needGroupsChangeReason": false,
+                    "section": 5,
+                    "groupSoure": 1,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "downloadNum": 99999,
+                    "globalrank": 10,
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "rankinfo": 2,
+                    "groupIds": "15128\n17923\n19915\n20097\n21434\n29908\n33130\n35691\n38537\n44813\n47940\n48621\n48745\n49456\n54403\n55130\n59608\n60880\n62334\n66102\n70597\n72331\n74255\n78777\n86846\n87110\n90115\n91135\n93532\n95178\n102595\n111173\n111312\n111894\n118780\n120916\n122095\n123112\n126794\n127136\n127965\n132036\n137924\n137986\n156750\n192648\n199200\n200011\n202130\n212042\n219365\n54\n55\n57\n59\n60\n61\n62\n63\n65\n71\n72\n82\n99\n119\n122\n123\n124\n125\n128\n130\n131\n324\n325\n355\n361\n365\n368\n370\n378\n380\n381\n383\n384\n385\n386\n387\n388\n389\n390\n392\n393\n394\n396\n397\n398\n655\n656\n657\n658\n659\n661\n662\n663\n664\n665\n666\n668\n669\n670\n671\n672\n677\n678\n679\n680\n681\n682\n1092\n1093\n1094\n1095\n1097\n1098\n1099\n1100\n1107\n1525\n1526\n1527\n1528\n2067\n2068\n2069\n2070\n2071\n2072\n2073\n2074\n2075\n2076\n2078\n2079\n2080\n2081\n2082\n2083\n2084\n2085\n2086\n2087\n2241\n2242\n2243\n2244\n2245\n2246\n2247\n2248\n2249\n2250\n2251\n2252\n2253\n2254\n2255\n2256\n2257\n2259\n4263\n4264\n4265\n4267\n4268\n4269\n4270\n4271\n4604\n4620\n4667\n4677\n4731\n5545\n6692\n6693\n6694\n6701\n6977\n6978\n6979\n6980\n6982\n6983\n7017\n7018\n7019\n7048\n7050\n7053\n7054\n7055\n7056\n7057\n7060\n7061\n7062\n7075\n7079\n7101\n7111\n7137\n7140\n7141\n7146\n7147\n7148\n7149\n7150\n7151\n7152\n7153\n7172\n7205\n7360\n7362\n7374\n7378\n7387\n7388\n7389\n7390\n7391\n7392\n7393\n7394\n7398\n7399\n7603\n7604\n7605\n7607\n7608\n7609\n7610\n7614\n7623\n7637\n7638\n7639\n7683\n7689\n7723\n7735\n7738\n8056\n8092\n8096\n8097\n8099\n8102\n8505\n8514\n8548\n8551\n8553\n8557\n8559\n8563\n8567\n8576\n8580\n8587\n8588\n8591\n8594\n8596\n8600\n8604\n8609\n8614\n8616\n8618\n8621\n8623\n8629\n8631\n8636\n8637\n8639\n8640\n8641\n8642\n8807\n8854\n8864\n8865\n8866\n8867\n8868\n8869\n8877\n8895\n8896\n8897\n8898\n8905\n8931\n8933\n8934\n8935\n8936\n8937\n8938\n9508\n9509\n9510\n9511\n9513\n9514\n9515\n9516\n9517\n9518\n9520\n9521\n9524\n9525\n9528\n9529\n9530\n9531\n9532\n9533\n9534\n9535\n9536\n9537\n9538\n9539\n9540\n9541\n9543\n9544\n9547\n9549\n9551\n9553\n9555\n9557\n9559\n9561\n9562\n9563\n9564\n9565\n9566\n9567\n9568\n9569\n9570\n9571\n9572\n9573\n9574\n9575\n9576\n9577\n9578\n9579\n9580\n9581\n9583\n9584\n9585\n9586\n9587\n9588\n9589\n9590\n9591\n9592\n9593\n9594\n9596\n9597\n9598\n9599\n9600\n9601\n9646\n9648\n9650\n9652\n9653\n9654\n9655\n9656\n9657\n10181\n10183\n10184\n10187\n10188\n10189\n10192\n10193\n10194\n10196\n10197\n10198\n10199\n10200\n10201\n10202\n10204\n10205\n10206\n10208\n10209\n10210\n10211\n10212\n10213\n10214\n10215\n10216\n10217\n10220\n10221\n10222\n10225\n10226\n10227\n10228\n10230\n10231\n10232\n10234\n10235\n10236\n10237\n10238\n10239\n10240\n10242\n10243\n10245\n10246\n10248\n10249\n10251\n10252\n10253\n10254\n10255\n10258\n10259\n10260\n10262\n10263\n10264\n10265\n10266\n10267\n10268\n10270\n10271\n10272\n10273\n10274\n10277\n10278\n10279\n10280\n10281\n10282\n10283\n10284\n10285\n10286\n10288\n10289\n10290\n10291\n10292\n10293\n10294\n10297\n10298\n10299\n10300\n10301\n10302\n10303\n10304\n10305\n10306\n10307\n10308\n10309\n10310\n10311\n10312\n10313\n10314\n10315\n10316\n10317\n10318\n10319\n10321\n10322\n10323\n10324\n10325\n10326\n10327\n10328\n10329\n10330\n10331\n10332\n10333\n10335\n10336\n11406\n11407\n11413\n11414\n11415\n11416\n11417\n11418\n11419\n11420\n11422\n11424\n11426\n11429\n11430\n11431\n11432\n11433\n11434\n11435\n11436\n11437\n11439\n11440\n11441\n11442\n11443\n11444\n11445\n11446\n11474\n11475\n11476\n11477\n11478\n11479\n11480\n11482\n11483\n11484\n11487\n11488\n11491\n11492\n11493\n11494\n11496\n11497\n11499\n11501\n11503\n11504\n11507\n11509\n11510\n11511\n11512\n11513\n11514\n11515\n11516\n11518\n11519\n11521\n11523\n11524\n11525\n11528\n11531\n11535\n11536\n11537\n11538\n11541\n11543\n11544\n11545\n11546\n11547\n11548\n11549\n11550\n11551\n11552\n11553\n11554\n11555\n11556\n11557\n11558\n11559\n11560\n11561\n11562\n11563\n11564\n11565\n11566\n11567\n11568\n11569\n11570\n11573\n11574\n11576\n11577\n11580\n11581\n11582\n11583\n11584\n11585\n11586\n11587\n11588\n11589\n11590\n11591\n11592\n11594\n11595\n11596\n11597\n11598\n11599\n11600\n11601\n11603\n11604\n11606\n11608\n11609\n11617\n11618\n11622\n11623\n11624\n11626\n11628\n11629\n11630\n11632\n11633\n11635\n11636\n11638\n11641\n11643\n11644\n11645\n11646\n11647\n12423\n12424\n12517\n12518\n12519\n12532\n12533\n12534\n12535\n12536\n12538\n12539\n12540\n12546\n12624\n12625\n12627\n12628\n12630\n12631\n12632\n12634\n12635\n12638\n12937\n12938\n12939\n12940\n12941\n12942\n12943\n12944\n12948\n12949\n12950\n12951\n12952\n12954\n12955\n12957\n12958\n12959\n12960\n12961\n12962\n12963\n12964\n12965\n12967\n12968\n12969\n12970\n12971\n12972\n12973\n12974\n12975\n12976\n12978\n12980\n12981\n12982\n12983\n12984\n12986\n12988\n12989\n12990\n12992\n12993\n12994\n12995\n12996\n12997\n12998\n12999\n13000\n13001\n13002\n13004\n13005\n13007\n13008\n13009\n13010\n13011\n13012\n13014\n13015\n13016\n13017\n13018\n13019\n13020\n13021\n13022\n13023\n13026\n13027\n13029\n13030\n13031\n13032\n13034\n13289\n13291\n13292\n13293\n13294\n13568\n14016\n14017\n14028\n14030\n14031\n14060\n14061\n14062\n14063\n14097\n14098\n14099\n14100\n14181\n14182\n14183\n14184\n14186\n14187\n14188\n14189\n14190\n14191\n14192\n14193\n14195\n14196\n14197\n14198\n14201\n14219\n14247\n14249\n14250\n14251\n14252\n14253\n14254\n14255\n14256\n14257\n14258\n14259\n14261\n14262\n14263\n14264\n14265\n14266\n14267\n14268\n14269\n14272\n14273\n14274\n14275\n14276\n14277\n14278\n14279\n14281\n14282\n14283\n14284\n14286\n14287\n14288\n14291\n14292\n14293\n14294\n14295\n14296\n14297\n14298\n14299\n14300\n14301\n14302\n14303\n14304\n14305\n14306\n14308\n14309\n14310\n14311\n14312\n14313\n14314\n14315\n14316\n14317\n14318\n14319\n14321\n14322\n14323\n14325\n14326\n14327\n14328\n14329\n14330\n14331\n14332\n14333\n14334\n14336\n14337\n14338\n14339\n14340\n14341\n14342\n14343\n14344\n14345\n14347\n14348\n14349\n14350\n14351\n14352\n14353\n14354\n14355\n14356\n14357\n14358\n14361\n14652\n14664\n14805\n14876\n14879\n14881\n14944\n14945\n14946\n14948\n14950\n14951\n14953\n14956\n14961\n14965\n14966\n14968\n14971\n14973\n14976\n14983\n14991\n14996\n14997\n14998\n15000\n15001\n15002\n15003\n15006\n15008\n15010\n15015\n15017\n15018\n15033\n15039\n15041\n15042\n15043\n15046\n15048\n15054\n15066\n15094\n15104\n15125\n15126\n15131\n15132\n15137\n15143\n15144\n15150\n15189\n15201\n15211\n15235\n15251\n15256\n15257\n15280\n15286\n15304\n15325\n15327\n15346\n15359\n15378\n15384\n15386\n15394\n15411\n15421\n15436\n15495\n15496\n15527\n15529\n15530\n15533\n15536\n15541\n15544\n15549\n15550\n15569\n15575\n15581\n15584\n15585\n15594\n15599\n15603\n15604\n15609\n15619\n15627\n15636\n15691\n15708\n15715\n15736\n15760\n15780\n15793\n15830\n15832\n15839\n15847\n15855\n15858\n15861\n15864\n15911\n15921\n15944\n15961\n15998\n16026\n16027\n16030\n16038\n16102\n16136\n16155\n16199\n16210\n16213\n16216\n16279\n16283\n16318\n16319\n16354\n16356\n16363\n16409\n16427\n16432\n16438\n16451\n16548\n16578\n16593\n16614\n16623\n16696\n16697\n16698\n16699\n16700\n16701\n16702\n16703\n16704\n16705\n16707\n16708\n16709\n16710\n16711\n16712\n16713\n16714\n16716\n16717\n16719\n16720\n16721\n16722\n16723\n16724\n16725\n16726\n16728\n16729\n16730\n16731\n16732\n16733\n16734\n16735\n16736\n16737\n16738\n16739\n16741\n16742\n16743\n16744\n16746\n16747\n16749\n16750\n16751\n16752\n16753\n16754\n16755\n16756\n16757\n16758\n16760\n16761\n16762\n16763\n16764\n16765\n16766\n16767\n16768\n16769\n16770\n16771\n16772\n16773\n16774\n16775\n16776\n16777\n16778\n16779\n16780\n16781\n16782\n16783\n16784\n16785\n16786\n16787\n16788\n16789\n16791\n16792\n16793\n16794\n16795\n16796\n16797\n16798\n16799\n16800\n16801\n16802\n16804\n16805\n16806\n16808\n16809\n16810\n16811\n16813\n16814\n16815\n16816\n16817\n16823\n16824\n16827\n16845\n16848\n16895\n16906\n16910\n16935\n16938\n16939\n16950\n16979\n16991\n17029\n17098\n17262\n17269\n17270\n17271\n17273\n17274\n17275\n17276\n17278\n17281\n17292\n17293\n17298\n17299\n17305\n17307\n17315\n17333\n17341\n17342\n17349\n17356\n17361\n17381\n17394\n17424\n17471\n17472\n17481\n17482\n17499\n17500\n17599\n17637\n17704\n17709\n17754\n17819\n17832\n17859\n17895\n17918\n17924\n17925\n17926\n17929\n17931\n17933\n17935\n17938\n17941\n17963\n17965\n17970\n17971\n17978\n17984\n17986\n17988\n17989\n17991\n17996\n18004\n18006\n18049\n18067\n18070\n18083\n18119\n18121\n18139\n18146\n18176\n18177\n18210\n18218\n18226\n18234\n18281\n18817\n18855\n18892\n18944\n18950\n18974\n19016\n19031\n19039\n19071\n19074\n19080\n19096\n19099\n19106\n19107\n19114\n19115\n19148\n19157\n19185\n19197\n19200\n19208\n19228\n19249\n19259\n19341\n19377\n19378\n19411\n19444\n19459\n19492\n19505\n19510\n19526\n19539\n19554\n19577\n19605\n19618\n19636\n19640\n19641\n19642\n19644\n19651\n19656\n19678\n19692\n19706\n19725\n19784\n19809\n19811\n19848\n19937\n19939\n19961\n19965\n19970\n19998\n20009\n20010\n20016\n20019\n20028\n20036\n20064\n20065\n20095\n20109\n20115\n20121\n20124\n20143\n20146\n20194\n20204\n20344\n20347\n20349\n20410\n20537\n20567\n20578\n20583\n20633\n20658\n20700\n20866\n20867\n20869\n20873\n20877\n20881\n20883\n20885\n20886\n20887\n20888\n20889\n20890\n20910\n20933\n20950\n20955\n20963\n20966\n20982\n21022\n21024\n21032\n21062\n21080\n21085\n21118\n21128\n21174\n21178\n21192\n21251\n21254\n21256\n21278\n21353\n21394\n21403\n21416\n21417\n21433\n21446\n21450\n21462\n21517\n21557\n21616\n21618\n21667\n21673\n21712\n21713\n21714\n21724\n21799\n21808\n21840\n21843\n21845\n21846\n21847\n21850\n21900\n21901\n21945\n22016\n22036\n22041\n22042\n22043\n22046\n22051\n22056\n22057\n22062\n22065\n22066\n22075\n22076\n22077\n22078\n22079\n22111\n22117\n22119\n22157\n22212\n22232\n22233\n22238\n22300\n22325\n22346\n22356\n22379\n22456\n22457\n22458\n22459\n22460\n22461\n22462\n22463\n22464\n22465\n22466\n22467\n22468\n22469\n22470\n22471\n22472\n22473\n22474\n22475\n22477\n22481\n22497\n22547\n22563\n22653\n22669\n22681\n22682\n22683\n22684\n22685\n22686\n22688\n22689\n22690\n22692\n22699\n22709\n22713\n22717\n22721\n22731\n22755\n22778\n22782\n22795\n22799\n22817\n22826\n22828\n22836\n22839\n22841\n22844\n22846\n22851\n22866\n22869\n22891\n22898\n22903\n22920\n22930\n22931\n22932\n22933\n22934\n22952\n22955\n22958\n23017\n23018\n23021\n23022\n23023\n23024\n23025\n23026\n23027\n23028\n23029\n23030\n23032\n23033\n23034\n23035\n23036\n23038\n23040\n23041\n23042\n23045\n23046\n23047\n23048\n23049\n23050\n23051\n23052\n23053\n23054\n23055\n23056\n23057\n23058\n23059\n23060\n23062\n23063\n23064\n23067\n23068\n23069\n23070\n23071\n23072\n23073\n23074\n23076\n23077\n23078\n23080\n23081\n23082\n23083\n23085\n23087\n23088\n23089\n23090\n23092\n23093\n23094\n23095\n23096\n23097\n23099\n23100\n23101\n23103\n23105\n23106\n23107\n23108\n23109\n23110\n23111\n23113\n23114\n23115\n23116\n23117\n23118\n23119\n23140\n23143\n23151\n23162\n23163\n23198\n23199\n23217\n23481\n23621\n23642\n23659\n23818\n23820\n23821\n23822\n23823\n23824\n23825\n23826\n23828\n23843\n23846\n23847\n23856\n23907\n23967\n24003\n24091\n24243\n24253\n24268\n24283\n24296\n24297\n24361\n24412\n24437\n24447\n24467\n24480\n24488\n24581\n24696\n24751\n24757\n24822\n24830\n24865\n24870\n24987\n25004\n25016\n25072\n25075\n25102\n25111\n25122\n25244\n25246\n25252\n25253\n25348\n25359\n25366\n25372\n25388\n25410\n25459\n25488\n25532\n25582\n25605\n25690\n25719\n25721\n25749\n25752\n25833\n25919\n26167\n26211\n26530\n26535\n26541\n26552\n26608\n26623\n26675\n26707\n26731\n26757\n26765\n26885\n26957\n27101\n27173\n27267\n27279\n27373\n27381\n27391\n27397\n27403\n27537\n27569\n27592\n27613\n27649\n27658\n27666\n27675\n27749\n27816\n27854\n27891\n27898\n27900\n27901\n27902\n27903\n27906\n27911\n27922\n27924\n27934\n27938\n27945\n27979\n27989\n28011\n28037\n28128\n28188\n28208\n28209\n28222\n28276\n28292\n28297\n28306\n28393\n28396\n28436\n28511\n28733\n29164\n29333\n29515\n29543\n29625\n29676\n29801\n29814\n29841\n29884\n29910\n30022\n30045\n30047\n30048\n30049\n30050\n30052\n30053\n30079\n30080\n30082\n30083\n30085\n30176\n30186\n30188\n30227\n30239\n30287\n30331\n30357\n30379\n30455\n30478\n30554\n30572\n30575\n30612\n30613\n30626\n30673\n30677\n30678\n30692\n30701\n30707\n30718\n30838\n30890\n30894\n30895\n30923\n30932\n30939\n30944\n30945\n30948\n30962\n30963\n31017\n31043\n31092\n31162\n31255\n31277\n31293\n31297\n31302\n31314\n31366\n31445\n31446\n31447\n31448\n31450\n31451\n31452\n31455\n31457\n31458\n31462\n31464\n31540\n31555\n31557\n31558\n31559\n31561\n31563\n31564\n31565\n31566\n31567\n31580\n31630\n31651\n31660\n31667\n31671\n31688\n31712\n31849\n31889\n31891\n31903\n31904\n31907\n31950\n32095\n32110\n32162\n32231\n32271\n32287\n32299\n32331\n32333\n32348\n32428\n32433\n32435\n32447\n32452\n32463\n32517\n32525\n32555\n32582\n32583\n32619\n32765\n32785\n32886\n32887\n32888\n32895\n32899\n32900\n32909\n32910\n32925\n32940\n32958\n32972\n33049\n33056\n33057\n33114\n33123\n33127\n33132\n33133\n33134\n33149\n33187\n33243\n33351\n33359\n33374\n33395\n33397\n33401\n33466\n33475\n33501\n33541\n33576\n33577\n33609\n33619\n33621\n33629\n33641\n33671\n33682\n33691\n33693\n33699\n33706\n33707\n33740\n33785\n33786\n33788\n33790\n33791\n33792\n33891\n33913\n33942\n33944\n33946\n33949\n33950\n33964\n34006\n34020\n34027\n34030\n34045\n34061\n34062\n34065\n34067\n34073\n34086\n34177\n34182\n34194\n34233\n34234\n34384\n34400\n34415\n34421\n34422\n34428\n34445\n34447\n34449\n34451\n34502\n34503\n34508\n34550\n34563\n34617\n34625\n34636\n34656\n34658\n34780\n34784\n34789\n34793\n34863\n34865\n34871\n34872\n34873\n34875\n34877\n34878\n34896\n34994\n35025\n35052\n35105\n35147\n35155\n35158\n35159\n35160\n35161\n35162\n35163\n35165\n35166\n35169\n35223\n35224\n35235\n35236\n35239\n35240\n35241\n35251\n35252\n35253\n35263\n35282\n35308\n35322\n35361\n35362\n35363\n35364\n35366\n35373\n35381\n35410\n35421\n35423\n35424\n35427\n35526\n35527\n35528\n35531\n35542\n35545\n35566\n35580\n35597\n35642\n35662\n35667\n35682\n35683\n35693\n35694\n35699\n35710\n35802\n35813\n35814\n35819\n35821\n35824\n35836\n35850\n35913\n35936\n35955\n35993\n35995\n36019\n36020\n36021\n36023\n36033\n36040\n36045\n36047\n36220\n36221\n36224\n36232\n36243\n36245\n36260\n36263\n36264\n36266\n36269\n36286\n36287\n36330\n36375\n36378\n36388\n36390\n36392\n36393\n36397\n36399\n36466\n36475\n36476\n36480\n36490\n36492\n36493\n36494\n36495\n36496\n36497\n36498\n36500\n36564\n36573\n36617\n36660\n36673\n36678\n36680\n36696\n36697\n36698\n36699\n36701\n36781\n36809\n36902\n36928\n36929\n37020\n37059\n37114\n37120\n37126\n37191\n37261\n37294\n37318\n37339\n37442\n37475\n37532\n37568\n37676\n37703\n37780\n37935\n37975\n38000\n38045\n38052\n38054\n38055\n38062\n38063\n38102\n38105\n38141\n38196\n38283\n38288\n38293\n38295\n38298\n38299\n38308\n38339\n38376\n38399\n38414\n38423\n38458\n38523\n38574\n38587\n38598\n38630\n38640\n38641\n38645\n38646\n38647\n38648\n38649\n38657\n38658\n38661\n38662\n38665\n38667\n38668\n38693\n38702\n38749\n38786\n38800\n38812\n38816\n38863\n38864\n38879\n38883\n38902\n38914\n38919\n38935\n38978\n38981\n38982\n38983\n38986\n38987\n39000\n39001\n39003\n39008\n39017\n39057\n39102\n39105\n39231\n39234\n39241\n39345\n39358\n39382\n39383\n39387\n39399\n39401\n39412\n39459\n39467\n39485\n39574\n39577\n39578\n39579\n39599\n39618\n39620\n39621\n39628\n39712\n39753\n39767\n39769\n39792\n39834\n39840\n39929\n39933\n39934\n39935\n39949\n40041\n40044\n40140\n40141\n40142\n40212\n40238\n40258\n40271\n40278\n40279\n40337\n40352\n40377\n40378\n40453\n40487\n40501\n40529\n40593\n40605\n40644\n40657\n40679\n40681\n40690\n40754\n40780\n40824\n40849\n40906\n40913\n40951\n41022\n41024\n41025\n41029\n41089\n41093\n41154\n41156\n41202\n41222\n41225\n41334\n41344\n41345\n41354\n41356\n41357\n41358\n41426\n41433\n41451\n41460\n41462\n41517\n41521\n41528\n41529\n41530\n41545\n41552\n41622\n41651\n41691\n41701\n41717\n41729\n41789\n41793\n41805\n41839\n41840\n41842\n41850\n41851\n41852\n41876\n41926\n41950\n41952\n41953\n41954\n41956\n41958\n41959\n41971\n41972\n42001\n42021\n42024\n42034\n42035\n42037\n42053\n42059\n42060\n42061\n42072\n42073\n42120\n42121\n42139\n42155\n42263\n42288\n42295\n42381\n42389\n42390\n42399\n42400\n42401\n42402\n42403\n42404\n42405\n42406\n42407\n42415\n42472\n42473\n42514\n42515\n42516\n42517\n42573\n42601\n42605\n42606\n42607\n42716\n42718\n42755\n42772\n42821\n42823\n42873\n42949\n42965\n42988\n43013\n43019\n43026\n43046\n43089\n43094\n43095\n43096\n43171\n43212\n43257\n43260\n43261\n43265\n43280\n43295\n43368\n43385\n43396\n43400\n43435\n43441\n43444\n43525\n43537\n43538\n43539\n43572\n43613\n43626\n43630\n43634\n43687\n43729\n43735\n43739\n43835\n43873\n43875\n43876\n43877\n43878\n43879\n43880\n43881\n43882\n43884\n43893\n43963\n43973\n43980\n43982\n43983\n43992\n43995\n44001\n44131\n44132\n44144\n44147\n44151\n44157\n44163\n44215\n44225\n44230\n44236\n44244\n44256\n44257\n44271\n44282\n44286\n44300\n44317\n44321\n44322\n44323\n44329\n44361\n44404\n44420\n44425\n44456\n44475\n44476\n44478\n44526\n44539\n44559\n44563\n44566\n44567\n44568\n44570\n44571\n44573\n44575\n44582\n44661\n44662\n44726\n44743\n44756\n44759\n44797\n44821\n44827\n44832\n44870\n44871\n44872\n44873\n44874\n44875\n44876\n44877\n44913\n44952\n44972\n44989\n44991\n45042\n45044\n45066\n45115\n45116\n45139\n45216\n45242\n45272\n45375\n45381\n45396\n45399\n45448\n45492\n45500\n45503\n45507\n45538\n45539\n45540\n45541\n45542\n45543\n45544\n45545\n45546\n45547\n45548\n45549\n45550\n45551\n45552\n45698\n45707\n45714\n45776\n45813\n45854\n45904\n45937\n45957\n45962\n45963\n45965\n45966\n45968\n45980\n46017\n46026\n46075\n46125\n46131\n46132\n46164\n46182\n46208\n46216\n46230\n46231\n46296\n46317\n46450\n46463\n46502\n46512\n46536\n46551\n46565\n46566\n46567\n46568\n46569\n46571\n46588\n46594\n46640\n46658\n46674\n46679\n46715\n46721\n46754\n46782\n46785\n46786\n46787\n46788\n46789\n46790\n46793\n46794\n46795\n46796\n46797\n46858\n46881\n46882\n46883\n46884\n46886\n46887\n46889\n46910\n46912\n46914\n46917\n46918\n46921\n46978\n46985\n46997\n47045\n47056\n47059\n47061\n47075\n47086\n47105\n47149\n47151\n47175\n47176\n47177\n47178\n47181\n47182\n47237\n47238\n47250\n47270\n47297\n47300\n47301\n47384\n47402\n47403\n47405\n47406\n47482\n47502\n47545\n47549\n47550\n47553\n47567\n47603\n47622\n47651\n47669\n47679\n47690\n47700\n47712\n47713\n47714\n47716\n47717\n47719\n47720\n47721\n47736\n47744\n47797\n47831\n47859\n47893\n47922\n47924\n47925\n47926\n47927\n47930\n47932\n47933\n47934\n47935\n47938\n47939\n47941\n47942\n47964\n47965\n47967\n48019\n48020\n48021\n48022\n48025\n48026\n48027\n48028\n48029\n48033\n48038\n48068\n48083\n48179\n48191\n48193\n48290\n48291\n48415\n48453\n48454\n48456\n48457\n48505\n48513\n48515\n48516\n48534\n48540\n48587\n48592\n48604\n48610\n48614\n48629\n48680\n48681\n48682\n48684\n48685\n48697\n48727\n48728\n48749\n48771\n48772\n48806\n48832\n48895\n48896\n48901\n48941\n48946\n49044\n49058\n49141\n49149\n49191\n49203\n49204\n49205\n49214\n49244\n49262\n49270\n49271\n49286\n49290\n49298\n49356\n49357\n49384\n49431\n49450\n49465\n49466\n49467\n49468\n49479\n49488\n49520\n49554\n49557\n49559\n49580\n49617\n49637\n49683\n49684\n49718\n49738\n49746\n49754\n49758\n49764\n49811\n49820\n49887\n49909\n49926\n49937\n49994\n50026\n50027\n50029\n50037\n50040\n50041\n50063\n50122\n50215\n50216\n50217\n50218\n50219\n50262\n50289\n50290\n50294\n50301\n50303\n50315\n50337\n50339\n50386\n50389\n50390\n50391\n50399\n50400\n50402\n50403\n50404\n50415\n50450\n50451\n50453\n50456\n50464\n50467\n50477\n50528\n50529\n50631\n50639\n50646\n50749\n50751\n50803\n50814\n50838\n50931\n50951\n50953\n50954\n50955\n50956\n50958\n51025\n51049\n51087\n51114\n51156\n51165\n51269\n51317\n51345\n51475\n51540\n51597\n51599\n51600\n51601\n51602\n51603\n51613\n51638\n51694\n51715\n51745\n51771\n51777\n51789\n51810\n51849\n51850\n51851\n51852\n51853\n51872\n51963\n52027\n52039\n52086\n52091\n52093\n52094\n52095\n52096\n52097\n52100\n52134\n52183\n52192\n52213\n52232\n52272\n52274\n52275\n52276\n52277\n52278\n52279\n52343\n52344\n52345\n52352\n52356\n52358\n52360\n52369\n52396\n52398\n52400\n52410\n52425\n52469\n52471\n52474\n52484\n52562\n52564\n52594\n52601\n52607\n52618\n52619\n52635\n52749\n52755\n52777\n52825\n52841\n52847\n52852\n52888\n52908\n52926\n52928\n52982\n52992\n52993\n52994\n52998\n53020\n53029\n53057\n53062\n53086\n53087\n53088\n53089\n53091\n53134\n53151\n53160\n53161\n53163\n53165\n53166\n53168\n53169\n53176\n53191\n53192\n53193\n53194\n53195\n53233\n53266\n53278\n53280\n53290\n53340\n53373\n53376\n53463\n53465\n53495\n53518\n53534\n53581\n53586\n53669\n53712\n53713\n53714\n53715\n53743\n53756\n53757\n53758\n53831\n53832\n53833\n53835\n53836\n53970\n54014\n54064\n54065\n54066\n54070\n54100\n54232\n54233\n54234\n54284\n54408\n54409\n54427\n54432\n54434\n54435\n54562\n54681\n54682\n54695\n54802\n54803\n54805\n54846\n54913\n55001\n55039\n55104\n55123\n55172\n55174\n55175\n55177\n55178\n55182\n55195\n55236\n55280\n55281\n55314\n55329\n55392\n55444\n55455\n55460\n55461\n55463\n55466\n55468\n55469\n55470\n55472\n55474\n55481\n55484\n55548\n55565\n55602\n55615\n55639\n55640\n55641\n55643\n55644\n55645\n55646\n55647\n55683\n55732\n55753\n55754\n55758\n55785\n55797\n55868\n55895\n55896\n55923\n55981\n56010\n56013\n56174\n56178\n56190\n56191\n56206\n56282\n56341\n56344\n56426\n56449\n56463\n56526\n56531\n56532\n56534\n56536\n56537\n56554\n56665\n56722\n56872\n56874\n56875\n56876\n56883\n56884\n56887\n56985\n56987\n56988\n56989\n57002\n57011\n57018\n57056\n57147\n57231\n57278\n57279\n57411\n57660\n57683\n57715\n57716\n57717\n57718\n57721\n57758\n57779\n57790\n57791\n57792\n57863\n57864\n57998\n58030\n58100\n58116\n58117\n58118\n58119\n58127\n58130\n58228\n58282\n58315\n58330\n58367\n58369\n58372\n58374\n58382\n58443\n58497\n58527\n58528\n58529\n58530\n58533\n58534\n58535\n58536\n58565\n58577\n58663\n58696\n58705\n58799\n58805\n58806\n58807\n58809\n58810\n58811\n58812\n58813\n58814\n58815\n58817\n58896\n58958\n59104\n59120\n59154\n59155\n59156\n59157\n59158\n59160\n59176\n59178\n59184\n59185\n59325\n59355\n59356\n59357\n59358\n59359\n59360\n59410\n59501\n59521\n59523\n59541\n59543\n59683\n59701\n59774\n59775\n59825\n59856\n59903\n59921\n59958\n59959\n59960\n59961\n59962\n59964\n59965\n59966\n59968\n59970\n59971\n59972\n59973\n59993\n60014\n60033\n60038\n60073\n60074\n60075\n60289\n60358\n60373\n60378\n60379\n60380\n60383\n60401\n60415\n60541\n60568\n60569\n60570\n60572\n60574\n60575\n60642\n60643\n60650\n60704\n60710\n60714\n60777\n60779\n60780\n60798\n60845\n60878\n60879\n60881\n60882\n60890\n60935\n60937\n60938\n60939\n60940\n60941\n60948\n60973\n61075\n61076\n61082\n61084\n61173\n61174\n61175\n61176\n61291\n61522\n61622\n61629\n61745\n61814\n61815\n61829\n61943\n61952\n62086\n62092\n62112\n62120\n62199\n62200\n62202\n62219\n62253\n62258\n62268\n62271\n62272\n62273\n62274\n62276\n62301\n62324\n62336\n62422\n62567\n62608\n62611\n62612\n62613\n62614\n62615\n62617\n62676\n62691\n62698\n62775\n62887\n62891\n62892\n62957\n62958\n62959\n62960\n62980\n63003\n63055\n63059\n63066\n63072\n63131\n63151\n63214\n63257\n63268\n63269\n63270\n63273\n63290\n63295\n63349\n63417\n63530\n63531\n63533\n63537\n63598\n63601\n63602\n63605\n63606\n63613\n63614\n63615\n63625\n63656\n63657\n63682\n63730\n63826\n63827\n63828\n63830\n63831\n63832\n63833\n63835\n63836\n63844\n63855\n63856\n63993\n64071\n64308\n64322\n64331\n64417\n64430\n64433\n64435\n64436\n64443\n64445\n64447\n64505\n64510\n64512\n64538\n64610\n64701\n64836\n64858\n64868\n64873\n64889\n64951\n64952\n64953\n64954\n64955\n64957\n64958\n64959\n64974\n64980\n65004\n65015\n65060\n65063\n65156\n65157\n65167\n65220\n65222\n65289\n65322\n65385\n65423\n65468\n65502\n65503\n65504\n65505\n65506\n65507\n65514\n65541\n65544\n65547\n65549\n65587\n65593\n65615\n65664\n65665\n65920\n65931\n65937\n65938\n65940\n65942\n66008\n66111\n66144\n66175\n66200\n66201\n66204\n66211\n66267\n66270\n66271\n66273\n66274\n66294\n66366\n66439\n66463\n66464\n66465\n66469\n66506\n66514\n66516\n66802\n66804\n66905\n66976\n67065\n67185\n67196\n67200\n67212\n67237\n67252\n67257\n67326\n67364\n67386\n67484\n67558\n67604\n67622\n67623\n67624\n67625\n67626\n67662\n67681\n67687\n67799\n67917\n67919\n67925\n67931\n67983\n68047\n68179\n68275\n68276\n68279\n68280\n68281\n68282\n68283\n68284\n68285\n68286\n68287\n68388\n68451\n68473\n68474\n68496\n68502\n68547\n68562\n68563\n68659\n68821\n68917\n68918\n68919\n68920\n68922\n68923\n68924\n68938\n69226\n69294\n69305\n69312\n69356\n69376\n69386\n69395\n69450\n69666\n69667\n69668\n69713\n69733\n69734\n69735\n69813\n69903\n70025\n70144\n70163\n70164\n70168\n70169\n70170\n70172\n70173\n70252\n70253\n70334\n70339\n70516\n70571\n70596\n70623\n70731\n70734\n70738\n70814\n71020\n71036\n71037\n71210\n71211\n71318\n71327\n71343\n71344\n71345\n71347\n71348\n71350\n71351\n71375\n71378\n71399\n71402\n71403\n71444\n71445\n71499\n71516\n71626\n71627\n71629\n71630\n71631\n71632\n71633\n71634\n71635\n71657\n71693\n71842\n71928\n72071\n72198\n72294\n72295\n72395\n72397\n72438\n72480\n72536\n72642\n72644\n72646\n72650\n72745\n72747\n72753\n72772\n72847\n72899\n72908\n72927\n72988\n73150\n73161\n73182\n73306\n73356\n73363\n73365\n73366\n73367\n73417\n73423\n73544\n73546\n73666\n73667\n73668\n73670\n73671\n73672\n73673\n73674\n73676\n73690\n73738\n73759\n73852\n73853\n73854\n73855\n73909\n73930\n73954\n73973\n73995\n74121\n74122\n74123\n74138\n74143\n74243\n74246\n74247\n74248\n74250\n74253\n74254\n74263\n74295\n74625\n74627\n74628\n74630\n74644\n74697\n74708\n74712\n74785\n74819\n74919\n74927\n75005\n75096\n75097\n75098\n75099\n75100\n75101\n75102\n75103\n75104\n75106\n75126\n75174\n75306\n75824\n75871\n75928\n75965\n75995\n76008\n76160\n76179\n76228\n76230\n76231\n76243\n76262\n76277\n76299\n76327\n76334\n76457\n76505\n76507\n76508\n76509\n76608\n76658\n76838\n76966\n76967\n77263\n77307\n77308\n77309\n77312\n77313\n77314\n77317\n77318\n77371\n77412\n77448\n77473\n77475\n77476\n77477\n77479\n77480\n77481\n77482\n77557\n77708\n77729\n77731\n77732\n77960\n77961\n78005\n78224\n78261\n78363\n78379\n78381\n78382\n78383\n78384\n78570\n78782\n78783\n78850\n78899\n78914\n79093\n79195\n79196\n79197\n79198\n79200\n79201\n79226\n79227\n79228\n79238\n79240\n79315\n79329\n79339\n79340\n79501\n79502\n79503\n79504\n79505\n79506\n79507\n79582\n79584\n79587\n79588\n79594\n79633\n79657\n79682\n79739\n79896\n79897\n79898\n79900\n79901\n80181\n80190\n80192\n80194\n80195\n80209\n80210\n80211\n80212\n80260\n80294\n80395\n80397\n80398\n80399\n80457\n80494\n80622\n80956\n80959\n80967\n80980\n81008\n81009\n81012\n81013\n81014\n81103\n81192\n81193\n81194\n81195\n81212\n81772\n81824\n81909\n81910\n81911\n81912\n81913\n81936\n81988\n82053\n82054\n82063\n82230\n82273\n82297\n82298\n82313\n82380\n82422\n82476\n82478\n82508\n82520\n82521\n82522\n82523\n82524\n82578\n82579\n82582\n82618\n82643\n82652\n82672\n82673\n82946\n82947\n83022\n83088\n83186\n83280\n83282\n83286\n83287\n83396\n83398\n83577\n83605\n83834\n83976\n84002\n84036\n84180\n84421\n84422\n84424\n84426\n84438\n84543\n84559\n84560\n84775\n84780\n85179\n85257\n85341\n85526\n85533\n85538\n85747\n85783\n85918\n85919\n85988\n86027\n86121\n86175\n86176\n86177\n86225\n86585\n86663\n86664\n86713\n86747\n86803\n86847\n86867\n86949\n86950\n86953\n87064\n87114\n87133\n87136\n87139\n87172\n87179\n87360\n87373\n87416\n87547\n87548\n87606\n87648\n87651\n87653\n87728\n87737\n87739\n87740\n87741\n87969\n88044\n88163\n88290\n88348\n88349\n88496\n88497\n88505\n88543\n88923\n89114\n89168\n89203\n89251\n89591\n89618\n89646\n89658\n89708\n89771\n89831\n89832\n89849\n89994\n90006\n90010\n90013\n90015\n90018\n90019\n90020\n90021\n90022\n90075\n90076\n90113\n90114\n90116\n90173\n90195\n90210\n90212\n90213\n90214\n90215\n90228\n90272\n90276\n90351\n90464\n90465\n90501\n90569\n90571\n90634\n90722\n90813\n90815\n90816\n91117\n91451\n91648\n91684\n91686\n91712\n91754\n91755\n91843\n92067\n92146\n92207\n92229\n92288\n92298\n92299\n92301\n92302\n92304\n92307\n92308\n92311\n92314\n92315\n92316\n92318\n92320\n92336\n92343\n92598\n92647\n92670\n92846\n92884\n93117\n93118\n93119\n93121\n93122\n93166\n93189\n93190\n93191\n93219\n93248\n93252\n93284\n93285\n93286\n93354\n93467\n93515\n93520\n93618\n93622\n93624\n93675\n93732\n93749\n93755\n93802\n93824\n93825\n93831\n93832\n93833\n93834\n93835\n93841\n93854\n94075\n94188\n94191\n94192\n94193\n94199\n94202\n94204\n94220\n94291\n94335\n94380\n94384\n94385\n94387\n94389\n94390\n94392\n94410\n94411\n94413\n94414\n94415\n94417\n94419\n94420\n94421\n94423\n94424\n94425\n94426\n94427\n94428\n94429\n94430\n94431\n94432\n94433\n94434\n94435\n94436\n94440\n94465\n94467\n94468\n94469\n94471\n94474\n94476\n94477\n94480\n94482\n94483\n94484\n94488\n94489\n94491\n94492\n94493\n94494\n94495\n94496\n94498\n94509\n94512\n94513\n94576\n94577\n94720\n94749\n94750\n94752\n94753\n94757\n94758\n94759\n94760\n94771\n94781\n94783\n94813\n94852\n95041\n95042\n95043\n95144\n95145\n95146\n95147\n95247\n95251\n95256\n95290\n95413\n95414\n95416\n95486\n95536\n95556\n95596\n95724\n95863\n95864\n95949\n95951\n96003\n96004\n96006\n96009\n96181\n96201\n96256\n96272\n96305\n96337\n96339\n96340\n96348\n96349\n96420\n96421\n96422\n96424\n96425\n96475\n96515\n96518\n96564\n96604\n96605\n96676\n96677\n96678\n96679\n96680\n96681\n96692\n96696\n96707\n96758\n96760\n96826\n96951\n97023\n97077\n97078\n97079\n97081\n97111\n97177\n97688\n97794\n97870\n97915\n97935\n97996\n98050\n98157\n98198\n98604\n98625\n98741\n98744\n98745\n98750\n98752\n98754\n98755\n98935\n99045\n99046\n99047\n99048\n99050\n99258\n99289\n99298\n99299\n99300\n99302\n99376\n99410\n99428\n99461\n99468\n99479\n99480\n99482\n99547\n99706\n99708\n99709\n99710\n99718\n99722\n100029\n100099\n100102\n100103\n100122\n100155\n100157\n100159\n100257\n100258\n100271\n100319\n100324\n100336\n100337\n100349\n100350\n100427\n100784\n100785\n100786\n100787\n100889\n100942\n101032\n101033\n101057\n101058\n101302\n101404\n101405\n101407\n101408\n101418\n101433\n101448\n101453\n101526\n101589\n101591\n101601\n101891\n101944\n101946\n101948\n101950\n101967\n101988\n101998\n102175\n102246\n102247\n102417\n102420\n102432\n102707\n102760\n102787\n102788\n102919\n103409\n103470\n103472\n103474\n103476\n103477\n103491\n103510\n103626\n103630\n103631\n103633\n103634\n103655\n103733\n103766\n103821\n103863\n103867\n103868\n103872\n103944\n103959\n103962\n104045\n104046\n104137\n104171\n104244\n104255\n104269\n104370\n104445\n104472\n104504\n104574\n104635\n104719\n104861\n104924\n105480\n105582\n105660\n105707\n105725\n105727\n105728\n105753\n105838\n105843\n105845\n105846\n105855\n106140\n106175\n106184\n106231\n106320\n106323\n106360\n106361\n106433\n106493\n106561\n106563\n106648\n106652\n106685\n106817\n106860\n106863\n106890\n107069\n107070\n107087\n107089\n107115\n107116\n107117\n107119\n107291\n107343\n107358\n107359\n107362\n107426\n107461\n107463\n107504\n107535\n107543\n107614\n107753\n107779\n107789\n107797\n108213\n108301\n108864\n109010\n109029\n109092\n109245\n109253\n109257\n110066\n110109\n110110\n110112\n110113\n110114\n110137\n110243\n110338\n110349\n110455\n110718\n110725\n110821\n110822\n111036\n111037\n111038\n111039\n111040\n111041\n111042\n111043\n111044\n111046\n111048\n111049\n111093\n111094\n111124\n111165\n111167\n111170\n111171\n111172\n111176\n111178\n111179\n111180\n111181\n111183\n111184\n111188\n111194\n111300\n111302\n111303\n111304\n111305\n111306\n111307\n111308\n111313\n111315\n111316\n111319\n111329\n111334\n111434\n111473\n111566\n111567\n111573\n111587\n111595\n111760\n111878\n111879\n111880\n111882\n111884\n111885\n111887\n111889\n111890\n111891\n111892\n111893\n111895\n111897\n111898\n111899\n111900\n111902\n111946\n111949\n112191\n112192\n112193\n112194\n112199\n112201\n112204\n112207\n112208\n112209\n112210\n112211\n112212\n112213\n112216\n112217\n112218\n112219\n112220\n112222\n112224\n112225\n112226\n112227\n112228\n112230\n112632\n112930\n112979\n113034\n113036\n113038\n113040\n113045\n113049\n113053\n113055\n113057\n113060\n113062\n113064\n113070\n113072\n113074\n113076\n113078\n113081\n113082\n113356\n113380\n113432\n113434\n113436\n113437\n113438\n113439\n113440\n113441\n113442\n113444\n113445\n113446\n113449\n113450\n113451\n113452\n113455\n113504\n113568\n113569\n113570\n113826\n113853\n113855\n113856\n113858\n113859\n113860\n113863\n113864\n113868\n113869\n113872\n113875\n113878\n113879\n113880\n113881\n113883\n113884\n114072\n114074\n114357\n114413\n114483\n114542\n114552\n114891\n114893\n114894\n114956\n115024\n115550\n115551\n115636\n115812\n116022\n116041\n116113\n116383\n116472\n116514\n116540\n116541\n116620\n116667\n116668\n116721\n116775\n116777\n116798\n117081\n117082\n117170\n117172\n117174\n117261\n117286\n117321\n117427\n117527\n117528\n117530\n117553\n117580\n117660\n117661\n118096\n118098\n118099\n118213\n118215\n118216\n118236\n118340\n118363\n118375\n118376\n118377\n118378\n118669\n118670\n118671\n118674\n118677\n118679\n118681\n118684\n118685\n118687\n118688\n118692\n118754\n118763\n118765\n118766\n118768\n118769\n118770\n118774\n118775\n118777\n118782\n118783\n118786\n118789\n118888\n118889\n118890\n118892\n118893\n118896\n118899\n118901\n118903\n118908\n118909\n119003\n119098\n119148\n119160\n119177\n119269\n119271\n119272\n119497\n119504\n119513\n119596\n119622\n119623\n119960\n119966\n120027\n120038\n120161\n120244\n120267\n120269\n120270\n120273\n120274\n120276\n120280\n120380\n120381\n120383\n120403\n120875\n120900\n120906\n120918\n121116\n121176\n121584\n121585\n121586\n121587\n121588\n121589\n121590\n121591\n121592\n121596\n121597\n121598\n121599\n121600\n121601\n121602\n121617\n121625\n121668\n121672\n121674\n121681\n121701\n121704\n121706\n121707\n121708\n121709\n121710\n121711\n121712\n121784\n121972\n121975\n121977\n121978\n121985\n121997\n121999\n122000\n122003\n122004\n122005\n122006\n122063\n122064\n122068\n122079\n122086\n122092\n122094\n122096\n122097\n122098\n122124\n122131\n122169\n122179\n122258\n122267\n122270\n122273\n122275\n122339\n122559\n122563\n122564\n122614\n122633\n122713\n122714\n122716\n122791\n122807\n122810\n122813\n122818\n122928\n122930\n123015\n123074\n123075\n123113\n123136\n123175\n123191\n123252\n123300\n123303\n123379\n123412\n123423\n123424\n123425\n123428\n123429\n123430\n123432\n123433\n123435\n123566\n123646\n123649\n123709\n124046\n124047\n124048\n124049\n124050\n124051\n124052\n124053\n124054\n124055\n124056\n124058\n124059\n124060\n124061\n124063\n124064\n124065\n124066\n124067\n124070\n124071\n124072\n124073\n124074\n124075\n124387\n124394\n124471\n124718\n124719\n124756\n124796\n124806\n124910\n124912\n124913\n124914\n124915\n124916\n124918\n124920\n124926\n124936\n124937\n124942\n124943\n124945\n124946\n124947\n124948\n124949\n124951\n124953\n124954\n124957\n124958\n124959\n124960\n124961\n124962\n124963\n124964\n125005\n125037\n125077\n125145\n125288\n125295\n125335\n125787\n125826\n125837\n125850\n126021\n126074\n126097\n126176\n126177\n126180\n126567\n126589\n126590\n126608\n126610\n126748\n126751\n126755\n126756\n126757\n126758\n126759\n126760\n126762\n126763\n126764\n126765\n126768\n126770\n126771\n126773\n126774\n126775\n126777\n126778\n126779\n126780\n126781\n126782\n126784\n126785\n126787\n126788\n126789\n126791\n126792\n126793\n126795\n126796\n126872\n126873\n126927\n127004\n127161\n127310\n127311\n127548\n127693\n127751\n127825\n127826\n127828\n127829\n127831\n127832\n127834\n127835\n127839\n127842\n127843\n127846\n127848\n127849\n127850\n127851\n127852\n127853\n127854\n127855\n127856\n127859\n127861\n127862\n127964\n127966\n128124\n128507\n128786\n129029\n129233\n129345\n129418\n129510\n130000\n130057\n130139\n130259\n130260\n130261\n130262\n130264\n130275\n130276\n130277\n130283\n130284\n130285\n130287\n130288\n130290\n130295\n130296\n130304\n130305\n130306\n130308\n130309\n130311\n130312\n130314\n130448\n130592\n130642\n130643\n131032\n131033\n131035\n131036\n131311\n131355\n131502\n131560\n131708\n131710\n131711\n131712\n131713\n131725\n131727\n131729\n131730\n132033\n132105\n132238\n132257\n132506\n132576\n132577\n132579\n132616\n132773\n133128\n133130\n133137\n133191\n133481\n133484\n133485\n133486\n133487\n133488\n133490\n133627\n133700\n133701\n133705\n134260\n134342\n134521\n134581\n134582\n134583\n134855\n135129\n135279\n135282\n135284\n135352\n135400\n136021\n136271\n136302\n136304\n136306\n136318\n136354\n136355\n136356\n136358\n136359\n136394\n136510\n136996\n137065\n137143\n137201\n137202\n137203\n137204\n137205\n137206\n137207\n137292\n137313\n137321\n137554\n137702\n137866\n137887\n137982\n137983\n137990\n137991\n137992\n137993\n137994\n137996\n138176\n138287\n138288\n138576\n138828\n138830\n138831\n138832\n138833\n138834\n138905\n138914\n139009\n139014\n139025\n139027\n139047\n139063\n139151\n139171\n139247\n139615\n140026\n140207\n140421\n140422\n140424\n140425\n140433\n140434\n140438\n140541\n140993\n141077\n141294\n141366\n141367\n141368\n141370\n141371\n141386\n141710\n141861\n142066\n142273\n142275\n142279\n142281\n142283\n142314\n142315\n142316\n142641\n142643\n142644\n142849\n143137\n143609\n143806\n143816\n143885\n144166\n144178\n144190\n144191\n144194\n144195\n144196\n144197\n144199\n144200\n144201\n144223\n144224\n144226\n144245\n144603\n144606\n144607\n144609\n144611\n144808\n144914\n144999\n145342\n145343\n145760\n145773\n146031\n146122\n146200\n146202\n146250\n146815\n146881\n147062\n147063\n147064\n147065\n147066\n147425\n147549\n147560\n147581\n148096\n148629\n148891\n148941\n148942\n148943\n148951\n148953\n148954\n148956\n148958\n149211\n149489\n149490\n149492\n149570\n149627\n149977\n150105\n150106\n150107\n150138\n150651\n150949\n150950\n150951\n150952\n150953\n150954\n150955\n151512\n151737\n151743\n151744\n151747\n151748\n151749\n151889\n152562\n152682\n152908\n152909\n152910\n152912\n152913\n152916\n153187\n153214\n153239\n153258\n153402\n153445\n153579\n153582\n153583\n154101\n155000\n155521\n155523\n155525\n155528\n155533\n155771\n156032\n156179\n156200\n156323\n156470\n156730\n157656\n157659\n157660\n157665\n157667\n157668\n157669\n157670\n157672\n157883\n159214\n159225\n159316\n159325\n159475\n159873\n159874\n159875\n159876\n159877\n159879\n159880\n159882\n159917\n160021\n160132\n160185\n160429\n160504\n160988\n161561\n161575\n161604\n161652\n161768\n161788\n161793\n161825\n161855\n161912\n162334\n162335\n162603\n162604\n162636\n162669\n162670\n162671\n162672\n162674\n162676\n162780\n163072\n163378\n163581\n163674\n163686\n163954\n163966\n164234\n164235\n164238\n164239\n164241\n164242\n164488\n164494\n164551\n164614\n165213\n165215\n165217\n165218\n165219\n165230\n165440\n165501\n165541\n165862\n166412\n166453\n167444\n167793\n167794\n167795\n167799\n167800\n168437\n168700\n168743\n168767\n170242\n170261\n170262\n170263\n170265\n170771\n170899\n171148\n171581\n171596\n172626\n173553\n173659\n173761\n174369\n174539\n174540\n174541\n174542\n174546\n174572\n174808\n175635\n176661\n176663\n176664\n176665\n176666\n176669\n176691\n177207\n177490\n178041\n178043\n178044\n178045\n178047\n178063\n178108\n178282\n178331\n178484\n179019\n179565\n179567\n179572\n179576\n179579\n179846\n180052\n180576\n180939\n180988\n181028\n181060\n181229\n181281\n181526\n181529\n181592\n181840\n181898\n182057\n182157\n182303\n182583\n182677\n182692\n182694\n182697\n182698\n182700\n183468\n183474\n183612\n185426\n185428\n186556\n187006\n187123\n187182\n187259\n187260\n187261\n187262\n187263\n187264\n187265\n187266\n187267\n188153\n188553\n189432\n189624\n189711\n190828\n190867\n190868\n190869\n191241\n191542\n191543\n191798\n191799\n191801\n191843\n192257\n192617\n192742\n193015\n193212\n193234\n193747\n194279\n194710\n195295\n195325\n195326\n195328\n195329\n195373\n195505\n196019\n196129\n196145\n196525\n196805\n197073\n197076\n197784\n198344\n198530\n198532\n198533\n198534\n198535\n198536\n198537\n198540\n198917\n199182\n199185\n199187\n199211\n199278\n199281\n199282\n199599\n199817\n200009\n200010\n200012\n200217\n200352\n200353\n200354\n200355\n200356\n200357\n201136\n201196\n201197\n201198\n201199\n201200\n201244\n201494\n201612\n201777\n202048\n202126\n202127\n202128\n202129\n202132\n202473\n202686\n202884\n202902\n202990\n202991\n203233\n203271\n203273\n203275\n203276\n203277\n203278\n203280\n203284\n203312\n203412\n203600\n203610\n203958\n203970\n204016\n204167\n204178\n204379\n204538\n204607\n204652\n204654\n204656\n204726\n205020\n205095\n205105\n205272\n205676\n205725\n205726\n205727\n205730\n205731\n205732\n205891\n205978\n206055\n206180\n206578\n206579\n206580\n206581\n206619\n206756\n206757\n206759\n206760\n207194\n207448\n207449\n207451\n207454\n207740\n208307\n208396\n208397\n208398\n208693\n208715\n208716\n208717\n208813\n209133\n209134\n209135\n209139\n209140\n209293\n209294\n209297\n209375\n209664\n209755\n209829\n209995\n210232\n210249\n210867\n211486\n211489\n211709\n211710\n211713\n211767\n211769\n211770\n211771\n211772\n212040\n212041\n212183\n212510\n212597\n212606\n212674\n212725\n212738\n213205\n213556\n213557\n213558\n213559\n213560\n213561\n213562\n213563\n213578\n213652\n213840\n213841\n213998\n213999\n214000\n214002\n214003\n214004\n214012\n214013\n214014\n214074\n214079\n214192\n214309\n214310\n214311\n214312\n214314\n214315\n214499\n214506\n214508\n214509\n214531\n214597\n214659\n214755\n214873\n215163\n215209\n215267\n215438\n215560\n215592\n215594\n215595\n215758\n215990\n216089\n216090\n216091\n216152\n216156\n216172\n216658\n216726\n216735\n216740\n216742\n216743\n216744\n217066\n217129\n217689\n217736\n217737\n217738\n217739\n217801\n218154\n218163\n218693\n218754\n218794\n218898\n218900\n218901\n218902\n218906\n218907\n218909\n218910\n218911\n219146\n219177\n219190\n219356\n219361\n219362\n219364\n219708\n219758\n219866\n219875\n219878\n219902\n220129\n220263\n220264\n220359\n220458\n220613\n220630\n220695\n220696\n220697\n220698\n220848\n220897\n221058\n30\n34\n35\n36\n37\n38\n39\n115\n126\n155\n158\n299\n305\n329\n333\n334\n335\n629\n685\n687\n688\n690\n1101\n1105\n1106\n1108\n1519\n1520\n1521\n1522\n1523\n2090\n2092\n2095\n2100\n2101\n2238\n2239\n2240\n2296\n2576\n2626\n3940\n3970\n4012\n4024\n4070\n4071\n4222\n4225\n4471\n5103\n5321\n5337\n5339\n5440\n5445\n5448\n5482\n5640\n6161\n6194\n6328\n6673\n6695\n6696\n7074\n7532\n7678\n7692\n8831\n8841\n8857\n8921\n9630\n9633\n9668\n9703\n9733\n9734\n9744\n9765\n9766\n9767\n9800\n9802\n9891\n9952\n10010\n10051\n10406\n10691\n10792\n10851\n10852\n10887\n10913\n10967\n10995\n11093\n11094\n11095\n11097\n11247\n11355\n11362\n12114\n12144\n12242\n12263\n12320\n12342\n12363\n12422\n12465\n12545\n12551\n12656\n12667\n13130\n13140\n13286\n13288\n13458\n13469\n13487\n13502\n13511\n13561\n13575\n13576\n13592\n13595\n13687\n13688\n13697\n13698\n13717\n13978\n13979\n14008\n14013\n14049\n14113\n14114\n14141\n14169\n14235\n14621\n14732\n14740\n14771\n14860\n14886\n14887\n14957\n14959\n15024\n15027\n15059\n15109\n15122\n15155\n15161\n15162\n15164\n15188\n15191\n15194\n15195\n15259\n15267\n15278\n15302\n15305\n15338\n15371\n15387\n15403\n15453\n15477\n15497\n15523\n15526\n15579\n15617\n15665\n15704\n15714\n15765\n15800\n15851\n15882\n15923\n15939\n15985\n15996\n16006\n16040\n16045\n16238\n16261\n16324\n16326\n16331\n16339\n16395\n16489\n16521\n16616\n16619\n16629\n16674\n16682\n16812\n16872\n16879\n16889\n17089\n17347\n17348\n17389\n17431\n17543\n17728\n17777\n17990\n18078\n18079\n18089\n18090\n18161\n18179\n18211\n18230\n18239\n18838\n18849\n18888\n18929\n19105\n19116\n19171\n19243\n19254\n19402\n19442\n19474\n19495\n19562\n19582\n19648\n19696\n19752\n19753\n19770\n19772\n19795\n19819\n19845\n19855\n19861\n19900\n20017\n20044\n20069\n20108\n20118\n20162\n20168\n20215\n20415\n20503\n20765\n21034\n21063\n21068\n21121\n21175\n21182\n21194\n21201\n21255\n21329\n21358\n21473\n21480\n21491\n21530\n21534\n21536\n21587\n21634\n21648\n21679\n21935\n21956\n22027\n22039\n22048\n22229\n22246\n22264\n22308\n22383\n22386\n22451\n22453\n22552\n22622\n22658\n22677\n22761\n22802\n22895\n22897\n23065\n23340\n23810\n23840\n23871\n23912\n23921\n23924\n23989\n23990\n24095\n24127\n24246\n24363\n24436\n24567\n24631\n24766\n24792\n24929\n24991\n24998\n25041\n25042\n25043\n25052\n25235\n25316\n25354\n25423\n25522\n25619\n25634\n25713\n25720\n25755\n25794\n25950\n26194\n26241\n26271\n26273\n26286\n26311\n26408\n26433\n26436\n26459\n26469\n26475\n26525\n26556\n26649\n27013\n27018\n27052\n27253\n27343\n27396\n27404\n27464\n27818\n27904\n27908\n27913\n27917\n27929\n27931\n27959\n27960\n28014\n28024\n28084\n28096\n28131\n28136\n28139\n28152\n28162\n28169\n28174\n28183\n28190\n28213\n28214\n28260\n28263\n28289\n28296\n28298\n28307\n28308\n28309\n28319\n28372\n28398\n28430\n28524\n28525\n28537\n28741\n28938\n28972\n29098\n29103\n29160\n29233\n29485\n29506\n29509\n29510\n29512\n29513\n29514\n29521\n29522\n29524\n29540\n29552\n29590\n29623\n29715\n29717\n29718\n29720\n29721\n29722\n29725\n29726\n29727\n29728\n29729\n29730\n29731\n29733\n29785\n29874\n29886\n29887\n29892\n29893\n29894\n29895\n29896\n29898\n29902\n29904\n29905\n29933\n30051\n30054\n30055\n30056\n30057\n30059\n30061\n30094\n30205\n30206\n30209\n30212\n30217\n30220\n30226\n30304\n30309\n30316\n30317\n30322\n30324\n30325\n30427\n30428\n30431\n30432\n30435\n30437\n30439\n30447\n30461\n30558\n30560\n30561\n30562\n30564\n30565\n30567\n30570\n30589\n30624\n30631\n30666\n30668\n30669\n30670\n30672\n30675\n30681\n30682\n30683\n30684\n30685\n30686\n30687\n30887\n30906\n30908\n30909\n30910\n30914\n30915\n30918\n30921\n30934\n30951\n31020\n31081\n31083\n31086\n31087\n31088\n31089\n31091\n31094\n31096\n31155\n31317\n31318\n31325\n31327\n31331\n31332\n31333\n31334\n31335\n31337\n31364\n31453\n31483\n31526\n31528\n31530\n31533\n31538\n31539\n31560\n31562\n31631\n31632\n31635\n31637\n31705\n31855\n31864\n31878\n31879\n31880\n31881\n31882\n31885\n31893\n31948\n32037\n32039\n32042\n32101\n32102\n32104\n32122\n32290\n32293\n32294\n32298\n32305\n32358\n32461\n32462\n32464\n32571\n32572\n32575\n32578\n32579\n32580\n32601\n32684\n32743\n32744\n32745\n32748\n32749\n32755\n32759\n32781\n32832\n32927\n33005\n33006\n33008\n33009\n33010\n33011\n33125\n33169\n33170\n33173\n33253\n33254\n33255\n33256\n33257\n33259\n33260\n33271\n33277\n33338\n33340\n33462\n33465\n33467\n33605\n33712\n33713\n33714\n33715\n33717\n33833\n33834\n33836\n33837\n33843\n33920\n33921\n33925\n33926\n33927\n33928\n33945\n34014\n34023\n34029\n34046\n34048\n34066\n34069\n34160\n34211\n34213\n34215\n34216\n34218\n34219\n34328\n34332\n34333\n34335\n34336\n34395\n34402\n34418\n34419\n34432\n34435\n34437\n34438\n34439\n34440\n34441\n34442\n34512\n34513\n34514\n34516\n34522\n34523\n34524\n34525\n34659\n34660\n34661\n34663\n34746\n34762\n34763\n34764\n34765\n34767\n34768\n34769\n34774\n34858\n34860\n34879\n34985\n34986\n34988\n35125\n35126\n35127\n35128\n35131\n35218\n35290\n35293\n35295\n35435\n35436\n35437\n35438\n35439\n35532\n35558\n35559\n35560\n35561\n35562\n35672\n35673\n35677\n35808\n35825\n35827\n35832\n35834\n35872\n36058\n36059\n36060\n36061\n36156\n36157\n36158\n36191\n36227\n36228\n36249\n36259\n36262\n36271\n36356\n36357\n36358\n36367\n36398\n36404\n36422\n36608\n36610\n36683\n36684\n36685\n36687\n36732\n36865\n36939\n36940\n36941\n36943\n37035\n37036\n37037\n37038\n37039\n37139\n37141\n37142\n37143\n37144\n37160\n37254\n37353\n37356\n37358\n37427\n37689\n37691\n37692\n37693\n37786\n37797\n37924\n37926\n37927\n38020\n38021\n38022\n38023\n38157\n38159\n38160\n38161\n38163\n38164\n38254\n38280\n38467\n38492\n38556\n38558\n38559\n38560\n38562\n38563\n38610\n38642\n38666\n38669\n38673\n38678\n38679\n38709\n38743\n38772\n38773\n38796\n38797\n38814\n38868\n38869\n38893\n38990\n38995\n38996\n38997\n38999\n39116\n39256\n39259\n39278\n39313\n39365\n39367\n39368\n39386\n39395\n39502\n39533\n39639\n39642\n39643\n39645\n39646\n39726\n39799\n39800\n39802\n39939\n40030\n40166\n40167\n40168\n40169\n40211\n40243\n40245\n40329\n40330\n40338\n40346\n40482\n40496\n40505\n40566\n40691\n40859\n40861\n40863\n40905\n40958\n40960\n41052\n41055\n41059\n41130\n41131\n41253\n41339\n41445\n41504\n41506\n41507\n41547\n41719\n41731\n41745\n42119\n42160\n42322\n42352\n42376\n42465\n42535\n42713\n42835\n42963\n43141\n43279\n43406\n43408\n43409\n43448\n43546\n43547\n44149\n44426\n44652\n44842\n44906\n45058\n45119\n45328\n45857\n45861\n45900\n45940\n45961\n45964\n45967\n45995\n46129\n46248\n46548\n46683\n46751\n46885\n46911\n46983\n47148\n47506\n47552\n47718\n47928\n47929\n47944\n47946\n47948\n47950\n47951\n47952\n47953\n47956\n47958\n47959\n47984\n48023\n48024\n48041\n48216\n48458\n48751\n49509\n49556\n49574\n49638\n49690\n49717\n49809\n49911\n50015\n50038\n50039\n50111\n50319\n50387\n50452\n50479\n50480\n50539\n50750\n50950\n51164\n51169\n51366\n51517\n51525\n51740\n51975\n52013\n52045\n52775\n52898\n52996\n53158\n53190\n53216\n53250\n53272\n53298\n53670\n53759\n53834\n54871\n54989\n55279\n55462\n55465\n55650\n55842\n56353\n56688\n57160\n57284\n57412\n57885\n57959\n58204\n58531\n58776\n58808\n59153\n59159\n59395\n59553\n59563\n59778\n59994\n60062\n60195\n60387\n60417\n60637\n60644\n61087\n61234\n61345\n61621\n61659\n61798\n61816\n62538\n62607\n62879\n63053\n63071\n63274\n63416\n63600\n63607\n63655\n63808\n63999\n64094\n65155\n65176\n65259\n65705\n65936\n65941\n65943\n66206\n66276\n67351\n67502\n67512\n67519\n67811\n67839\n67895\n67990\n68278\n68731\n68772\n68921\n70529\n70531\n70954\n71401\n71418\n71628\n72411\n72643\n73368\n74073\n74252\n74336\n74601\n74626\n74709\n75057\n76138\n76229\n76889\n77121\n77310\n77311\n77319\n77474\n78026\n78378\n79199\n79338\n79716\n81750\n81813\n82229\n82581\n83274\n83278\n83477\n84109\n85667\n85670\n85766\n85880\n85954\n86011\n86047\n86606\n86787\n86906\n87267\n87650\n87652\n87654\n88733\n88746\n88971\n88972\n89250\n89759\n89834\n90074\n90122\n90209\n90505\n90635\n91687\n92105\n92145\n92303\n92310\n92312\n92319\n92321\n92323\n92606\n92704\n92754\n92837\n93058\n93517\n93521\n93614\n93616\n93620\n93836\n93837\n94194\n94198\n94388\n94391\n94393\n94472\n94487\n94561\n94682\n94756\n94762\n94765\n94766\n94767\n94768\n94769\n94770\n95149\n95246\n95248\n95250\n95252\n95254\n95442\n95782\n96001\n96002\n96005\n96007\n96008\n96010\n96050\n96376\n96513\n96633\n96699\n96701\n96702\n96703\n97080\n97190\n98185\n98664\n98743\n98753\n99043\n99720\n100060\n100830\n102795\n102894\n102977\n103471\n103705\n104129\n104654\n105713\n105880\n106307\n106333\n106566\n106684\n107263\n107531\n107672\n107788\n108180\n108311\n110487\n110862\n111034\n111166\n111177\n111182\n111301\n111309\n111310\n111311\n111314\n111317\n111318\n111881\n111883\n111886\n111896\n111901\n111951\n112200\n112206\n112214\n112221\n112223\n112229\n112551\n112931\n113031\n113051\n113066\n113068\n113433\n113435\n113448\n113456\n113852\n113854\n113857\n113861\n113865\n113867\n113871\n113873\n113874\n113877\n113882\n114414\n114794\n114810\n116093\n116384\n116720\n117167\n117531\n118097\n118672\n118675\n118678\n118680\n118682\n118686\n118764\n118772\n118776\n118778\n118781\n118785\n118787\n118868\n118891\n118894\n118895\n118897\n118900\n118905\n118906\n118907\n118910\n118946\n119268\n119270\n119273\n119853\n120243\n120245\n120264\n120265\n120275\n120278\n120279\n120382\n120899\n121700\n121705\n121858\n121976\n122001\n122002\n122065\n122066\n122067\n122071\n122093\n122205\n122269\n122274\n122683\n122811\n122812\n123427\n123436\n123910\n124470\n124472\n124911\n124917\n124919\n124939\n124940\n124944\n124950\n124955\n124956\n124965\n125203\n125784\n126587\n126588\n126656\n126752\n126753\n126754\n126761\n126766\n126767\n126769\n126772\n126776\n126783\n126876\n127312\n127543\n127827\n127833\n127836\n127837\n127838\n127840\n127841\n127845\n127847\n127857\n127860\n127967\n128455\n128635\n128855\n128891\n129959\n130176\n130267\n130268\n130272\n130273\n130274\n130278\n130280\n130281\n130282\n130286\n130289\n130292\n130293\n130294\n130297\n130298\n130299\n130300\n130303\n130307\n130313\n130655\n131031\n131034\n131048\n131714\n131792\n131997\n132035\n132432\n132575\n132578\n132621\n133129\n133198\n133478\n133483\n133980\n134428\n134429\n135349\n136013\n136037\n136357\n137985\n137995\n138114\n138902\n138903\n138904\n138906\n138907\n138908\n138911\n138912\n138913\n138915\n138916\n138917\n138918\n138919\n138920\n138921\n138923\n138924\n138926\n138927\n138928\n138929\n138931\n138932\n138933\n138934\n138935\n138936\n138937\n138938\n138939\n138940\n138941\n138942\n138944\n138945\n138946\n138947\n138948\n138949\n138950\n138951\n138952\n138953\n138954\n138956\n138957\n138958\n138959\n138960\n138961\n138962\n138963\n138964\n138966\n138967\n138968\n138970\n138971\n138972\n138973\n138974\n138975\n138976\n138977\n138978\n138979\n138980\n138981\n138982\n138983\n138984\n138985\n138986\n138987\n138988\n138989\n138990\n138991\n138992\n138993\n138994\n138996\n138997\n138998\n138999\n139000\n139002\n139003\n139004\n139005\n139008\n139010\n139011\n139012\n139015\n139016\n139017\n139018\n139019\n139020\n139021\n139022\n139024\n139026\n139028\n139029\n139030\n139032\n139033\n139034\n139035\n139036\n139037\n139038\n139039\n139040\n139041\n139042\n139043\n139044\n139045\n139046\n139049\n139050\n139051\n139052\n139053\n139054\n139055\n139056\n139057\n139058\n139059\n139060\n139062\n139064\n139065\n139066\n139068\n139069\n139070\n139073\n139074\n139075\n139076\n139077\n139078\n139079\n139080\n139081\n139082\n139083\n139084\n139085\n139086\n139088\n139092\n139093\n139094\n139095\n139096\n139097\n139098\n139100\n139101\n139104\n139105\n139106\n139107\n139108\n139109\n139110\n139112\n139113\n139114\n139115\n139116\n139117\n139118\n139119\n139120\n139121\n139122\n139123\n139124\n139125\n139126\n139128\n139129\n139130\n139131\n139132\n139134\n139135\n139136\n139137\n139138\n139139\n139141\n139142\n139143\n139144\n139145\n139146\n139147\n139148\n139149\n139150\n139153\n139154\n139156\n139157\n139158\n139159\n139161\n139162\n139163\n139164\n139165\n139166\n139167\n139168\n139170\n139172\n139173\n139174\n139175\n139176\n139179\n139180\n139182\n139183\n139184\n139185\n139186\n139187\n139188\n139191\n139192\n139194\n139195\n139196\n139197\n139198\n139199\n139200\n139202\n139203\n139204\n139205\n139206\n139207\n139208\n139209\n139210\n139211\n139213\n139214\n139215\n139216\n139217\n139218\n139219\n139220\n139221\n139222\n139223\n139224\n139225\n139226\n139227\n139228\n139229\n139230\n139231\n139232\n139233\n139234\n139235\n139236\n139237\n139238\n139239\n139240\n139241\n139242\n139243\n139244\n139245\n139246\n139248\n139249\n139250\n139251\n139252\n139253\n139254\n139255\n139256\n139257\n139258\n139259\n139260\n139261\n139262\n139263\n139264\n139266\n139267\n139268\n139269\n139270\n139271\n139272\n139274\n139275\n139276\n139277\n139278\n139279\n139280\n139281\n139282\n140423\n140550\n140890\n141392\n141968\n142272\n142274\n143074\n143195\n143786\n144192\n144193\n144205\n144243\n144604\n144612\n144613\n145341\n146198\n146199\n146632\n146916\n147048\n147050\n147320\n147708\n148020\n148282\n148946\n148947\n148950\n149491\n149562\n150948\n151740\n151746\n151750\n152281\n152700\n152914\n152915\n153578\n154451\n155519\n155527\n155529\n155530\n155532\n156772\n157633\n157657\n158491\n158815\n159390\n159878\n159881\n160986\n161401\n162589\n162608\n162673\n162877\n164236\n164237\n164243\n164495\n164923\n165346\n165530\n166708\n166900\n167798\n167801\n169630\n169633\n171147\n171491\n171595\n173265\n174536\n174537\n174538\n174543\n174545\n174547\n175711\n176667\n176931\n178046\n178808\n179165\n179544\n179570\n179575\n181227\n181228\n181528\n182699\n183470\n183770\n184327\n184328\n184359\n184882\n187268\n189433\n191386\n191551\n192104\n192256\n192727\n195324\n195331\n195332\n196786\n197066\n197074\n197283\n197890\n198531\n198538\n198541\n199183\n199184\n199186\n199900\n200343\n201201\n202131\n203957\n204653\n205728\n205980\n206630\n206758\n206991\n206997\n207049\n207450\n208116\n208127\n208394\n208714\n209292\n210764\n210889\n211708\n211711\n211712\n211773\n214011\n214313\n214435\n214510\n214599\n215224\n215596\n215787\n216161\n216467\n216606\n217078\n217404\n217735\n218090\n218897\n218899\n218905\n218912\n219076\n219357\n219366\n219636\n219869\n220225\n220554\n220694\n221346",
+                    "auto_arr": [
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 1,
+                        "sourcesAction": 1,
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 2,
+                        "sourcesAction": 1,
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 3,
+                        "sourcesAction": 1,
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 7,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      },
+                      {
+                        "currencyType": 2,
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 4,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang825",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 802,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "下注金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "family_svip_ruleIds": [],
+                    "family_svip_levels": [],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Greedy&yummy&fisher&multi-fish&catdog Spend",
+                    "linktext": "",
+                    "lang": [
+                      "BN",
+                      "MY"
+                    ],
+                    "family_svip_check": false,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "need_attend": 0,
+                    "bottominfo": 2,
+                    "end_time": "2025/06/19 23:59:59",
+                    "groups": [],
+                    "cp_rank": 0,
+                    "index": 1,
+                    "groupFamilytype": 2,
+                    "selectedArea": [
+                      "MY"
+                    ],
+                    "family_svip_area": [],
+                    "start_time": "2025/06/13 00:00:00",
+                    "rankStyle": "1",
+                    "weeklyConfig": 1,
+                    "frontTextAlignStyle": "center",
+                    "selectedDays": [],
+                    "name": "Family Ranking",
+                    "linkurl": "",
+                    "countType": 3
+                  },
+                  "type": "grouprankings",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vDMYu",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Family ranking must register, no register no reward."
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "If family weekly overall winning diamond>0, no reward will be credited for family users, except for family leader."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Register HERE",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "DcdsU",
+                  "formData": {
+                    "fromTabCopy": false,
+                    "questionnaireData": {
+                      "conditionList": [
+                        {
+                          "conditionStr": "MY,BN,SG",
+                          "id": null,
+                          "type": 1
+                        },
+                        {
+                          "conditionStr": "MY",
+                          "id": null,
+                          "type": 2
+                        }
+                      ],
+                      "wjName": "Register HERE",
+                      "topics": [
+                        {
+                          "isRequired": 1,
+                          "addExtra": 0,
+                          "options": [
+                            {
+                              "showId": "1",
+                              "id": 1,
+                              "title": "YES",
+                              "sortIdx": 1
+                            }
+                          ],
+                          "id": 1,
+                          "type": 1,
+                          "title": "Please choose \"YES\" to register this event, thanks!",
+                          "sortIdx": 1
+                        }
+                      ],
+                      "description": "Family leader/members who register will qualify for the rewards.",
+                      "startTime": "2025-06-13 00:00:00",
+                      "id": 1244,
+                      "endTime": "2025-06-20 00:00:00",
+                      "multipleTimes": 1
+                    },
+                    "questionnaireId": 1244
+                  },
+                  "type": "questionnaire",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 1,
+          "uid_arr": [
+            {
+              "uid": "517059840",
+              "text": "Please contact the admin if you have any question about the event."
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

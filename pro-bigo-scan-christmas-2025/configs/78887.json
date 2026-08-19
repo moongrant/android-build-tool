@@ -1,0 +1,661 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260104",
+      "20260105",
+      "20260106",
+      "20260107",
+      "20260108",
+      "20260109",
+      "20260110",
+      "20260111",
+      "20260112"
+    ],
+    "week": [
+      "20251229",
+      "20260105",
+      "20260112"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 05:26:24",
+    "now_zone": 0,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78887,
+      "act_name": "Gala Welcome Party",
+      "state": 1,
+      "color": 1,
+      "theme": "dark-green",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-04 00:00:00",
+      "end_time": "2026-01-12 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "GB",
+        "IE"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "15"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaabG00y33lYHC1AJHtR.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "GB"
+          ],
+          "num": 20,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang087",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "Earn 1 UK&IE bean = 1point, no upper limitation. Both top hosts and top supporters will receive tones of rewards!",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 1,
+          "svip_levels": [],
+          "index": 1,
+          "selectedArea": [
+            "AR",
+            "PT",
+            "ES",
+            "ES_PT",
+            "RU",
+            "CN",
+            "AU",
+            "US",
+            "MY",
+            "TH",
+            "FZ",
+            "NLSE",
+            "DE",
+            "FR",
+            "GB",
+            "OTHER"
+          ],
+          "anchor_whitelist_status": 0,
+          "voteBoardTitle": "",
+          "frontTextAlignStyle": "center",
+          "name": "CP Leaderboard",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "GB",
+            "IE"
+          ],
+          "top3": 1,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "1893662069\n1818836894\n405333718\n688256292\n520758074\n581372539\n522744881\n439533483\n498955220\n472012452\n418891396\n\n807048511\n815055329\n780802071\n862237621\n853795640\n861161501\n854386617\n\n551199027\n529884291\n\n772743747\n667784686\n741134626\n504349393\n576072016\n732612513\n503411079\n508973577\n1830963821\n741134626\n516799413\n472012452\n428335607\n853266938\n818465728\n742607692\n634759349\n541212134\n860057399\n848268367\n855930439\n785312927",
+          "endActNotEdit": false,
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "anchor_whitelist_id": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "AD",
+            "AE",
+            "AF",
+            "AG",
+            "AI",
+            "AL",
+            "AM",
+            "AN",
+            "AO",
+            "AR",
+            "AS",
+            "AT",
+            "AU",
+            "AW",
+            "AX",
+            "AZ",
+            "BA",
+            "BB",
+            "BD",
+            "BE",
+            "BF",
+            "BG",
+            "BH",
+            "BI",
+            "BIGO",
+            "BJ",
+            "BL",
+            "BM",
+            "BN",
+            "BO",
+            "BR",
+            "BS",
+            "BT",
+            "BW",
+            "BY",
+            "BZ",
+            "CA",
+            "CC",
+            "CD",
+            "CF",
+            "CG",
+            "CH",
+            "CI",
+            "CK",
+            "CL",
+            "CM",
+            "CN",
+            "CO",
+            "CR",
+            "CU",
+            "CV",
+            "CW",
+            "CX",
+            "CY",
+            "CZ",
+            "DE",
+            "DJ",
+            "DK",
+            "DM",
+            "DO",
+            "DU",
+            "DZ",
+            "EC",
+            "EE",
+            "EG",
+            "ER",
+            "ES",
+            "ET",
+            "FA",
+            "FI",
+            "FJ",
+            "FM",
+            "FO",
+            "FR",
+            "GA",
+            "GB",
+            "GD",
+            "GE",
+            "GH",
+            "GI",
+            "GL",
+            "GM",
+            "GN",
+            "GP",
+            "GQ",
+            "GR",
+            "GT",
+            "GU",
+            "GW",
+            "GY",
+            "HK",
+            "HN",
+            "HR",
+            "HT",
+            "HU",
+            "ID",
+            "IE",
+            "IL",
+            "IM",
+            "IN",
+            "IQ",
+            "IR",
+            "IS",
+            "IT",
+            "JE",
+            "JM",
+            "JO",
+            "JP",
+            "KE",
+            "KG",
+            "KH",
+            "KI",
+            "KM",
+            "KN",
+            "KR",
+            "KW",
+            "KY",
+            "KZ",
+            "LA",
+            "LB",
+            "LC",
+            "LI",
+            "LK",
+            "LR",
+            "LS",
+            "LT",
+            "LU",
+            "LV",
+            "LY",
+            "MA",
+            "MC",
+            "MD",
+            "ME",
+            "MG",
+            "MH",
+            "MK",
+            "ML",
+            "MM",
+            "MN",
+            "MO",
+            "MP",
+            "MQ",
+            "MR",
+            "MS",
+            "MT",
+            "MU",
+            "MV",
+            "MW",
+            "MX",
+            "MY",
+            "MZ",
+            "NA",
+            "NC",
+            "NE",
+            "NF",
+            "NG",
+            "NI",
+            "NL",
+            "NO",
+            "NP",
+            "NR",
+            "NU",
+            "NZ",
+            "OM",
+            "PA",
+            "PE",
+            "PF",
+            "PG",
+            "PH",
+            "PK",
+            "PL",
+            "PN",
+            "PR",
+            "PS",
+            "PT",
+            "PW",
+            "PY",
+            "QA",
+            "RE",
+            "RO",
+            "RS",
+            "RU",
+            "RW",
+            "SA",
+            "SB",
+            "SC",
+            "SD",
+            "SE",
+            "SG",
+            "SH",
+            "SI",
+            "SK",
+            "SL",
+            "SM",
+            "SN",
+            "SO",
+            "SR",
+            "SS",
+            "ST",
+            "SV",
+            "SY",
+            "SZ",
+            "TC",
+            "TD",
+            "TG",
+            "TH",
+            "TJ",
+            "TK",
+            "TL",
+            "TM",
+            "TN",
+            "TO",
+            "TR",
+            "TT",
+            "TV",
+            "TW",
+            "TZ",
+            "UA",
+            "UG",
+            "US",
+            "UY",
+            "UZ",
+            "VE",
+            "VN",
+            "VU",
+            "WF",
+            "WS",
+            "YE",
+            "YT",
+            "ZA",
+            "ZM",
+            "ZR",
+            "ZW"
+          ],
+          "appoint_uid": 1,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vawwK00y2TWPL000iJrI.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Participant Showcase"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 2,
+          "uid_arr": [
+            {
+              "uid": 503411079,
+              "text": ""
+            },
+            {
+              "uid": 405333718,
+              "text": ""
+            },
+            {
+              "uid": 1893662069,
+              "text": ""
+            },
+            {
+              "uid": 520758074,
+              "text": ""
+            },
+            {
+              "uid": 439533483,
+              "text": ""
+            },
+            {
+              "uid": 732612513,
+              "text": ""
+            },
+            {
+              "uid": 1830963821,
+              "text": ""
+            },
+            {
+              "uid": 529884291,
+              "text": ""
+            },
+            {
+              "uid": 581372539,
+              "text": ""
+            },
+            {
+              "uid": 772743747,
+              "text": ""
+            },
+            {
+              "uid": 807048511,
+              "text": ""
+            },
+            {
+              "uid": 498955220,
+              "text": ""
+            },
+            {
+              "uid": 688256292,
+              "text": ""
+            },
+            {
+              "uid": 861161501,
+              "text": ""
+            },
+            {
+              "uid": 428335607,
+              "text": ""
+            },
+            {
+              "uid": 576072016,
+              "text": ""
+            },
+            {
+              "uid": 780802071,
+              "text": ""
+            },
+            {
+              "uid": 472012452,
+              "text": ""
+            },
+            {
+              "uid": 472012452,
+              "text": ""
+            },
+            {
+              "uid": 741134626,
+              "text": ""
+            },
+            {
+              "uid": 815055329,
+              "text": ""
+            },
+            {
+              "uid": 853795640,
+              "text": ""
+            },
+            {
+              "uid": 418891396,
+              "text": ""
+            },
+            {
+              "uid": 522744881,
+              "text": ""
+            },
+            {
+              "uid": 551199027,
+              "text": ""
+            },
+            {
+              "uid": 862237621,
+              "text": ""
+            },
+            {
+              "uid": 853266938,
+              "text": ""
+            },
+            {
+              "uid": 504349393,
+              "text": ""
+            },
+            {
+              "uid": 516799413,
+              "text": ""
+            },
+            {
+              "uid": 854386617,
+              "text": ""
+            },
+            {
+              "uid": 742607692,
+              "text": ""
+            },
+            {
+              "uid": 818465728,
+              "text": ""
+            },
+            {
+              "uid": 667784686,
+              "text": ""
+            },
+            {
+              "uid": 1818836894,
+              "text": ""
+            },
+            {
+              "uid": 508973577,
+              "text": ""
+            },
+            {
+              "uid": "634759349",
+              "text": ""
+            },
+            {
+              "uid": "541212134",
+              "text": ""
+            },
+            {
+              "uid": "860057399",
+              "text": ""
+            },
+            {
+              "uid": "848268367",
+              "text": ""
+            },
+            {
+              "uid": "855930439",
+              "text": ""
+            },
+            {
+              "uid": "785312927",
+              "text": ""
+            }
+          ],
+          "priority": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

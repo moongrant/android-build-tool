@@ -1,0 +1,668 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260101",
+      "20260102",
+      "20260103",
+      "20260104",
+      "20260105",
+      "20260106",
+      "20260107",
+      "20260108"
+    ],
+    "week": [
+      "20251229",
+      "20260105"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 00:25:36",
+    "now_zone": 5,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78951,
+      "act_name": "Trono de Año Nuevo",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-08 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "CO",
+        "MX",
+        "AR",
+        "UY",
+        "PE",
+        "CL",
+        "PY",
+        "EC",
+        "CR",
+        "BO",
+        "CU",
+        "DO",
+        "GT",
+        "HN",
+        "NI",
+        "PA",
+        "PR",
+        "SV",
+        "VE"
+      ],
+      "selectedArea": [
+        "ES"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vauAH00y2TWPL00H6nQ9.png",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "bigolive://diamonds",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "",
+                  "name": "Participo",
+                  "range": [
+                    2
+                  ],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "¡Quiero Participar!",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "popUpSure": "Regístrese primero, luego recargue",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 1
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "¡Recargue Ahora!",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://diamonds",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [],
+          "num": 999,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                5
+              ],
+              "sourcesAction": 1,
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "score": 1,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "Clasificación General del día 01 al 07 de enero",
+          "linktext": "",
+          "need_attend": 1,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 2,
+          "svip_levels": [],
+          "selectedArea": [
+            "ES"
+          ],
+          "anchor_whitelist_status": 0,
+          "voteBoardTitle": "",
+          "start_time": "2026/01/01 00:00:00",
+          "frontTextAlignStyle": "center",
+          "name": "Clasificación General",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "anchor_whitelist_id": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "AR",
+            "BO",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "UY",
+            "VE"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 2,
+          "prizeType": 1,
+          "end_time": "2026/01/08 00:00:00",
+          "appoint_uid_source": 1,
+          "rankStyle": "2",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Reglas"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Horas válidas de recarga: de la 00:00:00 del día 01 a las 23:59:59 del día 07 de enero (GMT-5)."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2. Valido para recargas por revendedores oficiales."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "3. SOLO quienes se registran a participar en este evento puedan recibir premios. En el caso de que hay varios eventos de la misma fecha , se van a entregar premios del evento que vaya a terminar primero, no se repiten los premios."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "4. En el caso de que varios IDs pertenezcan al mismo equipo, se otorgará el premio a uno solo de esos UIDs."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "5.🪂Bigo Live Latam reserva el derecho de interpretación final."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                5
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "Premio de Día de Reyes👑",
+          "svip_area": "",
+          "lottery_rule": "¡2000 diamantes recargados=1 sorteo, recarga y desbloquea Marco, placa y luz trasera por tiempo limitado! ",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 3,
+          "selectedArea": [
+            "ES"
+          ],
+          "anchor_whitelist_status": 0,
+          "is_pay_lottery": 1,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 0,
+            "consumeCost": "0.00",
+            "messageConfigure": 0,
+            "messageObj": {
+              "imImg": "",
+              "theme": "",
+              "content": ""
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vcZwp00y33lYHC0yIHig.png",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 19,
+                "is_pay_prize": 0,
+                "prize_name": "Marco",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "44997",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "3",
+                "used_num": 0,
+                "win_rate": "19",
+                "textLeft": "-35px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "108deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vca0A00y2TWPL01CXzbs.png",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": "Luz Trasera",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "44999",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "7",
+                "used_num": 0,
+                "win_rate": "30",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "36deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vcaYa00y33lYHC1n8XGq.png",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 25,
+                "is_pay_prize": 0,
+                "prize_name": "Placa",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "45001",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "5",
+                "used_num": 0,
+                "win_rate": "25",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "8"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-36deg",
+                "preview_img": "http://giftesx.bigo.sg/live/g2/M02/02/E8/LXz8GFpWy5-IOSbqAAAnwRD2BsEAANU6AD0QBAAACfZ467.png?auth-token=idhweAa3K4awqH6vcQ-wgZKLA2dbMBAaRiSWnYXT1yo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4OTUxLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2Mzc2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 11,
+                "is_pay_prize": 0,
+                "prize_name": "Super Skidmarks",
+                "consume_num": 0,
+                "residue_num": 500,
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "20535",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "500",
+                "valid_days": "3",
+                "used_num": 0,
+                "win_rate": "11",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-108deg",
+                "preview_img": "http://giftesx.bigo.sg/live/g1/M06/09/70/iwVsDlp_o6eITipKAAAUWqv7gkUAAOvHAKDM4YAABRy268.png?auth-token=jugtG9MiZimJr8LnkpNsjsSlUSQC7FEUPbqKY6XD_XU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4OTUxLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1MjEyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 15,
+                "is_pay_prize": 0,
+                "prize_name": "Archer Pendant",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "20221",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "3",
+                "used_num": 0,
+                "win_rate": "15",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "6"
+              }
+            ],
+            "totalCost": "0.0000"
+          },
+          "uid": "",
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "JM",
+            "TT",
+            "KY",
+            "BS",
+            "BB",
+            "CO",
+            "MX",
+            "AR",
+            "UY",
+            "PE",
+            "CL",
+            "PY",
+            "EC",
+            "CR",
+            "BO",
+            "CU",
+            "DO",
+            "GT",
+            "HN",
+            "NI",
+            "PA",
+            "PR",
+            "SV",
+            "VE"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 2000
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "⬇️Evento Para SVIP⬇️"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaqX600y2TWPL01dQpg3.png",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77771",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Mi nivel actual SVIP",
+              "fn": 1,
+              "style": 1,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

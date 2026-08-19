@@ -1,0 +1,925 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 08:25:36",
+    "now_zone": -3,
+    "leave_time": 0,
+    "act_info": {
+      "id": 67685,
+      "act_name": "Международный ПК (июнь 2025)",
+      "state": 1,
+      "color": 2,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-19 00:00:00",
+      "end_time": "2025-12-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "RU",
+        "KZ",
+        "UA",
+        "BY",
+        "KG",
+        "UZ",
+        "AZ",
+        "TJ",
+        "GE",
+        "AM",
+        "MD",
+        "TM"
+      ],
+      "selectedArea": [
+        "RU"
+      ],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "49",
+      "theme": "blue",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4he/11t2ul67RKbu.jpg?auth-token=xw1FAdyK6by1AnI3VnomDcyWhouzG5NfsonaYd2aHY8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Njg1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0MzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Правила и награды",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "HiWgU",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type2",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Награды за участие в ПК"
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "<em>Награды начисляются в соответствии с очками, полученными одним ведущим, в зависимости от выигрыша или проигрыша в ПК</em>\n\n<style>html,body{margin:0;padding:0;font-family:Arial,sans-serif;background-color:#fdfdfd}table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}th,td{border:1px solid #ccc;padding:10px}th{background-color:#2f80ed;color:white;font-weight:bold}tbody tr{background-color:#ffffff}</style><table><thead><tr><th>Минимальные очки ПК</th><th>Награда в бобах в случае проигрыша</th><th>Награда в бобах в случае выигрыша</th></tr></thead><tbody><tr><td>6 000 000</td><td>180 000</td><td>198 000</td></tr><tr><td>5 000 000</td><td>130 000</td><td>143 000</td></tr><tr><td>4 000 000</td><td>90 000</td><td>99 000</td></tr><tr><td>2 200 000</td><td>44 000</td><td>48 400</td></tr><tr><td>1 700 000</td><td>34 000</td><td>37 400</td></tr><tr><td>1 400 000</td><td>28 000</td><td>30 800</td></tr><tr><td>1 200 000</td><td>24 000</td><td>26 400</td></tr><tr><td>600 000</td><td>12 000</td><td>13 200</td></tr><tr><td>400 000</td><td>8 000</td><td>8 800</td></tr><tr><td>200 000</td><td>4 000</td><td>4 400</td></tr><tr><td>80 000</td><td>1 500</td><td>1 650</td></tr><tr><td>40 000</td><td>700</td><td>770</td></tr><tr><td>20 000</td><td>300</td><td>330</td></tr></tbody></table>"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "jRi2t",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type2",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Награды за рейтинг"
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "<em>На основе набранных очков ПК будет сформирован рейтинг среди ведущих СНГ. При достижении минимального порога очков ПК участники, занявшие ТОП-3 позиции, получат игрушки Дино.</em>\n\n<style>html, body {margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #fdfdfd;} table {width: 100%; border-collapse: collapse; font-size: 14px; text-align: center;} th, td {border: 1px solid #ccc; padding: 10px;} th {background-color: #2f80ed; color: white; font-weight: bold;} tbody tr {background-color: #ffffff;}</style><table><thead><tr><th>Порог очков ПК</th><th>Ранг</th><th>Награда</th></tr></thead><tbody><tr><td>5 000 000</td><td>1</td><td>Змеиный Дино - 2 шт.</td></tr><tr><td>4 000 000</td><td>2</td><td>Змеиный Дино - 1 шт.</td></tr><tr><td>3 000 000</td><td>3</td><td>Змеиный Дино - 1 шт.</td></tr></tbody></table>"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "R3nCx",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uRTF44e930eac25fb4a00a6c8fe2e2884fd50ph.png?auth-token=upwI_7i_WSH6VAKJfvKj0g_Vcz5DoVukhJnPLSIJ9Go:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Njg1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyMjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "SqOqe",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Правила участия"
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "1. <strong>Время проведения:</strong> 19-23 июня<p>\n2. <strong>Длительность ПК:</strong> 10 минут<p>\n3. <strong>Необходимо выйти в эфир заранее</strong>, чтобы сработало автоподключение баттла, и подтвердить начало ПК. При возникновении проблем подключитесь к баттлу вручную и предоставьте скриншот результата.<p>\n4. <strong>Черный экран или пустая трансляция запрещены.</strong> В случае выявления нарушений награды начислены не будут."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "W2k3i",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Инструкция по автоподключению",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=66701",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Расписание",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dVHEL",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "21 июня",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "KLjNr",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 21:00:00",
+                                "left": [
+                                  {
+                                    "uid": "657386380"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 21:10:00",
+                                "right": [
+                                  {
+                                    "uid": "752681219"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "GsOuP",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 21:10:00",
+                                "left": [
+                                  {
+                                    "uid": "1891947166"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 21:20:00",
+                                "right": [
+                                  {
+                                    "uid": "440800248"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "vUgh6",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 21:20:00",
+                                "left": [
+                                  {
+                                    "uid": "1829405647"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 21:30:00",
+                                "right": [
+                                  {
+                                    "uid": "420081687"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Ksyux",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 21:30:00",
+                                "left": [
+                                  {
+                                    "uid": "802838595"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 21:40:00",
+                                "right": [
+                                  {
+                                    "uid": "828352034"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Ezk6w",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 21:40:00",
+                                "left": [
+                                  {
+                                    "uid": "791634899"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 21:50:00",
+                                "right": [
+                                  {
+                                    "uid": "712914149"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "uwVgg",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 21:50:00",
+                                "left": [
+                                  {
+                                    "uid": "633511544"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 22:00:00",
+                                "right": [
+                                  {
+                                    "uid": "661562873"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "vIAYz",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/21 22:00:00",
+                                "left": [
+                                  {
+                                    "uid": "795790740"
+                                  }
+                                ],
+                                "end_time": "2025/06/21 22:10:00",
+                                "right": [
+                                  {
+                                    "uid": "638439221"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "22 июня",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "yNkNe",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 21:00:00",
+                                "left": [
+                                  {
+                                    "uid": "608385315"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 21:10:00",
+                                "right": [
+                                  {
+                                    "uid": "514860756"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "pP6Yp",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 21:10:00",
+                                "left": [
+                                  {
+                                    "uid": "637182001"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 21:20:00",
+                                "right": [
+                                  {
+                                    "uid": "558887941"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "b8DR2",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 21:20:00",
+                                "left": [
+                                  {
+                                    "uid": "636322345"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 21:30:00",
+                                "right": [
+                                  {
+                                    "uid": "404352333"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "rcZ1x",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 21:30:00",
+                                "left": [
+                                  {
+                                    "uid": "1832840697"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 21:40:00",
+                                "right": [
+                                  {
+                                    "uid": "825636474"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "w3TK6",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 21:40:00",
+                                "left": [
+                                  {
+                                    "uid": "454979630"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 21:50:00",
+                                "right": [
+                                  {
+                                    "uid": "754121954"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "lXgQi",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 21:50:00",
+                                "left": [
+                                  {
+                                    "uid": "757684781"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 22:00:00",
+                                "right": [
+                                  {
+                                    "uid": "732895906"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "qVAQ4",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 22:00:00",
+                                "left": [
+                                  {
+                                    "uid": "451024193"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 22:10:00",
+                                "right": [
+                                  {
+                                    "uid": "662819243"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "X1qjd",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/22 22:10:00",
+                                "left": [
+                                  {
+                                    "uid": "453810847"
+                                  }
+                                ],
+                                "end_time": "2025/06/22 22:20:00",
+                                "right": [
+                                  {
+                                    "uid": "747458841"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "23 июня",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Tyhq0",
+                            "formData": {
+                              "mode": 5,
+                              "groupPk": {
+                                "start_time": "2025/06/23 21:00:00",
+                                "left": [
+                                  {
+                                    "uid": "762289983"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 21:10:00",
+                                "right": [
+                                  {
+                                    "uid": "599046880"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Kub18",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/23 21:10:00",
+                                "left": [
+                                  {
+                                    "uid": "567924000"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 21:20:00",
+                                "right": [
+                                  {
+                                    "uid": "676168856"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "yc3dQ",
+                            "formData": {
+                              "mode": 5,
+                              "groupPk": {
+                                "start_time": "2025/06/23 21:20:00",
+                                "left": [
+                                  {
+                                    "uid": "559453618"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 21:30:00",
+                                "right": [
+                                  {
+                                    "uid": "757681780"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "oZZKB",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/23 21:30:00",
+                                "left": [
+                                  {
+                                    "uid": "569294926"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 21:40:00",
+                                "right": [
+                                  {
+                                    "uid": "765464131"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "SeKGD",
+                            "formData": {
+                              "mode": 5,
+                              "groupPk": {
+                                "start_time": "2025/06/23 21:40:00",
+                                "left": [
+                                  {
+                                    "uid": "429860968"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 21:50:00",
+                                "right": [
+                                  {
+                                    "uid": "745336815"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "2TOvX",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/23 21:50:00",
+                                "left": [
+                                  {
+                                    "uid": "726189083"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 22:00:00",
+                                "right": [
+                                  {
+                                    "uid": "809566572"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "WUQfL",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/23 22:00:00",
+                                "left": [
+                                  {
+                                    "uid": "729015106"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 22:10:00",
+                                "right": [
+                                  {
+                                    "uid": "756362104"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "H55w1",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/06/23 22:10:00",
+                                "left": [
+                                  {
+                                    "uid": "722166918"
+                                  }
+                                ],
+                                "end_time": "2025/06/23 22:20:00",
+                                "right": [
+                                  {
+                                    "uid": "601393087"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "СНГ - Италия"
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "MKUH8",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Результаты",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_15180/index.html?compe_id=1750245043848679#/schedule",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "ВСЕ ПРАВА ЗАЩИЩЕНЫ BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

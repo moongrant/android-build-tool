@@ -1,0 +1,673 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260101",
+      "20260102",
+      "20260103",
+      "20260104",
+      "20260105",
+      "20260106",
+      "20260107",
+      "20260108"
+    ],
+    "week": [
+      "20251229",
+      "20260105"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 00:25:36",
+    "now_zone": 5,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78960,
+      "act_name": "Año Nuevo, doble beneficio",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-08 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "CO",
+        "MX",
+        "AR",
+        "UY",
+        "PE",
+        "CL",
+        "PY",
+        "EC",
+        "CR",
+        "BO",
+        "CU",
+        "DO",
+        "GT",
+        "HN",
+        "NI",
+        "PA",
+        "PR",
+        "SV",
+        "VE"
+      ],
+      "selectedArea": [
+        "ES"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vbJHH00y33lYHC06WH6j.png",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "bigolive://diamonds",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "",
+                  "name": "Participo",
+                  "range": [
+                    3,
+                    19418
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "¡Quiero Participar!",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "popUpSure": "Regístrese primero, luego recargue",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 1
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "¡Recargue Ahora!",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://diamonds",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Recarga de recompensas",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WTtlJ",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vbJHL00y2TWPL01zVcfy.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "1BUtZ",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "ES"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          3,
+                          4,
+                          1,
+                          2,
+                          6,
+                          7,
+                          8
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Clasificación General del día 01 al 07 de enero",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [
+                      "ES"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2026/01/01 00:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "Clasificación General",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AR",
+                      "BB",
+                      "BO",
+                      "BS",
+                      "CL",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "DO",
+                      "EC",
+                      "GT",
+                      "HN",
+                      "JM",
+                      "KY",
+                      "MX",
+                      "NI",
+                      "PA",
+                      "PE",
+                      "PR",
+                      "PY",
+                      "SV",
+                      "TT",
+                      "UY",
+                      "VE"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AR",
+                      "BB",
+                      "BO",
+                      "BS",
+                      "CL",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "DO",
+                      "EC",
+                      "GT",
+                      "HN",
+                      "JM",
+                      "KY",
+                      "MX",
+                      "NI",
+                      "PA",
+                      "PE",
+                      "PR",
+                      "PY",
+                      "SV",
+                      "TT",
+                      "UY",
+                      "VE"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 1,
+                    "end_time": "2026/01/08 00:00:00",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "colecciona cartas para repartir Simillas",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "RCaRo",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1varL100y33lYHC0tWWQz.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "hLWoG",
+                  "formData": {
+                    "scoreLang": [
+                      "AR",
+                      "BB",
+                      "BO",
+                      "BS",
+                      "CL",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "DO",
+                      "EC",
+                      "GT",
+                      "HN",
+                      "JM",
+                      "KY",
+                      "MX",
+                      "NI",
+                      "PA",
+                      "PE",
+                      "PR",
+                      "PY",
+                      "SV",
+                      "TT",
+                      "UY",
+                      "VE"
+                    ],
+                    "aheadRewardCount": null,
+                    "regularReward": 1,
+                    "scoreSelectedArea": [
+                      "ES"
+                    ],
+                    "rewardType": 1,
+                    "onlyCharge": true,
+                    "endActNotEdit": false,
+                    "cardTriggerChannel": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          4,
+                          6,
+                          7,
+                          8
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 250,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 0,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "appType": 1,
+                    "grantMode": 3,
+                    "cardTypeCount": "4",
+                    "anchor_uids": "",
+                    "prizePoolType": 2,
+                    "anchor_whitelist_id": null,
+                    "needAppointUidChangeReason": false,
+                    "appoint_uid": 0,
+                    "area": [
+                      "AR",
+                      "BB",
+                      "BO",
+                      "BS",
+                      "CL",
+                      "CO",
+                      "CR",
+                      "CU",
+                      "DO",
+                      "EC",
+                      "GT",
+                      "HN",
+                      "JM",
+                      "KY",
+                      "MX",
+                      "NI",
+                      "PA",
+                      "PE",
+                      "PR",
+                      "PY",
+                      "SV",
+                      "TT",
+                      "UY",
+                      "VE"
+                    ],
+                    "need_attend": 1,
+                    "index": 19418,
+                    "svip_levels": [],
+                    "admixRule": 3,
+                    "selectedArea": [
+                      "ES"
+                    ],
+                    "appoint_uid_source": 1,
+                    "anchor_whitelist_status": 0,
+                    "cardCanShare": 2,
+                    "aheadGrantByPeopleCount": null,
+                    "finalAdmixReward": {
+                      "cardImage": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vasZ800y33lYHC0JNoBg.png",
+                      "cardTypeName": "Oro 2026"
+                    },
+                    "allCardType": [
+                      {
+                        "cardImage": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vasRM00y33lYHC0rzSDM.png",
+                        "probability": "25",
+                        "cardTypeName": "Rojo 2"
+                      },
+                      {
+                        "cardImage": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vasR600y2TWPL00mADNo.png",
+                        "probability": "25",
+                        "cardTypeName": "Azul 0"
+                      },
+                      {
+                        "cardImage": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vasRS00y33lYHC1KkzJ8.png",
+                        "probability": "25",
+                        "cardTypeName": "Verde 2"
+                      },
+                      {
+                        "cardImage": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vasRF00y2TWPL00hGkwG.png",
+                        "probability": "25",
+                        "cardTypeName": "Morado 6"
+                      }
+                    ],
+                    "anchor_uid_info": null,
+                    "aheadGrantByTime": null,
+                    "countType": "",
+                    "frontCollectCardsTitle": "Colecciona cartas y gana Semillas",
+                    "levelReward": [
+                      {
+                        "rewardCount": "1000",
+                        "cardCount": 0
+                      },
+                      {
+                        "rewardCount": "42000",
+                        "cardCount": 500
+                      },
+                      {
+                        "rewardCount": "100000",
+                        "cardCount": 1000
+                      }
+                    ]
+                  },
+                  "type": "collectCards",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Reglas"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Horas válidas de recarga: de la 00:00:00 del día 01 a las 23:59:59 del día 07 de enero (GMT-5)."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2. Válido para recargas realizadas a través de todos los canales, excepto el canal de revendedores."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "3. SOLO quienes se registran a participar en este evento puedan recibir premios. En el caso de que hay varios eventos de la misma fecha , se van a entregar premios del evento que vaya a terminar primero, no se repiten los premios."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "4. En el caso de que varios IDs pertenezcan al mismo equipo, se otorgará el premio a uno solo de esos UIDs."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "5.🪂Bigo Live Latam reserva el derecho de interpretación final."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "⬇️Evento Para SVIP⬇️"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vasML00y2TWPL01dYOWS.png",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77771",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Mi nivel actual SVIP",
+              "fn": 1,
+              "style": 1,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

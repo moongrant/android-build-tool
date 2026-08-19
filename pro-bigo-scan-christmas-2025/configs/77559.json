@@ -1,0 +1,302 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77559,
+      "act_name": "Family Gala Registration Form👑",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-04 20:00:00",
+      "end_time": "2025-12-14 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "🎁 Register Now & Win Exclusive Rewards!",
+        "appendixDesc": "✅ Submit your registration form before the deadline",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vR61Q00y33lYHC0M7qd5.png"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vR63u00y2TWPL00VNere.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Click to learn more about the event😍",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=76113",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "MY,BN,SG",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "MY",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Family Gala Registration Form👑",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "✅ Yes",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Do you confirm to join the Family Gala?",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 4,
+                    "title": "50K-100K",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 5,
+                    "title": "100K-300K",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 6,
+                    "title": "300K-500K",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 7,
+                    "title": "500K-1M",
+                    "sortIdx": 4
+                  },
+                  {
+                    "showId": "5",
+                    "id": 8,
+                    "title": "1M",
+                    "sortIdx": 5
+                  },
+                  {
+                    "showId": "6",
+                    "id": 9,
+                    "title": "3M",
+                    "sortIdx": 6
+                  },
+                  {
+                    "showId": "7",
+                    "id": 10,
+                    "title": "5M",
+                    "sortIdx": 7
+                  },
+                  {
+                    "showId": "8",
+                    "id": 11,
+                    "title": "10M",
+                    "sortIdx": 8
+                  },
+                  {
+                    "showId": "9",
+                    "id": 12,
+                    "title": "15M",
+                    "sortIdx": 9
+                  },
+                  {
+                    "showId": "10",
+                    "id": 17,
+                    "title": "20M",
+                    "sortIdx": 10
+                  },
+                  {
+                    "showId": "11",
+                    "id": 18,
+                    "title": "20M above",
+                    "sortIdx": 11
+                  }
+                ],
+                "id": 2,
+                "type": 1,
+                "title": "What is your estimated total Family Gala points during the event period?",
+                "sortIdx": 2
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 13,
+                    "title": "Regional Galaxy Top 3",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 14,
+                    "title": "Regional Diamond Top 3",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 19,
+                    "title": "Regional Platinum Top 3",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 20,
+                    "title": "Regional Rookie Top 3",
+                    "sortIdx": 4
+                  }
+                ],
+                "id": 3,
+                "type": 1,
+                "title": "What will you aim for the rewards during Family Gala?",
+                "sortIdx": 3
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 15,
+                    "title": "✅ I Agree",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 4,
+                "type": 1,
+                "title": "I confirm that the above information is accurate and agree to participate in Gala event.",
+                "sortIdx": 4
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 16,
+                    "title": "",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 5,
+                "type": 3,
+                "title": "Please fill in your phone number! (ONLY Family Leader)",
+                "sortIdx": 5
+              }
+            ],
+            "description": "Family Leader must submit this registration form to be eligible for 【Family Throne Battle】 rewards. Unregistered family will not receive any rewards.",
+            "startTime": "2025-12-04 20:00:00",
+            "id": 2043,
+            "endTime": "2025-12-14 23:59:59",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 2043
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "713200109"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

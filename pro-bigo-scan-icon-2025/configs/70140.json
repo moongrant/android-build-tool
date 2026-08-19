@@ -1,0 +1,664 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250805",
+      "20250806",
+      "20250807",
+      "20250808",
+      "20250809",
+      "20250810",
+      "20250811",
+      "20250812",
+      "20250813"
+    ],
+    "week": [
+      "20250804",
+      "20250811"
+    ],
+    "month": [
+      "202508"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 00:25:36",
+    "now_zone": 5,
+    "leave_time": 0,
+    "act_info": {
+      "id": 70140,
+      "act_name": "Diamantes Sembrados Agosto",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-08-05 00:00:00",
+      "end_time": "2025-08-13 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "CO",
+        "MX",
+        "AR",
+        "UY",
+        "PE",
+        "CL",
+        "PY",
+        "EC",
+        "CR",
+        "BO",
+        "CU",
+        "DO",
+        "GT",
+        "HN",
+        "NI",
+        "PA",
+        "PR",
+        "SV",
+        "VE"
+      ],
+      "selectedArea": [
+        "ES"
+      ],
+      "frontCustomBgColor": "#172A7B",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "7",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4he/01uj5W0RIgKR.png?auth-token=jpr90i9bRm4PpXdsqlUVBo7qUqTunrYv5in9adov-VI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMTQwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0NjcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "bigolive://diamonds",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "",
+                  "name": "Participo",
+                  "range": [
+                    1,
+                    2
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Participar",
+              "fn": 3,
+              "style": 1,
+              "share_img": "",
+              "popUpSure": "Regístrese primero, luego recargue",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 1
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Recargue Aquí",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://diamonds",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "ES"
+          ],
+          "num": 999,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                3,
+                4
+              ],
+              "sourcesAction": 1,
+              "change": 1,
+              "threeSource": [
+                0
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "score": 1,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "Clasificación General del día 05 al 12 de Agosto",
+          "linktext": "",
+          "need_attend": 1,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 1,
+          "selectedArea": [
+            "ES"
+          ],
+          "voteBoardTitle": "",
+          "frontTextAlignStyle": "center",
+          "name": "Clasificación General",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "AR",
+            "BO",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "UY",
+            "VE"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "AR",
+            "BO",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "UY",
+            "VE"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 2,
+          "prizeType": 1,
+          "rankStyle": "2",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [
+            "ES"
+          ],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                3,
+                4
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 10,
+              "threeSource": [
+                0
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 3,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "Sorteo Exclusivo",
+          "svip_area": "",
+          "lottery_rule": "Recarga de 10 diamantes=1 Sortería, 3 veces por día",
+          "need_attend": 1,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 2,
+          "selectedArea": [
+            "ES"
+          ],
+          "is_pay_lottery": 1,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "AR",
+            "BB",
+            "BO",
+            "BS",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "JM",
+            "KY",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "TT",
+            "UY",
+            "VE"
+          ],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 0,
+            "consumeCost": "0.00",
+            "messageConfigure": 0,
+            "messageObj": {
+              "imImg": "",
+              "theme": "",
+              "content": ""
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1u7g6l4cdbf932485b470fb7c473c2ae7134b7ph.png?auth-token=0ALzGJus1ExgddYuXpp5FBJ8lWDqX67jR7DTz3NHSt8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMTQwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU5NjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "Marco 2 LATAM",
+                "consume_num": 0,
+                "residue_num": 10000,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "39974",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "10000",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "-35px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": "11",
+                "rotate": "108deg",
+                "preview_img": "https://esx.bigo.sg/live/4he/11tSnSPAkuuC.png?auth-token=116i7Hea_l4fKhgzkCAxRhNDIrmqUoP9GKdgpZaN8g0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMTQwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwNTIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "2025 Placa LATAM",
+                "consume_num": 0,
+                "residue_num": 10000,
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "37783",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "10000",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "8"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "36deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1u7g1E1518cb4834a943a782e44d51ffaabf4bph.png?auth-token=LFJl_LskaEQn7NSvux-x6H5KMMUfnRyuD_021wOffvI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMTQwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM4MDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "Marco 1 LATAM",
+                "consume_num": 0,
+                "residue_num": 10000,
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "39972",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "10000",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-36deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hd/2hkoiA.png?auth-token=TF5wlgxSpB7gi4gb_7sn09H3ATWXVMgr_M-aVAtYMLc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMTQwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "RVIP5 EF LATAM",
+                "consume_num": 0,
+                "residue_num": 10000,
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "29047",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "10000",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-108deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hd/2z24rX.png?auth-token=sPC0KAXpKPGsRqXh6oomQWprkK-Ban2dTijdE0pNbUs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMTQwLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzNjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "RVIP4 EF LATAM",
+                "consume_num": 0,
+                "residue_num": 10000,
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "29045",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "10000",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "7"
+              }
+            ],
+            "totalCost": "0.0000"
+          },
+          "uid": "",
+          "appType": 1,
+          "lang": [
+            "AR",
+            "BB",
+            "BO",
+            "BS",
+            "CL",
+            "CO",
+            "CR",
+            "CU",
+            "DO",
+            "EC",
+            "GT",
+            "HN",
+            "JM",
+            "KY",
+            "MX",
+            "NI",
+            "PA",
+            "PE",
+            "PR",
+            "PY",
+            "SV",
+            "TT",
+            "UY",
+            "VE"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 10
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Reglas"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Horas válidas de recarga: de la 00:00:00 del día 05 a las 23:59:59 del día 12 de Agosto (GMT-5)."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2.Valido para todos los usarios."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "3. Valido para recargas por terceras partes (incluido métodos de BIGO cards y métodos de tercera parte)."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "4. SOLO quienes se registran a participar en este evento puedan recibir premios. En el caso de que hay varios eventos de la misma fecha , se van a entregar premios del evento que vaya a terminar primero, no se repiten los premios."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "5. En el caso de que varios IDs pertenezcan al mismo equipo, se otorgará el premio a uno solo de esos UIDs."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "6. El premio de semilla depende de los diamantes recargados y de tu posicíon en la clasificación.Por ejemplo, si recargas más de 40,000 diamantes y quedas en el puesto 3 ,recibirás 4,000 semillas, si recargas más de 3,000 diamantes y quedas en el puesto 26-50，recibirás 300 semillas."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "7.🪂Bigo Live Latam reserva el derecho de interpretación final."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

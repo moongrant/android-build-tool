@@ -1,0 +1,436 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77794,
+      "act_name": "Family Holiday Giveaway",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-24 00:00:00",
+      "end_time": "2026-01-02 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "Family Holiday Giveaway is Here!",
+        "appendixDesc": "Spin for a Chance to Win AirPods 4 & Exclusive Merch!",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vVjXa00y2TWPL00q1GbI.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "12"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vVeo000y2TWPL0088OwY.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vVeoa00y2TWPL00Bkc2T.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Lucky Wheel",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "MvFA6",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 600,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "lottery_title": "Family Holiday Giveaway",
+                    "svip_area": "",
+                    "lottery_rule": "Watch any live stream for 10 minutes to earn 1 spin.\nLimited to 1 spin per day.\nEligible for USCA Families only.",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 4,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 7,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500657438",
+                        "create_time": "1761951486",
+                        "utime": "2025-11-01 06:58:06",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "family welcome spin 10-31",
+                        "update_operator": "",
+                        "create_operator": "13082",
+                        "frequency": "0",
+                        "update_time": "1761951486",
+                        "black_tasks_status": "0",
+                        "filter_id": "19950",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-11-01 06:58:06",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 0,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vXkGX00y33lYHC0Oe1IU.jpg",
+                        "theme": "🎁Congratulations!🎁",
+                        "content": "You just won a lucky draw ticket! Click here to check your rewards!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": "1",
+                          "rotate": "180deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTT9l00y2TWPL01H4vdi.jpeg",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 0.01,
+                          "is_pay_prize": 0,
+                          "prize_name": "Airpods 4",
+                          "consume_num": 0,
+                          "residue_num": 5,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "123",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "5",
+                          "valid_days": "1",
+                          "used_num": 0,
+                          "win_rate": "0.01",
+                          "textLeft": "-35px",
+                          "prize_type": "15"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "128.57142857142856deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTT9q00y2TWPL00ySum6.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 0.5,
+                          "is_pay_prize": 0,
+                          "prize_name": "Cupid Dino",
+                          "consume_num": 0,
+                          "residue_num": 10,
+                          "imgTop": "27.996633157992356px",
+                          "imgLeft": "41.455676009782536px",
+                          "prize_id": "456",
+                          "textTop": "57.9362252323417px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "10",
+                          "valid_days": "1",
+                          "used_num": 0,
+                          "win_rate": "0.5",
+                          "textLeft": "62.72893530850372px",
+                          "prize_type": "15"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "77.14285714285714deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTTE400y33lYHC09fnqh.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 0.7,
+                          "is_pay_prize": 0,
+                          "prize_name": "Dino Pendant",
+                          "consume_num": 0,
+                          "residue_num": 20,
+                          "imgTop": "-43.91427938628672px",
+                          "imgLeft": "57.86887253545501px",
+                          "prize_id": "789",
+                          "textTop": "-47.815116744539296px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "20",
+                          "valid_days": "1",
+                          "used_num": 0,
+                          "win_rate": "0.7",
+                          "textLeft": "86.86598902272796px",
+                          "prize_type": "15"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "25.714285714285722deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/01tOQ8nDmlQE.png?auth-token=b1_XDTVSPLQhBMuhk_04u5_f8AZQrAeoGVXloyZtkqM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NzMxLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 38.79,
+                          "is_pay_prize": 0,
+                          "prize_name": "Family Christmas",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "-101.58235377170561px",
+                          "imgLeft": "11.880117824992446px",
+                          "prize_id": "37603",
+                          "textTop": "-132.62110848780236px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 0,
+                          "win_rate": "38.79",
+                          "textLeft": "19.235467389694776px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-25.714285714285722deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/11tNjvJ9J1LC.png?auth-token=m_nCZDBF7hnB-VM1YkgBpvwClqIwJMLdT0xr7A1lnXM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzNzg1LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "USCA Family Massive Holiday Rewards Pendant",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "-101.58235377170563px",
+                          "imgLeft": "-61.88011782499243px",
+                          "prize_id": "37561",
+                          "textTop": "-132.6211084878024px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 0,
+                          "win_rate": "20",
+                          "textLeft": "-89.23546738969475px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-77.14285714285717deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hb/2gd2VV.png?auth-token=n0JN16oO5YISYJO6hG3AHtIC3GDyBd1pwieV3lQkt68:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzNzEwLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "Christmas Pendant-USCA Family",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "-43.914279386286665px",
+                          "imgLeft": "-107.86887253545501px",
+                          "prize_id": "31400",
+                          "textTop": "-47.81511674453921px",
+                          "prize_serial": 6,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 0,
+                          "win_rate": "20",
+                          "textLeft": "-156.86598902272797px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-128.57142857142856deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/11tOV3xTquNS.png?auth-token=p75fLymht_OBFrvngVx3rTpOxG7BNk2fKeUQLamqKLM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MzE0LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "Family Massive Holiday Rewards",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "27.996633157992335px",
+                          "imgLeft": "-91.45567600978254px",
+                          "prize_id": "37559",
+                          "textTop": "57.93622523234167px",
+                          "prize_serial": 7,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 0,
+                          "win_rate": "20",
+                          "textLeft": "-132.72893530850374px",
+                          "prize_type": "7"
+                        }
+                      ],
+                      "totalCost": "0.0000"
+                    },
+                    "uid": "841893798",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "CA",
+                      "US"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500657438",
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "appointUidChangeReason": "扩大名单",
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": 3,
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Not in a Family Yet?",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "i7EUa",
+                  "formData": {
+                    "img": "http://esx.bigo.sg/live/4hd/01uxAkhRx1b0v.jpg?auth-token=LFF-NkqqOKJfrY0iXwH9E5oVblfoAyodVdcDmn2C0DU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0ODA2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                    "autoPlayAndLoop": false,
+                    "url": "http://esx.bigo.sg/live/4he/21uxAl4J2EFa.mp4?crc=-1339296667&type=5&auth-token=ZuN2GxkzEeZt0bbqFkHoLlOM5YKhIpedpsP0TzsXWdA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTUyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0"
+                  },
+                  "type": "video",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "87Ofw",
+                  "formData": {
+                    "img": "http://esx.bigo.sg/live/4he/01uqxYpQZvmM.jpg?auth-token=X1zEBKaJ7L4O6ss3SFJNO563gvLFfabnUPUS-oChQQo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3Nzk0LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MzE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

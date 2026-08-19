@@ -1,0 +1,233 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 14:26:08",
+    "now_zone": -9,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 67812,
+      "act_name": "GALA 참석 의향 조사",
+      "state": 1,
+      "color": 1,
+      "theme": "dark-green",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-20 17:00:00",
+      "end_time": "2025-06-24 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "KR"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "KR",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "GALA 참석 의향 조사",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "네",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 2,
+                    "title": "아니요",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 3,
+                    "title": "잘 모르겠다",
+                    "sortIdx": 3
+                  }
+                ],
+                "id": 1,
+                "type": 2,
+                "title": "갈라에 참석할 의향이 있으신가요?",
+                "sortIdx": 1
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 4,
+                    "title": "네",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 5,
+                    "title": "아니요",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 2,
+                "type": 2,
+                "title": "참석하지 않는다면 호스트에게 양도할 의향이 있으신가요?",
+                "sortIdx": 2
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 6,
+                    "title": "일 때문에 시간을 빼기 어렵다",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 7,
+                    "title": "거리가 너무 멀다",
+                    "sortIdx": 2
+                  },
+                  {
+                    "showId": "3",
+                    "id": 8,
+                    "title": "큰 관심이 없다",
+                    "sortIdx": 3
+                  },
+                  {
+                    "showId": "4",
+                    "id": 9,
+                    "title": "개인 사정",
+                    "sortIdx": 4
+                  }
+                ],
+                "id": 3,
+                "type": 2,
+                "title": "갈라에 참석하지 않는 이유는? ",
+                "sortIdx": 3
+              },
+              {
+                "isRequired": 1,
+                "addExtra": 1,
+                "options": [
+                  {
+                    "id": null,
+                    "title": "미국",
+                    "sortIdx": 1
+                  },
+                  {
+                    "id": null,
+                    "title": "영국",
+                    "sortIdx": 2
+                  },
+                  {
+                    "id": null,
+                    "title": "일본",
+                    "sortIdx": 3
+                  },
+                  {
+                    "id": null,
+                    "title": "베트남",
+                    "sortIdx": 4
+                  },
+                  {
+                    "id": null,
+                    "title": "인도네시아",
+                    "sortIdx": 5
+                  },
+                  {
+                    "id": null,
+                    "title": "대만",
+                    "sortIdx": 6
+                  },
+                  {
+                    "id": null,
+                    "title": "홍콩",
+                    "sortIdx": 7
+                  },
+                  {
+                    "id": null,
+                    "title": "두바이",
+                    "sortIdx": 8
+                  },
+                  {
+                    "id": null,
+                    "title": "태국",
+                    "sortIdx": 9
+                  },
+                  {
+                    "id": null,
+                    "title": "호주",
+                    "sortIdx": 10
+                  },
+                  {
+                    "id": null,
+                    "title": "한국",
+                    "sortIdx": 11
+                  }
+                ],
+                "id": null,
+                "type": 2,
+                "title": "터키를 제외하면 어떤 나라에서 이벤트가 열리면 가장 참여하고 싶으신가요?",
+                "sortIdx": 4
+              }
+            ],
+            "description": "안녕하세요, 2025년 8월 26일(화), 상반기 GALA가 터키에서 개최될 예정입니다. 이에 따라 한국 유저 분들의 참석 의향을 파악하고자 설문조사를 진행하게 되었습니다. 설문 결과는 추후 이벤트 보상 및 운영에 반영될 예정이니, 많은 관심과 적극적인 의견 참여 부탁드립니다. 감사합니다.",
+            "startTime": "2025-06-20 00:00:00",
+            "id": 1276,
+            "endTime": "2025-06-24 00:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 1276
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,371 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251214",
+      "20251215",
+      "20251216",
+      "20251217",
+      "20251218",
+      "20251219"
+    ],
+    "week": [
+      "20251208",
+      "20251215"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77928,
+      "act_name": "GALA-HÀO QUANG TỎA SÁNG",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-14 00:00:00",
+      "end_time": "2025-12-19 20:30:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "VN"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "HÀO QUANG TỎA SÁNG",
+        "appendixDesc": "Trong thời gian đua BXH, Idol nhận quà bất kỳ, 1 đậu = 1 điểm",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vUE1N00y2TWPL01uGpLX.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "11",
+      "black_uids_flag": 0,
+      "black_uids_id": ""
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vUHY000y2TWPL00vKFWs.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vUE3200y33lYHC1Guyy7.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Đăng ký ngay!",
+                  "name": "XÁC NHẬN THAM GIA:",
+                  "range": [
+                    3
+                  ],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Ấn vào 👉ĐÂY👈 để đăng ký",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "*Chỉ Idol tới tham dự Gala Night tối 19/12 mới có thể đăng ký tham gia!"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "BẢNG XẾP HẠNG",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VDEyj",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "needGiftUidChangeReason": false,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": "",
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Từ 20:30 18/12 - 20:30 19/12, idol nhận quà bất kỳ, 1 đậu = 1 điểm",
+                    "linktext": "",
+                    "needAppointUidChangeReason": true,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 3,
+                    "svip_levels": [],
+                    "endActNotEditGift": false,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/18 20:30:00",
+                    "frontTextAlignStyle": "center",
+                    "name": "BXH HÀO QUANG TỎA SÁNG",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500654630",
+                      "create_time": "1747215125",
+                      "utime": "2025-05-14 17:32:05",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "闪耀主播榜",
+                      "update_operator": "",
+                      "create_operator": "12474",
+                      "frequency": "0",
+                      "update_time": "1747215125",
+                      "black_tasks_status": "0",
+                      "filter_id": "17031",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-05-14 17:32:05",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "1526561785\n492882358\n1575383646\n528748129\n1825777759\n1517581929\n1835079107\n1851729141\n400903414\n1584341510\n530821750\n1770396838\n1695788959\n423558151\n1646850790\n517361660\n1658221278\n528144362\n1582759229\n1726594168\n587831136\n1580550416\n1844850676\n613877414\n453223724\n616933493\n594576292\n1605697913\n611213026\n525182266\n616599720\n528880070\n1827268728\n615013056\n1802880273\n529590769\n530984985\n1757741994\n1578816847\n424281911\n613834660\n618218301\n532150113\n1692143369\n526621689\n531911649\n610638010\n505375910\n429411052\n552779505\n532007200\n433049192\n611478335\n1575644585\n1540320722\n515424586\n434641216\n411494541\n1802043818\n614746060\n496921883\n573641061\n564896031\n615392692\n1771269061\n611611510\n534115731\n614451028\n526475988\n1679980408\n615460458\n613501113\n453199067\n616187288\n1758836189\n612051652\n518827232\n485742030\n1783844496\n1835807563\n586370079\n613783860\n616419917\n1705701525\n493117523\n532855190\n1805434380\n533062648\n1849037805\n419963447\n489332829\n1739966399\n422474950\n615119949\n402906698\n426115037\n431957937\n432822743\n496707657\n510711895\n523576332\n526365340\n527731841\n529303985\n577569133\n579906511\n592463957\n597607674\n614054263\n614463426\n614513985\n615364878\n1609743652\n1610123404\n1639010033\n1675683944\n1798452170\n1808414765\n1821650419\n1833993822\n1849832292\n1872025780\n1890073618",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "VN"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500654630",
+                    "bottominfo": 2,
+                    "prizeType": 1,
+                    "end_time": "2025/12/19 20:30:00",
+                    "appoint_uid_source": 1,
+                    "appointUidChangeReason": "签约主播可报名",
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": 5,
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "💰THƯỞNG💰 ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "UEGSd",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vUiBi00y2TWPL01wG8QR.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Thắc mắc liên hệ Admin Nguyên",
+              "fn": 1,
+              "style": 1,
+              "share_img": "",
+              "url": "https://www.facebook.com/AdminNguyenBigoLive",
+              "openType": 2,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Mọi quyền giải thích thuộc về BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

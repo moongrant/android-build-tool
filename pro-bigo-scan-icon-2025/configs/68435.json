@@ -1,0 +1,956 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250707",
+      "20250708",
+      "20250709",
+      "20250710",
+      "20250711",
+      "20250712"
+    ],
+    "week": [
+      "20250707"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 15:25:52",
+    "now_zone": -10,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68435,
+      "act_name": "Come to Support your TW/HK Hosts!",
+      "state": 1,
+      "color": 1,
+      "theme": "blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-07 19:30:00",
+      "end_time": "2025-07-12 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "#79EFFC",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uYhM4b4c217800ca14645862a520e875c1a3dph.jpg?auth-token=_ONOjb9ccVTxbwPlXRUVj4YLC5i3QGRDUZZM0cFnif0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Event Rules",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "E4xPr",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "ANZ-TW/HK Gala Rush💓"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "🌏Gifting Bonus is HERE💰"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "🙋‍♂️How to Join:\n1 diamond gifted toTW/HK region in Gala Duration= 1 point;\nTop winners who meet the diamond sending requirements will be able to claim the final rewards!"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "📅Event Timeline: 7th July - 12th July"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "👀Event Rewards: Beans rewards from Rank will be send out automatically!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "ANZ-HK/TW CP Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WIYIz",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "CN"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 diamond recharged= 1 point",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "ANZ-HK/TW CP Ranking",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "CN",
+                      "HK",
+                      "MO",
+                      "TW"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AS",
+                      "AU",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GU",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 3,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 35000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 35000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 30000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 30000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 1,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 20000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 20000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 2,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 4,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 10000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 10000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 3,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 5,
+                        "rank_from": 5,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 5000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 5000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 4,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 6,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 3000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 3000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 5,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 15,
+                        "rank_from": 11,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 1000,
+                            "free_level": "",
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 1000 beans rewards from ANZ HK/TW Gala Gifting Rush!"
+                            }
+                          ],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 6,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "💎Spin to Win 💎",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "LVWHY",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [
+                      "CN"
+                    ],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 100,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "lottery_title": "Max 5,000 Diamonds!",
+                    "svip_area": "",
+                    "lottery_rule": "Gift 100 💎💎💎 to TW/HK region = 1 free Spin - UNLIMITED!",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "CN",
+                      "HK",
+                      "MO",
+                      "TW"
+                    ],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 24.281299999999987,
+                      "consumeCost": "220.96",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://esx.bigo.sg/live/4hp/1uYhVq0f8dfe2ecc2b49a593815b5c48881487ph.png?auth-token=gzEz6Yf4vGHsXNVY6AaprmwuUrXXon4zWCDF5Az8dvE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU2MzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                        "theme": "Up to 5000 Diamonds in lucky spin!",
+                        "content": "Come to support your favorite HK/TW hosts in Gala NOW and win exclusive rewards!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1tmSghcdf9379d74bc4a2fad16ece0202b279aph.png?auth-token=92Fy91IY3_Bp7uzir8SqP8xvPMoHSqkTKTqEV1wW3B8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxMjIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "loving couple rings",
+                          "consume_num": 1112,
+                          "residue_num": 1888,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "38674",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "3000",
+                          "valid_days": "5",
+                          "used_num": 1112,
+                          "win_rate": "20",
+                          "textLeft": "-35px",
+                          "prize_type": "8"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "108deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1tmSnRaab24f58823c43e9af9e7a66818c50f5ph.png?auth-token=KWRbxR15iyU1kB6_7zMa61uFfm3rI_-gY0oATAvKhqE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYzNTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 24,
+                          "is_pay_prize": 0,
+                          "prize_name": "Queen's Privilege",
+                          "consume_num": 1380,
+                          "residue_num": 8619,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "38682",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 1380,
+                          "win_rate": "24",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/4hd/1uooYO.png?auth-token=EursKgIOVydVahXszYCi57cdQeQPB41h_rprTfQShE4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5NTcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 50,
+                          "is_pay_prize": 0,
+                          "prize_name": "Heavenly Beauty",
+                          "consume_num": 2745,
+                          "residue_num": 1255,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "29855",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "4000",
+                          "valid_days": "7",
+                          "used_num": 2745,
+                          "win_rate": "50",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": "100",
+                          "rotate": "-36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=WCzCSJrxkjBjfKa9NxzfMQSKmZCkoiss9IXMsMZkXVA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.4762",
+                          "activity_all_cost": "161.9080",
+                          "win_real_rate": 5,
+                          "is_pay_prize": 0,
+                          "prize_name": "x 100",
+                          "consume_num": 289,
+                          "residue_num": 51,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "340",
+                          "valid_days": "0",
+                          "used_num": 289,
+                          "win_rate": "5",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "5000",
+                          "rotate": "-108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=WMflNOI63WfuuZPsIx3RjV_2w2yhPUCqIy82byOlomc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "83.3333",
+                          "activity_all_cost": "83.3333",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "x 5000",
+                          "consume_num": 1,
+                          "residue_num": 0,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "1",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "0",
+                          "used_num": 1,
+                          "win_rate": "1",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "11"
+                        }
+                      ],
+                      "totalCost": "245.2413"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "lang": [
+                      "AS",
+                      "AU",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GU",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Click Here to Check your HK/TW hosts status👇"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uYhdl4fffc1bb210244d8b121ce8cbe3ee02aph.jpg?auth-token=_Df8igfDVXL0UnixsRyJy2-VhcN7iditgAzO54c9oiM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NDM1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=68587",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Event End in"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event End in"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

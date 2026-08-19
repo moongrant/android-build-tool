@@ -1,0 +1,757 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68873,
+      "act_name": "湖中女神降臨",
+      "state": 1,
+      "color": 3,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-07-06 00:00:00",
+      "end_time": "2025-07-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "TW",
+        "CN",
+        "HK",
+        "MO"
+      ],
+      "selectedArea": [
+        "CN"
+      ],
+      "act_ver": 1,
+      "version_id": "1",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "green",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://giftesx.bigo.sg/live/4hd/0OQ40h.png?auth-token=pXdtYjLfA0Dz7dWf3bXDmbGdcsyRdcqIG7O0aKwssUY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2OTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "SVIP積分轉盤特輯",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "0QLnI",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "活動時間：2025年7月6日起"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": "兌獎郵箱：所有資料卡皮膚、SVIP權益都需要去官方郵箱發郵件兌換，郵箱地址：customerzhvip@bigo.sg"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "IM9J6",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "華麗青銅轉盤",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "rl1Oz",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "type": "title",
+                                  "value": "華麗青銅轉盤"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "參與對象：本月所有SVIP專屬，使用10積分可獲得一張抽獎券，抽獎券上限為9999張"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "　"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "中獎後請發截圖到customerzhvip@bigo.sg領獎~保證不虧！"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "hbG0Z",
+                            "formData": {
+                              "setDraw10": 0,
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 10000,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "change": 10,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 42,
+                                  "score": 1,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 9999,
+                                  "auto_name": "SVIP积分",
+                                  "gameTag": []
+                                }
+                              ],
+                              "text": "这里是排行榜的说明文案",
+                              "linktext": "",
+                              "needAppointUidChangeReason": false,
+                              "lottery_title": "SVIP積分轉盤",
+                              "svip_area": "20",
+                              "lottery_rule": "消耗10SVIP積分轉轉盤一次，10連抽扣除100SVIP積分請注意！抽獎券限制9999張\n\n中大獎資料卡記得發郵箱去兌換哦~",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "index": 5,
+                              "svip_levels": [
+                                "all"
+                              ],
+                              "selectedArea": [
+                                "CN"
+                              ],
+                              "is_pay_lottery": 0,
+                              "name": "抽奖模块",
+                              "point_uid_lottery_ticket_num": 1,
+                              "linkurl": "",
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "is_lottery_all": 0,
+                              "top3": 1,
+                              "lottery_sector_num": 7,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": null,
+                              "lotter_configure": {
+                                "totalRate": 100,
+                                "residueCost": 0,
+                                "consumeCost": "0.00",
+                                "messageConfigure": 1,
+                                "messageObj": {
+                                  "imImg": "https://giftesx.bigo.sg/live/4hd/0stW85.png?auth-token=rLB8u4ZR-ieum9gSqJ9Ud6WcNQQFucbTshflQPLN4w4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwNDgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                  "theme": "SVIP銅轉盤虛擬獎勵限時回歸！",
+                                  "content": "🎉尊貴的SVIP抽獎來咯，10積分送你一張抽獎券~多送多抽，限額9999張！"
+                                },
+                                "list": [
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "180deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4hp/1tir55d91e2fa864ef4870bb615e32e6308833ph.png?auth-token=4iXBXKzMKyfbBLrGreztLY4W19aZFt0nwY0QY8BSAaw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 18,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "幸運守護杖頭框5天",
+                                    "consume_num": 0,
+                                    "residue_num": 20000,
+                                    "imgTop": "60px",
+                                    "imgLeft": "-25px",
+                                    "prize_id": "38777",
+                                    "textTop": "105px",
+                                    "prize_serial": 1,
+                                    "free_level": 0,
+                                    "activity_all_num": "20000",
+                                    "valid_days": "5",
+                                    "used_num": 0,
+                                    "win_rate": "18",
+                                    "textLeft": "-35px",
+                                    "prize_type": "6"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "128.57142857142856deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4he/01twc7VJSguP.png?auth-token=Vaw8L-9FpmOx62zkovdQ8XL7Z8kv5DdZ85OFcxsxyYc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1NzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.00",
+                                    "win_real_rate": 20,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "驚喜小雞銘牌10天",
+                                    "consume_num": 0,
+                                    "residue_num": 10000,
+                                    "imgTop": "27.996633157992356px",
+                                    "imgLeft": "41.455676009782536px",
+                                    "prize_id": "39163",
+                                    "textTop": "57.9362252323417px",
+                                    "prize_serial": 2,
+                                    "free_level": 0,
+                                    "activity_all_num": "10000",
+                                    "valid_days": "10",
+                                    "used_num": 0,
+                                    "win_rate": "20",
+                                    "textLeft": "62.72893530850372px",
+                                    "prize_type": "8"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "77.14285714285714deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4hb/01t9IS8z3UN7.png?auth-token=A7vLaoBSMv_1ogNig4DbcXjLmNhmdTVTREEMjHi2QK8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY2MTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 13,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "萌寵來臨進場5天",
+                                    "consume_num": 0,
+                                    "residue_num": 20000,
+                                    "imgTop": "-43.91427938628672px",
+                                    "imgLeft": "57.86887253545501px",
+                                    "prize_id": "36816",
+                                    "textTop": "-47.815116744539296px",
+                                    "prize_serial": 3,
+                                    "free_level": 0,
+                                    "activity_all_num": "20000",
+                                    "valid_days": "5",
+                                    "used_num": 0,
+                                    "win_rate": "13",
+                                    "textLeft": "86.86598902272796px",
+                                    "prize_type": "7"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "25.714285714285722deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4hb/11sy0ox4J4VR.png?auth-token=G2otESt2ImmpjAvZn-oekdpkjDAvajW0lS9QaxNIHaI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwMjcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 15,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "萬聖來臨進場3天",
+                                    "consume_num": 0,
+                                    "residue_num": 20000,
+                                    "imgTop": "-101.58235377170561px",
+                                    "imgLeft": "11.880117824992446px",
+                                    "prize_id": "36152",
+                                    "textTop": "-132.62110848780236px",
+                                    "prize_serial": 4,
+                                    "free_level": 0,
+                                    "activity_all_num": "20000",
+                                    "valid_days": "3",
+                                    "used_num": 0,
+                                    "win_rate": "15",
+                                    "textLeft": "19.235467389694776px",
+                                    "prize_type": "7"
+                                  },
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "-25.714285714285722deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4he/21tuO5Jahmxe.png?auth-token=gQcneJbGaDaY094t0GiRHoDvyMqQne_U1UA7LaKKJCk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1MjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0",
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 5,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "神秘人權益體驗1天",
+                                    "consume_num": 0,
+                                    "residue_num": 10,
+                                    "imgTop": "-101.58235377170563px",
+                                    "imgLeft": "-61.88011782499243px",
+                                    "prize_id": "1",
+                                    "textTop": "-132.6211084878024px",
+                                    "prize_serial": 5,
+                                    "free_level": 0,
+                                    "activity_all_num": "10",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "5",
+                                    "textLeft": "-89.23546738969475px",
+                                    "prize_type": "15"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "-77.14285714285717deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4he/21twc3CLtZoE.png?auth-token=-CMxFUdDEFf4inZap3WvlWZ1414cvkDcrorotjeNTCc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcyMDgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 1,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 28.000000000000004,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "森之小花尾燈7天",
+                                    "consume_num": 0,
+                                    "residue_num": 99999,
+                                    "imgTop": "-43.914279386286665px",
+                                    "imgLeft": "-107.86887253545501px",
+                                    "prize_id": "39161",
+                                    "textTop": "-47.81511674453921px",
+                                    "prize_serial": 6,
+                                    "free_level": 0,
+                                    "activity_all_num": "99999",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "28",
+                                    "textLeft": "-156.86598902272797px",
+                                    "prize_type": "5"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "-128.57142857142856deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4hd/22FkXC7.png?auth-token=cuHzvFzXxZx4v-xmu6iKf0chd6VbzdXizY-_T5n8PAk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5MjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 1,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "甜蜜相依進場99天",
+                                    "consume_num": 0,
+                                    "residue_num": 10,
+                                    "imgTop": "27.996633157992335px",
+                                    "imgLeft": "-91.45567600978254px",
+                                    "prize_id": "32449",
+                                    "textTop": "57.93622523234167px",
+                                    "prize_serial": 7,
+                                    "free_level": 0,
+                                    "activity_all_num": "10",
+                                    "valid_days": "99",
+                                    "used_num": 0,
+                                    "win_rate": "1",
+                                    "textLeft": "-132.72893530850374px",
+                                    "prize_type": "7"
+                                  }
+                                ],
+                                "totalCost": "0.0000"
+                              },
+                              "uid": "",
+                              "endActNotEdit": false,
+                              "isSearch": 0,
+                              "appType": 1,
+                              "lang": [
+                                "TW",
+                                "CN",
+                                "HK",
+                                "MO"
+                              ],
+                              "appoint_uid": 2,
+                              "lottery_type": 1,
+                              "lottery_stock_type": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "lottery_pay_type": 1,
+                              "lottery_ticket_timerange_limit": 0,
+                              "point_uid_lottery_ticket": 0,
+                              "appoint_uid_source": 2,
+                              "appointUidChangeReason": "限定華語區SVIP參與",
+                              "rankStyle": "1",
+                              "sendGift_uids": "",
+                              "lottery_timerange_limit": 0,
+                              "countType": "",
+                              "lottery_ticket_num": 1,
+                              "lottery_pay_num": 1
+                            },
+                            "type": "lottery",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "高級白銀轉盤",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "YX5EJ",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "type": "title",
+                                  "value": "高級白銀轉盤"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "參與對象：華語區等級SVIP3以上SVIP"
+                                },
+                                {
+                                  "type": "text",
+                                  "value": ""
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "100SVIP積分參與一次，每人每月限抽一次"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "　"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "看看誰能抽到價值600積分的24小時的主播橫幅推薦"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "　"
+                                },
+                                {
+                                  "type": "sub_title",
+                                  "value": "白銀轉盤所有獎項都需要發郵件去兌換"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "HJqfU",
+                            "formData": {
+                              "setDraw10": 0,
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 10000,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "change": 100,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 42,
+                                  "score": 1,
+                                  "totalLimit": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 1,
+                                  "auto_name": "SVIP积分",
+                                  "gameTag": []
+                                }
+                              ],
+                              "text": "这里是排行榜的说明文案",
+                              "linktext": "",
+                              "needAppointUidChangeReason": false,
+                              "lottery_title": "尊榮SVIP權益抽取",
+                              "svip_area": "20",
+                              "lottery_rule": "SVIP積分100分=1張抽獎券，每月每人限抽1次",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "svip_levels": [
+                                "6",
+                                "7",
+                                "5",
+                                "8",
+                                "9",
+                                "4",
+                                "3"
+                              ],
+                              "index": 6,
+                              "selectedArea": [
+                                "CN"
+                              ],
+                              "is_pay_lottery": 0,
+                              "name": "抽奖模块",
+                              "point_uid_lottery_ticket_num": 1,
+                              "linkurl": "",
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "is_lottery_all": 0,
+                              "top3": 1,
+                              "lottery_sector_num": 5,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": null,
+                              "lotter_configure": {
+                                "totalRate": 100,
+                                "residueCost": 0,
+                                "consumeCost": "0.00",
+                                "messageConfigure": 0,
+                                "messageObj": {
+                                  "imImg": "https://giftesx.bigo.sg/live/4hd/0WYUhF.png?auth-token=94N0K0LMGc3v5ewMlEO1zpLV3vfD-DscQe7IYpCFvnI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwNDksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                  "theme": "SVIP3以上專屬轉盤來了",
+                                  "content": "專屬於你的SVIP權益轉盤趕快來抽吧，一個月只能抽一次哦~"
+                                },
+                                "list": [
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "180deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/4hd/0hj3I4.png?auth-token=2qlJLDpqUPn9pVAAapdD4bym6T4ph-cxTw0x2-fucWY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3ODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 1,
+                                    "prize_cost": "0",
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 45,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "50積分熱門三小時",
+                                    "consume_num": 0,
+                                    "residue_num": 99999,
+                                    "imgTop": "60px",
+                                    "imgLeft": "-25px",
+                                    "prize_id": "1",
+                                    "textTop": "105px",
+                                    "prize_serial": 1,
+                                    "free_level": 0,
+                                    "activity_all_num": "99999",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "45",
+                                    "textLeft": "-35px",
+                                    "prize_type": "15"
+                                  },
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "108deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/4hd/1QYc20.png?auth-token=_Grp9RXg3PVUZys6h_C7-rKPv6nMJqMyapgea0iJ_9s:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4OTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0",
+                                    "activity_all_cost": "0.00",
+                                    "win_real_rate": 38,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "80積分清空收禮",
+                                    "consume_num": 0,
+                                    "residue_num": 100,
+                                    "imgTop": "1.2664445218705325px",
+                                    "imgLeft": "55.839803885088045px",
+                                    "prize_id": "2",
+                                    "textTop": "18.62712429686843px",
+                                    "prize_serial": 2,
+                                    "free_level": 0,
+                                    "activity_all_num": "100",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "38",
+                                    "textLeft": "83.88206453689419px",
+                                    "prize_type": "15"
+                                  },
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "36deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/4hd/0np9Q9.png?auth-token=HjQdUXLhj6dTp5r1wKWjo7yuzXiA5rNusz5Q9MsIBWM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5MDMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0",
+                                    "activity_all_cost": "0.00",
+                                    "win_real_rate": 10,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "100積分IM/push",
+                                    "consume_num": 0,
+                                    "residue_num": 69,
+                                    "imgTop": "-93.76644452187053px",
+                                    "imgLeft": "24.961746444860225px",
+                                    "prize_id": "3",
+                                    "textTop": "-121.12712429686842px",
+                                    "prize_serial": 3,
+                                    "free_level": 0,
+                                    "activity_all_num": "69",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "10",
+                                    "textLeft": "38.47315653655916px",
+                                    "prize_type": "15"
+                                  },
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "-36deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/4hd/2v36Xf.png?auth-token=LsDc3M7Ga0r35E7W1kXyIQG1PUZXlwfRHV0mAZd2Acw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUyMDYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0",
+                                    "activity_all_cost": "0.00",
+                                    "win_real_rate": 6,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "150積分官方社媒曝光",
+                                    "consume_num": 0,
+                                    "residue_num": 10,
+                                    "imgTop": "-93.76644452187054px",
+                                    "imgLeft": "-74.96174644486021px",
+                                    "prize_id": "4",
+                                    "textTop": "-121.12712429686844px",
+                                    "prize_serial": 4,
+                                    "free_level": 0,
+                                    "activity_all_num": "10",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "6",
+                                    "textLeft": "-108.47315653655913px",
+                                    "prize_type": "15"
+                                  },
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "-108deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/4hd/1qy3VL.png?auth-token=ZSI5Tz-MQHqZUaATKL9vkU1rSCXUdsgqdgZ00MPXXaQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODczLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0NzUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0",
+                                    "activity_all_cost": "0.00",
+                                    "win_real_rate": 1,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "600積分主播橫幅推薦",
+                                    "consume_num": 0,
+                                    "residue_num": 1,
+                                    "imgTop": "1.2664445218705147px",
+                                    "imgLeft": "-105.83980388508806px",
+                                    "prize_id": "5",
+                                    "textTop": "18.627124296868402px",
+                                    "prize_serial": 5,
+                                    "free_level": 0,
+                                    "activity_all_num": "1",
+                                    "valid_days": "7",
+                                    "used_num": 0,
+                                    "win_rate": "1",
+                                    "textLeft": "-153.8820645368942px",
+                                    "prize_type": "15"
+                                  }
+                                ],
+                                "totalCost": "0.0000"
+                              },
+                              "uid": "",
+                              "endActNotEdit": false,
+                              "isSearch": 0,
+                              "appType": 1,
+                              "lang": [
+                                "TW",
+                                "CN",
+                                "HK",
+                                "MO"
+                              ],
+                              "lottery_type": 1,
+                              "appoint_uid": 2,
+                              "lottery_stock_type": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "lottery_pay_type": 1,
+                              "lottery_ticket_timerange_limit": 0,
+                              "point_uid_lottery_ticket": 0,
+                              "appoint_uid_source": 2,
+                              "rankStyle": "1",
+                              "sendGift_uids": "",
+                              "lottery_timerange_limit": 0,
+                              "countType": "",
+                              "lottery_ticket_num": 1,
+                              "lottery_pay_num": 1
+                            },
+                            "type": "lottery",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "備註:"
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": "⚠️發中獎截圖兌獎請在郵件中註明ID以及需要兌換的獎勵，以及中獎界面截圖"
+            },
+            {
+              "type": "text",
+              "value": "⚠️請勿重複使用截圖，一經發現立馬取消轉盤資格"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "一切解釋權歸BIGO LIVE所有"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,538 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68344,
+      "act_name": "Welcome back! Check your gifts!",
+      "state": 1,
+      "color": 1,
+      "theme": "white-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-30 11:35:34",
+      "end_time": "2025-10-31 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "#000000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWAvo1164560a01e54f44a19afedb22b372bcph.png?auth-token=MX1TDMISxSD5S-VwN9p_PP22p-1rS0K6haYqIEWo3D8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1MTMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWR9x9230df1c8b4c4f45b9d715d72086f737ph.png?auth-token=bi0yZCFif8zmH2fCuUkhA9eJfIHLa0YpMWssRsQrA70:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3OTUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                1
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang084",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 3,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "用户分享直播",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang199",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 2,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "送出礼物",
+              "gameTag": []
+            }
+          ],
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "Join the raffle and win!",
+          "svip_area": "",
+          "lottery_rule": "Watch a livestream for 5 minutes — 🎰 1 chance\nShare the livestream link once — 🎰 1 chance\nSend any gift — 🎰 1 chance",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 1,
+          "selectedArea": [
+            "AU"
+          ],
+          "is_pay_lottery": 0,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 0,
+            "consumeCost": "0.00",
+            "messageConfigure": 0,
+            "messageObj": {
+              "imImg": "",
+              "theme": "",
+              "content": ""
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uWCHKdc22a95d635b4240ad5fd8ee1564222cph.png?auth-token=NJjeDcQOmcpKMeVENHS95W7atd_i1ebwOtXxvGQRH_E:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwMzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": "Crown",
+                "consume_num": 0,
+                "residue_num": 999,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "41419",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "999",
+                "valid_days": "60",
+                "used_num": 0,
+                "win_rate": "30",
+                "textLeft": "-35px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "108deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uWCBk2dd8e6054b0d485dae37495edc1d3f1bph.png?auth-token=1XGmSQ3GGB9LWIibBU8HNjkH0UZYrd-rry_2qoite6g:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxMTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 30,
+                "is_pay_prize": 0,
+                "prize_name": " Taillight",
+                "consume_num": 0,
+                "residue_num": 999,
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "41415",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "999",
+                "valid_days": "60",
+                "used_num": 0,
+                "win_rate": "30",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "36deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uWBpif781a556475e4348a6d753831819c3f4ph.png?auth-token=zrXZpauwcUuzHNr6Hb5Qs3nHtTwqmRyU5fqWLR0r-10:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyMDYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "Entrance effect",
+                "consume_num": 0,
+                "residue_num": 999,
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "41413",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "999",
+                "valid_days": "60",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-36deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uWBOB50ca1c8672654dde9e1bdf487d364db3ph.png?auth-token=VQLdrJjtAepprTJzPrYX0mZQrdiUKjsGLCvDRUPP1Mk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0NDMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "Name card",
+                "consume_num": 0,
+                "residue_num": 999,
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "41411",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "999",
+                "valid_days": "60",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "8"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-108deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s1/1Ei25k.png?auth-token=AM8XI7i0Qsx6CaiT-ZHNIuLoFqku-YYaIUmYCXQYdJ0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3ODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "Try next time!",
+                "consume_num": 0,
+                "residue_num": 9999,
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "10001000",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "16"
+              }
+            ],
+            "totalCost": "0.0000"
+          },
+          "uid": "",
+          "appType": 1,
+          "lang": [
+            "PG",
+            "TO",
+            "WS",
+            "FJ",
+            "GU",
+            "SB",
+            "NC",
+            "PF",
+            "PW",
+            "AS",
+            "FM",
+            "TK",
+            "MP",
+            "CK",
+            "VU",
+            "MH",
+            "KI",
+            "NR",
+            "TV",
+            "NU",
+            "NF",
+            "WF",
+            "PN",
+            "AU",
+            "NZ"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWAvy2a52696dcc70495f8821987398d488e0ph.png?auth-token=8FE_JhUbCKOwWkNOZVh8zNemPjI3F9Ns_h1E3e53hmg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzQ0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NDgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 4,
+          "uid_arr": [
+            {
+              "uid": "519485835",
+              "text": "/"
+            },
+            {
+              "uid": "503533275",
+              "text": "/"
+            },
+            {
+              "uid": "764688168",
+              "text": "/"
+            },
+            {
+              "uid": "781931205",
+              "text": "/"
+            },
+            {
+              "uid": "797837101",
+              "text": "/"
+            },
+            {
+              "uid": "803274074",
+              "text": "/"
+            },
+            {
+              "uid": "796794098",
+              "text": "/"
+            },
+            {
+              "uid": "674824639",
+              "text": "/"
+            },
+            {
+              "uid": "464359840",
+              "text": "/"
+            },
+            {
+              "uid": "748633343",
+              "text": "/"
+            },
+            {
+              "uid": "833441004",
+              "text": "/"
+            },
+            {
+              "uid": "1842215827",
+              "text": "/"
+            },
+            {
+              "uid": "828546922",
+              "text": "/"
+            },
+            {
+              "uid": "695854578",
+              "text": "/"
+            },
+            {
+              "uid": "835335985",
+              "text": "/"
+            },
+            {
+              "uid": "833419456",
+              "text": "/"
+            },
+            {
+              "uid": "818966885",
+              "text": "/"
+            },
+            {
+              "uid": "773313794",
+              "text": "/"
+            },
+            {
+              "uid": "829087599",
+              "text": "/"
+            },
+            {
+              "uid": "688015297",
+              "text": "/"
+            },
+            {
+              "uid": "670918548",
+              "text": "/"
+            },
+            {
+              "uid": "1883709555",
+              "text": "/"
+            },
+            {
+              "uid": "1842254787",
+              "text": "/"
+            },
+            {
+              "uid": "570790036",
+              "text": "/"
+            },
+            {
+              "uid": "831407029",
+              "text": "/"
+            },
+            {
+              "uid": "833019976",
+              "text": "/"
+            },
+            {
+              "uid": "832056797",
+              "text": "/"
+            },
+            {
+              "uid": "839355681",
+              "text": "/"
+            }
+          ],
+          "priority": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,640 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250704",
+      "20250705",
+      "20250706",
+      "20250707",
+      "20250708",
+      "20250709",
+      "20250710",
+      "20250711",
+      "20250712"
+    ],
+    "week": [
+      "20250630",
+      "20250707"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68234,
+      "act_name": "ID - Indonesia Host 2025 MID-YEAR GALA 👑 User",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-04 00:00:00",
+      "end_time": "2025-07-12 14:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "ID"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "#000000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "14"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWZIh2acc98f8cde544d4a8d5963083b975f3ph.png?auth-token=cYRbRKC9YfWIH8SdWoUdcccZcs0nOcw1r7P1TtCgV6s:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxODIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWa896d83bb6b99cb4202a5198dc6c074399bph.png?auth-token=BuvbVeWbX621zvUYgQ_Prr5coTgu65mcZcl5HOmXmQo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU4OTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 500,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 5,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "Gala Spin",
+          "svip_area": "",
+          "lottery_rule": "Top Up 500💎= 1 Tiket (Max 5/hari)\n1 Tiket=1 Kesempatan! \n\n",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 2,
+          "selectedArea": [],
+          "is_pay_lottery": 0,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "ID"
+          ],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 9,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 201.51,
+            "consumeCost": "215.36",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://esx.bigo.sg/live/4hp/1uXJsq80e4e30692c1476b81bc8297049f6ee8ph.png?auth-token=x86G8wb8yroU8n0kORt_7OS5WLNbkgKKSelkQ35iGw0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzMjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "theme": "Tiket undian pertamamu sudah dikantongi! SPIN SEKARANG!🎫",
+              "content": "Mau lebih banyak tiket? Top up 500💎dapat 1 tiket (max 5x/hari). Gaskeun top up sekarang sebelum kehabisan keberuntunganmu!🔥"
+            },
+            "list": [
+              {
+                "prizes_num": "1",
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=Qs4IUMwxe2Eij1KrxFbbp_jPPsM2dT9YZNAfeNsc9mc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0167",
+                "activity_all_cost": "83.5000",
+                "win_real_rate": 16.07,
+                "is_pay_prize": 0,
+                "prize_name": "1",
+                "consume_num": 2595,
+                "residue_num": 2405,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "1",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "5000",
+                "valid_days": "0",
+                "used_num": 2595,
+                "win_rate": "16.07",
+                "textLeft": "-35px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "10",
+                "rotate": "140deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=Qs4IUMwxe2Eij1KrxFbbp_jPPsM2dT9YZNAfeNsc9mc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.1667",
+                "activity_all_cost": "166.7000",
+                "win_real_rate": 3.2099999999999995,
+                "is_pay_prize": 0,
+                "prize_name": "10",
+                "consume_num": 542,
+                "residue_num": 458,
+                "imgTop": "40.11377766511313px",
+                "imgLeft": "29.636946823355835px",
+                "prize_id": "1",
+                "textTop": "75.75555538987226px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "1000",
+                "valid_days": "0",
+                "used_num": 542,
+                "win_rate": "3.21",
+                "textLeft": "45.3484512108174px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "100",
+                "rotate": "100deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=Qs4IUMwxe2Eij1KrxFbbp_jPPsM2dT9YZNAfeNsc9mc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "1.6667",
+                "activity_all_cost": "166.6700",
+                "win_real_rate": 0.32,
+                "is_pay_prize": 0,
+                "prize_name": "100",
+                "consume_num": 49,
+                "residue_num": 51,
+                "imgTop": "-10.239904898310915px",
+                "imgLeft": "58.70865900603768px",
+                "prize_id": "1",
+                "textTop": "1.7060222083663028px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "100",
+                "valid_days": "0",
+                "used_num": 49,
+                "win_rate": "0.32",
+                "textLeft": "88.100969126526px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1000",
+                "rotate": "60deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=Qs4IUMwxe2Eij1KrxFbbp_jPPsM2dT9YZNAfeNsc9mc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "16.6667",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0,
+                "is_pay_prize": 0,
+                "prize_name": "1000",
+                "consume_num": 0,
+                "residue_num": 0,
+                "imgTop": "-67.49999999999997px",
+                "imgLeft": "48.6121593216773px",
+                "prize_id": "1",
+                "textTop": "-82.49999999999997px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "0",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "0.00",
+                "textLeft": "73.25317547305484px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "20deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uR15lffafd089d6454a4dac3d5fa6922433fcph.png?auth-token=fmXCpd10jejMh4qTdkjkBtgXQJjE05et7gDKxGFS1_I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwMzUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 25.72,
+                "is_pay_prize": 0,
+                "prize_name": "Free tickets",
+                "consume_num": 4158,
+                "residue_num": 3842,
+                "imgTop": "-104.87387276680221px",
+                "imgLeft": "4.071712182681853px",
+                "prize_id": "41021",
+                "textTop": "-137.46157759823853px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "8000",
+                "valid_days": "3",
+                "used_num": 4158,
+                "win_rate": "25.72",
+                "textLeft": "7.752517915708609px",
+                "prize_type": "1"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-20deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uDh8g7b91226f649a45d19f7ebd368754d8f0ph.png?auth-token=NPg6WLJ9kH0eQlGo0XMZPPmOu8qG301BqMADtP3M8lc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NzksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 3.2099999999999995,
+                "is_pay_prize": 0,
+                "prize_name": "100 Combat Points",
+                "consume_num": 504,
+                "residue_num": 496,
+                "imgTop": "-104.87387276680222px",
+                "imgLeft": "-54.071712182681836px",
+                "prize_id": "40378",
+                "textTop": "-137.46157759823853px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "1000",
+                "valid_days": "3",
+                "used_num": 504,
+                "win_rate": "3.21",
+                "textLeft": "-77.75251791570858px",
+                "prize_type": "1"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-60deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hb/1bGDaJ.png?auth-token=08ljlDe0Bgg5MyRMqpC4h-1mA_ckGncRnKNUsdb-8xQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU1NjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 25.72,
+                "is_pay_prize": 0,
+                "prize_name": "Regional Tycoon List",
+                "consume_num": 4206,
+                "residue_num": 3794,
+                "imgTop": "-67.50000000000003px",
+                "imgLeft": "-98.61215932167727px",
+                "prize_id": "37308",
+                "textTop": "-82.50000000000006px",
+                "prize_serial": 7,
+                "free_level": "",
+                "activity_all_num": "8000",
+                "valid_days": "3",
+                "used_num": 4206,
+                "win_rate": "25.72",
+                "textLeft": "-143.2531754730548px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-100deg",
+                "preview_img": "https://esx.bigo.sg/live/4hc/01tN8GwRQTyT.png?auth-token=WTkc7EvjKv7qpIHp14C9kzr0m04Hr8KQp20pKjUE864:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU3OTIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 25.72,
+                "is_pay_prize": 0,
+                "prize_name": "Hello 2025",
+                "consume_num": 4160,
+                "residue_num": 5839,
+                "imgTop": "-10.239904898310952px",
+                "imgLeft": "-108.70865900603769px",
+                "prize_id": "37773",
+                "textTop": "1.706022208366246px",
+                "prize_serial": 8,
+                "free_level": "",
+                "activity_all_num": "9999",
+                "valid_days": "3",
+                "used_num": 4160,
+                "win_rate": "25.72",
+                "textLeft": "-158.10096912652602px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-140deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uV05124956a0e97ca43088c3806336e2d9921ph.png?auth-token=ZcGHkSaCM9gojsK-9xlC4Ry0IsOVw0aEKF0c0mo41Mw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1MjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0.03,
+                "is_pay_prize": 0,
+                "prize_name": "Limited Edition Dino Girl",
+                "consume_num": 5,
+                "residue_num": 0,
+                "imgTop": "40.11377766511312px",
+                "imgLeft": "-79.63694682335586px",
+                "prize_id": "41325",
+                "textTop": "75.75555538987223px",
+                "prize_serial": 9,
+                "free_level": "",
+                "activity_all_num": "5",
+                "valid_days": "3",
+                "used_num": 5,
+                "win_rate": "0.03",
+                "textLeft": "-115.34845121081744px",
+                "prize_type": "1"
+              }
+            ],
+            "totalCost": "416.8700"
+          },
+          "uid": "",
+          "appType": 1,
+          "lang": [
+            "ID"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "User Rank"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "text",
+              "value": "Top Up 1 💎 = 1 Point"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWa8He8ae63de3f0749229afba6b5f7e9280dph.png?auth-token=0IoXip9jFyAHzfIfIZL-q5rWi7pe-kiXC6khAPVnBQc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2OTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [],
+          "num": 30,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 10000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 6,
+          "selectedArea": [],
+          "voteBoardTitle": "",
+          "start_time": "2025/07/04 00:00:00",
+          "frontTextAlignStyle": "left",
+          "name": "",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "ID"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "ID"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 2,
+          "prizeType": 1,
+          "end_time": "2025/07/12 14:00:00",
+          "rankStyle": "2",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "🏆 HQ Host Gala Reward 🏆"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWGT27c8c37438cf14a7b824b1ce2705a3a72ph.png?auth-token=sJO8yI7HBBU0TBUzJiqXhXFIv-u1o96UuHbLnlHvAvo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3OTcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uV0eDf38141b28d494699ac9b9678e5b34f22ph.png?auth-token=xe9KzUw9jwssoxYCO6tlnB_WvxuAqYykISkXPRvgziE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2ODksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://static-fed.bigolive.tv/live/pages/bigolive/mid-festival-anchor-2025/index.html?lang=id",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZpzb6138c91cdffc478d8667f15b7d438e96ph.png?auth-token=Hd9tPNZ8exxtzTFLaH2T-BaSuuEiDPXgF896mLaFZVk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxMDEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWGTN54267e3a2d394709990862caf1442badph.png?auth-token=a47qNHXcwDes7VJLNvOTGaXe-7t_8gpo1ZydOxJvANc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MjM0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

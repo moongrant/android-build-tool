@@ -1,0 +1,391 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 66527,
+      "act_name": "U-Phúc lợi nạp và tặng quà hàng ngày-0628-30",
+      "state": 1,
+      "color": 2,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-06-28 00:00:00",
+      "end_time": "2025-06-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "VN"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "💎Phúc lợi nạp và tặng quà hàng ngày💎",
+        "appendixDesc": "Mỗi ngày nạp 200KC và tặng quà 60KC, sẽ nhận được 10kc, phần thưởng có hạn!",
+        "linkImg": "https://esx.bigo.sg/live/4hp/1uPGFe9390b7104f9f44b7b0b64ae85c38b761ph.jpg?auth-token=v1DC1uyjNNlNT94QrgPmGU2mz7DJVB8MloFK_Sg86wQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTI3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUyMjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "9",
+      "is_go_onelink": 0,
+      "theme": "red",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uR6eY8f36be9ed6fe4fcc9dc9438dfbf7b850ph.jpg?auth-token=vj8T0wUk-F6TRfuwrDq0EBKG2LFWuR7DeB1l_Tzu7-s:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTI3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NjAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uR6li272a4cf0dd6441d5a99b0b0df93a14f0ph.jpg?auth-token=9EJVUX5gyXlPDjJlIXWSYX2hJrvascgjtyam9dqL8B0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTI3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwMTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event đã kết thúc"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "dailyCycleEndTime": "21:00:00",
+          "skin": "0",
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "change": 1,
+              "threeRechage": [
+                [
+                  "VN",
+                  "mol",
+                  "molpoint_wallet"
+                ],
+                [
+                  "VN",
+                  "paypal",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "nganluong",
+                  "bank"
+                ],
+                [
+                  "VN",
+                  "nganluong",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "ocean",
+                  "creditCard"
+                ],
+                [
+                  "VN",
+                  "momo",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "epin"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "razer"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "letplay"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "coda"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "mtcgame"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "ecee"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "ka-cn_bigolive"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "kabasakal"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "high_gm"
+                ],
+                [
+                  "VN",
+                  "nlcard",
+                  "vms"
+                ],
+                [
+                  "VN",
+                  "nlcard",
+                  "gate"
+                ],
+                [
+                  "VN",
+                  "catappult",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "telco",
+                  "vms"
+                ],
+                [
+                  "VN",
+                  "telco",
+                  "vnp"
+                ],
+                [
+                  "VN",
+                  "telco",
+                  "viettel"
+                ],
+                [
+                  "VN",
+                  "adyen",
+                  "scheme"
+                ],
+                [
+                  "VN",
+                  "ingenico",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "appotapay",
+                  "ewallet"
+                ],
+                [
+                  "VN",
+                  "momo2",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "9pay",
+                  "bank_transfer"
+                ],
+                [
+                  "VN",
+                  "zalopay",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "zalopay",
+                  "vietqr"
+                ],
+                [
+                  "VN",
+                  "cko",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "cko_v2",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "card_payment_global",
+                  "global_card"
+                ]
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "score": 1,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 200,
+              "auto_name": "充值金额",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                0
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 60,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "Trong thời gian qui định, user nạp đạt mốc sẽ nhận phần thường tương ứng; Phần thưởng có hạn",
+          "lang": [
+            "VN"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "end_time": "2024/03/31",
+          "level_config": [
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "1000",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": 3,
+                  "reward_count": "10"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 260
+            }
+          ],
+          "groups": [],
+          "index": 2,
+          "raskType": 1,
+          "dailyCycleEndTimeOrigin": "2024/03/26 21:00:00",
+          "dailyCycleStartTime": "20:00:00",
+          "selectedArea": [],
+          "start_time": "2024/03/26",
+          "name": "NHIỆM VỤ Nạp và Tặng",
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2024/03/26 20:00:00",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Mọi quyền giải thích thuộc về BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80030"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

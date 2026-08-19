@@ -1,0 +1,602 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 02:27:12",
+    "now_zone": 3,
+    "leave_time": 0,
+    "act_info": {
+      "id": 66771,
+      "act_name": "A Sorte Está na Família - Festa Junina!👒",
+      "state": 1,
+      "color": 1,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-06-05 00:00:00",
+      "end_time": "2025-07-02 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "BR",
+        "AO"
+      ],
+      "selectedArea": [
+        "PT"
+      ],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "👒 Festa Junina e Prêmios Diários só na Família 🍂🌽",
+        "appendixDesc": "5 min assistir às lives = 1 sorteio: Prêmio Diário! ",
+        "linkImg": "https://esx.bigo.sg/live/4hp/1uKpqubda22b368a4545c58e4252a863a332c9ph.png?auth-token=Wzbl_9P9AR_FmMpfiGueOnLhF-BmaACIuLHnl8CQJSs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0OTcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+      },
+      "act_ver": 1,
+      "version_id": "2",
+      "appType": 1,
+      "is_go_onelink": 1,
+      "theme": "orange",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uKpp7a79f5bdcf6dc4c049066c4385a698c44ph.png?auth-token=S7P0itaSl39kpRcn-oZ43bIup3Fjuoc9gq-EjdQy8uM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY0MDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://static-fed.bigolive.tv/live/pages/bigolive/mid-festival-family-2023/index.html",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "type": "title",
+              "value": "👒🎉 Arraiá da Sorte está no ar! 🌽🔥\nLive boa, sorte grande! Bora pra Festa Junina! 🎊💃\n"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "💎🔥100% chance de ganhar \nPrêmio até 🤑9999 diamantes e mais..."
+            },
+            {
+              "frontTextStyle": "fill",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "\n✨✨Sorteio e Prêmio diário✨✨\nAssista às lives e veja sua sorte!\n5 min assistir às lives = 1 sorteio/dia"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "text",
+              "value": "Tempo do evento\n5/6/2025 00:00:00 -- 2/7/2025 23:59:59"
+            },
+            {
+              "frontTextStyle": "underline",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "Clique no botão no canto superior direito para compartilhar este evento com seus amigos! \nÉ só assistir e deixar a sorte te levar! 🍂🌟"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            }
+          ],
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "✨Sorteio de Família✨",
+          "svip_area": "",
+          "lottery_rule": "Membros da família, assista a lives por 5 minutos para obter um sorteio.",
+          "need_attend": 0,
+          "prize_arr": [],
+          "index": 1,
+          "svip_levels": [],
+          "selectedArea": [
+            "PT"
+          ],
+          "is_pay_lottery": 0,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 377.5965,
+            "consumeCost": "622.20",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://esx.bigo.sg/live/4hp/1uKpovc1a12bd38ca148199e6e65ea7d9b29a5ph.png?auth-token=SuP7Lr3YIKjnDAHTrUvsj6-5eS4ace-qlTvtKmUQTYE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2ODQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "theme": "🎭🎉Sorteio Diário 100% ganha! - Família",
+              "content": "💝Parabéns! Você acabou de ganhar um sorteio exclusivo de família! Assista a lives todos os dias para pegar mais prêmios😍"
+            },
+            "list": [
+              {
+                "prizes_num": "1",
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=BB-bYcKf_mZ1oyfzCHXK5ZZkijZs0-px52mthZmlNd4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0167",
+                "activity_all_cost": "593.0170",
+                "win_real_rate": 44.1,
+                "is_pay_prize": 0,
+                "prize_name": "💎*1",
+                "consume_num": 13827,
+                "residue_num": 21683,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "1",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": 0,
+                "activity_all_num": "35510",
+                "valid_days": "0",
+                "used_num": 13827,
+                "win_rate": "44.1",
+                "textLeft": "-35px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "99",
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=BB-bYcKf_mZ1oyfzCHXK5ZZkijZs0-px52mthZmlNd4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "1.6500",
+                "activity_all_cost": "33.0000",
+                "win_real_rate": 0.08,
+                "is_pay_prize": 0,
+                "prize_name": "💎*99",
+                "consume_num": 19,
+                "residue_num": 1,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "1",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": 0,
+                "activity_all_num": "20",
+                "valid_days": "0",
+                "used_num": 19,
+                "win_rate": "0.08",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1000",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=7BdIM8KyyNasgmQ5sEO-sjDRjV21p1hRyVzlV_rVXjU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "4.7619",
+                "activity_all_cost": "23.8095",
+                "win_real_rate": 0.05,
+                "is_pay_prize": 0,
+                "prize_name": "Beans*1000",
+                "consume_num": 5,
+                "residue_num": 0,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "4",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": 0,
+                "activity_all_num": "5",
+                "valid_days": "0",
+                "used_num": 5,
+                "win_rate": "0.05",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "14"
+              },
+              {
+                "prizes_num": "10",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=BB-bYcKf_mZ1oyfzCHXK5ZZkijZs0-px52mthZmlNd4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.1667",
+                "activity_all_cost": "16.6700",
+                "win_real_rate": 0.8,
+                "is_pay_prize": 0,
+                "prize_name": "💎*10",
+                "consume_num": 17,
+                "residue_num": 83,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "1",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": 0,
+                "activity_all_num": "100",
+                "valid_days": "0",
+                "used_num": 17,
+                "win_rate": "0.8",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "9999",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=BB-bYcKf_mZ1oyfzCHXK5ZZkijZs0-px52mthZmlNd4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "166.6500",
+                "activity_all_cost": "333.3000",
+                "win_real_rate": 0.01,
+                "is_pay_prize": 0,
+                "prize_name": "💎*9999",
+                "consume_num": 2,
+                "residue_num": 0,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "1",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": 0,
+                "activity_all_num": "2",
+                "valid_days": "0",
+                "used_num": 2,
+                "win_rate": "0.01",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s1/1OZarM.png?auth-token=Oo65gBS9Wv2tpaAlWxFBLy9Oeple1RgjpxjBce60GI8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NDksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 32.51,
+                "is_pay_prize": 0,
+                "prize_name": "Entrada Festa Junina",
+                "consume_num": 8278,
+                "residue_num": 1722,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "41167",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": 0,
+                "activity_all_num": "15000",
+                "valid_days": "2",
+                "used_num": 8278,
+                "win_rate": "32.51",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": "2",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/2AsY0i.png?auth-token=0f13z011kPxk9wCn14O4QaCGGgjC-nz7ZIa2My1LUb0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NzcxLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxOTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22.45,
+                "is_pay_prize": 0,
+                "prize_name": "Bullets",
+                "consume_num": 11003,
+                "residue_num": 88996,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "3",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": 0,
+                "activity_all_num": "99999",
+                "valid_days": "0",
+                "used_num": 11003,
+                "win_rate": "22.45",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "13"
+              }
+            ],
+            "totalCost": "999.7965"
+          },
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "lang": [
+            "BR",
+            "AO"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "lottery_ticket_timerange_limit": 0,
+          "point_uid_lottery_ticket": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": 3,
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "👉Se você ainda não se juntou à família, encontra seu grupo aqui!"
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Conheça TOP Famílias e mais...",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/family-detail/index.html#/family/list?firstpage=true",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "👉Se você está interessado em criar sua própria família..."
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Clique para começar sua lenda...",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_26289/index.html",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "📢Política da Família",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=66488",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "👑Prestígio de Famílias",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_14587/index.html",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "🤩Mais eventos legais",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1593330054",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Todos os direitos reservados pelo BIGOLIVE."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

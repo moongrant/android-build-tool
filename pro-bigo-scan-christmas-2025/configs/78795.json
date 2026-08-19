@@ -1,0 +1,437 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 11615616,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78795,
+      "act_name": "2026 Family Prestige",
+      "state": 1,
+      "color": 1,
+      "theme": "orange",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2027-01-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "#FF9900",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "34"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaTiZ00y2TWPL00pKkNt.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaTkw00y33lYHC0zVZfs.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Family Upgrade/Maintain",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "5IQuN",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaTmy00y33lYHC0ZhFVt.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "RLB3O",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Details",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "M1BGY",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1wjE0i00y0EuN6Q2Hxput.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "lhQRc",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaqlS00y33lYHC0kl80c.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Rewards",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "oOmjB",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaTnh00y33lYHC0BbsH3.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "jXocc",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaTnp00y33lYHC1UoVCE.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "MY,BN,SG",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "MY",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Register HERE！",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "Yes✅",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Please select \"YES\" to join the event. ✅",
+                "sortIdx": 1
+              }
+            ],
+            "description": "Only family leader who registers will qualify for the rewards!",
+            "startTime": "2026-08-01 00:00:00",
+            "id": 3062,
+            "endTime": "2026-08-30 00:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 3062
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "👇 Click the button",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "2Gu1L",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaTvV00y33lYHC10j1Cm.jpg",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_14587/?area=MY",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "PCdic",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Check👆 Family Prestige Ranking",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_14587/?area=MY",
+                        "openType": 1,
+                        "layer_title": "https://activity.bigo.tv/live/act/act_14587/?area=MY",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "rNM0R",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaTud00y33lYHC1LX4sy.jpg",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=87859",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "v8g36",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Step into👆 the 100M Club — legends only!",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=87859",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "50M Club Family",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "395lU",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1whPE300y0EuN6Q0w6U1f.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "6MsMw",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1whPEK00y0EuN6Q0kigPc.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "LBCGj",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1whPER00y0EuN6Q1hXD2b.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "TOP1% Family",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "zsobW",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1whPH800y3AuHU203zahh.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaTtm00y33lYHC02Dxj5.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "ALL RIGHTS RESERVED ©️ BIGO LIVE MY/SG/BN"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

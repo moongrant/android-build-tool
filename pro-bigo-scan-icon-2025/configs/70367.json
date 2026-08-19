@@ -1,0 +1,561 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 14:26:08",
+    "now_zone": -9,
+    "leave_time": 0,
+    "act_info": {
+      "id": 70367,
+      "act_name": "패밀리를 찾아서",
+      "state": 1,
+      "color": 6,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-08-01 00:00:00",
+      "end_time": "2026-07-30 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "KR"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "패밀리를 찾아서",
+        "appendixDesc": "패밀리를 결성해서 더 많은 보상을 함께 누려볼까요?",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vwLtW00y33lYHC22yDBU.jpg"
+      },
+      "act_ver": 1,
+      "version_id": "12",
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "green",
+      "frontCustomBgColor": "#FFE9EF",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vwLsH00y2TWPL00p6ZWa.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "멤버 모집 보상",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "W1bcu",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vwLsQ00y33lYHC0NpjIt.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "GvnGm",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "모으면 모을수록 더 큰 보상 획득 기회🎉"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": "최대 10,000콩 + 패밀리 전용 특권스토어 포인트까지!\n"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "2w2sr",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 1,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "⚔️특권스토어 바로가기⚔️",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://static-fed.bigolive.tv/live/pages/bigolive/family-point-mall/index.html",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "멤버 가입 보상",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Npu90",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vwLsa00y2TWPL00yjAIm.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "xUqQt",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "패밀리에 가입만 해도 선물이?"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": "가입 후 돌림판을 돌려 10,000다이아 뽑아보자!!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "HSZWs",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 1,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "패밀리 룰렛 바로가기",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=47833",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "패밀리 개설 방법",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dXyXt",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "✨패밀리 개설하기✨",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_26289/index.html#/index",
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "PBQ5L",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "1. '나' 탭에서 패밀리를 클릭합니다."
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Z4rgo",
+                  "formData": {
+                    "img": "https://giftesx.bigo.sg/live/4hc/21sBsekxZmN3.jpg?auth-token=Ba97YG09YILWLFKzLqr_Ct17bD2PKLv0RgG6SeosKFM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY3MzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "index": 0,
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "PhqbD",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "2. 우측 상단 사자🦁 아이콘을 클릭 합니다."
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "NM51d",
+                  "formData": {
+                    "img": "https://giftesx.bigo.sg/live/4hd/1GL5Pa.jpg?auth-token=z6RuWkHrEXmlPqJLFMZ25mGHABRQUVcYUzmVbpTH0DA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcyMzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "index": 0,
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "qhfPA",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "3. 패밀리 만들기 클릭 💥"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "h0sxc",
+                  "formData": {
+                    "img": "https://giftesx.bigo.sg/live/4hd/0Mjue3.jpg?auth-token=ELBuCTeEZZlqJ1j-8SD0qaMMe-XH9xbtzPJz-w7rqeg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyNTIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "index": 0,
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "BbiZ9",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "4. 패밀리 정보 입력 후 제출하기🌹"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "pQe84",
+                  "formData": {
+                    "img": "https://giftesx.bigo.sg/live/4hd/1JOB6n.jpg?auth-token=dPcK7tBe_D1TPhWPPymqKJk_gjWPEdzQOP9om7DegV4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzMTgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "index": 0,
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "3nK2q",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "type": "title",
+                        "value": "5. 패밀리 개설 완료 🏆🏆"
+                      },
+                      {
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "type": "text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "3BS9h",
+                  "formData": {
+                    "img": "https://giftesx.bigo.sg/live/4hd/1LQD12.jpg?auth-token=PrV0Q7MupHgHWd_JJBEUeZaFXqJPrrpd09kRlFsRQuM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcwMzY3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NDUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "index": 0,
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "패밀리 도장 보상",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "jXc5R",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vwLsr00y33lYHC0T9mJf.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "도장 현황",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "hvtFp",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vwLt200y33lYHC19AjJY.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "yfkhM",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "2026년 3월 01일 기준"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "zoRWV",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vSuKX00y2TWPL01afsyz.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vwLtN00y33lYHC0U6g5C.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80045"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

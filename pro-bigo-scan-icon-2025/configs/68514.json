@@ -1,0 +1,697 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250723",
+      "20250724",
+      "20250725",
+      "20250726",
+      "20250727",
+      "20250728",
+      "20250729",
+      "20250730",
+      "20250731"
+    ],
+    "week": [
+      "20250721",
+      "20250728"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 15:25:52",
+    "now_zone": -10,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68514,
+      "act_name": "July Diamond Rush!",
+      "state": 0,
+      "color": 1,
+      "theme": "purple",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-23 14:30:00",
+      "end_time": "2025-07-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6",
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1ucc4z7856a27399c44536af858215e0018fa3ph.jpg?auth-token=sH64ut1LOn53OW_8eomf8qZCJ1Yl9jwo7Mrmzbi2LDk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NTE0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyNTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Task",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Unjfc",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "💓Great chance to get beans and diamonds rewards by completing daily Gifting Task!💓"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "1 diamond gifted= 1 point"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "Limited rewards, first come, first serve"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Check Task Progression",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "53FDu",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": true,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "1 diamond gifted= 1 point",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "PG",
+                      "TO",
+                      "WS",
+                      "FJ",
+                      "GU",
+                      "SB",
+                      "NC",
+                      "PF",
+                      "PW",
+                      "AS",
+                      "FM",
+                      "TK",
+                      "MP",
+                      "CK",
+                      "VU",
+                      "MH",
+                      "KI",
+                      "NR",
+                      "TV",
+                      "NU",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "AU",
+                      "NZ"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 1 Task by gifting 100 diamonds. Gifting More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=65330",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "1500",
+                            "op_time": "1737107293",
+                            "offshelf_time": "2143209600",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-刘维娜",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7115191472737796388",
+                            "reward_name": "ANZ Koala Fan",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "38065",
+                            "nickname_color": "",
+                            "reward_count": "3",
+                            "icon_url": "https://esx.bigo.sg/live/4he/01tYbejKczw3.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "ANZ Koala Fan",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "4,6",
+                            "desc_text": "ANZ特定新用户活动专属，其他禁用",
+                            "reward_type": "38065",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "7",
+                            "param": "ANZ特定新用户活动专属，其他禁用",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1737079623",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4he/01tYbejKczw3.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4hd/11tYbemLsgriG.png"
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 1 task by gifting 100 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 100
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 2 Task by gifting 300 diamonds. Gifting More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=65330",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "1000",
+                            "op_time": "1740119924",
+                            "offshelf_time": "2137746879",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-刘维娜",
+                            "isOnlyNeedNum": 1,
+                            "mp4_url": "",
+                            "__version": "7127531211775815974",
+                            "reward_name": "ANZ Cute Koala",
+                            "typeid": "1",
+                            "extra_type": "0",
+                            "id": "38650",
+                            "nickname_color": "",
+                            "reward_count": "1",
+                            "icon_url": "https://esx.bigo.sg/live/4hp/1tlMf1a7955ae383ed415d94874b33bdf47511ph.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "1",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "1",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "ANZ Cute Koala",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "ANZ New Users Event 专属",
+                            "reward_type": "38650",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "7",
+                            "param": "ANZ New Users Event 专属",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1740120336",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4hp/1tlMf1a7955ae383ed415d94874b33bdf47511ph.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4hp/1tlMf506e042a8d0544fe783cce58cfa4304e9ph.png"
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 2 task by gifting 300 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 300
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 3 Task by gifting 500 diamonds. Gifting More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=65330",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "300",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "50"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 3 task by gifting 500 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 500
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 4 Task by gifting 1000 diamonds. Gifting More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=65330",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": 1,
+                            "reward_max_limit": "150",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "typeid": 3,
+                            "reward_count": "100"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 4 task by gifting 1000 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 1000
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "name": "May Diamond Rush",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "🔥Win 20K Beans🔥",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Ksn9D",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1ucc623d31fd261f7940238e380defcf9fc444ph.jpg?auth-token=vv8y800m7OkeDctyRNNIVEasctGT78dpdZog9hGZS_4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4NTE0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1NjcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "zgCqv",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 diamond gifted= 1 point",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "Overall Gifting Rank",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "PG",
+                      "TO",
+                      "WS",
+                      "FJ",
+                      "GU",
+                      "SB",
+                      "NC",
+                      "PF",
+                      "PW",
+                      "AS",
+                      "FM",
+                      "TK",
+                      "MP",
+                      "CK",
+                      "VU",
+                      "MH",
+                      "KI",
+                      "NR",
+                      "TV",
+                      "NU",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "AU",
+                      "NZ"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Event End in"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event End in"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "All Rights Reserved by BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

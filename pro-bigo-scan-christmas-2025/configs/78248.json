@@ -1,0 +1,867 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260122",
+      "20260123",
+      "20260124",
+      "20260125",
+      "20260126",
+      "20260127",
+      "20260128"
+    ],
+    "week": [
+      "20260119",
+      "20260126"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 16:25:36",
+    "now_zone": -11,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78248,
+      "act_name": "ANZ-HK/TW Gifting Rush!",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-22 17:30:00",
+      "end_time": "2026-01-28 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "GY",
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vi8A100y2TWPL00tmx5R.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Event Rules",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "E4xPr",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "ANZ-TW/HK Gifting Rush💓"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "🌏Gifting Bonus is HERE💰"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dt0jC",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vi89l00y2TWPL01BVuxN.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "ANZ-HK/TW Gift Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WIYIz",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "CN"
+                    ],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 diamond gifted= 1 point",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "svip_levels": [],
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "ANZ-HK/TW Gift Ranking",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "CN",
+                      "HK",
+                      "MO",
+                      "TW"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "AS",
+                      "AU",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GU",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 3,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Help Your HK/TW Hosts to BOOST!",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "qKKjh",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "It's time to help your HK/TW hosts to claim extra bonus now!\n🔔 The \"Jumping kangaroo\" item sent by ANZ users can help HK/TW hosts to get extra points on the Monthly Gift Rank!!"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "1 diamond recharged =1 point\n500 diamonds recharged to receive 1 Jumping kangaroo\nLimited Rewards per day!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vQh0S",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": true,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "anchor_uids": "",
+                    "anchor_whitelist_id": null,
+                    "text": "1 diamond recharged= 1 point; 500 diamonds recharged for 1 Jumping Kangaroo!",
+                    "lang": [
+                      "PG",
+                      "TO",
+                      "WS",
+                      "FJ",
+                      "GU",
+                      "SB",
+                      "NC",
+                      "PF",
+                      "PW",
+                      "AS",
+                      "FM",
+                      "TK",
+                      "MP",
+                      "CK",
+                      "VU",
+                      "MH",
+                      "KI",
+                      "NR",
+                      "TV",
+                      "NU",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "AU",
+                      "NZ"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "2000",
+                            "op_time": "1757494608",
+                            "offshelf_time": "2143209600",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-叶永钊",
+                            "isOnlyNeedNum": 1,
+                            "mp4_url": "",
+                            "__version": "7198697916378174243",
+                            "reward_name": "跳跳袋鼠",
+                            "typeid": "1",
+                            "extra_type": "0",
+                            "id": "41924",
+                            "nickname_color": "",
+                            "reward_count": "1",
+                            "icon_url": "https://esx.bigo.sg/live/4hd/11uwGc3Ajqbud.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "1",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "跳跳袋鼠",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "4,6",
+                            "desc_text": "華語X澳新收禮道具",
+                            "reward_type": "41924\t",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "3",
+                            "param": "",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1754289000",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4hd/11uwGc3Ajqbud.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4he/21uwGdBI0US0.png"
+                          }
+                        ],
+                        "process_notice_lang": "Congrats! Here'r your Jumping Kangaroo rewards from ANZ-HK/TW event! \nSending to your HK/TW hosts to help them boost NOW!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": true,
+                        "target": 500
+                      }
+                    ],
+                    "groups": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "appoint_uid_source": 1,
+                    "anchor_whitelist_status": 0,
+                    "anchor_uid_info": null,
+                    "name": "Extra HK/TW Gifting Bonus!",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "💎Spin to Win 💎",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "LVWHY",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [
+                      "CN"
+                    ],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 500,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "lottery_title": "Max 5,000 Diamonds!",
+                    "svip_area": "",
+                    "lottery_rule": "Gift 500 💎💎💎 to TW/HK region = 1 free Spin - UNLIMITED!",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "CN",
+                      "HK",
+                      "MO",
+                      "TW"
+                    ],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 747.6273,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 0,
+                      "messageObj": {
+                        "imImg": "http://esx.bigo.sg/live/4he/11uwtG9CuRxs.png?auth-token=P5a5dfDHIlIzPQnS48Lbxff80Trm9jvCBxCxt7iI6Kk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjQ4LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1ODI2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                        "theme": "Up to 5000 Diamonds in lucky spin!",
+                        "content": "Come to support your HK/TW hosts NOW and win exclusive rewards!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1tmSghcdf9379d74bc4a2fad16ece0202b279aph.png?auth-token=3A8L6dCJT9pXFsp-JTd9lvzK3qE_hukL4Ayc8jQePQI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjQ4LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0MTIyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "loving couple rings",
+                          "consume_num": 0,
+                          "residue_num": 3000,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "38674",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "3000",
+                          "valid_days": "5",
+                          "used_num": 0,
+                          "win_rate": "20",
+                          "textLeft": "-35px",
+                          "prize_type": "8"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "108deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1tmSnRaab24f58823c43e9af9e7a66818c50f5ph.png?auth-token=zLFB47gUc7Mi6GJWioxamtL8QI2f5bD9IAZuyS9LVeM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjQ4LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MzU5LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 50,
+                          "is_pay_prize": 0,
+                          "prize_name": "Queen's Privilege",
+                          "consume_num": 0,
+                          "residue_num": 9999,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "38682",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 0,
+                          "win_rate": "50",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": "300",
+                          "rotate": "36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "5.0000",
+                          "activity_all_cost": "250.0000",
+                          "win_real_rate": 9,
+                          "is_pay_prize": 0,
+                          "prize_name": "x 300",
+                          "consume_num": 0,
+                          "residue_num": 50,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "1",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "50",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "9",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "100",
+                          "rotate": "-36deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=0TX6FBy0WDBaA_mBUoPs8RZMPAMxAEHtn6aZJvtFk7M:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjQ4LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzOTY2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.4762",
+                          "activity_all_cost": "414.2940",
+                          "win_real_rate": 20,
+                          "is_pay_prize": 0,
+                          "prize_name": "x 100",
+                          "consume_num": 0,
+                          "residue_num": 870,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "870",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "20",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "5000",
+                          "rotate": "-108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=w1c7I7OmGGEwe0ygCGeKB2plg6wDXwEyOHkGDYWp3Ok:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjQ4LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NDE2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "83.3333",
+                          "activity_all_cost": "83.3333",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "x 5000",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "1",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "1",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "11"
+                        }
+                      ],
+                      "totalCost": "747.6273"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "AS",
+                      "AU",
+                      "CK",
+                      "FJ",
+                      "FM",
+                      "GU",
+                      "KI",
+                      "MH",
+                      "MP",
+                      "NC",
+                      "NF",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "VU",
+                      "WF",
+                      "WS"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Click the poster below to check your HK/TW host’s ranking!👇"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Event End in"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event End in"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

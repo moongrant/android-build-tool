@@ -1,0 +1,1717 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251215",
+      "20251216",
+      "20251217",
+      "20251218",
+      "20251219",
+      "20251220",
+      "20251221",
+      "20251222"
+    ],
+    "week": [
+      "20251215",
+      "20251222"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 05:26:24",
+    "now_zone": 0,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77739,
+      "act_name": "2025 SPARKLE & REWIND PARTY WEEK",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-15 00:00:00",
+      "end_time": "2025-12-22 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "GB",
+        "IE"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "32"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTepa00y2TWPL01XApeB.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Wheel",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "s9Zik",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [
+                      "GB",
+                      "AU",
+                      "US",
+                      "FZ"
+                    ],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 500,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          0
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 2,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          4
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 1800,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 1,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "lottery_title": "Lucky Wheel",
+                    "svip_area": "",
+                    "lottery_rule": "Win the ticket and spin the wheel!",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [
+                      "GB"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AS",
+                      "AU",
+                      "BJ",
+                      "CA",
+                      "CD",
+                      "CG",
+                      "CI",
+                      "CK",
+                      "CM",
+                      "ET",
+                      "FJ",
+                      "FM",
+                      "GB",
+                      "GH",
+                      "GM",
+                      "GU",
+                      "KE",
+                      "KI",
+                      "LR",
+                      "MG",
+                      "MH",
+                      "MP",
+                      "MU",
+                      "NC",
+                      "NF",
+                      "NG",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PH",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "SN",
+                      "TG",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "TZ",
+                      "UG",
+                      "US",
+                      "VU",
+                      "WF",
+                      "WS",
+                      "ZA",
+                      "ZM"
+                    ],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 9,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 23.808300000000003,
+                      "consumeCost": "21.43",
+                      "messageConfigure": 0,
+                      "messageObj": {
+                        "imImg": "",
+                        "theme": "",
+                        "content": ""
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "http://giftesx.bigo.sg/live/g2/M03/03/4D/iwVsD1p_m5eITzm8AAASt20TrvcAAN8JgO2_n8AABLP774.png?auth-token=LmqgKGohjcoXjPUjzAqbUwvqJnFyPrj8_IXj5kJLThM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NzM5LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MTAwLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 35,
+                          "is_pay_prize": 0,
+                          "prize_name": "Christmas  Hat",
+                          "consume_num": 174,
+                          "residue_num": 99826,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "20056",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "100000",
+                          "valid_days": "1",
+                          "used_num": 174,
+                          "win_rate": "35",
+                          "textLeft": "-35px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "140deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/g1/M0A/11/48/LXz8F1wE-kWIJw5vAAAtYOCUS5oAAhKiAJ_HQkAAC14842.png?auth-token=2r-oC0B5jL6IzrLr3GPlC9aSuMuzO4sUeTrdUFS8pzs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NzM5LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA3MDk2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 30,
+                          "is_pay_prize": 0,
+                          "prize_name": " Entrance Effect",
+                          "consume_num": 115,
+                          "residue_num": 99885,
+                          "imgTop": "40.11377766511313px",
+                          "imgLeft": "29.636946823355835px",
+                          "prize_id": "20895",
+                          "textTop": "75.75555538987226px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "100000",
+                          "valid_days": "1",
+                          "used_num": 115,
+                          "win_rate": "30",
+                          "textLeft": "45.3484512108174px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "100deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/08G37G.png?auth-token=5F9muXGMvkwrd-SbnWAuVmyhAn3N5y4vLP9Q7lOU1WY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NzM5LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0NDEzLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 25,
+                          "is_pay_prize": 0,
+                          "prize_name": "Christmas taillight",
+                          "consume_num": 109,
+                          "residue_num": 99891,
+                          "imgTop": "-10.239904898310915px",
+                          "imgLeft": "58.70865900603768px",
+                          "prize_id": "44303",
+                          "textTop": "1.7060222083663028px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "100000",
+                          "valid_days": "1",
+                          "used_num": 109,
+                          "win_rate": "25",
+                          "textLeft": "88.100969126526px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": "50",
+                          "rotate": "60deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.2381",
+                          "activity_all_cost": "2.3810",
+                          "win_real_rate": 3,
+                          "is_pay_prize": 0,
+                          "prize_name": "50 Beans",
+                          "consume_num": 10,
+                          "residue_num": 0,
+                          "imgTop": "-67.49999999999997px",
+                          "imgLeft": "48.6121593216773px",
+                          "prize_id": "4",
+                          "textTop": "-82.49999999999997px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "10",
+                          "valid_days": "0",
+                          "used_num": 10,
+                          "win_rate": "3",
+                          "textLeft": "73.25317547305484px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "100",
+                          "rotate": "20deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.4762",
+                          "activity_all_cost": "2.3810",
+                          "win_real_rate": 2,
+                          "is_pay_prize": 0,
+                          "prize_name": "100 Beans",
+                          "consume_num": 5,
+                          "residue_num": 0,
+                          "imgTop": "-104.87387276680221px",
+                          "imgLeft": "4.071712182681853px",
+                          "prize_id": "4",
+                          "textTop": "-137.46157759823853px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "5",
+                          "valid_days": "0",
+                          "used_num": 5,
+                          "win_rate": "2",
+                          "textLeft": "7.752517915708609px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "500",
+                          "rotate": "-20deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "2.3810",
+                          "activity_all_cost": "7.1430",
+                          "win_real_rate": 2,
+                          "is_pay_prize": 0,
+                          "prize_name": "500 Beans",
+                          "consume_num": 3,
+                          "residue_num": 0,
+                          "imgTop": "-104.87387276680222px",
+                          "imgLeft": "-54.071712182681836px",
+                          "prize_id": "4",
+                          "textTop": "-137.46157759823853px",
+                          "prize_serial": 6,
+                          "free_level": "",
+                          "activity_all_num": "3",
+                          "valid_days": "0",
+                          "used_num": 3,
+                          "win_rate": "2",
+                          "textLeft": "-77.75251791570858px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "1000",
+                          "rotate": "-60deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "4.7619",
+                          "activity_all_cost": "9.5238",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "1000 Beans",
+                          "consume_num": 2,
+                          "residue_num": 0,
+                          "imgTop": "-67.50000000000003px",
+                          "imgLeft": "-98.61215932167727px",
+                          "prize_id": "4",
+                          "textTop": "-82.50000000000006px",
+                          "prize_serial": 7,
+                          "free_level": "",
+                          "activity_all_num": "2",
+                          "valid_days": "0",
+                          "used_num": 2,
+                          "win_rate": "1",
+                          "textLeft": "-143.2531754730548px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "5000",
+                          "rotate": "-100deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "23.8095",
+                          "activity_all_cost": "23.8095",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "5000 Beans",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "-10.239904898310952px",
+                          "imgLeft": "-108.70865900603769px",
+                          "prize_id": "4",
+                          "textTop": "1.706022208366246px",
+                          "prize_serial": 8,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "1",
+                          "textLeft": "-158.10096912652602px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-140deg",
+                          "preview_img": "https://esx.bigo.sg/live/4he/01uypqeIfvZ0.png?auth-token=ZOqTOEXgqNyG4hoIYQqNo9MAGtWfbH8Uy7GzhnmsjSc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NzM5LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2OTA0LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "Physical Dino",
+                          "consume_num": 2,
+                          "residue_num": 0,
+                          "imgTop": "40.11377766511312px",
+                          "imgLeft": "-79.63694682335586px",
+                          "prize_id": "42771",
+                          "textTop": "75.75555538987223px",
+                          "prize_serial": 9,
+                          "free_level": "",
+                          "activity_all_num": "2",
+                          "valid_days": "1",
+                          "used_num": 2,
+                          "win_rate": "1",
+                          "textLeft": "-115.34845121081744px",
+                          "prize_type": "1"
+                        }
+                      ],
+                      "totalCost": "45.2383"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "GB",
+                      "IE"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": 5,
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "LEfOp",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTzS800y2TWPL00qXpGY.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Task",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "E0ALt",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": true,
+                            "sure": "Please check your rank and sign up ",
+                            "name": "Daily Task",
+                            "range": [
+                              4,
+                              5,
+                              6
+                            ],
+                            "title": "",
+                            "attendModular": 3,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "SIGN UP",
+                        "fn": 3,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "0ACT7",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Premium",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "PppTo",
+                            "formData": {
+                              "scoreLang": [
+                                "AS",
+                                "AU",
+                                "BJ",
+                                "CA",
+                                "CD",
+                                "CG",
+                                "CI",
+                                "CK",
+                                "CM",
+                                "ET",
+                                "FJ",
+                                "FM",
+                                "GB",
+                                "GH",
+                                "GM",
+                                "GU",
+                                "IE",
+                                "KE",
+                                "KI",
+                                "LR",
+                                "MG",
+                                "MH",
+                                "MP",
+                                "MU",
+                                "NC",
+                                "NF",
+                                "NG",
+                                "NR",
+                                "NU",
+                                "NZ",
+                                "PF",
+                                "PG",
+                                "PH",
+                                "PN",
+                                "PW",
+                                "SB",
+                                "SN",
+                                "TG",
+                                "TK",
+                                "TO",
+                                "TV",
+                                "TZ",
+                                "UG",
+                                "US",
+                                "VU",
+                                "WF",
+                                "WS",
+                                "ZA",
+                                "ZM"
+                              ],
+                              "group_arr": [],
+                              "raskValueSelect": 1,
+                              "scoreSelectedArea": [
+                                "GB",
+                                "AU",
+                                "US",
+                                "FZ"
+                              ],
+                              "num": 10,
+                              "needGroupsChangeReason": true,
+                              "section": 1,
+                              "groupSoure": 0,
+                              "whiteUid_id_info": null,
+                              "onlyCharge": false,
+                              "endActNotEditAnchor": false,
+                              "mode": 1,
+                              "uid": "405333718\n503411079\n807048511\n703592173\n506728293\n710613085\n439533483\n688256292\n442686297\n1666339130\n520758074\n472012452\n771774471\n732612513\n498955220\n581372539\n529884291\n799725446\n792857589\n428335607\n757172029\n771031894\n790684444\n663505369\n512780115\n780946110",
+                              "endActNotEdit": false,
+                              "needAnchorUidChangeReason": false,
+                              "appType": 1,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang087",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 11,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "实收金豆",
+                                  "gameTag": []
+                                }
+                              ],
+                              "groupIds": "",
+                              "anchor_uids": "",
+                              "anchor_whitelist_id": null,
+                              "text": "Signed host's rank is S3 and above in November please complete your daily task here!",
+                              "needAppointUidChangeReason": true,
+                              "lang": [
+                                "GB",
+                                "IE"
+                              ],
+                              "appoint_uid": 1,
+                              "cycleConfig": 1,
+                              "need_attend": 1,
+                              "whiteUid_id": null,
+                              "level_config": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "20",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "1200"
+                                    },
+                                    {
+                                      "reward_expire_time": null,
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 10000
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "10",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "3000"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 2,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 10000
+                                }
+                              ],
+                              "groups": [],
+                              "svip_levels": [],
+                              "index": 4,
+                              "raskType": 1,
+                              "selectedArea": [
+                                "GB"
+                              ],
+                              "appoint_uid_source": 1,
+                              "appointUidChangeReason": "线下打投活动结束添加主播",
+                              "anchor_whitelist_status": 0,
+                              "anchor_uid_info": null,
+                              "name": "Daily Task",
+                              "countType": 5,
+                              "level_config_2": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "isPercent": false,
+                                      "reward_type": 4,
+                                      "reward_max_limit": null,
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": 3,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": null
+                                    },
+                                    {
+                                      "isPercent": false,
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": true,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": "1"
+                                }
+                              ],
+                              "level_config_3": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "isPercent": false,
+                                      "reward_type": 1,
+                                      "reward_max_limit": null,
+                                      "reward_name": "diamonds",
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                                      "typeid": 3,
+                                      "reward_count": null
+                                    },
+                                    {
+                                      "isPercent": false,
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": true,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": "1"
+                                }
+                              ],
+                              "white_version_id": null,
+                              "_afterSaveFinished": null,
+                              "level_config_4": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_name": "beans",
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": 3,
+                                      "id": 4,
+                                      "reward_count": "15"
+                                    }
+                                  ],
+                                  "level": 1,
+                                  "send_im": false,
+                                  "countRoomType": [],
+                                  "countType": 1,
+                                  "private_send_im": false,
+                                  "target": 20000
+                                }
+                              ]
+                            },
+                            "type": "dailyLevelTask",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Advanced",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "53LYI",
+                            "formData": {
+                              "scoreLang": [
+                                "AS",
+                                "AU",
+                                "BJ",
+                                "CA",
+                                "CD",
+                                "CG",
+                                "CI",
+                                "CK",
+                                "CM",
+                                "ET",
+                                "FJ",
+                                "FM",
+                                "GB",
+                                "GH",
+                                "GM",
+                                "GU",
+                                "IE",
+                                "KE",
+                                "KI",
+                                "LR",
+                                "MG",
+                                "MH",
+                                "MP",
+                                "MU",
+                                "NC",
+                                "NF",
+                                "NG",
+                                "NR",
+                                "NU",
+                                "NZ",
+                                "PF",
+                                "PG",
+                                "PH",
+                                "PN",
+                                "PW",
+                                "SB",
+                                "SN",
+                                "TG",
+                                "TK",
+                                "TO",
+                                "TV",
+                                "TZ",
+                                "UG",
+                                "US",
+                                "VU",
+                                "WF",
+                                "WS",
+                                "ZA",
+                                "ZM"
+                              ],
+                              "group_arr": [],
+                              "raskValueSelect": 1,
+                              "scoreSelectedArea": [
+                                "AU",
+                                "US",
+                                "GB",
+                                "FZ"
+                              ],
+                              "num": 10,
+                              "needGroupsChangeReason": true,
+                              "section": 1,
+                              "groupSoure": 0,
+                              "whiteUid_id_info": null,
+                              "onlyCharge": false,
+                              "mode": 1,
+                              "uid": "679824032\n494718911\n682773217\n853795640\n553764118\n585744013\n772743747\n752886182\n847287624\n406209818\n861161501\n523030339\n418891396\n1830963821\n502740422\n614421179\n725853031\n799867215\n759125529\n856166385\n681669638\n572623041\n405372323\n464680746\n568336421\n461321864\n689212116\n772107072\n551199027\n830408931\n422581337\n517012798\n741134626\n504349393\n419006955\n824204399\n483350741\n787303988\n565390839\n576072016\n657807472\n716193326\n780802071\n863605671\n585473275\n670434717\n806135687\n772831368\n556328399\n501317001\n648506245\n619028083\n750702703\n773537915\n522744881\n690646198\n733753743\n852003201\n1823466648\n561656213\n843554420\n461730477\n862237621\n463141388\n543884823\n849085402\n578980315\n773255548\n766483298\n740117114\n489289445\n493187871\n759553042\n814423095\n537388603\n681782942\n562075499\n820046682\n633392721\n701908555\n537850568\n404704464\n405018131\n1827517768\n786368447\n685319191\n815055329\n681153727\n838037321\n829202216\n681235235\n792766075\n587747066\n603011476\n647103286\n778722875\n678763775\n648092039\n808490653\n821589917\n708422669\n628822395\n573983880\n1849393787\n515037538\n583975942\n848776547\n780109818\n559052211\n580122405\n845902756\n556672015\n585475796\n767016694\n402618960\n462207753\n748758722\n788479049\n854386617\n818496970\n651155861\n818465728\n438947213\n679523651\n511745609\n637705671\n621291360\n485911647\n811808226\n826057828",
+                              "endActNotEdit": false,
+                              "appType": 1,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang087",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 11,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "实收金豆",
+                                  "gameTag": []
+                                }
+                              ],
+                              "groupIds": "",
+                              "anchor_uids": "",
+                              "anchor_whitelist_id": null,
+                              "text": "Signed host's rank from D to S2 in November please complete your daily task here!",
+                              "needAppointUidChangeReason": true,
+                              "lang": [
+                                "GB",
+                                "IE"
+                              ],
+                              "appoint_uid": 1,
+                              "cycleConfig": 1,
+                              "need_attend": 1,
+                              "whiteUid_id": null,
+                              "level_config": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "20",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "525"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 3500
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "15",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "810"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 2,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 1000
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "3",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "1200"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 3,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 1500
+                                }
+                              ],
+                              "groups": [],
+                              "svip_levels": [],
+                              "index": 5,
+                              "raskType": 1,
+                              "selectedArea": [
+                                "GB"
+                              ],
+                              "appoint_uid_source": 1,
+                              "appointUidChangeReason": "线下打投结束添加参与主播",
+                              "anchor_whitelist_status": 0,
+                              "anchor_uid_info": null,
+                              "name": "Daily Task",
+                              "countType": "",
+                              "level_config_2": [],
+                              "level_config_3": [],
+                              "white_version_id": null,
+                              "_afterSaveFinished": null,
+                              "level_config_4": []
+                            },
+                            "type": "dailyLevelTask",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Standard",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "jk2TD",
+                            "formData": {
+                              "scoreLang": [
+                                "AS",
+                                "AU",
+                                "BJ",
+                                "CA",
+                                "CD",
+                                "CG",
+                                "CI",
+                                "CK",
+                                "CM",
+                                "ET",
+                                "FJ",
+                                "FM",
+                                "GB",
+                                "GH",
+                                "GM",
+                                "GU",
+                                "IE",
+                                "KE",
+                                "KI",
+                                "LR",
+                                "MG",
+                                "MH",
+                                "MP",
+                                "MU",
+                                "NC",
+                                "NF",
+                                "NG",
+                                "NR",
+                                "NU",
+                                "NZ",
+                                "PF",
+                                "PG",
+                                "PH",
+                                "PN",
+                                "PW",
+                                "SB",
+                                "SN",
+                                "TG",
+                                "TK",
+                                "TO",
+                                "TV",
+                                "TZ",
+                                "UG",
+                                "US",
+                                "VU",
+                                "WF",
+                                "WS",
+                                "ZA",
+                                "ZM"
+                              ],
+                              "group_arr": [],
+                              "raskValueSelect": 1,
+                              "scoreSelectedArea": [
+                                "GB",
+                                "US",
+                                "AU",
+                                "FZ"
+                              ],
+                              "num": 10,
+                              "needGroupsChangeReason": true,
+                              "section": 1,
+                              "groupSoure": 0,
+                              "whiteUid_id_info": null,
+                              "onlyCharge": false,
+                              "mode": 1,
+                              "uid": "811940153\n704204675\n849805681\n777078190\n1857610919\n594266288\n851503799\n537124071\n521020198\n558210216\n862660087\n566908677\n830132087\n485468455\n748746060\n856035780\n836893821\n853266938\n847294112\n624470946\n496331225\n634880806\n627797129\n669588083\n837011545\n574339443\n585124419\n840389816\n763402411\n620789567\n864567142\n856574536\n659060208\n861437569\n775065392\n620543020\n857669360\n590060400\n857422660\n788405615\n581435741\n616238145\n679710514\n862660252\n858478566\n609152610\n828790300\n631394757\n575493402\n780102301\n860134952\n553402480\n440876658\n855793701\n747805728\n523107027\n843880926\n734138791\n500908684\n734443354\n813412615\n496006090\n824654077\n486333842\n806540298\n470596881\n760129498\n495624475\n521170499\n545037833\n453631631\n462086652\n444068919\n614828209\n549781579\n504134009\n505224528\n860860558\n767740045\n692938427\n594975767\n866742458\n439440173\n861417189\n829115715\n728603229\n666735447\n850767352\n433673149\n826485475\n844603696\n722073931\n751966805\n748397109\n653176870\n661826757\n857271879\n762096269\n1813616093\n795790436\n463980547\n837414559\n858073545\n787823640\n815835665\n759982757\n638834207\n855180897\n633327075\n521047475\n859412681\n859435457\n438060854\n684344469\n825191076\n498611143\n864089266\n860608128\n805315046\n865272685\n527431637\n541178141\n828790102\n711679513\n806746879\n833635123\n865127904\n847888057\n538112754\n565195575\n864599534\n423946352\n718108251\n807755692\n846708448\n806954002\n721761259\n805942612\n774318008\n864127377\n667784686\n824122360\n680566012\n645057927\n644538277\n742607692\n750662630\n643267417\n643038621\n1878977177\n815723751\n763013410\n822293382\n1753067136\n863350330\n815261164\n666225190\n858724169\n667899569\n1677086379\n805970535\n537285828\n791728491\n765931229\n835690328\n838161548\n855189381\n1860793760\n462575461\n742971260\n714881853\n465779439\n857043222\n831141204\n793438770\n794221800\n556958246\n854741203\n653473704\n544726182\n864283789\n760834226\n746527424\n678704515\n847757687\n662020402\n716187679\n679103764\n1636284475\n460205018\n863471635\n679308864\n745116399\n837611880\n1800557094\n662878953\n823494106\n818425467\n520121451\n752581692\n799630153\n591410787\n695476265\n832716992\n782249384\n507394853\n832714344\n731817112\n600203078\n799954157\n435908710\n843275103\n799946914\n607649687\n608581529\n767174771\n811758138\n779904997\n772372542\n861570860\n861655993\n516799413\n516572633\n849941959\n826889857\n522821068\n586036615\n418558723\n586294912\n866438400\n431408340\n588147839\n811598322\n803231972\n838710935\n865196912\n865118906\n686189751\n734321088\n862530497\n813080642\n1888452832\n825466125\n615137564\n852785618\n437215893\n860596503\n798820703\n785060985\n690370590\n630164256\n828059184\n853400180\n402441055\n1815029235\n529993901\n782770802\n699493295\n865833605\n864702864\n866060379\n863712554\n630016138\n864002433\n865771162\n790173479\n864692802\n865922617\n865191318\n865194115\n865148095\n861262923\n864818300\n829798399\n763156486\n524123384\n780066621\n821430063\n841740894\n837421376\n625028769\n829730147\n502862277\n755996711\n500346337\n857279083\n501328662\n775788239\n738871961\n1855094287\n683822904\n849301786\n854535017\n786635343\n800658603\n696495160\n849179855\n859500360\n864257427\n865185972\n863188260\n795002527\n862959141\n593095931\n861159704\n864780960\n595533786\n863042937\n863567164\n835434620\n835534624\n825815585\n835361401\n835361334\n835360184\n835554039\n835559087\n825813150\n825745512\n825715632\n825830718\n835328929\n826238544\n835583833\n835587849\n825698569\n825201528\n836206357\n836037583\n825097096\n825097110\n825132486\n825198352\n825251977\n826400303\n825374000\n825427904\n825527522\n825527543\n825543882\n825619889\n835323445\n830985014\n826405301\n834733465\n827135783\n834713436\n834645946\n827143534\n827280670\n834569545\n827322457\n834381594\n834362867\n834358508\n834304097\n834247399\n827396021\n827404999\n827513991\n826998192\n826988544\n835278511\n834734555\n835278412\n836250356\n835222775\n826489645\n835173379\n826653353\n835143750\n835140494\n835088540\n826668991\n834998589\n834930678\n826912072\n834870654\n826987794\n835276449\n836497983\n836576063\n822521484\n838092610\n838072910\n838039186\n822457866\n822491454\n838019962\n822520849\n822527638\n822264718\n822570913\n822623439\n837958555\n822636694\n837950416\n822711830\n837919769\n838161148\n822019202\n822939355\n821917175\n838843946\n821867333\n838808563\n838795658\n838794559\n838735579\n838732979\n821936014\n838166264\n838666603\n838665626\n838638704\n821944944\n838604330\n838185701\n821945006\n822768174\n823076772\n836595406\n824409667\n837273436\n823607267\n823692980\n837170902\n823773097\n824011694\n837126946\n823529588\n824801272\n824815462\n837122152\n837081686\n824885188\n825094622\n836783474\n823582173\n837898909\n837686288\n823078388\n823142907\n823187648\n837875435\n837865324\n823265834\n837635439\n837423449\n837612487\n823266233\n823372463\n837439586\n823496871\n837431162\n827572730\n834136437\n834245468\n829791365\n829649046\n829660672\n838902289\n829770892\n832005786\n829791290\n831920474\n831919652\n829950770\n831891181\n831886513\n829906465\n831882005\n829642320\n832080275\n832082656\n829572904\n832274545\n832268800\n829410923\n832261922\n832227421\n829484767\n832227395\n832221870\n832168728\n829486270\n829496617\n832137879\n829513284\n829534812\n829534847\n831743691\n827679571\n830712821\n830509908\n831153932\n830516371\n830521120\n831115407\n831111515\n830524061\n830867554\n830903628\n830952941\n831067566\n831061596\n831040988\n831023494\n831021213\n830505206\n830500705\n831585231\n830068279\n830073848\n830234790\n830257877\n830274133\n830410780\n831627531\n831624756\n831624704\n831606373\n831598368\n831587217\n830489599\n832309299\n829410338\n829372159\n828573540\n828436441\n833530986\n828439728\n833402748\n828481058\n833399563\n833336673\n828663103\n829324348\n828738163\n833251455\n833251266\n833139964\n828756645\n828776846\n828790850\n833660383\n828432158\n833684715\n828362811\n834212935\n834138252\n830983835\n834128514\n827814495\n827832088\n827903627\n828223827\n834089245\n834023184\n833941516\n833815580\n828261675\n833692254\n828298123\n828800870\n828883152\n828900014\n832963241\n832873258\n832852312\n829224188\n832717567\n829247000\n829256993\n829302557\n832623243\n832587067\n832564626\n832374928\n832317750\n832309941\n829303957\n829320680\n832961025\n828918539\n832968290\n828924263\n829056253\n833135507\n833132768\n829063401\n829064828\n829068351\n829094801\n833114287\n829112386\n833112680\n833028189\n829112981\n838899512\n848674754\n838942549\n861437596\n861959036\n861950531\n861864009\n861848845\n861710838\n861696811\n861680560\n861650001\n861596326\n861575969\n861512533\n861429516\n861973353\n861386072\n861276576\n861262146\n861223905\n861007326\n861003412\n860999722\n860899023\n860888355\n860794272\n861970170\n861976966\n864435735\n863501462\n864325350\n864251348\n864201178\n864193578\n864127337\n864032199\n863749717\n863748743\n863641744\n863607955\n863502460\n863320353\n861994118\n863226540\n863213961\n862980250\n862834308\n862717752\n862669975\n862463237\n862418173\n862396296\n862269188\n862175141\n860790462\n860744871\n860742817\n857531505\n858285054\n858277755\n858187035\n858058886\n858031359\n857894336\n857891373\n857683181\n857597195\n857548580\n857537756\n857529393\n860653478\n857518363\n857411001\n857400536\n857375876\n857216015\n857063342\n857061755\n856835031\n856599031\n856596437\n858331753\n858380024\n858469278\n858605043\n860644829\n860543205\n860542440\n860540766\n860469976\n860425018\n860424532\n860272971\n860170726\n860108019\n859927028\n859926154\n859920861\n859920010\n859915505\n859846914\n859839140\n859723984\n858890149\n858839988\n858819277\n858762374\n858621311\n864397376\n864542534\n838960117\n1786778372\n1827592573\n1820092960\n1819058082\n1803913852\n1802462213\n1799665891\n1798693178\n1796224445\n1795910881\n1794290167\n1791418837\n1779888018\n1835845035\n1778354404\n1778134267\n1775629085\n1774595922\n1770665470\n1766855322\n1759437795\n1746150678\n1744746418\n1738314769\n1735993809\n1832651496\n1837637095\n864562030\n1875579405\n1892311584\n1888684204\n1887599930\n1887489204\n1882956474\n1880802866\n1880562913\n1879393122\n1879291600\n1876967225\n1875592213\n1866670513\n1838897950\n1864234583\n1863584208\n1861457058\n1861131063\n1860631184\n1859368819\n1850881233\n1845686904\n1842190847\n1840646536\n1839074051\n1706898730\n1704594823\n1678163525\n865832689\n866512724\n866454779\n866451674\n866274102\n866186393\n866125201\n866116378\n866106825\n866072414\n866064460\n865846877\n865781009\n1650246641\n865704137\n865672768\n865671622\n865428305\n865352386\n865318473\n864917652\n864915669\n864811704\n864698420\n864693019\n866515748\n866696463\n866748268\n866782763\n1649680968\n1649488479\n1648246275\n1648137102\n1595529595\n1519448147\n868327947\n868151782\n867895923\n867731353\n867590378\n867414719\n867412975\n867409668\n867404791\n867364766\n867160383\n866917761\n866913422\n866869603\n866784010\n856420935\n856398091\n856395249\n843267152\n844202250\n844125126\n844098392\n843896052\n843794219\n843751114\n843659152\n843635417\n843576988\n843551616\n843483561\n843265302\n844233185\n843125355\n843054508\n843053635\n843043138\n843030843\n842893359\n842841650\n842548098\n842540332\n842480331\n842434275\n844229357\n844237106\n856389229\n845041163\n845955830\n845874796\n845853161\n845653142\n845650158\n845632850\n845450763\n845417928\n845294056\n845231244\n845166761\n844989530\n844292979\n844969252\n844906615\n844848927\n844730841\n844730327\n844641939\n844622611\n844611957\n844570081\n844496093\n844315283\n842422866\n842291477\n842079626\n839527747\n840369836\n840369393\n840325447\n840321508\n840118093\n840050003\n839893227\n839818778\n839753995\n839689221\n839685844\n839497993\n841957114\n839491505\n839313679\n839284036\n839243006\n839237924\n839116117\n839110328\n839081987\n839075395\n839042444\n838982805\n840416988\n840473954\n840477724\n840528613\n841943733\n841943080\n841939353\n841905474\n841846187\n841765284\n841727164\n841706052\n841665177\n841628213\n841540899\n841535779\n841476307\n841470030\n841400149\n841388965\n841199775\n841127555\n840898827\n840888660\n840798266\n840747292\n840656999\n846086883\n846429737\n846643209\n852977991\n853893619\n853882793\n853878239\n853678480\n853673961\n853672583\n853632968\n853481927\n853424997\n853169640\n853058843\n852977065\n851859727\n852781401\n852520009\n852507387\n852506892\n852445768\n852438805\n852422946\n852403007\n851928824\n851925590\n853899582\n853919785\n854004760\n854030276\n856317816\n856002311\n855993756\n855927834\n855763084\n855738404\n855677007\n855612786\n855444339\n855340522\n855329800\n855161019\n855003318\n854945105\n854919390\n854910198\n854659014\n854534743\n854425859\n854273144\n854154117\n854132747\n854032576\n851875981\n851660904\n846645747\n847585056\n848417425\n848406124\n848341431\n848248138\n848243642\n848157680\n847847629\n847837164\n847759560\n847671125\n847508546\n851653448\n847495926\n847467803\n847347021\n847346762\n847292295\n847127663\n846949945\n846946360\n846934967\n846865815\n846648785\n848662025\n848772181\n848863027\n849007655\n851650656\n851330630\n851174697\n851098920\n851091440\n851074340\n851031127\n850995754\n850877579\n850846771\n850712876\n850484277\n850178358\n850171698\n849819362\n849741221\n849690079\n849464786\n849464364\n849463602\n849323992\n849219181\n849020102\n821859611\n400762251\n821513409\n664130334\n664097925\n663755779\n662317603\n662003035\n661219321\n661183594\n660957866\n660610408\n659889437\n656226601\n655697510\n655697289\n655331978\n655331489\n655241710\n654866833\n653913507\n653860842\n653335004\n653252897\n653042571\n652532209\n651748523\n651555682\n650715089\n664101604\n665134251\n718760154\n665937910\n675804874\n675671165\n674595575\n674562218\n674020914\n673758961\n673186855\n673093295\n672856515\n672624194\n672484538\n671801355\n671556713\n670936554\n670451483\n669517264\n668385465\n668019898\n668015626\n668015608\n667838327\n667149563\n666838111\n666493828\n666093194\n649338929\n649320675\n647937717\n647686891\n623116269\n622965346\n622811054\n621927941\n621852656\n621356202\n621293488\n620908854\n620428300\n620317338\n618910483\n618495324\n617508650\n617506134\n617266220\n617138014\n614330806\n614038377\n613361391\n611418267\n610781404\n610082572\n609158976\n608093145\n606101941\n624103869\n626505060\n628129972\n643431870\n647685372\n647574659\n647521439\n647252416\n647065235\n646882256\n646689642\n645880230\n645615404\n644091615\n644014355\n642323650\n628680039\n642181567\n640603027\n639727982\n637481926\n634915813\n634693380\n634145049\n632515547\n631309079\n630450839\n630009840\n676060732\n676227284\n676403038\n698687215\n708889645\n708101410\n707913957\n707786237\n707136375\n707112460\n707066254\n707056900\n706902827\n706605262\n706040672\n705034971\n704909363\n704462212\n704088059\n703716114\n703389736\n702759378\n702116231\n701909167\n701739098\n701559039\n701499436\n701491895\n701033385\n708971100\n708992095\n709473416\n713610723\n718236170\n718139413\n717924207\n716623907\n716378652\n716200036\n716080118\n715548542\n714603395\n714449104\n714308698\n713299522\n710946832\n713226152\n712879782\n712873417\n712703872\n712607184\n712605358\n712418400\n712263019\n712219062\n712141090\n712132182\n699505540\n698682842\n676892125\n697665569\n687097775\n686958558\n686730694\n685984469\n685821120\n685678114\n685652639\n685116151\n684941578\n684443174\n684324267\n684079253\n683468900\n683097383\n682846389\n682720780\n682644927\n682248555\n681983700\n681771126\n681732872\n681275603\n680235792\n677171996\n677074614\n687507343\n688838262\n688881290\n693660526\n697660026\n697519812\n697355089\n696027351\n695816524\n695722432\n695663866\n694690899\n694614791\n693869684\n693731143\n693506534\n689348066\n692206430\n692137397\n692013175\n691862977\n691471071\n691303400\n691207099\n691104738\n689993340\n689751772\n689577037\n605811465\n603246671\n602263329\n484746223\n497752924\n497720632\n497441734\n497261032\n497011719\n496915134\n496520855\n496192074\n496175421\n496164457\n495783500\n494992688\n494630261\n493962558\n493334426\n492019167\n491665195\n491547606\n491506779\n490150526\n489913642\n488739816\n488502337\n487463755\n486689037\n498954382\n500387082\n500648912\n508085171\n514503744\n513415439\n512626078\n512223157\n511848273\n511701118\n510849287\n510146492\n509651111\n508973577\n508301439\n507940359\n500717117\n507346897\n506969749\n506914962\n506390386\n506189405\n505602892\n504787871\n504364172\n503967933\n503352856\n501841574\n486444845\n482806148\n515233366\n482664472\n463528080\n462792273\n461935584\n460926526\n459514057\n459162026\n458276874\n456944684\n456907819\n455416892\n454480757\n453506292\n450407260\n449672178\n445238446\n439451170\n438261683\n430146529\n426033773\n425580132\n420475642\n416294565\n410080522\n408953925\n406390747\n463539770\n465333365\n465728667\n476370472\n481781259\n480811606\n480509419\n479268178\n478903308\n478591587\n478312539\n478302182\n478209903\n477506269\n476696366\n476244166\n466356103\n475908088\n474799754\n474649822\n470761872\n470489819\n470276020\n469896548\n469140569\n469134195\n468596278\n467361148\n514718802\n515580357\n602070040\n559073353\n578981958\n578769416\n576828834\n575520430\n574721793\n573300549\n573186413\n572981667\n572356456\n570288004\n569092081\n567701068\n566617844\n566004175\n565946007\n565482447\n565203153\n565202875\n565192323\n564214942\n564117777\n563747566\n563359374\n562387133\n579441211\n580431502\n580675265\n589677069\n597011800\n596989821\n596418680\n594092141\n592289196\n591703538\n591128617\n591015120\n590063120\n589799221\n588881793\n581115255\n588807884\n588217097\n588209701\n587320685\n585612060\n585611755\n584678372\n583482903\n582322718\n582217237\n581941519\n561273102\n558145290\n515584211\n557431018\n535622574\n535564355\n535356481\n534290576\n533816633\n532644262\n531231252\n530486303\n530279294\n530207766\n528673655\n524798949\n524741312\n524602608\n524480071\n523744824\n523601038\n523308230\n523091409\n522819328\n522290871\n520071581\n519047621\n517444280\n515649653\n536632163\n536915620\n537687387\n547509540\n556914149\n556355472\n556154040\n555646793\n555038453\n554407368\n553672222\n553544965\n550868267\n549510601\n549492095\n546438481\n537775525\n546436772\n544758077\n543273109\n542759503\n542333871\n542091187\n541071606\n539889641\n538014221\n537926844\n537779804\n718307683\n719241880\n821347076\n798612455\n798060501\n797878330\n797650202\n797591753\n797334298\n797168451\n796990394\n796976348\n796826377\n796741476\n796732856\n796584910\n796448670\n796328412\n796178859\n795949770\n795928213\n795880480\n795333175\n795190804\n795190762\n794936234\n798147639\n798665430\n719385195\n798895198\n801603101\n801590658\n801565668\n801342154\n801340042\n801224215\n801047434\n800689374\n800528853\n800369186\n800171819\n800008048\n799951257\n799812224\n799623928\n799522323\n799350449\n799215220\n799195638\n798948010\n798940928\n794936227\n794661419\n794486234\n793411862\n786921509\n786921361\n786755682\n785837368\n785527144\n784942798\n784930265\n784499268\n784495802\n784480593\n784074703\n784062276\n783988474\n783836103\n783530613\n783481170\n783464859\n783373587\n783087081\n783050261\n782770339\n781989262\n781864474\n781618400\n787061975\n787721584\n787738155\n791352983\n792925987\n792712039\n792487033\n792337064\n792280520\n792006014\n791579255\n791509246\n791507520\n791472994\n791048441\n787825292\n790559132\n790536465\n789827173\n789142136\n789136387\n788443395\n788342189\n788288790\n788056508\n788035571\n787872930\n801643506\n802530797\n802679629\n812685680\n817163895\n816326829\n816297001\n816148211\n816029375\n815884251\n815485144\n815485030\n815484933\n815089666\n814993149\n814852994\n814402157\n814155556\n813962043\n813665854\n813568841\n813492779\n813256211\n813123790\n812894241\n812823727\n817486439\n817834856\n817961281\n819867805\n820931970\n820924320\n820847240\n820779596\n820678353\n820549271\n820511123\n820227527\n820150051\n819998572\n819875269\n819666177\n818491327\n819482070\n819328827\n819311412\n819242192\n819201745\n819151315\n819119881\n819111715\n818973392\n818958732\n818638875\n812797339\n812304627\n802879798\n812294923\n806349768\n806226408\n806130617\n806099601\n806082276\n806015965\n805544230\n805391369\n805261603\n805191210\n805153117\n805038844\n804804555\n804794865\n804714946\n804586081\n804435090\n804042662\n803700472\n803573167\n803455657\n803452662\n803254285\n803232937\n803100271\n806782946\n806818935\n807838621\n809882238\n812293894\n812212430\n812098034\n812008024\n811962721\n811865122\n811855848\n811613263\n811439938\n811348270\n809912023\n809568571\n808467025\n809429810\n809352552\n809110270\n809032636\n808984803\n808920401\n808879887\n808699704\n808620497\n808530583\n808467383\n781464336\n781344104\n781327489\n738762743\n749792024\n749135450\n748999313\n748592226\n747599116\n747191646\n746723406\n746579737\n746126870\n745989354\n745687549\n745612783\n745112179\n745017584\n743910800\n743251193\n742870090\n742732605\n741660743\n741587163\n740806892\n740115723\n739229259\n749967167\n750057157\n750133020\n752953078\n755118840\n754943831\n754603656\n754439775\n754437757\n754046713\n753772483\n753625658\n753493532\n753344097\n753012678\n752804597\n750263275\n752709110\n752384772\n752301811\n751931930\n751741401\n751683225\n751448375\n751354226\n751143087\n750702402\n738764937\n738667656\n755575741\n738629511\n727416020\n726722797\n725769502\n725708250\n725464068\n725040262\n724906331\n724855332\n724268052\n724210507\n723758007\n723560247\n723481724\n723114454\n722796200\n722390311\n721972040\n721677855\n720411180\n720371246\n720355540\n720335955\n720067652\n719527966\n719511802\n727571008\n729307281\n729607998\n734995145\n738585245\n738272291\n738256278\n737964360\n737960942\n737524726\n737470773\n736969683\n736857214\n736528860\n735348818\n734675329\n729706233\n733166381\n733004306\n732313095\n732284007\n732130970\n731339421\n730924605\n730683240\n730196388\n730041940\n755270339\n755579889\n781321186\n769251284\n773101708\n773100486\n772977762\n772877502\n772865395\n772639598\n772519693\n772090935\n771770854\n771187718\n771031791\n771005209\n770969789\n770966424\n770966372\n770884383\n770702761\n770240363\n769807142\n769693427\n769684315\n773227976\n773549536\n773651997\n777386806\n781190158\n781088455\n780694542\n780165872\n779720533\n779636424\n779449636\n778232345\n778137531\n777714905\n777310584\n773667327\n776920219\n776725532\n776477870\n776092561\n775922899\n775780274\n774913839\n774697406\n774334712\n774309176\n774064998\n769257264\n769027539\n755607897\n768195970\n760645434\n760258536\n760125160\n759648674\n759553577\n759293492\n758881043\n758534791\n758428453\n758350180\n758141303\n758047854\n758031886\n757591885\n757464516\n757322607\n757180873\n757060640\n756818679\n756294861\n756251205\n756236179\n756066307\n760984653\n761548832\n761675162\n764315596\n767399003\n767305105\n766143219\n765991613\n765799285\n765269264\n765260620\n765171971\n764666422\n764337444\n764217986\n762168519\n763832483\n763801895\n763640046\n763292088\n762940363\n762827756\n762615404\n762603778\n762478658\n762318382\n762288665\n799092805",
+                              "endActNotEdit": false,
+                              "appType": 1,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang087",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 11,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "实收金豆",
+                                  "gameTag": []
+                                }
+                              ],
+                              "groupIds": "",
+                              "anchor_uids": "",
+                              "anchor_whitelist_id": null,
+                              "text": "Signed host's rank is E+ and below in November please complete your daily task here!",
+                              "needAppointUidChangeReason": true,
+                              "lang": [
+                                "GB",
+                                "IE"
+                              ],
+                              "appoint_uid": 1,
+                              "cycleConfig": 1,
+                              "need_attend": 1,
+                              "whiteUid_id": null,
+                              "level_config": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "80",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "78"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 600
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "50",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "128"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 2,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 200
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "reward_type": 4,
+                                      "reward_max_limit": "5",
+                                      "reward_name": "beans",
+                                      "free_level": null,
+                                      "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                                      "name": "beans",
+                                      "typeid": -1,
+                                      "reward_id": null,
+                                      "id": 4,
+                                      "reward_count": "270"
+                                    },
+                                    {
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "reward_image": null,
+                                      "reward_count": null
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 3,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 700
+                                }
+                              ],
+                              "groups": [],
+                              "svip_levels": [],
+                              "index": 6,
+                              "raskType": 1,
+                              "selectedArea": [
+                                "GB"
+                              ],
+                              "appoint_uid_source": 1,
+                              "appointUidChangeReason": "线下打投活动结束添加主播",
+                              "anchor_whitelist_status": 0,
+                              "anchor_uid_info": null,
+                              "name": "Daily Task",
+                              "countType": "",
+                              "level_config_2": [],
+                              "level_config_3": [],
+                              "white_version_id": null,
+                              "_afterSaveFinished": null,
+                              "level_config_4": []
+                            },
+                            "type": "dailyLevelTask",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "w4WpH",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTzSR00y33lYHC0KYFpp.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Rewind",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "oYWFt",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [
+                      "AU",
+                      "US",
+                      "GB",
+                      "FZ"
+                    ],
+                    "num": 26,
+                    "threeRechage": [],
+                    "dailyCycleEndTime": "18:00:00",
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "endActNotEditAnchor": false,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "needAnchorUidChangeReason": true,
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "852583225\n853795640\n462207753\n799725446\n824204399\n663505369\n405372323\n405333718\n1893662069\n504134009\n638834207\n824654077\n498955220\n581372539\n503411079\n708422669\n710613085\n634880806\n745116399\n461321864\n811940153\n520758074\n759125529\n462086652\n439533483\n558210216",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "needAppointUidChangeReason": true,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 1,
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [
+                      "GB"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/17 12:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "CP Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AS",
+                      "AU",
+                      "BJ",
+                      "CA",
+                      "CD",
+                      "CG",
+                      "CI",
+                      "CK",
+                      "CM",
+                      "ET",
+                      "FJ",
+                      "FM",
+                      "GB",
+                      "GH",
+                      "GM",
+                      "GU",
+                      "IE",
+                      "KE",
+                      "KI",
+                      "LR",
+                      "MG",
+                      "MH",
+                      "MP",
+                      "MU",
+                      "NC",
+                      "NF",
+                      "NG",
+                      "NR",
+                      "NU",
+                      "NZ",
+                      "PF",
+                      "PG",
+                      "PH",
+                      "PN",
+                      "PW",
+                      "SB",
+                      "SN",
+                      "TG",
+                      "TK",
+                      "TO",
+                      "TV",
+                      "TZ",
+                      "UG",
+                      "US",
+                      "VU",
+                      "WF",
+                      "WS",
+                      "ZA",
+                      "ZM"
+                    ],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "852583225\n853795640\n462207753\n799725446\n824204399\n663505369\n405372323\n405333718\n1893662069\n504134009\n638834207\n824654077\n498955220\n581372539\n503411079\n708422669\n710613085\n634880806\n745116399\n461321864\n811940153\n520758074\n759125529\n462086652\n439533483\n558210216",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "GB",
+                      "IE"
+                    ],
+                    "appoint_uid": 1,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "end_time": "2025/12/17 18:00:00",
+                    "dailyCycleEndTimeOrigin": "2025/12/09 18:00:00",
+                    "dailyCycleStartTime": "12:00:00",
+                    "appoint_uid_source": 1,
+                    "appointUidChangeReason": "新主播",
+                    "anchorUidChangeReason": "新主播参与活动",
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/12/09 12:00:00",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "f9Fu2",
+                  "formData": {
+                    "mode": 2,
+                    "uid_arr": [
+                      {
+                        "uid": "663505369",
+                        "text": ""
+                      },
+                      {
+                        "uid": "853795640",
+                        "text": ""
+                      },
+                      {
+                        "uid": "799725446",
+                        "text": ""
+                      },
+                      {
+                        "uid": "824204399",
+                        "text": ""
+                      },
+                      {
+                        "uid": "558210216",
+                        "text": ""
+                      },
+                      {
+                        "uid": "405372323",
+                        "text": ""
+                      },
+                      {
+                        "uid": "405333718",
+                        "text": ""
+                      },
+                      {
+                        "uid": "1893662069",
+                        "text": ""
+                      },
+                      {
+                        "uid": "504134009",
+                        "text": ""
+                      },
+                      {
+                        "uid": "638834207",
+                        "text": ""
+                      },
+                      {
+                        "uid": "824654077",
+                        "text": ""
+                      },
+                      {
+                        "uid": "498955220",
+                        "text": ""
+                      },
+                      {
+                        "uid": "581372539",
+                        "text": ""
+                      },
+                      {
+                        "uid": "503411079",
+                        "text": ""
+                      },
+                      {
+                        "uid": "708422669",
+                        "text": ""
+                      },
+                      {
+                        "uid": "462207753",
+                        "text": ""
+                      },
+                      {
+                        "uid": "634880806",
+                        "text": ""
+                      },
+                      {
+                        "uid": "745116399",
+                        "text": ""
+                      },
+                      {
+                        "uid": "461321864",
+                        "text": ""
+                      },
+                      {
+                        "uid": "811940153",
+                        "text": ""
+                      },
+                      {
+                        "uid": "520758074",
+                        "text": ""
+                      },
+                      {
+                        "uid": "759125529",
+                        "text": ""
+                      },
+                      {
+                        "uid": "462086652",
+                        "text": ""
+                      },
+                      {
+                        "uid": "710613085",
+                        "text": ""
+                      },
+                      {
+                        "uid": "439533483",
+                        "text": ""
+                      },
+                      {
+                        "uid": "852583225",
+                        "text": ""
+                      }
+                    ],
+                    "priority": false
+                  },
+                  "type": "anchor",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "swSvM",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTzSo00y33lYHC1LgkfB.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTzRo00y2TWPL00lGyAp.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,165 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 07:25:52",
+    "now_zone": -2,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 66735,
+      "act_name": "DACH SVIP Auflade-Aufgabe",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-21 00:00:00",
+      "end_time": "2025-06-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "DE",
+        "CH",
+        "AT"
+      ],
+      "selectedArea": [
+        "DE"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1"
+    },
+    "act_modular": [
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AT",
+            "CH",
+            "DE"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "DE"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": false,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": null,
+          "onlyCharge": true,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "每日充值1钻=1分，每日达成任务后即可获得奖励，只向6月SVIP开放（具体名单要等下个月才有）",
+          "lang": [
+            "AT",
+            "CH",
+            "DE"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": null,
+          "level_config": [
+            {
+              "private_im_lang": "",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "120",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": 3,
+                  "reward_count": "100"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": false,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 40000
+            }
+          ],
+          "groups": [],
+          "index": 1,
+          "raskType": 1,
+          "selectedArea": [
+            "DE"
+          ],
+          "name": "SVIP Auflade-Aufgabe",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

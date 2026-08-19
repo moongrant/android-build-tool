@@ -1,0 +1,1830 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20260101",
+      "20260102",
+      "20260103",
+      "20260104",
+      "20260105",
+      "20260106",
+      "20260107",
+      "20260108",
+      "20260109",
+      "20260110",
+      "20260111",
+      "20260112",
+      "20260113",
+      "20260114",
+      "20260115",
+      "20260116",
+      "20260117",
+      "20260118",
+      "20260119",
+      "20260120",
+      "20260121",
+      "20260122",
+      "20260123",
+      "20260124",
+      "20260125",
+      "20260126",
+      "20260127",
+      "20260128",
+      "20260129",
+      "20260130",
+      "20260131"
+    ],
+    "week": [
+      "20251229",
+      "20260105",
+      "20260112",
+      "20260119",
+      "20260126"
+    ],
+    "month": [
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78681,
+      "act_name": "Horse Prosperity",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "16"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1va9JP00y33lYHC0NG3f0.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event ended"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "MY,BN,SG",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "MY",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "actIndex": "",
+            "wjName": "【Register Event】",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "id": null,
+                    "title": "YES",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": null,
+                "type": 2,
+                "title": "Please select 'YES' to agree and confirm your participation.",
+                "sortIdx": 1
+              }
+            ],
+            "description": "Users who register between 1-31Jan 2026, will qualify for the rewards. ",
+            "startTime": "2026-01-01 00:00:00",
+            "id": null,
+            "endTime": "2026-01-31 23:59:59",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 2150
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Event Detail",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WGDtI",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaAT500y2TWPL01DxbKl.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Miyg6",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1va9Mq00y2TWPL01Xi9ft.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Event",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "kWYUY",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "1 diamonds = 1 point"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "XFMNH",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "🎁 NEW YEAR BONUS 🎁",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "vUu61",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaASY00y2TWPL0078JnM.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "iRwpb",
+                            "formData": {
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [
+                                "MY"
+                              ],
+                              "num": 999,
+                              "threeRechage": [],
+                              "dailyCycleEndTime": "23:59:59",
+                              "globalinfo": 0,
+                              "section": 6,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "giftUid_id": null,
+                              "downloadNum": 99999,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [
+                                    0
+                                  ],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang086",
+                                  "change": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 10,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "充值金额",
+                                  "gameTag": []
+                                }
+                              ],
+                              "anchor_uids": "",
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "time",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "2026.01.01 00:00 - 2026.01.03 23:59",
+                              "linktext": "",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "voteBoardConfig": 1,
+                              "cp_rank": 0,
+                              "svip_levels": [],
+                              "index": 1,
+                              "selectedArea": [
+                                "MY"
+                              ],
+                              "anchor_whitelist_status": 0,
+                              "voteBoardTitle": "",
+                              "start_time": "2026/01/01",
+                              "frontTextAlignStyle": "center",
+                              "name": "🎉 Top 15 🎉",
+                              "linkurl": "",
+                              "switchDisplay": false,
+                              "coupon_type": 0,
+                              "scoreLang": [
+                                "BN",
+                                "MY",
+                                "SG"
+                              ],
+                              "top3": 1,
+                              "onlyCharge": true,
+                              "whiteUid_id_info": null,
+                              "voteRankBoard": 1,
+                              "manualVoteList": [],
+                              "uid": "",
+                              "isSearch": 0,
+                              "appType": 1,
+                              "giftUid_id_info": null,
+                              "anchor_whitelist_id": null,
+                              "divide": {
+                                "isPercent": 0,
+                                "imconf": {
+                                  "beanImData": [],
+                                  "gift_room_im": "0",
+                                  "diamondImData": [],
+                                  "giftImData": [],
+                                  "diamond_room_im": "0",
+                                  "row_index": 0,
+                                  "bean_room_im": "0"
+                                },
+                                "proportion": []
+                              },
+                              "lang": [
+                                "BN",
+                                "MY",
+                                "SG"
+                              ],
+                              "appoint_uid": 0,
+                              "cycleConfig": 2,
+                              "uid_arr": [
+                                {
+                                  "uid": "1545090704",
+                                  "score": "999999"
+                                }
+                              ],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "prizeType": 1,
+                              "end_time": "2026/01/03",
+                              "dailyCycleEndTimeOrigin": "2025/12/31 23:59:59",
+                              "dailyCycleStartTime": "00:00:00",
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "prize_arr_v2": [],
+                              "switchOrder": 1,
+                              "weeklyConfig": 1,
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "selectedDays": [],
+                              "countType": "",
+                              "dailyCycleStartTimeOrigin": "2025/12/31 00:00:00",
+                              "maxManualVoteListID": 0
+                            },
+                            "type": "personrankings",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "eZfBe",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "fill",
+                                  "frontAlignStyle": "center",
+                                  "type": "text",
+                                  "value": "Daily Ranking is open to all MY/BN/SG users, with no selected users required to join, and will start and end at 00:00–23:59 each day. The top 15 users who meet the event requirement and threshold daily will earn bean rewards."
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ZOvk0",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "🐎 1st Week 🐎",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "95gOA",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaVsb00y33lYHC22PfcQ.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Qo2gF",
+                            "formData": {
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 999,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 1,
+                              "sendGift_limituid": 0,
+                              "mode": 0,
+                              "giftUid_id": null,
+                              "downloadNum": 99999,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [],
+                              "anchor_uids": "",
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "time",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "2026.01.04 00:00 - 2026.01.10 23:59",
+                              "linktext": "",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "voteBoardConfig": 1,
+                              "cp_rank": 0,
+                              "selectedArea": [],
+                              "anchor_whitelist_status": 0,
+                              "voteBoardTitle": "",
+                              "frontTextAlignStyle": "center",
+                              "name": "🎉 Top 50 🎉",
+                              "linkurl": "",
+                              "switchDisplay": false,
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "top3": 1,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": null,
+                              "voteRankBoard": 1,
+                              "manualVoteList": [],
+                              "uid": "",
+                              "isSearch": 0,
+                              "appType": 1,
+                              "giftUid_id_info": null,
+                              "anchor_whitelist_id": null,
+                              "divide": {
+                                "isPercent": 0,
+                                "imconf": {
+                                  "beanImData": [],
+                                  "gift_room_im": "0",
+                                  "diamondImData": [],
+                                  "giftImData": [],
+                                  "diamond_room_im": "0",
+                                  "row_index": 0,
+                                  "bean_room_im": "0"
+                                },
+                                "proportion": []
+                              },
+                              "lang": [],
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "uid_arr": [
+                                {
+                                  "uid": 564682818,
+                                  "score": "272950"
+                                },
+                                {
+                                  "uid": 433686995,
+                                  "score": "255000"
+                                },
+                                {
+                                  "uid": 409622924,
+                                  "score": "247000"
+                                },
+                                {
+                                  "uid": 514088805,
+                                  "score": "240122"
+                                },
+                                {
+                                  "uid": 1751019378,
+                                  "score": "218652"
+                                },
+                                {
+                                  "uid": 584828556,
+                                  "score": "210793"
+                                },
+                                {
+                                  "uid": 827611158,
+                                  "score": "200181"
+                                },
+                                {
+                                  "uid": 662975324,
+                                  "score": "198962"
+                                },
+                                {
+                                  "uid": 1804266676,
+                                  "score": "197250"
+                                },
+                                {
+                                  "uid": 1516209763,
+                                  "score": "192910"
+                                },
+                                {
+                                  "uid": 445003112,
+                                  "score": "180000"
+                                },
+                                {
+                                  "uid": 834067661,
+                                  "score": "177721"
+                                },
+                                {
+                                  "uid": 418344946,
+                                  "score": "164228"
+                                },
+                                {
+                                  "uid": 763137560,
+                                  "score": "162215"
+                                },
+                                {
+                                  "uid": 472659140,
+                                  "score": "156524"
+                                },
+                                {
+                                  "uid": 1505628784,
+                                  "score": "155570"
+                                },
+                                {
+                                  "uid": 859289383,
+                                  "score": "146400"
+                                },
+                                {
+                                  "uid": 1517858339,
+                                  "score": "140163"
+                                },
+                                {
+                                  "uid": 801337952,
+                                  "score": "138300"
+                                },
+                                {
+                                  "uid": 530903278,
+                                  "score": "131835"
+                                },
+                                {
+                                  "uid": 445428106,
+                                  "score": "129145"
+                                },
+                                {
+                                  "uid": 783477553,
+                                  "score": "128780"
+                                },
+                                {
+                                  "uid": 1577278607,
+                                  "score": "124618"
+                                },
+                                {
+                                  "uid": 1626111702,
+                                  "score": "123130"
+                                },
+                                {
+                                  "uid": 1511038094,
+                                  "score": "122700"
+                                },
+                                {
+                                  "uid": 482284677,
+                                  "score": "119635"
+                                },
+                                {
+                                  "uid": 866194112,
+                                  "score": "116400"
+                                },
+                                {
+                                  "uid": 1779028947,
+                                  "score": "114384"
+                                },
+                                {
+                                  "uid": 672424953,
+                                  "score": "111635"
+                                },
+                                {
+                                  "uid": 736258999,
+                                  "score": "110700"
+                                },
+                                {
+                                  "uid": 502462420,
+                                  "score": "110125"
+                                },
+                                {
+                                  "uid": 767866873,
+                                  "score": "108946"
+                                },
+                                {
+                                  "uid": 720728147,
+                                  "score": "107752"
+                                },
+                                {
+                                  "uid": 813468676,
+                                  "score": "106333"
+                                },
+                                {
+                                  "uid": 708088482,
+                                  "score": "106085"
+                                },
+                                {
+                                  "uid": 569748532,
+                                  "score": "105717"
+                                },
+                                {
+                                  "uid": 1522214707,
+                                  "score": "105000"
+                                },
+                                {
+                                  "uid": 647316713,
+                                  "score": "104383"
+                                },
+                                {
+                                  "uid": 464983745,
+                                  "score": "104228"
+                                },
+                                {
+                                  "uid": 865587047,
+                                  "score": "103940"
+                                },
+                                {
+                                  "uid": 1682975064,
+                                  "score": "100000"
+                                },
+                                {
+                                  "uid": 851328785,
+                                  "score": "99750"
+                                },
+                                {
+                                  "uid": 1879728290,
+                                  "score": "96808"
+                                },
+                                {
+                                  "uid": 674163609,
+                                  "score": "96581"
+                                },
+                                {
+                                  "uid": 642040075,
+                                  "score": "93990"
+                                },
+                                {
+                                  "uid": 844973268,
+                                  "score": "92440"
+                                },
+                                {
+                                  "uid": 822405826,
+                                  "score": "89757"
+                                },
+                                {
+                                  "uid": 605397731,
+                                  "score": "89700"
+                                },
+                                {
+                                  "uid": 705029524,
+                                  "score": "89375"
+                                },
+                                {
+                                  "uid": 460404142,
+                                  "score": "89000"
+                                }
+                              ],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "prizeType": 1,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "prize_arr_v2": [],
+                              "switchOrder": 1,
+                              "weeklyConfig": 1,
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "selectedDays": [],
+                              "countType": "",
+                              "maxManualVoteListID": 0
+                            },
+                            "type": "personrankings",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "🐎 2nd Week 🐎",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "z43pC",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaVvz00y33lYHC1lZi3o.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Rqb2p",
+                            "formData": {
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 999,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 1,
+                              "sendGift_limituid": 0,
+                              "mode": 0,
+                              "giftUid_id": null,
+                              "downloadNum": 99999,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [],
+                              "anchor_uids": "",
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "time",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "2026.01.11 00:00 - 2026.01.17 23:59",
+                              "linktext": "",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "voteBoardConfig": 1,
+                              "cp_rank": 0,
+                              "selectedArea": [],
+                              "anchor_whitelist_status": 0,
+                              "voteBoardTitle": "",
+                              "frontTextAlignStyle": "center",
+                              "name": "🎉 Top 50 🎉",
+                              "linkurl": "",
+                              "switchDisplay": false,
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "top3": 1,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": null,
+                              "voteRankBoard": 1,
+                              "manualVoteList": [],
+                              "uid": "",
+                              "isSearch": 0,
+                              "appType": 1,
+                              "giftUid_id_info": null,
+                              "anchor_whitelist_id": null,
+                              "divide": {
+                                "isPercent": 0,
+                                "imconf": {
+                                  "beanImData": [],
+                                  "gift_room_im": "0",
+                                  "diamondImData": [],
+                                  "giftImData": [],
+                                  "diamond_room_im": "0",
+                                  "row_index": 0,
+                                  "bean_room_im": "0"
+                                },
+                                "proportion": []
+                              },
+                              "lang": [],
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "uid_arr": [
+                                {
+                                  "uid": 564682818,
+                                  "score": "289600"
+                                },
+                                {
+                                  "uid": 433686995,
+                                  "score": "259250"
+                                },
+                                {
+                                  "uid": 834435231,
+                                  "score": "250828"
+                                },
+                                {
+                                  "uid": 1516209763,
+                                  "score": "250450"
+                                },
+                                {
+                                  "uid": 455818526,
+                                  "score": "248017"
+                                },
+                                {
+                                  "uid": 827611158,
+                                  "score": "228795"
+                                },
+                                {
+                                  "uid": 703988548,
+                                  "score": "225800"
+                                },
+                                {
+                                  "uid": 409622924,
+                                  "score": "219302"
+                                },
+                                {
+                                  "uid": 692615476,
+                                  "score": "207904"
+                                },
+                                {
+                                  "uid": 412497508,
+                                  "score": "207450"
+                                },
+                                {
+                                  "uid": 1886080013,
+                                  "score": "193750"
+                                },
+                                {
+                                  "uid": 870670997,
+                                  "score": "188190"
+                                },
+                                {
+                                  "uid": 778531307,
+                                  "score": "179710"
+                                },
+                                {
+                                  "uid": 1804266676,
+                                  "score": "175200"
+                                },
+                                {
+                                  "uid": 851328785,
+                                  "score": "168000"
+                                },
+                                {
+                                  "uid": 407075852,
+                                  "score": "166310"
+                                },
+                                {
+                                  "uid": 865861094,
+                                  "score": "163430"
+                                },
+                                {
+                                  "uid": 514088805,
+                                  "score": "162998"
+                                },
+                                {
+                                  "uid": 869688250,
+                                  "score": "162909"
+                                },
+                                {
+                                  "uid": 1554399237,
+                                  "score": "159640"
+                                },
+                                {
+                                  "uid": 825327434,
+                                  "score": "157000"
+                                },
+                                {
+                                  "uid": 1730935661,
+                                  "score": "153790"
+                                },
+                                {
+                                  "uid": 834908156,
+                                  "score": "150300"
+                                },
+                                {
+                                  "uid": 763137560,
+                                  "score": "145595"
+                                },
+                                {
+                                  "uid": 779800877,
+                                  "score": "138200"
+                                },
+                                {
+                                  "uid": 866686883,
+                                  "score": "131773"
+                                },
+                                {
+                                  "uid": 767866873,
+                                  "score": "131421"
+                                },
+                                {
+                                  "uid": 1511038094,
+                                  "score": "131000"
+                                },
+                                {
+                                  "uid": 843095871,
+                                  "score": "130549"
+                                },
+                                {
+                                  "uid": 482878103,
+                                  "score": "126315"
+                                },
+                                {
+                                  "uid": 1633034066,
+                                  "score": "123797"
+                                },
+                                {
+                                  "uid": 1525005314,
+                                  "score": "123540"
+                                },
+                                {
+                                  "uid": 705029524,
+                                  "score": "120312"
+                                },
+                                {
+                                  "uid": 1698811351,
+                                  "score": "120000"
+                                },
+                                {
+                                  "uid": 812915722,
+                                  "score": "117320"
+                                },
+                                {
+                                  "uid": 720728147,
+                                  "score": "115618"
+                                },
+                                {
+                                  "uid": 1522214707,
+                                  "score": "107180"
+                                },
+                                {
+                                  "uid": 465291819,
+                                  "score": "106765"
+                                },
+                                {
+                                  "uid": 674163609,
+                                  "score": "103152"
+                                },
+                                {
+                                  "uid": 409594294,
+                                  "score": "100936"
+                                },
+                                {
+                                  "uid": 502462420,
+                                  "score": "100795"
+                                },
+                                {
+                                  "uid": 1530796675,
+                                  "score": "100254"
+                                },
+                                {
+                                  "uid": 1540340524,
+                                  "score": "100000"
+                                },
+                                {
+                                  "uid": 647316713,
+                                  "score": "98756"
+                                },
+                                {
+                                  "uid": 1685961901,
+                                  "score": "98465"
+                                },
+                                {
+                                  "uid": 662975324,
+                                  "score": "94379"
+                                },
+                                {
+                                  "uid": 872168273,
+                                  "score": "94210"
+                                },
+                                {
+                                  "uid": 1517922577,
+                                  "score": "94044"
+                                },
+                                {
+                                  "uid": 1586788558,
+                                  "score": "93742"
+                                },
+                                {
+                                  "uid": 834436130,
+                                  "score": "93042"
+                                }
+                              ],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "prizeType": 1,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "prize_arr_v2": [],
+                              "switchOrder": 1,
+                              "weeklyConfig": 1,
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "selectedDays": [],
+                              "countType": "",
+                              "maxManualVoteListID": 0
+                            },
+                            "type": "personrankings",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "s9jF1",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "🐎 3rd Week 🐎",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "ujMtx",
+                                      "formData": {
+                                        "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaVy300y2TWPL02FlIdH.jpg",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "cjl13",
+                                      "formData": {
+                                        "isShowSpecialRank": 0,
+                                        "scoreSelectedArea": [],
+                                        "num": 999,
+                                        "threeRechage": [],
+                                        "globalinfo": 0,
+                                        "section": 1,
+                                        "sendGift_limituid": 0,
+                                        "mode": 0,
+                                        "giftUid_id": null,
+                                        "downloadNum": 99999,
+                                        "globalrank": 10,
+                                        "coupon_arr": [],
+                                        "rankinfo": 2,
+                                        "auto_arr": [],
+                                        "anchor_uids": "",
+                                        "blindConfig": {
+                                          "imSendBeforeSeconds": 1800,
+                                          "blindSwitch": false,
+                                          "imImgUrl": "",
+                                          "imContent": "",
+                                          "timeType": "time",
+                                          "timeRangeList": [],
+                                          "imSwitch": false,
+                                          "imTitle": "",
+                                          "percent": 0
+                                        },
+                                        "text": "2026.01.18 00:00 - 2026.01.24 23:59",
+                                        "linktext": "",
+                                        "need_attend": 0,
+                                        "prize_arr": [],
+                                        "voteBoardConfig": 1,
+                                        "cp_rank": 0,
+                                        "selectedArea": [],
+                                        "anchor_whitelist_status": 0,
+                                        "voteBoardTitle": "",
+                                        "frontTextAlignStyle": "center",
+                                        "name": "🎉 Top 50 🎉",
+                                        "linkurl": "",
+                                        "switchDisplay": false,
+                                        "coupon_type": 0,
+                                        "scoreLang": [],
+                                        "top3": 1,
+                                        "onlyCharge": false,
+                                        "whiteUid_id_info": null,
+                                        "voteRankBoard": 1,
+                                        "manualVoteList": [],
+                                        "uid": "",
+                                        "isSearch": 0,
+                                        "appType": 1,
+                                        "giftUid_id_info": null,
+                                        "anchor_whitelist_id": null,
+                                        "divide": {
+                                          "isPercent": 0,
+                                          "imconf": {
+                                            "beanImData": [],
+                                            "gift_room_im": "0",
+                                            "diamondImData": [],
+                                            "giftImData": [],
+                                            "diamond_room_im": "0",
+                                            "row_index": 0,
+                                            "bean_room_im": "0"
+                                          },
+                                          "proportion": []
+                                        },
+                                        "lang": [],
+                                        "appoint_uid": 0,
+                                        "cycleConfig": 1,
+                                        "uid_arr": [
+                                          {
+                                            "uid": 433686995,
+                                            "score": "263500"
+                                          },
+                                          {
+                                            "uid": 865861094,
+                                            "score": "261750"
+                                          },
+                                          {
+                                            "uid": 651563362,
+                                            "score": "258796"
+                                          },
+                                          {
+                                            "uid": 564682818,
+                                            "score": "236550"
+                                          },
+                                          {
+                                            "uid": 485558985,
+                                            "score": "225942"
+                                          },
+                                          {
+                                            "uid": 870187478,
+                                            "score": "217502"
+                                          },
+                                          {
+                                            "uid": 1807213550,
+                                            "score": "214026"
+                                          },
+                                          {
+                                            "uid": 1531447226,
+                                            "score": "213000"
+                                          },
+                                          {
+                                            "uid": 870670997,
+                                            "score": "205460"
+                                          },
+                                          {
+                                            "uid": 767866873,
+                                            "score": "195902"
+                                          },
+                                          {
+                                            "uid": 507008755,
+                                            "score": "195100"
+                                          },
+                                          {
+                                            "uid": 1554399237,
+                                            "score": "188410"
+                                          },
+                                          {
+                                            "uid": 834435231,
+                                            "score": "187037"
+                                          },
+                                          {
+                                            "uid": 694349681,
+                                            "score": "182250"
+                                          },
+                                          {
+                                            "uid": 687226703,
+                                            "score": "173100"
+                                          },
+                                          {
+                                            "uid": 842811325,
+                                            "score": "167713"
+                                          },
+                                          {
+                                            "uid": 1514495275,
+                                            "score": "164400"
+                                          },
+                                          {
+                                            "uid": 847852940,
+                                            "score": "151840"
+                                          },
+                                          {
+                                            "uid": 838087227,
+                                            "score": "146598"
+                                          },
+                                          {
+                                            "uid": 834436130,
+                                            "score": "145798"
+                                          },
+                                          {
+                                            "uid": 779800877,
+                                            "score": "142250"
+                                          },
+                                          {
+                                            "uid": 633557132,
+                                            "score": "139620"
+                                          },
+                                          {
+                                            "uid": 705029524,
+                                            "score": "137500"
+                                          },
+                                          {
+                                            "uid": 433642377,
+                                            "score": "131239"
+                                          },
+                                          {
+                                            "uid": 1525005314,
+                                            "score": "128064"
+                                          },
+                                          {
+                                            "uid": 817955032,
+                                            "score": "125028"
+                                          },
+                                          {
+                                            "uid": 875457534,
+                                            "score": "124424"
+                                          },
+                                          {
+                                            "uid": 842737474,
+                                            "score": "122850"
+                                          },
+                                          {
+                                            "uid": 763137560,
+                                            "score": "122609"
+                                          },
+                                          {
+                                            "uid": 773715410,
+                                            "score": "114940"
+                                          },
+                                          {
+                                            "uid": 807965291,
+                                            "score": "114282"
+                                          },
+                                          {
+                                            "uid": 1799102379,
+                                            "score": "113920"
+                                          },
+                                          {
+                                            "uid": 735830279,
+                                            "score": "113570"
+                                          },
+                                          {
+                                            "uid": 760853475,
+                                            "score": "112972"
+                                          },
+                                          {
+                                            "uid": 511187439,
+                                            "score": "110000"
+                                          },
+                                          {
+                                            "uid": 1512195420,
+                                            "score": "108430"
+                                          },
+                                          {
+                                            "uid": 690721753,
+                                            "score": "106535"
+                                          },
+                                          {
+                                            "uid": 849782562,
+                                            "score": "105420"
+                                          },
+                                          {
+                                            "uid": 851328785,
+                                            "score": "104501"
+                                          },
+                                          {
+                                            "uid": 470619818,
+                                            "score": "103277"
+                                          },
+                                          {
+                                            "uid": 874839123,
+                                            "score": "102250"
+                                          },
+                                          {
+                                            "uid": 1698811351,
+                                            "score": "100000"
+                                          },
+                                          {
+                                            "uid": 875331749,
+                                            "score": "99850"
+                                          },
+                                          {
+                                            "uid": 482878103,
+                                            "score": "99000"
+                                          },
+                                          {
+                                            "uid": 843095871,
+                                            "score": "98850"
+                                          },
+                                          {
+                                            "uid": 1522597667,
+                                            "score": "98284"
+                                          },
+                                          {
+                                            "uid": 812915722,
+                                            "score": "91488"
+                                          },
+                                          {
+                                            "uid": 582235414,
+                                            "score": "91114"
+                                          },
+                                          {
+                                            "uid": 620848179,
+                                            "score": "88475"
+                                          },
+                                          {
+                                            "uid": 460404142,
+                                            "score": "86260"
+                                          }
+                                        ],
+                                        "whiteUid_id": null,
+                                        "bottominfo": 0,
+                                        "prizeType": 1,
+                                        "appoint_uid_source": 1,
+                                        "rankStyle": "1",
+                                        "prize_arr_v2": [],
+                                        "switchOrder": 1,
+                                        "weeklyConfig": 1,
+                                        "anchor_uid_info": null,
+                                        "sendGift_uids": "",
+                                        "selectedDays": [],
+                                        "countType": "",
+                                        "maxManualVoteListID": 0
+                                      },
+                                      "type": "personrankings",
+                                      "complete": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "🐎 4th Week 🐎",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "tf6tE",
+                                      "formData": {
+                                        "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaVyv00y33lYHC0dKAS0.jpg",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "uMFYe",
+                                      "formData": {
+                                        "isShowSpecialRank": 0,
+                                        "scoreSelectedArea": [],
+                                        "num": 999,
+                                        "threeRechage": [],
+                                        "globalinfo": 0,
+                                        "section": 1,
+                                        "sendGift_limituid": 0,
+                                        "mode": 0,
+                                        "giftUid_id": null,
+                                        "downloadNum": 99999,
+                                        "globalrank": 10,
+                                        "coupon_arr": [],
+                                        "rankinfo": 2,
+                                        "auto_arr": [],
+                                        "anchor_uids": "",
+                                        "blindConfig": {
+                                          "imSendBeforeSeconds": 1800,
+                                          "blindSwitch": false,
+                                          "imImgUrl": "",
+                                          "imContent": "",
+                                          "timeType": "time",
+                                          "timeRangeList": [],
+                                          "imSwitch": false,
+                                          "imTitle": "",
+                                          "percent": 0
+                                        },
+                                        "text": "2026.01.25 00:00 - 2026.01.31 23:59",
+                                        "linktext": "",
+                                        "need_attend": 0,
+                                        "prize_arr": [],
+                                        "voteBoardConfig": 1,
+                                        "cp_rank": 0,
+                                        "selectedArea": [],
+                                        "anchor_whitelist_status": 0,
+                                        "voteBoardTitle": "",
+                                        "frontTextAlignStyle": "center",
+                                        "name": "🎉 Top 50 🎉",
+                                        "linkurl": "",
+                                        "switchDisplay": false,
+                                        "coupon_type": 0,
+                                        "scoreLang": [],
+                                        "top3": 1,
+                                        "onlyCharge": false,
+                                        "whiteUid_id_info": null,
+                                        "voteRankBoard": 1,
+                                        "manualVoteList": [],
+                                        "uid": "",
+                                        "isSearch": 0,
+                                        "appType": 1,
+                                        "giftUid_id_info": null,
+                                        "anchor_whitelist_id": null,
+                                        "divide": {
+                                          "isPercent": 0,
+                                          "imconf": {
+                                            "beanImData": [],
+                                            "gift_room_im": "0",
+                                            "diamondImData": [],
+                                            "giftImData": [],
+                                            "diamond_room_im": "0",
+                                            "row_index": 0,
+                                            "bean_room_im": "0"
+                                          },
+                                          "proportion": []
+                                        },
+                                        "lang": [],
+                                        "appoint_uid": 0,
+                                        "cycleConfig": 1,
+                                        "uid_arr": [
+                                          {
+                                            "uid": 437471877,
+                                            "score": "292275"
+                                          },
+                                          {
+                                            "uid": 564682818,
+                                            "score": "192700"
+                                          },
+                                          {
+                                            "uid": 485558985,
+                                            "score": "170315"
+                                          },
+                                          {
+                                            "uid": 779800877,
+                                            "score": "153010"
+                                          },
+                                          {
+                                            "uid": 633557132,
+                                            "score": "137540"
+                                          },
+                                          {
+                                            "uid": 499096515,
+                                            "score": "131000"
+                                          },
+                                          {
+                                            "uid": 858364111,
+                                            "score": "122030"
+                                          },
+                                          {
+                                            "uid": 724809413,
+                                            "score": "121170"
+                                          },
+                                          {
+                                            "uid": 445984760,
+                                            "score": "120331"
+                                          },
+                                          {
+                                            "uid": 851328785,
+                                            "score": "119710"
+                                          },
+                                          {
+                                            "uid": 823733222,
+                                            "score": "114093"
+                                          },
+                                          {
+                                            "uid": 507008755,
+                                            "score": "108501"
+                                          },
+                                          {
+                                            "uid": 855055433,
+                                            "score": "107840"
+                                          },
+                                          {
+                                            "uid": 843141800,
+                                            "score": "107360"
+                                          },
+                                          {
+                                            "uid": 1532895673,
+                                            "score": "105000"
+                                          },
+                                          {
+                                            "uid": 1891997824,
+                                            "score": "100000"
+                                          },
+                                          {
+                                            "uid": 1632161803,
+                                            "score": "98938"
+                                          },
+                                          {
+                                            "uid": 847852940,
+                                            "score": "98100"
+                                          },
+                                          {
+                                            "uid": 853986275,
+                                            "score": "98100"
+                                          },
+                                          {
+                                            "uid": 1512195420,
+                                            "score": "97595"
+                                          },
+                                          {
+                                            "uid": 842737474,
+                                            "score": "95550"
+                                          },
+                                          {
+                                            "uid": 514088805,
+                                            "score": "92835"
+                                          },
+                                          {
+                                            "uid": 1505628784,
+                                            "score": "85260"
+                                          },
+                                          {
+                                            "uid": 433686995,
+                                            "score": "85000"
+                                          },
+                                          {
+                                            "uid": 756125143,
+                                            "score": "83902"
+                                          },
+                                          {
+                                            "uid": 1525005314,
+                                            "score": "81340"
+                                          },
+                                          {
+                                            "uid": 442835743,
+                                            "score": "80986"
+                                          },
+                                          {
+                                            "uid": 870187478,
+                                            "score": "79616"
+                                          },
+                                          {
+                                            "uid": 1829648763,
+                                            "score": "75032"
+                                          },
+                                          {
+                                            "uid": 864469579,
+                                            "score": "70230"
+                                          },
+                                          {
+                                            "uid": 409594294,
+                                            "score": "68545"
+                                          },
+                                          {
+                                            "uid": 738835840,
+                                            "score": "67533"
+                                          },
+                                          {
+                                            "uid": 1516209763,
+                                            "score": "66140"
+                                          },
+                                          {
+                                            "uid": 856901477,
+                                            "score": "66094"
+                                          },
+                                          {
+                                            "uid": 1808593789,
+                                            "score": "65822"
+                                          },
+                                          {
+                                            "uid": 516189145,
+                                            "score": "62399"
+                                          },
+                                          {
+                                            "uid": 755195620,
+                                            "score": "62250"
+                                          },
+                                          {
+                                            "uid": 569539244,
+                                            "score": "60000"
+                                          },
+                                          {
+                                            "uid": 1837419655,
+                                            "score": "57680"
+                                          },
+                                          {
+                                            "uid": 1578352173,
+                                            "score": "56550"
+                                          },
+                                          {
+                                            "uid": 778531307,
+                                            "score": "55640"
+                                          },
+                                          {
+                                            "uid": 1554399237,
+                                            "score": "54660"
+                                          },
+                                          {
+                                            "uid": 834908156,
+                                            "score": "54600"
+                                          },
+                                          {
+                                            "uid": 543709761,
+                                            "score": "54180"
+                                          },
+                                          {
+                                            "uid": 1524014728,
+                                            "score": "54014"
+                                          },
+                                          {
+                                            "uid": 530903278,
+                                            "score": "53880"
+                                          },
+                                          {
+                                            "uid": 1522597667,
+                                            "score": "53630"
+                                          },
+                                          {
+                                            "uid": 690721753,
+                                            "score": "52360"
+                                          },
+                                          {
+                                            "uid": 764800214,
+                                            "score": "50912"
+                                          },
+                                          {
+                                            "uid": 671064093,
+                                            "score": "50000"
+                                          }
+                                        ],
+                                        "whiteUid_id": null,
+                                        "bottominfo": 0,
+                                        "prizeType": 1,
+                                        "appoint_uid_source": 1,
+                                        "rankStyle": "1",
+                                        "prize_arr_v2": [],
+                                        "switchOrder": 1,
+                                        "weeklyConfig": 1,
+                                        "anchor_uid_info": null,
+                                        "sendGift_uids": "",
+                                        "selectedDays": [],
+                                        "countType": "",
+                                        "maxManualVoteListID": 0
+                                      },
+                                      "type": "personrankings",
+                                      "complete": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "UKsXC",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "For the Weekly Ranking, there will be 4 weekly rankings from January 6 to January 31, 2026. Users can claim rewards each week if they reach the minimum points requirement and rank in the Top 50 for that week."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "nL0xZ",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "underline",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "📢 Data will be updated weekly every Monday at 3 PM, except on weekends."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Special Reward",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "yCK3c",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "1 diamonds = 1 point"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "kscKB",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "💥SVIP Level Upgrade💥",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "6jMrp",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1valYD00y2TWPL01qITNj.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Q1yvN",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1valzz00y2TWPL01LKMcb.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VTPd8",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "fill",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "Event is offered to December 2025 SVIP users. Users who upgrade their SVIP level within 31 days in January 2026 can claim rewards. Rewards are limited to the first 100 participants."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Final interpretation of this event is reserved by BIGOLIVE. This event is not associated with Apple Inc."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

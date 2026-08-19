@@ -1,0 +1,427 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231"
+    ],
+    "week": [
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 05:26:24",
+    "now_zone": 0,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78290,
+      "act_name": "UK Potential Family Clash (12.22-12.31)",
+      "state": 1,
+      "color": 4,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-12-22 18:00:00",
+      "end_time": "2025-12-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "GB",
+        "IE"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "act_ver": 1,
+      "version_id": "2",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hb/11sndtt9k6GB.jpg?auth-token=R7_3-YW9MKailvr3sxqngWYO_9NtixSRms8jTQUJhHM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjkwLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0NzA0LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "Time: 22 December 18:00:00 -31 December 23:59:59"
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Ranking Countdown!"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "15,000 Beans are waiting for the TOP80 Families!"
+            },
+            {
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "🔥Send or Receive gifts and GO LIVE now! Become the King of Families🔥"
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "Event Rules\n\n1.This event is for selected GB/IE Families only (1000<= family combat points of Nov<=100,000 ).\n2.Family members send gifts 1 Diamond =1 point; Members receive gifts 1 Bean=1 Point; GO Live 20 mins =2 point;\n3.According to the family ranking, Top 80 Families will win huge beans rewards. (must reach minimum 1000 points)\n4. Beans rewards will be sent to family leaders"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uN5ecac896411250c4dc2bd85a548f367a15eph.png?auth-token=pNJSnh9mKtRAMXtFPcwHURnJ6oLISauEWeBBHZ1k8Sk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjkwLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzNjkyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Family Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tgCNA",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Potential Family Rank",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "wrdoi",
+                            "formData": {
+                              "group_arr": [],
+                              "isShowSpecialRank": 0,
+                              "scoreSelectedArea": [],
+                              "num": 999,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "groupSoure": 1,
+                              "mode": 1,
+                              "downloadNum": 20000,
+                              "globalrank": 10,
+                              "rankinfo": 2,
+                              "groupIds": "83237\n119447\n131616\n224755\n125172\n119907\n221676\n231466\n42423\n57438\n63759\n222722\n231842\n123375\n170251\n209845\n87119\n149676\n85657\n58578\n12585\n231439\n230994\n170127\n56686\n127153\n225575\n106490\n221828\n225269\n174377\n225536\n70931\n204375\n53131\n64025\n34558\n154517\n227491\n25394\n35121\n171882\n215244\n108800\n122846\n143636\n232956\n5209\n123313\n220619\n104629\n62459\n160791\n5237\n167822\n181811\n230722\n207372\n101903\n24758\n44185\n215461\n148214\n226782\n225395\n85711\n219252\n187170\n23677\n143160\n117615\n110570\n150280\n125111\n206119\n5224\n165362\n156774\n137652\n17518\n69457\n209594\n217044\n170851\n228537\n45531\n224561\n215988\n213094\n5196\n195192\n203362\n164594\n229289\n207383\n167423\n223886\n80634\n232265\n212734\n229875\n5119\n134405\n157445\n215492\n150698\n41289\n232500\n8342\n218292\n153759\n232449\n233214\n88541\n214589\n211423\n204357\n70060\n211736\n45350\n137029\n211673\n180356\n5243\n67400\n219515\n201799\n8357\n111972\n12577\n104198\n210070\n149575\n202406\n225197\n152251\n230119\n108346\n144701\n33301\n141324\n220839\n185653\n190444\n127645\n40531\n130069\n135886\n224324\n230063\n190640\n224056\n156765\n101974\n115573\n179861\n231995\n125081\n219897\n232096\n189127\n231373\n149643\n47804\n129015\n67398\n8346\n126600\n51749\n63659\n172936\n216929\n92821\n58602\n194607\n116184\n232489\n180337\n110876\n217941\n221134\n148724\n96262\n229083\n187529\n12616\n64268\n217238\n202535\n218815\n153098\n5132\n63408\n128779\n228276\n229535\n12594\n160393\n122809\n220399\n17402\n5184\n97769\n25214\n8353\n61525\n226440\n125866\n100764\n129930\n134574\n96071\n144735\n218538\n221685\n33980\n103503\n232203\n127718\n155812\n132113\n112788\n32920\n166966\n232111\n176235\n53513\n232426\n175125\n212377\n5619\n126718\n19744\n35676\n106127\n214305\n123286\n187486\n225603\n124571\n117409\n211415\n83534\n128965\n5198\n123393\n49478\n179863\n211987\n197399\n189356\n229531\n228767\n232344\n199277\n141821\n5166\n225178\n178621\n217818\n233188\n80840\n199191\n91626\n232290\n156528\n37335\n233029\n226559\n212262\n25976\n73733\n233147\n91919\n224318\n208518\n199754\n105860\n53302\n192108\n106261\n217583\n197545\n202028\n126050\n101541\n111561\n217898\n233149\n67656\n221976\n212908\n106129\n115497\n187155\n186677\n223336\n36279\n119990\n148735\n226467\n205530\n122160\n109074\n152226\n230780\n229867\n172535\n190238\n210417\n74318\n10578\n140411\n232848\n197648\n153828\n158119\n144376\n110041\n227207\n230659\n232539\n229721\n197422\n214956\n188449\n19210\n23165\n140390\n224244\n122154\n206990\n158709\n163806\n112852\n109603\n229566\n149806\n140530\n47524\n219678\n144129\n45023\n221280\n209029\n205841\n202751\n49422\n233981\n161145\n219567\n230847\n63909\n231476\n86805\n225133\n102720\n5624\n104481\n232098\n143861\n207063\n6068\n132442\n171857\n81712\n108399\n163810\n215837\n39169\n227112\n228252\n157452\n173473\n72873\n200547\n205271\n59815\n231739\n206692\n219317\n200452\n212553\n229657\n233191\n41228\n120962\n47610\n194589\n178755\n230222\n182712\n203827\n5128\n100049\n110861\n104758\n8375\n73642\n144126\n232647\n89040\n222254\n148851\n30255\n211723\n136690\n187489\n217671\n231177\n16470\n81866\n66263\n28123\n55653\n215788\n156757\n225251\n222720\n192220\n81791\n48622\n224265\n24582\n158781\n192500\n156780\n209253\n62972\n150966\n221623\n82424\n24282\n231394\n173622\n17234\n220035\n46314\n209254\n202439\n50613\n28543\n232612\n119629\n157302\n175798\n121147\n165844\n230483\n17878\n230275\n40513\n93857\n222719\n111497\n231148\n5202\n32726\n184376\n54185\n126673\n231985\n215478\n213122\n176403\n107474\n148675\n143753\n5233\n66235\n115829\n225781\n123411\n222324\n162433\n212527\n164478\n161175\n116040\n103493\n232750\n123591\n209729\n22970\n85656\n47830\n211441\n147877\n133655\n233158\n134478\n176216\n109145\n107558\n120327\n122651\n205849\n100885\n5227\n138140\n228909\n155595\n145746\n117092\n127776\n17747\n73709\n8358\n116167\n124003\n184020\n160366\n152887\n81709\n19987\n164329\n96900\n42409\n125313\n96781\n230050\n219693\n225598\n129225\n78398",
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang441",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 12,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "送出钻石",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": 0,
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang087",
+                                  "change": 1,
+                                  "scoreType": 1,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 11,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": [],
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "实收金豆",
+                                  "gameTag": []
+                                },
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang442",
+                                  "change": 1200,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 5,
+                                  "gift_id_type": 1,
+                                  "score": 2,
+                                  "cameraEnable": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "开播时长",
+                                  "gameTag": []
+                                }
+                              ],
+                              "anchor_uids": "",
+                              "family_svip_levels": [],
+                              "blindConfig": {
+                                "imSendBeforeSeconds": 1800,
+                                "blindSwitch": false,
+                                "imImgUrl": "",
+                                "imContent": "",
+                                "timeType": "dateTime",
+                                "timeRangeList": [],
+                                "imSwitch": false,
+                                "imTitle": "",
+                                "percent": 0
+                              },
+                              "text": "Become TOP80 Families to win Massive BEANS rewards!",
+                              "linktext": "",
+                              "needAppointUidChangeReason": false,
+                              "need_attend": 0,
+                              "svip_levels": [],
+                              "index": 2,
+                              "selectedArea": [
+                                "GB"
+                              ],
+                              "anchor_whitelist_status": 0,
+                              "frontTextAlignStyle": "center",
+                              "name": "Overall Family Battle Ranking",
+                              "linkurl": "",
+                              "scoreLang": [],
+                              "needGroupsChangeReason": false,
+                              "onlyCharge": false,
+                              "endActNotEdit": false,
+                              "isSearch": 0,
+                              "appType": 1,
+                              "family_svip_ruleIds": [],
+                              "anchor_whitelist_id": null,
+                              "lang": [
+                                "GB",
+                                "IE"
+                              ],
+                              "family_svip_check": false,
+                              "appoint_uid": 0,
+                              "cycleConfig": 1,
+                              "uid_arr": [],
+                              "bottominfo": 0,
+                              "groups": [],
+                              "groupFamilytype": 2,
+                              "appoint_uid_source": 1,
+                              "family_svip_area": [],
+                              "rankStyle": "1",
+                              "weeklyConfig": 1,
+                              "anchor_uid_info": null,
+                              "selectedDays": [],
+                              "countType": ""
+                            },
+                            "type": "grouprankings",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "Try to gain more combat points this month to win CRAZY rewards up to 140,000 beans in the Family Prestige event!"
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Click here to check the event detail>>>",
+              "fn": 1,
+              "style": 1,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_14587/index.html?area=GB",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 1,
+          "uid_arr": [
+            {
+              "uid": "30000",
+              "text": "UK Official Admin"
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "ALL RIGHTS RESERVED BY BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

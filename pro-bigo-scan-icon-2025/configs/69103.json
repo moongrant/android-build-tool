@@ -1,0 +1,1050 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250714",
+      "20250715",
+      "20250716",
+      "20250717",
+      "20250718"
+    ],
+    "week": [
+      "20250714"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 69103,
+      "act_name": "Middle Month Level up Auto Rebate(a-s2)",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-14 00:00:00",
+      "end_time": "2025-07-18 22:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "ID"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "#000000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "10"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uaBI67d4f8498114d4acfa5a121a2c74c0eb4ph.png?auth-token=i31zCs4bB3rTagZCZOZUdd0X4Fb0t3VSWj5UCVpLnMw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTAzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxMTUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Tasks",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Ofdd7",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "dailyCycleEndTime": "21:00:00",
+                    "needGroupsChangeReason": true,
+                    "section": 6,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655456",
+                      "create_time": "1752056198",
+                      "utime": "2025-07-09 18:16:38",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "0714-0718活动印尼a-s2等级主播",
+                      "update_operator": "",
+                      "create_operator": "12991",
+                      "frequency": "0",
+                      "update_time": "1752056198",
+                      "black_tasks_status": "0",
+                      "filter_id": "17887",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-07-09 18:16:38",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 2000,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 2000,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "First Come, First Serve! ",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "ID"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 2,
+                    "need_attend": 0,
+                    "whiteUid_id": "1500655456",
+                    "end_time": "2025/07/18",
+                    "level_config": [
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 1!",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "free_level": null,
+                            "reward_image": null,
+                            "reward_id": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "141",
+                            "op_time": "1752117275",
+                            "offshelf_time": "2069739575",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7176672361553540381",
+                            "reward_name": "Dino Taillight",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "41521",
+                            "nickname_color": "",
+                            "reward_count": "3",
+                            "icon_url": "https://esx.bigo.sg/live/4hp/1uN9GRb321a52331cd470d8b38fbd08f1eaac3ph.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "1",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Dino Taillight",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Gift to Middle Month Level up Auto Rebate",
+                            "reward_type": "41521",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "3",
+                            "param": "",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1752059976",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4hp/1uN9GRb321a52331cd470d8b38fbd08f1eaac3ph.png",
+                            "act_url": "",
+                            "reward_id": null,
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4hp/1uN9GVaf00ea87c51d4585bd0b4ff4ebfc9613ph.png"
+                          }
+                        ],
+                        "process_notice_lang": "- Kamu mencapai Level 1! Terima 2000 beans lagi untuk membuka hadiah tambahan 300 Beans🎁\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 2!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "76",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "300"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 2! Terima 2000 beans lagi untuk membuka hadiah tambahan 300 Beans🎁\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 3!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "46",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "300"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 3! Terima 2000 beans lagi untuk membuka hadiah tambahan 300 Beans🎁..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 4!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "34",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "300"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 4! Terima 2000 beans lagi untuk membuka hadiah tambahan 300 Beans🎁..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 5!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "29",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "300"
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "29",
+                            "op_time": "1752117283",
+                            "offshelf_time": "2143209600",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7176672394000625950",
+                            "reward_name": "Summer Island",
+                            "typeid": "6",
+                            "extra_type": "0",
+                            "id": "41519",
+                            "nickname_color": "",
+                            "reward_count": "3",
+                            "icon_url": "https://esx.bigo.sg/live/4he/11tTWvRAwT90.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Summer Island",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "4,6",
+                            "desc_text": "Gift to Middle Month Level up Auto Rebate",
+                            "reward_type": "41519",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "3",
+                            "param": "",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1752059793",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4he/11tTWvRAwT90.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4he/21tXG7cGayfc.webp"
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 5! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁 dan Virtual Effect..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 5,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 2000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 6!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "14",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": null,
+                            "op_time": "1752117283",
+                            "offshelf_time": "2143209600",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7176672394000625950",
+                            "reward_name": null,
+                            "typeid": "6",
+                            "extra_type": "0",
+                            "id": "41519",
+                            "nickname_color": "",
+                            "reward_count": null,
+                            "icon_url": "https://esx.bigo.sg/live/4he/11tTWvRAwT90.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Summer Island",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "4,6",
+                            "desc_text": "Gift to Middle Month Level up Auto Rebate",
+                            "reward_type": "",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "param": "",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1752059793",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": null,
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4he/21tXG7cGayfc.webp"
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 6! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 6,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 7!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "9",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 7! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 7,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 8!\n",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "4",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 8! Terima 5000 beans lagi untuk membuka hadiah tambahan 1000 Beans🎁..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 8,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 9!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "3",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Kamu mencapai Level 9! Terima 10000 beans lagi untuk membuka hadiah tambahan 3500 Beans🎁dan Virtual Effect..\n(14–18 Juli🕐 Setiap hari pukul 15:00–21:00) *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 9,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5000
+                      },
+                      {
+                        "private_im_lang": "Selamat! Kamu telah menyelesaikan [Middle Month Level Up Auto Rebate] Level 10!",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "1",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "3500"
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "1",
+                            "op_time": "1752117290",
+                            "offshelf_time": "2143209600",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-王希彤",
+                            "isOnlyNeedNum": 0,
+                            "mp4_url": "",
+                            "__version": "7176672423391216414",
+                            "reward_name": "Bee Dino",
+                            "typeid": "7",
+                            "extra_type": "0",
+                            "id": "41517",
+                            "nickname_color": "",
+                            "reward_count": "7",
+                            "icon_url": "https://esx.bigo.sg/live/4hd/02CfqFJ.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "Bee Dino",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "",
+                            "desc_text": "Gift to Middle Month Level up Auto Rebate",
+                            "reward_type": "41517",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "reward_expire_time": "7",
+                            "param": "",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1752059645",
+                            "env": "1",
+                            "gif_url": "https://esx.bigo.sg/live/4hb/0sY5Mp.webp",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4hd/02CfqFJ.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4hd/0Wg9Kor.webp"
+                          }
+                        ],
+                        "process_notice_lang": "Kamu telah mencapai Level 10! Segera klaim hadiahmu setiap hari tanggal 14–18 Juli🕐 Setiap hari pukul 15:00–21:00 WIB🎁 *Kuota Terbatas*\n",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 10,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 10000
+                      }
+                    ],
+                    "groups": [],
+                    "index": 2,
+                    "raskType": 1,
+                    "dailyCycleEndTimeOrigin": "2025/07/14 21:00:00",
+                    "dailyCycleStartTime": "15:00:00",
+                    "selectedArea": [],
+                    "start_time": "2025/07/14",
+                    "name": "Up to 3500 Level Reward Beans Everyday！",
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/07/14 15:00:00",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Rules",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "J6eK3",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "1 Beans dari ID users = 1 point\nHanya Beans selama 15:00-21:00 yang akan dihitung\nLive Streaming 5 menit = 2000 points, max 2000 points/day\nSelesaikan Daily Task untuk mendapatkan rewards"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "T5uMZ",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uZhrSfdfc243f96d14a5ca88f2d3c0a03233aph.png?auth-token=TNunDLEgadO8Tzta4d6MiAcWgvx2-0i7XDQFmHn53AE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTAzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNzksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VZ6PU",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uZiAU1397445220074753b3d6f234ae929781ph.png?auth-token=wgyv3uAoUvjQRIYGql9Rv0bVdRhQO6wPmr4sYGhh_FQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTAzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwNTUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Total Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Kcgky",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "needGiftUidChangeReason": true,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "threeRechage": [],
+                    "dailyCycleEndTime": "21:00:00",
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": "1500655456",
+                    "downloadNum": 999999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 2000,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 2000,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "needAppointUidChangeReason": true,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 3,
+                    "endActNotEditGift": false,
+                    "selectedArea": [],
+                    "voteBoardTitle": "",
+                    "start_time": "2025/07/14",
+                    "frontTextAlignStyle": "left",
+                    "name": "Total Ranking",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655456",
+                      "create_time": "1752056198",
+                      "utime": "2025-07-09 18:16:38",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "0714-0718活动印尼a-s2等级主播",
+                      "update_operator": "",
+                      "create_operator": "12991",
+                      "frequency": "0",
+                      "update_time": "1752056198",
+                      "black_tasks_status": "0",
+                      "filter_id": "17887",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-07-09 18:16:38",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "giftUidChangeReason": "更新白名单",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655456",
+                      "create_time": "1752056198",
+                      "utime": "2025-07-09 18:16:38",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "0714-0718活动印尼a-s2等级主播",
+                      "update_operator": "",
+                      "create_operator": "12991",
+                      "frequency": "0",
+                      "update_time": "1752056198",
+                      "black_tasks_status": "0",
+                      "filter_id": "17887",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-07-09 18:16:38",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "ID"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 2,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500655456",
+                    "bottominfo": 1,
+                    "prizeType": 1,
+                    "end_time": "2025/07/18",
+                    "dailyCycleEndTimeOrigin": "2025/07/11 21:00:00",
+                    "dailyCycleStartTime": "15:00:00",
+                    "appointUidChangeReason": "更新白名单",
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/07/11 15:00:00",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Rules",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "eQm23",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "1 Beans dari ID users = 1 point\nHanya Beans selama 15:00-21:00 yang akan dihitung\nLive Streaming 5 menit = 2000 points, max 2000 points/day"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "53Dd9",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1ua7PE7046f952c4394fe6963a3347ec2c89acph.png?auth-token=QTbwYE1za9-tfrr6osXEHvF9pvZmjpW0TNYbnCDKc-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY5MTAzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3MzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

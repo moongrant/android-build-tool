@@ -1,0 +1,967 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250609",
+      "20250610",
+      "20250611",
+      "20250612",
+      "20250613"
+    ],
+    "week": [
+      "20250609"
+    ],
+    "month": [
+      "202506"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 15:25:52",
+    "now_zone": -10,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 67062,
+      "act_name": "Recharge Mania in June",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-09 21:00:00",
+      "end_time": "2025-06-13 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PG",
+        "TO",
+        "WS",
+        "FJ",
+        "GU",
+        "SB",
+        "NC",
+        "PF",
+        "PW",
+        "AS",
+        "FM",
+        "TK",
+        "MP",
+        "CK",
+        "VU",
+        "MH",
+        "KI",
+        "NR",
+        "TV",
+        "NU",
+        "NF",
+        "WF",
+        "PN",
+        "AU",
+        "NZ"
+      ],
+      "selectedArea": [
+        "AU"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "1",
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Mission",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ggbdL",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "Online Recharge Only! Can go to official web to unlock more recharge benefits!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tDyEt",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1u5iU4a8cd851553404daea26cc31105d0017dph.png?auth-token=qQHPL4BNb_Gk70Jc4dqGWe2UQaKZUx7As2XSFqPjtWY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3MDYyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxMzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Your Task Progression",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "lmv7C",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Daily Task"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "Rewards are limited! First Come, First Served."
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "sub_title",
+                        "value": "Online Recharge Only! Can go to official web to unlock more recharge benefits!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "uW7c0",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": true,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          4,
+                          6,
+                          7,
+                          8
+                        ],
+                        "sourcesAction": 1,
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "Rewards are limited, first-come-first-served basis.",
+                    "lang": [
+                      "PG",
+                      "TO",
+                      "WS",
+                      "FJ",
+                      "GU",
+                      "SB",
+                      "NC",
+                      "PF",
+                      "PW",
+                      "AS",
+                      "FM",
+                      "TK",
+                      "MP",
+                      "CK",
+                      "VU",
+                      "MH",
+                      "KI",
+                      "NR",
+                      "TV",
+                      "NU",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "AU",
+                      "NZ"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 1 Task by recharging 100 diamonds. Recharge More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=63913",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          },
+                          {
+                            "base_map_url": "",
+                            "reward_max_limit": "1800",
+                            "op_time": "1741747136",
+                            "offshelf_time": "2143209600",
+                            "vm_price": "0",
+                            "op_user": "直播事业部-刘维娜",
+                            "mp4_url": "",
+                            "__version": "7134196272465703719",
+                            "reward_name": "ANZ Koala Worker",
+                            "typeid": "5",
+                            "extra_type": "0",
+                            "id": "38947",
+                            "nickname_color": "",
+                            "reward_count": "2",
+                            "icon_url": "https://esx.bigo.sg/live/4he/21tsBwOkR2sT.png",
+                            "svga_url": "",
+                            "ext": "",
+                            "avatar_width": "0",
+                            "sort_key": "0",
+                            "new_banner_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "2",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "val_count_decimal": "0",
+                            "name": "ANZ Koala Worker",
+                            "is_lock": "0",
+                            "text_color": "#FFFFFF",
+                            "status": "0",
+                            "pk_type": "4,6",
+                            "desc_text": "ANZ特定新用户活动专属，其他禁用",
+                            "reward_type": "38947",
+                            "vm_price_decimal": "0",
+                            "game_type": "0",
+                            "can_vip_share": "0",
+                            "head_type": "0",
+                            "param": "ANZ特定新用户活动专属，其他禁用",
+                            "banner_url": "",
+                            "label_name": "",
+                            "need_combine": "0",
+                            "__deleted": "0",
+                            "onshelf_time": "1741747523",
+                            "env": "1",
+                            "gif_url": "",
+                            "sale": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://esx.bigo.sg/live/4he/21tsBwOkR2sT.png",
+                            "act_url": "",
+                            "medal_jump_url": "",
+                            "supported_buy": "0",
+                            "show_url": "https://esx.bigo.sg/live/4he/11tsBwRVauOl.png"
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 1 task by recharging 100 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 100
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 2 Task by recharging 3500 diamonds. Recharge More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=63913",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "85",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "200"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 2 task by recharging 3500 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 3500
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 3 Task by recharging 8000 diamonds. Recharge More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=63913",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "5",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "600"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 3 task by recharging 8000 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 8000
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 4 Task by recharging 22000 diamonds. Recharge More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=63913",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "3",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "2500"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 4 task by recharging 22000 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 22000
+                      },
+                      {
+                        "private_im_lang": "Congratulations! You have completed Level 5 Task by recharging 85000 diamonds. Recharge More to win reward for next stage!  Check the event here: \nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=63913",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "1",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "8500"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Dear BIGOer, you can finish level 5 task by recharging 85000 diamonds!",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 5,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 85000
+                      }
+                    ],
+                    "groups": [],
+                    "index": 1,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "name": "Daily Recharge Task",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Overall Recharge Ranking Bonus",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "OHesd",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "Online Recharge Only! Can go to official web to unlock more recharge benefits!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "90Nfa",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 50,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3,
+                          4,
+                          6,
+                          8,
+                          7
+                        ],
+                        "sourcesAction": 1,
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 Diamond Recharged = 1 Point; Online recharge Only!",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "AU"
+                    ],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "June Perks",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "PG",
+                      "TO",
+                      "WS",
+                      "FJ",
+                      "GU",
+                      "SB",
+                      "NC",
+                      "PF",
+                      "PW",
+                      "AS",
+                      "FM",
+                      "TK",
+                      "MP",
+                      "CK",
+                      "VU",
+                      "MH",
+                      "KI",
+                      "NR",
+                      "TV",
+                      "NU",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "AU",
+                      "NZ"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": 1,
+                        "rank_from": 1,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 30000,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 30000 beans easter perks from ANZ Easter Recharge Feast Event!"
+                            }
+                          ],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 2,
+                        "rank_from": 2,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 15000,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 15000 beans easter perks from ANZ Easter Recharge Feast Event!"
+                            }
+                          ],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 1,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 3,
+                        "rank_from": 3,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 10000,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 10000 beans easter perks from ANZ Easter Recharge Feast Event!"
+                            }
+                          ],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 2,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 4,
+                        "rank_from": 4,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 6000,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 6000 beans easter perks from ANZ Easter Recharge Feast Event!"
+                            }
+                          ],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 3,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 10,
+                        "rank_from": 5,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 3000,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 3000 beans easter perks from ANZ Easter Recharge Feast Event!"
+                            }
+                          ],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 4,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      },
+                      {
+                        "rank_to": 15,
+                        "rank_from": 11,
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 1500,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [
+                            {
+                              "zone": "en",
+                              "text": "Congrats! Here's your 1500 beans easter perks from ANZ Easter Recharge Feast Event!"
+                            }
+                          ],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 5,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 0
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Event End In"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Event End In"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "All Rights Reserved by BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

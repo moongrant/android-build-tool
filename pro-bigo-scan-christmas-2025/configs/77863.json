@@ -1,0 +1,122 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 6086016,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77863,
+      "act_name": "Live House",
+      "state": 1,
+      "color": 1,
+      "theme": "green",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-11 16:00:00",
+      "end_time": "2026-10-29 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "GB",
+        "IE"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "frontCustomBgColor": "#1A3A71",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "7"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaCs400y2TWPL02ChDep.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": true,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Get ready for festive pull-and-reveal fun! 🎄✨\nTime: 16:00 – 20:30"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "The Christmas Crackers Celebration brings classic holiday joy to the Live House! Hosts pull festive crackers live, revealing tiny toys, crowns, trivia, and silly jokes that keep the stream lively and interactive.\n\nJump in, enjoy cosy end-of-year vibes, and choose which cracker they open next! 🎁🔥"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "LIVE HOUSE ROOM"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 1,
+          "uid_arr": [
+            {
+              "uid": "1747576147",
+              "text": "LIVE HOUSE ROOM"
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

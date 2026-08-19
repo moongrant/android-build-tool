@@ -1,0 +1,560 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78512,
+      "act_name": "KH Auto Get Dia (Jan 2026)",
+      "state": 1,
+      "color": 2,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "KH"
+      ],
+      "selectedArea": [],
+      "act_ver": 1,
+      "version_id": "1",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "blue",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hb/1s4H4c.jpg?auth-token=df6nboxWi8IwkkjNsggdJoqw9mHwFM5zYTXti6Lfj-A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NTEyLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NjM3LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "💡Rules💡",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "r51G2",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vao9T00y2TWPL01sV6YB.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "💎មើលការ​ Live បានរង្វាន់💎",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "PbEeE",
+                  "formData": {
+                    "group_arr": [],
+                    "scoreLang": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "skin": "2",
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "score": 30,
+                        "_sourcesErrorMsg": "",
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "change": 1800,
+                        "limit": 120,
+                        "auto_name": "观看直播时长",
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "score": 1,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "anchor_uids": "",
+                    "anchor_whitelist_id": null,
+                    "text": "រង្វាន់នឹងត្រូវបានផ្ដល់ជូននៅពេលបំពេញកិច្ចការទស្សនាការ​ Live នៅក្នុង Public Room",
+                    "lang": [
+                      "KH"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "🎉 អបអរសាទរ រង្វាន់ [Warrior pendant*1Day] ត្រូវបានផ្ញើរួចរាល់\n🚩 ប្រសិនបើអ្នកទទួល [30] ពិន្ទុ រង្វាន់[Audio Frame*1Day] នឹងត្រូវផ្ញើ!\n🌟សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          },
+                          {
+                            "desc_text": "Pendant",
+                            "base_map_url": "",
+                            "reward_type": "21311",
+                            "reward_max_limit": "100000",
+                            "offshelf_time": "1879679031",
+                            "vm_price": "0",
+                            "can_vip_share": "1",
+                            "mp4_url": "",
+                            "head_type": "0",
+                            "__version": "6802357429779080756",
+                            "reward_expire_time": "1",
+                            "param": "8月全平台活动",
+                            "reward_name": "Warrior pendant",
+                            "typeid": "6",
+                            "extra_type": "0",
+                            "banner_url": "",
+                            "id": "21311",
+                            "nickname_color": "",
+                            "label_name": "",
+                            "reward_count": "1",
+                            "icon_url": "https://giftesx.bigo.sg/live/7h4/M03/73/58/bvsbAF05qKiIDkrzAABsQdgdVEsAAWjvgGRKjkAAGxZ092.png",
+                            "svga_url": "",
+                            "__deleted": "0",
+                            "sort_key": "0",
+                            "onshelf_time": "1564059829",
+                            "env": "1",
+                            "gif_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "sale": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/7h4/M03/73/58/bvsbAF05qKiIDkrzAABsQdgdVEsAAWjvgGRKjkAAGxZ092.png",
+                            "name": "Warrior pendant",
+                            "act_url": "",
+                            "text_color": "",
+                            "medal_jump_url": "",
+                            "show_url": "https://giftesx.bigo.sg/live/7h2/M01/76/45/8vobAF05qLCIMK-KAAeIJBqwkx4AAW-pAEa2IYAB4g807.webp",
+                            "status": "0",
+                            "pk_type": ""
+                          }
+                        ],
+                        "process_notice_lang": "💪 អបអរសាទរ [001] ទៅ Lv។[002] កិច្ចការជិតមកដល់ហើយ  [Warrior pendant*1Day] នឹងត្រូវបានផ្ញើនៅពេលអ្នកបំពេញភារកិច្ច။ \n⏰ ប្រសិនបើអ្នកបន្តទទួលបាន [004] ពិន្ទុ អ្នកនឹងអាចឈ្នះ [Audio Frame*1Day]\n💓សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": true,
+                        "target": 30
+                      },
+                      {
+                        "private_im_lang": "🎉 អបអរសាទរ រង្វាន់ [Audio Frame*1Day] ត្រូវបានផ្ញើរួចរាល់\n🚩 ប្រសិនបើអ្នកទទួល [60] ពិន្ទុ រង្វាន់[Honor Effect*1Day] នឹងត្រូវផ្ញើ!\n🌟សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          },
+                          {
+                            "desc_text": "",
+                            "base_map_url": "",
+                            "reward_type": "21317",
+                            "reward_max_limit": "100000",
+                            "offshelf_time": "1879809794",
+                            "vm_price": "0",
+                            "can_vip_share": "0",
+                            "mp4_url": "",
+                            "head_type": "0",
+                            "__version": "6683475267431330868",
+                            "reward_expire_time": "1",
+                            "param": "",
+                            "reward_name": "Defender",
+                            "typeid": "9",
+                            "extra_type": "0",
+                            "banner_url": "",
+                            "id": "21317",
+                            "nickname_color": "",
+                            "label_name": "",
+                            "reward_count": "1",
+                            "icon_url": "https://giftesx.bigo.sg/live/3s4/0UW9ZU.png",
+                            "svga_url": "",
+                            "__deleted": "0",
+                            "sort_key": "0",
+                            "onshelf_time": "1564190599",
+                            "env": "1",
+                            "gif_url": "",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "sale": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/3s4/0UW9ZU.png",
+                            "name": "Defender",
+                            "act_url": "",
+                            "text_color": "",
+                            "medal_jump_url": "",
+                            "show_url": "https://giftesx.bigo.sg/live/3s4/1Vt3KD.png",
+                            "status": "0",
+                            "pk_type": ""
+                          }
+                        ],
+                        "process_notice_lang": "💪 អបអរសាទរ [001] ទៅ Lv។[002] កិច្ចការជិតមកដល់ហើយ  [Audio Frame*1Day] នឹងត្រូវបានផ្ញើនៅពេលអ្នកបំពេញភារកិច្ច။ \n⏰ ប្រសិនបើអ្នកបន្តទទួលបាន [004] ពិន្ទុ អ្នកនឹងអាចឈ្នះ [Honor Effect*1Day]\n💓សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": true,
+                        "target": 30
+                      },
+                      {
+                        "private_im_lang": "🎉 អបអរសាទរ រង្វាន់ [Honor Effect*1Day] ត្រូវបានផ្ញើរួចរាល់\n🚩 កិច្ចការកម្រិតថ្ងៃនេះត្រូវបានបញ្ចប់ដោយជោគជ័យ!​​ តោះបញ្ចប់​កិច្ចការ​នៅ​ថ្ងៃ​ស្អែក\n🌟សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "anthor_room_reward": [
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          },
+                          {
+                            "desc_text": "",
+                            "base_map_url": "",
+                            "reward_type": "21529",
+                            "reward_max_limit": "100000",
+                            "offshelf_time": "1890613499",
+                            "vm_price": "0",
+                            "can_vip_share": "1",
+                            "mp4_url": "",
+                            "head_type": "0",
+                            "__version": "6780008207968048436",
+                            "reward_expire_time": "1",
+                            "param": "年度盛典高级进场奖励——总榜",
+                            "reward_name": "Annual Honor",
+                            "typeid": "7",
+                            "extra_type": "0",
+                            "banner_url": "",
+                            "id": "21529",
+                            "nickname_color": "",
+                            "label_name": "",
+                            "reward_count": "1",
+                            "icon_url": "https://giftesx.bigo.sg/live/7h4/M0A/5C/DD/bPsbAF23ozeIWKb8AAAsCmLrWxIAA6BYgJScjEAACwi376.png",
+                            "svga_url": "",
+                            "__deleted": "0",
+                            "sort_key": "1",
+                            "onshelf_time": "1572315897",
+                            "env": "1",
+                            "gif_url": "https://giftesx.bigo.sg/live/7h2/M04/2D/35/8fobAF237GKIC8k3AAb7LFfHbHoAAmvgQGFo2MABvtE99.webp",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "sale": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": "https://giftesx.bigo.sg/live/7h4/M0A/5C/DD/bPsbAF23ozeIWKb8AAAsCmLrWxIAA6BYgJScjEAACwi376.png",
+                            "name": "Annual Honor",
+                            "act_url": "",
+                            "text_color": "",
+                            "medal_jump_url": "",
+                            "show_url": "https://giftesx.bigo.sg/live/7h3/M08/11/8B/MPsbAF237GuIEAXxAAgKXOytYqIAAnDtgJBjO4ACAp005.webp",
+                            "status": "0",
+                            "pk_type": ""
+                          }
+                        ],
+                        "process_notice_lang": "💪 អបអរសាទរ [001] ទៅ Lv។[002] កិច្ចការជិតមកដល់ហើយ  [Honor Effect*1Day] នឹងត្រូវបានផ្ញើនៅពេលអ្នកបំពេញភារកិច្ច။ \n⏰ ប្រសិនបើអ្នកបន្តទទួលបាន [004] ពិន្ទុ អ្នកនឹងអាចឈ្នះ [Diamond*1]\n💓សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": true,
+                        "target": 60
+                      },
+                      {
+                        "private_im_lang": "🎉 អបអរសាទរ រង្វាន់ [Diamond*1] ត្រូវបានផ្ញើរួចរាល់\n🚩 កិច្ចការកម្រិតថ្ងៃនេះត្រូវបានបញ្ចប់ដោយជោគជ័យ!​​ តោះបញ្ចប់​កិច្ចការ​នៅ​ថ្ងៃ​ស្អែក\n🌟សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "reward_type": 1,
+                            "reward_max_limit": "3000",
+                            "reward_name": "diamonds",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                            "name": "diamonds",
+                            "typeid": 3,
+                            "id": 1,
+                            "reward_count": "1"
+                          },
+                          {
+                            "desc_text": "",
+                            "base_map_url": "",
+                            "reward_type": "",
+                            "reward_max_limit": null,
+                            "offshelf_time": "1890613499",
+                            "vm_price": "0",
+                            "can_vip_share": "1",
+                            "mp4_url": "",
+                            "head_type": "0",
+                            "__version": "6780008207968048436",
+                            "param": "年度盛典高级进场奖励——总榜",
+                            "reward_name": null,
+                            "typeid": "7",
+                            "extra_type": "0",
+                            "banner_url": "",
+                            "id": "21529",
+                            "nickname_color": "",
+                            "label_name": "",
+                            "reward_count": null,
+                            "icon_url": "https://giftesx.bigo.sg/live/7h4/M0A/5C/DD/bPsbAF23ozeIWKb8AAAsCmLrWxIAA6BYgJScjEAACwi376.png",
+                            "svga_url": "",
+                            "__deleted": "0",
+                            "sort_key": "1",
+                            "onshelf_time": "1572315897",
+                            "env": "1",
+                            "gif_url": "https://giftesx.bigo.sg/live/7h2/M04/2D/35/8fobAF237GKIC8k3AAb7LFfHbHoAAmvgQGFo2MABvtE99.webp",
+                            "val_count": "0",
+                            "show_type": "0",
+                            "medal_type": "0",
+                            "sale": "0",
+                            "model_code": "",
+                            "val_typeid": "0",
+                            "permanent": "0",
+                            "vm_typeid": "0",
+                            "extra_value": "0",
+                            "reward_image": null,
+                            "name": "Annual Honor",
+                            "act_url": "",
+                            "text_color": "",
+                            "medal_jump_url": "",
+                            "show_url": "https://giftesx.bigo.sg/live/7h3/M08/11/8B/MPsbAF237GuIEAXxAAgKXOytYqIAAnDtgJBjO4ACAp005.webp",
+                            "status": "0",
+                            "pk_type": ""
+                          }
+                        ],
+                        "process_notice_lang": "💪 អបអរសាទរ [001] ទៅ Lv។[002] កិច្ចការជិតមកដល់ហើយ  [Diamond*1] នឹងត្រូវបានផ្ញើនៅពេលអ្នកបំពេញភារកិច្ច။ \n⏰កិច្ចការកម្រិតថ្ងៃនេះជិតបញ្ចប់ដោយជោគជ័យ!\n💓សម្រាប់ព័ត៌មានលម្អិត >>>https://activity.bigo.tv/live/act/banner-aggregation2/index.html?id=1592893413",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": true,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 1
+                      }
+                    ],
+                    "index": 1,
+                    "groups": [],
+                    "svip_levels": [],
+                    "raskType": 1,
+                    "selectedArea": [],
+                    "appoint_uid_source": 1,
+                    "anchor_whitelist_status": 0,
+                    "anchor_uid_info": null,
+                    "name": "💎 មើលការ Live ទទួលបានរង្វាន់💎",
+                    "countType": "",
+                    "level_config_2": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_3": [],
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": ""
+            },
+            {
+              "type": "sub_title",
+              "value": "💃 SVIP ឬ Pre-SVIP គឺមានឪកាសច្រើនជាង! តោះចូលទៅមើលថាមានអ្វីពិសេស!"
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "SVIP privileges >>>",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=388",
+              "layer_title": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "ចំណាំ៖ \nNote: "
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "រង្វាន់នឹងមិនត្រូវបានផ្ញើទេ ប្រសិនបើទីតាំងនោះមិនមែនជា KH ឬបំពានច្បាប់របស់ Bigo។\nRewards will not be sent if the location is not KH, or violate Bigo community rules."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 1,
+          "uid_arr": [
+            {
+              "uid": "1885990591",
+              "text": "KH"
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

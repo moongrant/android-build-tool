@@ -1,0 +1,147 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 77885,
+      "act_name": "Family Growth Prestige Booster Calendar - Christmas Edition",
+      "state": 1,
+      "color": 5,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-12-16 00:00:00",
+      "end_time": "2025-12-29 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "🍂Grow Your Family & Prestige Points🍂",
+        "appendixDesc": "👉Click Here for Rules and Dates👈",
+        "linkImg": "http://esx.bigo.sg/live/4he/01vDsXJdQsk4.jpg?auth-token=Ta_fBS9RHGjLlkGZROgAMDs3mVV3O3ygv4kF4fLI6hA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3ODg1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA3MjI3LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0"
+      },
+      "act_ver": 1,
+      "version_id": "3",
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTuyB00y33lYHC0lVcrR.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vYDEW00y33lYHC19w1WO.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vYDEm00y2TWPL00Vs5vk.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "US,CA",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "US",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "wjName": "Sign Up to Earn Extra Prestige Points Daily!",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "showId": "1",
+                    "id": 1,
+                    "title": "I want to sign up to earn as a Family Leader!",
+                    "sortIdx": 1
+                  },
+                  {
+                    "showId": "2",
+                    "id": 2,
+                    "title": "I want to sign up to earn as a Family Member!",
+                    "sortIdx": 2
+                  }
+                ],
+                "id": 1,
+                "type": 1,
+                "title": "Sign up to earn extra prestige points!",
+                "sortIdx": 1
+              }
+            ],
+            "description": "",
+            "startTime": "2025-12-16 00:00:00",
+            "id": 2070,
+            "endTime": "2025-12-23 07:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 2070
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

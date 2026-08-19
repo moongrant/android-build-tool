@@ -1,0 +1,419 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 08:25:36",
+    "now_zone": -3,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 71364,
+      "act_name": "حدث التفاعل",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-08-25 00:00:00",
+      "end_time": "2025-08-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "SA",
+        "IQ",
+        "MA",
+        "KW",
+        "EG",
+        "QA",
+        "DZ",
+        "AE",
+        "JO",
+        "LB",
+        "BH",
+        "OM",
+        "LY",
+        "PS",
+        "YE",
+        "TN",
+        "SY",
+        "SD",
+        "DJ",
+        "SO",
+        "BL"
+      ],
+      "selectedArea": [
+        "AR"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 1,
+      "black_uids_id": "1500656048",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4hd/01uqH35RxutKX.jpg?auth-token=fvmJIrSbmr8nkeMjyJzi19pbw7-8uPKaBKoCcgcHd_o:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMzY0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "هذا الحدث خاص فقط بالحسابات الغير حاصلة على الشارة"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "http://esx.bigo.sg/live/4he/21uqwxaLtj2D.png?auth-token=Qn1Cyx_H3ftcUCmpsAwGeIqwVt0pCd-bB0CQJAxPNY4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjcxMzY0LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "actLevelTask",
+        "formData": {
+          "scoreLang": [],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "Active but unpaid",
+              "list_id": "1500656107",
+              "create_time": "1756066949",
+              "utime": "2025-08-25 04:22:29",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "MENA Active but unpaid",
+              "update_operator": "",
+              "create_operator": "09621",
+              "frequency": "0",
+              "update_time": "1756066949",
+              "black_tasks_status": "0",
+              "filter_id": "18575",
+              "filter_countries": "[\"DZ\",\"SD\",\"IQ\",\"MA\",\"SA\",\"YE\",\"SY\",\"TN\",\"SO\",\"AE\",\"LY\",\"JO\",\"LB\",\"KW\",\"OM\",\"QA\",\"BH\",\"DJ\",\"EG\",\"PS\",\"IR\",\"IL\",\"KM\",\"MR\"]",
+              "union_conditions": "[{\"conditionName\":\"active_and_watch\",\"conditionList\":[{\"name\":\"active_day\",\"type\":\"compare_greater\",\"time\":\"14\",\"value\":\"7\"},{\"name\":\"watch_hour\",\"type\":\"compare_no_less\",\"time\":\"14\",\"value\":\"5\"}],\"combineType\":\"and\"}]",
+              "filter_blacklist": "0",
+              "ctime": "2025-08-25 04:22:29",
+              "filter_conditions_ext": "{\"pay\":{\"name\":\"pay\",\"type\":\"pay\",\"value\":{\"time\":\"-3\",\"number\":{\"type\":\"compare_no_greater\",\"value\":\"0\"}}},\"data_type\":{\"name\":\"data_type\",\"type\":\"enum\",\"value\":\"TOTAL\"}}",
+              "filter_conditions": "{\"pay\":{\"name\":\"pay\",\"type\":\"pay\",\"value\":{\"time\":\"-3\",\"number\":{\"type\":\"compare_no_greater\",\"value\":\"0\"}}},\"data_type\":{\"name\":\"data_type\",\"type\":\"enum\",\"value\":\"TOTAL\"}}",
+              "status": "0"
+            }
+          ],
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "充值金额",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 1,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang199",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 2,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "送出礼物",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "أنجز المهام للحصول على  الألماس",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "SA",
+            "IQ",
+            "MA",
+            "KW",
+            "EG",
+            "QA",
+            "DZ",
+            "AE",
+            "JO",
+            "LB",
+            "BH",
+            "OM",
+            "LY",
+            "PS",
+            "YE",
+            "TN",
+            "SY",
+            "SD",
+            "DJ",
+            "SO",
+            "BL"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": "1500656107",
+          "level_config": [
+            {
+              "private_im_lang": "مبااااارك، لقد أنجزت المهمة الأولى، تفقد جوائزك",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "base_map_url": "",
+                  "reward_max_limit": "1",
+                  "op_time": "0",
+                  "offshelf_time": "1830268800",
+                  "vm_price": "0",
+                  "op_user": "",
+                  "isOnlyNeedNum": 0,
+                  "mp4_url": "",
+                  "__version": "6780008207968048436",
+                  "reward_name": "Family Honor",
+                  "typeid": "6",
+                  "extra_type": "0",
+                  "id": "20297",
+                  "nickname_color": "",
+                  "reward_count": null,
+                  "icon_url": "http://giftesx.bigo.sg/live/g1/M00/09/71/nXfpBFp_rNiICt13AABuqCMv62IAAOvKgMR2b8AAG7A323.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "avatar_width": "0",
+                  "sort_key": "5",
+                  "new_banner_url": "",
+                  "val_count": "0",
+                  "show_type": "0",
+                  "medal_type": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "val_count_decimal": "0",
+                  "name": "Family Honor",
+                  "is_lock": "0",
+                  "text_color": "",
+                  "status": "0",
+                  "pk_type": "",
+                  "desc_text": "",
+                  "reward_type": "20297",
+                  "vm_price_decimal": "0",
+                  "game_type": "0",
+                  "can_vip_share": "1",
+                  "head_type": "0",
+                  "reward_expire_time": "1",
+                  "param": "",
+                  "banner_url": "",
+                  "label_name": "",
+                  "need_combine": "0",
+                  "__deleted": "0",
+                  "onshelf_time": "1505788316",
+                  "env": "1",
+                  "gif_url": "",
+                  "sale": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "http://giftesx.bigo.sg/live/g1/M00/09/71/nXfpBFp_rNiICt13AABuqCMv62IAAOvKgMR2b8AAG7A323.png",
+                  "act_url": "",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "http://giftesx.bigo.sg/live/g2/M08/05/16/LXz8GFnAgcOIAJgaAAU-Fo7FUO0AAK6PgONYhIABT4u917.png"
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 1
+            },
+            {
+              "private_im_lang": "مبااااارك، لقد أنجزت المهمة الأولى، تفقد جوائزك",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "1",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "1"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 2,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 2
+            },
+            {
+              "private_im_lang": "مبااااارك، لقد أنجزت المهمة الأولى، تفقد جوائزك",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "1",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": -1,
+                  "reward_count": "5"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 3,
+              "process_notice": true,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": false,
+              "target": 100
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 1,
+          "raskType": 1,
+          "selectedArea": [
+            "AR"
+          ],
+          "appoint_uid_source": 1,
+          "name": "انطلق نحو القمة",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

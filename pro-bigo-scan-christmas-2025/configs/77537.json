@@ -1,0 +1,188 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 00:25:36",
+    "now_zone": 5,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77537,
+      "act_name": "¡Recibe 2000 Semillas al Mes y Gana Más! Diciembre",
+      "state": 1,
+      "color": 1,
+      "theme": "pink",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-15 00:00:00",
+      "end_time": "2025-12-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "JM",
+        "TT",
+        "KY",
+        "BS",
+        "BB",
+        "CO",
+        "MX",
+        "AR",
+        "UY",
+        "PE",
+        "CL",
+        "PY",
+        "EC",
+        "CR",
+        "BO",
+        "CU",
+        "DO",
+        "GT",
+        "HN",
+        "NI",
+        "PA",
+        "PR",
+        "SV",
+        "VE"
+      ],
+      "selectedArea": [
+        "ES"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vR2qo00y2TWPL000Fafu.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "📑 Solo los EMISORES INVITADOS que se hayan INSCRITO al evento por medio del botón podrán participar y cobrar premios."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "questionnaire",
+        "formData": {
+          "fromTabCopy": false,
+          "questionnaireData": {
+            "conditionList": [
+              {
+                "conditionStr": "ZA,VN,VE,UY,US,UA,UZ,TJ,TW,TM,TR,TK,TH,TG,TD,TC,TL,SZ,SY,SV,ST,SS,SR,SO,SN,SM,SL,SK,SI,SG,SE,SD,SC,SB,SA,RW,RU,RS,RO,RE,QA,PY,PW,PT,PS,PR,PL,PK,PH,PG,PF,PE,PA,OM,NZ,NU,NR,NP,NO,NL,NI,NG,NE,NC,NA,MZ,MY,MX,MW,MV,MU,MT,MS,MR,MQ,MO,MN,MM,ML,MK,MH,MG,ME,MD,MC,MA,LY,LV,LU,LT,LS,LR,LK,LI,LC,LB,LA,KZ,KY,KW,KR,KN,KM,KI,KH,KG,KE,JP,JO,JM,JE,IT,IS,IR,IQ,IN,IM,IL,IE,ID,HU,HT,HR,HN,HK,GY,GW,GU,GT,GR,GQ,GP,GN,GM,GL,GI,GH,GE,GD,GB,GA,FR,FO,FM,FJ,FI,FA,ET,ES,ER,EG,EE,EC,DZ,DU,DO,DM,DK,DJ,DE,CZ,CY,CX,CW,CV,CU,CR,CO,CN,CM,CL,CK,CI,CH,CG,CF,CD,CC,CA,BZ,BY,BW,BT,BS,BR,BO,BN,BM,BJ,BI,BH,BG,BF,BE,BD,BB,BA,AZ,AX,AW,AU,AT,AS,AR,AO,AN,AM,AL,AI,AG,AF,AE,AD,TN,YE,TZ,UG,ZW,ZR,ZM,SH,YT,TO,WS,MP,VU,TV,NF,WF,PN,BL,TT,BIGO",
+                "id": null,
+                "type": 1
+              },
+              {
+                "conditionStr": "AR,PT,ES,ES_PT,RU,CN,AU,US,MY,TH,FZ,NLSE,DE,FR,GB,OTHER",
+                "id": null,
+                "type": 2
+              }
+            ],
+            "actIndex": "",
+            "wjName": "A participar👇",
+            "topics": [
+              {
+                "isRequired": 1,
+                "addExtra": 0,
+                "options": [
+                  {
+                    "id": null,
+                    "title": "Si",
+                    "sortIdx": 1
+                  }
+                ],
+                "id": null,
+                "type": 1,
+                "title": "¡Quiero participar!",
+                "sortIdx": 1
+              }
+            ],
+            "description": "",
+            "startTime": "2025-12-15 13:00:00",
+            "id": null,
+            "endTime": "2026-01-01 13:00:00",
+            "multipleTimes": 1
+          },
+          "questionnaireId": 2040
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Reviso mis semillas recibidas de este mes",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/live-data/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

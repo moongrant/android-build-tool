@@ -1,0 +1,3251 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251216",
+      "20251217",
+      "20251218",
+      "20251219",
+      "20251220",
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231"
+    ],
+    "week": [
+      "20251215",
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 00:25:36",
+    "now_zone": 5,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77974,
+      "act_name": "SVIP Up Fiesta",
+      "state": 1,
+      "color": 1,
+      "theme": "green-red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-16 00:00:00",
+      "end_time": "2025-12-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "JM",
+        "TT",
+        "KY",
+        "BS",
+        "BB",
+        "CO",
+        "MX",
+        "AR",
+        "UY",
+        "PE",
+        "CL",
+        "PY",
+        "EC",
+        "CR",
+        "BO",
+        "CU",
+        "DO",
+        "GT",
+        "HN",
+        "NI",
+        "PA",
+        "PR",
+        "SV",
+        "VE"
+      ],
+      "selectedArea": [
+        "ES"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 1,
+      "black_uids_id": "1500658368",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "SVIP Up Fiesta",
+        "appendixDesc": "¡SVIP Up! ¡Tu Caja de Año Nuevo BIGO te está esperando!",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vVIuX00y33lYHC0rJOy1.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "9"
+    },
+    "act_modular": [
+      {
+        "type": "banner",
+        "formData": {
+          "play": 1,
+          "img_arr": [
+            {
+              "uid": 1765949480598,
+              "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vVk6c00y33lYHC0x3Zcf.png",
+              "status": "success"
+            },
+            {
+              "uid": 1765949480599,
+              "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vVk7200y33lYHC07w0PR.jpg",
+              "status": "success"
+            },
+            {
+              "uid": 1765949480600,
+              "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vVk8600y33lYHC0y2NQt.jpg",
+              "status": "success"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Reglas"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Periodo: de la 00:00:00 del día 16 a las 23:59:59 del día 31 de noviembre (GMT-5,ZONA HORARIA DE COLOMBIA).\n\n2. Recargue para subir su nivel de SVIP este mes para obtener recompensas exclusivas.\n\n3. Se evaluará su nivel de SVIP de 15 de diciembre y su nivel de SVIP al final de evento. Por ejemplo,  Si eras SVIP1 el día 15 y te convertiste en SVIP2 al final del evento, significa que lograste subir 1 nivel.\n\n4. SOLO los SVIP que tengan contacto con oficial puedan recibir premios. En el final de la página hay contacto de oficial. En el caso de que hay varios eventos o oferta de la misma fecha , se van a entregar premios del evento que vaya a terminar primero, no se repiten los premios.\n\n5. En el caso de que varios IDs pertenezcan al mismo equipo, se otorgará el premio a uno solo de esos UIDs.\n\n6.🪂Bigo Live Latam reserva el derecho de interpretación final."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "¡Compare su nivel de SVIP actual con el del 15 de diciembre aquí!",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "f7i9y",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Mi nivel actual de SVIP",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "YbfTB",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Mi nivel de SVIP el 15 de diciembre 🥰 ↓ ↓ ↓"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "--0=PRE SVIP\n--El punto representa su nivel de SVIP, por ejemplo, 2= SVIP2\n--Si no está en la lista, significa que aún no es SVIP. \n--Pero todavía puede participar en este evento convirtiéndote en SVIP y tiene más espacio para subir su nivel de SVIP."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "vXuV2",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 1,
+                    "sendGift_limituid": 0,
+                    "mode": 0,
+                    "giftUid_id": null,
+                    "downloadNum": 9999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Introduzca BIGO ID para consultar su nivel                ",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "left",
+                    "name": "",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [
+                      {
+                        "uid": 865098850,
+                        "score": "9"
+                      },
+                      {
+                        "uid": 1761041628,
+                        "score": "6"
+                      },
+                      {
+                        "uid": 705066046,
+                        "score": "4"
+                      },
+                      {
+                        "uid": 1861221215,
+                        "score": "4"
+                      },
+                      {
+                        "uid": 774801917,
+                        "score": "4"
+                      },
+                      {
+                        "uid": 812618115,
+                        "score": "4"
+                      },
+                      {
+                        "uid": 543066297,
+                        "score": "4"
+                      },
+                      {
+                        "uid": 866558214,
+                        "score": "4"
+                      },
+                      {
+                        "uid": 566233231,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 816007150,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 707703085,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 693562066,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 866877501,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 868477733,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 453342291,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 440933228,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 869959594,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 778121223,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 848222615,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 625363667,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 782925411,
+                        "score": "3"
+                      },
+                      {
+                        "uid": 570755965,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 717425669,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 692191904,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 623021682,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 551294905,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 496586619,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 862524851,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 414367671,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1609545420,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 592906022,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 780767425,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1831020410,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 655577782,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1805171462,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1772593649,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 780662476,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 720254784,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 534565833,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 778958840,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 630414406,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 676829310,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 648656435,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 862677111,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1847009340,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 546237402,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 502136645,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1690570499,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 773699483,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 790671766,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 458798432,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 671831757,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 765787000,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 821548880,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 869618596,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 591479906,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 855025674,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1839261674,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 477193101,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 749978392,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 834225927,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 855814424,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 802164163,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 657010361,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 514061217,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 736913562,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 776260046,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 682076533,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 770118988,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 408337844,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 554411411,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 1884221259,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 859521992,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 846445598,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 756639962,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 858706706,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 648464537,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 848429229,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 863442834,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 836917154,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 544441771,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 829231862,
+                        "score": "2"
+                      },
+                      {
+                        "uid": 864681603,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 765375977,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 868363091,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 612046184,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 597261176,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 833164272,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1773427181,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 868707076,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 824863064,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 781739578,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 798627892,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 829712442,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 683700437,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 826787439,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1876685928,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 599999679,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 760276320,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1609543581,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 835789646,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 844801852,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 597635195,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 659637763,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1625490366,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 545884252,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 837108707,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 508767040,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 707882615,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 867677526,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 501209519,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 518792218,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 675286905,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 780738985,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1886106097,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 592084923,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 851518444,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 675720175,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 559416814,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1885382086,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 707397425,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 687890162,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 790668949,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1623569374,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 644767822,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 818990000,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 841247874,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 806994308,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 850514472,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 444044491,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 557038609,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 454998985,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 812729107,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 842868819,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 850666440,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 860954704,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 416095969,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 593391589,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 713301294,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 671084060,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 841584990,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 823544368,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 645234710,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1514529482,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 475263041,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 526913642,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1577219871,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1877956685,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1862706613,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 716056700,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 746893994,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 685443205,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 649379424,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 764110500,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 698109524,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 444873255,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 854511317,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 660113920,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 790623238,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 751139009,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 785453414,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 821907069,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 624201989,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 739124267,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 851459665,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 535914400,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1815892978,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 633962035,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 466776315,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 487577912,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 866357249,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 631725072,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 816005525,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 649961455,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 850531834,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 482806856,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 809782295,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 631806557,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 755427379,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 823219184,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 817089383,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 450152501,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 849884773,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 694717237,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 852387856,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 855867732,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1826467239,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 671645007,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 479215025,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 519205148,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 631358237,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 408215306,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1595119308,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 667034451,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1814511470,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 848423290,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 865157610,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 860629201,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 853958664,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 864474125,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1597090483,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 855875077,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 721480221,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 568622978,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 466747665,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 440546294,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 863737960,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 785792058,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 578567263,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 632117892,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 468035442,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 855433750,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 533439727,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1665924787,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 830083491,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 745423403,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 704324765,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 764114881,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 515069089,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 1819913597,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 474132694,
+                        "score": "1"
+                      },
+                      {
+                        "uid": 759540362,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 829831469,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 796624507,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1797067871,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 858111936,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 869195733,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 408997249,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1628863513,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 498259783,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 550513848,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 652725644,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 790190194,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 729071437,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1607923529,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 861482233,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 811825835,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 852077993,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 480407390,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 770783910,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 754636637,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 794518044,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 468458028,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 406978947,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1871985867,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 508165544,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 765199008,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 800669664,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 835878982,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 461848601,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1805179951,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 664112802,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 842651027,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 510342107,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 468173817,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 480762296,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 677373988,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 792875985,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 691267673,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 619294477,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 754442616,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1556082113,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 850532685,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 488114349,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1846735272,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 840352192,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1860953438,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 862943422,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 810325330,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 672641059,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 666761259,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 747753325,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 462169689,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 855485018,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 841972679,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 685841952,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 638463951,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 531841134,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 675215388,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 436911349,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1608288305,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1635027727,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1827471385,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1784526741,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 802680539,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 719061132,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 861709130,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 781218857,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1846291006,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 636918666,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 789099993,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 686825598,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 836210892,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1888419836,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 816828259,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 858429643,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 775862983,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 417041144,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 853625055,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 712237003,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 527467160,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 807419568,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 547226465,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 868801182,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 688219592,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 846481773,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 617091848,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 782985236,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 744970354,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 864049122,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 857850466,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 591478780,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 531978299,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 747052070,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1641278090,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 843167337,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 595434223,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 673478256,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1601622276,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 707218804,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 761955588,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 806559725,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 481173072,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 724893268,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 805287769,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 765866974,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1859865490,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 848851049,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 860253613,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 774473545,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1751838896,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 740026818,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 601110264,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 702715522,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 751953728,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 485150463,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 486565820,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 696828475,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 730369431,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1659177227,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 681260237,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 432043076,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1791880473,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 640613049,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 651442601,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 841139165,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 493284695,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 828155857,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 416735232,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 684509009,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1819229997,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 518106578,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 788291023,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 662336933,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 779252988,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 860633841,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 669873019,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1890515155,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 666505788,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 784030529,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 631805347,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 818247865,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 459371618,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 809787694,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 855379574,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 714433523,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 842327788,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 859159476,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 713944083,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 795877054,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 834199833,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 658513927,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 684531535,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 763171168,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 859965521,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 750419073,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 868038501,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1695773257,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 412370532,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 518758874,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 868069261,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 645426969,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 787903274,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1763795017,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 824614880,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 867661730,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1595117932,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 417728834,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 794793152,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 827072053,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 847926295,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 411243434,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 865260606,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 556572130,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 794573568,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1871281535,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 779451587,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 810681566,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 523710810,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1871670114,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 760521273,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 701339130,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 782418338,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 694875954,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 837286486,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 547793302,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 610254779,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 763825965,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 766135763,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 401442109,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 840189125,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 751896482,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 704093522,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 845003440,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 736926007,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 434198564,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 739843394,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 575066234,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 707518845,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 854477223,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1740279102,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 786093518,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1883663832,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 729844454,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 860754401,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 666440759,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 691913866,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 858859258,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 693782097,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 624372293,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 855718208,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 426120902,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 781823067,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1560218363,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 726434934,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 598464351,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 853360525,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 698830863,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 775453340,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 865179413,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 851422820,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 747186670,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 514394680,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1625410802,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 860632416,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 841977711,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 485262655,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 621228770,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 603599242,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 859646582,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 828185648,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 836229123,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 784470248,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1814515854,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1735314148,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 676523796,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 834171685,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 823407983,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1860950407,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 787345130,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 760483894,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 527800951,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 865990136,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1840009033,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 733608906,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 829723636,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 829834260,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 856088452,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 856093784,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 618587836,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 657252803,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 758787864,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 765720510,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 815618580,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 583135665,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 850822380,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 684595004,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 818687442,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 557520747,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 685528053,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 841209000,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 414361795,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 593377485,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 848561138,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 778213576,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 752424212,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 852692559,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 627176703,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 426636251,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 430272693,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 514439685,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 834824942,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 546129030,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 836399994,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 809254018,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 761872261,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 689905481,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1731514284,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 834283888,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 807560652,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 758414713,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1749740443,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 780113902,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 830689157,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 851597510,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 643515885,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 596220834,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 569985760,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 603975502,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 834222714,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 569607007,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 562686159,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 662555127,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 513183451,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 861528323,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 671942629,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1863820703,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 416732758,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 616778241,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1838061476,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 862678129,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 675936197,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 670346339,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 852388287,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 542319222,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 556992012,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 843282466,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 668840354,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 588124895,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 862458739,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1677686643,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 580295716,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 639986644,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 722564915,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 724383030,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1683497033,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 712442564,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 835544281,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 653763826,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 783698643,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1891691444,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 753135706,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1840752548,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 454591599,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 575763042,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1800682194,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 460021251,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 695274996,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 845409702,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 632551641,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1819147326,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 863089685,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 732962601,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 554155908,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 836390725,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1800583061,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 513248516,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 850201510,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 768738653,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 856099575,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 607072696,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 526672880,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 575868046,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 723662407,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 864135950,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 686904597,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 857965712,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 846624768,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 830805974,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 521600554,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 697736471,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 647797492,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 742711240,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 731725673,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 870083018,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 529312513,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 754170591,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 869551309,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 697871249,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1877007618,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 481864658,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 737569533,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 790044745,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 744577487,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 611725852,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 722536229,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 869951834,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 848202709,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 618638095,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 859963958,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 867962813,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 557030708,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 584542676,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 607544846,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 843214644,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 717660979,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 860750047,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 448854701,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 859694872,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 548874183,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 868110161,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 455920469,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 492598397,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 500532077,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 797690977,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1684725446,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 854903110,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 719069933,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 781107492,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 756545909,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 767377581,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1871034239,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 519581337,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 607540858,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1873059493,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 449349400,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 404074887,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 742645998,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 826788186,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 543902795,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 847623268,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 528333536,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 704227622,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 599874931,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1862642608,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 637492601,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 564083208,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 798935450,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 790184889,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 813525004,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 621494122,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1854210408,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 767628010,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 851837559,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 796102734,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 556996939,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 788809005,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 1809507216,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 504792222,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 565702813,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 793586593,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 868981327,
+                        "score": "0"
+                      },
+                      {
+                        "uid": 647531710,
+                        "score": "0"
+                      }
+                    ],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Consulte su recarga 16-31 de diciembre",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "OMglt",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Quiero recargar",
+                        "fn": 1,
+                        "style": 1,
+                        "share_img": "",
+                        "url": "bigolive://diamonds",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "W441o",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 5,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 9999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 4,
+                    "selectedArea": [
+                      "ES"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "start_time": "2025/12/16 00:00:00",
+                    "frontTextAlignStyle": "left",
+                    "name": "",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "JM",
+                      "TT",
+                      "KY",
+                      "BS",
+                      "BB",
+                      "CO",
+                      "MX",
+                      "AR",
+                      "UY",
+                      "PE",
+                      "CL",
+                      "PY",
+                      "EC",
+                      "CR",
+                      "BO",
+                      "CU",
+                      "DO",
+                      "GT",
+                      "HN",
+                      "NI",
+                      "PA",
+                      "PR",
+                      "SV",
+                      "VE"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 1,
+                    "prizeType": 1,
+                    "end_time": "2025/12/31 23:59:59",
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "¿Cómo y Por qué hacerme SVIP?",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "YoGIl",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "text",
+                        "value": "--¡Con recarga de 12000 💎 en los últimos 30 días，puedes hacerte SVIP!\n\n--Subida de nivel de SVIP: Durante el periodo de validez de SVIP, si la recarga realizada en los últimos 30 días cumple los requisitos para el siguiente nivel, el usuario se convierte en SVIP del siguiente nivel."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "u4ZW9",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "¡PRIVILEGIO SVIP!",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Id3wE",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vSnxH00y2TWPL0030Bjg.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "JgnML",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vSOkK00y2TWPL01rHOUe.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "832y2",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "Quiero hacerme SVIP",
+                                  "fn": 1,
+                                  "style": 1,
+                                  "share_img": "",
+                                  "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+                                  "openType": 1,
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "¡MÁS SORPRESAS!",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Yl0Jj",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vVOHA00y2TWPL00XBDzG.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "3Vvjd",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "CONTACTAR CON OFICIAL",
+                                  "fn": 1,
+                                  "style": 1,
+                                  "share_img": "",
+                                  "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77771",
+                                  "openType": 1,
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

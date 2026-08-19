@@ -1,0 +1,841 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250611",
+      "20250612",
+      "20250613",
+      "20250614",
+      "20250615",
+      "20250616",
+      "20250617",
+      "20250618",
+      "20250619",
+      "20250620",
+      "20250621",
+      "20250622",
+      "20250623",
+      "20250624",
+      "20250625",
+      "20250626",
+      "20250627",
+      "20250628",
+      "20250629",
+      "20250630",
+      "20250701",
+      "20250702"
+    ],
+    "week": [
+      "20250609",
+      "20250616",
+      "20250623",
+      "20250630"
+    ],
+    "month": [
+      "202506",
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 02:27:12",
+    "now_zone": 3,
+    "leave_time": 0,
+    "act_info": {
+      "id": 67286,
+      "act_name": "Ao Vivo, Ao Dourado 202506",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-11 00:00:00",
+      "end_time": "2025-07-02 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "BR",
+        "AO"
+      ],
+      "selectedArea": [
+        "PT"
+      ],
+      "frontCustomBgColor": "#f8d8ff",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "9",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uOn9Ma038c48e340e4e0e8eb8485d19d87092ph.png?auth-token=3TonyPU491O9plI4tjCH4lAk3NhD2ej0NEZXQO0dzH8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mjg2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzNzEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Recompensas"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Ranking diário de live: pode ganhar 80 beans com live e PK todos os dias."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2. Tarefa diária de beans: pode ganhar 100 beans extra com 150 beans recebidos na live toods os dias."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "key_text",
+              "value": "Caso complete as duas tarefas em cima, ganhará 180 beans todos os dias."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Regras"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "sub_title",
+              "value": "Período: 11/6 00:00:00~2/7/2025 23:59:59"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Para apenas os hosts oficiais no Brasil com menos de 2k beans recebidos em maio"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2. O ranking e tarefa são diários. Participe todos os dias. Os prêmios serão enviados automaticamente para sua conta dentro de 5 dias úteis."
+            },
+            {
+              "frontTextStyle": "underline",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "3. Clique abaixo para se inscrever. Apenas os inscritos podem entrar no evento. Basta se inscrever uma vez"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Inscrição concluída",
+                  "name": "Ao vivo, Ao dourado",
+                  "range": [
+                    2,
+                    3
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Inscrever-se",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Iniciar live>>>",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://livebroadcast?roomtype=1",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "LIVE",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Y4VMz",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 1,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 999,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          10000
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang794",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 43,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "PK场次",
+                        "gameTag": []
+                      }
+                    ],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "time",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Live 5 min=1 Ponto. 1 PK=1 Ponto. A live e PK precisam terminar no dia para receber prêmios.",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "index": 2,
+                    "selectedArea": [
+                      "PT"
+                    ],
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "left",
+                    "name": "Ranking Diário",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "rankFrom": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655018",
+                      "create_time": "1749454046",
+                      "utime": "2025-06-09 15:27:26",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "巴西低收入主播<2k202505",
+                      "update_operator": "",
+                      "create_operator": "08534",
+                      "frequency": "0",
+                      "update_time": "1749454046",
+                      "black_tasks_status": "0",
+                      "filter_id": "17438",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-06-09 15:27:26",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "rankTo": 500,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "BR",
+                      "AO"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500655018",
+                    "bottominfo": 1,
+                    "prizeType": 2,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 80,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://esx.bigo.sg/live/4he/01tTSpEA7s4y.png?auth-token=SeyfZTqGLR4SOv2ILVzd2lA7bGI_qMPVpZMjX1sHLAM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mjg2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyMTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 37821,
+                            "num": 1,
+                            "days": 1,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 4
+                      }
+                    ],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": 5,
+                    "prize_arr_v3": [
+                      {
+                        "rank_to": "",
+                        "rank_from": "",
+                        "prizes": [
+                          {
+                            "disabledDay": true,
+                            "is_virtual": 0,
+                            "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                            "disabledID": true,
+                            "items_id": 4,
+                            "num": 80,
+                            "days": 0,
+                            "disabledNum": false,
+                            "isDayType": false,
+                            "type": 4
+                          },
+                          {
+                            "disabledDay": false,
+                            "is_virtual": 1,
+                            "img": "https://esx.bigo.sg/live/4he/01tTSpEA7s4y.png?auth-token=SeyfZTqGLR4SOv2ILVzd2lA7bGI_qMPVpZMjX1sHLAM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mjg2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYyMTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                            "disabledID": false,
+                            "items_id": 37821,
+                            "num": 1,
+                            "days": 1,
+                            "disabledNum": true,
+                            "isDayType": true,
+                            "type": 5
+                          }
+                        ],
+                        "prizesImconf": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "prizesImconfUser": {
+                          "beanImData": [],
+                          "gift_room_im": "0",
+                          "diamondImData": [],
+                          "giftImData": [],
+                          "diamond_room_im": "0",
+                          "row_index": 0,
+                          "bean_room_im": "0"
+                        },
+                        "rankGride": 4
+                      }
+                    ],
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "BEANS",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ZTZfL",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uRiix16c461b9362144eb97763192e2736abbph.png?auth-token=MTaHyHOC99n6Si57XSjpCm51ReCn36bLB9DLG-_8Ft0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3Mjg2LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxNjQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "IeUq8",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": true,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500655018",
+                      "create_time": "1749454046",
+                      "utime": "2025-06-09 15:27:26",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "巴西低收入主播<2k202505",
+                      "update_operator": "",
+                      "create_operator": "08534",
+                      "frequency": "0",
+                      "update_time": "1749454046",
+                      "black_tasks_status": "0",
+                      "filter_id": "17438",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-06-09 15:27:26",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "1 bean recebido=1 ponto.",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "BR",
+                      "AO"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "need_attend": 1,
+                    "whiteUid_id": "1500655018",
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "300",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "5"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 5
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "250",
+                            "reward_name": "beans",
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "id": 4,
+                            "reward_count": "5"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 5
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "200",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "20"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 20
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "150",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "30"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 30
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "100",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "20"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 5,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 40
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "50",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "40"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 6,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 100
+                      }
+                    ],
+                    "groups": [],
+                    "index": 3,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "PT"
+                    ],
+                    "name": "Tarefa Diária",
+                    "countType": 5,
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Todos os direitos de interpretação pertencem ao BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

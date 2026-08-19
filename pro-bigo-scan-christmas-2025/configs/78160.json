@@ -1,0 +1,458 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251220",
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230"
+    ],
+    "week": [
+      "20251215",
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 05:26:24",
+    "now_zone": 0,
+    "leave_time": 0,
+    "act_info": {
+      "id": 78160,
+      "act_name": "Rising Family Adventure (20-30 December)",
+      "state": 0,
+      "color": 1,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-12-20 00:00:00",
+      "end_time": "2025-12-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "IE",
+        "GB"
+      ],
+      "selectedArea": [
+        "GB"
+      ],
+      "act_ver": 1,
+      "version_id": "1",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "is_go_onelink": 0,
+      "theme": "red",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "group_arr": [],
+          "img": "https://esx.bigo.sg/live/4hb/1KGDh5.jpg?auth-token=2J8JScOCKQ7la3ib5Hjk1s6EZSSqUosfomUNJwClbP8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MTYwLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1MTU5LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "groupIds": "",
+          "groups": [],
+          "groupSoure": 0,
+          "level_config_4": [],
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Time: 20 December 00:00:00 30 December 23:59:59"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Ranking Countdown!"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Rising Your Fam for Advancement",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "6INYK",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Event Rules",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "rcpeB",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vLlVm00y2TWPL00qEfm7.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Event Reward",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "pGoDu",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vLlN200y2TWPL01MVnRB.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Check Your Rising Rank",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "LaZJ3",
+                  "formData": {
+                    "group_arr": [],
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "groupSoure": 1,
+                    "mode": 1,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "rankinfo": 2,
+                    "groupIds": "231842\n231739\n231737\n231675\n231537\n231476\n231466\n231462\n231443\n231439\n231394\n231373\n231350\n231243\n231228\n231209\n231177\n231148\n231138\n231124\n231119\n231057\n231040\n231023\n230994\n230975\n230970\n230948\n230923\n230897\n230871\n230847\n230780\n230722\n230659\n230615\n230483\n230337\n230322\n230284\n230275\n230222\n230168\n230124\n230121\n230119\n230065\n230063\n230050\n230030\n229995\n229986\n229985\n229972\n229875\n229867\n229860\n229721",
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 600,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 600,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang804",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 54,
+                        "gift_id_type": 1,
+                        "score": 3,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "家族内被成功邀请加入家族的人数",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "family_svip_levels": [],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "Become TOP30 Families to win Massive BEANS rewards!",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "svip_levels": [],
+                    "index": 6,
+                    "selectedArea": [
+                      "GB"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "frontTextAlignStyle": "center",
+                    "name": "Oct Rising Family Ranks",
+                    "linkurl": "",
+                    "scoreLang": [],
+                    "needGroupsChangeReason": false,
+                    "onlyCharge": false,
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "appType": 1,
+                    "family_svip_ruleIds": [],
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "GB",
+                      "IE"
+                    ],
+                    "family_svip_check": false,
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "bottominfo": 0,
+                    "groups": [],
+                    "groupFamilytype": 2,
+                    "appoint_uid_source": 1,
+                    "family_svip_area": [],
+                    "rankStyle": "1",
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "selectedDays": [],
+                    "countType": ""
+                  },
+                  "type": "grouprankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "All New Families can create their own Bigo Official WhatsApp group, please contact BIGO ID: 30000."
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": ""
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 1,
+          "uid_arr": [
+            {
+              "uid": "30000",
+              "text": "UK Official Admin"
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "group_arr": [],
+          "groupIds": "",
+          "groups": [],
+          "text": "All Rights Reserved by BIGO LIVE",
+          "groupSoure": 0,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

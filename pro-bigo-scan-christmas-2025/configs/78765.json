@@ -1,0 +1,1011 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78765,
+      "act_name": "Welcome Aboard, New BIGOer! -Jan",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-05 00:00:00",
+      "end_time": "2026-02-04 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "PH"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "10"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vcaiB00y2TWPL029UiKu.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Welcome Step 1: Unlock Your First Reward!",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "TmlFQ",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 480,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 1,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 480,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "lottery_title": "Spin Ur Lucky Here!",
+                    "svip_area": "",
+                    "lottery_rule": "Watch live 8 mins=1 spin(daily capping 10 spins)\nGo live 8 mins= 1 spin(daily capping 10 spins)",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500658646",
+                        "create_time": "1767068434",
+                        "utime": "2025-12-30 12:20:34",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "phnewusersconversionJan",
+                        "update_operator": "",
+                        "create_operator": "13759",
+                        "frequency": "0",
+                        "update_time": "1767068434",
+                        "black_tasks_status": "0",
+                        "filter_id": "21233",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-12-30 12:20:34",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 539.1609000000001,
+                      "consumeCost": "1.55",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaQZO00y33lYHC0UXWOV.jpg",
+                        "theme": "Welcome Aboard, New BIGOer!",
+                        "content": "Congrats! U won spins by completing step1 requirement in Welcome Aboard, New BIGOer!  Come and use your lucky spins!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/2PruVL.png?auth-token=18YslkZ5rTQb6Z6E8yZCi-EcYNRyzede_aBsn0zvnQM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4NzY1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0NDcyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 48.88,
+                          "is_pay_prize": 0,
+                          "prize_name": "Firecrackers",
+                          "consume_num": 163,
+                          "residue_num": 9836,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "23362",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "9999",
+                          "valid_days": "3",
+                          "used_num": 163,
+                          "win_rate": "48.88",
+                          "textLeft": "-35px",
+                          "prize_type": "1"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0048",
+                          "activity_all_cost": "356.3376",
+                          "win_real_rate": 50,
+                          "is_pay_prize": 0,
+                          "prize_name": "1 bean",
+                          "consume_num": 170,
+                          "residue_num": 74067,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "4",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "74237",
+                          "valid_days": "0",
+                          "used_num": 170,
+                          "win_rate": "50",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "777",
+                          "rotate": "36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "3.7000",
+                          "activity_all_cost": "74.0000",
+                          "win_real_rate": 0.1,
+                          "is_pay_prize": 0,
+                          "prize_name": "777 beans",
+                          "consume_num": 0,
+                          "residue_num": 20,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "20",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "0.1",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "7777",
+                          "rotate": "-36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "37.0333",
+                          "activity_all_cost": "37.0333",
+                          "win_real_rate": 0.02,
+                          "is_pay_prize": 0,
+                          "prize_name": "7777 beans",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "0.02",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "77",
+                          "rotate": "-108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.3667",
+                          "activity_all_cost": "73.3400",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "77 beans",
+                          "consume_num": 2,
+                          "residue_num": 198,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "4",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "200",
+                          "valid_days": "0",
+                          "used_num": 2,
+                          "win_rate": "1",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "14"
+                        }
+                      ],
+                      "totalCost": "540.7109"
+                    },
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "PH"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 2,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500658646",
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Note",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "pU5fA",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vcf3e00y33lYHC1a4CBj.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Welcome Step 2: Daily Spin Everyday",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "D55Nb",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          3,
+                          5
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 45,
+                        "threeSource": [
+                          0
+                        ],
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "lottery_title": "Second Reward Here！",
+                    "svip_area": "",
+                    "lottery_rule": "Recharge 45 diamonds= 1 spin (no capping)",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500658646",
+                        "create_time": "1767068434",
+                        "utime": "2025-12-30 12:20:34",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "phnewusersconversionJan",
+                        "update_operator": "",
+                        "create_operator": "13759",
+                        "frequency": "0",
+                        "update_time": "1767068434",
+                        "black_tasks_status": "0",
+                        "filter_id": "21233",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-12-30 12:20:34",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 796.5129,
+                      "consumeCost": "0.44",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaQfi00y33lYHC1PH3v3.jpg",
+                        "theme": "Welcome Aboard, New BIGOer!",
+                        "content": "Congrats! U won spins by completing step2 requirement in Welcome Aboard, New BIGOer! Come and use your lucky spins!"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": "7",
+                          "rotate": "180deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 1,
+                          "prize_cost": "0.0333",
+                          "activity_all_cost": "452.6469",
+                          "win_real_rate": 91.39,
+                          "is_pay_prize": 0,
+                          "prize_name": "7 beans",
+                          "consume_num": 2,
+                          "residue_num": 13591,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "4",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "13593",
+                          "valid_days": "0",
+                          "used_num": 2,
+                          "win_rate": "91.39",
+                          "textLeft": "-35px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "79",
+                          "rotate": "108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.3762",
+                          "activity_all_cost": "30.0960",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "79 beans",
+                          "consume_num": 1,
+                          "residue_num": 79,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "4",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "80",
+                          "valid_days": "0",
+                          "used_num": 1,
+                          "win_rate": "8",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "7999",
+                          "rotate": "36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "38.0905",
+                          "activity_all_cost": "190.4525",
+                          "win_real_rate": 0.1,
+                          "is_pay_prize": 0,
+                          "prize_name": "7999 beans",
+                          "consume_num": 0,
+                          "residue_num": 5,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "5",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "0.1",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "17999",
+                          "rotate": "-36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "85.7095",
+                          "activity_all_cost": "85.7095",
+                          "win_real_rate": 0.01,
+                          "is_pay_prize": 0,
+                          "prize_name": "17999 beans",
+                          "consume_num": 0,
+                          "residue_num": 1,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "0.01",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "799",
+                          "rotate": "-108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "3.8048",
+                          "activity_all_cost": "38.0480",
+                          "win_real_rate": 0.5,
+                          "is_pay_prize": 0,
+                          "prize_name": "799 beans",
+                          "consume_num": 0,
+                          "residue_num": 10,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "4",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "10",
+                          "valid_days": "0",
+                          "used_num": 0,
+                          "win_rate": "0.5",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "14"
+                        }
+                      ],
+                      "totalCost": "796.9529"
+                    },
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "PH"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 2,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500658646",
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Note",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Ppo5O",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaQbc00y2TWPL00vabsc.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Daily Task",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "aJfrh",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": true,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500658646",
+                        "create_time": "1767068434",
+                        "utime": "2025-12-30 12:20:34",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "phnewusersconversionJan",
+                        "update_operator": "",
+                        "create_operator": "13759",
+                        "frequency": "0",
+                        "update_time": "1767068434",
+                        "black_tasks_status": "0",
+                        "filter_id": "21233",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-12-30 12:20:34",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 55,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "anchor_uids": "",
+                    "anchor_whitelist_id": null,
+                    "text": "Gifting 55 Diamonds = 1 task point",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "PH"
+                    ],
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": "1500658646",
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "207",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "2"
+                          },
+                          {
+                            "reward_expire_time": null,
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Congratulations! You have received Diamonds reward! Continue to earn more",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 1
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "100",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "5"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Congratulations! You have received Diamonds reward! Continue to earn more",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 3
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "49",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "12"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Congratulations! You have received Diamonds reward! Continue to earn more",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 3,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "33",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "25"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Congratulations! You have received Diamonds reward! Continue to earn more",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 4,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 5
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "17",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "90"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "Congratulations! You have received Diamonds reward! Continue to earn more",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 5,
+                        "process_notice": true,
+                        "send_im": false,
+                        "anthor_finish_room": true,
+                        "private_send_im": false,
+                        "target": 15
+                      },
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "10",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "170"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 6,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 41
+                      }
+                    ],
+                    "groups": [],
+                    "svip_levels": [],
+                    "index": 4,
+                    "raskType": 1,
+                    "selectedArea": [],
+                    "appoint_uid_source": 1,
+                    "anchor_whitelist_status": 0,
+                    "anchor_uid_info": null,
+                    "name": "Meet your target and win big EVERYDAY!",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Note",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "PGpcf",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vaQpu00y2TWPL00zrh3a.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

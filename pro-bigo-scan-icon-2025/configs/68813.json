@@ -1,0 +1,1959 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 07:25:52",
+    "now_zone": -2,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68813,
+      "act_name": "Yeni BIGOculara Özel",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-07-07 00:00:00",
+      "end_time": "2025-08-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "DE",
+        "CH",
+        "AT"
+      ],
+      "selectedArea": [
+        "DE"
+      ],
+      "frontCustomBgColor": "#3DEDFC",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZnXX8a39c2777e5c41859ba2cb0d15a41367ph.png?auth-token=M7aiiTPrZVo2boMtXpHVl0_V2T_8pP89uIpWTuWhv3g:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5MTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "bigolive://diamonds",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 0,
+          "scoreSelectedArea": [
+            "AR",
+            "PT",
+            "ES",
+            "RU",
+            "CN",
+            "AU",
+            "US",
+            "MY",
+            "TH",
+            "FZ",
+            "NLSE",
+            "DE",
+            "FR",
+            "GB",
+            "OTHER"
+          ],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 600,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang510",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 15,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "送出金豆价值",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 50,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 10,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 10,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "Yeni BIGOculara Özel",
+          "svip_area": "",
+          "lottery_rule": "Günde bir kez:\n10 dakika canlı yayın izle=1 çekiliş hakkı\n1 elmas gönder=1 çekiliş hakkı\n50 elmas yükle=10 çekiliş hakkı",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 2,
+          "selectedArea": [
+            "DE"
+          ],
+          "is_pay_lottery": 0,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "AD",
+            "AE",
+            "AF",
+            "AG",
+            "AI",
+            "AL",
+            "AM",
+            "AN",
+            "AO",
+            "AR",
+            "AS",
+            "AT",
+            "AU",
+            "AW",
+            "AX",
+            "AZ",
+            "BA",
+            "BB",
+            "BD",
+            "BE",
+            "BF",
+            "BG",
+            "BH",
+            "BI",
+            "BIGO",
+            "BJ",
+            "BL",
+            "BM",
+            "BN",
+            "BO",
+            "BR",
+            "BS",
+            "BT",
+            "BW",
+            "BY",
+            "BZ",
+            "CA",
+            "CC",
+            "CD",
+            "CF",
+            "CG",
+            "CH",
+            "CI",
+            "CK",
+            "CL",
+            "CM",
+            "CN",
+            "CO",
+            "CR",
+            "CU",
+            "CV",
+            "CW",
+            "CX",
+            "CY",
+            "CZ",
+            "DE",
+            "DJ",
+            "DK",
+            "DM",
+            "DO",
+            "DU",
+            "DZ",
+            "EC",
+            "EE",
+            "EG",
+            "ER",
+            "ES",
+            "ET",
+            "FA",
+            "FI",
+            "FJ",
+            "FM",
+            "FO",
+            "FR",
+            "GA",
+            "GB",
+            "GD",
+            "GE",
+            "GH",
+            "GI",
+            "GL",
+            "GM",
+            "GN",
+            "GP",
+            "GQ",
+            "GR",
+            "GT",
+            "GU",
+            "GW",
+            "GY",
+            "HK",
+            "HN",
+            "HR",
+            "HT",
+            "HU",
+            "ID",
+            "IE",
+            "IL",
+            "IM",
+            "IN",
+            "IQ",
+            "IR",
+            "IS",
+            "IT",
+            "JE",
+            "JM",
+            "JO",
+            "JP",
+            "KE",
+            "KG",
+            "KH",
+            "KI",
+            "KM",
+            "KN",
+            "KR",
+            "KW",
+            "KY",
+            "KZ",
+            "LA",
+            "LB",
+            "LC",
+            "LI",
+            "LK",
+            "LR",
+            "LS",
+            "LT",
+            "LU",
+            "LV",
+            "LY",
+            "MA",
+            "MC",
+            "MD",
+            "ME",
+            "MG",
+            "MH",
+            "MK",
+            "ML",
+            "MM",
+            "MN",
+            "MO",
+            "MP",
+            "MQ",
+            "MR",
+            "MS",
+            "MT",
+            "MU",
+            "MV",
+            "MW",
+            "MX",
+            "MY",
+            "MZ",
+            "NA",
+            "NC",
+            "NE",
+            "NF",
+            "NG",
+            "NI",
+            "NL",
+            "NO",
+            "NP",
+            "NR",
+            "NU",
+            "NZ",
+            "OM",
+            "PA",
+            "PE",
+            "PF",
+            "PG",
+            "PH",
+            "PK",
+            "PL",
+            "PN",
+            "PR",
+            "PS",
+            "PT",
+            "PW",
+            "PY",
+            "QA",
+            "RE",
+            "RO",
+            "RS",
+            "RU",
+            "RW",
+            "SA",
+            "SB",
+            "SC",
+            "SD",
+            "SE",
+            "SG",
+            "SH",
+            "SI",
+            "SK",
+            "SL",
+            "SM",
+            "SN",
+            "SO",
+            "SR",
+            "SS",
+            "ST",
+            "SV",
+            "SY",
+            "SZ",
+            "TC",
+            "TD",
+            "TG",
+            "TH",
+            "TJ",
+            "TK",
+            "TL",
+            "TM",
+            "TN",
+            "TO",
+            "TR",
+            "TV",
+            "TW",
+            "TZ",
+            "UA",
+            "UG",
+            "US",
+            "UY",
+            "UZ",
+            "VE",
+            "VN",
+            "VU",
+            "WF",
+            "WS",
+            "YE",
+            "YT",
+            "ZA",
+            "ZM",
+            "ZR",
+            "ZW"
+          ],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 6,
+          "onlyCharge": false,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500655463",
+            "create_time": "1752138300",
+            "utime": "2025-07-10 17:05:00",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "DACH unpaid July TR",
+            "update_operator": "",
+            "create_operator": "12537",
+            "frequency": "0",
+            "update_time": "1752138300",
+            "black_tasks_status": "0",
+            "filter_id": "17894",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-07-10 17:05:00",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 597.67,
+            "consumeCost": "0.00",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://esx.bigo.sg/live/4hp/1uZndF6ba00cc88cd141eebebcc8321ac65d97ph.png?auth-token=lD-9QNAzSO-r5JdzBNx2U2Y3J74oBTmb-IsJKCVdG_4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MDksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "theme": "Canlı izleme görevini tamamladın ve 1 çekiliş hakkı kazandınız!",
+              "content": "Çarkı çevirerek yaz temalı özel madalya, avatar çerçevesi veya 50 elmasa kadar ödüller kazan!"
+            },
+            "list": [
+              {
+                "prizes_num": "1",
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=8m6kELlnheJtcUmB1dl6Box3i-MYgdlcmL67tbfyhiI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0167",
+                "activity_all_cost": "76.8200",
+                "win_real_rate": 40,
+                "is_pay_prize": 0,
+                "prize_name": "钻石",
+                "consume_num": 0,
+                "residue_num": 4600,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "1",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "4600",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "40",
+                "textLeft": "-35px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "25",
+                "rotate": "120deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=8m6kELlnheJtcUmB1dl6Box3i-MYgdlcmL67tbfyhiI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.4167",
+                "activity_all_cost": "312.5250",
+                "win_real_rate": 10,
+                "is_pay_prize": 0,
+                "prize_name": "钻石",
+                "consume_num": 0,
+                "residue_num": 750,
+                "imgTop": "17.500000000000007px",
+                "imgLeft": "48.61215932167728px",
+                "prize_id": "1",
+                "textTop": "42.500000000000014px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "750",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "10",
+                "textLeft": "73.25317547305482px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "50",
+                "rotate": "60deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=8m6kELlnheJtcUmB1dl6Box3i-MYgdlcmL67tbfyhiI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.8333",
+                "activity_all_cost": "208.3250",
+                "win_real_rate": 5,
+                "is_pay_prize": 0,
+                "prize_name": "钻石",
+                "consume_num": 0,
+                "residue_num": 250,
+                "imgTop": "-67.49999999999997px",
+                "imgLeft": "48.6121593216773px",
+                "prize_id": "1",
+                "textTop": "-82.49999999999997px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "250",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "5",
+                "textLeft": "73.25317547305484px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "0deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png?auth-token=seAMnqGv3UeTwExsFSEKYk_0p4Cui7b2Vo9rLpDt4EQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5ODEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 20,
+                "is_pay_prize": 0,
+                "prize_name": "Schwimmring",
+                "consume_num": 0,
+                "residue_num": 99999,
+                "imgTop": "-110px",
+                "imgLeft": "-24.99999999999999px",
+                "prize_id": "41053",
+                "textTop": "-145px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "30",
+                "used_num": 0,
+                "win_rate": "20",
+                "textLeft": "-34.999999999999986px",
+                "prize_type": "1"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-60deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hc/0YNUwf.png?auth-token=b-DuxKgTV9f5aJHv3dMQ3lcTKv4nbSZe-IoUl0eO_bc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNDQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 16,
+                "is_pay_prize": 0,
+                "prize_name": "Sommertraum",
+                "consume_num": 0,
+                "residue_num": 99999,
+                "imgTop": "-67.50000000000003px",
+                "imgLeft": "-98.61215932167727px",
+                "prize_id": "41049",
+                "textTop": "-82.50000000000006px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "16",
+                "textLeft": "-143.2531754730548px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-120deg",
+                "preview_img": "https://giftesx.bigo.sg/live/4hc/08699K.png?auth-token=t8n1-FHWfyfO7_Z4ez89EZqB-0c52lprPbrpb6jCIYU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 9,
+                "is_pay_prize": 0,
+                "prize_name": "Lässiger Sommer",
+                "consume_num": 0,
+                "residue_num": 99999,
+                "imgTop": "17.500000000000007px",
+                "imgLeft": "-98.61215932167728px",
+                "prize_id": "41051",
+                "textTop": "42.500000000000014px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "1",
+                "used_num": 0,
+                "win_rate": "9",
+                "textLeft": "-143.25317547305482px",
+                "prize_type": "6"
+              }
+            ],
+            "totalCost": "597.6700"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "lang": [
+            "AT",
+            "CH",
+            "DE"
+          ],
+          "lottery_type": 2,
+          "appoint_uid": 2,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": "1500655463",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uZne1eb2a79d210a04a3ba2bc262092d5f618ph.png?auth-token=D9nAhRSCQonOjajeX3u8s3T5XhSUScU2RBHI5w4aXAM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODEzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3ODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "sub_title",
+              "value": "Beğenebileceğin kişiler↓↓"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 4,
+          "uid_arr": [
+            {
+              "uid": 824332128,
+              "text": ""
+            },
+            {
+              "uid": 572464667,
+              "text": ""
+            },
+            {
+              "uid": 825534915,
+              "text": ""
+            },
+            {
+              "uid": 825804510,
+              "text": ""
+            },
+            {
+              "uid": 823843060,
+              "text": ""
+            },
+            {
+              "uid": 825376262,
+              "text": ""
+            },
+            {
+              "uid": 825708321,
+              "text": ""
+            },
+            {
+              "uid": 825743674,
+              "text": ""
+            },
+            {
+              "uid": 825776905,
+              "text": ""
+            },
+            {
+              "uid": 824659973,
+              "text": ""
+            },
+            {
+              "uid": 826568485,
+              "text": ""
+            },
+            {
+              "uid": 826050721,
+              "text": ""
+            },
+            {
+              "uid": 825465908,
+              "text": ""
+            },
+            {
+              "uid": 826232077,
+              "text": ""
+            },
+            {
+              "uid": 826391456,
+              "text": ""
+            },
+            {
+              "uid": 826412157,
+              "text": ""
+            },
+            {
+              "uid": 826445772,
+              "text": ""
+            },
+            {
+              "uid": 824835469,
+              "text": ""
+            },
+            {
+              "uid": 825408102,
+              "text": ""
+            },
+            {
+              "uid": 826980218,
+              "text": ""
+            },
+            {
+              "uid": 827141293,
+              "text": ""
+            },
+            {
+              "uid": 827445729,
+              "text": ""
+            },
+            {
+              "uid": 820543229,
+              "text": ""
+            },
+            {
+              "uid": 827253294,
+              "text": ""
+            },
+            {
+              "uid": 825804510,
+              "text": ""
+            },
+            {
+              "uid": 825534915,
+              "text": ""
+            },
+            {
+              "uid": 572464667,
+              "text": ""
+            },
+            {
+              "uid": 824495473,
+              "text": ""
+            },
+            {
+              "uid": 825631711,
+              "text": ""
+            },
+            {
+              "uid": 825420917,
+              "text": ""
+            },
+            {
+              "uid": 825548615,
+              "text": ""
+            },
+            {
+              "uid": 826034140,
+              "text": ""
+            },
+            {
+              "uid": 827251947,
+              "text": ""
+            },
+            {
+              "uid": 827159640,
+              "text": ""
+            },
+            {
+              "uid": 490391256,
+              "text": ""
+            },
+            {
+              "uid": 828571940,
+              "text": ""
+            },
+            {
+              "uid": 828885091,
+              "text": ""
+            },
+            {
+              "uid": 829053327,
+              "text": ""
+            },
+            {
+              "uid": 829207310,
+              "text": ""
+            },
+            {
+              "uid": 829322055,
+              "text": ""
+            },
+            {
+              "uid": 764067243,
+              "text": ""
+            },
+            {
+              "uid": 829323689,
+              "text": ""
+            },
+            {
+              "uid": 829441492,
+              "text": ""
+            },
+            {
+              "uid": 829370120,
+              "text": ""
+            },
+            {
+              "uid": 829186064,
+              "text": ""
+            },
+            {
+              "uid": 829662476,
+              "text": ""
+            },
+            {
+              "uid": 828065430,
+              "text": ""
+            },
+            {
+              "uid": 821701939,
+              "text": ""
+            },
+            {
+              "uid": 493313004,
+              "text": ""
+            },
+            {
+              "uid": 826270035,
+              "text": ""
+            },
+            {
+              "uid": 830252683,
+              "text": ""
+            },
+            {
+              "uid": 830224792,
+              "text": ""
+            },
+            {
+              "uid": 830216098,
+              "text": ""
+            },
+            {
+              "uid": 829900775,
+              "text": ""
+            },
+            {
+              "uid": 828900741,
+              "text": ""
+            },
+            {
+              "uid": 829303792,
+              "text": ""
+            },
+            {
+              "uid": 799922955,
+              "text": ""
+            },
+            {
+              "uid": 799183127,
+              "text": ""
+            },
+            {
+              "uid": 828575705,
+              "text": ""
+            },
+            {
+              "uid": 828398082,
+              "text": ""
+            },
+            {
+              "uid": 829091952,
+              "text": ""
+            },
+            {
+              "uid": 1864619096,
+              "text": ""
+            },
+            {
+              "uid": 546304462,
+              "text": ""
+            },
+            {
+              "uid": 822090687,
+              "text": ""
+            },
+            {
+              "uid": 552226611,
+              "text": ""
+            },
+            {
+              "uid": 412992992,
+              "text": ""
+            },
+            {
+              "uid": 1772748920,
+              "text": ""
+            },
+            {
+              "uid": 616832651,
+              "text": ""
+            },
+            {
+              "uid": 619539441,
+              "text": ""
+            },
+            {
+              "uid": 579981387,
+              "text": ""
+            },
+            {
+              "uid": 680594579,
+              "text": ""
+            },
+            {
+              "uid": 1752829004,
+              "text": ""
+            },
+            {
+              "uid": 1861420170,
+              "text": ""
+            },
+            {
+              "uid": 583421542,
+              "text": ""
+            },
+            {
+              "uid": 1889376484,
+              "text": ""
+            },
+            {
+              "uid": 737746084,
+              "text": ""
+            },
+            {
+              "uid": 509048473,
+              "text": ""
+            },
+            {
+              "uid": 627484438,
+              "text": ""
+            },
+            {
+              "uid": 1677511790,
+              "text": ""
+            },
+            {
+              "uid": 1746023453,
+              "text": ""
+            },
+            {
+              "uid": 1874256526,
+              "text": ""
+            },
+            {
+              "uid": 1827194611,
+              "text": ""
+            },
+            {
+              "uid": 402640044,
+              "text": ""
+            },
+            {
+              "uid": 458473550,
+              "text": ""
+            },
+            {
+              "uid": 814931809,
+              "text": ""
+            },
+            {
+              "uid": 738081150,
+              "text": ""
+            },
+            {
+              "uid": 826410014,
+              "text": ""
+            },
+            {
+              "uid": 639226858,
+              "text": ""
+            },
+            {
+              "uid": 749337439,
+              "text": ""
+            },
+            {
+              "uid": 446542990,
+              "text": ""
+            },
+            {
+              "uid": 1801217860,
+              "text": ""
+            },
+            {
+              "uid": 738566012,
+              "text": ""
+            },
+            {
+              "uid": 577136282,
+              "text": ""
+            },
+            {
+              "uid": 454977459,
+              "text": ""
+            },
+            {
+              "uid": 695668470,
+              "text": ""
+            },
+            {
+              "uid": 406279452,
+              "text": ""
+            },
+            {
+              "uid": 795422427,
+              "text": ""
+            },
+            {
+              "uid": 1865119060,
+              "text": ""
+            },
+            {
+              "uid": 721451572,
+              "text": ""
+            },
+            {
+              "uid": 472289974,
+              "text": ""
+            },
+            {
+              "uid": 797650166,
+              "text": ""
+            },
+            {
+              "uid": 489779745,
+              "text": ""
+            },
+            {
+              "uid": 765684786,
+              "text": ""
+            },
+            {
+              "uid": 771407251,
+              "text": ""
+            },
+            {
+              "uid": 1846713116,
+              "text": ""
+            },
+            {
+              "uid": 500517487,
+              "text": ""
+            },
+            {
+              "uid": 726188169,
+              "text": ""
+            },
+            {
+              "uid": 725148338,
+              "text": ""
+            },
+            {
+              "uid": 737965680,
+              "text": ""
+            },
+            {
+              "uid": 496171381,
+              "text": ""
+            },
+            {
+              "uid": 570239050,
+              "text": ""
+            },
+            {
+              "uid": 432836386,
+              "text": ""
+            },
+            {
+              "uid": 1887797986,
+              "text": ""
+            },
+            {
+              "uid": 588888236,
+              "text": ""
+            },
+            {
+              "uid": 813263092,
+              "text": ""
+            },
+            {
+              "uid": 539313855,
+              "text": ""
+            },
+            {
+              "uid": 442697673,
+              "text": ""
+            },
+            {
+              "uid": 1864619096,
+              "text": ""
+            },
+            {
+              "uid": 738584923,
+              "text": ""
+            },
+            {
+              "uid": 669112586,
+              "text": ""
+            },
+            {
+              "uid": 1789373324,
+              "text": ""
+            },
+            {
+              "uid": 478694374,
+              "text": ""
+            },
+            {
+              "uid": 1860555796,
+              "text": ""
+            },
+            {
+              "uid": 529658625,
+              "text": ""
+            },
+            {
+              "uid": 1746023453,
+              "text": ""
+            },
+            {
+              "uid": 1861420170,
+              "text": ""
+            },
+            {
+              "uid": 748752916,
+              "text": ""
+            },
+            {
+              "uid": 756587608,
+              "text": ""
+            },
+            {
+              "uid": 796781515,
+              "text": ""
+            },
+            {
+              "uid": 577136282,
+              "text": ""
+            },
+            {
+              "uid": 423753909,
+              "text": ""
+            },
+            {
+              "uid": 1853649510,
+              "text": ""
+            },
+            {
+              "uid": 664099760,
+              "text": ""
+            },
+            {
+              "uid": 1820302255,
+              "text": ""
+            },
+            {
+              "uid": 1861240613,
+              "text": ""
+            },
+            {
+              "uid": 765684786,
+              "text": ""
+            },
+            {
+              "uid": 507800323,
+              "text": ""
+            },
+            {
+              "uid": 655161766,
+              "text": ""
+            },
+            {
+              "uid": 797472119,
+              "text": ""
+            },
+            {
+              "uid": 761857651,
+              "text": ""
+            },
+            {
+              "uid": 630128213,
+              "text": ""
+            },
+            {
+              "uid": 462336037,
+              "text": ""
+            },
+            {
+              "uid": 771189042,
+              "text": ""
+            },
+            {
+              "uid": 801028750,
+              "text": ""
+            },
+            {
+              "uid": 753875671,
+              "text": ""
+            },
+            {
+              "uid": 578325501,
+              "text": ""
+            },
+            {
+              "uid": 434431906,
+              "text": ""
+            },
+            {
+              "uid": 489722485,
+              "text": ""
+            },
+            {
+              "uid": 764769211,
+              "text": ""
+            },
+            {
+              "uid": 406279452,
+              "text": ""
+            },
+            {
+              "uid": 1746841397,
+              "text": ""
+            },
+            {
+              "uid": 1887453720,
+              "text": ""
+            },
+            {
+              "uid": 1756983968,
+              "text": ""
+            },
+            {
+              "uid": 1801217860,
+              "text": ""
+            },
+            {
+              "uid": 820190314,
+              "text": ""
+            },
+            {
+              "uid": 731303639,
+              "text": ""
+            },
+            {
+              "uid": 805381631,
+              "text": ""
+            },
+            {
+              "uid": 446542990,
+              "text": ""
+            },
+            {
+              "uid": 738566012,
+              "text": ""
+            }
+          ],
+          "priority": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [
+            "AD",
+            "AE",
+            "AF",
+            "AG",
+            "AI",
+            "AL",
+            "AM",
+            "AN",
+            "AO",
+            "AR",
+            "AS",
+            "AT",
+            "AU",
+            "AW",
+            "AX",
+            "AZ",
+            "BA",
+            "BB",
+            "BD",
+            "BE",
+            "BF",
+            "BG",
+            "BH",
+            "BI",
+            "BIGO",
+            "BJ",
+            "BL",
+            "BM",
+            "BN",
+            "BO",
+            "BR",
+            "BS",
+            "BT",
+            "BW",
+            "BY",
+            "BZ",
+            "CA",
+            "CC",
+            "CD",
+            "CF",
+            "CG",
+            "CH",
+            "CI",
+            "CK",
+            "CL",
+            "CM",
+            "CN",
+            "CO",
+            "CR",
+            "CU",
+            "CV",
+            "CW",
+            "CX",
+            "CY",
+            "CZ",
+            "DE",
+            "DJ",
+            "DK",
+            "DM",
+            "DO",
+            "DU",
+            "DZ",
+            "EC",
+            "EE",
+            "EG",
+            "ER",
+            "ES",
+            "ET",
+            "FA",
+            "FI",
+            "FJ",
+            "FM",
+            "FO",
+            "FR",
+            "GA",
+            "GB",
+            "GD",
+            "GE",
+            "GH",
+            "GI",
+            "GL",
+            "GM",
+            "GN",
+            "GP",
+            "GQ",
+            "GR",
+            "GT",
+            "GU",
+            "GW",
+            "GY",
+            "HK",
+            "HN",
+            "HR",
+            "HT",
+            "HU",
+            "ID",
+            "IE",
+            "IL",
+            "IM",
+            "IN",
+            "IQ",
+            "IR",
+            "IS",
+            "IT",
+            "JE",
+            "JM",
+            "JO",
+            "JP",
+            "KE",
+            "KG",
+            "KH",
+            "KI",
+            "KM",
+            "KN",
+            "KR",
+            "KW",
+            "KY",
+            "KZ",
+            "LA",
+            "LB",
+            "LC",
+            "LI",
+            "LK",
+            "LR",
+            "LS",
+            "LT",
+            "LU",
+            "LV",
+            "LY",
+            "MA",
+            "MC",
+            "MD",
+            "ME",
+            "MG",
+            "MH",
+            "MK",
+            "ML",
+            "MM",
+            "MN",
+            "MO",
+            "MP",
+            "MQ",
+            "MR",
+            "MS",
+            "MT",
+            "MU",
+            "MV",
+            "MW",
+            "MX",
+            "MY",
+            "MZ",
+            "NA",
+            "NC",
+            "NE",
+            "NF",
+            "NG",
+            "NI",
+            "NL",
+            "NO",
+            "NP",
+            "NR",
+            "NU",
+            "NZ",
+            "OM",
+            "PA",
+            "PE",
+            "PF",
+            "PG",
+            "PH",
+            "PK",
+            "PL",
+            "PN",
+            "PR",
+            "PS",
+            "PT",
+            "PW",
+            "PY",
+            "QA",
+            "RE",
+            "RO",
+            "RS",
+            "RU",
+            "RW",
+            "SA",
+            "SB",
+            "SC",
+            "SD",
+            "SE",
+            "SG",
+            "SH",
+            "SI",
+            "SK",
+            "SL",
+            "SM",
+            "SN",
+            "SO",
+            "SR",
+            "SS",
+            "ST",
+            "SV",
+            "SY",
+            "SZ",
+            "TC",
+            "TD",
+            "TG",
+            "TH",
+            "TJ",
+            "TK",
+            "TL",
+            "TM",
+            "TN",
+            "TO",
+            "TR",
+            "TV",
+            "TW",
+            "TZ",
+            "UA",
+            "UG",
+            "US",
+            "UY",
+            "UZ",
+            "VE",
+            "VN",
+            "VU",
+            "WF",
+            "WS",
+            "YE",
+            "YT",
+            "ZA",
+            "ZM",
+            "ZR",
+            "ZW"
+          ],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [
+            "AR",
+            "PT",
+            "ES",
+            "RU",
+            "CN",
+            "AU",
+            "US",
+            "MY",
+            "TH",
+            "FZ",
+            "NLSE",
+            "DE",
+            "FR",
+            "GB",
+            "OTHER"
+          ],
+          "num": 10,
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500655463",
+            "create_time": "1752138300",
+            "utime": "2025-07-10 17:05:00",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "DACH unpaid July TR",
+            "update_operator": "",
+            "create_operator": "12537",
+            "frequency": "0",
+            "update_time": "1752138300",
+            "black_tasks_status": "0",
+            "filter_id": "17894",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-07-10 17:05:00",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang443",
+              "change": 600,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 6,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "观看直播时长",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang510",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 15,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "送出金豆价值",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "Günlük Bonus",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "AT",
+            "CH",
+            "DE"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": "1500655463",
+          "level_config": [
+            {
+              "private_im_lang": "[Yeni BIGOculara Özel] Canlı izleme görevini tamamladın ve 1 çekiliş hakkı kazandın. Çarkı çevirerek yaz temalı özel madalya, avatar çerçevesi veya 50 elmasa kadar ödüller kazan!\nhttps://sl.bigo.tv/aZjmUT",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "base_map_url": "",
+                  "reward_max_limit": "2000",
+                  "op_time": "1749114376",
+                  "offshelf_time": "2101455414",
+                  "vm_price": "0",
+                  "op_user": "直播事业部-钱超杰",
+                  "isOnlyNeedNum": 1,
+                  "mp4_url": "",
+                  "__version": "7164372486680264995",
+                  "reward_name": "Schwimmring",
+                  "typeid": "1",
+                  "extra_type": "0",
+                  "id": "41053",
+                  "nickname_color": "",
+                  "reward_count": "1",
+                  "icon_url": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "avatar_width": "0",
+                  "sort_key": "0",
+                  "new_banner_url": "",
+                  "val_count": "0",
+                  "show_type": "1",
+                  "medal_type": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "val_count_decimal": "0",
+                  "name": "Schwimmring",
+                  "is_lock": "0",
+                  "text_color": "#FFFFFF",
+                  "status": "0",
+                  "pk_type": "",
+                  "desc_text": "Sommer-Schwimmspaß",
+                  "reward_type": "41053",
+                  "vm_price_decimal": "0",
+                  "game_type": "0",
+                  "can_vip_share": "0",
+                  "head_type": "0",
+                  "reward_expire_time": "3",
+                  "param": "夏季活动",
+                  "banner_url": "",
+                  "label_name": "",
+                  "need_combine": "0",
+                  "__deleted": "0",
+                  "onshelf_time": "1749114856",
+                  "env": "1",
+                  "gif_url": "",
+                  "sale": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                  "act_url": "",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://giftesx.bigo.sg/live/4hc/075781.png"
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": true,
+              "target": 1
+            },
+            {
+              "private_im_lang": "[Yeni BIGOculara Özel] Hediye gönderme görevini tamamladın ve 1 çekiliş hakkı kazandın. Çarkı çevirerek yaz temalı özel madalya, avatar çerçevesi veya 50 elmasa kadar ödüller kazan!\nhttps://sl.bigo.tv/aZjmUT",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "base_map_url": "",
+                  "reward_max_limit": "2000",
+                  "op_time": "1749114376",
+                  "offshelf_time": "2101455414",
+                  "vm_price": "0",
+                  "op_user": "直播事业部-钱超杰",
+                  "isOnlyNeedNum": 1,
+                  "mp4_url": "",
+                  "__version": "7164372486680264995",
+                  "reward_name": "Schwimmring",
+                  "typeid": "1",
+                  "extra_type": "0",
+                  "id": "41053",
+                  "nickname_color": "",
+                  "reward_count": "1",
+                  "icon_url": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "avatar_width": "0",
+                  "sort_key": "0",
+                  "new_banner_url": "",
+                  "val_count": "0",
+                  "show_type": "1",
+                  "medal_type": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "val_count_decimal": "0",
+                  "name": "Schwimmring",
+                  "is_lock": "0",
+                  "text_color": "#FFFFFF",
+                  "status": "0",
+                  "pk_type": "",
+                  "desc_text": "Sommer-Schwimmspaß",
+                  "reward_type": "41053",
+                  "vm_price_decimal": "0",
+                  "game_type": "0",
+                  "can_vip_share": "0",
+                  "head_type": "0",
+                  "reward_expire_time": "3",
+                  "param": "夏季活动",
+                  "banner_url": "",
+                  "label_name": "",
+                  "need_combine": "0",
+                  "__deleted": "0",
+                  "onshelf_time": "1749114856",
+                  "env": "1",
+                  "gif_url": "",
+                  "sale": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                  "act_url": "",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://giftesx.bigo.sg/live/4hc/075781.png"
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 2,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": true,
+              "target": 1
+            },
+            {
+              "private_im_lang": "[Yeni BIGOculara Özel] Yükleme görevini tamamladın ve 10 çekiliş hakkı kazandın. Çarkı çevirerek yaz temalı özel madalya, avatar çerçevesi veya 50 elmasa kadar ödüller kazan!\nhttps://sl.bigo.tv/aZjmUT",
+              "anthor_room_reward": [
+                {
+                  "reward_expire_time": null,
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "free_level": null,
+                  "reward_image": null,
+                  "reward_id": null,
+                  "reward_count": null
+                },
+                {
+                  "base_map_url": "",
+                  "reward_max_limit": "2000",
+                  "op_time": "1749114376",
+                  "offshelf_time": "2101455414",
+                  "vm_price": "0",
+                  "op_user": "直播事业部-钱超杰",
+                  "isOnlyNeedNum": 1,
+                  "mp4_url": "",
+                  "__version": "7164372486680264995",
+                  "reward_name": "Schwimmring",
+                  "typeid": "1",
+                  "extra_type": "0",
+                  "id": "41053",
+                  "nickname_color": "",
+                  "reward_count": "1",
+                  "icon_url": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "avatar_width": "0",
+                  "sort_key": "0",
+                  "new_banner_url": "",
+                  "val_count": "0",
+                  "show_type": "1",
+                  "medal_type": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "val_count_decimal": "0",
+                  "name": "Schwimmring",
+                  "is_lock": "0",
+                  "text_color": "#FFFFFF",
+                  "status": "0",
+                  "pk_type": "",
+                  "desc_text": "Sommer-Schwimmspaß",
+                  "reward_type": "41053",
+                  "vm_price_decimal": "0",
+                  "game_type": "0",
+                  "can_vip_share": "0",
+                  "head_type": "0",
+                  "reward_expire_time": "3",
+                  "param": "夏季活动",
+                  "banner_url": "",
+                  "label_name": "",
+                  "need_combine": "0",
+                  "__deleted": "0",
+                  "onshelf_time": "1749114856",
+                  "env": "1",
+                  "gif_url": "",
+                  "sale": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://giftesx.bigo.sg/live/4h2/2PUfMM.png",
+                  "act_url": "",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://giftesx.bigo.sg/live/4hc/075781.png"
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 3,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": true,
+              "target": 50
+            }
+          ],
+          "groups": [],
+          "index": 3,
+          "raskType": 1,
+          "selectedArea": [
+            "DE"
+          ],
+          "name": "Günlük Bonus",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

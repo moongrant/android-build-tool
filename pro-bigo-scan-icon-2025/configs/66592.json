@@ -1,0 +1,864 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 66592,
+      "act_name": "Recall Eksklusif June 2025",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-04 00:00:00",
+      "end_time": "2025-07-04 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "ID"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "#0F1010",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "13",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0,
+      "black_uids_id": ""
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uMMrl9e7e3dd785b44d0aa639c8685ebb2cadph.png?auth-token=EA-Ja0f5L_6KHp7k2HPB5dUd7j9UeR8pq6aFtspqy5k:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwMzYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "🎖️ Call Back Exclusive",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ocMhz",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type2",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "Bagaimana untuk dapatkan tiket Lucky Draw?\n\nTop-Up 30 💎 = 1 Tiket (maks. 10 tiket/hari）\nMenonton Live Streaming 5 menit = 1 Tiket (maks. 2 tiket/hari)"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Av55g",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "lottery_timerange_endTime": 1751561999,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "lottery_timerange_startTime": 1748970000,
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 2,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "change": 30,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 10,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "lottery_title": "✨Hadiah Eksklusif✨",
+                    "svip_area": "",
+                    "lottery_rule": "1 Tiket = 1 Kali Kesempatan Spin.",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 2,
+                    "start_time_stamp": 1748970000000,
+                    "selectedArea": [],
+                    "start_time": "2025-06-03T17:00:00.000Z",
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "ID"
+                    ],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 7,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": {
+                      "filter_name": "",
+                      "list_id": "1500654945",
+                      "create_time": "1748941381",
+                      "utime": "2025-06-03 17:03:01",
+                      "filter_country": "",
+                      "source": "whitelist",
+                      "list_name": "ID-recall June",
+                      "update_operator": "",
+                      "create_operator": "12248",
+                      "frequency": "0",
+                      "update_time": "1748941381",
+                      "black_tasks_status": "0",
+                      "filter_id": "17362",
+                      "filter_countries": "",
+                      "union_conditions": "",
+                      "filter_blacklist": "",
+                      "ctime": "2025-06-03 17:03:01",
+                      "filter_conditions_ext": "",
+                      "filter_conditions": "",
+                      "status": "2"
+                    },
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 418.29999999999995,
+                      "consumeCost": "30.10",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://esx.bigo.sg/live/4hp/1uKgIMe0e63df41c9242f29b83f0ec466ef2d5ph.png?auth-token=Dc1JX_28O0XTBmP1NYOp96HyI2jMcOUdnWoD4Y8mu3A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3NDcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                        "theme": "Kamu memiliki tiket untuk spin Lucky Draw!",
+                        "content": "Yuk segera pakai tiketmu untuk spin lucky draw dan dapatkan hadiah menarik khusus untukmu! Cek sekarang dengan klik pesan ini ya!🤗"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1u6m2Q1d239364fcb9453a98da52b5d13f82d5ph.png?auth-token=GT1S7HIAhzpJX99L_aInMYeCg0UzgABjdLpaGQUWYpI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwMzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 19.05,
+                          "is_pay_prize": 0,
+                          "prize_name": "super lucky",
+                          "consume_num": 833,
+                          "residue_num": 9167,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "39938",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": 0,
+                          "activity_all_num": "10000",
+                          "valid_days": "3",
+                          "used_num": 833,
+                          "win_rate": "19.05",
+                          "textLeft": "-35px",
+                          "prize_type": "1"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "128.57142857142856deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hd/2uFigYI.png?auth-token=AQO0FCZ4L0SHEYTDMvJ18FdUWB0fWvBzCDdUVtOESPE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcxNTMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 19.05,
+                          "is_pay_prize": 0,
+                          "prize_name": "Luxury car",
+                          "consume_num": 848,
+                          "residue_num": 9152,
+                          "imgTop": "27.996633157992356px",
+                          "imgLeft": "41.455676009782536px",
+                          "prize_id": "40158",
+                          "textTop": "57.9362252323417px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "10000",
+                          "valid_days": "3",
+                          "used_num": 848,
+                          "win_rate": "19.05",
+                          "textLeft": "62.72893530850372px",
+                          "prize_type": "1"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "77.14285714285714deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hd/29L3qXM.png?auth-token=H26l94nIpCvzNbP8LLaN8SeV7t8dXil-c-Sax8oMn70:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxMTgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 19.05,
+                          "is_pay_prize": 0,
+                          "prize_name": "Shining Star Dino",
+                          "consume_num": 837,
+                          "residue_num": 9163,
+                          "imgTop": "-43.91427938628672px",
+                          "imgLeft": "57.86887253545501px",
+                          "prize_id": "39253",
+                          "textTop": "-47.815116744539296px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "10000",
+                          "valid_days": "3",
+                          "used_num": 837,
+                          "win_rate": "19.05",
+                          "textLeft": "86.86598902272796px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "25.714285714285722deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/2AsY0i.png?auth-token=22zTPFZuLxIAZ-Ni92TBC2Vhfd_tk3gHSu58_B4tfk8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxOTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 19.05,
+                          "is_pay_prize": 0,
+                          "prize_name": "Bullet coupon",
+                          "consume_num": 859,
+                          "residue_num": 9141,
+                          "imgTop": "-101.58235377170561px",
+                          "imgLeft": "11.880117824992446px",
+                          "prize_id": "3",
+                          "textTop": "-132.62110848780236px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "10000",
+                          "valid_days": "0",
+                          "used_num": 859,
+                          "win_rate": "19.05",
+                          "textLeft": "19.235467389694776px",
+                          "prize_type": "13"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-25.714285714285722deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1tiSOg4d498b9e4cbd4e7e94255e0d2b71767bph.png?auth-token=psWv-R2BfEzWWJTlboqlnPmIW956z2WxxEoXixetLBc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQyMzUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 19.05,
+                          "is_pay_prize": 0,
+                          "prize_name": "SuperLucky",
+                          "consume_num": 860,
+                          "residue_num": 9140,
+                          "imgTop": "-101.58235377170563px",
+                          "imgLeft": "-61.88011782499243px",
+                          "prize_id": "39544",
+                          "textTop": "-132.6211084878024px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "10000",
+                          "valid_days": "3",
+                          "used_num": 860,
+                          "win_rate": "19.05",
+                          "textLeft": "-89.23546738969475px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "-77.14285714285717deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=bRxmTRMpSOqovsjzDbFc505T14tdbydTpRrfa0SDns8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0167",
+                          "activity_all_cost": "33.4000",
+                          "win_real_rate": 3.8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Diamonds",
+                          "consume_num": 162,
+                          "residue_num": 1838,
+                          "imgTop": "-43.914279386286665px",
+                          "imgLeft": "-107.86887253545501px",
+                          "prize_id": "1",
+                          "textTop": "-47.81511674453921px",
+                          "prize_serial": 6,
+                          "free_level": "",
+                          "activity_all_num": "2000",
+                          "valid_days": "0",
+                          "used_num": 162,
+                          "win_rate": "3.8",
+                          "textLeft": "-156.86598902272797px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "-128.57142857142856deg",
+                          "preview_img": "https://esx.bigo.sg/live/4hp/1uKGN991b9b37c0f414622adc0fae898a680a9ph.png?auth-token=aYf6UOB0zr4omOjLnuWcUZDKUb3AOS1ffc4iV3UWXZM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU2MzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.83",
+                          "activity_all_cost": "415.0000",
+                          "win_real_rate": 0.95,
+                          "is_pay_prize": 0,
+                          "prize_name": "25% Top Up Coupon",
+                          "consume_num": 33,
+                          "residue_num": 467,
+                          "imgTop": "27.996633157992335px",
+                          "imgLeft": "-91.45567600978254px",
+                          "prize_id": "1745990290",
+                          "textTop": "57.93622523234167px",
+                          "prize_serial": 7,
+                          "free_level": 0,
+                          "activity_all_num": "500",
+                          "valid_days": "3",
+                          "used_num": 33,
+                          "win_rate": "0.95",
+                          "textLeft": "-132.72893530850374px",
+                          "prize_type": "17"
+                        }
+                      ],
+                      "totalCost": "448.4000"
+                    },
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "lang": [
+                      "ID"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 2,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500654945",
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "end_time": "2025-07-02T17:00:00.000Z",
+                    "dailyCycleEndTimeOrigin": "2025/03/07 23:59:59",
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 1,
+                    "appoint_uid_source": 1,
+                    "end_time_stamp": 1751475600000,
+                    "rankStyle": "1",
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 1,
+                    "countType": "",
+                    "dailyCycleStartTimeOrigin": "2025/03/07 00:00:00",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Top UP Event ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "DeppA",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1u7VYh110fa630fb5b4916ad3934e08cec8808ph.jpg?auth-token=UejiJPlI2OCLz48lGENHsQngPjKZ0ZGbtvDHGEnyouo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQzMTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "https://static-fed.bigolive.tv/live/pages/bigolive/act-39011/index.html",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uSZ7g888ae08b160b4b3ba82dc27c9c6834c0ph.jpg?auth-token=F3CCqvdotl3SIvWLUjdfvuEauWj3xxQ3mF0vv1qR7nc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3MTMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": true,
+                    "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=67354",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Top Up Sekarang dan Dapatkan Hadiahnya",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=67354",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": " Content Event ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "1Qy6W",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "event content june",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "D8iFH",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "KLIK DI SINI",
+                                  "fn": 1,
+                                  "style": 0,
+                                  "share_img": "",
+                                  "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=63189",
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "NwT1x",
+                            "formData": {
+                              "mode": 4,
+                              "uid_arr": [
+                                {
+                                  "uid": "764104329",
+                                  "text": ""
+                                },
+                                {
+                                  "uid": "828467467",
+                                  "text": ""
+                                },
+                                {
+                                  "uid": "1515958654",
+                                  "text": ""
+                                },
+                                {
+                                  "uid": "1683401403",
+                                  "text": ""
+                                }
+                              ],
+                              "priority": true
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "NSTkc",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uMlZ2cf859273d2204f378ea88163c1abf972ph.jpg?auth-token=zpJnWJJFm8tbvw0bz0zYuOu3rtFQdjipN2yzTrT5rAU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5NDgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "XJUI5",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uMlZN83c041c6456846799acfcd50cebe0f1bph.jpg?auth-token=n34m6GMUVIVyu1mi3jTm8wP9HQv1XV0jJ8R8fjvEays:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ4MTIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "UOH48",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uMlaR7beac5ed781745d1ac138c211f55f38bph.png?auth-token=kiHpWFChcAiqLWqtZfOptmOxzJlOEzolLuUCekpsahA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3MzMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Family🏠",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "S9m4K",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Petunjuk",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "jFcHt",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1u5iW60758835a384c40ebb3626a6993b0d941ph.png?auth-token=8-qS5ORUrHonMZoD8h0HQ04wM2mMkri49bu2VIHsYCY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxMDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": true,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=39468",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "V0quu",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "Come and Join the Family!",
+                                  "fn": 1,
+                                  "style": 0,
+                                  "share_img": "",
+                                  "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=39468",
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "LCLtt",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1u5iUx7c4e4e67a3d74b6aad4b4ce90fdbc5ddph.png?auth-token=cKUwjnzFPG2ufeReUts7J5tdl0IrH7ZpQyIPpRfAlKQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ4OTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": true,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=41306",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "4e5Ia",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "Cek Disini Untuk Lihat Daftar Rekomendasi Family",
+                                  "fn": 1,
+                                  "style": 0,
+                                  "share_img": "",
+                                  "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=41306",
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Event",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "MECki",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uMofk245cadea3e804b4e9a79589f43891e66ph.png?auth-token=EUQFnPqkpHYeHol2kte9lALIZy4QTI4JR9zsPzv3UuY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2OTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": true,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=66327",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "GyCpS",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "Join Family and get reward",
+                                  "fn": 1,
+                                  "style": 0,
+                                  "share_img": "",
+                                  "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=66327",
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "f2d2u",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uMogK808017c0a39b45659433e0776a3618d1ph.png?auth-token=QVvXE-71XgytJb5hVH_onuJSg0F-bhJpX7fB4_TdwQk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY2NTkyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwMTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": true,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=66428",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "ydIBl",
+                            "formData": {
+                              "buttons": [
+                                {
+                                  "share_content": "",
+                                  "ranking_attends": [
+                                    {
+                                      "checkAll": false,
+                                      "sure": "",
+                                      "name": "报名1",
+                                      "range": [],
+                                      "title": "",
+                                      "attendModular": 0,
+                                      "desc": ""
+                                    }
+                                  ],
+                                  "layer_content": [],
+                                  "share_title": "",
+                                  "name": "Double combat points time",
+                                  "fn": 1,
+                                  "style": 0,
+                                  "share_img": "",
+                                  "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=66428",
+                                  "layer_title": "",
+                                  "canSignNum": 0
+                                }
+                              ]
+                            },
+                            "type": "button",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

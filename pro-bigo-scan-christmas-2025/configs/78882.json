@@ -1,0 +1,880 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 06:26:08",
+    "now_zone": -1,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78882,
+      "act_name": "DACH SVIP: Hallo 2026!",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-20 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "DE",
+        "CH",
+        "AT"
+      ],
+      "selectedArea": [
+        "DE"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 1,
+      "black_uids_id": "1500658408",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "⚡️2026 Special⚡️",
+        "appendixDesc": "Nur jetzt: 2026 Diamanten → 400 Bohnen! 4000 → 1000 Bohnen! 🎆 Mehr Details: https://activity.bigo.tv/live/act/act_16907/index.html?id=78882",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1viBKy00y33lYHC21sB7W.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "4"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1viASc00y33lYHC1lvius.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Das Event endet"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Laufzeit: 20.Jan. 00:00 – 31.Jan. 23:59 DE"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Für DACH-Bigoer",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "UyoUQ",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "❗️Nur DACH-Bigoer mit dem Auflade-Ländercode DE/AT/CH können am Event teilnehmen❗️"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "6MAmb",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type2",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Die Belohnungen sind unbegrenzt"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "D2N4Q",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "underline",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "🎁Es gibt viele verschiedene Outfits🎁\nSchaffst du es, die ganze Sammlung zu vervollständigen? "
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "59I0V",
+                  "formData": {
+                    "setDraw10": 1,
+                    "scoreSelectedArea": [
+                      "DE"
+                    ],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 60,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "这里是排行榜的说明文案",
+                    "linktext": "",
+                    "lottery_title": "👉Spezielle-Outfits👈",
+                    "svip_area": "",
+                    "lottery_rule": "60 Diamanten aufladen=1 Chance im Glücksrad. Täglich ohne Limit. Belohnungen werden automatisch in deinen Item-Bag geschickt",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 3,
+                    "selectedArea": [
+                      "DE"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "抽奖模块",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "is_lottery_all": 1,
+                    "top3": 1,
+                    "lottery_sector_num": 12,
+                    "onlyCharge": true,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 0,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1viBM800y2TWPL00LfiMa.png",
+                        "theme": "⚡️2026 Special",
+                        "content": "Nur jetzt: 2026 Diamanten → 400 Bohnen! 4000 → 1000 Bohnen! 🎆 Mehr Details: https://activity.bigo.tv/live/act/act_16907/index.html?id=78882"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vhn3c00y33lYHC0XkXc5.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Eingangseffekt 1",
+                          "consume_num": 208,
+                          "residue_num": 99791,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "45321",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 208,
+                          "win_rate": "8",
+                          "textLeft": "-35px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "150deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vgbeZ00y2TWPL01GH0G6.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Eingangseffekt 2",
+                          "consume_num": 120,
+                          "residue_num": 99879,
+                          "imgTop": "48.6121593216773px",
+                          "imgLeft": "17.499999999999993px",
+                          "prize_id": "45267",
+                          "textTop": "88.25317547305484px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 120,
+                          "win_rate": "8",
+                          "textLeft": "27.499999999999993px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "120deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vauPf00y2TWPL01VUufl.png",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Eingangseffekt 3",
+                          "consume_num": 142,
+                          "residue_num": 99857,
+                          "imgTop": "17.500000000000007px",
+                          "imgLeft": "48.61215932167728px",
+                          "prize_id": "44961",
+                          "textTop": "42.500000000000014px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 142,
+                          "win_rate": "8",
+                          "textLeft": "73.25317547305482px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "90deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vaTYl00y33lYHC2D4Snh.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Eingangseffekt 4",
+                          "consume_num": 118,
+                          "residue_num": 99881,
+                          "imgTop": "-24.999999999999996px",
+                          "imgLeft": "60px",
+                          "prize_id": "44697",
+                          "textTop": "-19.999999999999993px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 118,
+                          "win_rate": "8",
+                          "textLeft": "90px",
+                          "prize_type": "7"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "60deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vge4600y2TWPL00Xvrph.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Medaille 1",
+                          "consume_num": 143,
+                          "residue_num": 99856,
+                          "imgTop": "-67.49999999999997px",
+                          "imgLeft": "48.6121593216773px",
+                          "prize_id": "45269",
+                          "textTop": "-82.49999999999997px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 143,
+                          "win_rate": "8",
+                          "textLeft": "73.25317547305484px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "30deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vaEgd00y33lYHC1ypiBk.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Medaille 2",
+                          "consume_num": 155,
+                          "residue_num": 99844,
+                          "imgTop": "-98.6121593216773px",
+                          "imgLeft": "17.499999999999993px",
+                          "prize_id": "44811",
+                          "textTop": "-128.25317547305485px",
+                          "prize_serial": 6,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 155,
+                          "win_rate": "8",
+                          "textLeft": "27.499999999999993px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "0deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vVJwj00y2TWPL01ED85t.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Medaille 3",
+                          "consume_num": 131,
+                          "residue_num": 99868,
+                          "imgTop": "-110px",
+                          "imgLeft": "-24.99999999999999px",
+                          "prize_id": "44473",
+                          "textTop": "-145px",
+                          "prize_serial": 7,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 131,
+                          "win_rate": "8",
+                          "textLeft": "-34.999999999999986px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-30deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/3s4/2ujNpp.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Medaille 4",
+                          "consume_num": 126,
+                          "residue_num": 99873,
+                          "imgTop": "-98.61215932167728px",
+                          "imgLeft": "-67.5px",
+                          "prize_id": "44463",
+                          "textTop": "-128.25317547305482px",
+                          "prize_serial": 8,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 126,
+                          "win_rate": "8",
+                          "textLeft": "-97.50000000000001px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-60deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vhn7E00y2TWPL00DrhHv.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Avataranhänger 1 1",
+                          "consume_num": 122,
+                          "residue_num": 99877,
+                          "imgTop": "-67.50000000000003px",
+                          "imgLeft": "-98.61215932167727px",
+                          "prize_id": "45323",
+                          "textTop": "-82.50000000000006px",
+                          "prize_serial": 9,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 122,
+                          "win_rate": "8",
+                          "textLeft": "-143.2531754730548px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-90deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vgdWN00y2TWPL016Wdx7.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 8,
+                          "is_pay_prize": 0,
+                          "prize_name": "Avataranhänger 2",
+                          "consume_num": 132,
+                          "residue_num": 99867,
+                          "imgTop": "-25.000000000000014px",
+                          "imgLeft": "-110px",
+                          "prize_id": "45265",
+                          "textTop": "-20.00000000000002px",
+                          "prize_serial": 10,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 132,
+                          "win_rate": "8",
+                          "textLeft": "-160px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-120deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vfpd200y33lYHC0Xm9VU.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 10,
+                          "is_pay_prize": 0,
+                          "prize_name": "Avataranhänger 3",
+                          "consume_num": 153,
+                          "residue_num": 99846,
+                          "imgTop": "17.500000000000007px",
+                          "imgLeft": "-98.61215932167728px",
+                          "prize_id": "45235",
+                          "textTop": "42.500000000000014px",
+                          "prize_serial": 11,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 153,
+                          "win_rate": "10",
+                          "textLeft": "-143.25317547305482px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-150deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vdief00y2TWPL01hIsw4.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 10,
+                          "is_pay_prize": 0,
+                          "prize_name": "Avataranhänger 4",
+                          "consume_num": 134,
+                          "residue_num": 99865,
+                          "imgTop": "48.61215932167727px",
+                          "imgLeft": "-67.50000000000003px",
+                          "prize_id": "45051",
+                          "textTop": "88.2531754730548px",
+                          "prize_serial": 12,
+                          "free_level": "",
+                          "activity_all_num": "99999",
+                          "valid_days": "3",
+                          "used_num": 134,
+                          "win_rate": "10",
+                          "textLeft": "-97.50000000000006px",
+                          "prize_type": "6"
+                        }
+                      ],
+                      "totalCost": "0.0000"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "lottery_type": 2,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Für DACH-SVIPs",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "BqWHE",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "❗️Nur DACH-SVIPs mit dem Auflade-Ländercode DE/AT/CH können am Event teilnehmen❗️"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "mwKXJ",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Jetzt SVIP werden! ✅",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://static-fed.bigolive.tv/live/pages/bigolive/svip/index.html",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "5GtpQ",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "❓Was ist SVIP❓",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77944",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "PSo4x",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Die Belohnungen sind begrenzt – wer zuerst kommt, mahlt zuerst!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "7qQnr",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type2",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "👉Jeden Tag erwarten dich zwei exklusive Missionen👈"
+                      },
+                      {
+                        "frontTextStyle": "underline",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "\n1️⃣Mission 1: Lade 2026 Diamanten auf und erhalte sofort 400 Bohnen.\n2️⃣Mission 2: Lade weitere 4000 Diamanten auf und bekomme 1000 Bohnen extra!\n\n💡 Mission 2 wird freigeschaltet, sobald du Mission 1 abgeschlossen hast."
+                      },
+                      {
+                        "frontTextStyle": "underline",
+                        "frontAlignStyle": "center",
+                        "type": "key_text",
+                        "value": "⏰ Die Aufgaben werden täglich zurückgesetzt – also sichere dir bis zu 1400 Bohnen pro Tag!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "lCvOJ",
+                  "formData": {
+                    "scoreLang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [
+                      "DE"
+                    ],
+                    "num": 10,
+                    "needGroupsChangeReason": true,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": true,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          0
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang086",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 10,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "充值金额",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "anchor_uids": "",
+                    "anchor_whitelist_id": null,
+                    "text": " 1 Diamant aufladen=1 Punkt bekommen",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "AT",
+                      "CH",
+                      "DE"
+                    ],
+                    "svip_area": "3",
+                    "appoint_uid": 2,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "Glückwunsch! Du hast die tägliche Aufgabe im [Hallo 2026]-Event abgeschlossen! 400 Bohnen wurden dir gutgeschrieben. Mehr: https://activity.bigo.tv/live/act/act_16907/index.html?id=78882",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "276",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "400"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": false,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 2026
+                      },
+                      {
+                        "private_im_lang": "Glückwunsch! Du hast die zweite tägliche Aufgabe im [Hallo 2026]-Event abgeschlossen! 1000 Bohnen wurden dir gutgeschrieben. Mehr: https://activity.bigo.tv/live/act/act_16907/index.html?id=78882",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "106",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": -1,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "1000"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 2,
+                        "process_notice": false,
+                        "send_im": true,
+                        "anthor_finish_room": false,
+                        "private_send_im": true,
+                        "target": 4000
+                      }
+                    ],
+                    "groups": [],
+                    "svip_levels": [
+                      "all"
+                    ],
+                    "index": 4,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "DE"
+                    ],
+                    "appoint_uid_source": 2,
+                    "anchor_whitelist_status": 0,
+                    "anchor_uid_info": null,
+                    "name": "Tägliche Aufladen-Aufgabe",
+                    "countType": "",
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,788 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251220",
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231",
+      "20260101",
+      "20260102",
+      "20260103",
+      "20260104",
+      "20260105"
+    ],
+    "week": [
+      "20251215",
+      "20251222",
+      "20251229",
+      "20260105"
+    ],
+    "month": [
+      "202512",
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 21:26:24",
+    "now_zone": 8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78220,
+      "act_name": "New Year DJ Fest",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-20 00:00:00",
+      "end_time": "2026-01-05 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "US",
+        "CA"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "11"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vZ1DI00y33lYHC0NfKVu.jpeg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 1,
+          "uid_arr": [
+            {
+              "uid": "1894390304",
+              "text": "New Year DJ Fest"
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Register to Get Featured in the Channel",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://forms.gle/3esoHnENGceRrjuw6",
+              "openType": 2,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Post Now",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://myposts",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Get Featured in the Channel",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "pi5JP",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vZ1DR00y33lYHC0r8i03.jpeg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Stream",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WsTnv",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vZ00H00y2TWPL01los2t.jpeg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "uJPFO",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "layer_content": [],
+                        "fn": 3,
+                        "popUpSure": "Confirm",
+                        "url": "",
+                        "openType": 1,
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": true,
+                            "sure": "",
+                            "name": "Broadcasters Leaderboard",
+                            "range": [
+                              1
+                            ],
+                            "title": "",
+                            "attendModular": 1,
+                            "desc": ""
+                          },
+                          {
+                            "checkAll": true,
+                            "sure": "",
+                            "name": "Lucky Draw (on the \"Watch\" Tab)",
+                            "range": [
+                              2
+                            ],
+                            "title": "",
+                            "attendModular": 2,
+                            "desc": ""
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Sign Up to Join",
+                        "style": 0,
+                        "share_img": "",
+                        "layer_title": "",
+                        "canSignNum": 1
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "59Guq",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 30,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 2,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 2000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 1800,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 30,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "weekTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "30 Minutes of Live-Streaming = 30 Points",
+                    "linktext": "",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "Broadcasters Leaderboard",
+                    "linkurl": "",
+                    "switchDisplay": false,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "isSearch": 0,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "US",
+                      "CA"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Watch",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "v0iOL",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 900,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "totalLimit": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 20,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "lottery_title": "Viewers Lucky Draw",
+                    "svip_area": "",
+                    "lottery_rule": "15 Minutes of Watching = 1 Draws\nMax 20 Draws/Day",
+                    "need_attend": 1,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 2,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 0,
+                      "consumeCost": "0.00",
+                      "messageConfigure": 0,
+                      "messageObj": {
+                        "imImg": "",
+                        "theme": "",
+                        "content": ""
+                      },
+                      "list": [
+                        {
+                          "prizes_num": 1,
+                          "rotate": "180deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vVJwj00y2TWPL01ED85t.png",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "New Year Medal",
+                          "consume_num": 2576,
+                          "residue_num": 9997423,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "44473",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "9999999",
+                          "valid_days": "30",
+                          "used_num": 2576,
+                          "win_rate": "40",
+                          "textLeft": "-35px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "108deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vY6YK00y2TWPL00grNOK.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 10,
+                          "is_pay_prize": 0,
+                          "prize_name": "Hello 2026",
+                          "consume_num": 100,
+                          "residue_num": 0,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "44747",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "100",
+                          "valid_days": "30",
+                          "used_num": 100,
+                          "win_rate": "10",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "36deg",
+                          "preview_img": "http://giftesx.bigo.sg/live/g2/M09/03/4D/iwVsD1p_qj-IQy5QAAAVjPGJH2oAAN8LwI0ak4AABWk202.png?auth-token=VTemvyxLzh96VUNv5ziwDvavANJKCASkvfHo_usNlcs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MjIwLFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1MzIyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 40,
+                          "is_pay_prize": 0,
+                          "prize_name": "Musical Microphone",
+                          "consume_num": 2421,
+                          "residue_num": 9997578,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "20279",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "9999999",
+                          "valid_days": "30",
+                          "used_num": 2421,
+                          "win_rate": "40",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "5"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-36deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vRIcb00y2TWPL01bEc03.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 9,
+                          "is_pay_prize": 0,
+                          "prize_name": "Gingerbread Pendant",
+                          "consume_num": 100,
+                          "residue_num": 0,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "44211",
+                          "textTop": "-121.12712429686843px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "100",
+                          "valid_days": "30",
+                          "used_num": 100,
+                          "win_rate": "9",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "6"
+                        },
+                        {
+                          "prizes_num": "1",
+                          "rotate": "-108deg",
+                          "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vWk9q00y33lYHC1AI7Df.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0",
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 1,
+                          "is_pay_prize": 0,
+                          "prize_name": "Dino Coin Purse",
+                          "consume_num": 1,
+                          "residue_num": 0,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "1",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "1",
+                          "valid_days": "30",
+                          "used_num": 1,
+                          "win_rate": "1",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "15"
+                        }
+                      ],
+                      "totalCost": "0.0000"
+                    },
+                    "uid": "",
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "US",
+                      "CA"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 0,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 0,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Post with #BigoHoliday",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "b8jWv",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Post Now",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "bigolive://myposts",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "L5mAL",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Access and FAQ",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://slink.bigovideo.tv/slink_redirect/activity/live/act/act_16907/index.html?id=68581&slink_hash=QiNn7U",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "EwdBN",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vZ1Dd00y2TWPL00lmHm2.jpeg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Post Ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "zynSW",
+                  "formData": {
+                    "need_attend": 0,
+                    "rankType": 1,
+                    "postType": [],
+                    "index": 3,
+                    "postId": "6949086897349226105",
+                    "onlyCharge": true,
+                    "selectedArea": [
+                      "US"
+                    ],
+                    "countryList": [
+                      "US",
+                      "CA"
+                    ],
+                    "tieba_font_num": 999,
+                    "isSign": 0,
+                    "mode": 1,
+                    "isDepu": 2,
+                    "isOnScore": 0,
+                    "dateType": 4,
+                    "appType": 1,
+                    "rankName": "#BigoHoliday Posting Leaderboard",
+                    "userFansNumsRange": [],
+                    "rank": 999,
+                    "circleId": "",
+                    "text": "1 share/person = 1 point; 1 like = 1 point",
+                    "countType": "",
+                    "isOnUserInfo": 1,
+                    "info": [
+                      {
+                        "max": 100000,
+                        "from": 1,
+                        "to": 1,
+                        "type": 1
+                      },
+                      {
+                        "max": 100000,
+                        "from": 1,
+                        "to": 1,
+                        "type": 3
+                      }
+                    ],
+                    "cycleConfig": 1
+                  },
+                  "type": "tieba",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

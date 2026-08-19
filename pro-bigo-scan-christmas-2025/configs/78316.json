@@ -1,0 +1,870 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78316,
+      "act_name": "2026 NEW YEAR SPIN",
+      "state": 1,
+      "color": 1,
+      "theme": "blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-05 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "#98FBCB",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "37"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vbbrq00y2TWPL01PGmK6.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 500,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": false,
+          "lottery_title": "2026 NEW YEAR SPIN",
+          "svip_area": "",
+          "lottery_rule": "500 Diamonds = 1 Spin",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 1,
+          "selectedArea": [
+            "MY"
+          ],
+          "anchor_whitelist_status": 0,
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": true,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500658800",
+              "create_time": "1767520605",
+              "utime": "2026-01-04 17:56:45",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "78316",
+              "update_operator": "",
+              "create_operator": "12715",
+              "frequency": "0",
+              "update_time": "1767520605",
+              "black_tasks_status": "0",
+              "filter_id": "21395",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2026-01-04 17:56:45",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 9.004999999999995,
+            "consumeCost": "490.91",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vcKsp00y2TWPL01TVCxF.jpg",
+              "theme": "Congratulation! You've Received Spin!",
+              "content": "Let's Spin & Win Big Prizes NOW! "
+            },
+            "list": [
+              {
+                "prizes_num": "5000",
+                "rotate": "180deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "83.3333",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0,
+                "is_pay_prize": 0,
+                "prize_name": "5,000 Diamonds",
+                "consume_num": 0,
+                "residue_num": 0,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "1",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "0",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "0",
+                "textLeft": "-35px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "500",
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "8.3333",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0,
+                "is_pay_prize": 0,
+                "prize_name": "500 Diamonds",
+                "consume_num": 0,
+                "residue_num": 0,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "1",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "0",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "0",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "150",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "2.5000",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0,
+                "is_pay_prize": 0,
+                "prize_name": "150 Diamonds",
+                "consume_num": 0,
+                "residue_num": 0,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "1",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "0",
+                "valid_days": "0",
+                "used_num": 0,
+                "win_rate": "0",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "50",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.8333",
+                "activity_all_cost": "41.6650",
+                "win_real_rate": 0.1,
+                "is_pay_prize": 0,
+                "prize_name": "50 Diamonds",
+                "consume_num": 50,
+                "residue_num": 0,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "1",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "50",
+                "valid_days": "0",
+                "used_num": 50,
+                "win_rate": "0.1",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "10",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.1667",
+                "activity_all_cost": "166.7000",
+                "win_real_rate": 0.1,
+                "is_pay_prize": 0,
+                "prize_name": "10 Diamonds",
+                "consume_num": 946,
+                "residue_num": 54,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "1",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "1000",
+                "valid_days": "0",
+                "used_num": 946,
+                "win_rate": "0.1",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "5",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.0833",
+                "activity_all_cost": "291.5500",
+                "win_real_rate": 0,
+                "is_pay_prize": 0,
+                "prize_name": "5 Diamonds",
+                "consume_num": 3500,
+                "residue_num": 0,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "1",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "3500",
+                "valid_days": "0",
+                "used_num": 3500,
+                "win_rate": "0",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vXvNj00y33lYHC11YvuI.png",
+                "is_bottom_prize": 1,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 99.8,
+                "is_pay_prize": 0,
+                "prize_name": "Diamond Ticket",
+                "consume_num": 56674,
+                "residue_num": 43325,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "1",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": "",
+                "activity_all_num": "99999",
+                "valid_days": "0",
+                "used_num": 56674,
+                "win_rate": "99.8",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "15"
+              }
+            ],
+            "totalCost": "499.9150"
+          },
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": "1500658800",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 1,
+          "sendGift_limituid": 0,
+          "mode": 0,
+          "giftUid_id": null,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [],
+          "anchor_uids": "",
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "time",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "Final Result",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "selectedArea": [],
+          "anchor_whitelist_status": 0,
+          "voteBoardTitle": "",
+          "frontTextAlignStyle": "center",
+          "name": "🎫 Diamond Ticket Leaderboard 🎫",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [],
+          "top3": 1,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "anchor_whitelist_id": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [
+            {
+              "uid": 597002279,
+              "score": "5749"
+            },
+            {
+              "uid": 853060601,
+              "score": "1477"
+            },
+            {
+              "uid": 465291819,
+              "score": "1211"
+            },
+            {
+              "uid": 834435231,
+              "score": "918"
+            },
+            {
+              "uid": 847852940,
+              "score": "870"
+            },
+            {
+              "uid": 859289383,
+              "score": "513"
+            },
+            {
+              "uid": 692615476,
+              "score": "483"
+            },
+            {
+              "uid": 412497508,
+              "score": "439"
+            },
+            {
+              "uid": 1730604544,
+              "score": "430"
+            },
+            {
+              "uid": 703133647,
+              "score": "409"
+            },
+            {
+              "uid": 415356870,
+              "score": "407"
+            },
+            {
+              "uid": 672424953,
+              "score": "369"
+            },
+            {
+              "uid": 698626809,
+              "score": "347"
+            },
+            {
+              "uid": 620848179,
+              "score": "333"
+            },
+            {
+              "uid": 516189145,
+              "score": "330"
+            },
+            {
+              "uid": 647316713,
+              "score": "328"
+            },
+            {
+              "uid": 642040075,
+              "score": "320"
+            },
+            {
+              "uid": 1808593789,
+              "score": "320"
+            },
+            {
+              "uid": 507008755,
+              "score": "317"
+            },
+            {
+              "uid": 1654143727,
+              "score": "303"
+            },
+            {
+              "uid": 797457144,
+              "score": "297"
+            },
+            {
+              "uid": 467213557,
+              "score": "284"
+            },
+            {
+              "uid": 514053115,
+              "score": "257"
+            },
+            {
+              "uid": 1873771922,
+              "score": "250"
+            },
+            {
+              "uid": 799799774,
+              "score": "248"
+            },
+            {
+              "uid": 1559228834,
+              "score": "243"
+            },
+            {
+              "uid": 518554878,
+              "score": "237"
+            },
+            {
+              "uid": 1875790499,
+              "score": "231"
+            },
+            {
+              "uid": 1834125651,
+              "score": "226"
+            },
+            {
+              "uid": 671064093,
+              "score": "221"
+            },
+            {
+              "uid": 1642799579,
+              "score": "216"
+            },
+            {
+              "uid": 1837419655,
+              "score": "213"
+            },
+            {
+              "uid": 502106880,
+              "score": "209"
+            },
+            {
+              "uid": 582235414,
+              "score": "204"
+            },
+            {
+              "uid": 668291339,
+              "score": "202"
+            },
+            {
+              "uid": 497562305,
+              "score": "199"
+            },
+            {
+              "uid": 602023158,
+              "score": "195"
+            },
+            {
+              "uid": 823240249,
+              "score": "188"
+            },
+            {
+              "uid": 441735030,
+              "score": "184"
+            },
+            {
+              "uid": 558429386,
+              "score": "184"
+            },
+            {
+              "uid": 851263870,
+              "score": "184"
+            },
+            {
+              "uid": 1869690218,
+              "score": "184"
+            },
+            {
+              "uid": 811817425,
+              "score": "178"
+            },
+            {
+              "uid": 620229174,
+              "score": "170"
+            },
+            {
+              "uid": 814475703,
+              "score": "170"
+            },
+            {
+              "uid": 1893049956,
+              "score": "170"
+            },
+            {
+              "uid": 1858795999,
+              "score": "169"
+            },
+            {
+              "uid": 1573557891,
+              "score": "165"
+            },
+            {
+              "uid": 759940237,
+              "score": "164"
+            },
+            {
+              "uid": 1531024484,
+              "score": "161"
+            },
+            {
+              "uid": 802228316,
+              "score": "152"
+            },
+            {
+              "uid": 434419565,
+              "score": "151"
+            },
+            {
+              "uid": 537846350,
+              "score": "148"
+            },
+            {
+              "uid": 600040751,
+              "score": "148"
+            },
+            {
+              "uid": 824942622,
+              "score": "148"
+            },
+            {
+              "uid": 1503792419,
+              "score": "146"
+            },
+            {
+              "uid": 1606622342,
+              "score": "146"
+            },
+            {
+              "uid": 798968672,
+              "score": "145"
+            },
+            {
+              "uid": 1800161083,
+              "score": "144"
+            },
+            {
+              "uid": 592981428,
+              "score": "143"
+            },
+            {
+              "uid": 862878041,
+              "score": "142"
+            },
+            {
+              "uid": 1794034908,
+              "score": "142"
+            },
+            {
+              "uid": 690969098,
+              "score": "141"
+            },
+            {
+              "uid": 467939625,
+              "score": "133"
+            },
+            {
+              "uid": 834159051,
+              "score": "133"
+            },
+            {
+              "uid": 857170672,
+              "score": "132"
+            },
+            {
+              "uid": 1657366685,
+              "score": "130"
+            },
+            {
+              "uid": 848194941,
+              "score": "127"
+            },
+            {
+              "uid": 527278937,
+              "score": "126"
+            },
+            {
+              "uid": 620534076,
+              "score": "124"
+            },
+            {
+              "uid": 694531070,
+              "score": "123"
+            },
+            {
+              "uid": 858252499,
+              "score": "122"
+            },
+            {
+              "uid": 1508907485,
+              "score": "122"
+            },
+            {
+              "uid": 834724986,
+              "score": "121"
+            },
+            {
+              "uid": 1522292372,
+              "score": "120"
+            },
+            {
+              "uid": 470414962,
+              "score": "119"
+            },
+            {
+              "uid": 685151674,
+              "score": "118"
+            },
+            {
+              "uid": 446338972,
+              "score": "117"
+            },
+            {
+              "uid": 831137955,
+              "score": "117"
+            },
+            {
+              "uid": 697298505,
+              "score": "115"
+            },
+            {
+              "uid": 761599546,
+              "score": "114"
+            },
+            {
+              "uid": 1516516948,
+              "score": "114"
+            },
+            {
+              "uid": 566681070,
+              "score": "113"
+            },
+            {
+              "uid": 796758602,
+              "score": "113"
+            },
+            {
+              "uid": 518499255,
+              "score": "112"
+            },
+            {
+              "uid": 716171212,
+              "score": "111"
+            },
+            {
+              "uid": 735223047,
+              "score": "111"
+            },
+            {
+              "uid": 1701444057,
+              "score": "111"
+            },
+            {
+              "uid": 1554000344,
+              "score": "110"
+            },
+            {
+              "uid": 793206874,
+              "score": "109"
+            },
+            {
+              "uid": 539775450,
+              "score": "108"
+            },
+            {
+              "uid": 554103684,
+              "score": "108"
+            },
+            {
+              "uid": 1580135021,
+              "score": "108"
+            },
+            {
+              "uid": 1788258597,
+              "score": "108"
+            },
+            {
+              "uid": 411787944,
+              "score": "107"
+            },
+            {
+              "uid": 424160489,
+              "score": "106"
+            },
+            {
+              "uid": 404799034,
+              "score": "104"
+            },
+            {
+              "uid": 748043837,
+              "score": "104"
+            },
+            {
+              "uid": 559540595,
+              "score": "102"
+            }
+          ],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

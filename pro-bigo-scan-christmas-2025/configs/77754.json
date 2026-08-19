@@ -1,0 +1,511 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251212",
+      "20251213",
+      "20251214",
+      "20251215",
+      "20251216",
+      "20251217",
+      "20251218",
+      "20251219",
+      "20251220",
+      "20251221",
+      "20251222",
+      "20251223",
+      "20251224",
+      "20251225",
+      "20251226",
+      "20251227",
+      "20251228",
+      "20251229",
+      "20251230",
+      "20251231",
+      "20260101"
+    ],
+    "week": [
+      "20251208",
+      "20251215",
+      "20251222",
+      "20251229"
+    ],
+    "month": [
+      "202512",
+      "202601"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 10:57:04",
+    "now_zone": -5.5,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1,
+        2,
+        3
+      ],
+      "id": 77754,
+      "act_name": "Bali Carnival Night （Selection）",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-12 00:00:00",
+      "end_time": "2026-01-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "IN"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "5"
+    },
+    "act_modular": [
+      {
+        "type": "video",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vWXmS00y33lYHC1NnBas.png",
+          "autoPlayAndLoop": true,
+          "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vWXkg00y2TWPL003jx2H.mp4"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTBR400y33lYHC1unsF8.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Waves, sunsets, and the ultimate party—be in the Top 2 and experience Bali like never before."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "December 12 - December 31"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "text",
+              "value": "Climb to the top! The top two users with the highest points（ from gifting and top-ups ）will earn entry to our Bali event plus access to all event experiences. Don’t miss your chance to join the island adventure!"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "center",
+              "type": "key_text",
+              "value": "If a selected participant is unable to attend, their spot will be passed to the next eligible user."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [],
+          "num": 50,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 1000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "充值金额",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": 0,
+              "sourcesAction": 1,
+              "auto_type_lang": "lang441",
+              "change": 1,
+              "scoreType": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "Recharge 1 diamond = 1 point；Send a diamond (gift) = 1 point(For IN only）",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "svip_levels": [],
+          "index": 1,
+          "selectedArea": [],
+          "anchor_whitelist_status": 0,
+          "voteBoardTitle": "",
+          "frontTextAlignStyle": "center",
+          "name": "Bali Carnival Night（12-12 ~ 12-31)",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "IN"
+          ],
+          "top3": 1,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 1,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "anchor_whitelist_id": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "IN"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 2,
+          "prizeType": 1,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "prize_arr_v2": [
+            {
+              "rank_to": 3,
+              "rank_from": 1,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                  "disabledID": true,
+                  "items_id": 4,
+                  "num": 20000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 4
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 0
+            },
+            {
+              "rank_to": 4,
+              "rank_from": 4,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                  "disabledID": true,
+                  "items_id": 4,
+                  "num": 17500,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 4
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 0
+            },
+            {
+              "rank_to": 5,
+              "rank_from": 5,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                  "disabledID": true,
+                  "items_id": 4,
+                  "num": 15000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 4
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 0
+            },
+            {
+              "rank_to": 6,
+              "rank_from": 6,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                  "disabledID": true,
+                  "items_id": 4,
+                  "num": 12500,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 4
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 0
+            },
+            {
+              "rank_to": 10,
+              "rank_from": 7,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/beans.png",
+                  "disabledID": true,
+                  "items_id": 4,
+                  "num": 10000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 4
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 0
+            }
+          ],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Event Rules\n\nEligibility:\nThis event is only open to users from India.\n\nHow to Earn Points:\n\nTop-up Points: Every 1 diamond recharged = 1 point.\n\nGift Points: Every 1-diamond gift sent = 1 point.\n\nGift Counting Range: Only gifts sent to Indian hosts will be counted.\n\nNotes:\n\nTop-ups and gifts from non-Indian users will not earn points.\n\nGifts sent to non-Indian streamers will not be counted.\n\nPoints are only valid during the event period."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Countdown"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

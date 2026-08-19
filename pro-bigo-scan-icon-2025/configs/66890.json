@@ -1,0 +1,889 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250601",
+      "20250602",
+      "20250603",
+      "20250604",
+      "20250605",
+      "20250606",
+      "20250607",
+      "20250608",
+      "20250609",
+      "20250610",
+      "20250611",
+      "20250612",
+      "20250613",
+      "20250614",
+      "20250615",
+      "20250616",
+      "20250617",
+      "20250618",
+      "20250619",
+      "20250620",
+      "20250621",
+      "20250622",
+      "20250623",
+      "20250624",
+      "20250625",
+      "20250626",
+      "20250627",
+      "20250628",
+      "20250629",
+      "20250630"
+    ],
+    "week": [
+      "20250526",
+      "20250602",
+      "20250609",
+      "20250616",
+      "20250623",
+      "20250630"
+    ],
+    "month": [
+      "202506"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 66890,
+      "act_name": "test Mid Year GALA Recharge",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-01 00:00:00",
+      "end_time": "2025-06-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2"
+    },
+    "act_modular": [
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 999,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 2000000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": true,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [
+              {
+                "startDateTime": "2025-06-01 00:00:00",
+                "endDate": "2025-06-03",
+                "originEndTime": "",
+                "originStartTime": "",
+                "startTime": "00:00:00",
+                "endTime": "23:59:59",
+                "originStartDateTime": "2025-06-01 00:00:00",
+                "endDateTime": "2025-06-03 23:59:59",
+                "originEndDateTime": "2025-06-03 23:59:59",
+                "startDate": "2025-06-01"
+              }
+            ],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 100
+          },
+          "text": "Recharge 1 Diamond = 1 Point",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 1,
+          "selectedArea": [
+            "MY"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/01 00:00:00",
+          "frontTextAlignStyle": "left",
+          "name": "1st phase Malay Naga Recharge Ranking",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "end_time": "2025/06/16 23:59:59",
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 999,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 200000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": true,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [
+              {
+                "startDateTime": "2025-06-06 00:00:00",
+                "endDate": "2025-06-08",
+                "originEndTime": "",
+                "originStartTime": "",
+                "startTime": "00:00:00",
+                "endTime": "23:59:59",
+                "originStartDateTime": "2025-06-06 00:00:00",
+                "endDateTime": "2025-06-08 23:59:59",
+                "originEndDateTime": "2025-06-08 23:59:59",
+                "startDate": "2025-06-06"
+              }
+            ],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 100
+          },
+          "text": "Recharge 1 Diamond = 1 Point",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 2,
+          "selectedArea": [
+            "MY"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/01 00:00:00",
+          "frontTextAlignStyle": "left",
+          "name": "1st phase Chinese Loong Recharge Ranking",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "end_time": "2025/06/16 23:59:59",
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 999,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 200000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "same",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 3,
+          "selectedArea": [
+            "MY"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/17 00:00:00",
+          "frontTextAlignStyle": "left",
+          "name": "2nd phase Naga",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "end_time": "2025/06/30 23:59:59",
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 999,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 20000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "dateTime",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "same",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 4,
+          "selectedArea": [
+            "MY"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/17 00:00:00",
+          "frontTextAlignStyle": "left",
+          "name": "2nd phase loong",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "end_time": "2025/06/30 23:59:59",
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 10,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": true,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeRangeList": [
+              {
+                "startDateTime": "2025-06-24 00:00:00",
+                "endDate": "2025-06-26",
+                "originEndTime": "",
+                "originStartTime": "",
+                "startTime": "00:00:00",
+                "endTime": "23:59:59",
+                "originStartDateTime": "2025-06-24 00:00:00",
+                "endDateTime": "2025-06-26 23:59:59",
+                "originEndDateTime": "2025-06-26 23:59:59",
+                "startDate": "2025-06-24"
+              }
+            ],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 100
+          },
+          "text": "1D=1P",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 5,
+          "selectedArea": [
+            "MY"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/17 00:00:00",
+          "frontTextAlignStyle": "center",
+          "name": "2nd Loong & Naga 2x 24-26june",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "end_time": "2025/06/30 23:59:59",
+          "rankStyle": "2",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [
+            "MY"
+          ],
+          "num": 10,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 5,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 9999,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": true,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeRangeList": [
+              {
+                "startDateTime": "2025-06-27 00:00:00",
+                "endDate": "2025-06-29",
+                "originEndTime": "",
+                "originStartTime": "",
+                "startTime": "00:00:00",
+                "endTime": "23:59:59",
+                "originStartDateTime": "2025-06-27 00:00:00",
+                "endDateTime": "2025-06-29 23:59:59",
+                "originEndDateTime": "2025-06-29 23:59:59",
+                "startDate": "2025-06-27"
+              }
+            ],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 100
+          },
+          "text": "1D=1P",
+          "linktext": "",
+          "need_attend": 0,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 6,
+          "selectedArea": [
+            "MY"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/17 00:00:00",
+          "frontTextAlignStyle": "center",
+          "name": "2nd Loong & Naga 2x 27-29june",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "top3": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": null,
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 0,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "BN",
+            "MY",
+            "SG"
+          ],
+          "appoint_uid": 0,
+          "cycleConfig": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "prizeType": 1,
+          "end_time": "2025/06/30 23:59:59",
+          "rankStyle": "1",
+          "prize_arr_v2": [],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

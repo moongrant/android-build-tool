@@ -1,0 +1,2534 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 08:25:36",
+    "now_zone": -3,
+    "leave_time": 8955264,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 78036,
+      "act_name": "Добро пожаловать в BIGO LIVE!",
+      "state": 0,
+      "color": 1,
+      "theme": "pink",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-17 00:00:00",
+      "end_time": "2026-12-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "RU",
+        "KZ",
+        "UA",
+        "BY",
+        "KG",
+        "UZ",
+        "AZ",
+        "TJ",
+        "GE",
+        "AM",
+        "MD",
+        "TM"
+      ],
+      "selectedArea": [
+        "RU"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "9"
+    },
+    "act_modular": [
+      {
+        "type": "header-image",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJVkl00y33lYHC144rIe.jpg",
+          "videoUrl": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJsXX00y33lYHC1eQ47e.mp4",
+          "videoPlayType": 2,
+          "type": 2,
+          "videoPoster": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJsXd00y33lYHC25DFh3.jpg",
+          "imgPos": 600
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Бесплатные призы",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "bigolive://redemption?code=Welcome to Bigo live",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Как начать?",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "aYdY5",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vJTsS00y33lYHC14ge02.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "48ZwI",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJUEH00y2TWPL01AU8HH.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "2sFGc",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vJUP500y2TWPL01TqB55.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "GbD4b",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vJUQL00y33lYHC26u0tw.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Нажмите на \"Больше\", чтобы выбрать страну"
+                          },
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJUQq00y33lYHC2KKVKU.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Нажмите на значок фильтра, чтобы выбрать трансляцию по интересам"
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Как выбрать стрим?",
+                        "fn": 0,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "openType": 1,
+                        "layer_title": "Выберете наверху \"Обнаружить\"",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "9x8w7",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJW7L00y33lYHC0laOC3.jpg",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=61263",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "WqpdW",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJXKy00y33lYHC1PtB1Y.jpg",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "https://docs.google.com/document/d/1EaPN33-nF_w2O4q9N4K10DQ-P0PbY1AJ4v0iZ90LzHU/edit?tab=t.0#heading=h.v6em0s48r7ek",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "EuhEm",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vJWWO00y33lYHC0mEMnl.png"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Нажми \"Стать официльаным ведущим\""
+                          },
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vJWY100y33lYHC0KJpcr.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Выбери агента, который будет представлять тебя в BIGO LIVE"
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Как стать ведущим?",
+                        "fn": 0,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "openType": 1,
+                        "layer_title": "Зайди в \"Творческий центр на вкладке \"Я\"",
+                        "canSignNum": 0
+                      },
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vJWYm00y2TWPL02DMPfZ.png"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Зайди в \"Творческий центр\", прейди во вкладку \"Агентство\""
+                          },
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJWZG00y33lYHC1i6pIK.png"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Подай заявку, чтобы стать агентом"
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Как стать агентом?",
+                        "fn": 0,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "layer_title": "Открой вкладку \"Я\"",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "KHfm9",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJWs700y33lYHC13CawE.jpg",
+                    "imgSupportJump": true,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=60539",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "i7IDx",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vdNLF00y33lYHC0OA6df.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "7c2NY",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJXDw00y33lYHC1gk9fx.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Нажмите на раздел \"Зарабатывайте\", чтобы узнать о реферальной программе"
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Подробнее о реферальной программе",
+                        "fn": 0,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "openType": 1,
+                        "layer_title": "Откройте вкладку \"Я\"",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "SR0dR",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1wI1B500y2TWPL01qrEDz.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "bJ7wp",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Пригласить сейчас",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://static-fed.bigolive.tv/live/pages/bigolive/act-39011/index.html",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "iOvcX",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vvAkH00y33lYHC0azMCX.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "nFVHx",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Как сделать посты?",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=80898",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "YANuL",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vvAl700y33lYHC2APXB7.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "U5IAd",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJXS100y2TWPL00Mwznz.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Выберете \"Центр заданий\""
+                          },
+                          {
+                            "type": "img",
+                            "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vJXST00y2TWPL01MCIXw.jpg"
+                          },
+                          {
+                            "type": "text",
+                            "value": "Накормите Дино пончиками"
+                          }
+                        ],
+                        "share_title": "",
+                        "name": "Виртуальный питомец",
+                        "fn": 0,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "",
+                        "openType": 1,
+                        "layer_title": "Зайдите в раздел \"Я\"",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "zr7t5",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vJXhv00y33lYHC2CTOvD.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "gQ2Z9",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vJXih00y33lYHC04ccl3.png",
+                    "autoPlayAndLoop": true,
+                    "url": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vJXif00y2TWPL02J7K50.mp4"
+                  },
+                  "type": "video",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "3lP05",
+                  "formData": {
+                    "mode": 4,
+                    "uid_arr": [
+                      {
+                        "uid": 520121943,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1623028531,
+                        "text": ""
+                      },
+                      {
+                        "uid": 433867958,
+                        "text": ""
+                      },
+                      {
+                        "uid": 493332510,
+                        "text": ""
+                      },
+                      {
+                        "uid": 449827651,
+                        "text": ""
+                      },
+                      {
+                        "uid": 462007478,
+                        "text": ""
+                      },
+                      {
+                        "uid": 517431495,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1754489339,
+                        "text": ""
+                      },
+                      {
+                        "uid": 602333073,
+                        "text": ""
+                      },
+                      {
+                        "uid": 563950901,
+                        "text": ""
+                      },
+                      {
+                        "uid": 523028760,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1878424872,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1832840697,
+                        "text": ""
+                      },
+                      {
+                        "uid": 518475315,
+                        "text": ""
+                      },
+                      {
+                        "uid": 408745873,
+                        "text": ""
+                      },
+                      {
+                        "uid": 817990859,
+                        "text": ""
+                      },
+                      {
+                        "uid": 473351192,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1610509266,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1573520397,
+                        "text": ""
+                      },
+                      {
+                        "uid": 501274383,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1857014653,
+                        "text": ""
+                      },
+                      {
+                        "uid": 420193829,
+                        "text": ""
+                      },
+                      {
+                        "uid": 468831047,
+                        "text": ""
+                      },
+                      {
+                        "uid": 543080096,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1857499977,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1858264088,
+                        "text": ""
+                      },
+                      {
+                        "uid": 582213108,
+                        "text": ""
+                      },
+                      {
+                        "uid": 518817410,
+                        "text": ""
+                      },
+                      {
+                        "uid": 614338830,
+                        "text": ""
+                      },
+                      {
+                        "uid": 454979630,
+                        "text": ""
+                      },
+                      {
+                        "uid": 520656175,
+                        "text": ""
+                      },
+                      {
+                        "uid": 608385315,
+                        "text": ""
+                      },
+                      {
+                        "uid": 614839613,
+                        "text": ""
+                      },
+                      {
+                        "uid": 633511544,
+                        "text": ""
+                      },
+                      {
+                        "uid": 600704435,
+                        "text": ""
+                      },
+                      {
+                        "uid": 469123585,
+                        "text": ""
+                      },
+                      {
+                        "uid": 621400389,
+                        "text": ""
+                      },
+                      {
+                        "uid": 601391707,
+                        "text": ""
+                      },
+                      {
+                        "uid": 804912482,
+                        "text": ""
+                      },
+                      {
+                        "uid": 602078848,
+                        "text": ""
+                      },
+                      {
+                        "uid": 558299397,
+                        "text": ""
+                      },
+                      {
+                        "uid": 591199280,
+                        "text": ""
+                      },
+                      {
+                        "uid": 582398276,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1806777119,
+                        "text": ""
+                      },
+                      {
+                        "uid": 412417905,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1809964973,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1844934747,
+                        "text": ""
+                      },
+                      {
+                        "uid": 469446241,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1835279679,
+                        "text": ""
+                      },
+                      {
+                        "uid": 497519522,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1785833959,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1826830070,
+                        "text": ""
+                      },
+                      {
+                        "uid": 602232470,
+                        "text": ""
+                      },
+                      {
+                        "uid": 601635971,
+                        "text": ""
+                      },
+                      {
+                        "uid": 596330212,
+                        "text": ""
+                      },
+                      {
+                        "uid": 544820974,
+                        "text": ""
+                      },
+                      {
+                        "uid": 593558580,
+                        "text": ""
+                      },
+                      {
+                        "uid": 567924000,
+                        "text": ""
+                      },
+                      {
+                        "uid": 669680550,
+                        "text": ""
+                      },
+                      {
+                        "uid": 502912433,
+                        "text": ""
+                      },
+                      {
+                        "uid": 669887522,
+                        "text": ""
+                      },
+                      {
+                        "uid": 692019410,
+                        "text": ""
+                      },
+                      {
+                        "uid": 693044977,
+                        "text": ""
+                      },
+                      {
+                        "uid": 506699381,
+                        "text": ""
+                      },
+                      {
+                        "uid": 591867127,
+                        "text": ""
+                      },
+                      {
+                        "uid": 693773915,
+                        "text": ""
+                      },
+                      {
+                        "uid": 613768482,
+                        "text": ""
+                      },
+                      {
+                        "uid": 419679739,
+                        "text": ""
+                      },
+                      {
+                        "uid": 633321412,
+                        "text": ""
+                      },
+                      {
+                        "uid": 723961075,
+                        "text": ""
+                      },
+                      {
+                        "uid": 589301578,
+                        "text": ""
+                      },
+                      {
+                        "uid": 627608839,
+                        "text": ""
+                      },
+                      {
+                        "uid": 635960769,
+                        "text": ""
+                      },
+                      {
+                        "uid": 703243728,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1621989735,
+                        "text": ""
+                      },
+                      {
+                        "uid": 655390892,
+                        "text": ""
+                      },
+                      {
+                        "uid": 480539578,
+                        "text": ""
+                      },
+                      {
+                        "uid": 636002009,
+                        "text": ""
+                      },
+                      {
+                        "uid": 471901760,
+                        "text": ""
+                      },
+                      {
+                        "uid": 647658317,
+                        "text": ""
+                      },
+                      {
+                        "uid": 729772457,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1803663870,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1813901173,
+                        "text": ""
+                      },
+                      {
+                        "uid": 666476161,
+                        "text": ""
+                      },
+                      {
+                        "uid": 736182142,
+                        "text": ""
+                      },
+                      {
+                        "uid": 724328398,
+                        "text": ""
+                      },
+                      {
+                        "uid": 614033431,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1689968580,
+                        "text": ""
+                      },
+                      {
+                        "uid": 734440346,
+                        "text": ""
+                      },
+                      {
+                        "uid": 411200108,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1614961178,
+                        "text": ""
+                      },
+                      {
+                        "uid": 459417183,
+                        "text": ""
+                      },
+                      {
+                        "uid": 500163627,
+                        "text": ""
+                      },
+                      {
+                        "uid": 739453106,
+                        "text": ""
+                      },
+                      {
+                        "uid": 650495602,
+                        "text": ""
+                      },
+                      {
+                        "uid": 533424137,
+                        "text": ""
+                      },
+                      {
+                        "uid": 683573373,
+                        "text": ""
+                      },
+                      {
+                        "uid": 629094951,
+                        "text": ""
+                      },
+                      {
+                        "uid": 752702570,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1592224483,
+                        "text": ""
+                      },
+                      {
+                        "uid": 609155840,
+                        "text": ""
+                      },
+                      {
+                        "uid": 751350092,
+                        "text": ""
+                      },
+                      {
+                        "uid": 728590954,
+                        "text": ""
+                      },
+                      {
+                        "uid": 752580975,
+                        "text": ""
+                      },
+                      {
+                        "uid": 652655905,
+                        "text": ""
+                      },
+                      {
+                        "uid": 717635418,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1763712857,
+                        "text": ""
+                      },
+                      {
+                        "uid": 761178302,
+                        "text": ""
+                      },
+                      {
+                        "uid": 592806327,
+                        "text": ""
+                      },
+                      {
+                        "uid": 745208816,
+                        "text": ""
+                      },
+                      {
+                        "uid": 766588058,
+                        "text": ""
+                      },
+                      {
+                        "uid": 762289983,
+                        "text": ""
+                      },
+                      {
+                        "uid": 761069823,
+                        "text": ""
+                      },
+                      {
+                        "uid": 636609411,
+                        "text": ""
+                      },
+                      {
+                        "uid": 450231372,
+                        "text": ""
+                      },
+                      {
+                        "uid": 760110300,
+                        "text": ""
+                      },
+                      {
+                        "uid": 756413244,
+                        "text": ""
+                      },
+                      {
+                        "uid": 698909983,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1581143648,
+                        "text": ""
+                      },
+                      {
+                        "uid": 757379623,
+                        "text": ""
+                      },
+                      {
+                        "uid": 771033870,
+                        "text": ""
+                      },
+                      {
+                        "uid": 606903461,
+                        "text": ""
+                      },
+                      {
+                        "uid": 502451609,
+                        "text": ""
+                      },
+                      {
+                        "uid": 460747141,
+                        "text": ""
+                      },
+                      {
+                        "uid": 774325984,
+                        "text": ""
+                      },
+                      {
+                        "uid": 752568571,
+                        "text": ""
+                      },
+                      {
+                        "uid": 773764719,
+                        "text": ""
+                      },
+                      {
+                        "uid": 693507617,
+                        "text": ""
+                      },
+                      {
+                        "uid": 775189266,
+                        "text": ""
+                      },
+                      {
+                        "uid": 746188725,
+                        "text": ""
+                      },
+                      {
+                        "uid": 782829732,
+                        "text": ""
+                      },
+                      {
+                        "uid": 607224196,
+                        "text": ""
+                      },
+                      {
+                        "uid": 766576219,
+                        "text": ""
+                      },
+                      {
+                        "uid": 772739943,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1843982903,
+                        "text": ""
+                      },
+                      {
+                        "uid": 768444922,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1596578354,
+                        "text": ""
+                      },
+                      {
+                        "uid": 703884438,
+                        "text": ""
+                      },
+                      {
+                        "uid": 740635295,
+                        "text": ""
+                      },
+                      {
+                        "uid": 776897182,
+                        "text": ""
+                      },
+                      {
+                        "uid": 787599414,
+                        "text": ""
+                      },
+                      {
+                        "uid": 792669958,
+                        "text": ""
+                      },
+                      {
+                        "uid": 793789822,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1629840232,
+                        "text": ""
+                      },
+                      {
+                        "uid": 440272816,
+                        "text": ""
+                      },
+                      {
+                        "uid": 764312831,
+                        "text": ""
+                      },
+                      {
+                        "uid": 731238790,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1770664768,
+                        "text": ""
+                      },
+                      {
+                        "uid": 788709925,
+                        "text": ""
+                      },
+                      {
+                        "uid": 769682654,
+                        "text": ""
+                      },
+                      {
+                        "uid": 429111349,
+                        "text": ""
+                      },
+                      {
+                        "uid": 729015106,
+                        "text": ""
+                      },
+                      {
+                        "uid": 634113105,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1598574491,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1855992887,
+                        "text": ""
+                      },
+                      {
+                        "uid": 716596033,
+                        "text": ""
+                      },
+                      {
+                        "uid": 584431970,
+                        "text": ""
+                      },
+                      {
+                        "uid": 801840080,
+                        "text": ""
+                      },
+                      {
+                        "uid": 668098468,
+                        "text": ""
+                      },
+                      {
+                        "uid": 771008302,
+                        "text": ""
+                      },
+                      {
+                        "uid": 798438636,
+                        "text": ""
+                      },
+                      {
+                        "uid": 752385296,
+                        "text": ""
+                      },
+                      {
+                        "uid": 601653618,
+                        "text": ""
+                      },
+                      {
+                        "uid": 451024193,
+                        "text": ""
+                      },
+                      {
+                        "uid": 684734645,
+                        "text": ""
+                      },
+                      {
+                        "uid": 715258718,
+                        "text": ""
+                      },
+                      {
+                        "uid": 805603121,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1628062090,
+                        "text": ""
+                      },
+                      {
+                        "uid": 728011036,
+                        "text": ""
+                      },
+                      {
+                        "uid": 729747857,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1755245982,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1612433284,
+                        "text": ""
+                      },
+                      {
+                        "uid": 490349347,
+                        "text": ""
+                      },
+                      {
+                        "uid": 734275553,
+                        "text": ""
+                      },
+                      {
+                        "uid": 591418568,
+                        "text": ""
+                      },
+                      {
+                        "uid": 631025310,
+                        "text": ""
+                      },
+                      {
+                        "uid": 787167694,
+                        "text": ""
+                      },
+                      {
+                        "uid": 797366125,
+                        "text": ""
+                      },
+                      {
+                        "uid": 813830477,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1852329781,
+                        "text": ""
+                      },
+                      {
+                        "uid": 803442335,
+                        "text": ""
+                      },
+                      {
+                        "uid": 783896699,
+                        "text": ""
+                      },
+                      {
+                        "uid": 722391036,
+                        "text": ""
+                      },
+                      {
+                        "uid": 809881165,
+                        "text": ""
+                      },
+                      {
+                        "uid": 596819880,
+                        "text": ""
+                      },
+                      {
+                        "uid": 738346849,
+                        "text": ""
+                      },
+                      {
+                        "uid": 819067834,
+                        "text": ""
+                      },
+                      {
+                        "uid": 774295496,
+                        "text": ""
+                      },
+                      {
+                        "uid": 789199347,
+                        "text": ""
+                      },
+                      {
+                        "uid": 816788210,
+                        "text": ""
+                      },
+                      {
+                        "uid": 559443157,
+                        "text": ""
+                      },
+                      {
+                        "uid": 617113185,
+                        "text": ""
+                      },
+                      {
+                        "uid": 464929594,
+                        "text": ""
+                      },
+                      {
+                        "uid": 461051278,
+                        "text": ""
+                      },
+                      {
+                        "uid": 698363019,
+                        "text": ""
+                      },
+                      {
+                        "uid": 822933176,
+                        "text": ""
+                      },
+                      {
+                        "uid": 823692496,
+                        "text": ""
+                      },
+                      {
+                        "uid": 819720995,
+                        "text": ""
+                      },
+                      {
+                        "uid": 819896164,
+                        "text": ""
+                      },
+                      {
+                        "uid": 810374138,
+                        "text": ""
+                      },
+                      {
+                        "uid": 825190016,
+                        "text": ""
+                      },
+                      {
+                        "uid": 733676481,
+                        "text": ""
+                      },
+                      {
+                        "uid": 777643726,
+                        "text": ""
+                      },
+                      {
+                        "uid": 827465598,
+                        "text": ""
+                      },
+                      {
+                        "uid": 860458509,
+                        "text": ""
+                      },
+                      {
+                        "uid": 757135654,
+                        "text": ""
+                      },
+                      {
+                        "uid": 789358419,
+                        "text": ""
+                      },
+                      {
+                        "uid": 737029048,
+                        "text": ""
+                      },
+                      {
+                        "uid": 810138892,
+                        "text": ""
+                      },
+                      {
+                        "uid": 783921911,
+                        "text": ""
+                      },
+                      {
+                        "uid": 479354176,
+                        "text": ""
+                      },
+                      {
+                        "uid": 717885330,
+                        "text": ""
+                      },
+                      {
+                        "uid": 827808211,
+                        "text": ""
+                      },
+                      {
+                        "uid": 523752149,
+                        "text": ""
+                      },
+                      {
+                        "uid": 784733545,
+                        "text": ""
+                      },
+                      {
+                        "uid": 771109919,
+                        "text": ""
+                      },
+                      {
+                        "uid": 802320356,
+                        "text": ""
+                      },
+                      {
+                        "uid": 811339251,
+                        "text": ""
+                      },
+                      {
+                        "uid": 483738893,
+                        "text": ""
+                      },
+                      {
+                        "uid": 831068645,
+                        "text": ""
+                      },
+                      {
+                        "uid": 624334560,
+                        "text": ""
+                      },
+                      {
+                        "uid": 422073169,
+                        "text": ""
+                      },
+                      {
+                        "uid": 833330280,
+                        "text": ""
+                      },
+                      {
+                        "uid": 784364183,
+                        "text": ""
+                      },
+                      {
+                        "uid": 660041308,
+                        "text": ""
+                      },
+                      {
+                        "uid": 796781928,
+                        "text": ""
+                      },
+                      {
+                        "uid": 770419354,
+                        "text": ""
+                      },
+                      {
+                        "uid": 828768957,
+                        "text": ""
+                      },
+                      {
+                        "uid": 838392951,
+                        "text": ""
+                      },
+                      {
+                        "uid": 524438239,
+                        "text": ""
+                      },
+                      {
+                        "uid": 472670861,
+                        "text": ""
+                      },
+                      {
+                        "uid": 683124609,
+                        "text": ""
+                      },
+                      {
+                        "uid": 815680395,
+                        "text": ""
+                      },
+                      {
+                        "uid": 843962357,
+                        "text": ""
+                      },
+                      {
+                        "uid": 844232732,
+                        "text": ""
+                      },
+                      {
+                        "uid": 844723551,
+                        "text": ""
+                      },
+                      {
+                        "uid": 844986401,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1751839221,
+                        "text": ""
+                      },
+                      {
+                        "uid": 844234253,
+                        "text": ""
+                      },
+                      {
+                        "uid": 734880274,
+                        "text": ""
+                      },
+                      {
+                        "uid": 826810579,
+                        "text": ""
+                      },
+                      {
+                        "uid": 832291658,
+                        "text": ""
+                      },
+                      {
+                        "uid": 847340056,
+                        "text": ""
+                      },
+                      {
+                        "uid": 832080141,
+                        "text": ""
+                      },
+                      {
+                        "uid": 845454608,
+                        "text": ""
+                      },
+                      {
+                        "uid": 651335753,
+                        "text": ""
+                      },
+                      {
+                        "uid": 791150978,
+                        "text": ""
+                      },
+                      {
+                        "uid": 761118738,
+                        "text": ""
+                      },
+                      {
+                        "uid": 841784941,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1767491387,
+                        "text": ""
+                      },
+                      {
+                        "uid": 848271973,
+                        "text": ""
+                      },
+                      {
+                        "uid": 841666807,
+                        "text": ""
+                      },
+                      {
+                        "uid": 586940671,
+                        "text": ""
+                      },
+                      {
+                        "uid": 602974169,
+                        "text": ""
+                      },
+                      {
+                        "uid": 848280858,
+                        "text": ""
+                      },
+                      {
+                        "uid": 842014792,
+                        "text": ""
+                      },
+                      {
+                        "uid": 852443190,
+                        "text": ""
+                      },
+                      {
+                        "uid": 850197824,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1605896808,
+                        "text": ""
+                      },
+                      {
+                        "uid": 852963732,
+                        "text": ""
+                      },
+                      {
+                        "uid": 811594671,
+                        "text": ""
+                      },
+                      {
+                        "uid": 847576529,
+                        "text": ""
+                      },
+                      {
+                        "uid": 844235615,
+                        "text": ""
+                      },
+                      {
+                        "uid": 847248095,
+                        "text": ""
+                      },
+                      {
+                        "uid": 829572261,
+                        "text": ""
+                      },
+                      {
+                        "uid": 814210930,
+                        "text": ""
+                      },
+                      {
+                        "uid": 819542727,
+                        "text": ""
+                      },
+                      {
+                        "uid": 851754429,
+                        "text": ""
+                      },
+                      {
+                        "uid": 852955860,
+                        "text": ""
+                      },
+                      {
+                        "uid": 850374283,
+                        "text": ""
+                      },
+                      {
+                        "uid": 845277523,
+                        "text": ""
+                      },
+                      {
+                        "uid": 847960467,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1752972530,
+                        "text": ""
+                      },
+                      {
+                        "uid": 848886961,
+                        "text": ""
+                      },
+                      {
+                        "uid": 854311642,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1759401251,
+                        "text": ""
+                      },
+                      {
+                        "uid": 855113654,
+                        "text": ""
+                      },
+                      {
+                        "uid": 855249057,
+                        "text": ""
+                      },
+                      {
+                        "uid": 858728414,
+                        "text": ""
+                      },
+                      {
+                        "uid": 856594401,
+                        "text": ""
+                      },
+                      {
+                        "uid": 497016136,
+                        "text": ""
+                      },
+                      {
+                        "uid": 644297453,
+                        "text": ""
+                      },
+                      {
+                        "uid": 856928345,
+                        "text": ""
+                      },
+                      {
+                        "uid": 798772974,
+                        "text": ""
+                      },
+                      {
+                        "uid": 858919674,
+                        "text": ""
+                      },
+                      {
+                        "uid": 855333419,
+                        "text": ""
+                      },
+                      {
+                        "uid": 840802216,
+                        "text": ""
+                      },
+                      {
+                        "uid": 860165750,
+                        "text": ""
+                      },
+                      {
+                        "uid": 481925282,
+                        "text": ""
+                      },
+                      {
+                        "uid": 844490456,
+                        "text": ""
+                      },
+                      {
+                        "uid": 827319187,
+                        "text": ""
+                      },
+                      {
+                        "uid": 855690972,
+                        "text": ""
+                      },
+                      {
+                        "uid": 597998836,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1796693033,
+                        "text": ""
+                      },
+                      {
+                        "uid": 858050670,
+                        "text": ""
+                      },
+                      {
+                        "uid": 465434661,
+                        "text": ""
+                      },
+                      {
+                        "uid": 845634694,
+                        "text": ""
+                      },
+                      {
+                        "uid": 857891695,
+                        "text": ""
+                      },
+                      {
+                        "uid": 624585091,
+                        "text": ""
+                      },
+                      {
+                        "uid": 804589993,
+                        "text": ""
+                      },
+                      {
+                        "uid": 610213500,
+                        "text": ""
+                      },
+                      {
+                        "uid": 845457418,
+                        "text": ""
+                      },
+                      {
+                        "uid": 746367964,
+                        "text": ""
+                      },
+                      {
+                        "uid": 842069991,
+                        "text": ""
+                      },
+                      {
+                        "uid": 823296011,
+                        "text": ""
+                      },
+                      {
+                        "uid": 857346079,
+                        "text": ""
+                      },
+                      {
+                        "uid": 842531974,
+                        "text": ""
+                      },
+                      {
+                        "uid": 786047605,
+                        "text": ""
+                      },
+                      {
+                        "uid": 473934730,
+                        "text": ""
+                      },
+                      {
+                        "uid": 752576331,
+                        "text": ""
+                      },
+                      {
+                        "uid": 642025375,
+                        "text": ""
+                      },
+                      {
+                        "uid": 732115232,
+                        "text": ""
+                      },
+                      {
+                        "uid": 851241164,
+                        "text": ""
+                      },
+                      {
+                        "uid": 858476698,
+                        "text": ""
+                      },
+                      {
+                        "uid": 846029077,
+                        "text": ""
+                      },
+                      {
+                        "uid": 708878044,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1738466602,
+                        "text": ""
+                      },
+                      {
+                        "uid": 861168505,
+                        "text": ""
+                      },
+                      {
+                        "uid": 1814533130,
+                        "text": ""
+                      },
+                      {
+                        "uid": 804676878,
+                        "text": ""
+                      },
+                      {
+                        "uid": 768361491,
+                        "text": ""
+                      },
+                      {
+                        "uid": 552450807,
+                        "text": ""
+                      },
+                      {
+                        "uid": 861736028,
+                        "text": ""
+                      },
+                      {
+                        "uid": 861693765,
+                        "text": ""
+                      },
+                      {
+                        "uid": 804430198,
+                        "text": ""
+                      },
+                      {
+                        "uid": 863698783,
+                        "text": ""
+                      },
+                      {
+                        "uid": 811336021,
+                        "text": ""
+                      },
+                      {
+                        "uid": 861916966,
+                        "text": ""
+                      },
+                      {
+                        "uid": 859626716,
+                        "text": ""
+                      },
+                      {
+                        "uid": 807151013,
+                        "text": ""
+                      }
+                    ],
+                    "priority": true
+                  },
+                  "type": "anchor",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Ежедневное задание и лотерея",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "pZbef",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vJXoM00y2TWPL02EMvq1.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "eOt47",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Ежедневное задание",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Fg49V",
+                            "formData": {
+                              "scoreLang": [
+                                "AM",
+                                "AZ",
+                                "BY",
+                                "GE",
+                                "KG",
+                                "KZ",
+                                "MD",
+                                "RU",
+                                "TJ",
+                                "TM",
+                                "UA",
+                                "UZ"
+                              ],
+                              "group_arr": [],
+                              "raskValueSelect": 1,
+                              "scoreSelectedArea": [
+                                "RU"
+                              ],
+                              "num": 10,
+                              "needGroupsChangeReason": true,
+                              "section": 1,
+                              "groupSoure": 0,
+                              "whiteUid_id_info": [
+                                {
+                                  "filter_name": "俄语区新用户指引页RU漏斗",
+                                  "list_id": "1500661252",
+                                  "create_time": "1777290563",
+                                  "utime": "2026-04-27 19:49:23",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "俄语区新用户指引页RU推送uid",
+                                  "update_operator": "",
+                                  "create_operator": "13529",
+                                  "frequency": "0",
+                                  "update_time": "1777290563",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "24128",
+                                  "filter_countries": "[\"RU\",\"BY\",\"UA\",\"MD\",\"GE\",\"AM\",\"AZ\",\"KZ\",\"KG\",\"TM\",\"TJ\"]",
+                                  "union_conditions": "[]",
+                                  "filter_blacklist": "0",
+                                  "ctime": "2026-04-27 19:49:23",
+                                  "filter_conditions_ext": "{\"register_days\":{\"name\":\"register_days\",\"type\":\"compare_no_greater\",\"value\":\"2\"},\"data_type\":{\"name\":\"data_type\",\"type\":\"enum\",\"value\":\"TOTAL\"}}",
+                                  "filter_conditions": "{\"register_days\":{\"name\":\"register_days\",\"type\":\"compare_no_greater\",\"value\":\"2\"},\"data_type\":{\"name\":\"data_type\",\"type\":\"enum\",\"value\":\"TOTAL\"}}",
+                                  "status": "0"
+                                }
+                              ],
+                              "onlyCharge": false,
+                              "mode": 1,
+                              "uid": "",
+                              "endActNotEdit": false,
+                              "appType": 1,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang443",
+                                  "change": 300,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 6,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "观看直播时长",
+                                  "gameTag": []
+                                }
+                              ],
+                              "groupIds": "",
+                              "anchor_uids": "",
+                              "anchor_whitelist_id": null,
+                              "text": "Смотрите стримы по 30 мин в день и получайте набор виртуальных наград!",
+                              "needAppointUidChangeReason": true,
+                              "lang": [
+                                "AM",
+                                "AZ",
+                                "BY",
+                                "GE",
+                                "KG",
+                                "KZ",
+                                "MD",
+                                "RU",
+                                "TJ",
+                                "TM",
+                                "UA",
+                                "UZ"
+                              ],
+                              "appoint_uid": 2,
+                              "cycleConfig": 1,
+                              "need_attend": 0,
+                              "whiteUid_id": "1500661252",
+                              "level_config": [
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "reward_expire_time": null,
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "free_level": null,
+                                      "reward_image": null,
+                                      "reward_id": null,
+                                      "reward_count": null
+                                    },
+                                    {
+                                      "base_map_url": "",
+                                      "reward_max_limit": "999999",
+                                      "op_time": "1754317278",
+                                      "offshelf_time": "2143191600",
+                                      "vm_price": "0",
+                                      "op_user": "直播事业部-Liudmila Shevelkova",
+                                      "isOnlyNeedNum": 0,
+                                      "mp4_url": "",
+                                      "__version": "7185683573723750691",
+                                      "reward_name": "Праздничное настроение",
+                                      "typeid": "12",
+                                      "extra_type": "0",
+                                      "id": "41932",
+                                      "nickname_color": "",
+                                      "reward_count": null,
+                                      "icon_url": "https://esx.bigo.sg/live/4he/11uiutwNc0JQ.png",
+                                      "svga_url": "",
+                                      "ext": "",
+                                      "avatar_width": "0",
+                                      "sort_key": "0",
+                                      "new_banner_url": "",
+                                      "val_count": "0",
+                                      "show_type": "0",
+                                      "medal_type": "0",
+                                      "model_code": "",
+                                      "val_typeid": "0",
+                                      "val_count_decimal": "0",
+                                      "name": "Праздничное настроение",
+                                      "is_lock": "0",
+                                      "text_color": "#FFFFFF",
+                                      "status": "0",
+                                      "pk_type": "",
+                                      "desc_text": "Welcome to BIGO event exclusive RU & CIS",
+                                      "reward_type": "41932",
+                                      "vm_price_decimal": "0",
+                                      "game_type": "0",
+                                      "can_vip_share": "0",
+                                      "head_type": "0",
+                                      "reward_expire_time": "1",
+                                      "param": "俄语区专用",
+                                      "banner_url": "",
+                                      "label_name": "",
+                                      "need_combine": "0",
+                                      "__deleted": "0",
+                                      "onshelf_time": "1754313358",
+                                      "env": "1",
+                                      "gif_url": "https://esx.bigo.sg/live/4he/21uiuu0Qf5WM.png",
+                                      "sale": "0",
+                                      "permanent": "0",
+                                      "vm_typeid": "0",
+                                      "extra_value": "0",
+                                      "reward_image": "https://esx.bigo.sg/live/4he/11uiutwNc0JQ.png",
+                                      "act_url": "",
+                                      "medal_jump_url": "",
+                                      "supported_buy": "0",
+                                      "show_url": ""
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 1,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 1
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "reward_expire_time": null,
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "free_level": null,
+                                      "reward_image": null,
+                                      "reward_id": null,
+                                      "reward_count": null
+                                    },
+                                    {
+                                      "base_map_url": "",
+                                      "reward_max_limit": "999999",
+                                      "op_time": "1754989194",
+                                      "offshelf_time": "2082654000",
+                                      "vm_price": "0",
+                                      "op_user": "直播事业部-陈倩霖",
+                                      "isOnlyNeedNum": 0,
+                                      "mp4_url": "",
+                                      "__version": "7188435741341770013",
+                                      "reward_name": "Золотой пончик",
+                                      "typeid": "6",
+                                      "extra_type": "0",
+                                      "id": "41930",
+                                      "nickname_color": "",
+                                      "reward_count": null,
+                                      "icon_url": "https://esx.bigo.sg/live/4he/21uiusELa0Mz.png",
+                                      "svga_url": "",
+                                      "ext": "",
+                                      "avatar_width": "0",
+                                      "sort_key": "1",
+                                      "new_banner_url": "",
+                                      "val_count": "0",
+                                      "show_type": "0",
+                                      "medal_type": "0",
+                                      "model_code": "",
+                                      "val_typeid": "0",
+                                      "val_count_decimal": "0",
+                                      "name": "Золотой пончик",
+                                      "is_lock": "0",
+                                      "text_color": "#FFFFFF",
+                                      "status": "0",
+                                      "pk_type": "",
+                                      "desc_text": "Welcome to BIGO event exclusive RU & CIS",
+                                      "reward_type": "41930",
+                                      "vm_price_decimal": "0",
+                                      "game_type": "0",
+                                      "can_vip_share": "1",
+                                      "head_type": "0",
+                                      "reward_expire_time": "1",
+                                      "param": "俄语区专用",
+                                      "banner_url": "",
+                                      "label_name": "",
+                                      "need_combine": "0",
+                                      "__deleted": "0",
+                                      "onshelf_time": "1754313287",
+                                      "env": "1",
+                                      "gif_url": "",
+                                      "sale": "0",
+                                      "permanent": "0",
+                                      "vm_typeid": "0",
+                                      "extra_value": "0",
+                                      "reward_image": "https://esx.bigo.sg/live/4he/21uiusELa0Mz.png",
+                                      "act_url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=70083",
+                                      "medal_jump_url": "",
+                                      "supported_buy": "0",
+                                      "show_url": "https://esx.bigo.sg/live/4he/01uiusIcTOAq.webp"
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 2,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": false,
+                                  "private_send_im": false,
+                                  "target": 2
+                                },
+                                {
+                                  "private_im_lang": "",
+                                  "anthor_room_reward": [
+                                    {
+                                      "reward_expire_time": null,
+                                      "reward_type": null,
+                                      "reward_max_limit": null,
+                                      "reward_name": null,
+                                      "free_level": null,
+                                      "reward_image": null,
+                                      "reward_id": null,
+                                      "reward_count": null
+                                    },
+                                    {
+                                      "base_map_url": "",
+                                      "reward_max_limit": "99999",
+                                      "op_time": "1748614016",
+                                      "offshelf_time": "2142190073",
+                                      "vm_price": "0",
+                                      "op_user": "直播事业部-郑贝贝",
+                                      "isOnlyNeedNum": 0,
+                                      "mp4_url": "",
+                                      "__version": "7162323009724199459",
+                                      "reward_name": "Dino Superstar",
+                                      "typeid": "7",
+                                      "extra_type": "0",
+                                      "id": "40887",
+                                      "nickname_color": "",
+                                      "reward_count": null,
+                                      "icon_url": "https://esx.bigo.sg/live/4hd/29L3qXM.png",
+                                      "svga_url": "",
+                                      "ext": "",
+                                      "avatar_width": "0",
+                                      "sort_key": "0",
+                                      "new_banner_url": "",
+                                      "val_count": "0",
+                                      "show_type": "0",
+                                      "medal_type": "0",
+                                      "model_code": "",
+                                      "val_typeid": "0",
+                                      "val_count_decimal": "0",
+                                      "name": "Dino Superstar",
+                                      "is_lock": "0",
+                                      "text_color": "#FFFFFF",
+                                      "status": "0",
+                                      "pk_type": "",
+                                      "desc_text": "UK Host Event",
+                                      "reward_type": "40887",
+                                      "vm_price_decimal": "0",
+                                      "game_type": "0",
+                                      "can_vip_share": "1",
+                                      "head_type": "0",
+                                      "reward_expire_time": "1",
+                                      "param": "",
+                                      "banner_url": "",
+                                      "label_name": "",
+                                      "need_combine": "0",
+                                      "__deleted": "0",
+                                      "onshelf_time": "1748588292",
+                                      "env": "1",
+                                      "gif_url": "https://esx.bigo.sg/live/4hb/1iOalt.webp",
+                                      "sale": "0",
+                                      "permanent": "0",
+                                      "vm_typeid": "0",
+                                      "extra_value": "0",
+                                      "reward_image": "https://esx.bigo.sg/live/4hd/29L3qXM.png",
+                                      "act_url": "",
+                                      "medal_jump_url": "",
+                                      "supported_buy": "0",
+                                      "show_url": "https://esx.bigo.sg/live/4hb/2B74VT.webp"
+                                    }
+                                  ],
+                                  "process_notice_lang": "",
+                                  "user_room_rewards": [],
+                                  "user_finish_room": false,
+                                  "level": 3,
+                                  "process_notice": false,
+                                  "send_im": false,
+                                  "anthor_finish_room": true,
+                                  "private_send_im": false,
+                                  "target": 3
+                                }
+                              ],
+                              "groups": [],
+                              "svip_levels": [],
+                              "index": 1,
+                              "raskType": 1,
+                              "selectedArea": [
+                                "RU"
+                              ],
+                              "appoint_uid_source": 1,
+                              "appointUidChangeReason": "更新",
+                              "anchor_whitelist_status": 0,
+                              "anchor_uid_info": null,
+                              "name": "Ежедневное задание",
+                              "countType": "",
+                              "level_config_2": [],
+                              "level_config_3": [],
+                              "white_version_id": null,
+                              "_afterSaveFinished": null,
+                              "level_config_4": []
+                            },
+                            "type": "dailyLevelTask",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Лотерея",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "1Q5PD",
+                            "formData": {
+                              "setDraw10": 0,
+                              "scoreSelectedArea": [
+                                "RU"
+                              ],
+                              "num": 10000,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang442",
+                                  "change": 300,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 5,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "totalLimit": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 0,
+                                  "auto_name": "开播时长",
+                                  "gameTag": []
+                                }
+                              ],
+                              "anchor_uids": "",
+                              "text": "这里是排行榜的说明文案",
+                              "linktext": "",
+                              "lottery_title": "Колесо призов",
+                              "svip_area": "",
+                              "lottery_rule": "Вести эфир 5 мин = 1 билет",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "svip_levels": [],
+                              "index": 2,
+                              "selectedArea": [
+                                "RU"
+                              ],
+                              "anchor_whitelist_status": 0,
+                              "is_pay_lottery": 0,
+                              "name": "抽奖模块",
+                              "point_uid_lottery_ticket_num": 1,
+                              "linkurl": "",
+                              "coupon_type": 0,
+                              "scoreLang": [
+                                "AM",
+                                "AZ",
+                                "BY",
+                                "GE",
+                                "KG",
+                                "KZ",
+                                "MD",
+                                "RU",
+                                "TJ",
+                                "TM",
+                                "UA",
+                                "UZ"
+                              ],
+                              "is_lottery_all": 0,
+                              "top3": 1,
+                              "lottery_sector_num": 2,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": null,
+                              "lotter_configure": {
+                                "totalRate": 100,
+                                "residueCost": 0,
+                                "consumeCost": "0.00",
+                                "messageConfigure": 0,
+                                "messageObj": {
+                                  "imImg": "",
+                                  "theme": "",
+                                  "content": ""
+                                },
+                                "list": [
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "180deg",
+                                    "preview_img": "https://esx.bigo.sg/live/4he/11uiuqwLay9P.png?auth-token=uf9MsP-j3Nf71e7WVPmjPiwJdf5iPVc4z2l4imKCMfw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MDM2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MTEyLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 1,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 70,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Пончик",
+                                    "consume_num": 5595,
+                                    "residue_num": 94404,
+                                    "imgTop": "60px",
+                                    "imgLeft": "-25px",
+                                    "prize_id": "41928",
+                                    "textTop": "105px",
+                                    "prize_serial": 1,
+                                    "free_level": "",
+                                    "activity_all_num": "99999",
+                                    "valid_days": "1",
+                                    "used_num": 5595,
+                                    "win_rate": "70",
+                                    "textLeft": "-35px",
+                                    "prize_type": "6"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "0deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/4hb/2QrlJb.png?auth-token=bgqaN5Of0eCz-srsaldBK-DFr1PBfj4EHuTN6B4zqa4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc4MDM2LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzNzUwLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 30,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Эффект входа",
+                                    "consume_num": 2334,
+                                    "residue_num": 97665,
+                                    "imgTop": "-110px",
+                                    "imgLeft": "-24.99999999999999px",
+                                    "prize_id": "40420",
+                                    "textTop": "-145px",
+                                    "prize_serial": 2,
+                                    "free_level": "",
+                                    "activity_all_num": "99999",
+                                    "valid_days": "1",
+                                    "used_num": 2334,
+                                    "win_rate": "30",
+                                    "textLeft": "-34.999999999999986px",
+                                    "prize_type": "7"
+                                  }
+                                ],
+                                "totalCost": "0.0000"
+                              },
+                              "uid": "",
+                              "appType": 1,
+                              "anchor_whitelist_id": null,
+                              "lang": [
+                                "AM",
+                                "AZ",
+                                "BY",
+                                "GE",
+                                "KG",
+                                "KZ",
+                                "MD",
+                                "RU",
+                                "TJ",
+                                "TM",
+                                "UA",
+                                "UZ"
+                              ],
+                              "lottery_type": 2,
+                              "appoint_uid": 0,
+                              "lottery_stock_type": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": null,
+                              "bottominfo": 0,
+                              "lottery_pay_type": 1,
+                              "point_uid_lottery_ticket": 0,
+                              "lottery_ticket_timerange_limit": 0,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "lottery_timerange_limit": 0,
+                              "countType": "",
+                              "lottery_ticket_num": 1,
+                              "lottery_pay_num": 1
+                            },
+                            "type": "lottery",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

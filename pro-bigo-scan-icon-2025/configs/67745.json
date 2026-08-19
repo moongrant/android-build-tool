@@ -1,0 +1,785 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250627",
+      "20250628",
+      "20250629",
+      "20250630",
+      "20250701"
+    ],
+    "week": [
+      "20250623",
+      "20250630"
+    ],
+    "month": [
+      "202506",
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 02:27:12",
+    "now_zone": 3,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 67745,
+      "act_name": "LIVE DA HORA 202506",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-27 00:00:00",
+      "end_time": "2025-07-01 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "BR",
+        "AO"
+      ],
+      "selectedArea": [
+        "PT"
+      ],
+      "frontCustomBgColor": "#e69efa",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "6"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uS45s9b49a2d1d37f4f16b77baa74a0c43c7fph.png?auth-token=v-YXmz_7Yfr7T8d3NS2aGjVNAFwjOKr_5qjzG6HmycQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NzQ1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzMjcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "Regras"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "sub_title",
+              "value": "Período: 27/6 00:00:00~1/7/2025 23:59:59"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1. Somente os hosts/agentes oficiais brasileiros podem participar."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "2. A tarefa diária é para host. O bônus será enviado dentro de 3 dias úteis."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "3. O ranking de agências é geral. Os top5 agentes ganham os bigolinos especiais de PRIDE."
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "4. Clique abaixo para se inscrever. Apenas os inscritos podem entrar no evento. Basta se inscrever uma vez."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Inscrição concluída",
+                  "name": "Hosts Oficiais/Agências",
+                  "range": [
+                    3
+                  ],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Inscrever-se",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Evento acabou"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Hosts Oficiais",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "euXff",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "1 PONTO=50 BEANS, BÔNUS TODOS OS DIAS"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "✅ Live 5 min=1 Ponto"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "✅ 1 PK=1 Ponto"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "✅ 1 Live compartilhada para FB/TWITTER/VK=1 Ponto"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "🔥 Quantidade limitada, por ordem de chegada. Cada host só pode receber uma recompensa por dia"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ydCqX",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "raskValueSelect": 1,
+                    "scoreSelectedArea": [],
+                    "num": 10,
+                    "needGroupsChangeReason": false,
+                    "section": 1,
+                    "groupSoure": 0,
+                    "whiteUid_id_info": null,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          10000
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang794",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 43,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "PK场次",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [
+                          1,
+                          2,
+                          3
+                        ],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang084",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 3,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "用户分享直播",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "groupIds": "",
+                    "text": "A live/PK precisa terminar no dia para ser válida.",
+                    "needAppointUidChangeReason": false,
+                    "lang": [
+                      "BR",
+                      "AO"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "need_attend": 1,
+                    "whiteUid_id": null,
+                    "level_config": [
+                      {
+                        "private_im_lang": "",
+                        "anthor_room_reward": [
+                          {
+                            "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "reward_type": 4,
+                            "reward_max_limit": "1324",
+                            "reward_name": "beans",
+                            "free_level": null,
+                            "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                            "name": "beans",
+                            "typeid": 3,
+                            "reward_id": null,
+                            "id": 4,
+                            "reward_count": "50"
+                          },
+                          {
+                            "reward_type": null,
+                            "reward_max_limit": null,
+                            "reward_name": null,
+                            "reward_image": null,
+                            "reward_count": null
+                          }
+                        ],
+                        "process_notice_lang": "",
+                        "user_room_rewards": [],
+                        "user_finish_room": false,
+                        "level": 1,
+                        "process_notice": false,
+                        "send_im": false,
+                        "anthor_finish_room": false,
+                        "private_send_im": false,
+                        "target": 1
+                      }
+                    ],
+                    "groups": [],
+                    "index": 3,
+                    "raskType": 1,
+                    "selectedArea": [
+                      "PT"
+                    ],
+                    "name": "Tarefa Diária",
+                    "countType": 5,
+                    "level_config_2": [],
+                    "level_config_3": [],
+                    "white_version_id": null,
+                    "_afterSaveFinished": null,
+                    "level_config_4": []
+                  },
+                  "type": "dailyLevelTask",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Agências",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "HcXQ2",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uS5Db69507707973e4569aafb39216e8fc23fph.jpg?auth-token=3867l4FqXXBt-uVGsEJedupnVgNNmmF52eQIRP1To-o:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NzQ1LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM4ODAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VBIVT",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "✅ Live 5 min=1Ponto(todos os hosts na agência)"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "Cada host pode acumular no máximo um ponto por dia."
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": "Chame mais hosts para completar a tarefa."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "eeOqM",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 200,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "needGroupsChangeReason": false,
+                    "section": 4,
+                    "groupSoure": 3,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "endActNotEdit": false,
+                    "isSearch": 0,
+                    "appType": 1,
+                    "rankinfo": 2,
+                    "groupIds": "661598848\n819783028\n833265749\n806382809\n1840272265\n839067791\n670211912\n480238077\n655323764\n716334271\n560833835\n1601761730\n831909548\n443385115\n731438697\n1843340079\n701051256\n795785811\n717014895\n1882882455\n728852289\n832011173\n833261827\n674078435\n824742492\n825886146\n711827963\n826853776\n833216292\n831906100\n530511266\n1859470153\n625221300\n764522556\n607085870\n611222062\n796627919\n785929599\n825473926\n798920793\n786647072\n616304686\n687851899\n778959403\n1702795829\n765246805\n538789777\n760489411\n1806871040\n448322637\n826475640\n514750689\n821448706\n671511753\n735997979\n824742573\n823811902\n611448826\n643517226\n677512230\n821297333\n449642649\n537658965\n819593545\n750374969\n731847880\n700067757\n800890508\n770657088\n403464703\n807973013\n731749160\n683558656\n798214285\n1815890150\n738820388\n599135382\n571202390\n763394632\n772692048\n804540098\n793665340\n755610614\n707704488\n678624456\n723171509\n1791639978\n759628542\n710697966\n649363395\n437712251\n651859643\n636017227\n729070778\n614387936\n529470670\n1729307862\n503649516\n529151535\n1575659687\n638179285\n557801197\n583830444\n766855184\n554309224\n600230738\n565411847\n1568097161\n534359754\n1665242752\n744483644\n528702336\n720787182\n607825699\n730149524\n713041334\n662784313\n1848792775\n605547512\n1567676619\n518263917\n711683316\n524390523\n564904269\n1613852601\n614139952\n483784760\n589501824\n569842277\n521648141\n541115349\n616197408\n1685652118\n455194800\n546425130\n1845821444\n514237426\n513332118\n585383198\n1875054327\n1858274724\n425603978\n1890494489\n1754637576\n430568914\n1804614435\n417860049\n485273099\n1836634074\n1893528111\n403105911\n432776017\n447832384\n1790949829\n1854015603\n1798826380\n1809983649\n1810990500\n1877959275\n1872530215\n1694194334\n1781708326\n1787587939\n1818918001\n1613689929\n1662434007\n1610513136\n1532194101\n1782647734\n1828892827\n1773446918\n1800437891\n1634911790\n1607606836\n1704247534",
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 1,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      }
+                    ],
+                    "family_svip_ruleIds": [],
+                    "family_svip_levels": [],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "lang": [
+                      "ZA",
+                      "VN",
+                      "VE",
+                      "UY",
+                      "US",
+                      "UA",
+                      "UZ",
+                      "TJ",
+                      "TW",
+                      "TM",
+                      "TR",
+                      "TK",
+                      "TH",
+                      "TG",
+                      "TD",
+                      "TC",
+                      "TL",
+                      "SZ",
+                      "SY",
+                      "SV",
+                      "ST",
+                      "SS",
+                      "SR",
+                      "SO",
+                      "SN",
+                      "SM",
+                      "SL",
+                      "SK",
+                      "SI",
+                      "SG",
+                      "SE",
+                      "SD",
+                      "SC",
+                      "SB",
+                      "SA",
+                      "RW",
+                      "RU",
+                      "RS",
+                      "RO",
+                      "RE",
+                      "QA",
+                      "PY",
+                      "PW",
+                      "PT",
+                      "PS",
+                      "PR",
+                      "PL",
+                      "PK",
+                      "PH",
+                      "PG",
+                      "PF",
+                      "PE",
+                      "PA",
+                      "OM",
+                      "NZ",
+                      "NU",
+                      "NR",
+                      "NP",
+                      "NO",
+                      "NL",
+                      "NI",
+                      "NG",
+                      "NE",
+                      "NC",
+                      "NA",
+                      "MZ",
+                      "MY",
+                      "MX",
+                      "MW",
+                      "MV",
+                      "MU",
+                      "MT",
+                      "MS",
+                      "MR",
+                      "MQ",
+                      "MO",
+                      "MN",
+                      "MM",
+                      "ML",
+                      "MK",
+                      "MH",
+                      "MG",
+                      "ME",
+                      "MD",
+                      "MC",
+                      "MA",
+                      "LY",
+                      "LV",
+                      "LU",
+                      "LT",
+                      "LS",
+                      "LR",
+                      "LK",
+                      "LI",
+                      "LC",
+                      "LB",
+                      "LA",
+                      "KZ",
+                      "KY",
+                      "KW",
+                      "KR",
+                      "KN",
+                      "KM",
+                      "KI",
+                      "KH",
+                      "KG",
+                      "KE",
+                      "JP",
+                      "JO",
+                      "JM",
+                      "JE",
+                      "IT",
+                      "IS",
+                      "IR",
+                      "IQ",
+                      "IN",
+                      "IM",
+                      "IL",
+                      "IE",
+                      "ID",
+                      "HU",
+                      "HT",
+                      "HR",
+                      "HN",
+                      "HK",
+                      "GY",
+                      "GW",
+                      "GU",
+                      "GT",
+                      "GR",
+                      "GQ",
+                      "GP",
+                      "GN",
+                      "GM",
+                      "GL",
+                      "GI",
+                      "GH",
+                      "GE",
+                      "GD",
+                      "GB",
+                      "GA",
+                      "FR",
+                      "FO",
+                      "FM",
+                      "FJ",
+                      "FI",
+                      "FA",
+                      "ET",
+                      "ES",
+                      "ER",
+                      "EG",
+                      "EE",
+                      "EC",
+                      "DZ",
+                      "DU",
+                      "DO",
+                      "DM",
+                      "DK",
+                      "DJ",
+                      "DE",
+                      "CZ",
+                      "CY",
+                      "CX",
+                      "CW",
+                      "CV",
+                      "CU",
+                      "CR",
+                      "CO",
+                      "CN",
+                      "CM",
+                      "CL",
+                      "CK",
+                      "CI",
+                      "CH",
+                      "CG",
+                      "CF",
+                      "CD",
+                      "CC",
+                      "CA",
+                      "BZ",
+                      "BY",
+                      "BW",
+                      "BT",
+                      "BS",
+                      "BR",
+                      "BO",
+                      "BN",
+                      "BM",
+                      "BJ",
+                      "BI",
+                      "BH",
+                      "BG",
+                      "BF",
+                      "BE",
+                      "BD",
+                      "BB",
+                      "BA",
+                      "AZ",
+                      "AX",
+                      "AW",
+                      "AU",
+                      "AT",
+                      "AS",
+                      "AR",
+                      "AO",
+                      "AN",
+                      "AM",
+                      "AL",
+                      "AI",
+                      "AG",
+                      "AF",
+                      "AE",
+                      "AD",
+                      "TN",
+                      "YE",
+                      "TZ",
+                      "UG",
+                      "ZW",
+                      "ZR",
+                      "ZM",
+                      "SH",
+                      "YT",
+                      "TO",
+                      "WS",
+                      "MP",
+                      "VU",
+                      "TV",
+                      "NF",
+                      "WF",
+                      "PN",
+                      "BL",
+                      "BIGO"
+                    ],
+                    "family_svip_check": false,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "uid_arr": [],
+                    "bottominfo": 1,
+                    "groups": [],
+                    "index": 2,
+                    "groupFamilytype": 2,
+                    "selectedArea": [
+                      "AR",
+                      "PT",
+                      "ES",
+                      "RU",
+                      "CN",
+                      "AU",
+                      "US",
+                      "MY",
+                      "TH",
+                      "FZ",
+                      "NLSE",
+                      "DE",
+                      "FR",
+                      "GB",
+                      "OTHER"
+                    ],
+                    "family_svip_area": [],
+                    "rankStyle": "1",
+                    "weeklyConfig": 1,
+                    "frontTextAlignStyle": "left",
+                    "selectedDays": [],
+                    "name": "Ranking Geral",
+                    "linkurl": "",
+                    "countType": 5
+                  },
+                  "type": "grouprankings",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Todos os direitos de interpretação pertencem à BIGO LIVE."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

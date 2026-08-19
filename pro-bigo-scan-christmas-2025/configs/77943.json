@@ -1,0 +1,862 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 08:25:36",
+    "now_zone": -3,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1,
+        2,
+        3
+      ],
+      "id": 77943,
+      "act_name": "TR AJANS PK ARALIK 2025",
+      "state": 1,
+      "color": 1,
+      "theme": "blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-14 21:30:00",
+      "end_time": "2025-12-21 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "TR"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "#000000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "21"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vUqSc00y2TWPL00fFDhF.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "PK zamanı:    17 - 19 Aralık\nKayıt süresi:    15 - 16 Aralık"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "KAYIT OL! ",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://forms.gle/D1Ccf4Am8XuxSdsa6",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type2",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "PK kuralları : \n"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "sub_title",
+              "value": "(1) Her ajans en fazla 3 yayıncıyı PK'ye katılabilir. Bir yayıncı PK'ye birden fazla kez katılabilir, ancak her gün sadece 1 PK alabilir.    \n(2) PK'yi kazanan ve kaybeden, PK puanlarına göre ödül alabilir.   \n(3) TOP 1-2 yayıncının ajansı, çevrimdışı gala biletleri alabilir.\t"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "TOP 1 YAYINCI AJANSI GÜNEY KORE GALA BILETI ALABILIR (UÇUŞ VE OTEL DAHİL) \n"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "TOP 2 YAYINCI AJANSI GÜNEY KORE GALA BILETI ALABILIR (UÇUŞ VE OTEL DAHİL DEĞİL) "
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "PK ÖDÜLÜ ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "NOIuj",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vUqxA00y33lYHC0rixZE.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "TOPLAM 3 GÜN SIRALAMA ÖDÜLÜ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "TnRjF",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vUr3k00y2TWPL00TSYIk.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "PK",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "8Hf1y",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "17 Aralık 2025",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "RlSBo",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/17 22:00:00",
+                                "left": [
+                                  {
+                                    "uid": "854874067"
+                                  }
+                                ],
+                                "end_time": "2025/12/17 22:10:00",
+                                "right": [
+                                  {
+                                    "uid": "1861420170"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 17/12/2025  22:00 - 22:10 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "18 Aralık 2025",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "fNch0",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/18 21:30:00",
+                                "left": [
+                                  {
+                                    "uid": "695897716"
+                                  }
+                                ],
+                                "end_time": "2025/12/18 21:40:00",
+                                "right": [
+                                  {
+                                    "uid": "838986694"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 18/12/2025  21:30 - 21:40 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "6hGXm",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/18 21:40:00",
+                                "left": [
+                                  {
+                                    "uid": "474790166"
+                                  }
+                                ],
+                                "end_time": "2025/12/18 21:50:00",
+                                "right": [
+                                  {
+                                    "uid": "820182862"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 18/12/2025  21:40 - 21:50 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "ADPtW",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/18 21:50:00",
+                                "left": [
+                                  {
+                                    "uid": "470296326"
+                                  }
+                                ],
+                                "end_time": "2025/12/18 22:00:00",
+                                "right": [
+                                  {
+                                    "uid": "718462935"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 18/12/2025  21:50 - 22:00 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "c4Zse",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/18 22:00:00",
+                                "left": [
+                                  {
+                                    "uid": "819871937"
+                                  }
+                                ],
+                                "end_time": "2025/12/18 22:10:00",
+                                "right": [
+                                  {
+                                    "uid": "766492656"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 18/12/2025  22:00 - 22:10 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "noI3U",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/18 22:10:00",
+                                "left": [
+                                  {
+                                    "uid": "860894240"
+                                  }
+                                ],
+                                "end_time": "2025/12/18 22:20:00",
+                                "right": [
+                                  {
+                                    "uid": "657532897"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 18/12/2025  22:10 - 22:20 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "8a9Qu",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/18 22:20:00",
+                                "left": [
+                                  {
+                                    "uid": "618332814"
+                                  }
+                                ],
+                                "end_time": "2025/12/18 22:30:00",
+                                "right": [
+                                  {
+                                    "uid": "867197419"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 18/12/2025  22:20 - 22:30 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "19 Aralık 2025",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "fNch0",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 21:00:00",
+                                "left": [
+                                  {
+                                    "uid": "493502503"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 21:10:00",
+                                "right": [
+                                  {
+                                    "uid": "861268155"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  21:00 - 21:10 ✨ "
+                              },
+                              "index": 0,
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "6hGXm",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 21:10:00",
+                                "left": [
+                                  {
+                                    "uid": "506507773"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 21:20:00",
+                                "right": [
+                                  {
+                                    "uid": "499591078"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  21:10 - 21:20 ✨ "
+                              },
+                              "index": 0,
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "ADPtW",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 21:20:00",
+                                "left": [
+                                  {
+                                    "uid": "494335210"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 21:30:00",
+                                "right": [
+                                  {
+                                    "uid": "863498598"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  21:20 - 21:30 ✨ "
+                              },
+                              "index": 0,
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "8a9Qu",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 21:50:00",
+                                "left": [
+                                  {
+                                    "uid": "794955606"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 22:00:00",
+                                "right": [
+                                  {
+                                    "uid": "695004366"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  21:50 - 22:00 ✨ "
+                              },
+                              "index": 0,
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "RuOYF",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 22:00:00",
+                                "left": [
+                                  {
+                                    "uid": "737965680"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 22:10:00",
+                                "right": [
+                                  {
+                                    "uid": "602196240"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  22:00 - 22:10 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "VZJzf",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 22:10:00",
+                                "left": [
+                                  {
+                                    "uid": "815090600"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 22:20:00",
+                                "right": [
+                                  {
+                                    "uid": "1707355221"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  22:10 - 22:20 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5xzZQ",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 22:20:00",
+                                "left": [
+                                  {
+                                    "uid": "860276346"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 22:30:00",
+                                "right": [
+                                  {
+                                    "uid": "856407018"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  22:20 - 22:30 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "5w2F8",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:50:00",
+                                "left": [
+                                  {
+                                    "uid": "480711779"
+                                  }
+                                ],
+                                "end_time": "2025/12/20 00:00:00",
+                                "right": [
+                                  {
+                                    "uid": "870042605"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:50 - 00:00 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "FLIWx",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:40:00",
+                                "left": [
+                                  {
+                                    "uid": "651747883"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 23:50:00",
+                                "right": [
+                                  {
+                                    "uid": "1692215281"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:40 - 23:50 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "DE6ze",
+                            "formData": {
+                              "mode": 5,
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:50:00",
+                                "left": [
+                                  {
+                                    "uid": "867916688"
+                                  }
+                                ],
+                                "end_time": "2025/12/20 00:00:00",
+                                "right": [
+                                  {
+                                    "uid": "755129520"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:50 - 00:00 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "VFUd5",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:50:00",
+                                "left": [
+                                  {
+                                    "uid": "723514509"
+                                  }
+                                ],
+                                "end_time": "2025/12/20 00:00:00",
+                                "right": [
+                                  {
+                                    "uid": "640310658"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:50 - 00:00 ✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "c4Zse",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:40:00",
+                                "left": [
+                                  {
+                                    "uid": "853279980"
+                                  }
+                                ],
+                                "end_time": "2025/12/19 23:50:00",
+                                "right": [
+                                  {
+                                    "uid": "862854977"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:40 - 23:50 ✨ "
+                              },
+                              "index": 0,
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "noI3U",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:50:00",
+                                "left": [
+                                  {
+                                    "uid": "561030547"
+                                  }
+                                ],
+                                "end_time": "2025/12/20 00:00:00",
+                                "right": [
+                                  {
+                                    "uid": "500517487"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:50 - 00:00✨ "
+                              },
+                              "index": 0,
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "ozbv2",
+                            "formData": {
+                              "mode": 5,
+                              "uid_arr": [],
+                              "groupPk": {
+                                "start_time": "2025/12/19 23:50:00",
+                                "left": [
+                                  {
+                                    "uid": "1861420170"
+                                  }
+                                ],
+                                "end_time": "2025/12/20 00:00:00",
+                                "right": [
+                                  {
+                                    "uid": "864986636"
+                                  }
+                                ],
+                                "time": null,
+                                "title": "✨  Ajans PK 19/12/2025  23:50 - 00:00✨ "
+                              },
+                              "priority": false
+                            },
+                            "type": "anchor",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "BIGOLIVE, bu etkinlikle ilgili nihai yorum hakkını saklı tutar. Bu etkinlik Apple Inc. ile bağlantılı değildir."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

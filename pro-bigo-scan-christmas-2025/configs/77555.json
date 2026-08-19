@@ -1,0 +1,629 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20251206",
+      "20251207",
+      "20251208",
+      "20251209",
+      "20251210",
+      "20251211",
+      "20251212",
+      "20251213",
+      "20251214"
+    ],
+    "week": [
+      "20251201",
+      "20251208"
+    ],
+    "month": [
+      "202512"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77555,
+      "act_name": "Hosts on the Throne Family GALA",
+      "state": 1,
+      "color": 1,
+      "theme": "red",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-06 00:00:00",
+      "end_time": "2025-12-14 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "#000000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "🔥 Hosts on the Throne · Family GALA is LIVE!",
+        "appendixDesc": "Collect Family GALA Gifts to earn extra Reward Beans ! 🎉",
+        "linkImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vR5s000y2TWPL01ErkVj.jpg"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "7"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vR5yY00y2TWPL00Mz6Xe.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Collect Family Gala Gift to get the reward 😍",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Q8x32",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vR5wB00y33lYHC18YRua.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "2k3k9",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "text",
+                        "value": "Hosts must submit this registration form to be eligible for event rewards and official ranking. Unregistered hosts will not receive any rewards.👇 Registration closes at 23:59 on December 11th. ⏰"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "VfU4t",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "⚠️MUST Submit Form to get rewards⚠️",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=77558",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "Yll71",
+                  "formData": {
+                    "index": 0,
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "center",
+                        "type": "key_text",
+                        "value": "The Blind Leaderboard will be activated on 13 Dec, 23:30 – 23:59 (GMT+8)\nDuring this period, ranking points will be hidden."
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "W99Jp",
+                  "formData": {
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "giftUid_id": null,
+                    "downloadNum": 20000,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": "503481\n503482\n503483\n503450\n43650\n503362\n503363",
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 2,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 0,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      }
+                    ],
+                    "anchor_uids": "",
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": true,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [
+                        {
+                          "startDateTime": "2025-12-13 23:30:00",
+                          "endDate": "2025-12-13",
+                          "originEndTime": "",
+                          "originStartTime": "",
+                          "startTime": "23:30:00",
+                          "endTime": "23:59:59",
+                          "originStartDateTime": "2025-12-13 23:30:00",
+                          "endDateTime": "2025-12-13 23:59:59",
+                          "originEndDateTime": "2025-12-13 23:59:59",
+                          "startDate": "2025-12-13"
+                        }
+                      ],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "1 Bean (Event Gift) = 1 Point",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "voteBoardConfig": 1,
+                    "cp_rank": 0,
+                    "svip_levels": [],
+                    "index": 4,
+                    "selectedArea": [],
+                    "anchor_whitelist_status": 0,
+                    "voteBoardTitle": "",
+                    "frontTextAlignStyle": "center",
+                    "name": "Host Ranking",
+                    "linkurl": "",
+                    "switchDisplay": true,
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "top3": 1,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": null,
+                    "voteRankBoard": 1,
+                    "manualVoteList": [],
+                    "uid": "",
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "giftUid_id_info": null,
+                    "anchor_whitelist_id": null,
+                    "divide": {
+                      "isPercent": 0,
+                      "imconf": {
+                        "beanImData": [],
+                        "gift_room_im": "0",
+                        "diamondImData": [],
+                        "giftImData": [],
+                        "diamond_room_im": "0",
+                        "row_index": 0,
+                        "bean_room_im": "0"
+                      },
+                      "proportion": []
+                    },
+                    "lang": [
+                      "SG",
+                      "MY",
+                      "BN"
+                    ],
+                    "appoint_uid": 0,
+                    "cycleConfig": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": null,
+                    "bottominfo": 2,
+                    "prizeType": 1,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "2",
+                    "prize_arr_v2": [],
+                    "switchOrder": 1,
+                    "weeklyConfig": 1,
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "selectedDays": [],
+                    "countType": "",
+                    "maxManualVoteListID": 0
+                  },
+                  "type": "personrankings",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dL4Od",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vR5xT00y33lYHC01PCeJ.jpg",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": "503481\n503482\n503483\n503450\n43650\n503362\n503363",
+              "sourcesAction": 1,
+              "auto_type_lang": "lang087",
+              "change": 10,
+              "scoreType": 1,
+              "gift_type": 2,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 11,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "实收金豆",
+              "gameTag": []
+            },
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": "503481\n503482\n503483\n503450\n43650\n503362\n503363",
+              "sourcesAction": 1,
+              "auto_type_lang": "lang441",
+              "change": 10,
+              "scoreType": 1,
+              "gift_type": 2,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 12,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "totalLimit": 0,
+              "roomTypes": [],
+              "speakTime": 1,
+              "limit": 1,
+              "auto_name": "送出钻石",
+              "gameTag": []
+            }
+          ],
+          "anchor_uids": "",
+          "text": "这里是排行榜的说明文案",
+          "linktext": "",
+          "lottery_title": "🏆GALA GIFT SPIN🏆",
+          "svip_area": "",
+          "lottery_rule": "Sent or received 10 Beans (Event Gift)  =1 Ticket Lucky Draw (Max 1 Ticket Per Day)",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 5,
+          "selectedArea": [
+            "MY"
+          ],
+          "anchor_whitelist_status": 0,
+          "is_pay_lottery": 0,
+          "name": "抽奖模块",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [],
+          "is_lottery_all": 0,
+          "top3": 1,
+          "lottery_sector_num": 5,
+          "onlyCharge": false,
+          "whiteUid_id_info": null,
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": "",
+            "consumeCost": "",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vSSb000y33lYHC2A0dhq.jpg",
+              "theme": "You have won a ticket for the Lucky Draw!",
+              "content": "Congratulations! You’ve reached 10 Beans (by Sending or Receiving GALA gifts) and earned 1 Lucky Draw chance! ❤️"
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://giftesx.bigo.sg/live/g1/M09/0F/1D/LXz8F1tw9R-IOqAxAAAMRtFScUsAAXlmwP7hrUAAAxe911.png?auth-token=dOa20UzHQ32730RcW_-MSBP3xPQIPF_5mF3jToA9x18:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NTU1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1ODU0LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22,
+                "is_pay_prize": 0,
+                "prize_name": "Korea Medal",
+                "consume_num": "",
+                "residue_num": "",
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "20790",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "1000000",
+                "valid_days": "1",
+                "win_rate": "22",
+                "textLeft": "-35px",
+                "prize_type": "5"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "108deg",
+                "preview_img": "https://esx.bigo.sg/live/4he/01uqQ6DLTcBP.png?auth-token=dWeTXyaDm1kiz6rhEfgjVE1PYZLrfspEByr_wGWMu2I:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NTU1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjAzNzU3LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22,
+                "is_pay_prize": 0,
+                "prize_name": "PICK ME UP 펜던트",
+                "consume_num": "",
+                "residue_num": "",
+                "imgTop": "1.2664445218705325px",
+                "imgLeft": "55.839803885088045px",
+                "prize_id": "42373",
+                "textTop": "18.62712429686843px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "1000000",
+                "valid_days": "1",
+                "win_rate": "22",
+                "textLeft": "83.88206453689419px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "36deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1tmooAe02b2105174b42cd8acac3ec1489566dph.png?auth-token=Q_59lUs5iw8QEj6HG-Tc9hrkOOWb0Lw9H1SjYpv8I-U:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NTU1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA3MTk2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22,
+                "is_pay_prize": 0,
+                "prize_name": "비고 타임인가 봄!",
+                "consume_num": "",
+                "residue_num": "",
+                "imgTop": "-93.76644452187053px",
+                "imgLeft": "24.961746444860225px",
+                "prize_id": "38702",
+                "textTop": "-121.12712429686842px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "1000000",
+                "valid_days": "1",
+                "win_rate": "22",
+                "textLeft": "38.47315653655916px",
+                "prize_type": "7"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-36deg",
+                "preview_img": "https://giftesx.bigo.sg/live/7h4/M04/0B/70/bPsbAF2GJfOISK1pAAAq7Y_trXkAAs3ZADgyfMAACsF931.png?auth-token=HiQg5nssOk7eM2VuFfmpJU_STRKCmvk9jcFZIbjTpTM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NTU1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NjM2LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                "is_bottom_prize": 0,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 22,
+                "is_pay_prize": 0,
+                "prize_name": "Raytheon",
+                "consume_num": "",
+                "residue_num": "",
+                "imgTop": "-93.76644452187054px",
+                "imgLeft": "-74.96174644486021px",
+                "prize_id": "21430",
+                "textTop": "-121.12712429686844px",
+                "prize_serial": 4,
+                "free_level": "",
+                "activity_all_num": "1000000",
+                "valid_days": "1",
+                "win_rate": "22",
+                "textLeft": "-108.47315653655913px",
+                "prize_type": "1"
+              },
+              {
+                "prizes_num": 1,
+                "rotate": "-108deg",
+                "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/1Ei25k.png",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 12,
+                "is_pay_prize": 0,
+                "prize_name": "Try Again",
+                "consume_num": "",
+                "residue_num": "",
+                "imgTop": "1.2664445218705147px",
+                "imgLeft": "-105.83980388508806px",
+                "prize_id": "10001000",
+                "textTop": "18.627124296868402px",
+                "prize_serial": 5,
+                "free_level": "",
+                "activity_all_num": "1000000",
+                "valid_days": "0",
+                "win_rate": "12",
+                "textLeft": "-153.8820645368942px",
+                "prize_type": "16"
+              }
+            ],
+            "totalCost": "0.0000"
+          },
+          "uid": "",
+          "appType": 1,
+          "anchor_whitelist_id": null,
+          "lang": [
+            "MY",
+            "BN",
+            "SG"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 0,
+          "lottery_stock_type": 1,
+          "uid_arr": [],
+          "whiteUid_id": null,
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "rankStyle": "1",
+          "anchor_uid_info": null,
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 0,
+          "countType": "",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "This event is for all MY/SG/BN Host & Agency"
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "1.If a host violates any BIGO platform rules (e.g., no content, illegal broadcasting, using multiple accounts for live streaming, replacing live broadcasts, etc.), BIGO reserves the right to deduct the host’s event rewards for that month.\n\n2.Any illegal or invalid beans will result in disqualification from event rewards.\n\n3.BIGO reserves the final decision regarding all online/offline exposures, materials, and/or physical rewards.\n\n4.Hosts may not receive more than 30% of their beans from countries outside Malaysia, Singapore, and Brunei. If the percentage of international beans exceeds 30%, all excess overseas beans will be excluded from reward calculations, except for hosts who are granted an overseas beans exemption, for whom this rule does not apply."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "523872451"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

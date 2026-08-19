@@ -1,0 +1,424 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250625",
+      "20250626",
+      "20250627",
+      "20250628",
+      "20250629",
+      "20250630"
+    ],
+    "week": [
+      "20250623",
+      "20250630"
+    ],
+    "month": [
+      "202506"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 07:25:52",
+    "now_zone": -2,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 68028,
+      "act_name": "Prewarmup Gala Ranking event",
+      "state": 1,
+      "color": 1,
+      "theme": "black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-25 02:20:00",
+      "end_time": "2025-06-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "NL",
+        "DK",
+        "NO",
+        "FI",
+        "SE"
+      ],
+      "selectedArea": [
+        "NLSE"
+      ],
+      "frontCustomBgColor": "#00000",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "3"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uUCmY65a45a5d8eb44d6d9a9a2b5efc32ee4aph.jpg?auth-token=T1_3XMGgLqkZ-bnensvw0ZTrI4tlIdxbpWynmbGjbRw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDI4LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxMTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Rules and Rewards",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "fB54f",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Rules"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "- Event time: 25 - 30 June\n- The most active families until the end of the month will get rewards\n- The ranking is based on points as shown below, your family will get more points when your family members go live!"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "x6H1X",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uUCpE270b991b2c10417883b260f4446e220aph.jpg?auth-token=9TGwrWPiAOEWgRpZg-MLfVbcqP_HHBTMTepDqsDdD7c:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDI4LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1NTMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "dFnLx",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Rewards"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "- The top 10 most active families with the most points will get rewards as shown below"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "J8YGA",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hp/1uUCpj041130af2753463ba7471a0fef148965ph.jpg?auth-token=IGsVzQH00wE8cZfJJsI1kfWSNyeGq2Uu3DF3yu4BHyk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MDI4LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY2NDAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Current ranking",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "3Yun9",
+                  "formData": {
+                    "scoreLang": [],
+                    "group_arr": [],
+                    "isShowSpecialRank": 0,
+                    "scoreSelectedArea": [],
+                    "num": 999,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "needGroupsChangeReason": false,
+                    "section": 5,
+                    "groupSoure": 1,
+                    "onlyCharge": false,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "endActNotEdit": false,
+                    "isSearch": 1,
+                    "appType": 1,
+                    "rankinfo": 2,
+                    "groupIds": "221526\n222363\n81804\n64276\n122214\n12302\n124689\n123722\n48236\n169081\n144737\n65131\n198335\n115313\n207501\n157186\n169187\n184979\n61428\n174285\n142896\n207317\n8843\n157342\n30511\n215295\n9978\n31976\n134358\n129387\n98994\n73409\n83541\n71379\n21696\n210624\n131677\n143558\n50239\n137014\n137170\n65353\n137013\n41190\n26598\n150512\n84615\n73406\n142126\n11081\n71564\n106108\n95901\n83542\n123606\n23524\n88912\n164579\n84578\n12257\n43908\n59662\n32223\n12360\n158553\n115316\n25450\n94833\n88519\n13917\n83476\n32195\n85062\n210822\n98141\n74209\n13265\n76690\n118708\n192279\n71659\n45456\n37863\n63092\n67282\n99631\n99523\n50230\n122203\n114963\n98644\n98086\n96083\n93450\n92869\n92565\n8863\n86899\n86897\n84971\n84958\n84617\n83520\n70185\n68762\n65117\n64502\n58253\n56494\n53108\n51185\n43684\n43092\n39996\n35571\n33730\n26996\n26509\n23353\n206999\n19990\n19603\n178669\n176502\n16857\n15224\n146154\n14139\n14040\n14039\n13918\n13914\n138686\n136940\n134991\n13272\n131104\n130084\n129886\n12662\n126002\n125782\n123578\n121770\n12002\n118069\n112687\n105701\n105382\n104900\n104548\n103919\n103665\n101096\n100854\n89015\n80459\n201721\n45015\n114593\n215707\n123602\n93893\n159009\n211520\n200074\n132643\n73942\n201719\n59582\n100332\n115317\n80461\n154924\n120649\n32584\n218076\n123582\n120004\n150671\n130224\n49383\n198567\n158268\n186482\n52941\n216221\n215779\n201720\n82194\n130925\n194492\n102075\n162985\n203931\n157434\n108393\n29639\n147363\n140820\n8852\n65354\n122204\n155246\n71368\n114964\n187508\n139315\n86641\n70565\n145894\n122215\n125771\n19461\n107696\n150914\n121896\n41755\n91659\n32206\n165885\n135246\n151414\n164838\n180890\n95610\n168920\n17110\n209577\n205162\n159980\n57213\n34809\n158269\n112683\n118570\n89008\n153002\n122719\n219578\n41125\n113738\n101882\n150687\n112685\n80460\n46279\n156157\n87294\n57304\n99324\n112927\n98652\n114812\n91507\n86193\n216527\n142135\n8844\n128497\n69373\n127418\n26464\n65132\n11127\n19594\n98223\n45191\n89891\n114589\n48753\n176458\n77909\n143452\n129391\n168882\n12416\n180221\n57271\n66598\n69502\n95612\n174284\n82195\n37370\n115435\n50422\n124004\n119469\n12544\n89579\n10889\n55809\n8849\n108135\n107688\n38208\n44608\n102066\n65339\n44269\n50175\n174279\n87291\n117870\n49796\n146132\n114966\n8862\n107846\n84944\n85061\n109049\n31571\n26507\n62571\n47068\n38824\n202447\n40380\n95609\n120010\n114827\n194718\n145879\n117846\n107693\n159982\n38220\n92028\n52963\n108233\n103912\n125310\n84618\n66239\n34803\n31778\n134062\n107445\n95190\n92032\n57298\n34808\n68126\n98112\n92976\n92871\n9182\n8893\n88347\n86126\n86125\n77703\n77702\n77398\n76765\n76691\n73879\n72790\n70567\n70564\n68133\n68127\n68122\n68121\n65119\n65042\n63162\n62573\n61460\n60677\n60149\n59645\n55996\n55366\n54894\n54891\n54887\n52961\n52938\n51811\n51656\n50344\n50174\n49380\n48636\n48633\n48572\n47993\n47989\n46848\n45479\n45169\n45101\n45084\n44259\n41999\n41754\n41569\n40856\n39734\n38823\n38822\n38207\n34927\n34913\n34562\n30648\n30386\n29132\n27507\n27423\n27030\n25550\n25489\n25478\n23180\n23179\n20992\n209366\n202448\n19599\n18071\n16853\n16485\n15901\n15441\n15183\n151423\n145298\n142881\n141739\n141040\n139313\n138731\n137884\n137081\n137017\n136234\n13456\n130091\n125230\n125182\n120852\n120850\n119439\n114982\n114846\n114573\n112684\n11015\n109121\n108392\n102064",
+                    "auto_arr": [
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang442",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 5,
+                        "gift_id_type": 1,
+                        "score": 10,
+                        "cameraEnable": 1,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 360,
+                        "auto_name": "开播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": [],
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang443",
+                        "change": 300,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 6,
+                        "gift_id_type": 1,
+                        "score": 5,
+                        "cameraEnable": 0,
+                        "roomTypes": 0,
+                        "speakTime": 1,
+                        "limit": 360,
+                        "auto_name": "观看直播时长",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang441",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 12,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "送出钻石",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang087",
+                        "change": 1,
+                        "scoreType": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 11,
+                        "gift_id_type": 1,
+                        "score": 1,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "实收金豆",
+                        "gameTag": []
+                      },
+                      {
+                        "_sourcesErrorMsg": "",
+                        "numRequire": 0,
+                        "sources": 0,
+                        "sourcesAction": 1,
+                        "auto_type_lang": "lang804",
+                        "change": 1,
+                        "gift_type": 1,
+                        "sdks": [
+                          -1
+                        ],
+                        "gift_multiple_type": 1,
+                        "auto_type": 54,
+                        "gift_id_type": 1,
+                        "score": 100,
+                        "cameraEnable": 0,
+                        "roomTypes": [],
+                        "speakTime": 1,
+                        "limit": 99999999,
+                        "auto_name": "家族内被成功邀请加入家族的人数",
+                        "gameTag": []
+                      }
+                    ],
+                    "family_svip_ruleIds": [],
+                    "family_svip_levels": [],
+                    "blindConfig": {
+                      "imSendBeforeSeconds": 1800,
+                      "blindSwitch": false,
+                      "imImgUrl": "",
+                      "imContent": "",
+                      "timeType": "dateTime",
+                      "timeRangeList": [],
+                      "imSwitch": false,
+                      "imTitle": "",
+                      "percent": 0
+                    },
+                    "text": "",
+                    "linktext": "",
+                    "lang": [
+                      "NL",
+                      "DK",
+                      "NO",
+                      "FI",
+                      "SE"
+                    ],
+                    "family_svip_check": false,
+                    "cycleConfig": 1,
+                    "need_attend": 0,
+                    "uid_arr": [],
+                    "bottominfo": 2,
+                    "end_time": "2025/06/30 23:59:59",
+                    "groups": [],
+                    "index": 1,
+                    "groupFamilytype": 2,
+                    "selectedArea": [
+                      "NLSE"
+                    ],
+                    "family_svip_area": [],
+                    "start_time": "2025/06/25 02:30:53",
+                    "rankStyle": "1",
+                    "weeklyConfig": 1,
+                    "frontTextAlignStyle": "left",
+                    "selectedDays": [],
+                    "name": "Total ranking",
+                    "linkurl": "",
+                    "countType": ""
+                  },
+                  "type": "grouprankings",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Family PKs",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "OIp3o",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "The Family PKs will run until 29th of June, you can sign up through the link below"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "eLnLK",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "For more info, click here",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=68088",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,627 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77410,
+      "act_name": "VN - MKT - ĐĂNG DỄ ĐẬU VỀ THÁNG 12 - 2025",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-black",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-05 00:00:00",
+      "end_time": "2025-12-26 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "VN"
+      ],
+      "selectedArea": [],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "4"
+    },
+    "act_modular": [
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "SỰ KIỆN ĐÃ KẾT THÚC!"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vQH3E00y2TWPL0039G1o.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "⚜ ĐĂNG VIDEO",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/act-85008-TgX2wL/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            },
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "⚜ ĐIỀN FORM",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://forms.gle/T84CwNBCTSuCp2z17",
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTXqZ00y2TWPL00hY44u.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "NHIỆM VỤ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "IMuEd",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vQH8G00y2TWPL02CxaHo.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "CÁCH ĐĂNG",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "P7Qxq",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vTXqz00y33lYHC1q844b.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "pbypv",
+                  "formData": {
+                    "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vTXqr00y2TWPL007EEh8.png",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": true
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "⚜ ĐĂNG NGAY⚜ ",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://static-fed.bigolive.tv/live/pages/bigolive/act-85008-TgX2wL/index.html",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTXnl00y33lYHC1xAoj2.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "NGÔI SAO THỜI TRANG GALA 2025",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "I1f9y",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "NHIỆM VỤ",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "qTo35",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTXoz00y33lYHC1nXiaf.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "klZMQ",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTXpE00y2TWPL00KxnnX.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "CÁCH ĐĂNG",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "thVhF",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vTXq100y2TWPL002Zztn.png",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "⚜ ĐIỀN FORM TẠI ĐÂY⚜ ",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://forms.gle/T84CwNBCTSuCp2z17",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "anchor",
+        "formData": {
+          "mode": 4,
+          "uid_arr": [
+            {
+              "uid": 548080515,
+              "text": ""
+            },
+            {
+              "uid": 403051764,
+              "text": ""
+            },
+            {
+              "uid": 1805453839,
+              "text": ""
+            },
+            {
+              "uid": 516245716,
+              "text": ""
+            },
+            {
+              "uid": 524882519,
+              "text": ""
+            },
+            {
+              "uid": 693084745,
+              "text": ""
+            },
+            {
+              "uid": 1734716115,
+              "text": ""
+            },
+            {
+              "uid": 765456861,
+              "text": ""
+            },
+            {
+              "uid": 539974144,
+              "text": ""
+            },
+            {
+              "uid": 603464236,
+              "text": ""
+            },
+            {
+              "uid": 728051526,
+              "text": ""
+            },
+            {
+              "uid": 810459322,
+              "text": ""
+            },
+            {
+              "uid": 1572065478,
+              "text": ""
+            },
+            {
+              "uid": 628388593,
+              "text": ""
+            },
+            {
+              "uid": 710041962,
+              "text": ""
+            },
+            {
+              "uid": 496876603,
+              "text": ""
+            },
+            {
+              "uid": 860552213,
+              "text": ""
+            },
+            {
+              "uid": 854698473,
+              "text": ""
+            },
+            {
+              "uid": 514041987,
+              "text": ""
+            },
+            {
+              "uid": 697610119,
+              "text": ""
+            },
+            {
+              "uid": 686596744,
+              "text": ""
+            },
+            {
+              "uid": 591913540,
+              "text": ""
+            },
+            {
+              "uid": 789676470,
+              "text": ""
+            },
+            {
+              "uid": 598916425,
+              "text": ""
+            },
+            {
+              "uid": 783140013,
+              "text": ""
+            },
+            {
+              "uid": 570921398,
+              "text": ""
+            },
+            {
+              "uid": 1839065240,
+              "text": ""
+            },
+            {
+              "uid": 810010466,
+              "text": ""
+            },
+            {
+              "uid": 1505556035,
+              "text": ""
+            },
+            {
+              "uid": 556144511,
+              "text": ""
+            }
+          ],
+          "priority": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "layer_content": [
+                {
+                  "type": "img",
+                  "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vQjPj00y2TWPL00MDJs6.png"
+                }
+              ],
+              "fn": 0,
+              "index": 1,
+              "url": "",
+              "openType": 1,
+              "share_content": "VIDEO ĐẠT",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "share_title": "VIDEO ĐẠT",
+              "name": "VIDEO ĐẠT",
+              "style": 0,
+              "share_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vQHip00y33lYHC0y7hsB.png",
+              "layer_title": "VIDEO ĐẠT",
+              "canSignNum": 0
+            },
+            {
+              "share_content": "LƯU Ý",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [
+                {
+                  "type": "img",
+                  "value": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vQjPu00y2TWPL00AVMoR.png"
+                }
+              ],
+              "share_title": "LƯU Ý",
+              "name": "LƯU Ý",
+              "fn": 0,
+              "index": 2,
+              "style": 0,
+              "share_img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vQHjI00y33lYHC1D0rH0.png",
+              "url": "",
+              "layer_title": "LƯU Ý",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "postDisplay",
+        "formData": {
+          "mode": 2,
+          "postid_arr": [
+            {
+              "postid": "7576204134968479492",
+              "text": "Hát Cover"
+            },
+            {
+              "postid": "7576087054081381406",
+              "text": "Múa Dân Tộc"
+            },
+            {
+              "postid": "7575940768589011372",
+              "text": "Trai Đẹp"
+            },
+            {
+              "postid": "7575657982628614111",
+              "text": "Nhảy Hiện Đại"
+            },
+            {
+              "postid": "7575068687075737104",
+              "text": "Gái Xink"
+            },
+            {
+              "postid": "7574390584644220669",
+              "text": "Bắt Trend"
+            },
+            {
+              "postid": "7574072018725505193",
+              "text": "Biến Hình"
+            },
+            {
+              "postid": "7573839210015912426",
+              "text": "Nhảy Cute"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "BIGOLIVE có quyền đưa ra quyết định cuối cùng về sự kiện này và sự kiện này không liên kết với Apple Inc."
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "30005"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

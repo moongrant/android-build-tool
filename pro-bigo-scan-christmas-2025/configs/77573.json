@@ -1,0 +1,256 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 06:26:08",
+    "now_zone": -1,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77573,
+      "act_name": "LIVEATHON",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-12-05 00:00:00",
+      "end_time": "2026-01-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "NG",
+        "ZA",
+        "KE",
+        "ET",
+        "GH",
+        "TZ",
+        "SN",
+        "CM",
+        "CI",
+        "BJ",
+        "CD",
+        "UG",
+        "GM",
+        "TG",
+        "LR",
+        "ZM",
+        "CG",
+        "MU",
+        "MG"
+      ],
+      "selectedArea": [
+        "FZ"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "7"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vYmlx00y2TWPL00KUg0O.png",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vYmm500y33lYHC1bc6Bl.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "scoreLang": [],
+          "group_arr": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "dailyCycleEndTime": "23:59:59",
+          "needGroupsChangeReason": false,
+          "section": 6,
+          "groupSoure": 0,
+          "whiteUid_id_info": [
+            {
+              "filter_name": "",
+              "list_id": "1500658568",
+              "create_time": "1766674948",
+              "utime": "2025-12-25 23:02:28",
+              "filter_country": "",
+              "source": "whitelist",
+              "list_name": "DAB UID 12.26",
+              "update_operator": "",
+              "create_operator": "13107",
+              "frequency": "0",
+              "update_time": "1766674948",
+              "black_tasks_status": "0",
+              "filter_id": "21151",
+              "filter_countries": "",
+              "union_conditions": "",
+              "filter_blacklist": "",
+              "ctime": "2025-12-25 23:02:28",
+              "filter_conditions_ext": "",
+              "filter_conditions": "",
+              "status": "2"
+            }
+          ],
+          "onlyCharge": false,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang442",
+              "change": 300,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 5,
+              "gift_id_type": 1,
+              "score": 5,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 0,
+              "auto_name": "开播时长",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "anchor_uids": "",
+          "anchor_whitelist_id": null,
+          "text": "Go live and get beans",
+          "needAppointUidChangeReason": false,
+          "lang": [
+            "NG",
+            "ZA",
+            "KE",
+            "ET",
+            "GH",
+            "TZ",
+            "SN",
+            "CM",
+            "CI",
+            "BJ",
+            "CD",
+            "UG",
+            "GM",
+            "TG",
+            "LR",
+            "ZM",
+            "CG",
+            "MU",
+            "MG"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 2,
+          "need_attend": 0,
+          "whiteUid_id": "1500658568",
+          "end_time": "2025/12/31",
+          "level_config": [
+            {
+              "private_im_lang": "Welcome to go live! Want to unlock more  beans? Sign up now！1000 beans is waiting for you！\nClick here：\nhttps://activity.bigo.tv/live/act/act_16907/index.html?id=77238\n",
+              "anthor_room_reward": [
+                {
+                  "icon_url": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "reward_type": 4,
+                  "reward_max_limit": "1000",
+                  "reward_name": "beans",
+                  "free_level": null,
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/beans.png",
+                  "name": "beans",
+                  "typeid": -1,
+                  "reward_id": null,
+                  "id": 4,
+                  "reward_count": "10"
+                },
+                {
+                  "reward_type": null,
+                  "reward_max_limit": null,
+                  "reward_name": null,
+                  "reward_image": null,
+                  "reward_count": null
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": true,
+              "private_send_im": true,
+              "target": 5
+            }
+          ],
+          "groups": [],
+          "svip_levels": [],
+          "index": 4,
+          "raskType": 1,
+          "dailyCycleEndTimeOrigin": "2025/12/25 23:59:59",
+          "dailyCycleStartTime": "00:00:00",
+          "selectedArea": [
+            "FZ"
+          ],
+          "appoint_uid_source": 1,
+          "anchor_whitelist_status": 0,
+          "start_time": "2025/12/26",
+          "anchor_uid_info": null,
+          "name": "Only 5 minutes !!! Beans is waiting for you！",
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/12/25 00:00:00",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

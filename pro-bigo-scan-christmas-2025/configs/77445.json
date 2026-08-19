@@ -1,0 +1,1410 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "actPlatform": [
+        1
+      ],
+      "id": 77445,
+      "act_name": "Nice to Meet You on BIGO! 2026 Jan",
+      "state": 1,
+      "color": 1,
+      "theme": "purple-blue",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2026-01-01 00:00:00",
+      "end_time": "2026-01-31 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "MY",
+        "BN",
+        "SG"
+      ],
+      "selectedArea": [
+        "MY"
+      ],
+      "frontCustomBgColor": "",
+      "black_uids_flag": 0,
+      "black_uids_id": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "15"
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vNtVE00y2TWPL027ZmiI.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "Welcome Event Ending In"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": "The Diamonds/Beans you received have been added to your wallet. You can now send gifts to your favorite hosts."
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Limited Bonus Spin",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "egkc8",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Win extra diamond",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "A7SUq",
+                            "formData": {
+                              "setDraw10": 0,
+                              "scoreSelectedArea": [],
+                              "num": 10000,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [
+                                    0
+                                  ],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang086",
+                                  "change": 20,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 10,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "totalLimit": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 3,
+                                  "auto_name": "充值金额",
+                                  "gameTag": []
+                                }
+                              ],
+                              "anchor_uids": "",
+                              "text": "Here's the list of expository cases",
+                              "linktext": "",
+                              "needAppointUidChangeReason": false,
+                              "lottery_title": "BONUS SPIN",
+                              "svip_area": "",
+                              "lottery_rule": "▶️Event Duration: 1– 31 Jan\n▶️Recharge 20 diamond spin 1 max 3 spin per days",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "svip_levels": [],
+                              "index": 3,
+                              "selectedArea": [
+                                "MY"
+                              ],
+                              "anchor_whitelist_status": 0,
+                              "is_pay_lottery": 0,
+                              "name": "Lucky Draw",
+                              "point_uid_lottery_ticket_num": 1,
+                              "linkurl": "",
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "is_lottery_all": 0,
+                              "top3": 1,
+                              "lottery_sector_num": 7,
+                              "onlyCharge": true,
+                              "whiteUid_id_info": [
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500657298",
+                                  "create_time": "1761532802",
+                                  "utime": "2025-10-27 10:40:02",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "90110文莱新用户",
+                                  "update_operator": "",
+                                  "create_operator": "12965",
+                                  "frequency": "0",
+                                  "update_time": "1761532802",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "19800",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2025-10-27 10:40:02",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                },
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500657296",
+                                  "create_time": "1761532745",
+                                  "utime": "2025-10-27 10:39:05",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "90110新加坡新用户",
+                                  "update_operator": "",
+                                  "create_operator": "12965",
+                                  "frequency": "0",
+                                  "update_time": "1761532745",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "19798",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2025-10-27 10:39:05",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                },
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500657297",
+                                  "create_time": "1761532780",
+                                  "utime": "2025-10-27 10:39:40",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "90110马来西亚新用户",
+                                  "update_operator": "",
+                                  "create_operator": "12965",
+                                  "frequency": "0",
+                                  "update_time": "1761532780",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "19799",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2025-10-27 10:39:40",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                },
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500659180",
+                                  "create_time": "1769089111",
+                                  "utime": "2026-01-22 21:38:31",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "Q4newuser 0 recharge",
+                                  "update_operator": "",
+                                  "create_operator": "11076",
+                                  "frequency": "0",
+                                  "update_time": "1769089111",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "21791",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2026-01-22 21:38:31",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                }
+                              ],
+                              "lotter_configure": {
+                                "totalRate": 100,
+                                "residueCost": 145.4115,
+                                "consumeCost": "75.49",
+                                "messageConfigure": 1,
+                                "messageObj": {
+                                  "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vOUV800y33lYHC1uKxgv.jpg",
+                                  "theme": "🎉 Topup Completed!",
+                                  "content": "Congratulations 🎊 You've finished the task — hurry and claim your reward before it's gone! 🏆💎"
+                                },
+                                "list": [
+                                  {
+                                    "prizes_num": "1",
+                                    "rotate": "180deg",
+                                    "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0.0167",
+                                    "activity_all_cost": "41.7500",
+                                    "win_real_rate": 42,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "1 Diamonds",
+                                    "consume_num": 742,
+                                    "residue_num": 1758,
+                                    "imgTop": "60px",
+                                    "imgLeft": "-25px",
+                                    "prize_id": "1",
+                                    "textTop": "105px",
+                                    "prize_serial": 1,
+                                    "free_level": "",
+                                    "activity_all_num": "2500",
+                                    "valid_days": "0",
+                                    "used_num": 742,
+                                    "win_rate": "42",
+                                    "textLeft": "-35px",
+                                    "prize_type": "11"
+                                  },
+                                  {
+                                    "prizes_num": "3",
+                                    "rotate": "128.57142857142856deg",
+                                    "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0.0500",
+                                    "activity_all_cost": "125.0000",
+                                    "win_real_rate": 50,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "3 Diamonds",
+                                    "consume_num": 957,
+                                    "residue_num": 1543,
+                                    "imgTop": "27.996633157992356px",
+                                    "imgLeft": "41.455676009782536px",
+                                    "prize_id": "1",
+                                    "textTop": "57.9362252323417px",
+                                    "prize_serial": 2,
+                                    "free_level": "",
+                                    "activity_all_num": "2500",
+                                    "valid_days": "0",
+                                    "used_num": 957,
+                                    "win_rate": "50",
+                                    "textLeft": "62.72893530850372px",
+                                    "prize_type": "11"
+                                  },
+                                  {
+                                    "prizes_num": "5",
+                                    "rotate": "77.14285714285714deg",
+                                    "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0.0833",
+                                    "activity_all_cost": "41.6500",
+                                    "win_real_rate": 1.5,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "5 Diamonds",
+                                    "consume_num": 33,
+                                    "residue_num": 467,
+                                    "imgTop": "-43.91427938628672px",
+                                    "imgLeft": "57.86887253545501px",
+                                    "prize_id": "1",
+                                    "textTop": "-47.815116744539296px",
+                                    "prize_serial": 3,
+                                    "free_level": "",
+                                    "activity_all_num": "500",
+                                    "valid_days": "0",
+                                    "used_num": 33,
+                                    "win_rate": "1.5",
+                                    "textLeft": "86.86598902272796px",
+                                    "prize_type": "11"
+                                  },
+                                  {
+                                    "prizes_num": "10",
+                                    "rotate": "25.714285714285722deg",
+                                    "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0.1667",
+                                    "activity_all_cost": "8.3350",
+                                    "win_real_rate": 3,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "10 Diamonds",
+                                    "consume_num": 50,
+                                    "residue_num": 0,
+                                    "imgTop": "-101.58235377170561px",
+                                    "imgLeft": "11.880117824992446px",
+                                    "prize_id": "1",
+                                    "textTop": "-132.62110848780236px",
+                                    "prize_serial": 4,
+                                    "free_level": "",
+                                    "activity_all_num": "50",
+                                    "valid_days": "0",
+                                    "used_num": 50,
+                                    "win_rate": "3",
+                                    "textLeft": "19.235467389694776px",
+                                    "prize_type": "11"
+                                  },
+                                  {
+                                    "prizes_num": "50",
+                                    "rotate": "-25.714285714285722deg",
+                                    "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "0.8333",
+                                    "activity_all_cost": "4.1665",
+                                    "win_real_rate": 0.5,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "50 Diamonds",
+                                    "consume_num": 5,
+                                    "residue_num": 0,
+                                    "imgTop": "-101.58235377170563px",
+                                    "imgLeft": "-61.88011782499243px",
+                                    "prize_id": "1",
+                                    "textTop": "-132.6211084878024px",
+                                    "prize_serial": 5,
+                                    "free_level": "",
+                                    "activity_all_num": "5",
+                                    "valid_days": "0",
+                                    "used_num": 5,
+                                    "win_rate": "0.5",
+                                    "textLeft": "-89.23546738969475px",
+                                    "prize_type": "11"
+                                  },
+                                  {
+                                    "prizes_num": "99",
+                                    "rotate": "-77.14285714285717deg",
+                                    "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": "1.6500",
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 0,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "90 Diamonds",
+                                    "consume_num": 0,
+                                    "residue_num": 0,
+                                    "imgTop": "-43.914279386286665px",
+                                    "imgLeft": "-107.86887253545501px",
+                                    "prize_id": "1",
+                                    "textTop": "-47.81511674453921px",
+                                    "prize_serial": 6,
+                                    "free_level": "",
+                                    "activity_all_num": "0",
+                                    "valid_days": "0",
+                                    "used_num": 0,
+                                    "win_rate": "0",
+                                    "textLeft": "-156.86598902272797px",
+                                    "prize_type": "11"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "-128.57142857142856deg",
+                                    "preview_img": "http://giftesx.bigo.sg/live/g1/M0B/0A/64/iwVsDlqrKHCIena4AAAdBTsSIOoAAQOTAOLVPAAAB0d965.png?auth-token=mwxhVvR95JMH1qymVx_NTr2RgTbdyHzMFL23Bkm_rq8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2MjUzLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 1,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 3,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Star Light",
+                                    "consume_num": 73,
+                                    "residue_num": 9927,
+                                    "imgTop": "27.996633157992335px",
+                                    "imgLeft": "-91.45567600978254px",
+                                    "prize_id": "20587",
+                                    "textTop": "57.93622523234167px",
+                                    "prize_serial": 7,
+                                    "free_level": "",
+                                    "activity_all_num": "10000",
+                                    "valid_days": "3",
+                                    "used_num": 73,
+                                    "win_rate": "3",
+                                    "textLeft": "-132.72893530850374px",
+                                    "prize_type": "6"
+                                  }
+                                ],
+                                "totalCost": "220.9015"
+                              },
+                              "uid": "",
+                              "endActNotEdit": false,
+                              "appType": 1,
+                              "anchor_whitelist_id": null,
+                              "lang": [
+                                "MY",
+                                "BN",
+                                "SG"
+                              ],
+                              "lottery_type": 1,
+                              "appoint_uid": 2,
+                              "lottery_stock_type": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": "1500657298,1500657296,1500657297,1500659180",
+                              "bottominfo": 0,
+                              "lottery_pay_type": 1,
+                              "point_uid_lottery_ticket": 0,
+                              "lottery_ticket_timerange_limit": 0,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "lottery_timerange_limit": 0,
+                              "countType": "",
+                              "lottery_ticket_num": 1,
+                              "lottery_pay_num": 1
+                            },
+                            "type": "lottery",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Free Gift",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "p4BJf",
+                            "formData": {
+                              "setDraw10": 0,
+                              "scoreSelectedArea": [],
+                              "num": 10000,
+                              "threeRechage": [],
+                              "globalinfo": 0,
+                              "section": 4,
+                              "sendGift_limituid": 0,
+                              "mode": 1,
+                              "globalrank": 10,
+                              "coupon_arr": [],
+                              "rankinfo": 2,
+                              "auto_arr": [
+                                {
+                                  "_sourcesErrorMsg": "",
+                                  "numRequire": 0,
+                                  "sources": [],
+                                  "sourcesAction": 1,
+                                  "auto_type_lang": "lang443",
+                                  "change": 600,
+                                  "gift_type": 1,
+                                  "sdks": [
+                                    -1
+                                  ],
+                                  "gift_multiple_type": 1,
+                                  "auto_type": 6,
+                                  "gift_id_type": 1,
+                                  "score": 1,
+                                  "cameraEnable": 0,
+                                  "totalLimit": 0,
+                                  "roomTypes": 0,
+                                  "speakTime": 1,
+                                  "limit": 3,
+                                  "auto_name": "观看直播时长",
+                                  "gameTag": []
+                                }
+                              ],
+                              "anchor_uids": "",
+                              "text": "Here's the list of expository cases",
+                              "linktext": "",
+                              "needAppointUidChangeReason": false,
+                              "lottery_title": "Watch Live get Free Gift",
+                              "svip_area": "",
+                              "lottery_rule": "▶️Event Duration: 1– 31 Jan\n▶️Watch 10min get 1 spin.  Max 3 spin per days",
+                              "need_attend": 0,
+                              "prize_arr": [],
+                              "svip_levels": [],
+                              "index": 2,
+                              "selectedArea": [
+                                "MY"
+                              ],
+                              "anchor_whitelist_status": 0,
+                              "is_pay_lottery": 0,
+                              "name": "Lucky Draw",
+                              "point_uid_lottery_ticket_num": 1,
+                              "linkurl": "",
+                              "coupon_type": 0,
+                              "scoreLang": [],
+                              "is_lottery_all": 0,
+                              "top3": 1,
+                              "lottery_sector_num": 5,
+                              "onlyCharge": false,
+                              "whiteUid_id_info": [
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500657298",
+                                  "create_time": "1761532802",
+                                  "utime": "2025-10-27 10:40:02",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "90110文莱新用户",
+                                  "update_operator": "",
+                                  "create_operator": "12965",
+                                  "frequency": "0",
+                                  "update_time": "1761532802",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "19800",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2025-10-27 10:40:02",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                },
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500657296",
+                                  "create_time": "1761532745",
+                                  "utime": "2025-10-27 10:39:05",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "90110新加坡新用户",
+                                  "update_operator": "",
+                                  "create_operator": "12965",
+                                  "frequency": "0",
+                                  "update_time": "1761532745",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "19798",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2025-10-27 10:39:05",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                },
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500657297",
+                                  "create_time": "1761532780",
+                                  "utime": "2025-10-27 10:39:40",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "90110马来西亚新用户",
+                                  "update_operator": "",
+                                  "create_operator": "12965",
+                                  "frequency": "0",
+                                  "update_time": "1761532780",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "19799",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2025-10-27 10:39:40",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                },
+                                {
+                                  "filter_name": "",
+                                  "list_id": "1500659180",
+                                  "create_time": "1769089111",
+                                  "utime": "2026-01-22 21:38:31",
+                                  "filter_country": "",
+                                  "source": "whitelist",
+                                  "list_name": "Q4newuser 0 recharge",
+                                  "update_operator": "",
+                                  "create_operator": "11076",
+                                  "frequency": "0",
+                                  "update_time": "1769089111",
+                                  "black_tasks_status": "0",
+                                  "filter_id": "21791",
+                                  "filter_countries": "",
+                                  "union_conditions": "",
+                                  "filter_blacklist": "",
+                                  "ctime": "2026-01-22 21:38:31",
+                                  "filter_conditions_ext": "",
+                                  "filter_conditions": "",
+                                  "status": "2"
+                                }
+                              ],
+                              "lotter_configure": {
+                                "totalRate": 100,
+                                "residueCost": 0,
+                                "consumeCost": "0.00",
+                                "messageConfigure": 1,
+                                "messageObj": {
+                                  "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vOUUg00y2TWPL01oD21d.jpg",
+                                  "theme": "🎉Watch Live Mission Complete!",
+                                  "content": "Congratulations 🎊 You've finished the task — collect your reward now!"
+                                },
+                                "list": [
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "180deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/3s2/0KzBS1.png?auth-token=aS6EXZKhtdLvK5xfEfnZhEW8Ej2HZQ7Bor0mDfCpA84:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NTczLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 20,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Magic Book",
+                                    "consume_num": 728,
+                                    "residue_num": 9272,
+                                    "imgTop": "60px",
+                                    "imgLeft": "-25px",
+                                    "prize_id": "22777",
+                                    "textTop": "105px",
+                                    "prize_serial": 1,
+                                    "free_level": "",
+                                    "activity_all_num": "10000",
+                                    "valid_days": "3",
+                                    "used_num": 728,
+                                    "win_rate": "20",
+                                    "textLeft": "-35px",
+                                    "prize_type": "1"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "108deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/3s2/0mSh8T.png?auth-token=nGbUSXQWNtwdM39f5XwUROuEHWnV7xCi9g9O8RO-8cg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA2NTI3LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 20,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Magic journey",
+                                    "consume_num": 802,
+                                    "residue_num": 9198,
+                                    "imgTop": "1.2664445218705325px",
+                                    "imgLeft": "55.839803885088045px",
+                                    "prize_id": "22782",
+                                    "textTop": "18.62712429686843px",
+                                    "prize_serial": 2,
+                                    "free_level": "",
+                                    "activity_all_num": "10000",
+                                    "valid_days": "3",
+                                    "used_num": 802,
+                                    "win_rate": "20",
+                                    "textLeft": "83.88206453689419px",
+                                    "prize_type": "5"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "36deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/3s2/2FKTyO.png?auth-token=v9sM4N2Xx87NVXZQbySJMa2ti-QEiRGmRbttGyBiXsU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0OTkwLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 1,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 20,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Magic Hat",
+                                    "consume_num": 763,
+                                    "residue_num": 9237,
+                                    "imgTop": "-93.76644452187053px",
+                                    "imgLeft": "24.961746444860225px",
+                                    "prize_id": "22788",
+                                    "textTop": "-121.12712429686842px",
+                                    "prize_serial": 3,
+                                    "free_level": "",
+                                    "activity_all_num": "10000",
+                                    "valid_days": "3",
+                                    "used_num": 763,
+                                    "win_rate": "20",
+                                    "textLeft": "38.47315653655916px",
+                                    "prize_type": "6"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "-36deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/g1/M03/14/94/iwVsDlwdwRmILM9lAACOcBxCAZkAAjMrgF6PL0AAI6I084.png?auth-token=k035q8GoNWp4_7LCb5KC7Y2FTQNwWVOPgKHzY0yqd00:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0ODM1LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 20,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Ludo King Entrance Effect",
+                                    "consume_num": 695,
+                                    "residue_num": 9305,
+                                    "imgTop": "-93.76644452187054px",
+                                    "imgLeft": "-74.96174644486021px",
+                                    "prize_id": "20914",
+                                    "textTop": "-121.12712429686844px",
+                                    "prize_serial": 4,
+                                    "free_level": "",
+                                    "activity_all_num": "10000",
+                                    "valid_days": "3",
+                                    "used_num": 695,
+                                    "win_rate": "20",
+                                    "textLeft": "-108.47315653655913px",
+                                    "prize_type": "7"
+                                  },
+                                  {
+                                    "prizes_num": 1,
+                                    "rotate": "-108deg",
+                                    "preview_img": "https://giftesx.bigo.sg/live/3s4/1Cl2wd.png?auth-token=jkcALkY7IdiMyREsEl3AV-k52LFldT03sdA4yU50sXE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA0MTAzLCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                                    "is_bottom_prize": 0,
+                                    "prize_cost": 0,
+                                    "activity_all_cost": "0.0000",
+                                    "win_real_rate": 20,
+                                    "is_pay_prize": 0,
+                                    "prize_name": "Magic Factory",
+                                    "consume_num": 740,
+                                    "residue_num": 9260,
+                                    "imgTop": "1.2664445218705147px",
+                                    "imgLeft": "-105.83980388508806px",
+                                    "prize_id": "24299",
+                                    "textTop": "18.627124296868402px",
+                                    "prize_serial": 5,
+                                    "free_level": "",
+                                    "activity_all_num": "10000",
+                                    "valid_days": "3",
+                                    "used_num": 740,
+                                    "win_rate": "20",
+                                    "textLeft": "-153.8820645368942px",
+                                    "prize_type": "1"
+                                  }
+                                ],
+                                "totalCost": "0.0000"
+                              },
+                              "uid": "",
+                              "endActNotEdit": false,
+                              "appType": 1,
+                              "anchor_whitelist_id": null,
+                              "lang": [
+                                "MY",
+                                "BN",
+                                "SG"
+                              ],
+                              "lottery_type": 1,
+                              "appoint_uid": 2,
+                              "lottery_stock_type": 1,
+                              "uid_arr": [],
+                              "whiteUid_id": "1500657298,1500657296,1500657297,1500659180",
+                              "bottominfo": 0,
+                              "lottery_pay_type": 1,
+                              "point_uid_lottery_ticket": 0,
+                              "lottery_ticket_timerange_limit": 0,
+                              "appoint_uid_source": 1,
+                              "rankStyle": "1",
+                              "anchor_uid_info": null,
+                              "sendGift_uids": "",
+                              "lottery_timerange_limit": 0,
+                              "countType": "",
+                              "lottery_ticket_num": 1,
+                              "lottery_pay_num": 1
+                            },
+                            "type": "lottery",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "20ear",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "Complete your task here",
+                        "fn": 1,
+                        "style": 0,
+                        "share_img": "",
+                        "url": "https://www.bigo.tv/",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "Welcome Gift ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "hpfdk",
+                  "formData": {
+                    "setDraw10": 0,
+                    "scoreSelectedArea": [],
+                    "num": 10000,
+                    "threeRechage": [],
+                    "globalinfo": 0,
+                    "section": 4,
+                    "sendGift_limituid": 0,
+                    "mode": 1,
+                    "globalrank": 10,
+                    "coupon_arr": [],
+                    "rankinfo": 2,
+                    "auto_arr": [],
+                    "anchor_uids": "",
+                    "text": "Here's the list of expository cases",
+                    "linktext": "",
+                    "needAppointUidChangeReason": false,
+                    "lottery_title": "Welcome Gift for you",
+                    "svip_area": "",
+                    "lottery_rule": "You is only eligible to claim the Welcome Gift once.",
+                    "need_attend": 0,
+                    "prize_arr": [],
+                    "svip_levels": [],
+                    "index": 1,
+                    "selectedArea": [
+                      "MY"
+                    ],
+                    "anchor_whitelist_status": 0,
+                    "is_pay_lottery": 0,
+                    "name": "Lucky Draw",
+                    "point_uid_lottery_ticket_num": 1,
+                    "linkurl": "",
+                    "coupon_type": 0,
+                    "scoreLang": [],
+                    "is_lottery_all": 0,
+                    "top3": 1,
+                    "lottery_sector_num": 5,
+                    "onlyCharge": false,
+                    "whiteUid_id_info": [
+                      {
+                        "filter_name": "",
+                        "list_id": "1500657298",
+                        "create_time": "1761532802",
+                        "utime": "2025-10-27 10:40:02",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "90110文莱新用户",
+                        "update_operator": "",
+                        "create_operator": "12965",
+                        "frequency": "0",
+                        "update_time": "1761532802",
+                        "black_tasks_status": "0",
+                        "filter_id": "19800",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-10-27 10:40:02",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      },
+                      {
+                        "filter_name": "",
+                        "list_id": "1500657296",
+                        "create_time": "1761532745",
+                        "utime": "2025-10-27 10:39:05",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "90110新加坡新用户",
+                        "update_operator": "",
+                        "create_operator": "12965",
+                        "frequency": "0",
+                        "update_time": "1761532745",
+                        "black_tasks_status": "0",
+                        "filter_id": "19798",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-10-27 10:39:05",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      },
+                      {
+                        "filter_name": "",
+                        "list_id": "1500657297",
+                        "create_time": "1761532780",
+                        "utime": "2025-10-27 10:39:40",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "90110马来西亚新用户",
+                        "update_operator": "",
+                        "create_operator": "12965",
+                        "frequency": "0",
+                        "update_time": "1761532780",
+                        "black_tasks_status": "0",
+                        "filter_id": "19799",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2025-10-27 10:39:40",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      },
+                      {
+                        "filter_name": "",
+                        "list_id": "1500659180",
+                        "create_time": "1769089111",
+                        "utime": "2026-01-22 21:38:31",
+                        "filter_country": "",
+                        "source": "whitelist",
+                        "list_name": "Q4newuser 0 recharge",
+                        "update_operator": "",
+                        "create_operator": "11076",
+                        "frequency": "0",
+                        "update_time": "1769089111",
+                        "black_tasks_status": "0",
+                        "filter_id": "21791",
+                        "filter_countries": "",
+                        "union_conditions": "",
+                        "filter_blacklist": "",
+                        "ctime": "2026-01-22 21:38:31",
+                        "filter_conditions_ext": "",
+                        "filter_conditions": "",
+                        "status": "2"
+                      }
+                    ],
+                    "lotter_configure": {
+                      "totalRate": 100,
+                      "residueCost": 109.07,
+                      "consumeCost": "13.48",
+                      "messageConfigure": 1,
+                      "messageObj": {
+                        "imImg": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vOUUV00y2TWPL01zaszZ.jpg",
+                        "theme": "🎉 Welcome to BIGO! Your Gift Awaits! 🎁",
+                        "content": "Hey there! We've prepared a special Welcome Gift just for you! Come and claim it before the event ends — don't miss out! ✨"
+                      },
+                      "list": [
+                        {
+                          "prizes_num": "1",
+                          "rotate": "180deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0167",
+                          "activity_all_cost": "25.0500",
+                          "win_real_rate": 25,
+                          "is_pay_prize": 0,
+                          "prize_name": "1 Diamonds",
+                          "consume_num": 172,
+                          "residue_num": 1328,
+                          "imgTop": "60px",
+                          "imgLeft": "-25px",
+                          "prize_id": "1",
+                          "textTop": "105px",
+                          "prize_serial": 1,
+                          "free_level": "",
+                          "activity_all_num": "1500",
+                          "valid_days": "0",
+                          "used_num": 172,
+                          "win_rate": "25",
+                          "textLeft": "-35px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "4",
+                          "rotate": "108deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0190",
+                          "activity_all_cost": "28.5000",
+                          "win_real_rate": 25,
+                          "is_pay_prize": 0,
+                          "prize_name": "4 Beans",
+                          "consume_num": 197,
+                          "residue_num": 1303,
+                          "imgTop": "1.2664445218705325px",
+                          "imgLeft": "55.839803885088045px",
+                          "prize_id": "4",
+                          "textTop": "18.62712429686843px",
+                          "prize_serial": 2,
+                          "free_level": "",
+                          "activity_all_num": "1500",
+                          "valid_days": "0",
+                          "used_num": 197,
+                          "win_rate": "25",
+                          "textLeft": "83.88206453689419px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": "2",
+                          "rotate": "36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/0dcPw5.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0333",
+                          "activity_all_cost": "33.3000",
+                          "win_real_rate": 14.000000000000002,
+                          "is_pay_prize": 0,
+                          "prize_name": "2 Diamonds",
+                          "consume_num": 71,
+                          "residue_num": 929,
+                          "imgTop": "-93.76644452187053px",
+                          "imgLeft": "24.961746444860225px",
+                          "prize_id": "1",
+                          "textTop": "-121.12712429686842px",
+                          "prize_serial": 3,
+                          "free_level": "",
+                          "activity_all_num": "1000",
+                          "valid_days": "0",
+                          "used_num": 71,
+                          "win_rate": "14",
+                          "textLeft": "38.47315653655916px",
+                          "prize_type": "11"
+                        },
+                        {
+                          "prizes_num": "5",
+                          "rotate": "-36deg",
+                          "preview_img": "https://static-web.bigolive.tv/as/fhab-static/act_tpl/14wOaI.png",
+                          "is_bottom_prize": 0,
+                          "prize_cost": "0.0238",
+                          "activity_all_cost": "35.7000",
+                          "win_real_rate": 27,
+                          "is_pay_prize": 0,
+                          "prize_name": "5 Beans",
+                          "consume_num": 189,
+                          "residue_num": 1311,
+                          "imgTop": "-93.76644452187054px",
+                          "imgLeft": "-74.96174644486021px",
+                          "prize_id": "4",
+                          "textTop": "-121.12712429686844px",
+                          "prize_serial": 4,
+                          "free_level": "",
+                          "activity_all_num": "1500",
+                          "valid_days": "0",
+                          "used_num": 189,
+                          "win_rate": "27",
+                          "textLeft": "-108.47315653655913px",
+                          "prize_type": "14"
+                        },
+                        {
+                          "prizes_num": 1,
+                          "rotate": "-108deg",
+                          "preview_img": "https://giftesx.bigo.sg/live/4hb/1fqgCB.png?auth-token=j1wTG7Gy6rH_BWHRT2TFrinG0puT7kAhWC1vZflxpYU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjc3NDQ1LFwiZXh0SW5mb1wiOlwiMjAuMy4xNjcuODJcIn0iLCJlIjoxNzg3MjA1NjI3LCJzIjoiYmlnb19hY3RfdGVtcGxhdGVfYXBpIn0",
+                          "is_bottom_prize": 1,
+                          "prize_cost": 0,
+                          "activity_all_cost": "0.0000",
+                          "win_real_rate": 9,
+                          "is_pay_prize": 0,
+                          "prize_name": "HAPPY NEW YEAR",
+                          "consume_num": 163,
+                          "residue_num": 9837,
+                          "imgTop": "1.2664445218705147px",
+                          "imgLeft": "-105.83980388508806px",
+                          "prize_id": "28120",
+                          "textTop": "18.627124296868402px",
+                          "prize_serial": 5,
+                          "free_level": "",
+                          "activity_all_num": "10000",
+                          "valid_days": "30",
+                          "used_num": 163,
+                          "win_rate": "9",
+                          "textLeft": "-153.8820645368942px",
+                          "prize_type": "7"
+                        }
+                      ],
+                      "totalCost": "122.5500"
+                    },
+                    "uid": "523937088",
+                    "endActNotEdit": false,
+                    "appType": 1,
+                    "anchor_whitelist_id": null,
+                    "lang": [
+                      "MY",
+                      "BN",
+                      "SG"
+                    ],
+                    "lottery_type": 1,
+                    "appoint_uid": 2,
+                    "lottery_stock_type": 1,
+                    "uid_arr": [],
+                    "whiteUid_id": "1500657298,1500657296,1500657297,1500659180",
+                    "bottominfo": 0,
+                    "lottery_pay_type": 1,
+                    "point_uid_lottery_ticket": 1,
+                    "lottery_ticket_timerange_limit": 0,
+                    "appoint_uid_source": 1,
+                    "rankStyle": "1",
+                    "anchor_uid_info": null,
+                    "sendGift_uids": "",
+                    "lottery_timerange_limit": 0,
+                    "countType": "",
+                    "lottery_ticket_num": 1,
+                    "lottery_pay_num": 1
+                  },
+                  "type": "lottery",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Tutorial",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "khuYm",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "Where to watch live",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "GdWtk",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vLfKB00y33lYHC0T8zJU.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "How to recharge",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "RzmM1",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsy/1vLfGE00y33lYHC0R5tXd.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "More Privilege ",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "5v3Mc",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "About Wealth Level",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "QGE8h",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vdk0400y2TWPL01R9QSN.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "About VIP",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "xyjnx",
+                            "formData": {
+                              "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsz/1vdk1f00y33lYHC1GDloi.jpg",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": false,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "Contact US",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "1KS1m",
+                  "formData": {
+                    "buttons": [
+                      {
+                        "share_content": "",
+                        "ranking_attends": [
+                          {
+                            "checkAll": false,
+                            "sure": "",
+                            "name": "报名1",
+                            "range": [],
+                            "title": "",
+                            "attendModular": 0,
+                            "desc": ""
+                          }
+                        ],
+                        "layer_content": [],
+                        "share_title": "",
+                        "name": "BIGO LIVE VIP SERVICE",
+                        "fn": 1,
+                        "style": 1,
+                        "share_img": "",
+                        "url": "https://wa.link/g4s4sc",
+                        "openType": 1,
+                        "layer_title": "",
+                        "canSignNum": 0
+                      }
+                    ]
+                  },
+                  "type": "button",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tyfo3",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "活动资格说明："
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "🌟仅限注册日起30天内的指定新用户参加。\n🌟每位用户的参与期限会依照其 个人注册日计算 30 天。\n🌟不在30天范围内的用户将无法加入或继续任务。\n🌟指定用户而已 "
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "u03T8",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": "Eligibility:"
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "sub_title",
+                        "value": "🌟Only selected new users within 30 days from their registration date can join this event.\n🌟Each user's eligibility period is based on their own registration date.\n🌟Users outside the 30-day window will not be able to participate.\n🌟Open to selected user only"
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://static-comm.bigolive.tv/as/pgc-live-manage/lpsx/1vNtVS00y2TWPL01aoaLU.jpg",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

@@ -1,0 +1,531 @@
+{
+  "code": 0,
+  "data": {
+    "date": [],
+    "week": [],
+    "month": [],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 12:26:40",
+    "now_zone": -7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68357,
+      "act_name": "M-GÓI QUÀ THĂNG CẤP-01-31/7",
+      "state": 1,
+      "color": 6,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-07-01 00:00:00",
+      "end_time": "2025-08-01 00:00:00",
+      "hasRankCoupon": false,
+      "lang": [
+        "VN"
+      ],
+      "selectedArea": [],
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "2",
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "HOẠT ĐỘNG ĐÃ KẾT THÚC"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uWwap266b5a5f535047f7afba9e2c6f987c5fph.jpg?auth-token=lQ2G-vbl-uLg0wzDOe1Mu4GK4WnSwLHb-Xdb5pJ8hyo:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzU3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxNzAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "PHẦN THƯỞNG",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "1KZ9y",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4hb/11t6SnvvRW10.png?auth-token=CrKWa4s95L0qmBS_iqKxdtlHYExhVR-OwSozHElYnkw:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzU3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxMTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "QUY TẮC",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "tvIQv",
+                  "formData": {
+                    "img": "https://esx.bigo.sg/live/4he/11t6SoE4cANm.jpg?auth-token=JIbZWlYn1ddDsq5GENe3RsOCBQFUh9hJbcQr3_rIkgY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4MzU3LFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNDgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                    "imgSupportJump": false,
+                    "frontImageAdaptStyle": false,
+                    "imgRedirectUrl": "",
+                    "frontNeedBottomMargin": false
+                  },
+                  "type": "picture",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "dailyLevelTask",
+        "formData": {
+          "group_arr": [],
+          "scoreLang": [],
+          "raskValueSelect": 1,
+          "scoreSelectedArea": [],
+          "num": 10,
+          "skin": "3",
+          "needGroupsChangeReason": true,
+          "section": 1,
+          "groupSoure": 0,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500655337",
+            "create_time": "1751377958",
+            "utime": "2025-07-01 21:52:38",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "越南202507首充用户次月转化白名单",
+            "update_operator": "",
+            "create_operator": "11206",
+            "frequency": "0",
+            "update_time": "1751377958",
+            "black_tasks_status": "0",
+            "filter_id": "17767",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-07-01 21:52:38",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "onlyCharge": true,
+          "mode": 1,
+          "uid": "",
+          "endActNotEdit": false,
+          "appType": 1,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                0
+              ],
+              "sourcesAction": 1,
+              "change": 1,
+              "threeRechage": [
+                [
+                  "VN",
+                  "mol",
+                  "molpoint_wallet"
+                ],
+                [
+                  "VN",
+                  "paypal",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "nganluong",
+                  "bank"
+                ],
+                [
+                  "VN",
+                  "nganluong",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "ocean",
+                  "creditCard"
+                ],
+                [
+                  "VN",
+                  "momo",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "epin"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "razer"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "letplay"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "coda"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "mtcgame"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "ecee"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "ka-cn_bigolive"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "kabasakal"
+                ],
+                [
+                  "VN",
+                  "bigo_card",
+                  "high_gm"
+                ],
+                [
+                  "VN",
+                  "nlcard",
+                  "vms"
+                ],
+                [
+                  "VN",
+                  "nlcard",
+                  "gate"
+                ],
+                [
+                  "VN",
+                  "catappult",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "telco",
+                  "vms"
+                ],
+                [
+                  "VN",
+                  "telco",
+                  "vnp"
+                ],
+                [
+                  "VN",
+                  "telco",
+                  "viettel"
+                ],
+                [
+                  "VN",
+                  "adyen",
+                  "scheme"
+                ],
+                [
+                  "VN",
+                  "ingenico",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "appotapay",
+                  "ewallet"
+                ],
+                [
+                  "VN",
+                  "momo2",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "9pay",
+                  "bank_transfer"
+                ],
+                [
+                  "VN",
+                  "zalopay",
+                  "wallet"
+                ],
+                [
+                  "VN",
+                  "zalopay",
+                  "vietqr"
+                ],
+                [
+                  "VN",
+                  "cko",
+                  "card"
+                ],
+                [
+                  "VN",
+                  "cko_v2",
+                  "card"
+                ]
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "score": 1,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "groupIds": "",
+          "text": "Nạp KC mỗi ngày nhận thêm nhiều quà tặng hấp dẫn khác, số lượng có hạn, nhanh tay lên nhé!!",
+          "needAppointUidChangeReason": true,
+          "lang": [
+            "VN"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 1,
+          "need_attend": 0,
+          "whiteUid_id": "1500655337",
+          "level_config": [
+            {
+              "private_im_lang": "Bạn đã nạp 100KC, chúc mừng bạn được thưởng thêm 15KC.",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "300",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": 3,
+                  "reward_count": "15"
+                },
+                {
+                  "desc_text": "Blossoms Serenade🌸",
+                  "base_map_url": "",
+                  "reward_type": "32757",
+                  "reward_max_limit": "300",
+                  "op_time": "0",
+                  "offshelf_time": "2029139448",
+                  "game_type": "0",
+                  "vm_price": "0",
+                  "can_vip_share": "1",
+                  "op_user": "",
+                  "mp4_url": "",
+                  "head_type": "0",
+                  "__version": "7010077364448609584",
+                  "param": "菲律宾4月春日活动征用",
+                  "reward_name": "Lucky Spring",
+                  "typeid": "6",
+                  "extra_type": "0",
+                  "banner_url": "",
+                  "id": "32757",
+                  "nickname_color": "",
+                  "label_name": "",
+                  "reward_count": "7",
+                  "icon_url": "https://giftesx.bigo.sg/live/3s1/2NEwMb.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "__deleted": "0",
+                  "sort_key": "0",
+                  "onshelf_time": "1711444829",
+                  "env": "1",
+                  "gif_url": "",
+                  "val_count": "0",
+                  "show_type": "0",
+                  "medal_type": "0",
+                  "sale": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://giftesx.bigo.sg/live/3s1/2NEwMb.png",
+                  "name": "Lucky Spring",
+                  "act_url": "",
+                  "text_color": "#FFFFFF",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://giftesx.bigo.sg/live/3s1/0u6BtTs.webp",
+                  "status": "0",
+                  "pk_type": ""
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 1,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 100
+            },
+            {
+              "private_im_lang": "Bạn đã nạp 300KC, chúc mừng bạn được thưởng thêm 100KC.",
+              "anthor_room_reward": [
+                {
+                  "reward_type": 1,
+                  "reward_max_limit": "100",
+                  "reward_name": "diamonds",
+                  "reward_image": "https://static-web.bigolive.tv/as/bigo-static/personranking-icon/diamonds.png",
+                  "typeid": 3,
+                  "reward_count": "100"
+                },
+                {
+                  "desc_text": "XY",
+                  "base_map_url": "",
+                  "reward_type": "31637",
+                  "reward_max_limit": "100",
+                  "op_time": "0",
+                  "offshelf_time": "2020490890",
+                  "game_type": "0",
+                  "vm_price": "0",
+                  "can_vip_share": "1",
+                  "op_user": "",
+                  "mp4_url": "",
+                  "head_type": "0",
+                  "__version": "6983152792978981415",
+                  "param": "",
+                  "reward_name": "Dino invierno",
+                  "typeid": "7",
+                  "extra_type": "0",
+                  "banner_url": "",
+                  "id": "31637",
+                  "nickname_color": "",
+                  "label_name": "",
+                  "reward_count": "3",
+                  "icon_url": "https://esx.bigo.sg/live/4hd/2GLjY0l.png",
+                  "svga_url": "",
+                  "ext": "",
+                  "__deleted": "0",
+                  "sort_key": "1",
+                  "onshelf_time": "1704871763",
+                  "env": "1",
+                  "gif_url": "https://esx.bigo.sg/live/4hd/1LQPjSG.webp",
+                  "val_count": "0",
+                  "show_type": "0",
+                  "medal_type": "0",
+                  "sale": "0",
+                  "model_code": "",
+                  "val_typeid": "0",
+                  "permanent": "0",
+                  "vm_typeid": "0",
+                  "extra_value": "0",
+                  "reward_image": "https://esx.bigo.sg/live/4hd/2GLjY0l.png",
+                  "name": "Dino invierno",
+                  "act_url": "",
+                  "text_color": "#FFFFFF",
+                  "medal_jump_url": "",
+                  "supported_buy": "0",
+                  "show_url": "https://esx.bigo.sg/live/4hd/29EcR5Y.webp",
+                  "status": "0",
+                  "pk_type": ""
+                }
+              ],
+              "process_notice_lang": "",
+              "user_room_rewards": [],
+              "user_finish_room": false,
+              "level": 2,
+              "process_notice": false,
+              "send_im": true,
+              "anthor_finish_room": false,
+              "private_send_im": false,
+              "target": 200
+            }
+          ],
+          "groups": [],
+          "index": 2,
+          "raskType": 1,
+          "selectedArea": [],
+          "appointUidChangeReason": "更新本月新名单",
+          "name": "User nhận được tin nhắn này",
+          "countType": "",
+          "level_config_2": [],
+          "level_config_3": [],
+          "white_version_id": null,
+          "_afterSaveFinished": null,
+          "level_config_4": []
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Mọi quyền giải thích thuộc về BIGO LIVE"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "footer",
+        "formData": {
+          "uid": "80030"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

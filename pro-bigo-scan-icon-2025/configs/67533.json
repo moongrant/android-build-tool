@@ -1,0 +1,946 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250613",
+      "20250614",
+      "20250615",
+      "20250616",
+      "20250617",
+      "20250618",
+      "20250619",
+      "20250620",
+      "20250621",
+      "20250622",
+      "20250623",
+      "20250624",
+      "20250625",
+      "20250626",
+      "20250627",
+      "20250628",
+      "20250629",
+      "20250630"
+    ],
+    "week": [
+      "20250609",
+      "20250616",
+      "20250623",
+      "20250630"
+    ],
+    "month": [
+      "202506"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260818 22:26:08",
+    "now_zone": 7,
+    "leave_time": 0,
+    "act_info": {
+      "id": 67533,
+      "act_name": "BIGO Recharge Event",
+      "state": 1,
+      "color": 1,
+      "theme": "yellow",
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "is_go_onelink": 0,
+      "start_time": "2025-06-13 00:00:00",
+      "end_time": "2025-06-30 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "US"
+      ],
+      "selectedArea": [
+        "US"
+      ],
+      "frontCustomBgColor": "",
+      "act_link_info": {
+        "isShareLink": 2,
+        "title": "",
+        "appendixDesc": "",
+        "linkImg": ""
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "16",
+      "actPlatform": [
+        1
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uQEjq3601e6c036b1420f8e845387e58e3533ph.jpg?auth-token=y_e2AbdCFJzZb9vV6aAZYEuh_aCJ6nDR78zab67yNzY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3MjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": true,
+                  "sure": "Thank you for Sign up",
+                  "name": "Daily Leaderboard",
+                  "range": [
+                    5
+                  ],
+                  "title": "",
+                  "attendModular": 1,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "Sign Up Here",
+              "fn": 3,
+              "style": 0,
+              "share_img": "",
+              "url": "",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "Daily Leaderboard: 1 Recharge 💎 in any recharge channel = 1 Point Received"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "personrankings",
+        "formData": {
+          "isShowSpecialRank": 0,
+          "scoreSelectedArea": [],
+          "num": 500,
+          "threeRechage": [],
+          "dailyCycleEndTime": "23:59:59",
+          "globalinfo": 0,
+          "section": 6,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "giftUid_id": null,
+          "downloadNum": 30000,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                1,
+                2,
+                3,
+                5
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1,
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "blindConfig": {
+            "imSendBeforeSeconds": 1800,
+            "blindSwitch": false,
+            "imImgUrl": "",
+            "imContent": "",
+            "timeType": "time",
+            "timeRangeList": [],
+            "imSwitch": false,
+            "imTitle": "",
+            "percent": 0
+          },
+          "text": "Top 1–50: Win Diamonds at the end of each day & Top 51–500: Win Recharge Coupons after Event End. ",
+          "linktext": "",
+          "needAppointUidChangeReason": true,
+          "need_attend": 1,
+          "prize_arr": [],
+          "voteBoardConfig": 1,
+          "cp_rank": 0,
+          "index": 5,
+          "selectedArea": [
+            "US"
+          ],
+          "voteBoardTitle": "",
+          "start_time": "2025/06/14",
+          "frontTextAlignStyle": "left",
+          "name": "Daily Recharge Leaderboard",
+          "linkurl": "",
+          "switchDisplay": false,
+          "coupon_type": 0,
+          "scoreLang": [],
+          "top3": 1,
+          "rankFrom": 1,
+          "onlyCharge": true,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500655100",
+            "create_time": "1749859976",
+            "utime": "2025-06-14 08:12:56",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "BIGO Pay Event",
+            "update_operator": "",
+            "create_operator": "11616",
+            "frequency": "0",
+            "update_time": "1749859976",
+            "black_tasks_status": "0",
+            "filter_id": "17522",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-06-14 08:12:56",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "voteRankBoard": 1,
+          "manualVoteList": [],
+          "uid": "",
+          "isSearch": 1,
+          "rankTo": 500,
+          "appType": 1,
+          "giftUid_id_info": null,
+          "divide": {
+            "isPercent": 0,
+            "imconf": {
+              "beanImData": [],
+              "gift_room_im": "0",
+              "diamondImData": [],
+              "giftImData": [],
+              "diamond_room_im": "0",
+              "row_index": 0,
+              "bean_room_im": "0"
+            },
+            "proportion": []
+          },
+          "lang": [
+            "US"
+          ],
+          "appoint_uid": 2,
+          "cycleConfig": 2,
+          "uid_arr": [],
+          "whiteUid_id": "1500655100",
+          "bottominfo": 3,
+          "prizeType": 3,
+          "end_time": "2025/06/20",
+          "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+          "dailyCycleStartTime": "00:00:00",
+          "appointUidChangeReason": "x",
+          "rankStyle": "1",
+          "prize_arr_v2": [
+            {
+              "rank_to": 10,
+              "rank_from": 1,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 12000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Be Top 50 to Win Free Diamonds! Recharge More, Climb Higher, Earn Bigger Bonuses!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "1",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 200000
+            },
+            {
+              "rank_to": 50,
+              "rank_from": 11,
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 3000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Be Top 50 to Win Free Diamonds! Recharge More, Climb Higher, Earn Bigger Bonuses!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "1",
+                "row_index": 1,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 65000
+            }
+          ],
+          "switchOrder": 1,
+          "weeklyConfig": 1,
+          "sendGift_uids": "",
+          "selectedDays": [],
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+          "prize_arr_v3": [
+            {
+              "rank_to": "",
+              "rank_from": "",
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 200,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Be Top 50 to Win Free Diamonds! Recharge More, Climb Higher, Earn Bigger Bonuses!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "1",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 15000
+            },
+            {
+              "rank_to": "",
+              "rank_from": "",
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 500,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Be Top 50 to Win Free Diamonds! Recharge More, Climb Higher, Earn Bigger Bonuses!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "1",
+                "row_index": 1,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 30000
+            },
+            {
+              "rank_to": "",
+              "rank_from": "",
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 1000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Be Top 50 to Win Free Diamonds! Recharge More, Climb Higher, Earn Bigger Bonuses!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "1",
+                "row_index": 2,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 50000
+            },
+            {
+              "rank_to": "",
+              "rank_from": "",
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 3000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Be Top 50 to Win Free Diamonds! Recharge More, Climb Higher, Earn Bigger Bonuses!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "1",
+                "row_index": 3,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 100000
+            },
+            {
+              "rank_to": "",
+              "rank_from": "",
+              "prizes": [
+                {
+                  "disabledDay": true,
+                  "is_virtual": 0,
+                  "img": "https://static-web.likeevideo.com/as/bigo-static/act_23890/diamonds.png",
+                  "disabledID": true,
+                  "items_id": 1,
+                  "num": 15000,
+                  "free_level": "",
+                  "days": 0,
+                  "disabledNum": false,
+                  "isDayType": false,
+                  "type": 1
+                }
+              ],
+              "prizesImconf": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [
+                  {
+                    "zone": "default",
+                    "text": "Recharge More to win More Spin Wheel tickets to max out your rewards!"
+                  }
+                ],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 4,
+                "bean_room_im": "0"
+              },
+              "prizesImconfUser": {
+                "beanImData": [],
+                "gift_room_im": "0",
+                "diamondImData": [],
+                "giftImData": [],
+                "diamond_room_im": "0",
+                "row_index": 0,
+                "bean_room_im": "0"
+              },
+              "rankGride": 300000
+            }
+          ],
+          "maxManualVoteListID": 0
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uQFgg6d9fee5df126469896aa76fd3ba9e490ph.png?auth-token=oBboBsPI_3s93QsgQxb7FYrQwMjH7iiN0hAqijJ9ojI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQwNjUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://mobile.bigo.tv/live/quicklyTopUp/appAuth.html",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uQFgy964fd01676fa489f92808b52edb25986ph.png?auth-token=zohs0_dO29eNbvMaBHn4rDdG8IYogSEuFSJtz3bPga8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1MzksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://www.bigo.tv/blog/bigo-live-recharge",
+          "frontNeedBottomMargin": false
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "lottery",
+        "formData": {
+          "setDraw10": 1,
+          "scoreSelectedArea": [],
+          "num": 10000,
+          "threeRechage": [],
+          "globalinfo": 0,
+          "lottery_timerange_endTime": 1750489199,
+          "section": 4,
+          "sendGift_limituid": 0,
+          "mode": 1,
+          "globalrank": 10,
+          "coupon_arr": [],
+          "lottery_timerange_startTime": 1749884400,
+          "rankinfo": 2,
+          "auto_arr": [
+            {
+              "_sourcesErrorMsg": "",
+              "numRequire": 0,
+              "sources": [
+                3
+              ],
+              "sourcesAction": 1,
+              "auto_type_lang": "lang086",
+              "change": 1000,
+              "threeRechage": [],
+              "threeSource": [
+                2,
+                4,
+                3
+              ],
+              "gift_type": 1,
+              "sdks": [
+                -1
+              ],
+              "gift_multiple_type": 1,
+              "auto_type": 10,
+              "gift_id_type": 1,
+              "score": 1,
+              "cameraEnable": 0,
+              "roomTypes": 0,
+              "speakTime": 1,
+              "limit": 99999999,
+              "auto_name": "充值金额",
+              "gameTag": []
+            }
+          ],
+          "text": "Here's the list of expository cases",
+          "linktext": "",
+          "needAppointUidChangeReason": true,
+          "lottery_title": "m.bigopay.tv Spin",
+          "svip_area": "",
+          "lottery_rule": "1,000 Diamonds Recharge on m.bigopay.tv = 1 Free Spin",
+          "need_attend": 0,
+          "prize_arr": [],
+          "svip_levels": [],
+          "index": 2,
+          "start_time_stamp": 1749884400000,
+          "selectedArea": [
+            "US"
+          ],
+          "start_time": "2025-06-14T07:00:00.000Z",
+          "is_pay_lottery": 0,
+          "name": "Lucky Draw",
+          "point_uid_lottery_ticket_num": 1,
+          "linkurl": "",
+          "coupon_type": 0,
+          "scoreLang": [
+            "US"
+          ],
+          "is_lottery_all": 1,
+          "top3": 1,
+          "lottery_sector_num": 7,
+          "onlyCharge": true,
+          "whiteUid_id_info": {
+            "filter_name": "",
+            "list_id": "1500655100",
+            "create_time": "1749859976",
+            "utime": "2025-06-14 08:12:56",
+            "filter_country": "",
+            "source": "whitelist",
+            "list_name": "BIGO Pay Event",
+            "update_operator": "",
+            "create_operator": "11616",
+            "frequency": "0",
+            "update_time": "1749859976",
+            "black_tasks_status": "0",
+            "filter_id": "17522",
+            "filter_countries": "",
+            "union_conditions": "",
+            "filter_blacklist": "",
+            "ctime": "2025-06-14 08:12:56",
+            "filter_conditions_ext": "",
+            "filter_conditions": "",
+            "status": "2"
+          },
+          "lotter_configure": {
+            "totalRate": 100,
+            "residueCost": 301.89330000000007,
+            "consumeCost": "168.17",
+            "messageConfigure": 1,
+            "messageObj": {
+              "imImg": "https://esx.bigo.sg/live/4hp/1uQsGZ1337f23ff3dd4a81b347689a08e61dd4ph.png?auth-token=4_6IZAgt7hQye21lcgFSJMqo_BmUwh6AW-3m7d-V2os:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU5NTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+              "theme": "Free Spin Unlocked!",
+              "content": "Recharge For More Bonus Back!"
+            },
+            "list": [
+              {
+                "prizes_num": 1,
+                "rotate": "180deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uEHnOab4889df3cfd46c89d5a643347e7be08ph.png?auth-token=K0y-fuU-i7WYq2OfGwWZlLxRTrRYXsnZSeaEe3CCEhI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM3MzksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 1,
+                "prize_cost": 0,
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 56.99999999999999,
+                "is_pay_prize": 0,
+                "prize_name": "Pendant",
+                "consume_num": 174,
+                "residue_num": 999825,
+                "imgTop": "60px",
+                "imgLeft": "-25px",
+                "prize_id": "40372",
+                "textTop": "105px",
+                "prize_serial": 1,
+                "free_level": "",
+                "activity_all_num": "999999",
+                "valid_days": "1",
+                "used_num": 377,
+                "win_rate": "57",
+                "textLeft": "-35px",
+                "prize_type": "6"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "128.57142857142856deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s1/2CZ5L2.png?auth-token=W4074dMFVdPXLWc4MOMbNcfBFfHLNEX71rWGINGq8tY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ0MzcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "2.5",
+                "activity_all_cost": "250.0000",
+                "win_real_rate": 15,
+                "is_pay_prize": 0,
+                "prize_name": "5% Coupon ",
+                "consume_num": 47,
+                "residue_num": 53,
+                "imgTop": "27.996633157992356px",
+                "imgLeft": "41.455676009782536px",
+                "prize_id": "1749856584",
+                "textTop": "57.9362252323417px",
+                "prize_serial": 2,
+                "free_level": "",
+                "activity_all_num": "100",
+                "valid_days": "3",
+                "used_num": 101,
+                "win_rate": "15",
+                "textLeft": "62.72893530850372px",
+                "prize_type": "17"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "77.14285714285714deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s1/2CZ5L2.png?auth-token=W4074dMFVdPXLWc4MOMbNcfBFfHLNEX71rWGINGq8tY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ0MzcsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.6",
+                "activity_all_cost": "128.4000",
+                "win_real_rate": 23,
+                "is_pay_prize": 0,
+                "prize_name": "3% Coupon ",
+                "consume_num": 65,
+                "residue_num": 149,
+                "imgTop": "-43.91427938628672px",
+                "imgLeft": "57.86887253545501px",
+                "prize_id": "1749856426",
+                "textTop": "-47.815116744539296px",
+                "prize_serial": 3,
+                "free_level": "",
+                "activity_all_num": "214",
+                "valid_days": "3",
+                "used_num": 132,
+                "win_rate": "23",
+                "textLeft": "86.86598902272796px",
+                "prize_type": "17"
+              },
+              {
+                "prizes_num": "50",
+                "rotate": "25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=r72j1iYyvhmj0r3_1x2hUpFd9ZFWkExVpcA28mEQlCY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0.8333",
+                "activity_all_cost": "83.3300",
+                "win_real_rate": 3,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 50",
+                "consume_num": 14,
+                "residue_num": 86,
+                "imgTop": "-101.58235377170561px",
+                "imgLeft": "11.880117824992446px",
+                "prize_id": "1",
+                "textTop": "-132.62110848780236px",
+                "prize_serial": 4,
+                "free_level": 0,
+                "activity_all_num": "100",
+                "valid_days": "0",
+                "used_num": 22,
+                "win_rate": "3",
+                "textLeft": "19.235467389694776px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "500",
+                "rotate": "-25.714285714285722deg",
+                "preview_img": "https://giftesx.bigo.sg/live/3s2/0dcPw5.png?auth-token=r72j1iYyvhmj0r3_1x2hUpFd9ZFWkExVpcA28mEQlCY:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU0MTYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "8.3333",
+                "activity_all_cost": "8.3333",
+                "win_real_rate": 0.5,
+                "is_pay_prize": 0,
+                "prize_name": "💎 x 500",
+                "consume_num": 0,
+                "residue_num": 1,
+                "imgTop": "-101.58235377170563px",
+                "imgLeft": "-61.88011782499243px",
+                "prize_id": "1",
+                "textTop": "-132.6211084878024px",
+                "prize_serial": 5,
+                "free_level": 0,
+                "activity_all_num": "1",
+                "valid_days": "0",
+                "used_num": 1,
+                "win_rate": "0.5",
+                "textLeft": "-89.23546738969475px",
+                "prize_type": "11"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-77.14285714285717deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uQDqy2a3dbe4c96e54e1bb031b61102ebb4a5ph.png?auth-token=1QJgN3lv3FAuJdEMEIDbjSsMeUSblJ8X6QnC--gbX18:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY5NDYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 0.5,
+                "is_pay_prize": 0,
+                "prize_name": "Pumpkin Dino",
+                "consume_num": 1,
+                "residue_num": 0,
+                "imgTop": "-43.914279386286665px",
+                "imgLeft": "-107.86887253545501px",
+                "prize_id": "12344",
+                "textTop": "-47.81511674453921px",
+                "prize_serial": 6,
+                "free_level": "",
+                "activity_all_num": "1",
+                "valid_days": "0",
+                "used_num": 1,
+                "win_rate": "0.5",
+                "textLeft": "-156.86598902272797px",
+                "prize_type": "15"
+              },
+              {
+                "prizes_num": "1",
+                "rotate": "-128.57142857142856deg",
+                "preview_img": "https://esx.bigo.sg/live/4hp/1uQDt41733ea8f61724a5bb39bf297c0e04071ph.png?auth-token=TXV3u0YAPViifdaTOJio9jm5JGsOCStv3lj0m50HO1k:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwMjksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                "is_bottom_prize": 0,
+                "prize_cost": "0",
+                "activity_all_cost": "0.0000",
+                "win_real_rate": 1,
+                "is_pay_prize": 0,
+                "prize_name": "Dino Wallet",
+                "consume_num": 1,
+                "residue_num": 0,
+                "imgTop": "27.996633157992335px",
+                "imgLeft": "-91.45567600978254px",
+                "prize_id": "6543",
+                "textTop": "57.93622523234167px",
+                "prize_serial": 7,
+                "free_level": "",
+                "activity_all_num": "1",
+                "valid_days": "0",
+                "used_num": 2,
+                "win_rate": "1",
+                "textLeft": "-132.72893530850374px",
+                "prize_type": "15"
+              }
+            ],
+            "totalCost": "470.0633"
+          },
+          "uid": "695481429\n598116560",
+          "endActNotEdit": false,
+          "appType": 1,
+          "lang": [
+            "US"
+          ],
+          "lottery_type": 1,
+          "appoint_uid": 2,
+          "lottery_stock_type": 2,
+          "uid_arr": [],
+          "whiteUid_id": "1500655100",
+          "bottominfo": 0,
+          "lottery_pay_type": 1,
+          "end_time": "2025-06-20T07:00:00.000Z",
+          "dailyCycleEndTimeOrigin": "2025/04/02 23:59:59",
+          "point_uid_lottery_ticket": 0,
+          "lottery_ticket_timerange_limit": 0,
+          "appoint_uid_source": 1,
+          "appointUidChangeReason": "x",
+          "end_time_stamp": 1750402800000,
+          "rankStyle": "1",
+          "sendGift_uids": "",
+          "lottery_timerange_limit": 1,
+          "countType": "",
+          "dailyCycleStartTimeOrigin": "2025/01/01 00:00:00",
+          "lottery_ticket_num": 1,
+          "lottery_pay_num": 1
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uQFhE63b7734882cf4ea09772786b5129c079ph.png?auth-token=k7Fwarl4r91zIwqO7WfNamH8Li2jm5ZQE_dhmr369Cs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY3NTMzLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU4OTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": true,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "https://activity.bigo.tv/live/act/act_16907/index.html?id=65300",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}

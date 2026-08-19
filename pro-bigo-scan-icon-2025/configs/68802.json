@@ -1,0 +1,3072 @@
+{
+  "code": 0,
+  "data": {
+    "date": [
+      "20250704",
+      "20250705",
+      "20250706",
+      "20250707",
+      "20250708"
+    ],
+    "week": [
+      "20250630",
+      "20250707"
+    ],
+    "month": [
+      "202507"
+    ],
+    "uid": null,
+    "uidCountry": null,
+    "now_time": "20260819 13:26:24",
+    "now_zone": -8,
+    "leave_time": 0,
+    "act_info": {
+      "id": 68802,
+      "act_name": "年中盛典PK&主題房專屬",
+      "state": 1,
+      "color": 4,
+      "is_ar": 0,
+      "is_ar_domain": 0,
+      "start_time": "2025-07-04 00:00:00",
+      "end_time": "2025-07-08 23:59:59",
+      "hasRankCoupon": false,
+      "lang": [
+        "TW",
+        "CN",
+        "HK",
+        "MO"
+      ],
+      "selectedArea": [
+        "CN"
+      ],
+      "act_link_info": {
+        "isShareLink": 1,
+        "title": "年中盛典PK&主題房專屬",
+        "appendixDesc": "年中盛典PK&主題房專屬",
+        "linkImg": "https://esx.bigo.sg/live/4hp/1uXA0775c5decb79344b42ab8aab246ccd7ec7ph.jpg?auth-token=_0gtPqxGPNQHkWVF-kWZqI3X8iRK_3KhFAWlc86yy-M:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ2ODEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ"
+      },
+      "appType": 1,
+      "act_ver": 1,
+      "version_id": "26",
+      "is_go_onelink": 0,
+      "theme": "black",
+      "frontCustomBgColor": "#F2EBE3",
+      "actPlatform": [
+        1,
+        2,
+        3
+      ],
+      "black_uids_flag": 0
+    },
+    "act_modular": [
+      {
+        "type": "picture",
+        "formData": {
+          "img": "https://esx.bigo.sg/live/4hp/1uXA8td506158384e4449da2c1122450b8fce8ph.png?auth-token=Eqn7s4G2ZfnvjoU0BhxbUVWEf07LvpiHZ9rSEVhgd6w:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY4NzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+          "imgSupportJump": false,
+          "frontImageAdaptStyle": false,
+          "imgRedirectUrl": "",
+          "frontNeedBottomMargin": true
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "countdown",
+        "formData": {
+          "end_desc": "活動結束"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "button",
+        "formData": {
+          "buttons": [
+            {
+              "share_content": "",
+              "ranking_attends": [
+                {
+                  "checkAll": false,
+                  "sure": "",
+                  "name": "报名1",
+                  "range": [],
+                  "title": "",
+                  "attendModular": 0,
+                  "desc": ""
+                }
+              ],
+              "layer_content": [],
+              "share_title": "",
+              "name": "點擊進入年中盛典區域榜單",
+              "fn": 1,
+              "style": 0,
+              "share_img": "",
+              "url": "https://activity.bigo.tv/live/act/act_16907/index.html?id=68833",
+              "openType": 1,
+              "layer_title": "",
+              "canSignNum": 0
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "tab",
+        "formData": {
+          "tabContent": [
+            {
+              "name": "加分榜",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "D2XHD",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "7/4-7/5",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "k1Moa",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "活動玩法："
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "1.活動時間內參加 官方PK 或 主題房 任一的簽約華語區主播\n2.全賽區主播\n\n只要在活動期間送 GALA 指定禮物，即可計入榜單\n（不一定要打在官方PK或主題房）"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "加分榜達門檻可獲得 GALA 榜單加分（以高分者計算）"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "zbZ49",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "賽區 A&B\t",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "3r63l",
+                                      "formData": {
+                                        "tabContent": [
+                                          {
+                                            "name": "賽區 A",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "Z7OXg",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa4Vb8fcc535f27b4c989b54a91ad6cb5e38ph.png?auth-token=fpLNcvofMpHMIwQTfO4RHSW9g_U5fb1mqDwMaAJukcg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY2MTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "MK5R6",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        0
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 15,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/04 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 A",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655385",
+                                                    "create_time": "1751539068",
+                                                    "utime": "2025-07-03 18:37:48",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區A",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539068",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17816",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:37:48",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655385",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/05 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "賽區 B",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "GOp7g",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa4ceed07f368884478680a8fedb03600dd3ph.png?auth-token=ezJG_6FzjjI9C1koZoflNJD3BUQ0BLPwuoXogYpPtp4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQyNjEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "YCCGI",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 9999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        -1
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 17,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/04 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 B",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655386",
+                                                    "create_time": "1751539076",
+                                                    "utime": "2025-07-03 18:37:56",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區B",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539076",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17817",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:37:56",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655386",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/05 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      "type": "tab",
+                                      "complete": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "賽區 C&D\t",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "PD8y7",
+                                      "formData": {
+                                        "tabContent": [
+                                          {
+                                            "name": "賽區 C",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "pVSbi",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa4k8f7e180fd29740aea31dd321ce915a98ph.png?auth-token=zyNW7bK_DWouDgPJSCXAzfPfcdkSWhostzzbTBfWQvI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ1MDAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "LjSXd",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 9999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        -1
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 18,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/06 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 C",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655387",
+                                                    "create_time": "1751539083",
+                                                    "utime": "2025-07-03 18:38:03",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區C",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539083",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17818",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:38:03",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655387",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/07 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "賽區 D",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "hQdhx",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa4r5853871e53ff4afbae8e89f97c9c237cph.png?auth-token=iaxjAztV_Nq4Hp3oBg-nwe8NVue1d3qZWbqz805ne2M:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQzNzIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "asBFQ",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        -1
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 19,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/04 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 D",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655388",
+                                                    "create_time": "1751539089",
+                                                    "utime": "2025-07-03 18:38:09",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區D",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539089",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17819",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:38:09",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655388",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/05 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      "type": "tab",
+                                      "complete": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "7/6-7/7",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "c8oT2",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "活動玩法："
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "1.活動時間內參加 官方PK 或 主題房 任一的簽約華語區主播\n2.全賽區主播\n\n只要在活動期間送 GALA 指定禮物，即可計入榜單\n（不一定要打在官方PK或主題房）"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "加分榜達門檻可獲得 GALA 榜單加分（以高分者計算）"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "vPu8o",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "賽區 A&B",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "nDp4r",
+                                      "formData": {
+                                        "tabContent": [
+                                          {
+                                            "name": "賽區 A",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "tgQa3",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa515cd9926905724dfaa0445e536707fdc3ph.png?auth-token=d-Kk-C4IdNobNpqhskEGlKG5bDrfROSL3kJPzIfC9Vs:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5MzYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "Pipoy",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "dailyCycleEndTime": "23:59:59",
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        0
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 16,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/06 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 A",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655385",
+                                                    "create_time": "1751539068",
+                                                    "utime": "2025-07-03 18:37:48",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區A",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539068",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17816",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:37:48",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655385",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/07 23:59:59",
+                                                  "dailyCycleEndTimeOrigin": "2025/01/01 23:59:59",
+                                                  "dailyCycleStartTime": "00:00:00",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "dailyCycleStartTimeOrigin": "2025/07/03 00:00:00",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "賽區 B",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "LCOPS",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa5B5f9bbed011614663892bc1022065f9beph.png?auth-token=NhW-az7TJFFEI9_bvYbkJd2vcc9QiUCJGbgAxauHq30:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUwODIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "fgDbX",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 9999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        -1
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 20,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/06 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 B",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655386",
+                                                    "create_time": "1751539076",
+                                                    "utime": "2025-07-03 18:37:56",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區B",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539076",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17817",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:37:56",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655386",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/07 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      "type": "tab",
+                                      "complete": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "賽區 C&D",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "ICg8I",
+                                      "formData": {
+                                        "tabContent": [
+                                          {
+                                            "name": "賽區 C",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "XC6fY",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa5Mf95270982fd7469d9231ceed54b8be83ph.png?auth-token=UdzHOdBlxqRpVw3d5lsdoS6iDCNJajcCGQ15lXxXw-M:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY1MzUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "BIdK5",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        -1
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 22,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/06 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 C",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655387",
+                                                    "create_time": "1751539083",
+                                                    "utime": "2025-07-03 18:38:03",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區C",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539083",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17818",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:38:03",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655387",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/07 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "賽區 D",
+                                            "modular_arr": [
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "CzlVn",
+                                                "formData": {
+                                                  "img": "https://esx.bigo.sg/live/4hp/1uXa5R05cdc6fe83fb435b81a7047aca71b265ph.png?auth-token=CaSraWOY34FcC7kHuASlIUpbuDjLcSYXp9iKmZN5grU:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ3OTQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                                  "imgSupportJump": false,
+                                                  "frontImageAdaptStyle": false,
+                                                  "imgRedirectUrl": "",
+                                                  "frontNeedBottomMargin": true
+                                                },
+                                                "type": "picture",
+                                                "complete": true
+                                              },
+                                              {
+                                                "hideEdit": false,
+                                                "edit": false,
+                                                "uniqueKey": "s1mEx",
+                                                "formData": {
+                                                  "isShowSpecialRank": 0,
+                                                  "scoreSelectedArea": [],
+                                                  "num": 999,
+                                                  "threeRechage": [],
+                                                  "globalinfo": 0,
+                                                  "section": 5,
+                                                  "sendGift_limituid": 0,
+                                                  "mode": 1,
+                                                  "giftUid_id": null,
+                                                  "downloadNum": 9999999,
+                                                  "globalrank": 10,
+                                                  "coupon_arr": [],
+                                                  "rankinfo": 2,
+                                                  "auto_arr": [
+                                                    {
+                                                      "_sourcesErrorMsg": "",
+                                                      "numRequire": 0,
+                                                      "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                                      "sourcesAction": 1,
+                                                      "auto_type_lang": "lang087",
+                                                      "change": 1,
+                                                      "scoreType": 1,
+                                                      "gift_type": 2,
+                                                      "sdks": [
+                                                        -1
+                                                      ],
+                                                      "gift_multiple_type": 1,
+                                                      "auto_type": 11,
+                                                      "gift_id_type": 1,
+                                                      "score": 1,
+                                                      "cameraEnable": 0,
+                                                      "roomTypes": [],
+                                                      "speakTime": 1,
+                                                      "limit": 99999999,
+                                                      "auto_name": "实收金豆",
+                                                      "gameTag": []
+                                                    }
+                                                  ],
+                                                  "blindConfig": {
+                                                    "imSendBeforeSeconds": 1800,
+                                                    "blindSwitch": false,
+                                                    "imImgUrl": "",
+                                                    "imContent": "",
+                                                    "timeType": "dateTime",
+                                                    "timeRangeList": [],
+                                                    "imSwitch": false,
+                                                    "imTitle": "",
+                                                    "percent": 0
+                                                  },
+                                                  "text": "",
+                                                  "linktext": "",
+                                                  "needAppointUidChangeReason": false,
+                                                  "need_attend": 0,
+                                                  "prize_arr": [],
+                                                  "voteBoardConfig": 1,
+                                                  "cp_rank": 0,
+                                                  "index": 21,
+                                                  "selectedArea": [
+                                                    "CN"
+                                                  ],
+                                                  "voteBoardTitle": "",
+                                                  "start_time": "2025/07/06 00:00:00",
+                                                  "frontTextAlignStyle": "left",
+                                                  "name": "賽區 D",
+                                                  "linkurl": "",
+                                                  "switchDisplay": false,
+                                                  "coupon_type": 0,
+                                                  "scoreLang": [],
+                                                  "top3": 1,
+                                                  "onlyCharge": false,
+                                                  "whiteUid_id_info": {
+                                                    "filter_name": "",
+                                                    "list_id": "1500655388",
+                                                    "create_time": "1751539089",
+                                                    "utime": "2025-07-03 18:38:09",
+                                                    "filter_country": "",
+                                                    "source": "whitelist",
+                                                    "list_name": "年中盛典PK&主題房專屬\t賽區D",
+                                                    "update_operator": "",
+                                                    "create_operator": "11681",
+                                                    "frequency": "0",
+                                                    "update_time": "1751539089",
+                                                    "black_tasks_status": "0",
+                                                    "filter_id": "17819",
+                                                    "filter_countries": "",
+                                                    "union_conditions": "",
+                                                    "filter_blacklist": "",
+                                                    "ctime": "2025-07-03 18:38:09",
+                                                    "filter_conditions_ext": "",
+                                                    "filter_conditions": "",
+                                                    "status": "2"
+                                                  },
+                                                  "voteRankBoard": 1,
+                                                  "manualVoteList": [],
+                                                  "uid": "",
+                                                  "endActNotEdit": false,
+                                                  "isSearch": 0,
+                                                  "appType": 1,
+                                                  "giftUid_id_info": null,
+                                                  "divide": {
+                                                    "isPercent": 0,
+                                                    "imconf": {
+                                                      "beanImData": [],
+                                                      "gift_room_im": "0",
+                                                      "diamondImData": [],
+                                                      "giftImData": [],
+                                                      "diamond_room_im": "0",
+                                                      "row_index": 0,
+                                                      "bean_room_im": "0"
+                                                    },
+                                                    "proportion": []
+                                                  },
+                                                  "lang": [
+                                                    "TW",
+                                                    "CN",
+                                                    "HK",
+                                                    "MO"
+                                                  ],
+                                                  "appoint_uid": 2,
+                                                  "cycleConfig": 1,
+                                                  "uid_arr": [],
+                                                  "whiteUid_id": "1500655388",
+                                                  "bottominfo": 2,
+                                                  "prizeType": 1,
+                                                  "end_time": "2025/07/07 23:59:59",
+                                                  "rankStyle": "1",
+                                                  "prize_arr_v2": [],
+                                                  "switchOrder": 1,
+                                                  "weeklyConfig": 1,
+                                                  "sendGift_uids": "",
+                                                  "selectedDays": [],
+                                                  "countType": "",
+                                                  "maxManualVoteListID": 0
+                                                },
+                                                "type": "personrankings",
+                                                "complete": true
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      "type": "tab",
+                                      "complete": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "扭蛋機",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "W9o85",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "賽區A&B\t",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "RB3sM",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "賽區 A",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "ioeZ5",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": ""
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "key_text",
+                                            "value": "獎項內容"
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "text",
+                                            "value": "1張直播抽獎券、50金豆、海島娃娃（顏色隨機）、撲克牌、尾燈 萌龍寶寶\n\n🔺直播抽獎卷可抽出周邊好禮！將於下月官方直播間抽獎。各主播獲得張數，官方將於 7/14 前公布於代理群內"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "OgovM",
+                                      "formData": {
+                                        "setDraw10": 0,
+                                        "scoreSelectedArea": [],
+                                        "num": 10000,
+                                        "threeRechage": [],
+                                        "globalinfo": 0,
+                                        "section": 4,
+                                        "sendGift_limituid": 0,
+                                        "mode": 1,
+                                        "globalrank": 10,
+                                        "coupon_arr": [],
+                                        "rankinfo": 2,
+                                        "auto_arr": [
+                                          {
+                                            "_sourcesErrorMsg": "",
+                                            "numRequire": 0,
+                                            "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                            "sourcesAction": 1,
+                                            "auto_type_lang": "lang087",
+                                            "change": 1,
+                                            "scoreType": 1,
+                                            "gift_type": 2,
+                                            "sdks": [
+                                              0
+                                            ],
+                                            "gift_multiple_type": 1,
+                                            "auto_type": 11,
+                                            "gift_id_type": 1,
+                                            "score": 1,
+                                            "cameraEnable": 0,
+                                            "roomTypes": [],
+                                            "speakTime": 1,
+                                            "limit": 6,
+                                            "auto_name": "实收金豆",
+                                            "gameTag": []
+                                          }
+                                        ],
+                                        "text": "这里是排行榜的说明文案",
+                                        "linktext": "",
+                                        "needAppointUidChangeReason": false,
+                                        "lottery_title": "賽區 A 扭蛋機",
+                                        "svip_area": "",
+                                        "lottery_rule": "賽區 A 達 8,000 分，得 1 張抽獎券 （共上限 30 張）",
+                                        "need_attend": 0,
+                                        "prize_arr": [],
+                                        "svip_levels": [],
+                                        "index": 23,
+                                        "selectedArea": [
+                                          "CN"
+                                        ],
+                                        "is_pay_lottery": 0,
+                                        "name": "抽奖模块",
+                                        "point_uid_lottery_ticket_num": 1,
+                                        "linkurl": "",
+                                        "coupon_type": 0,
+                                        "scoreLang": [],
+                                        "is_lottery_all": 0,
+                                        "top3": 1,
+                                        "lottery_sector_num": 5,
+                                        "onlyCharge": false,
+                                        "whiteUid_id_info": {
+                                          "filter_name": "",
+                                          "list_id": "1500655385",
+                                          "create_time": "1751539068",
+                                          "utime": "2025-07-03 18:37:48",
+                                          "filter_country": "",
+                                          "source": "whitelist",
+                                          "list_name": "年中盛典PK&主題房專屬\t賽區A",
+                                          "update_operator": "",
+                                          "create_operator": "11681",
+                                          "frequency": "0",
+                                          "update_time": "1751539068",
+                                          "black_tasks_status": "0",
+                                          "filter_id": "17816",
+                                          "filter_countries": "",
+                                          "union_conditions": "",
+                                          "filter_blacklist": "",
+                                          "ctime": "2025-07-03 18:37:48",
+                                          "filter_conditions_ext": "",
+                                          "filter_conditions": "",
+                                          "status": "2"
+                                        },
+                                        "lotter_configure": {
+                                          "totalRate": 100,
+                                          "residueCost": 7.143,
+                                          "consumeCost": "0.00",
+                                          "messageConfigure": 1,
+                                          "messageObj": {
+                                            "imImg": "https://esx.bigo.sg/live/4hp/1uXDLD904320da8ac147cc983ca62f6e5beb28ph.jpg?auth-token=ScOIYFdpVWp2TCHkW90AsjujaS_y2Qnhtrve54Sixqk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxMjMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                            "theme": "賽道 A",
+                                            "content": "達 8,000 分，恭喜獲得 1 張抽獎券！快點擊進入抽獎"
+                                          },
+                                          "list": [
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "180deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXHTZe7c75466fea24654abd3a605e986030fph.png?auth-token=Ks2cxGt_XSibRP-vn198AYXWifczTxkZIQVoDU0pI4o:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUyMTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 15,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "直播抽獎券",
+                                              "consume_num": 0,
+                                              "residue_num": 45,
+                                              "imgTop": "60px",
+                                              "imgLeft": "-25px",
+                                              "prize_id": "3",
+                                              "textTop": "105px",
+                                              "prize_serial": 1,
+                                              "free_level": "",
+                                              "activity_all_num": "45",
+                                              "valid_days": "3",
+                                              "used_num": 0,
+                                              "win_rate": "15",
+                                              "textLeft": "-35px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "50",
+                                              "rotate": "108deg",
+                                              "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=yToR-fwLGMp_BO2tKq12zHBCVaNn3G3B-ll-isT1z-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0.2381",
+                                              "activity_all_cost": "7.1430",
+                                              "win_real_rate": 10,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "金豆",
+                                              "consume_num": 0,
+                                              "residue_num": 30,
+                                              "imgTop": "1.2664445218705325px",
+                                              "imgLeft": "55.839803885088045px",
+                                              "prize_id": "4",
+                                              "textTop": "18.62712429686843px",
+                                              "prize_serial": 2,
+                                              "free_level": "",
+                                              "activity_all_num": "30",
+                                              "valid_days": "0",
+                                              "used_num": 0,
+                                              "win_rate": "10",
+                                              "textLeft": "83.88206453689419px",
+                                              "prize_type": "14"
+                                            },
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "36deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXDIKfb06faa0d7c14add8c640977b0f43c43ph.jpg?auth-token=LOzMe6mqni-euQFTVrka7F7UkY2te2Lp-G-JGoybzVE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYwMDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 0.33,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "海島娃娃（顏色隨機）",
+                                              "consume_num": 0,
+                                              "residue_num": 1,
+                                              "imgTop": "-93.76644452187053px",
+                                              "imgLeft": "24.961746444860225px",
+                                              "prize_id": "1",
+                                              "textTop": "-121.12712429686842px",
+                                              "prize_serial": 3,
+                                              "free_level": "",
+                                              "activity_all_num": "1",
+                                              "valid_days": "3",
+                                              "used_num": 0,
+                                              "win_rate": "0.33",
+                                              "textLeft": "38.47315653655916px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "-36deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXDGO46603016f328487999bdaed60307c1f4ph.png?auth-token=15Q1g9ms9_4eSWtDd-xpkucwwz3XMXcgJ8D37dJvTmM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDcwNjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 1.5,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "撲克牌",
+                                              "consume_num": 0,
+                                              "residue_num": 2,
+                                              "imgTop": "-93.76644452187054px",
+                                              "imgLeft": "-74.96174644486021px",
+                                              "prize_id": "2",
+                                              "textTop": "-121.12712429686844px",
+                                              "prize_serial": 4,
+                                              "free_level": "",
+                                              "activity_all_num": "2",
+                                              "valid_days": "3",
+                                              "used_num": 0,
+                                              "win_rate": "1.5",
+                                              "textLeft": "-108.47315653655913px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": 1,
+                                              "rotate": "-108deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hd/01t3YRPWy1D7T.png?auth-token=eS-THQ3J0fKz1Jb3Yn_cAVm1S44h5BH09N_iq-_EAPI:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxODEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 1,
+                                              "prize_cost": 0,
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 73.17,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "萌龍寶寶",
+                                              "consume_num": 0,
+                                              "residue_num": 9999,
+                                              "imgTop": "1.2664445218705147px",
+                                              "imgLeft": "-105.83980388508806px",
+                                              "prize_id": "36493",
+                                              "textTop": "18.627124296868402px",
+                                              "prize_serial": 5,
+                                              "free_level": "",
+                                              "activity_all_num": "9999",
+                                              "valid_days": "3",
+                                              "used_num": 0,
+                                              "win_rate": "73.17",
+                                              "textLeft": "-153.8820645368942px",
+                                              "prize_type": "5"
+                                            }
+                                          ],
+                                          "totalCost": "7.1430"
+                                        },
+                                        "uid": "",
+                                        "endActNotEdit": false,
+                                        "appType": 1,
+                                        "lang": [
+                                          "TW",
+                                          "CN",
+                                          "HK",
+                                          "MO"
+                                        ],
+                                        "lottery_type": 2,
+                                        "appoint_uid": 2,
+                                        "lottery_stock_type": 1,
+                                        "uid_arr": [],
+                                        "whiteUid_id": "1500655385",
+                                        "bottominfo": 0,
+                                        "lottery_pay_type": 1,
+                                        "point_uid_lottery_ticket": 0,
+                                        "lottery_ticket_timerange_limit": 0,
+                                        "appoint_uid_source": 1,
+                                        "rankStyle": "1",
+                                        "sendGift_uids": "",
+                                        "lottery_timerange_limit": 0,
+                                        "countType": "",
+                                        "lottery_ticket_num": 1,
+                                        "lottery_pay_num": 1
+                                      },
+                                      "type": "lottery",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "c8EMV",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uXF3P56ecdc26188e45728af88ad7c3df7889ph.png?auth-token=94-o7NmZh7oN80x8lrGzdL2CEgXTyTY1DG7RXJsx0Nc:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ4ODksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "賽區 B",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "1u2o9",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": ""
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "key_text",
+                                            "value": "獎項內容"
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "text",
+                                            "value": "1張直播抽獎券、50金豆、海島娃娃（顏色隨機）、生肖盲盒、尾燈 口袋萌友\n\n🔺直播抽獎卷可抽出周邊好禮！將於下月官方直播間抽獎。各主播獲得張數，官方將於 7/14 前公布於代理群內"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "1TO6B",
+                                      "formData": {
+                                        "setDraw10": 0,
+                                        "scoreSelectedArea": [],
+                                        "num": 10000,
+                                        "threeRechage": [],
+                                        "globalinfo": 0,
+                                        "section": 4,
+                                        "sendGift_limituid": 0,
+                                        "mode": 1,
+                                        "globalrank": 10,
+                                        "coupon_arr": [],
+                                        "rankinfo": 2,
+                                        "auto_arr": [
+                                          {
+                                            "_sourcesErrorMsg": "",
+                                            "numRequire": 0,
+                                            "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                            "sourcesAction": 1,
+                                            "auto_type_lang": "lang087",
+                                            "change": 1,
+                                            "scoreType": 1,
+                                            "gift_type": 2,
+                                            "sdks": [
+                                              0
+                                            ],
+                                            "gift_multiple_type": 1,
+                                            "auto_type": 11,
+                                            "gift_id_type": 1,
+                                            "score": 1,
+                                            "cameraEnable": 0,
+                                            "roomTypes": [],
+                                            "speakTime": 1,
+                                            "limit": 6,
+                                            "auto_name": "实收金豆",
+                                            "gameTag": []
+                                          }
+                                        ],
+                                        "text": "这里是排行榜的说明文案",
+                                        "linktext": "",
+                                        "needAppointUidChangeReason": false,
+                                        "lottery_title": "賽區 B 扭蛋機",
+                                        "svip_area": "",
+                                        "lottery_rule": "賽區 B 達 6,500 分，得 1 張抽獎券 （共上限 30 張）",
+                                        "need_attend": 0,
+                                        "prize_arr": [],
+                                        "svip_levels": [],
+                                        "index": 24,
+                                        "selectedArea": [
+                                          "CN"
+                                        ],
+                                        "is_pay_lottery": 0,
+                                        "name": "抽奖模块",
+                                        "point_uid_lottery_ticket_num": 1,
+                                        "linkurl": "",
+                                        "coupon_type": 0,
+                                        "scoreLang": [],
+                                        "is_lottery_all": 0,
+                                        "top3": 1,
+                                        "lottery_sector_num": 5,
+                                        "onlyCharge": false,
+                                        "whiteUid_id_info": {
+                                          "filter_name": "",
+                                          "list_id": "1500655386",
+                                          "create_time": "1751539076",
+                                          "utime": "2025-07-03 18:37:56",
+                                          "filter_country": "",
+                                          "source": "whitelist",
+                                          "list_name": "年中盛典PK&主題房專屬\t賽區B",
+                                          "update_operator": "",
+                                          "create_operator": "11681",
+                                          "frequency": "0",
+                                          "update_time": "1751539076",
+                                          "black_tasks_status": "0",
+                                          "filter_id": "17817",
+                                          "filter_countries": "",
+                                          "union_conditions": "",
+                                          "filter_blacklist": "",
+                                          "ctime": "2025-07-03 18:37:56",
+                                          "filter_conditions_ext": "",
+                                          "filter_conditions": "",
+                                          "status": "2"
+                                        },
+                                        "lotter_configure": {
+                                          "totalRate": 100,
+                                          "residueCost": 16.667,
+                                          "consumeCost": "0.00",
+                                          "messageConfigure": 1,
+                                          "messageObj": {
+                                            "imImg": "https://esx.bigo.sg/live/4hp/1uXDSC3c5d83da95fb4176b7b396792565c1efph.jpg?auth-token=udkDONkxa2SUuMjKd41KzF1R1JhIVkwF-j7CiKPop6A:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxODEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                            "theme": "賽區 B ",
+                                            "content": "達 6,500 分，恭喜獲得 1 張抽獎券！快點擊進入抽獎"
+                                          },
+                                          "list": [
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "180deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXHTt54a8802827fb4d2abc286af4cc5a4bacph.png?auth-token=QGGlnTZxd05a9ArHlx5WoQtFrvZWnDfKATMhXFXPsEA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQ5NDksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 15,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "直播抽獎券",
+                                              "consume_num": 0,
+                                              "residue_num": 90,
+                                              "imgTop": "60px",
+                                              "imgLeft": "-25px",
+                                              "prize_id": "1",
+                                              "textTop": "105px",
+                                              "prize_serial": 1,
+                                              "free_level": "",
+                                              "activity_all_num": "90",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "15",
+                                              "textLeft": "-35px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "50",
+                                              "rotate": "108deg",
+                                              "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=yToR-fwLGMp_BO2tKq12zHBCVaNn3G3B-ll-isT1z-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0.2381",
+                                              "activity_all_cost": "16.6670",
+                                              "win_real_rate": 10,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "金豆",
+                                              "consume_num": 0,
+                                              "residue_num": 70,
+                                              "imgTop": "1.2664445218705325px",
+                                              "imgLeft": "55.839803885088045px",
+                                              "prize_id": "4",
+                                              "textTop": "18.62712429686843px",
+                                              "prize_serial": 2,
+                                              "free_level": "",
+                                              "activity_all_num": "70",
+                                              "valid_days": "0",
+                                              "used_num": 0,
+                                              "win_rate": "10",
+                                              "textLeft": "83.88206453689419px",
+                                              "prize_type": "14"
+                                            },
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "36deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXDQId19bdce129264a53bee039e15eb9372dph.jpg?auth-token=MBJjF7pxAnC_ZRbizacISSE60wyqaAzmvGYoUnXAQRk:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQyNTEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 0.15,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "海島娃娃（顏色隨機）",
+                                              "consume_num": 0,
+                                              "residue_num": 1,
+                                              "imgTop": "-93.76644452187053px",
+                                              "imgLeft": "24.961746444860225px",
+                                              "prize_id": "2",
+                                              "textTop": "-121.12712429686842px",
+                                              "prize_serial": 3,
+                                              "free_level": "",
+                                              "activity_all_num": "1",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "0.15",
+                                              "textLeft": "38.47315653655916px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "-36deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXHTw302a4686db7140348e33cf1de7eb6964ph.png?auth-token=gGkOvQJu-RMdIlF5Z0e4amYoDqBGlahEQwA9NvVe0-4:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2NTksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 1,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "生肖盲盒",
+                                              "consume_num": 0,
+                                              "residue_num": 2,
+                                              "imgTop": "-93.76644452187054px",
+                                              "imgLeft": "-74.96174644486021px",
+                                              "prize_id": "3",
+                                              "textTop": "-121.12712429686844px",
+                                              "prize_serial": 4,
+                                              "free_level": "",
+                                              "activity_all_num": "2",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "1",
+                                              "textLeft": "-108.47315653655913px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": 1,
+                                              "rotate": "-108deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4he/11t3Y8j8gJvQ.png?auth-token=ahHSg4ck2m5MioXTtMrShAwihDLza08kJzLNLejk_jE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYzNzAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 1,
+                                              "prize_cost": 0,
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 73.85,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "口袋萌友",
+                                              "consume_num": 0,
+                                              "residue_num": 9999,
+                                              "imgTop": "1.2664445218705147px",
+                                              "imgLeft": "-105.83980388508806px",
+                                              "prize_id": "36491",
+                                              "textTop": "18.627124296868402px",
+                                              "prize_serial": 5,
+                                              "free_level": "",
+                                              "activity_all_num": "9999",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "73.85",
+                                              "textLeft": "-153.8820645368942px",
+                                              "prize_type": "5"
+                                            }
+                                          ],
+                                          "totalCost": "16.6670"
+                                        },
+                                        "uid": "",
+                                        "endActNotEdit": false,
+                                        "appType": 1,
+                                        "lang": [
+                                          "TW",
+                                          "CN",
+                                          "HK",
+                                          "MO"
+                                        ],
+                                        "lottery_type": 2,
+                                        "appoint_uid": 2,
+                                        "lottery_stock_type": 1,
+                                        "uid_arr": [],
+                                        "whiteUid_id": "1500655386",
+                                        "bottominfo": 0,
+                                        "lottery_pay_type": 1,
+                                        "point_uid_lottery_ticket": 0,
+                                        "lottery_ticket_timerange_limit": 0,
+                                        "appoint_uid_source": 1,
+                                        "rankStyle": "1",
+                                        "sendGift_uids": "",
+                                        "lottery_timerange_limit": 0,
+                                        "countType": "",
+                                        "lottery_ticket_num": 1,
+                                        "lottery_pay_num": 1
+                                      },
+                                      "type": "lottery",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "TKy9J",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uXFBu68674ceda79a49ecb0f7620baa02845fph.png?auth-token=m6H8XcUjQvDWtLHjMqXbkMAmcd0hyQk4UQxvDjJdrAg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUyODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": true
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "賽區C&D\t",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "RguM3",
+                            "formData": {
+                              "tabContent": [
+                                {
+                                  "name": "賽區 C",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "rXLO8",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": ""
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "key_text",
+                                            "value": "獎項內容"
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "text",
+                                            "value": "1張直播抽獎券、50金豆、蛇年娃娃（顏色隨機）、1000金豆、尾燈 甜蜜瑪芬\n\n🔺直播抽獎卷可抽出周邊好禮！將於下月官方直播間抽獎。各主播獲得張數，官方將於 7/14 前公布於代理群內"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "HW2fh",
+                                      "formData": {
+                                        "setDraw10": 0,
+                                        "scoreSelectedArea": [],
+                                        "num": 10000,
+                                        "threeRechage": [],
+                                        "globalinfo": 0,
+                                        "section": 4,
+                                        "sendGift_limituid": 0,
+                                        "mode": 1,
+                                        "globalrank": 10,
+                                        "coupon_arr": [],
+                                        "rankinfo": 2,
+                                        "auto_arr": [
+                                          {
+                                            "_sourcesErrorMsg": "",
+                                            "numRequire": 0,
+                                            "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                            "sourcesAction": 1,
+                                            "auto_type_lang": "lang087",
+                                            "change": 1,
+                                            "scoreType": 1,
+                                            "gift_type": 2,
+                                            "sdks": [
+                                              0
+                                            ],
+                                            "gift_multiple_type": 1,
+                                            "auto_type": 11,
+                                            "gift_id_type": 1,
+                                            "score": 1,
+                                            "cameraEnable": 0,
+                                            "roomTypes": [],
+                                            "speakTime": 1,
+                                            "limit": 6,
+                                            "auto_name": "实收金豆",
+                                            "gameTag": []
+                                          }
+                                        ],
+                                        "text": "这里是排行榜的说明文案",
+                                        "linktext": "",
+                                        "needAppointUidChangeReason": false,
+                                        "lottery_title": "賽區 C 扭蛋機",
+                                        "svip_area": "",
+                                        "lottery_rule": "賽區 C 達 4,000 分，得 1 張抽獎券 （共上限 30 張）",
+                                        "need_attend": 0,
+                                        "prize_arr": [],
+                                        "svip_levels": [],
+                                        "index": 25,
+                                        "selectedArea": [
+                                          "CN"
+                                        ],
+                                        "is_pay_lottery": 0,
+                                        "name": "抽奖模块",
+                                        "point_uid_lottery_ticket_num": 1,
+                                        "linkurl": "",
+                                        "coupon_type": 0,
+                                        "scoreLang": [],
+                                        "is_lottery_all": 0,
+                                        "top3": 1,
+                                        "lottery_sector_num": 5,
+                                        "onlyCharge": false,
+                                        "whiteUid_id_info": {
+                                          "filter_name": "",
+                                          "list_id": "1500655387",
+                                          "create_time": "1751539083",
+                                          "utime": "2025-07-03 18:38:03",
+                                          "filter_country": "",
+                                          "source": "whitelist",
+                                          "list_name": "年中盛典PK&主題房專屬\t賽區C",
+                                          "update_operator": "",
+                                          "create_operator": "11681",
+                                          "frequency": "0",
+                                          "update_time": "1751539083",
+                                          "black_tasks_status": "0",
+                                          "filter_id": "17818",
+                                          "filter_countries": "",
+                                          "union_conditions": "",
+                                          "filter_blacklist": "",
+                                          "ctime": "2025-07-03 18:38:03",
+                                          "filter_conditions_ext": "",
+                                          "filter_conditions": "",
+                                          "status": "2"
+                                        },
+                                        "lotter_configure": {
+                                          "totalRate": 100,
+                                          "residueCost": 280.953,
+                                          "consumeCost": "0.00",
+                                          "messageConfigure": 1,
+                                          "messageObj": {
+                                            "imImg": "https://esx.bigo.sg/live/4hp/1uXF5N87d61f96842b47c1b27c94c053039f4eph.jpg?auth-token=blyZGDOauVhCvqrUkoGMUtyj8o34bqVmbKeEOI2LPRA:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQyNzQsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                            "theme": "賽區 C",
+                                            "content": "達 4,000 分，恭喜獲得 1 張抽獎券！快點擊進入抽獎"
+                                          },
+                                          "list": [
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "180deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXHUG29b1d8e52b4c458183f9e15e6ad51da6ph.png?auth-token=MBBK9s4t35tMuoG0GDGD9KtYHO06_6CnL9GKI1iE9ug:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 15,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "直播抽獎券",
+                                              "consume_num": 0,
+                                              "residue_num": 150,
+                                              "imgTop": "60px",
+                                              "imgLeft": "-25px",
+                                              "prize_id": "3",
+                                              "textTop": "105px",
+                                              "prize_serial": 1,
+                                              "free_level": "",
+                                              "activity_all_num": "150",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "15",
+                                              "textLeft": "-35px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "50",
+                                              "rotate": "108deg",
+                                              "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=yToR-fwLGMp_BO2tKq12zHBCVaNn3G3B-ll-isT1z-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0.2381",
+                                              "activity_all_cost": "42.8580",
+                                              "win_real_rate": 10,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "金豆",
+                                              "consume_num": 0,
+                                              "residue_num": 180,
+                                              "imgTop": "1.2664445218705325px",
+                                              "imgLeft": "55.839803885088045px",
+                                              "prize_id": "4",
+                                              "textTop": "18.62712429686843px",
+                                              "prize_serial": 2,
+                                              "free_level": "",
+                                              "activity_all_num": "180",
+                                              "valid_days": "0",
+                                              "used_num": 0,
+                                              "win_rate": "10",
+                                              "textLeft": "83.88206453689419px",
+                                              "prize_type": "14"
+                                            },
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "36deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXEkD842d923c9b9f4047b639897992fd3f0fph.png?auth-token=XBKL4taOrRFZD-GNc7z2Dn15GOH9MfrXkOBAHN2lexE:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDU5ODMsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 0.05,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "蛇年娃娃（顏色隨機）",
+                                              "consume_num": 0,
+                                              "residue_num": 1,
+                                              "imgTop": "-93.76644452187053px",
+                                              "imgLeft": "24.961746444860225px",
+                                              "prize_id": "2",
+                                              "textTop": "-121.12712429686842px",
+                                              "prize_serial": 3,
+                                              "free_level": "",
+                                              "activity_all_num": "1",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "0.05",
+                                              "textLeft": "38.47315653655916px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "1000",
+                                              "rotate": "-36deg",
+                                              "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=yToR-fwLGMp_BO2tKq12zHBCVaNn3G3B-ll-isT1z-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "4.7619",
+                                              "activity_all_cost": "238.0950",
+                                              "win_real_rate": 2.5,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "金豆",
+                                              "consume_num": 0,
+                                              "residue_num": 50,
+                                              "imgTop": "-93.76644452187054px",
+                                              "imgLeft": "-74.96174644486021px",
+                                              "prize_id": "4",
+                                              "textTop": "-121.12712429686844px",
+                                              "prize_serial": 4,
+                                              "free_level": "",
+                                              "activity_all_num": "50",
+                                              "valid_days": "0",
+                                              "used_num": 0,
+                                              "win_rate": "2.5",
+                                              "textLeft": "-108.47315653655913px",
+                                              "prize_type": "14"
+                                            },
+                                            {
+                                              "prizes_num": 1,
+                                              "rotate": "-108deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hd/21t3Y72W1ov5f.png?auth-token=yreXxloQcniW6ieSdMBiUpBiGnQsJji9AnJKDdMNfZQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUxOTAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 1,
+                                              "prize_cost": 0,
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 72.45,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "甜蜜瑪芬",
+                                              "consume_num": 0,
+                                              "residue_num": 9999,
+                                              "imgTop": "1.2664445218705147px",
+                                              "imgLeft": "-105.83980388508806px",
+                                              "prize_id": "36487",
+                                              "textTop": "18.627124296868402px",
+                                              "prize_serial": 5,
+                                              "free_level": "",
+                                              "activity_all_num": "9999",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "72.45",
+                                              "textLeft": "-153.8820645368942px",
+                                              "prize_type": "5"
+                                            }
+                                          ],
+                                          "totalCost": "280.9530"
+                                        },
+                                        "uid": "",
+                                        "endActNotEdit": false,
+                                        "appType": 1,
+                                        "lang": [
+                                          "TW",
+                                          "CN",
+                                          "HK",
+                                          "MO"
+                                        ],
+                                        "lottery_type": 2,
+                                        "appoint_uid": 2,
+                                        "lottery_stock_type": 1,
+                                        "uid_arr": [],
+                                        "whiteUid_id": "1500655387",
+                                        "bottominfo": 0,
+                                        "lottery_pay_type": 1,
+                                        "point_uid_lottery_ticket": 0,
+                                        "lottery_ticket_timerange_limit": 0,
+                                        "appoint_uid_source": 1,
+                                        "rankStyle": "1",
+                                        "sendGift_uids": "",
+                                        "lottery_timerange_limit": 0,
+                                        "countType": "",
+                                        "lottery_ticket_num": 1,
+                                        "lottery_pay_num": 1
+                                      },
+                                      "type": "lottery",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "piSVb",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uXFC78d468e8435b34d8f8fdcc81c9ce36432ph.png?auth-token=FbI7TRH7E9DSOmRfjS2jhUETEg240zzx95A_QUmGDqM:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDUzODAsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": false
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "賽區 D",
+                                  "modular_arr": [
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "dP1KT",
+                                      "formData": {
+                                        "textContent": [
+                                          {
+                                            "frontTextStyle": "type1",
+                                            "frontAlignStyle": "left",
+                                            "type": "title",
+                                            "value": ""
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "key_text",
+                                            "value": "獎項內容"
+                                          },
+                                          {
+                                            "frontTextStyle": "default",
+                                            "frontAlignStyle": "left",
+                                            "type": "text",
+                                            "value": "1張直播抽獎券、50金豆、DINO 抱枕、1000金豆、尾燈 神秘魔豆\n\n🔺直播抽獎卷可抽出周邊好禮！將於下月官方直播間抽獎。各主播獲得張數，官方將於 7/14 前公布於代理群內"
+                                          }
+                                        ]
+                                      },
+                                      "type": "paragraph",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "uc1wW",
+                                      "formData": {
+                                        "setDraw10": 0,
+                                        "scoreSelectedArea": [],
+                                        "num": 10000,
+                                        "threeRechage": [],
+                                        "globalinfo": 0,
+                                        "section": 4,
+                                        "sendGift_limituid": 0,
+                                        "mode": 1,
+                                        "globalrank": 10,
+                                        "coupon_arr": [],
+                                        "rankinfo": 2,
+                                        "auto_arr": [
+                                          {
+                                            "_sourcesErrorMsg": "",
+                                            "numRequire": 0,
+                                            "sources": "502363\n502415\n502367\n502373\n9172\n500404\n502503\n6003\n501849",
+                                            "sourcesAction": 1,
+                                            "auto_type_lang": "lang087",
+                                            "change": 1,
+                                            "scoreType": 1,
+                                            "gift_type": 2,
+                                            "sdks": [
+                                              0
+                                            ],
+                                            "gift_multiple_type": 1,
+                                            "auto_type": 11,
+                                            "gift_id_type": 1,
+                                            "score": 1,
+                                            "cameraEnable": 0,
+                                            "roomTypes": [],
+                                            "speakTime": 1,
+                                            "limit": 6,
+                                            "auto_name": "实收金豆",
+                                            "gameTag": []
+                                          }
+                                        ],
+                                        "text": "这里是排行榜的说明文案",
+                                        "linktext": "",
+                                        "needAppointUidChangeReason": false,
+                                        "lottery_title": "賽區 D 扭蛋機",
+                                        "svip_area": "",
+                                        "lottery_rule": "賽區 C 達 4,000 分，得 1 張抽獎券 （共上限 30 張）",
+                                        "need_attend": 0,
+                                        "prize_arr": [],
+                                        "svip_levels": [],
+                                        "index": 26,
+                                        "selectedArea": [
+                                          "CN"
+                                        ],
+                                        "is_pay_lottery": 0,
+                                        "name": "抽奖模块",
+                                        "point_uid_lottery_ticket_num": 1,
+                                        "linkurl": "",
+                                        "coupon_type": 0,
+                                        "scoreLang": [],
+                                        "is_lottery_all": 0,
+                                        "top3": 1,
+                                        "lottery_sector_num": 5,
+                                        "onlyCharge": false,
+                                        "whiteUid_id_info": {
+                                          "filter_name": "",
+                                          "list_id": "1500655388",
+                                          "create_time": "1751539089",
+                                          "utime": "2025-07-03 18:38:09",
+                                          "filter_country": "",
+                                          "source": "whitelist",
+                                          "list_name": "年中盛典PK&主題房專屬\t賽區D",
+                                          "update_operator": "",
+                                          "create_operator": "11681",
+                                          "frequency": "0",
+                                          "update_time": "1751539089",
+                                          "black_tasks_status": "0",
+                                          "filter_id": "17819",
+                                          "filter_countries": "",
+                                          "union_conditions": "",
+                                          "filter_blacklist": "",
+                                          "ctime": "2025-07-03 18:38:09",
+                                          "filter_conditions_ext": "",
+                                          "filter_conditions": "",
+                                          "status": "2"
+                                        },
+                                        "lotter_configure": {
+                                          "totalRate": 100,
+                                          "residueCost": 25.7143,
+                                          "consumeCost": "0.00",
+                                          "messageConfigure": 1,
+                                          "messageObj": {
+                                            "imImg": "https://esx.bigo.sg/live/4hp/1uXEqu65810b1b0614457284c33418e624a7b8ph.jpg?auth-token=AGh__530JM6xZJVgknkv3io5FUsTHjnnlpD3teA4Sz0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNjgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                            "theme": "賽區D",
+                                            "content": "達 4,000 分，恭喜獲得 1 張抽獎券！快點擊進入抽獎"
+                                          },
+                                          "list": [
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "180deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXHUa7b69a851f9ae4a21a0dd853e11b51440ph.png?auth-token=LTW2ZhP3A0VIYjHwCowig6dKJs5pa65T-ddk2_MDStQ:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDQxNDIsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 7.5,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "直播抽獎券",
+                                              "consume_num": 0,
+                                              "residue_num": 10,
+                                              "imgTop": "60px",
+                                              "imgLeft": "-25px",
+                                              "prize_id": "1",
+                                              "textTop": "105px",
+                                              "prize_serial": 1,
+                                              "free_level": "",
+                                              "activity_all_num": "10",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "7.5",
+                                              "textLeft": "-35px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "50",
+                                              "rotate": "108deg",
+                                              "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=yToR-fwLGMp_BO2tKq12zHBCVaNn3G3B-ll-isT1z-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0.2381",
+                                              "activity_all_cost": "1.9048",
+                                              "win_real_rate": 5,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "金豆",
+                                              "consume_num": 0,
+                                              "residue_num": 8,
+                                              "imgTop": "1.2664445218705325px",
+                                              "imgLeft": "55.839803885088045px",
+                                              "prize_id": "4",
+                                              "textTop": "18.62712429686843px",
+                                              "prize_serial": 2,
+                                              "free_level": "",
+                                              "activity_all_num": "8",
+                                              "valid_days": "0",
+                                              "used_num": 0,
+                                              "win_rate": "5",
+                                              "textLeft": "83.88206453689419px",
+                                              "prize_type": "14"
+                                            },
+                                            {
+                                              "prizes_num": "1",
+                                              "rotate": "36deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4hp/1uXEqRd038a4806ba24ff8b9dacce11ca865bfph.png?auth-token=L5w1t4sgze65Ljpp9UgPCh1uS5cfRCOo_gDQ4eX99Q8:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDY2NjEsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "0",
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 0.67,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "DINO 抱枕",
+                                              "consume_num": 0,
+                                              "residue_num": 1,
+                                              "imgTop": "-93.76644452187053px",
+                                              "imgLeft": "24.961746444860225px",
+                                              "prize_id": "2",
+                                              "textTop": "-121.12712429686842px",
+                                              "prize_serial": 3,
+                                              "free_level": "",
+                                              "activity_all_num": "1",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "0.67",
+                                              "textLeft": "38.47315653655916px",
+                                              "prize_type": "15"
+                                            },
+                                            {
+                                              "prizes_num": "1000",
+                                              "rotate": "-36deg",
+                                              "preview_img": "https://giftesx.bigo.sg/live/3s4/14wOaI.png?auth-token=yToR-fwLGMp_BO2tKq12zHBCVaNn3G3B-ll-isT1z-0:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM5NjYsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 0,
+                                              "prize_cost": "4.7619",
+                                              "activity_all_cost": "23.8095",
+                                              "win_real_rate": 3,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "金豆",
+                                              "consume_num": 0,
+                                              "residue_num": 5,
+                                              "imgTop": "-93.76644452187054px",
+                                              "imgLeft": "-74.96174644486021px",
+                                              "prize_id": "4",
+                                              "textTop": "-121.12712429686844px",
+                                              "prize_serial": 4,
+                                              "free_level": "",
+                                              "activity_all_num": "5",
+                                              "valid_days": "0",
+                                              "used_num": 0,
+                                              "win_rate": "3",
+                                              "textLeft": "-108.47315653655913px",
+                                              "prize_type": "14"
+                                            },
+                                            {
+                                              "prizes_num": 1,
+                                              "rotate": "-108deg",
+                                              "preview_img": "https://esx.bigo.sg/live/4he/21t3Y7p8TrWQ.png?auth-token=mtEQCoIJBHetJ-gBf5GBb7g1f9o8uLgTJ2MwqSnkh7M:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDM2OTUsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                              "is_bottom_prize": 1,
+                                              "prize_cost": 0,
+                                              "activity_all_cost": "0.0000",
+                                              "win_real_rate": 83.83,
+                                              "is_pay_prize": 0,
+                                              "prize_name": "神秘魔豆",
+                                              "consume_num": 0,
+                                              "residue_num": 9999,
+                                              "imgTop": "1.2664445218705147px",
+                                              "imgLeft": "-105.83980388508806px",
+                                              "prize_id": "36489",
+                                              "textTop": "18.627124296868402px",
+                                              "prize_serial": 5,
+                                              "free_level": "",
+                                              "activity_all_num": "9999",
+                                              "valid_days": "7",
+                                              "used_num": 0,
+                                              "win_rate": "83.83",
+                                              "textLeft": "-153.8820645368942px",
+                                              "prize_type": "5"
+                                            }
+                                          ],
+                                          "totalCost": "25.7143"
+                                        },
+                                        "uid": "",
+                                        "endActNotEdit": false,
+                                        "appType": 1,
+                                        "lang": [
+                                          "TW",
+                                          "CN",
+                                          "HK",
+                                          "MO"
+                                        ],
+                                        "lottery_type": 2,
+                                        "appoint_uid": 2,
+                                        "lottery_stock_type": 1,
+                                        "uid_arr": [],
+                                        "whiteUid_id": "1500655388",
+                                        "bottominfo": 0,
+                                        "lottery_pay_type": 1,
+                                        "point_uid_lottery_ticket": 0,
+                                        "lottery_ticket_timerange_limit": 0,
+                                        "appoint_uid_source": 1,
+                                        "rankStyle": "1",
+                                        "sendGift_uids": "",
+                                        "lottery_timerange_limit": 0,
+                                        "countType": "",
+                                        "lottery_ticket_num": 1,
+                                        "lottery_pay_num": 1
+                                      },
+                                      "type": "lottery",
+                                      "complete": true
+                                    },
+                                    {
+                                      "hideEdit": false,
+                                      "edit": false,
+                                      "uniqueKey": "LMUkd",
+                                      "formData": {
+                                        "img": "https://esx.bigo.sg/live/4hp/1uXFCD2039a562534340a28b8f21bcc10a763aph.png?auth-token=eHigQA3C6IGFaU05ISKeK4k-6GfLbXOJJ_GuvMfRtts:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYzNzgsInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                                        "imgSupportJump": false,
+                                        "frontImageAdaptStyle": false,
+                                        "imgRedirectUrl": "",
+                                        "frontNeedBottomMargin": true
+                                      },
+                                      "type": "picture",
+                                      "complete": false
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "type": "tab",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            },
+            {
+              "name": "PK&主題房加碼",
+              "modular_arr": [
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "QJkCm",
+                  "formData": {
+                    "textContent": [
+                      {
+                        "frontTextStyle": "type1",
+                        "frontAlignStyle": "left",
+                        "type": "title",
+                        "value": ""
+                      },
+                      {
+                        "frontTextStyle": "default",
+                        "frontAlignStyle": "left",
+                        "type": "key_text",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "type": "paragraph",
+                  "complete": true
+                },
+                {
+                  "hideEdit": false,
+                  "edit": false,
+                  "uniqueKey": "ObDFm",
+                  "formData": {
+                    "tabContent": [
+                      {
+                        "name": "官方 PK",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "02bEv",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "📌 盛典加碼無敵星星🌟\n"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "活動期間，官方 PK 星星獲得全面升級：\n單場PK每 3000 金豆 ➡️ 1 顆星星，單日上限仍為 10 顆\n達成單場PK 5 萬金豆 ➡️ 直接獲得 20 顆星星，單日上限提升至 20 顆！\n⚠️ 未達 5 萬門檻者僅可獲得一般加碼（上限 10 顆），主播單日最多可獲得 20 顆星星"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "qsmpR",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "📌 官方PK指定席\t"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "所屬主播在活動期間內，參與官方 PK 累積 5 場勝利 ➡️ 獲得 5 名主播的指名權\t\n若勝場數達 10 場 ➡️ 獲得 10 名主播的指名權\t\n📍 指名權使用時段：7/9（三）～ 7/20（日）\n📍 可「無條件」指名主播參加官方 PK\t\n📍 上限 10 位主播\n\n⚠️ 需聯繫官方指名主播，才可報名官方 PK\n⚠️ 代理獲勝數，將於 7/11（五）前公布於群組中"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          }
+                        ]
+                      },
+                      {
+                        "name": "主題房",
+                        "modular_arr": [
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "Y69Se",
+                            "formData": {
+                              "textContent": [
+                                {
+                                  "frontTextStyle": "type1",
+                                  "frontAlignStyle": "left",
+                                  "type": "title",
+                                  "value": ""
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "key_text",
+                                  "value": "主題房內會放置GALA指定禮物\n"
+                                },
+                                {
+                                  "frontTextStyle": "default",
+                                  "frontAlignStyle": "left",
+                                  "type": "text",
+                                  "value": "*每日Top3疊加抽獎券"
+                                }
+                              ]
+                            },
+                            "type": "paragraph",
+                            "complete": true
+                          },
+                          {
+                            "hideEdit": false,
+                            "edit": false,
+                            "uniqueKey": "fWir4",
+                            "formData": {
+                              "img": "https://esx.bigo.sg/live/4hp/1uXFS05566b42e484a4df7a8c0bc13f9d43d54ph.png?auth-token=-S8Lbkdd6wuIQMUkcsdeXJgxmKRqpSyOrjYSPPMZUNg:eyJhIjo2MCwiYyI6IntcInNjZW5lXCI6XCJhY3RfdGVtcGxhdGVcIixcInVpZFwiOjAsXCJidXNJZFwiOjY4ODAyLFwiZXh0SW5mb1wiOlwiMTMuODMuMTA3LjEzNFwifSIsImUiOjE3ODcyMDYxMDksInMiOiJiaWdvX2FjdF90ZW1wbGF0ZV9hcGkifQ",
+                              "imgSupportJump": false,
+                              "frontImageAdaptStyle": true,
+                              "imgRedirectUrl": "",
+                              "frontNeedBottomMargin": true
+                            },
+                            "type": "picture",
+                            "complete": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "tab",
+                  "complete": true
+                }
+              ]
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "frontTextStyle": "type1",
+              "frontAlignStyle": "left",
+              "type": "title",
+              "value": ""
+            },
+            {
+              "frontTextStyle": "default",
+              "frontAlignStyle": "left",
+              "type": "text",
+              "value": "＊扭蛋機：周邊獎勵將會在活動結束後核對獲獎信息並於次月初通知中獎代理，回傳寄件資訊\n＊直播抽獎卷：官方會登記各主播獲得抽獎卷張數，將於下月官方直播抽獎中抽出"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "paragraph",
+        "formData": {
+          "textContent": [
+            {
+              "type": "title",
+              "value": "活動備註"
+            },
+            {
+              "type": "sub_title",
+              "value": ""
+            },
+            {
+              "type": "text",
+              "value": "⚠️ 任何官方認定的不法手段，將被取消活動資格"
+            },
+            {
+              "type": "text",
+              "value": "⚠️  所有活動辦法、實體、虛擬、線上、線下獎勵，BIGO保有最終決定權"
+            }
+          ]
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      },
+      {
+        "type": "copyright",
+        "formData": {
+          "text": "一切解釋權歸BIGO LIVE所有"
+        },
+        "complete": true,
+        "edit": false,
+        "hideEdit": false
+      }
+    ],
+    "attend_status": {
+      "isAttend": false,
+      "attendInfo": []
+    }
+  },
+  "message": "index"
+}
