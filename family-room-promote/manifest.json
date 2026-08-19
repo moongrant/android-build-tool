@@ -1,0 +1,82 @@
+{
+  "target": {
+    "slug": "family-room-promote",
+    "label": "Family Room Promote / L aventure BIGO",
+    "url": "https://static-fed.bigolive.tv/live/pages/bigolive/family-room-promote/index.html"
+  },
+  "navigationError": null,
+  "info": {
+    "title": "404",
+    "url": "https://activity.bigo.tv/404.html",
+    "hash": "",
+    "text": "404 The event has expired, thanks for your participation.",
+    "htmlLength": 1599,
+    "width": 390,
+    "height": 844,
+    "images": [
+      {
+        "src": "https://activity.bigo.tv/assets/images/404/404.png",
+        "width": 480,
+        "height": 480,
+        "complete": true
+      }
+    ],
+    "links": [],
+    "scripts": [],
+    "controls": []
+  },
+  "features": [],
+  "responseCount": 4,
+  "responseHosts": [
+    "activity.bigo.tv",
+    "static-fed.bigolive.tv"
+  ],
+  "responses": [
+    {
+      "url": "https://static-fed.bigolive.tv/live/pages/bigolive/family-room-promote/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://activity.bigo.tv/404.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://activity.bigo.tv/assets/images/404/404.png",
+      "status": 200,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://activity.bigo.tv/assets/css/404/style.css",
+      "status": 200,
+      "contentType": "text/css"
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://static-fed.bigolive.tv/live/as/libs/common-config/first/bigolive/index.js.html",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://static-fed.bigolive.tv/live/as/libs/assets-load-monitor/stable/assets-load-monitor-init.min.js.html",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://static-fed.bigolive.tv/live/as/libs/nativeapi/monitor/nativeApi.bigolive.min.js",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://static-fed.bigolive.tv/live/as/libs/bigo-logger/v3/stable/bigo-logger.js.html",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://static-fed.bigolive.tv/live/as/libs/common-vendor/common-vendor.min.js",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://static-fed.bigolive.tv/live/as/libs/vue-i18n/stable/vue-i18n.min.js.html",
+      "error": "net::ERR_ABORTED"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en" style="font-size: 52px;"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=0">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <title>404</title>
+    <link href="/assets/css/404/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        ;
+        (function (win) {
+            var timer = null;
+            function refreshRem() {
+                var width = win.document.documentElement.getBoundingClientRect().width;
+                if (width > 768) {
+                    width = 768;
+                }
+                var rem = 50 / 375 * width;
+                win.document.documentElement.style.fontSize = rem + "px";
+            }
+            win.addEventListener('resize', function () {
+                timer = setTimeout(refreshRem, 300);
+            }, false);
+            refreshRem();
+        })(window);
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="icon-404">
+            <img src="/assets/images/404/404.png" alt="" srcset="">
+        </div>
+        <div class="title">404</div>
+        <div class="text">The event has expired, thanks for your participation.</div>
+    </div>
+    <script type="text/javascript">
+    </script>
+
+</body></html>
