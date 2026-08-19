@@ -1,0 +1,120 @@
+name: Pro Falla batch 3 final release package
+
+on:
+  push:
+    branches: [pro-falla-batch3-final-20260819]
+    paths:
+      - '.github/workflows/pro-falla-batch3-final-release.yml'
+      - 'tools/pro-falla-batch3-final/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pro-falla-batch3-final-20260819
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check aiohttp pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Fetch reviewed Batch 3 source tools
+        run: |
+          set -Eeuo pipefail
+          mkdir -p tools/pro-falla-batch3 work
+          base='https://raw.githubusercontent.com/moongrant/android-build-tool/research/pro-falla-batch3-20260819'
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/archive_selected.mjs" -o tools/pro-falla-batch3/archive_selected.mjs
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/repair_archive.py" -o tools/pro-falla-batch3/repair_archive.py
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/repair_probe_fast.py" -o tools/pro-falla-batch3/repair_probe_fast.py
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/contact_sheets.py" -o tools/pro-falla-batch3/contact_sheets.py
+          node --check tools/pro-falla-batch3/archive_selected.mjs
+          python -m py_compile tools/pro-falla-batch3/repair_archive.py tools/pro-falla-batch3/repair_probe_fast.py tools/pro-falla-batch3/contact_sheets.py
+      - name: Recover source maps, release configs and historical APIs
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/probe
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3/repair_probe_fast.py
+      - name: Build final enhanced archiver
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3/repair_archive.py
+          cp tools/pro-falla-batch3/archive_selected_repaired.mjs work/archive_selected_repaired.mjs
+          python tools/pro-falla-batch3-final/final_enhance.py
+          node --check work/archive_selected_final.mjs
+      - name: Capture original production bytes and replay locally
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/archive
+          PROBE_DIR: ${{ github.workspace }}/artifacts/probe
+          ONLINE_WAIT_MS: '6200'
+          OFFLINE_WAIT_MS: '4800'
+          ROUTE_LIMIT: '10'
+          PAGE_CONCURRENCY: '3'
+        run: |
+          set -Eeuo pipefail
+          node work/archive_selected_final.mjs
+      - name: Build contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/archive
+        run: |
+          python tools/pro-falla-batch3/contact_sheets.py
+      - name: Build strict Sites package
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3-final/build_sites_package.py \
+            --archive artifacts/archive \
+            --out "$GITHUB_WORKSPACE/pro-falla-sites-increment-05-batch3-eight-campaigns" \
+            --zip "$GITHUB_WORKSPACE/pro-falla-sites-increment-05-batch3-eight-campaigns.zip"
+          sha256sum pro-falla-sites-increment-05-batch3-eight-campaigns.zip > pro-falla-sites-increment-05-batch3-eight-campaigns.zip.sha256
+          cp artifacts/archive/contact-sheets-preview/overview.jpg PACKAGE_OVERVIEW.jpg
+          cp artifacts/archive/contact-sheets-preview/ramadan-2025.jpg ramadan-2025.jpg
+          cp artifacts/archive/contact-sheets-preview/blind-box-rave-2024.jpg blind-box-rave-2024.jpg
+          cp artifacts/archive/contact-sheets-preview/hatching-chicks-2023.jpg hatching-chicks-2023.jpg
+          cp pro-falla-sites-increment-05-batch3-eight-campaigns/QA_REPORT.md QA_REPORT.md
+          cp pro-falla-sites-increment-05-batch3-eight-campaigns/QA_REPORT.json QA_REPORT.json
+          cp pro-falla-sites-increment-05-batch3-eight-campaigns/site-patch/WORK_UPLOAD_PROMPT.txt WORK_UPLOAD_PROMPT.txt
+      - name: Publish deterministic release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          tag='pro-falla-batch3-final-20260819'
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --target "$GITHUB_SHA" --title 'Pro Falla Batch 3 Final Sites Increment' --notes '8 Campaigns / 19 original SPA archive units. Strict local replay QA; no remote iframe; expired private/user data uses explicitly marked anonymous fixtures only.'
+          gh release upload "$tag" --clobber \
+            pro-falla-sites-increment-05-batch3-eight-campaigns.zip \
+            pro-falla-sites-increment-05-batch3-eight-campaigns.zip.sha256 \
+            QA_REPORT.md QA_REPORT.json WORK_UPLOAD_PROMPT.txt \
+            PACKAGE_OVERVIEW.jpg ramadan-2025.jpg blind-box-rave-2024.jpg hatching-chicks-2023.jpg
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-final-release
+          path: |
+            pro-falla-sites-increment-05-batch3-eight-campaigns.zip
+            pro-falla-sites-increment-05-batch3-eight-campaigns.zip.sha256
+            QA_REPORT.md
+            QA_REPORT.json
+            WORK_UPLOAD_PROMPT.txt
+            PACKAGE_OVERVIEW.jpg
+            ramadan-2025.jpg
+            blind-box-rave-2024.jpg
+            hatching-chicks-2023.jpg
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 0
