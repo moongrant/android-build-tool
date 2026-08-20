@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/pro-falla-batch4-archive.yml'
       - 'tools/pro-falla-batch4/archive_selected.mjs'
+      - 'tools/pro-falla-batch4/repair_archive.py'
       - 'tools/pro-falla-batch4/contact_sheets_original.py'
   workflow_dispatch:
 
@@ -34,6 +35,12 @@ jobs:
           python -m pip install --disable-pip-version-check pillow
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Build repaired archiver
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch4/repair_archive.py
+          python tools/pro-falla-batch4/repair_archive.py
+          node --check tools/pro-falla-batch4/archive_selected_repaired.mjs
       - name: Capture and replay original Falla SPAs
         env:
           OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch4-original-spa
@@ -42,8 +49,7 @@ jobs:
           PAGE_CONCURRENCY: '3'
         run: |
           set -Eeuo pipefail
-          node --check tools/pro-falla-batch4/archive_selected.mjs
-          node tools/pro-falla-batch4/archive_selected.mjs
+          node tools/pro-falla-batch4/archive_selected_repaired.mjs
       - name: Build campaign contact sheets
         env:
           OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch4-original-spa
@@ -59,7 +65,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: pro-falla-batch4-original-spa
+          name: pro-falla-batch4-original-spa-repaired
           path: artifacts/pro-falla-batch4-original-spa
           if-no-files-found: error
           retention-days: 14
