@@ -1,0 +1,143 @@
+name: Temporary Pro-Yalla common API parameters reverse
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/tmp-pro-yalla-common-params-reverse.yml
+      - tools/pro-yalla-probe/trigger-common-params.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reverse:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download current public Yalla APK
+        run: |
+          set -Eeuo pipefail
+          out=artifacts/pro-yalla-three-rich/common-params
+          mkdir -p "$out" /tmp/apkeep-output /tmp/yalla-xapk
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep-output:/output ghcr.io/efforg/apkeep:stable \
+            -a com.weieyu.yalla -d apk-pure /output > "$out/apkeep.stdout.txt" 2> "$out/apkeep.stderr.txt"
+          package="$(find /tmp/apkeep-output -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-base.apk; else
+            unzip -q "$package" -d /tmp/yalla-xapk
+            base="$(find /tmp/yalla-xapk -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)"
+            if [[ -z "$base" ]]; then base="$(find /tmp/yalla-xapk -type f -name '*.apk' -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"; fi
+            test -f "$base"; cp "$base" /tmp/yalla-base.apk
+          fi
+          sha256sum /tmp/yalla-base.apk > "$out/base-apk.sha256"
+
+      - name: Install JADX and decompile exact network classes
+        run: |
+          set -Eeuo pipefail
+          out=artifacts/pro-yalla-three-rich/common-params
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep
+          asset_url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' \
+            https://api.github.com/repos/skylot/jadx/releases/latest \
+            | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$asset_url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          mkdir -p "$out/classes"
+          classes=(
+            'p534o0OoOoo.o00'
+            'p534o0OoOoo.o00O0000'
+            'p534o0OoOoo.o000OOo0'
+            'p575o0o00O0O.o0ooOOo'
+            'p575o0o00O0O.o00000'
+            'p575o0o00O0O.o000000'
+            'p575o0o00O0O.o000000O'
+            'p575o0o00O0O.o00oO0o'
+            'p575o0o00O0O.o00000O'
+            'p575o0o00O0O.o0Oo0oo'
+            'p575o0o00O0O.o00000OO'
+            'p575o0o00O0O.o0000'
+            'p575o0o00O0O.o0OOO0o'
+            'p575o0o00O0O.o00000O0'
+            'com.yalla.yalla.api.old.Oooo0'
+            'com.yalla.yalla.domain.OooOo00'
+            'com.yalla.yalla.domain.DomainType'
+            'com.yalla.yalla.api.call.OooO0o'
+          )
+          for cls in "${classes[@]}"; do
+            safe="$(printf '%s' "$cls" | tr '.' '_')"
+            /tmp/jadx/bin/jadx --no-res --show-bad-code \
+              --single-class "$cls" --single-class-output "$out/classes/${safe}.java" \
+              /tmp/yalla-base.apk > "$out/classes/${safe}.stdout.txt" 2> "$out/classes/${safe}.stderr.txt" || true
+          done
+
+          # Full decompile fallback to resolve any package renumbering or synthetic helper classes.
+          /tmp/jadx/bin/jadx --no-res --threads-count 4 --deobf --show-bad-code \
+            --output-dir /tmp/jadx-out /tmp/yalla-base.apk > "$out/jadx.stdout.txt" 2> "$out/jadx.stderr.txt" || true
+          root=/tmp/jadx-out/sources
+          test -d "$root"
+
+          rg -n -i -C 25 \
+            'GetActivityListForCenter|ParametersWrong|Yalla-Activity-Headers|addQueryParameter|newBuilder\(\)|Request\.Builder|\.header\(|addHeader\(|removeHeader\(|formParams|isExploreIndex|timestamp|timeStamp|deviceId|deviceid|userId|userid|region|language|platform|appVersion|versionCode|versionName|country|timezone|signature|sign|nonce|token' \
+            "$root/p534o0OoOoo" "$root/p575o0o00O0O" "$root/com/yalla/yalla/api" "$root/com/yalla/yalla/domain" 2>/dev/null \
+            > "$out/exact-network-context.txt" || true
+
+          rg -l -i \
+            'Request\.Builder|addQueryParameter|Yalla-Activity-Headers|isExploreIndex|ParamsWrapper|HttpCoreRequest|ParametersWrong' \
+            "$root/p534o0OoOoo" "$root/p575o0o00O0O" "$root/com/yalla/yalla/api" 2>/dev/null \
+            | sort -u > "$out/relevant-files.txt" || true
+          mkdir -p "$out/source-snippets"
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            i=$((i+1)); [[ $i -le 200 ]] || break
+            rel="${file#$root/}"; safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr -cd '[:alnum:]_.-')"
+            cp "$file" "$out/source-snippets/${i}-${safe}"
+          done < "$out/relevant-files.txt"
+
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path('/tmp/jadx-out/sources')
+          out=Path('artifacts/pro-yalla-three-rich/common-params')
+          needles=re.compile(r'query|header|device|user|token|region|language|platform|version|time|timestamp|country|timezone|sign|signature|nonce|activity|explore',re.I)
+          rows=[]
+          for base in [root/'p534o0OoOoo',root/'p575o0o00O0O',root/'com/yalla/yalla/api',root/'com/yalla/yalla/domain']:
+            if not base.exists(): continue
+            for path in base.rglob('*.java'):
+              try: text=path.read_text(errors='ignore')
+              except Exception: continue
+              literals=[]
+              for m in re.finditer(r'"([^"\\]*(?:\\.[^"\\]*)*)"',text):
+                value=m.group(1)
+                if len(value)<=300 and needles.search(value): literals.append(value)
+              if literals or re.search(r'addQueryParameter|addHeader|\.header\(|Request\.Builder|HttpUrl\.Builder',text):
+                rows.append({'file':str(path.relative_to(root)),'literals':sorted(set(literals)),'builder_hits':len(re.findall(r'addQueryParameter|addHeader|\.header\(|Request\.Builder|HttpUrl\.Builder',text))})
+          rows.sort(key=lambda r:(-r['builder_hits'],r['file']))
+          (out/'network-string-evidence.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          PY
+
+          {
+            echo '# Yalla common API parameter reverse'
+            echo
+            echo "Relevant files: $(wc -l < "$out/relevant-files.txt")"
+            echo
+            echo '## Exact network context'
+            echo '```'
+            sed -n '1,6000p' "$out/exact-network-context.txt"
+            echo '```'
+          } > "$out/REPORT.md"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-common-params-reverse
+          path: artifacts/pro-yalla-three-rich/common-params
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7

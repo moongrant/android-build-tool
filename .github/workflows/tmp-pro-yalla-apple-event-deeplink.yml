@@ -1,0 +1,254 @@
+name: Temporary Pro-Yalla Apple event deep-link probe
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/tmp-pro-yalla-apple-event-deeplink.yml
+      - tools/pro-yalla-probe/trigger-apple-events.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests playwright beautifulsoup4
+          python -m playwright install --with-deps chromium
+      - name: Inspect App Store event pages and catalog traffic
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-three-rich/apple-event-deeplinks
+          cat > /tmp/apple_event_probe.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import base64
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+          from typing import Any
+          from urllib.parse import urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT = Path('artifacts/pro-yalla-three-rich/apple-event-deeplinks')
+          OUT.mkdir(parents=True, exist_ok=True)
+          APP_ID = '1091902866'
+          EVENTS = {
+              'sweet-love-2024': '6475700703',
+              'lucky-carnival-2024': '6737220863',
+          }
+          STORES = ['us', 'ae', 'sa', 'tr', 'gb']
+          UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/127 Safari/537.36'
+
+          def redact_headers(headers: dict[str, str]) -> dict[str, str]:
+              result = {}
+              for key, value in headers.items():
+                  if key.lower() in {'authorization', 'cookie', 'x-apple-store-front'}:
+                      result[key] = '[REDACTED]'
+                  else:
+                      result[key] = value
+              return result
+
+          def walk_strings(value: Any, path: str = '$'):
+              if isinstance(value, dict):
+                  for key, child in value.items():
+                      yield from walk_strings(child, f'{path}.{key}')
+              elif isinstance(value, list):
+                  for index, child in enumerate(value):
+                      yield from walk_strings(child, f'{path}[{index}]')
+              elif isinstance(value, str):
+                  yield path, value
+
+          s = requests.Session()
+          s.headers.update({'User-Agent': UA, 'Accept-Language': 'en-US,en;q=.9'})
+          curl_rows = []
+          slugs = ['id1091902866', 'yalla-group-voice-chat-rooms/id1091902866', 'yalla-play-game-voice-chat/id1091902866']
+          for activity, event_id in EVENTS.items():
+              folder = OUT / activity
+              folder.mkdir(exist_ok=True)
+              for store in STORES:
+                  for slug in slugs:
+                      url = f'https://apps.apple.com/{store}/app/{slug}?eventid={event_id}'
+                      row = {'activity': activity, 'event_id': event_id, 'store': store, 'url': url}
+                      try:
+                          r = s.get(url, timeout=(15, 60), allow_redirects=True)
+                          row.update(status=r.status_code, final_url=r.url, bytes=len(r.content), content_type=r.headers.get('content-type'), sha256=hashlib.sha256(r.content).hexdigest())
+                          key = hashlib.sha1(url.encode()).hexdigest()[:10]
+                          (folder / f'html-{store}-{key}.html').write_bytes(r.content)
+                          text = r.text
+                          row['matches'] = sorted(set(re.findall(r'(?:https?://|[a-z][a-z0-9+.-]*://)[^"\'<>\s)]+', text, re.I)))[:500]
+                          row['event_id_occurrences'] = text.count(event_id)
+                          row['activity2_occurrences'] = text.lower().count('activity2.yalla')
+                          row['deep_link_occurrences'] = text.lower().count('deeplink') + text.lower().count('deep-link')
+                      except Exception as exc:
+                          row['error'] = repr(exc)
+                      curl_rows.append(row)
+          (OUT / 'direct-html-results.json').write_text(json.dumps(curl_rows, ensure_ascii=False, indent=2))
+
+          async def main():
+              captures = []
+              interesting_json = []
+              tokens = []
+              async with async_playwright() as p:
+                  browser = await p.chromium.launch()
+                  context = await browser.new_context(viewport={'width': 1280, 'height': 900}, user_agent=UA, locale='en-US')
+
+                  async def inspect_response(response, activity: str, event_id: str, store: str):
+                      url = response.url
+                      if not any(domain in url for domain in ['apps.apple.com', 'amp-api.apps.apple.com', 'itunes.apple.com']):
+                          return
+                      request = response.request
+                      req_headers = await request.all_headers()
+                      auth = req_headers.get('authorization')
+                      if auth and auth.lower().startswith('bearer '):
+                          tokens.append({'token': auth, 'store': store, 'source_url': url})
+                      record = {
+                          'activity': activity,
+                          'event_id': event_id,
+                          'store': store,
+                          'url': url,
+                          'status': response.status,
+                          'request_method': request.method,
+                          'request_headers': redact_headers(req_headers),
+                          'response_headers': redact_headers(await response.all_headers()),
+                      }
+                      try:
+                          body = await response.body()
+                          record['bytes'] = len(body)
+                          record['sha256'] = hashlib.sha256(body).hexdigest()
+                          low = body[:5_000_000].lower()
+                          is_interesting = event_id.encode() in body or b'deeplink' in low or b'activity2.yalla' in low or b'appevent' in low or b'events' in low
+                          if is_interesting:
+                              folder = OUT / activity / 'network'
+                              folder.mkdir(parents=True, exist_ok=True)
+                              key = hashlib.sha1(url.encode()).hexdigest()[:12]
+                              path = folder / f'{store}-{key}.body'
+                              path.write_bytes(body)
+                              record['saved_body'] = str(path.relative_to(OUT))
+                              try:
+                                  data = json.loads(body)
+                                  strings = []
+                                  for json_path, value in walk_strings(data):
+                                      low_value = value.lower()
+                                      if event_id in value or 'deeplink' in json_path.lower() or 'deep-link' in json_path.lower() or 'activity2.yalla' in low_value or low_value.startswith(('yalla://', 'yallaapp://', 'http://', 'https://')):
+                                          strings.append({'path': json_path, 'value': value[:4000]})
+                                  interesting_json.append({'activity': activity, 'store': store, 'url': url, 'matches': strings[:1000]})
+                              except Exception:
+                                  pass
+                      except Exception as exc:
+                          record['body_error'] = repr(exc)
+                      captures.append(record)
+
+                  for activity, event_id in EVENTS.items():
+                      for store in STORES:
+                          url = f'https://apps.apple.com/{store}/app/id{APP_ID}?eventid={event_id}'
+                          page = await context.new_page()
+                          page.on('response', lambda response, a=activity, e=event_id, st=store: asyncio.create_task(inspect_response(response, a, e, st)))
+                          try:
+                              await page.goto(url, wait_until='domcontentloaded', timeout=90000)
+                              await page.wait_for_timeout(12000)
+                              folder = OUT / activity
+                              await page.screenshot(path=str(folder / f'app-store-{store}-full.png'), full_page=True)
+                              (folder / f'app-store-{store}-dom.html').write_text(await page.content(), errors='ignore')
+                              (folder / f'app-store-{store}-text.txt').write_text(await page.locator('body').inner_text(), errors='ignore')
+                          except Exception as exc:
+                              captures.append({'activity': activity, 'event_id': event_id, 'store': store, 'page_error': repr(exc), 'url': url})
+                          await page.close()
+                  await context.close()
+                  await browser.close()
+
+              (OUT / 'network-captures.json').write_text(json.dumps(captures, ensure_ascii=False, indent=2))
+              (OUT / 'interesting-json-matches.json').write_text(json.dumps(interesting_json, ensure_ascii=False, indent=2))
+
+              # Use browser-issued AMP bearer tokens during this run, but never write them to artifacts.
+              catalog_results = []
+              seen = set()
+              for token_row in tokens:
+                  token = token_row['token']
+                  store = token_row['store'].upper()
+                  token_key = hashlib.sha256(token.encode()).hexdigest()
+                  if (token_key, store) in seen:
+                      continue
+                  seen.add((token_key, store))
+                  headers = {'Authorization': token, 'User-Agent': UA, 'Origin': 'https://apps.apple.com', 'Referer': f'https://apps.apple.com/{store.lower()}/'}
+                  endpoints = [
+                      f'https://amp-api.apps.apple.com/v1/catalog/{store}/apps/{APP_ID}?platform=web&additionalPlatforms=appletv%2Cipad%2Ciphone%2Cmac',
+                      f'https://amp-api.apps.apple.com/v1/catalog/{store}/apps/{APP_ID}?platform=web&additionalPlatforms=appletv%2Cipad%2Ciphone%2Cmac&extend=events,appEvents,inAppEvents,customPromotionalText,description,versionHistory',
+                      f'https://amp-api.apps.apple.com/v1/catalog/{store}/apps/{APP_ID}?platform=web&additionalPlatforms=appletv%2Cipad%2Ciphone%2Cmac&include=events,appEvents,inAppEvents',
+                  ]
+                  for endpoint in endpoints:
+                      row = {'store': store, 'url': endpoint}
+                      try:
+                          r = requests.get(endpoint, headers=headers, timeout=(15, 60))
+                          row.update(status=r.status_code, bytes=len(r.content), content_type=r.headers.get('content-type'), sha256=hashlib.sha256(r.content).hexdigest())
+                          folder = OUT / 'amp-catalog'
+                          folder.mkdir(exist_ok=True)
+                          key = hashlib.sha1(endpoint.encode()).hexdigest()[:12]
+                          (folder / f'{store}-{key}.body').write_bytes(r.content)
+                          try:
+                              data = r.json()
+                              matches = []
+                              for json_path, value in walk_strings(data):
+                                  low_value = value.lower()
+                                  if any(event_id in value for event_id in EVENTS.values()) or 'event' in json_path.lower() or 'deeplink' in json_path.lower() or 'activity2.yalla' in low_value or low_value.startswith(('yalla://', 'yallaapp://')):
+                                      matches.append({'path': json_path, 'value': value[:4000]})
+                              row['matches'] = matches[:3000]
+                          except Exception as exc:
+                              row['json_error'] = repr(exc)
+                      except Exception as exc:
+                          row['error'] = repr(exc)
+                      catalog_results.append(row)
+              (OUT / 'amp-catalog-results.json').write_text(json.dumps(catalog_results, ensure_ascii=False, indent=2))
+
+          asyncio.run(main())
+
+          report = ['# Yalla App Store event deep-link probe', '']
+          report += [f'Direct HTML requests: {len(curl_rows)}', '']
+          catalog_path = OUT / 'amp-catalog-results.json'
+          network_path = OUT / 'network-captures.json'
+          matches_path = OUT / 'interesting-json-matches.json'
+          if matches_path.exists():
+              matches = json.loads(matches_path.read_text())
+              total = sum(len(row.get('matches', [])) for row in matches)
+              report += [f'Interesting network JSON match groups: {len(matches)}', f'Interesting strings: {total}', '']
+          if catalog_path.exists():
+              catalog = json.loads(catalog_path.read_text())
+              report += [f'AMP catalog probes: {len(catalog)}', '']
+              for row in catalog:
+                  if row.get('matches'):
+                      report.append(f"- `{row['url']}` HTTP {row.get('status')}, matches={len(row['matches'])}")
+          report += ['', 'Bearer tokens captured from the public App Store web client were used ephemerally and were not saved. App Store event IDs are not treated as Yalla internal activity IDs unless a deep link or H5 URL proves the relationship.']
+          (OUT / 'REPORT.md').write_text('\n'.join(report), encoding='utf-8')
+          PY
+          python /tmp/apple_event_probe.py
+      - name: Write summary
+        if: always()
+        run: |
+          if [[ -f artifacts/pro-yalla-three-rich/apple-event-deeplinks/REPORT.md ]]; then
+            cat artifacts/pro-yalla-three-rich/apple-event-deeplinks/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-apple-event-deeplinks
+          path: artifacts/pro-yalla-three-rich/apple-event-deeplinks
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
