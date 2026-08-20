@@ -32,19 +32,24 @@ insert=r"""async function prefetchKnownStatic(){
     'https://web.fallaweb.com/falla-web/act-game-championship/prod/0.2.0/assets/1ec420146b984b6cc9a4.png?x-oss-process=image/format,webp',
     'https://web.fallaweb.com/falla-web/act-team-treasure-2512/prod/0.6.0/assets/66f0c8d176d3ba8fe33a.png',
     'https://web.fallaweb.com/falla-web/act-team-treasure-2512/prod/0.6.0/assets/e883651ff2c1d614506b.png',
-    'https://web.fallaweb.com/falla-web/act-team-treasure-2512/prod/0.6.0/assets/ba4f9b8615be26506c22.png'
+    'https://web.fallaweb.com/falla-web/act-team-treasure-2512/prod/0.6.0/assets/ba4f9b8615be26506c22.png',
+    'https://web.fallaweb.com/activity_gift_config_v3/h5_833_ALL.json'
   ];
   let added=0;
   for(const url of desired){
     if(byUrl.has(urlKey('GET',url))||byPath.has(pathKey('GET',url)))continue;
     const candidates=[url,url.split('?')[0]];
+    if(url.includes('/activity_gift_config_v3/h5_833_ALL.json')){
+      candidates.push('https://web.falla.live/activity_gift_config_v3/pre/h5_833_ALL.json');
+      candidates.push('https://web.falla.live/activity_gift_config_v3/prod/h5_833_ALL.json');
+    }
     let fetched=null,sourceUrl=null,headers=null,status=0;
     for(const candidate of [...new Set(candidates)]){
-      try{const r=await fetch(candidate,{headers:{'user-agent':UA,'accept':'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'},redirect:'follow',signal:AbortSignal.timeout(25000)});if(!r.ok)continue;fetched=Buffer.from(await r.arrayBuffer());sourceUrl=candidate;headers=Object.fromEntries(r.headers.entries());status=r.status;break;}catch{}
+      try{const r=await fetch(candidate,{headers:{'user-agent':UA,'accept':'application/json,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'},redirect:'follow',signal:AbortSignal.timeout(25000)});if(!r.ok)continue;fetched=Buffer.from(await r.arrayBuffer());sourceUrl=candidate;headers=Object.fromEntries(r.headers.entries());status=r.status;break;}catch{}
     }
     if(!fetched)continue;
     const bodyHash=sha(fetched),objectPath=`objects/${bodyHash}${extFrom(url,headers?.['content-type']||'')}`;try{await fs.access(path.join(OUT,objectPath));}catch{await fs.writeFile(path.join(OUT,objectPath),fetched);}
-    const rec={key:requestKey('GET',url,''),method:'GET',url,sourceUrl,postDataHash:sha(''),status:status||200,statusText:'OK',headers:headers||{'content-type':'image/png'},objectPath,bytes:fetched.length,sha256:bodyHash,contentType:(headers||{})['content-type']||'image/png',pageIds:['known-static-closure']};records.set(rec.key,rec);byUrl.set(urlKey('GET',url),rec);byPath.set(pathKey('GET',url),rec);added++;
+    const rec={key:requestKey('GET',url,''),method:'GET',url,sourceUrl,postDataHash:sha(''),status:status||200,statusText:'OK',headers:headers||{'content-type':'application/json'},objectPath,bytes:fetched.length,sha256:bodyHash,contentType:(headers||{})['content-type']||'application/json',pageIds:['known-static-closure']};records.set(rec.key,rec);byUrl.set(urlKey('GET',url),rec);byPath.set(pathKey('GET',url),rec);added++;
   }
   return added;
 }
@@ -63,6 +68,5 @@ new_manifest="staticClosureAdded:closureAdded,knownStaticAdded,captureErrors:cap
 if old_manifest not in src: raise SystemExit('manifest closure field not found')
 src=src.replace(old_manifest,new_manifest,1)
 
-src=src.replace("`- Static closure additions: ${manifest.staticClosureAdded}`", "`- Static closure additions: ${manifest.staticClosureAdded}`", 1)
 Path('tools/pro-falla-batch4/archive_selected_repaired.mjs').write_text(src,encoding='utf-8')
 print('wrote archive_selected_repaired.mjs')
