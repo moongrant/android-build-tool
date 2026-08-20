@@ -1,0 +1,232 @@
+name: Pro Yalla archived event metadata recovery
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/pro-yalla-event-archive-recovery.yml
+      - research-trigger/pro-yalla-event-archive.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4
+      - name: Query archives and replay event metadata
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-event-archive
+          cat > /tmp/recover.py <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import re
+          import time
+          from pathlib import Path
+          from typing import Any
+          from urllib.parse import quote
+
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT = Path('artifacts/pro-yalla-event-archive')
+          OUT.mkdir(parents=True, exist_ok=True)
+          UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/127 Safari/537.36'
+          S = requests.Session()
+          S.headers.update({'User-Agent': UA, 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.9'})
+
+          TARGETS = {
+              'sweet-love-2024': {
+                  'event_id': '6475700703',
+                  'from': '20240115',
+                  'to': '20240315',
+                  'patterns': [
+                      'apps.apple.com/*/app/*?eventid=6475700703*',
+                      'apps.apple.com/api/apps/v1/catalog/*/app-events/6475700703*',
+                      'amp-api.apps.apple.com/v1/catalog/*/app-events/6475700703*',
+                      'appshunter.io/events/6475700703*',
+                      'cdn3.appshunter.io/*',
+                  ],
+              },
+              'lucky-carnival-2024': {
+                  'event_id': '6737220863',
+                  'from': '20241001',
+                  'to': '20241120',
+                  'patterns': [
+                      'apps.apple.com/*/app/*?eventid=6737220863*',
+                      'apps.apple.com/api/apps/v1/catalog/*/app-events/6737220863*',
+                      'amp-api.apps.apple.com/v1/catalog/*/app-events/6737220863*',
+                      'appshunter.io/events/6737220863*',
+                      'cdn3.appshunter.io/*',
+                  ],
+              },
+              'treasure-tycoon-2026': {
+                  'event_id': '1021917730722093',
+                  'from': '20260715',
+                  'to': '20260821',
+                  'patterns': [
+                      'facebook.com/yallavoicechatrooms/videos/1021917730722093*',
+                      'www.facebook.com/yallavoicechatrooms/videos/1021917730722093*',
+                      'm.facebook.com/yallavoicechatrooms/videos/1021917730722093*',
+                  ],
+              },
+          }
+
+          def request(url: str, *, params=None, timeout=(20, 120), attempts=4):
+              for i in range(attempts):
+                  try:
+                      return S.get(url, params=params, timeout=timeout, allow_redirects=True)
+                  except Exception:
+                      time.sleep(3 + i * 4)
+              return None
+
+          def cdx(pattern: str, start: str, end: str) -> dict[str, Any]:
+              params = {
+                  'url': pattern,
+                  'from': start,
+                  'to': end,
+                  'output': 'json',
+                  'fl': 'timestamp,original,mimetype,statuscode,digest,length',
+                  'filter': 'statuscode:200',
+                  'collapse': 'urlkey',
+                  'limit': '5000',
+              }
+              row = {'pattern': pattern, 'params': params, 'records': []}
+              r = request('https://web.archive.org/cdx/search/cdx', params=params, timeout=(30, 180), attempts=5)
+              if r is None:
+                  row['error'] = 'request failed'
+                  return row
+              row.update(status=r.status_code, bytes=len(r.content), content_type=r.headers.get('content-type'), sample=r.text[:2000])
+              if r.status_code == 200:
+                  try:
+                      data = r.json()
+                      if isinstance(data, list) and data:
+                          header = data[0]
+                          row['records'] = [dict(zip(header, item)) for item in data[1:] if len(item) == len(header)]
+                  except Exception as exc:
+                      row['parse_error'] = repr(exc)
+              return row
+
+          def arquivo(pattern: str) -> dict[str, Any]:
+              url = 'https://arquivo.pt/textsearch'
+              params = {'versionHistory': 'https://' + pattern, 'maxItems': '500'}
+              row = {'pattern': pattern, 'params': params}
+              r = request(url, params=params, timeout=(20, 120), attempts=4)
+              if r is None:
+                  row['error'] = 'request failed'
+                  return row
+              row.update(status=r.status_code, bytes=len(r.content), content_type=r.headers.get('content-type'), body=r.text[:500000])
+              return row
+
+          queries = []
+          captures = []
+          for slug, config in TARGETS.items():
+              for pattern in config['patterns']:
+                  result = cdx(pattern, config['from'], config['to'])
+                  records = result.pop('records')
+                  queries.append(result | {'activity': slug, 'record_count': len(records)})
+                  for record in records:
+                      record['activity'] = slug
+                      captures.append(record)
+                  queries.append(arquivo(pattern) | {'activity': slug, 'source': 'arquivo'})
+
+          (OUT / 'query-results.json').write_text(json.dumps(queries, ensure_ascii=False, indent=2))
+          (OUT / 'captures.json').write_text(json.dumps(captures, ensure_ascii=False, indent=2))
+
+          replay_results = []
+          for index, record in enumerate(captures):
+              slug = record['activity']
+              timestamp = record.get('timestamp', '')
+              original = record.get('original', '')
+              replay_urls = [
+                  ('id', f'https://web.archive.org/web/{timestamp}id_/{original}'),
+                  ('if', f'https://web.archive.org/web/{timestamp}if_/{original}'),
+                  ('plain', f'https://web.archive.org/web/{timestamp}/{original}'),
+              ]
+              accepted = False
+              for mode, url in replay_urls:
+                  row = {'activity': slug, 'timestamp': timestamp, 'original': original, 'mode': mode, 'replay_url': url}
+                  r = request(url, timeout=(25, 150), attempts=4)
+                  if r is None:
+                      row['error'] = 'request failed'
+                      replay_results.append(row)
+                      continue
+                  body = r.content
+                  text = body[:10_000_000].decode('utf-8', 'ignore')
+                  low = text.lower()
+                  row.update(status=r.status_code, final_url=r.url, bytes=len(body), content_type=r.headers.get('content-type'), sha256=hashlib.sha256(body).hexdigest())
+                  row['target_matches'] = {
+                      'event_id': text.count(TARGETS[slug]['event_id']),
+                      'deeplink': len(re.findall(r'deep.?link', text, re.I)),
+                      'activity_url': len(re.findall(r'activity.?url', text, re.I)),
+                      'h5_url': len(re.findall(r'h5.?url', text, re.I)),
+                      'activity2': low.count('activity2.yalla'),
+                      'yalla_scheme': len(re.findall(r'yalla(?:app)?://', text, re.I)),
+                      'sweet_love': len(re.findall(r'sweet.?love', text, re.I)),
+                      'lucky_carnival': len(re.findall(r'lucky.?carnival', text, re.I)),
+                      'treasure_tycoon': len(re.findall(r'treasure.?tycoon', text, re.I)),
+                  }
+                  generic = any(x in low for x in ['temporarily offline', 'service unavailable', 'rate limit reached', 'not in archive', 'robots.txt'])
+                  row['generic_archive_error'] = generic
+                  if r.status_code == 200 and len(body) > 100 and not generic:
+                      folder = OUT / 'replays' / slug
+                      folder.mkdir(parents=True, exist_ok=True)
+                      key = hashlib.sha1((timestamp + original).encode()).hexdigest()[:12]
+                      path = folder / f'{key}.body'
+                      path.write_bytes(body)
+                      row['saved_body'] = str(path.relative_to(OUT))
+                      # Extract all URI-like strings and key-value neighborhoods.
+                      row['uri_strings'] = sorted(set(re.findall(r'(?:https?://|[a-z][a-z0-9+.-]*://)[^"\'<>\s)]+', text, re.I)))[:3000]
+                      contexts = []
+                      pattern = re.compile(r'deep.?link|activity.?url|h5.?url|yalla(?:app)?://|activity2\.yalla|6475700703|6737220863|1021917730722093|sweet.?love|lucky.?carnival|treasure.?tycoon', re.I)
+                      for match in pattern.finditer(text):
+                          contexts.append(text[max(0, match.start()-700):min(len(text), match.end()+1600)])
+                          if len(contexts) >= 200:
+                              break
+                      row['contexts'] = contexts
+                      accepted = True
+                  replay_results.append(row)
+                  if accepted:
+                      break
+
+          (OUT / 'replay-results.json').write_text(json.dumps(replay_results, ensure_ascii=False, indent=2))
+
+          report = ['# Pro-Yalla archived event metadata recovery', '']
+          report += [f'Archive query batches: {len(queries)}', f'Wayback captures: {len(captures)}', f'Replay attempts: {len(replay_results)}', '']
+          for slug in TARGETS:
+              rows = [r for r in replay_results if r['activity'] == slug and r.get('saved_body')]
+              report += [f'## {slug}', '']
+              if not rows:
+                  report.append('No valid replay body recovered.')
+              else:
+                  for row in rows:
+                      matches = row.get('target_matches', {})
+                      report.append(f"- `{row['original']}` @ {row['timestamp']} — {row['bytes']} bytes, matches={matches}")
+              report.append('')
+          report.append('A catalog event ID remains external metadata until a concrete Yalla deep link, activityUrl, or H5 URL is recovered.')
+          (OUT / 'REPORT.md').write_text('\n'.join(report), encoding='utf-8')
+          PY
+          python /tmp/recover.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-event-archive-recovery
+          path: artifacts/pro-yalla-event-archive
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
