@@ -1,0 +1,131 @@
+name: Pro Falla batch 3 final repaired Sites package
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pro-falla-batch3-final-package.yml'
+      - 'tools/pro-falla-batch3-final/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: pro-falla-batch3-final-20260819
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser and QA dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check aiohttp pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Fetch reviewed Batch 3 archiver sources
+        run: |
+          set -Eeuo pipefail
+          mkdir -p tools/pro-falla-batch3 work
+          base='https://raw.githubusercontent.com/moongrant/android-build-tool/research/pro-falla-batch3-20260819'
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/archive_selected.mjs" -o tools/pro-falla-batch3/archive_selected.mjs
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/repair_archive.py" -o tools/pro-falla-batch3/repair_archive.py
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/repair_probe_fast.py" -o tools/pro-falla-batch3/repair_probe_fast.py
+          curl -L --fail --retry 5 "$base/tools/pro-falla-batch3/contact_sheets.py" -o tools/pro-falla-batch3/contact_sheets.py
+          node --check tools/pro-falla-batch3/archive_selected.mjs
+          python -m py_compile tools/pro-falla-batch3/repair_archive.py tools/pro-falla-batch3/repair_probe_fast.py tools/pro-falla-batch3/contact_sheets.py
+      - name: Recover source maps, release configs and historical API responses
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/probe
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3/repair_probe_fast.py
+          cat artifacts/probe/REPORT.md
+      - name: Build enhanced original-SPA archiver
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3/repair_archive.py
+          cp tools/pro-falla-batch3/archive_selected_repaired.mjs work/archive_selected_repaired.mjs
+          python tools/pro-falla-batch3-final/final_enhance.py
+          node --check work/archive_selected_final.mjs
+      - name: Capture all original bytes and verify local replay
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/archive
+          PROBE_DIR: ${{ github.workspace }}/artifacts/probe
+          ONLINE_WAIT_MS: '6200'
+          OFFLINE_WAIT_MS: '4800'
+          ROUTE_LIMIT: '10'
+          PAGE_CONCURRENCY: '3'
+        run: |
+          set -Eeuo pipefail
+          node work/archive_selected_final.mjs
+      - name: Build full-page contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/archive
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch3/contact_sheets.py
+      - name: Build strict Sites increment package
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch3-final/build_sites_package.py
+          python tools/pro-falla-batch3-final/build_sites_package.py \
+            --archive artifacts/archive \
+            --out "$GITHUB_WORKSPACE/pro-falla-sites-increment-05-batch3-eight-campaigns" \
+            --zip "$GITHUB_WORKSPACE/pro-falla-sites-increment-05-batch3-eight-campaigns.zip"
+          sha256sum pro-falla-sites-increment-05-batch3-eight-campaigns.zip > pro-falla-sites-increment-05-batch3-eight-campaigns.zip.sha256
+      - name: Collect review deliverables
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          mkdir -p deliverables
+          cp -f pro-falla-sites-increment-05-batch3-eight-campaigns.zip deliverables/ 2>/dev/null || true
+          cp -f pro-falla-sites-increment-05-batch3-eight-campaigns.zip.sha256 deliverables/ 2>/dev/null || true
+          cp -f pro-falla-sites-increment-05-batch3-eight-campaigns/QA_REPORT.md deliverables/ 2>/dev/null || true
+          cp -f pro-falla-sites-increment-05-batch3-eight-campaigns/QA_REPORT.json deliverables/ 2>/dev/null || true
+          cp -f pro-falla-sites-increment-05-batch3-eight-campaigns/site-patch/WORK_UPLOAD_PROMPT.txt deliverables/ 2>/dev/null || true
+          cp -f artifacts/archive/contact-sheets-preview/overview.jpg deliverables/PACKAGE_OVERVIEW.jpg 2>/dev/null || true
+          cp -f artifacts/archive/contact-sheets-preview/ramadan-2025.jpg deliverables/ramadan-2025.jpg 2>/dev/null || true
+          cp -f artifacts/archive/contact-sheets-preview/blind-box-rave-2024.jpg deliverables/blind-box-rave-2024.jpg 2>/dev/null || true
+          cp -f artifacts/archive/contact-sheets-preview/hatching-chicks-2023.jpg deliverables/hatching-chicks-2023.jpg 2>/dev/null || true
+          du -sh deliverables artifacts/archive || true
+      - name: Print final QA
+        if: always()
+        run: |
+          cat pro-falla-sites-increment-05-batch3-eight-campaigns/QA_REPORT.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          cat pro-falla-sites-increment-05-batch3-eight-campaigns.zip.sha256 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-final-sites-increment
+          path: deliverables
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-final-source-proof
+          path: |
+            artifacts/archive/manifest.json
+            artifacts/archive/records.json
+            artifacts/archive/capture-errors.json
+            artifacts/archive/SHA256SUMS.txt
+            artifacts/archive/QA-FINAL.md
+            artifacts/probe/REPORT.md
+            artifacts/probe/results.json
+            artifacts/probe/useful.json
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 6
