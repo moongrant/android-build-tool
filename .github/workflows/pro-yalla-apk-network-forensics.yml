@@ -1,0 +1,147 @@
+name: Pro Yalla APK activity API network forensics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-apk-network-forensics.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  decompile:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download latest public Yalla package
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/apkeep /tmp/xapk /tmp/jadx-out artifacts/yalla-network-forensics/sources
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable \
+            -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then
+            cp "$package" /tmp/yalla.apk
+          else
+            unzip -q "$package" -d /tmp/xapk
+            base="$(find /tmp/xapk -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)"
+            test -f "$base"
+            cp "$base" /tmp/yalla.apk
+          fi
+          sha256sum /tmp/yalla.apk | tee artifacts/yalla-network-forensics/APK.sha256
+          stat -c '%s' /tmp/yalla.apk | tee artifacts/yalla-network-forensics/APK.size
+
+      - name: Install reverse-engineering tools
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep apktool
+          asset_url="$(curl -fsSL -H 'Accept: application/vnd.github+json' https://api.github.com/repos/skylot/jadx/releases/latest \
+            | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl -fsSL "$asset_url" -o /tmp/jadx.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          /tmp/jadx/bin/jadx --version | tee artifacts/yalla-network-forensics/jadx-version.txt
+
+      - name: Full decompile
+        run: |
+          set -Eeuo pipefail
+          /tmp/jadx/bin/jadx --no-res --threads-count 4 --deobf --show-bad-code \
+            --output-dir /tmp/jadx-out /tmp/yalla.apk \
+            > artifacts/yalla-network-forensics/jadx.stdout.txt \
+            2> artifacts/yalla-network-forensics/jadx.stderr.txt || true
+          find /tmp/jadx-out/sources -type f | wc -l | tee artifacts/yalla-network-forensics/source-count.txt
+
+      - name: Extract activity-center request construction and common parameters
+        run: |
+          set -Eeuo pipefail
+          root=/tmp/jadx-out/sources
+          out=artifacts/yalla-network-forensics
+          test -d "$root"
+
+          # Exact endpoint call chain.
+          rg -n -i -C 80 'GetActivityListForCenter|ActivityCenterRepo|isExploreIndex' "$root" \
+            > "$out/activity-center-context.txt" || true
+
+          # HTTP core and request wrappers.
+          rg -n -i -C 60 'class HttpCoreRequest|HttpCoreRequest|class ParamsWrapper|ParamsWrapper|class YLApi|CommonRequest|Request\.Builder|OkHttpClient\.Builder|Interceptor|intercept\(' "$root/com/yalla/yalla" "$root" \
+            > "$out/http-core-context.txt" || true
+
+          # Common request parameter and header names.
+          rg -n -i -C 18 'ParametersWrong|requestId|request-id|timestamp|timeStamp|nonce|signature|signKey|sign\b|token\b|accessToken|authorization|userid|userId|user_id|uid\b|deviceId|device_id|androidId|uuid|region\b|country\b|language\b|lang\b|platform\b|version\b|appVersion|versionCode|channel\b|packageName|clientType|systemVersion|model\b|networkType|timezone|x-' "$root/com/yalla/yalla" "$root/com/code/android" \
+            > "$out/common-parameter-context.txt" || true
+
+          # Locate likely common-parameter injection files and copy complete sources.
+          {
+            rg -l -i 'GetActivityListForCenter|ActivityCenterRepo|ParamsWrapper|HttpCoreRequest|YLApi' "$root" || true
+            rg -l -i 'Request\.Builder|addHeader|header\(|addQueryParameter|Interceptor|intercept\(' "$root/com/yalla/yalla" || true
+            rg -l -i 'timestamp|nonce|signature|accessToken|deviceId|androidId|versionCode|packageName|region|language' "$root/com/yalla/yalla/api" "$root/com/yalla/yalla/http" "$root/com/yalla/yalla/data" 2>/dev/null || true
+          } | sort -u > "$out/relevant-files.txt"
+
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            i=$((i+1)); [[ $i -le 300 ]] || break
+            rel="${file#$root/}"
+            safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr -cd '[:alnum:]_.-$')"
+            cp "$file" "$out/sources/${i}-${safe}"
+          done < "$out/relevant-files.txt"
+
+          # Extract string literals around API/auth/common params into structured JSON.
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path('/tmp/jadx-out/sources')
+          terms=re.compile(r'activity|request|header|token|sign|nonce|timestamp|device|android|region|language|version|platform|channel|userid|uid|authorization',re.I)
+          rows=[]
+          for p in root.rglob('*.java'):
+              try: text=p.read_text(errors='ignore')
+              except Exception: continue
+              if not terms.search(text): continue
+              strings=[]
+              for m in re.finditer(r'"([^"\\]*(?:\\.[^"\\]*)*)"',text):
+                  s=m.group(1)
+                  if terms.search(s) and len(s)<500:
+                      strings.append(s)
+              if strings:
+                  rows.append({'file':str(p.relative_to(root)),'strings':sorted(set(strings))})
+          Path('artifacts/yalla-network-forensics/string-literals.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          PY
+
+          # Decode resources/manifest for app version and network security config.
+          apktool d -f -s /tmp/yalla.apk -o /tmp/apktool-out >/tmp/apktool.log 2>&1 || true
+          cp /tmp/apktool.log "$out/apktool.log"
+          if [[ -f /tmp/apktool-out/AndroidManifest.xml ]]; then cp /tmp/apktool-out/AndroidManifest.xml "$out/AndroidManifest.xml"; fi
+          find /tmp/apktool-out/res/xml -maxdepth 1 -type f -print0 2>/dev/null | xargs -0 -r -I{} cp {} "$out/" || true
+
+          {
+            echo '# Yalla APK activity API network forensics'
+            echo
+            echo "Source files: $(cat "$out/source-count.txt")"
+            echo "Relevant full sources copied: $(find "$out/sources" -type f | wc -l)"
+            echo
+            echo '## Activity center request construction'
+            echo '```'
+            sed -n '1,1800p' "$out/activity-center-context.txt"
+            echo '```'
+            echo
+            echo '## HTTP core and interceptors'
+            echo '```'
+            sed -n '1,2500p' "$out/http-core-context.txt"
+            echo '```'
+          } > "$out/REPORT.md"
+
+      - name: Upload forensics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-apk-network-forensics
+          path: artifacts/yalla-network-forensics
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14
