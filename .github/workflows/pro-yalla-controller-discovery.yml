@@ -1,0 +1,107 @@
+name: Pro Yalla controller discovery
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-controller-discovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependency
+        run: python -m pip install requests
+      - name: Probe generated controller names with OPTIONS
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/yalla-controller-discovery
+          cat > /tmp/discover.py <<'PY'
+          from __future__ import annotations
+          import concurrent.futures, json, re, time
+          from pathlib import Path
+          import requests
+
+          OUT=Path('artifacts/yalla-controller-discovery'); OUT.mkdir(parents=True,exist_ok=True)
+          S=requests.Session(); S.headers.update({'User-Agent':'Mozilla/5.0 (compatible; YallaActivityResearch/1.0)','Accept':'*/*'})
+
+          explicit={
+              'SweetLove','SweetMoment','LoveMoment','Valentine','Valentines','ValentineDay','ValentinesDay','SweetValentine','SweetValentines',
+              'Love','Sweet','Moment','Romance','Romantic','Cupid','Couple','Couples','Lover','Lovers','Heart','Hearts','SweetHeart','Sweetheart',
+              'LoveStory','SweetStory','LoveJourney','SweetJourney','LoveChallenge','SweetChallenge','LoveTeam','SweetTeam','TeamLove','TeamUp',
+              'LoveGift','SweetGift','SurpriseGift','LoveReward','SweetReward','LoveParty','SweetParty','LoveCarnival','SweetCarnival','LovePark','SweetPark',
+              'LoveWorld','SweetWorld','LoveLand','SweetLand','LoveMatch','SweetMatch','LoveDate','SweetDate','LoveBear','SweetBear','TeddyBear','PinkBear',
+              'RoseLove','LoveRose','HeartLove','LoveHeart','LoveBalloon','SweetBalloon','CP','CPLove','CPValentine','CPChallenge','CPTeam','LoveCP',
+              'Valentine2024','SweetLove2024','Love2024','Sweet2024','LoveDay','SweetDay','LoveFestival','SweetFestival','LoveTime','SweetTime',
+              'TreasureTycoon','Treasure','Tycoon','WealthPath','Wealth','Path','TreasureHunt','TreasureMap','TreasureRoad','TreasureJourney',
+              'LuckyTreasure','LuckyTreasureHunt','PonyTreasure','PonyAdventure','Pony','GoldTreasure','GoldenTreasure','TreasureAdventure','TreasureWorld',
+              'TreasureLand','TreasureKing','TreasureMaster','TreasureHero','TreasureQuest','WealthTycoon','LuckyTycoon','GoldTycoon','RichTycoon',
+              'WealthJourney','WealthRoad','WealthMap','WealthAdventure','FortunePath','FortuneRoad','FortuneJourney','FortuneTycoon','RichPath','RichRoad',
+              'GoldPath','GoldenPath','MoneyPath','CoinPath','LuckyPath','TreasureChest','GoldenChest','LuckyChest','WealthChest','GoldMine','TreasureMine',
+              'RichMan','Billionaire','Millionaire','Money','Coins','Gold','Fortune','Rich','Explorer','Adventure','TreasureExplorer','PonyExplorer',
+              'TreasureTycoon2026','WealthPath2026','Treasure2026','Tycoon2026','TreasureGame','WealthGame','LuckyWealth','WealthKing','RichKing',
+              # controls
+              'AsianCup','KingCar','LuckyCarnival','Carnival','GeneralTemplate','DeepSea','FerrisWheel','RollerCoaster','RoyalVictory','Ramadan'
+          }
+          sweet_a=['Sweet','Love','Heart','Valentine','Romantic','Romance','Cupid','Couple','CP','Teddy','Bear','Rose','Honey']
+          sweet_b=['Moment','Love','Story','Journey','Challenge','Team','Gift','Reward','Party','Carnival','Park','World','Land','Match','Date','Day','Festival','Time','Balloon','Bear','Rose','Heart']
+          treasure_a=['Treasure','Wealth','Lucky','Gold','Golden','Rich','Fortune','Money','Coin','Pony']
+          treasure_b=['Tycoon','Path','Hunt','Map','Road','Journey','Adventure','World','Land','King','Master','Quest','Chest','Mine','Game','Explorer','Hero']
+          names=set(explicit)
+          for a in sweet_a:
+              for b in sweet_b: names.add(a+b); names.add(b+a)
+          for a in treasure_a:
+              for b in treasure_b: names.add(a+b); names.add(b+a)
+          # Three-part high-value compounds.
+          for a,b,c in [
+              ('Sweet','Love','Moment'),('Sweet','Love','Challenge'),('Sweet','Love','Journey'),('Sweet','Love','Story'),('Sweet','Love','Team'),
+              ('Love','Team','Up'),('Valentine','Love','Challenge'),('CP','Love','Challenge'),('Lucky','Treasure','Hunt'),('Lucky','Treasure','Tycoon'),
+              ('Treasure','Hunt','Tycoon'),('Treasure','Map','Adventure'),('Wealth','Path','Tycoon'),('Pony','Treasure','Adventure'),('Golden','Treasure','Path')
+          ]: names.add(a+b+c)
+          names=sorted(n for n in names if re.fullmatch(r'[A-Za-z][A-Za-z0-9]{1,60}',n))
+
+          def probe(name):
+              results=[]
+              for casing in ['api','Api']:
+                  url=f'https://activity2.yalla.live/{casing}/{name}/Init'
+                  row={'controller':name,'casing':casing,'url':url}
+                  try:
+                      r=S.options(url,timeout=(10,30),allow_redirects=True)
+                      row.update(status=r.status_code,allow=r.headers.get('allow'),bytes=len(r.content),ctype=r.headers.get('content-type'),body=r.text[:500])
+                  except Exception as e: row['error']=repr(e)
+                  results.append(row)
+              return results
+          rows=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=24) as ex:
+              for pair in ex.map(probe,names): rows.extend(pair)
+          (OUT/'all-results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          hits=[]
+          for r in rows:
+              # Existing ASP.NET route generally yields 405 + Allow GET/POST, or auth/model response rather than blank 404.
+              if r.get('status') in (200,204,400,401,403,405,422,500) and (r.get('status')!=405 or r.get('allow')):
+                  hits.append(r)
+          (OUT/'hits.json').write_text(json.dumps(hits,ensure_ascii=False,indent=2))
+          ctrls=sorted({r['controller'] for r in hits})
+          report=['# Yalla controller discovery','',f'Controller candidates: {len(names)}',f'HTTP probes: {len(rows)}',f'Existing controllers: {len(ctrls)}','', '## Existing controllers','']+[f'- {c}' for c in ctrls]
+          (OUT/'REPORT.md').write_text('\n'.join(report))
+          PY
+          python /tmp/discover.py
+      - name: Add report
+        if: always()
+        run: test -f artifacts/yalla-controller-discovery/REPORT.md && cat artifacts/yalla-controller-discovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-controller-discovery
+          path: artifacts/yalla-controller-discovery
+          if-no-files-found: error
+          retention-days: 14
