@@ -1,0 +1,150 @@
+name: Pro Yalla Apple event metadata recovery
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-apple-event-metadata.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser dependencies
+        run: |
+          python -m pip install requests playwright beautifulsoup4 lxml
+          python -m playwright install --with-deps chromium
+      - name: Fetch event pages and inspect Apple API responses
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/yalla-apple-events
+          cat > /tmp/apple_events.py <<'PY'
+          from __future__ import annotations
+          import asyncio, base64, hashlib, json, re
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT=Path('artifacts/yalla-apple-events'); OUT.mkdir(parents=True,exist_ok=True)
+          EVENTS={'sweet-love-2024':'6475700703','lucky-carnival-2024':'6737220863'}
+          STORES=['us','ae','sa','gb','tr','vn','id','in','pt','es','ca']
+          SLUGS=['yalla-play-game-voice-chat','yalla-group-voice-chat-rooms']
+          UA='Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'
+          S=requests.Session(); S.headers.update({'User-Agent':UA,'Accept-Language':'en-US,en;q=.9','Accept':'text/html,application/xhtml+xml,application/json;q=.9,*/*;q=.8'})
+          raw=[]
+          for target,eid in EVENTS.items():
+              folder=OUT/target; folder.mkdir(exist_ok=True)
+              for store in STORES:
+                  for slug in SLUGS:
+                      for key in ['eventid','eventId']:
+                          url=f'https://apps.apple.com/{store}/app/{slug}/id1091902866?{key}={eid}'
+                          row={'target':target,'event_id':eid,'store':store,'slug':slug,'key':key,'url':url}
+                          try:
+                              r=S.get(url,timeout=(20,70),allow_redirects=True)
+                              row.update(status=r.status_code,final_url=r.url,bytes=len(r.content),ctype=r.headers.get('content-type'),headers=dict(r.headers))
+                              name=f'{store}-{slug}-{key}.html'
+                              (folder/name).write_bytes(r.content)
+                              text=r.text
+                              row['event_hit']=eid in text
+                              row['deep_terms']=bool(re.search(r'deep.?link|universal.?link|actionUrl|targetUrl|custom.?url|event.?url',text,re.I))
+                              row['urls']=sorted(set(re.findall(r'(?:https?|[A-Za-z][A-Za-z0-9+.-]{1,20})://[^"\'<>\\\s)]+',text)))[:2000]
+                              row['event_context']=[]
+                              for m in re.finditer(eid,text): row['event_context'].append(text[max(0,m.start()-1200):m.end()+3000])
+                              row['event_context']=row['event_context'][:20]
+                          except Exception as e: row['error']=repr(e)
+                          raw.append(row)
+          (OUT/'raw-fetches.json').write_text(json.dumps(raw,ensure_ascii=False,indent=2))
+
+          async def inspect_browser():
+              records=[]
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch()
+                  context=await browser.new_context(user_agent=UA,locale='en-US',viewport={'width':390,'height':844},device_scale_factor=1)
+                  for target,eid in EVENTS.items():
+                      for store in STORES:
+                          url=f'https://apps.apple.com/{store}/app/yalla-play-game-voice-chat/id1091902866?eventid={eid}'
+                          page=await context.new_page(); net=[]; errors=[]
+                          async def on_response(resp,net=net,eid=eid,target=target):
+                              u=resp.url
+                              if not any(x in u for x in ['apple.com','itunes.apple.com','mzstatic.com']): return
+                              item={'url':u,'status':resp.status,'ctype':resp.headers.get('content-type'),'method':resp.request.method}
+                              try:
+                                  body=await resp.body(); item['bytes']=len(body); item['sha256']=hashlib.sha256(body).hexdigest()
+                                  text=body[:5_000_000].decode('utf-8','ignore')
+                                  if eid in text or re.search(r'deep.?link|universal.?link|actionUrl|targetUrl|custom.?url|in-app-event',text,re.I):
+                                      item['body_b64']=base64.b64encode(body).decode(); item['event_hit']=eid in text
+                                      item['matches']=[]
+                                      for pat in [eid,r'deep.?link',r'actionUrl',r'targetUrl',r'universal.?link',r'custom.?url',r'in-app-event']:
+                                          for m in re.finditer(pat,text,re.I): item['matches'].append(text[max(0,m.start()-1000):m.end()+2500])
+                                      item['matches']=item['matches'][:30]
+                              except Exception as e: item['error']=repr(e)
+                              net.append(item)
+                          page.on('response',lambda r,net=net,eid=eid,target=target: asyncio.create_task(on_response(r,net,eid,target)))
+                          page.on('pageerror',lambda e,errors=errors: errors.append(str(e)))
+                          try:
+                              await page.goto(url,wait_until='domcontentloaded',timeout=90000)
+                              await page.wait_for_timeout(12000)
+                              await page.screenshot(path=str(OUT/f'{target}-{store}-page.png'),full_page=True)
+                              html=await page.content(); text=await page.locator('body').inner_text()
+                              (OUT/f'{target}-{store}-dom.html').write_text(html,errors='ignore')
+                              records.append({'target':target,'event_id':eid,'store':store,'url':url,'title':await page.title(),'final_url':page.url,'text':text[:30000],'html_event_hit':eid in html,'network':net,'errors':errors})
+                          except Exception as e:
+                              records.append({'target':target,'event_id':eid,'store':store,'url':url,'error':repr(e),'network':net,'errors':errors})
+                          await page.close()
+                  await context.close(); await browser.close()
+              (OUT/'browser-records.json').write_text(json.dumps(records,ensure_ascii=False,indent=2))
+          asyncio.run(inspect_browser())
+
+          # Extract any non-Apple deep links and event-specific URLs from every recovered body/context.
+          candidates=[]
+          def add_urls(text,target,source):
+              for u in re.findall(r'(?:https?|[A-Za-z][A-Za-z0-9+.-]{1,20})://[^"\'<>\\\s)]+',text):
+                  low=u.lower()
+                  if not any(x in low for x in ['apple.com','mzstatic.com','itunes.com','appshunter.io']): candidates.append({'target':target,'source':source,'url':u})
+          for row in raw:
+              for c in row.get('event_context') or []: add_urls(c,row['target'],row['url'])
+          bp=OUT/'browser-records.json'
+          if bp.exists():
+              for row in json.loads(bp.read_text()):
+                  for n in row.get('network') or []:
+                      for m in n.get('matches') or []: add_urls(m,row['target'],n['url'])
+          # dedupe
+          seen=set(); ded=[]
+          for c in candidates:
+              k=(c['target'],c['url'])
+              if k not in seen: seen.add(k); ded.append(c)
+          (OUT/'deep-link-candidates.json').write_text(json.dumps(ded,ensure_ascii=False,indent=2))
+
+          report=['# Yalla Apple in-app event metadata recovery','',f'Raw storefront fetches: {len(raw)}',f'Non-Apple deep-link candidates: {len(ded)}','']
+          for target in EVENTS:
+              report += [f'## {target}','']
+              hits=[c for c in ded if c['target']==target]
+              if hits:
+                  for h in hits: report.append(f"- `{h['url']}` via `{h['source']}`")
+              else: report.append('- No public non-Apple deep link recovered from the expired App Store event metadata.')
+              report += ['']
+          (OUT/'REPORT.md').write_text('\n'.join(report))
+          PY
+          python /tmp/apple_events.py
+      - name: Add report
+        if: always()
+        run: test -f artifacts/yalla-apple-events/REPORT.md && cat artifacts/yalla-apple-events/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-apple-event-metadata
+          path: artifacts/yalla-apple-events
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14
