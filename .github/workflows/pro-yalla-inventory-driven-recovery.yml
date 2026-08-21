@@ -1,0 +1,215 @@
+name: Pro Yalla inventory-driven campaign recovery
+
+on:
+  push:
+    branches:
+      - research/yalla-spa-link-bridge-20260822
+    paths:
+      - .github/workflows/pro-yalla-inventory-driven-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml playwright pillow
+          python -m playwright install --with-deps chromium
+      - name: Mine archive inventories and render credible SPA roots
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-inventory-recovery
+          cat > /tmp/inventory_recovery.py <<'PY'
+          from __future__ import annotations
+          import asyncio, hashlib, json, re, time
+          from collections import defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urljoin, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT=Path('artifacts/pro-yalla-inventory-recovery')
+          OUT.mkdir(parents=True,exist_ok=True)
+          S=requests.Session()
+          S.headers.update({'User-Agent':'curl/8.0','Accept':'*/*'})
+          HOST='activity2.yalla.live'
+          BASE='https://activity2.yalla.live/activity/'
+          WINDOWS={
+            'sweet-love-2024':('20240115','20240415',['sweet','love','valentine','moment','couple','cp','heart','romance']),
+            'lucky-carnival-2024':('20240915','20241215',['lucky','carnival','pool','prize','draw','lottery','party','wheel']),
+          }
+          EXCLUDE={
+            'footballCarnival','ferrisWheel','fw_newyear','rollerCoaster','seaDominator','8thAnniversary',
+            '9thAnniversary','10thAnniversary','templateActivity','activityMap','ramadan','royalVictory',
+            'wonderLand','carKing','recallAndRecruit'
+          }
+          COMPLEX=['task','mission','progress','reward','lottery','draw','exchange','rank','team','friend','record','shop','store','collect','stage','level','pool','medal','gift']
+
+          def get(url,timeout=(20,90),tries=4):
+            last=None
+            for i in range(tries):
+              try:
+                r=S.get(url,timeout=timeout,allow_redirects=True)
+                if r.status_code in (200,404): return r
+                last=r
+              except Exception as e: last=e
+              time.sleep(2+i*3)
+            return last
+
+          def cdx(url,from_ts,to_ts):
+            q='https://web.archive.org/cdx/search/cdx?url='+quote(url,safe='')+'&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode:200&collapse=urlkey&from='+from_ts+'&to='+to_ts+'&limit=50000'
+            r=get(q,timeout=(20,150))
+            if not hasattr(r,'status_code') or r.status_code!=200: return []
+            try: data=r.json()
+            except Exception: return []
+            if not data or len(data)<2: return []
+            hdr=data[0]
+            return [dict(zip(hdr,row)) for row in data[1:]]
+
+          inventories={}
+          roots_by_target={}
+          for target,(fr,to,hints) in WINDOWS.items():
+            rows=cdx(f'{HOST}/activity/2024dist/*',fr,to)
+            inventories[target]=rows
+            roots=defaultdict(list)
+            for row in rows:
+              u=row.get('original','')
+              m=re.search(r'/activity/2024dist/([^/?#]+)/?',u,re.I)
+              if not m: continue
+              root=m.group(1)
+              if root in EXCLUDE: continue
+              roots[root].append(row)
+            roots_by_target[target]=roots
+          (OUT/'inventories.json').write_text(json.dumps(inventories,ensure_ascii=False,indent=2))
+
+          def replay(row):
+            u=row['original']; ts=row['timestamp']
+            candidates=[
+              f'https://web.archive.org/web/{ts}id_/{u}',
+              f'https://web.archive.org/web/{ts}if_/{u}',
+              f'https://arquivo.pt/wayback/{ts}id_/{u}',
+              u,
+            ]
+            for url in candidates:
+              r=get(url,timeout=(20,90),tries=2)
+              if not hasattr(r,'status_code') or r.status_code!=200 or len(r.content)<200: continue
+              low=r.content[:30000].decode('utf-8','ignore').lower()
+              if any(x in low for x in ['temporarily offline','rate limit reached','service unavailable','not in archive','blocked by robots']): continue
+              return url,r
+            return None,None
+
+          def inspect_root(target,root,rows):
+            hints=WINDOWS[target][2]
+            # prefer HTML rows, then shortest root-like URL
+            ordered=sorted(rows,key=lambda r:(0 if r.get('mimetype')=='text/html' else 1,len(r.get('original','')),r.get('timestamp','')))
+            evidence=[]; best=None
+            for row in ordered[:40]:
+              src,r=replay(row)
+              if r is None: continue
+              text=r.content.decode('utf-8','ignore')
+              soup=BeautifulSoup(text,'lxml')
+              refs=[]
+              for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src')]:
+                for el in soup.find_all(tag):
+                  v=el.get(attr)
+                  if v: refs.append(urljoin(r.url,v))
+              low=text.lower()
+              title=soup.title.get_text(strip=True) if soup.title else ''
+              visible=re.sub(r'\s+',' ',soup.get_text(' ',strip=True))[:2000]
+              hint_score=sum(5 for x in hints if x in (root+' '+title+' '+visible+' '+low[:100000]).lower())
+              complex_score=sum(1 for x in COMPLEX if x in low)
+              spa=sum(1 for x in ['js/app.','css/app.','chunk-vendors','webpack','vue'] if x in low)
+              jsrefs=[u for u in refs if re.search(r'\.js(?:\?|$)',u,re.I)]
+              cssrefs=[u for u in refs if re.search(r'\.css(?:\?|$)',u,re.I)]
+              item={'target':target,'root':root,'capture':row,'source':src,'bytes':len(r.content),'title':title,'visible':visible,'hint_score':hint_score,'complex_score':complex_score,'spa_signals':spa,'refs':refs[:200]}
+              # Fetch a few bundles and score their strings.
+              bundle_hits=[]
+              for ref in (jsrefs+cssrefs)[:12]:
+                rr=get(ref,timeout=(15,70),tries=2)
+                if not hasattr(rr,'status_code') or rr.status_code!=200 or len(rr.content)<100: continue
+                btext=rr.content.decode('utf-8','ignore').lower()
+                hs=sum(5 for x in hints if x in btext)
+                cs=sum(1 for x in COMPLEX if x in btext)
+                bundle_hits.append({'url':ref,'bytes':len(rr.content),'hint_score':hs,'complex_score':cs,'sha256':hashlib.sha256(rr.content).hexdigest()})
+                # Store official bytes for credible roots.
+                if hs>0 or cs>=5:
+                  d=OUT/'candidate-bytes'/target/root
+                  d.mkdir(parents=True,exist_ok=True)
+                  ext=Path(urlparse(ref).path).suffix or '.bin'
+                  (d/f'{hashlib.sha1(ref.encode()).hexdigest()[:12]}{ext}').write_bytes(rr.content)
+              item['bundle_hits']=bundle_hits
+              item['score']=hint_score+complex_score+spa*2+sum(x['hint_score']+min(x['complex_score'],10) for x in bundle_hits)
+              evidence.append(item)
+              if best is None or item['score']>best['score']: best=item
+              if item['score']>=18: break
+            return best,evidence
+
+          findings=[]; all_evidence=[]
+          for target,roots in roots_by_target.items():
+            for root,rows in roots.items():
+              best,evidence=inspect_root(target,root,rows)
+              all_evidence+=evidence
+              if best: findings.append(best)
+          findings.sort(key=lambda x:x['score'],reverse=True)
+          (OUT/'root-evidence.json').write_text(json.dumps(all_evidence,ensure_ascii=False,indent=2))
+          (OUT/'ranked-findings.json').write_text(json.dumps(findings,ensure_ascii=False,indent=2))
+
+          # Render only roots with meaningful campaign/complexity evidence.
+          renderable=[x for x in findings if x['score']>=12 and x['spa_signals']>=1]
+          async def render():
+            if not renderable: return
+            async with async_playwright() as p:
+              b=await p.chromium.launch()
+              for i,item in enumerate(renderable[:30]):
+                page=await b.new_page(viewport={'width':390,'height':844},device_scale_factor=1,locale='en-US')
+                errs=[]; bad=[]
+                page.on('pageerror',lambda e,errs=errs: errs.append(str(e)))
+                page.on('response',lambda r,bad=bad: bad.append({'url':r.url,'status':r.status}) if r.status>=400 else None)
+                slug=f"{i:02d}-{item['target']}-{item['root']}"
+                try:
+                  await page.goto(item['source'],wait_until='domcontentloaded',timeout=90000)
+                  await page.wait_for_timeout(9000)
+                  h=await page.evaluate('document.documentElement.scrollHeight')
+                  for y in range(0,max(h,844)+844,560):
+                    await page.evaluate('(y)=>window.scrollTo(0,y)',y); await page.wait_for_timeout(120)
+                  await page.evaluate('window.scrollTo(0,0)')
+                  await page.screenshot(path=str(OUT/f'{slug}-full.png'),full_page=True)
+                  (OUT/f'{slug}-dom.html').write_text(await page.content(),errors='ignore')
+                  (OUT/f'{slug}-text.txt').write_text(await page.locator('body').inner_text(),errors='ignore')
+                  item['render']={'screenshot':f'{slug}-full.png','height':await page.evaluate('document.documentElement.scrollHeight'),'title':await page.title(),'errors':errs,'bad':bad}
+                except Exception as e:
+                  item['render']={'error':repr(e),'errors':errs,'bad':bad}
+                await page.close()
+              await b.close()
+            (OUT/'rendered-findings.json').write_text(json.dumps(renderable,ensure_ascii=False,indent=2))
+          asyncio.run(render())
+
+          report=['# Yalla inventory-driven recovery','',f'Findings: {len(findings)}',f'Renderable: {len(renderable)}','', '|Target|Root|Score|Title|Source|','|---|---|---:|---|---|']
+          for x in findings[:80]: report.append(f"|{x['target']}|`{x['root']}`|{x['score']}|{x['title'][:80]}|{x['source']}|")
+          (OUT/'REPORT.md').write_text('\n'.join(report),encoding='utf-8')
+          PY
+          python /tmp/inventory_recovery.py
+      - name: Add report
+        if: always()
+        run: test -f artifacts/pro-yalla-inventory-recovery/REPORT.md && cat artifacts/pro-yalla-inventory-recovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Upload recovery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-inventory-driven-recovery
+          path: artifacts/pro-yalla-inventory-recovery
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
