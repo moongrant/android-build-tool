@@ -1,0 +1,211 @@
+name: Pro Yalla Lucky Carnival recovery
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-lucky-carnival-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml playwright pillow cryptography
+          python -m playwright install --with-deps chromium
+
+      - name: Recover static shells, archive inventory, API actions and materials
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/lucky-carnival-recovery
+          cat > /tmp/recover.py <<'PY'
+          from __future__ import annotations
+          import asyncio, base64, concurrent.futures, hashlib, json, re, time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urljoin, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from cryptography.hazmat.primitives import serialization
+          from cryptography.hazmat.primitives.asymmetric import padding
+          from playwright.async_api import async_playwright
+
+          OUT=Path('artifacts/lucky-carnival-recovery')
+          OUT.mkdir(parents=True,exist_ok=True)
+          S=requests.Session(); S.headers.update({'User-Agent':'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36','Accept':'*/*','Accept-Language':'en-US,en;q=.9'})
+
+          def fetch(url,method='GET',timeout=(15,60),**kw):
+              row={'url':url,'method':method}
+              try:
+                  r=S.request(method,url,timeout=timeout,allow_redirects=True,**kw)
+                  body=r.content; text=body[:2_000_000].decode('utf-8','ignore')
+                  row.update(status=r.status_code,final_url=r.url,bytes=len(body),ctype=r.headers.get('content-type'),allow=r.headers.get('allow'),headers=dict(r.headers),sha256=hashlib.sha256(body).hexdigest(),body=text)
+              except Exception as e: row['error']=repr(e)
+              return row
+
+          hosts=['activity2.yalla.live','event.yalla.live','activitytest2.yalla.live','activity2.yallalive.cn','h5client.peakxyz.com']
+          years=['2023dist','2024dist','2025dist','YallaActivity2024']
+          names=['luckyCarnival','LuckyCarnival','luckycarnival','lucky_carnival','lucky-carnival','luckyCarnival2024','LuckyCarnival2024','carnival','Carnival','carnival2024','Carnival2024','luckyMoment','LuckyMoment','luckyPool','LuckyPool','prizePool','PrizePool','luckyDraw','LuckyDraw','luckyParty','LuckyParty','superLucky','SuperLucky','luckyFestival','LuckyFestival','fortuneCarnival','FortuneCarnival']
+          files=['','index.html','manifest.json','favicon.ico','asset-manifest.json','robots.txt','service-worker.js','js/app.js','css/app.css','lang/en.json','lang/ar.json']
+          probe_jobs=[]
+          for host in hosts:
+              for year in years:
+                  for name in names:
+                      base=f'https://{host}/activity/{year}/{name}/'
+                      for f in files: probe_jobs.append(base+f)
+          static=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=48) as ex:
+              for r in ex.map(fetch,probe_jobs): static.append(r)
+          (OUT/'static-probes.json').write_text(json.dumps(static,ensure_ascii=False,indent=2))
+          live=[r for r in static if r.get('status')==200 and r.get('bytes',0)>0 and 'cloudflare' not in (r.get('body') or '').lower()]
+          (OUT/'live-static.json').write_text(json.dumps(live,ensure_ascii=False,indent=2))
+          for i,r in enumerate(live):
+              ext=Path(urlparse(r['url']).path).suffix or '.html'
+              (OUT/f'live-{i:04d}{ext}').write_bytes((r.get('body') or '').encode('utf-8','ignore'))
+
+          # Wayback CDX queries, including regex filters and pagination metadata.
+          cdx_queries=[]
+          patterns=[
+              'activity2.yalla.live/activity/2024dist/*',
+              'activity2.yalla.live/activity/*/*carnival*',
+              'activity2.yalla.live/activity/*/*lucky*',
+              'activity2.yalla.live/activity/*/*prize*',
+              'file.yalla.live/Activity/*carnival*',
+              'file.yalla.live/Activity/*lucky*',
+              'event.yalla.live/*carnival*',
+          ]
+          filters=['','&filter=original:.*[Cc]arnival.*','&filter=original:.*[Ll]ucky.*','&filter=urlkey:.*carnival.*','&filter=urlkey:.*lucky.*']
+          for pattern in patterns:
+              for fil in filters:
+                  q='https://web.archive.org/cdx/search/cdx?url='+quote(pattern,safe='')+'&output=json&fl=urlkey,timestamp,original,mimetype,statuscode,digest,length&filter=statuscode:200&collapse=urlkey&limit=50000'+fil
+                  cdx_queries.append(q)
+                  cdx_queries.append(q+'&from=20241001&to=20241130')
+                  cdx_queries.append(q+'&showNumPages=true&pageSize=5000')
+          cdx=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+              for r in ex.map(lambda u:fetch(u,timeout=(20,180)),cdx_queries): cdx.append(r)
+          (OUT/'cdx-raw.json').write_text(json.dumps(cdx,ensure_ascii=False,indent=2))
+
+          urls=set(); rows=[]
+          for result in cdx:
+              if result.get('status')!=200: continue
+              body=result.get('body') or ''
+              try: data=json.loads(body)
+              except Exception: continue
+              if not isinstance(data,list) or len(data)<2 or not isinstance(data[0],list): continue
+              header=data[0]
+              for values in data[1:]:
+                  if not isinstance(values,list): continue
+                  item=dict(zip(header,values)); original=item.get('original')
+                  if original: urls.add(original); rows.append(item)
+          (OUT/'cdx-rows.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          (OUT/'cdx-urls.txt').write_text('\n'.join(sorted(urls)))
+
+          # Extract root names, bundle names and potential static path aliases.
+          roots=Counter(); assets=[]
+          for u in urls:
+              p=urlparse(u).path
+              m=re.search(r'/activity/(?:\d{4}dist|YallaActivity\d{4})/([^/]+)/',p,re.I)
+              if m: roots[m.group(1)]+=1
+              if re.search(r'\.(?:js|css|json|png|jpe?g|webp|gif|svg|mp4|mp3|woff2?|ttf)(?:$|\?)',u,re.I): assets.append(u)
+          (OUT/'archive-roots.json').write_text(json.dumps(roots.most_common(),ensure_ascii=False,indent=2))
+          (OUT/'archive-assets.txt').write_text('\n'.join(sorted(assets)))
+
+          # Replay exact archive rows that look carnival/lucky-related.
+          replay=[]
+          candidate_rows=[]
+          for item in rows:
+              u=item.get('original',''); low=u.lower()
+              if any(x in low for x in ['carnival','lucky','prizepool','luckypool','luckymoment']): candidate_rows.append(item)
+          candidate_rows=sorted(candidate_rows,key=lambda x:(x.get('original',''),x.get('timestamp','')))
+          for item in candidate_rows[:1000]:
+              u=item['original']; ts=item['timestamp']
+              for mode in ['id_','if_']:
+                  replay_url=f'https://web.archive.org/web/{ts}{mode}/{u}'
+                  r=fetch(replay_url,timeout=(20,120)); r.update(original=u,timestamp=ts,mode=mode)
+                  replay.append(r)
+                  if r.get('status')==200 and r.get('bytes',0)>0 and not any(x in (r.get('body') or '').lower() for x in ['temporarily offline','rate limit','service unavailable']):
+                      suffix=Path(urlparse(u).path).suffix or '.html'
+                      path=OUT/'recovered'/f"{hashlib.sha1(u.encode()).hexdigest()}-{ts}{suffix}"
+                      path.parent.mkdir(exist_ok=True); path.write_bytes((r.get('body') or '').encode('utf-8','ignore'))
+                      (path.with_suffix(path.suffix+'.meta.json')).write_text(json.dumps({'original':u,'timestamp':ts,'replay':replay_url,'sha256':r.get('sha256')},indent=2))
+                      break
+          (OUT/'archive-replay.json').write_text(json.dumps(replay,ensure_ascii=False,indent=2))
+
+          # Enumerate controller actions from the union of known Yalla SPA verbs.
+          actions=['Init','GetActivityInfo','GetUserInfo','GetMyTaskInfo','GetProcessInfo','GetProgressInfo','GetProcessReward','GetRewardInfo','GetRewardByRecordId','GetRank','GetRankInfo','GetRankV2','GetDailyRank','GetTotalRank','GetLotteryInfo','Lottery','MultLottery','SingleLottery','SingleDraw','GetRecordInfo','GetLotteryRecord','GetOrderList','GetProductList','PurchaseProduct','ReceiveReward','ReceiveProcessReward','RewardTask','RewardProgress','ReceiveProgressReward','GetTotalProgressInfo','ReceiveTotalProgressInfo','GetMedalConfigList','GetExchangeMedalCount','ExchangeMedal','GetBarrageInfo','GetNotices','UpgradePool','UpLotteryLevel','GetPoolInfo','GetPrizePool','GetPrizePoolInfo','GetUserData','GetActivityConfig','GetConfig','GetMaterials','GetMaterialConfig','GetJackpotInfo','GetLuckyValue','GetLuckyRecord','ReceiveReturnProgressInfo']
+          modules=['LuckyCarnival','Carnival']
+          api=[]
+          for module in modules:
+              for action in actions:
+                  for casing in ['api','Api']:
+                      url=f'https://activity2.yalla.live/{casing}/{module}/{action}'
+                      for method in ['GET','POST','OPTIONS']:
+                          kw={};
+                          if method=='POST': kw['json']={}
+                          r=fetch(url,method=method,timeout=(12,40),**kw); r.update(module=module,action=action)
+                          api.append(r)
+          (OUT/'api-actions.json').write_text(json.dumps(api,ensure_ascii=False,indent=2))
+          api_existing=[r for r in api if r.get('status') not in (404,) and not (r.get('status')==405 and not r.get('allow'))]
+          (OUT/'api-existing.json').write_text(json.dumps(api_existing,ensure_ascii=False,indent=2))
+
+          # Signed query calibration for existing GET routes.
+          pub=b'''-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2\nUJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o\nyT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K\nUusZI5pu5Gm9+ML4NQIDAQAB\n-----END PUBLIC KEY-----'''
+          key=serialization.load_pem_public_key(pub)
+          def sig(token,ts): return base64.b64encode(key.encrypt(f'{token}|{ts}|Yalla-Activity-Headers'.encode(),padding.PKCS1v15())).decode()
+          signed=[]
+          get_routes={(r['module'],r['action']) for r in api_existing if r.get('allow')=='GET' or r.get('method')=='GET'}
+          combos=[
+              {'region':'0','userId':'0','token':'','v':'3501','s':'3','activityId':'241022'},
+              {'region':'1','userId':'0','token':'','v':'3501','s':'3','activityId':'241022'},
+              {'region':'7','userId':'0','token':'','v':'3501','s':'2','activityId':'241022'},
+              {'region':'0','userId':'1','token':'','v':'3311','s':'3','activityId':'241022'},
+              {'region':'0','userId':'0','token':'null','v':'3501','s':'3','activityId':'241022'},
+          ]
+          for module,action in sorted(get_routes):
+              for params in combos:
+                  params=dict(params); ts=str(int(time.time()*1000)); params['xtimestamp']=ts; params['xsignature']=sig(params['token'],ts)
+                  headers={k:str(v) for k,v in params.items()}
+                  r=fetch(f'https://activity2.yalla.live/api/{module}/{action}',params=params,headers=headers,timeout=(12,45)); r.update(module=module,action=action,params=params)
+                  signed.append(r)
+          (OUT/'signed-actions.json').write_text(json.dumps(signed,ensure_ascii=False,indent=2))
+
+          # Human-readable report.
+          report=['# Lucky Carnival SPA recovery','',f'Static probes: {len(static)}',f'Live static files: {len(live)}',f'CDX rows: {len(rows)}',f'Carnival/lucky archive rows: {len(candidate_rows)}',f'API action probes: {len(api)}',f'Existing API responses: {len(api_existing)}','']
+          report += ['## Archive roots','']+[f'- {name}: {count}' for name,count in roots.most_common(80)]+['']
+          report += ['## Existing API routes','']
+          seen=set()
+          for r in api_existing:
+              key2=(r['module'],r['action'],r.get('allow'),r.get('status'))
+              if key2 in seen: continue
+              seen.add(key2); report.append(f"- {r['module']}/{r['action']} status={r.get('status')} allow={r.get('allow')} method={r.get('method')}")
+          (OUT/'REPORT.md').write_text('\n'.join(report))
+          PY
+          python /tmp/recover.py
+
+      - name: Add report to summary
+        if: always()
+        run: test -f artifacts/lucky-carnival-recovery/REPORT.md && cat artifacts/lucky-carnival-recovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Upload recovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-lucky-carnival-recovery
+          path: artifacts/lucky-carnival-recovery
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14

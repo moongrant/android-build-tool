@@ -1,0 +1,164 @@
+name: Pro Yalla Common Crawl recovery
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-commoncrawl-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests warcio
+      - name: Query indexes and recover WARC records
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-commoncrawl
+          cat > /tmp/cc.py <<'PY'
+          from __future__ import annotations
+          import concurrent.futures, gzip, io, json, re, time, hashlib
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import requests
+          from warcio.archiveiterator import ArchiveIterator
+
+          OUT=Path('artifacts/pro-yalla-commoncrawl'); OUT.mkdir(parents=True,exist_ok=True)
+          S=requests.Session(); S.headers.update({'User-Agent':'Mozilla/5.0 (compatible; YallaActivityResearch/1.0; +https://github.com/moongrant/android-build-tool)','Accept':'application/json,text/plain,*/*'})
+          indexes=[
+            'CC-MAIN-2024-10','CC-MAIN-2024-14','CC-MAIN-2024-18','CC-MAIN-2024-22','CC-MAIN-2024-26','CC-MAIN-2024-30','CC-MAIN-2024-33','CC-MAIN-2024-38','CC-MAIN-2024-42','CC-MAIN-2024-46','CC-MAIN-2024-51',
+            'CC-MAIN-2025-05','CC-MAIN-2025-08','CC-MAIN-2025-13','CC-MAIN-2025-18','CC-MAIN-2025-21','CC-MAIN-2025-26','CC-MAIN-2025-30','CC-MAIN-2025-34','CC-MAIN-2025-38','CC-MAIN-2025-43','CC-MAIN-2025-47','CC-MAIN-2025-51',
+            'CC-MAIN-2026-04','CC-MAIN-2026-08','CC-MAIN-2026-12','CC-MAIN-2026-16','CC-MAIN-2026-20','CC-MAIN-2026-24','CC-MAIN-2026-28','CC-MAIN-2026-32'
+          ]
+          patterns=[
+            'activity2.yalla.live/activity/2024dist/*',
+            'activity2.yalla.live/activity/2025dist/*',
+            'activity2.yalla.live/activity/2026dist/*',
+            'file.yalla.live/Activity/*',
+            'event.yalla.live/*',
+            'activitytest2.yalla.live/activity/*',
+          ]
+          target_terms=re.compile(r'(sweet.?love|sweet.?moment|valentine|lucky.?carnival|lucky.?pool|prize.?pool|lucky.?moment|treasure.?tycoon|wealth.?path|treasure.?hunt|lucky.?treasure|pony.?treasure)',re.I)
+          api_terms=re.compile(rb'(LuckyCarnival|SweetLove|SweetMoment|TreasureTycoon|WealthPath|/api/(?:LuckyCarnival|Carnival|Sweet|Love|Treasure|Tycoon))',re.I)
+
+          def query(index,pattern):
+              endpoint=f'https://index.commoncrawl.org/{index}-index'
+              params={'url':pattern,'output':'json','filter':'status:200','collapse':'urlkey'}
+              row={'index':index,'pattern':pattern}
+              try:
+                  r=S.get(endpoint,params=params,timeout=(20,120))
+                  row.update(status=r.status_code,bytes=len(r.content),url=r.url,body_sample=r.text[:1000])
+                  records=[]
+                  if r.status_code==200:
+                      for line in r.text.splitlines():
+                          try: records.append(json.loads(line))
+                          except Exception: pass
+                  row['records']=records
+              except Exception as e: row['error']=repr(e); row['records']=[]
+              return row
+
+          queries=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+              futs=[ex.submit(query,i,p) for i in indexes for p in patterns]
+              for f in concurrent.futures.as_completed(futs): queries.append(f.result())
+          (OUT/'index-queries.json').write_text(json.dumps(queries,ensure_ascii=False,indent=2))
+
+          recs=[]; seen=set()
+          for q in queries:
+              for r in q.get('records',[]):
+                  key=(r.get('url'),r.get('digest'),r.get('filename'),r.get('offset'))
+                  if key in seen: continue
+                  seen.add(key); r=dict(r); r['_index']=q['index']; recs.append(r)
+          (OUT/'all-records.json').write_text(json.dumps(recs,ensure_ascii=False,indent=2))
+
+          # Prioritize target-looking URLs, then all HTML/JS records around target campaign dates.
+          selected=[]
+          for r in recs:
+              u=r.get('url',''); ts=r.get('timestamp',''); mt=(r.get('mime') or r.get('mime-detected') or '').lower()
+              date_ok=('20240201'<=ts[:8]<='20240229') or ('20241001'<=ts[:8]<='20241115') or ('20260801'<=ts[:8]<='20260831')
+              type_ok=('html' in mt or 'javascript' in mt or u.lower().endswith(('.js','.html','.htm','.json','.css')))
+              if target_terms.search(u) or (date_ok and type_ok): selected.append(r)
+          # If sparse, include every HTML/JS record from the target host, capped.
+          if len(selected)<50:
+              for r in recs:
+                  u=r.get('url',''); mt=(r.get('mime') or r.get('mime-detected') or '').lower()
+                  if ('html' in mt or 'javascript' in mt or u.lower().endswith(('.js','.html','.htm','.json','.css'))) and r not in selected:
+                      selected.append(r)
+                      if len(selected)>=1200: break
+          selected=selected[:1600]
+          (OUT/'selected-records.json').write_text(json.dumps(selected,ensure_ascii=False,indent=2))
+
+          def recover(r):
+              item=dict(r)
+              try:
+                  filename=r['filename']; off=int(r['offset']); length=int(r['length'])
+                  url='https://data.commoncrawl.org/'+filename
+                  resp=S.get(url,headers={'Range':f'bytes={off}-{off+length-1}'},timeout=(20,120))
+                  item['warc_status']=resp.status_code; item['warc_bytes']=len(resp.content)
+                  if resp.status_code not in (200,206): return item
+                  data=resp.content
+                  # Range is a gzip member containing one WARC record.
+                  stream=io.BytesIO(data)
+                  payload=None; warc_headers=None; http_headers=None
+                  for record in ArchiveIterator(stream,arc2warc=True):
+                      if record.rec_type in ('response','resource'):
+                          payload=record.content_stream().read(); warc_headers=dict(record.rec_headers.headers); http_headers=dict(record.http_headers.headers) if record.http_headers else {}
+                          break
+                  if payload is None:
+                      try: payload=gzip.decompress(data)
+                      except Exception: payload=data
+                  item['payload_bytes']=len(payload); item['payload_sha256']=hashlib.sha256(payload).hexdigest(); item['warc_headers']=warc_headers; item['http_headers']=http_headers
+                  u=r.get('url',''); suffix=Path(urlparse(u).path).suffix
+                  if not suffix or len(suffix)>8: suffix='.bin'
+                  p=OUT/'recovered'/f"{hashlib.sha1(u.encode()).hexdigest()}-{r.get('timestamp')}{suffix}"
+                  p.parent.mkdir(exist_ok=True); p.write_bytes(payload)
+                  item['local_path']=str(p.relative_to(OUT)); item['api_hit']=bool(api_terms.search(payload)); item['target_url_hit']=bool(target_terms.search(u))
+                  if item['api_hit']:
+                      (p.with_suffix(p.suffix+'.hit.txt')).write_text('API TARGET HIT\n'+u+'\n')
+              except Exception as e: item['error']=repr(e)
+              return item
+
+          recovered=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+              for item in ex.map(recover,selected): recovered.append(item)
+          (OUT/'recovered-records.json').write_text(json.dumps(recovered,ensure_ascii=False,indent=2))
+
+          hits=[r for r in recovered if r.get('api_hit') or r.get('target_url_hit')]
+          (OUT/'hits.json').write_text(json.dumps(hits,ensure_ascii=False,indent=2))
+          roots={}
+          for r in recs:
+              m=re.search(r'/activity/(?:\d{4}dist|YallaActivity\d{4})/([^/?#]+)',urlparse(r.get('url','')).path,re.I)
+              if m: roots[m.group(1)]=roots.get(m.group(1),0)+1
+          (OUT/'roots.json').write_text(json.dumps(sorted(roots.items(),key=lambda x:-x[1]),ensure_ascii=False,indent=2))
+
+          report=['# Pro-Yalla Common Crawl recovery','',f'Index queries: {len(queries)}',f'Indexed records: {len(recs)}',f'Recovered WARC records: {len(recovered)}',f'Target/API hits: {len(hits)}','', '## Root inventory','']
+          report += [f'- {k}: {v}' for k,v in sorted(roots.items(),key=lambda x:-x[1])[:120]]
+          report += ['', '## Hits','']
+          for h in hits[:200]: report += [f"- `{h.get('url')}` timestamp={h.get('timestamp')} api_hit={h.get('api_hit')} local={h.get('local_path')}"]
+          (OUT/'REPORT.md').write_text('\n'.join(report))
+          PY
+          python /tmp/cc.py
+      - name: Add report to summary
+        if: always()
+        run: test -f artifacts/pro-yalla-commoncrawl/REPORT.md && cat artifacts/pro-yalla-commoncrawl/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Upload recovery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-commoncrawl-recovery
+          path: artifacts/pro-yalla-commoncrawl
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14
