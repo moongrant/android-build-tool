@@ -1,0 +1,319 @@
+name: Pro Yalla public deep probe
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-public-deep-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install crawler and browser dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml playwright pillow yt-dlp
+          python -m playwright install --with-deps chromium
+
+      - name: Run wide discovery and SPA validation
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-public-deep
+          cat > /tmp/probe.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import concurrent.futures
+          import hashlib
+          import json
+          import os
+          import re
+          import subprocess
+          import time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urljoin, urlparse, unquote
+
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT = Path('artifacts/pro-yalla-public-deep')
+          OUT.mkdir(parents=True, exist_ok=True)
+          SESSION = requests.Session()
+          SESSION.headers.update({
+              'User-Agent': 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36',
+              'Accept-Language': 'en-US,en;q=.9,ar;q=.7',
+              'Accept': '*/*',
+          })
+
+          TARGETS = {
+              'sweet-love-2024': {
+                  'dates': ('20240201','20240229'),
+                  'keywords': ['sweet love','sweetlove','sweet moment','sweetmoment','love points','team up','limited-time items','surprise gifts'],
+                  'years': ['2023dist','2024dist','2025dist'],
+                  'names': [
+                      'sweetLove','SweetLove','sweetlove','sweet_love','sweet-love','Sweet-Love','sweetLove2024','SweetLove2024',
+                      'sweetMoment','SweetMoment','sweetmoment','loveChallenge','LoveChallenge','sweetValentine','SweetValentine',
+                      'valentine','Valentine','valentine2024','Valentine2024','love2024','Love2024','love','Love','cpLove','CPLove',
+                      'cpValentine','CPValentine','loveStory','LoveStory','loveJourney','LoveJourney','sweetDate','SweetDate',
+                      'romanticJourney','RomanticJourney','loveCarnival','LoveCarnival','lovePark','LovePark','loveGift','LoveGift'
+                  ],
+                  'ids': ['6475700703','240207','20240207','202402','2402','202402071','2024020701'],
+              },
+              'lucky-carnival-2024': {
+                  'dates': ('20241001','20241115'),
+                  'keywords': ['lucky carnival','luckycarnival','upgrade the prize pool','prize pool','lucky moments','abundant rewards'],
+                  'years': ['2023dist','2024dist','2025dist'],
+                  'names': [
+                      'luckyCarnival','LuckyCarnival','luckycarnival','lucky_carnival','lucky-carnival','luckyCarnival2024','LuckyCarnival2024',
+                      'carnival','Carnival','carnival2024','Carnival2024','luckyMoment','LuckyMoment','luckyPool','LuckyPool',
+                      'prizePool','PrizePool','luckyDraw','LuckyDraw','luckyParty','LuckyParty','superLucky','SuperLucky',
+                      'luckyStage','LuckyStage','luckyShow','LuckyShow','luckyFestival','LuckyFestival','luckyTreasure','LuckyTreasure',
+                      'fortuneCarnival','FortuneCarnival','happyCarnival','HappyCarnival','rewardCarnival','RewardCarnival'
+                  ],
+                  'ids': ['6737220863','241022','20241022','202410','2410','202410221','2024102201'],
+              },
+              'treasure-tycoon-2026': {
+                  'dates': ('20260801','20260831'),
+                  'keywords': ['treasure tycoon','treasuretycoon','wealth path','wealthpath','lucky treasure hunt tickets','random treasures','pony'],
+                  'years': ['2025dist','2026dist'],
+                  'names': [
+                      'treasureTycoon','TreasureTycoon','treasuretycoon','treasure_tycoon','treasure-tycoon','treasureTycoon2026','TreasureTycoon2026',
+                      'wealthPath','WealthPath','wealthpath','treasureHunt','TreasureHunt','luckyTreasure','LuckyTreasure',
+                      'luckyTreasureHunt','LuckyTreasureHunt','treasure','Treasure','tycoon','Tycoon','ponyTreasure','PonyTreasure',
+                      'treasurePath','TreasurePath','wealthRoad','WealthRoad','treasureRoad','TreasureRoad','wealthTycoon','WealthTycoon',
+                      'luckyTycoon','LuckyTycoon','treasureAdventure','TreasureAdventure','richPath','RichPath','goldenPath','GoldenPath'
+                  ],
+                  'ids': ['1021917730722093','260805','20260805','202608','2608','202608051','2026080501'],
+              },
+          }
+
+          GENERIC = [
+              'the activity has ended','activity has ended','more coming soon','404 not found','page not found',
+              'temporarily offline','sorry, you have been blocked','cloudflare','domain is for sale','huge domains'
+          ]
+
+          def fetch(url: str, timeout=(12, 35), method='GET') -> dict:
+              row = {'url': url}
+              try:
+                  r = SESSION.request(method, url, timeout=timeout, allow_redirects=True)
+                  body = r.content
+                  text = body[:500000].decode('utf-8','ignore')
+                  soup = BeautifulSoup(text, 'lxml') if ('html' in (r.headers.get('content-type') or '').lower() or '<html' in text.lower()) else None
+                  visible = re.sub(r'\s+',' ',soup.get_text(' ',strip=True))[:5000] if soup else text[:5000]
+                  refs=[]
+                  if soup:
+                      for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src')]:
+                          for el in soup.find_all(tag):
+                              v=el.get(attr)
+                              if v: refs.append(urljoin(r.url,v))
+                  low=(text+' '+visible).lower()
+                  row.update({
+                      'status':r.status_code,'final_url':r.url,'bytes':len(body),'ctype':r.headers.get('content-type'),
+                      'title':soup.title.get_text(strip=True) if soup and soup.title else '',
+                      'visible_text':visible,'asset_refs':refs[:1000],
+                      'generic':any(x in low for x in GENERIC),
+                      'spa_signals':sum(1 for x in ['js/app.','css/app.','chunk-vendors','webpack','vue.runtime','manifest.json','__webpack_require__','react'] if x in low),
+                      'sha256':hashlib.sha256(body).hexdigest(),
+                      'sample':text[:30000],
+                  })
+              except Exception as exc:
+                  row['error']=repr(exc)
+              return row
+
+          # 1) Concurrent dedicated-root and fixed-template probing.
+          jobs=[]
+          for target,cfg in TARGETS.items():
+              for year in cfg['years']:
+                  for name in cfg['names']:
+                      for host in ['activity2.yalla.live','event.yalla.live','activitytest2.yalla.live']:
+                          jobs.append((target,'root',f'https://{host}/activity/{year}/{name}/',{'year':year,'name':name,'host':host}))
+              for activity_id in cfg['ids']:
+                  for year in ['2024dist','2025dist','2026dist']:
+                      jobs.append((target,'template',f'https://activity2.yalla.live/activity/{year}/templateActivity/?activityId={activity_id}',{'year':year,'activity_id':activity_id}))
+
+          rows=[]
+          def run_job(job):
+              target,kind,url,meta=job
+              r=fetch(url)
+              r.update(target=target,kind=kind,**meta)
+              return r
+          with concurrent.futures.ThreadPoolExecutor(max_workers=36) as ex:
+              for result in ex.map(run_job,jobs):
+                  rows.append(result)
+          (OUT/'root-template-probes.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+
+          # 2) Archive inventories and keyword queries across public archives.
+          archive_results=[]
+          def cdx(url_pattern, from_date=None, to_date=None, limit=50000):
+              params='url='+quote(url_pattern,safe='')+'&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode:200&collapse=urlkey&limit='+str(limit)
+              if from_date: params+='&from='+from_date
+              if to_date: params+='&to='+to_date
+              return fetch('https://web.archive.org/cdx/search/cdx?'+params,timeout=(20,150))
+
+          archive_jobs=[]
+          for target,cfg in TARGETS.items():
+              start,end=cfg['dates']
+              for pattern in [
+                  'activity2.yalla.live/activity/*',
+                  'activity2.yalla.live/activity/2024dist/*',
+                  'activity2.yalla.live/activity/2025dist/*',
+                  'activity2.yalla.live/activity/2026dist/*',
+                  'file.yalla.live/Activity/*',
+                  'file.peakxyz.com/Activity/*',
+                  'event.yalla.live/*',
+              ]:
+                  archive_jobs.append((target,'date-inventory',pattern,start,end))
+              for term in ['sweet*love','sweet*moment','valentine','lucky*carnival','lucky*pool','prize*pool','treasure*tycoon','wealth*path','treasure*hunt','lucky*treasure']:
+                  archive_jobs.append((target,'keyword',f'activity2.yalla.live/activity/*/*{term}*',None,None))
+                  archive_jobs.append((target,'keyword',f'file.yalla.live/Activity/*{term}*',None,None))
+
+          def run_archive(job):
+              target,kind,pattern,start,end=job
+              r=cdx(pattern,start,end,50000)
+              return {'target':target,'kind':kind,'pattern':pattern,'from':start,'to':end,'result':r}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+              for result in ex.map(run_archive,archive_jobs): archive_results.append(result)
+          (OUT/'archive-results.json').write_text(json.dumps(archive_results,ensure_ascii=False,indent=2))
+
+          # Parse every successful CDX response into distinct URLs/root names.
+          archive_urls=defaultdict(set)
+          archive_roots=defaultdict(Counter)
+          for item in archive_results:
+              r=item['result']
+              if r.get('status')!=200: continue
+              try:
+                  payload=json.loads(r.get('sample') or '[]')
+              except Exception:
+                  try: payload=json.loads((r.get('visible_text') or '[]'))
+                  except Exception: continue
+              if not isinstance(payload,list) or len(payload)<2: continue
+              header=payload[0]
+              for vals in payload[1:]:
+                  row=dict(zip(header,vals))
+                  original=row.get('original')
+                  if not original: continue
+                  archive_urls[item['target']].add(original)
+                  m=re.search(r'/activity/(?:\d{4}dist|YallaActivity\d{4})/([^/?#]+)',urlparse(original).path,re.I)
+                  if m: archive_roots[item['target']][m.group(1)]+=1
+          parsed={t:{'urls':sorted(v),'roots':archive_roots[t].most_common()} for t,v in archive_urls.items()}
+          (OUT/'archive-parsed.json').write_text(json.dumps(parsed,ensure_ascii=False,indent=2))
+
+          # 3) Event metadata, images, official social video, and search-result pages.
+          event_pages=[]
+          for target,event_id in [('sweet-love-2024','6475700703'),('lucky-carnival-2024','6737220863')]:
+              for url in [f'https://appshunter.io/events/{event_id}',f'https://apps.apple.com/us/app/yalla-play-game-voice-chat/id1091902866?eventid={event_id}']:
+                  r=fetch(url,timeout=(20,70)); r.update(target=target,event_id=event_id); event_pages.append(r)
+          (OUT/'event-pages.json').write_text(json.dumps(event_pages,ensure_ascii=False,indent=2))
+
+          social=OUT/'social'/'treasure-tycoon-2026'; social.mkdir(parents=True,exist_ok=True)
+          video_url='https://www.facebook.com/yallavoicechatrooms/videos/1021917730722093/'
+          try:
+              p=subprocess.run(['yt-dlp','--no-playlist','--write-info-json','--write-thumbnail','--convert-thumbnails','jpg','--merge-output-format','mp4','-o',str(social/'source.%(ext)s'),video_url],capture_output=True,text=True,timeout=300)
+              (social/'stdout.txt').write_text(p.stdout); (social/'stderr.txt').write_text(p.stderr)
+          except Exception as exc: (social/'error.txt').write_text(repr(exc))
+
+          # 4) Follow archive-discovered roots and all 200 SPA-ish live roots; render and record network.
+          candidates=[]
+          for r in rows:
+              refs=r.get('asset_refs') or []
+              scripts=[u for u in refs if re.search(r'\.(?:js|css)(?:\?|$)',u,re.I)]
+              if r.get('status')==200 and not r.get('generic') and r.get('bytes',0)>500 and (r.get('spa_signals',0)>0 or len(scripts)>=2):
+                  candidates.append(dict(r))
+          for target,info in parsed.items():
+              for root,count in info.get('roots',[]):
+                  for year in TARGETS[target]['years']:
+                      url=f'https://activity2.yalla.live/activity/{year}/{root}/'
+                      if any(x.get('url')==url for x in candidates): continue
+                      r=fetch(url); r.update(target=target,kind='archive-root-followup',year=year,name=root,archive_count=count)
+                      refs=r.get('asset_refs') or []; scripts=[u for u in refs if re.search(r'\.(?:js|css)(?:\?|$)',u,re.I)]
+                      if r.get('status')==200 and not r.get('generic') and r.get('bytes',0)>500 and (r.get('spa_signals',0)>0 or len(scripts)>=2): candidates.append(r)
+
+          # Deduplicate by target + URL.
+          dedup={}
+          for r in candidates: dedup[(r['target'],r['url'])]=r
+          candidates=list(dedup.values())
+          (OUT/'candidate-shells.json').write_text(json.dumps(candidates,ensure_ascii=False,indent=2))
+
+          async def render_candidates():
+              rendered=[]
+              if not candidates: return rendered
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch()
+                  for idx,r in enumerate(candidates[:160]):
+                      page=await browser.new_page(viewport={'width':390,'height':844},device_scale_factor=1,locale='en-US',user_agent='Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36')
+                      net=[]; errors=[]; failed=[]
+                      page.on('response',lambda x,net=net: net.append({'url':x.url,'status':x.status,'type':x.request.resource_type,'method':x.request.method}))
+                      page.on('pageerror',lambda e,errors=errors: errors.append(str(e)))
+                      page.on('requestfailed',lambda q,failed=failed: failed.append({'url':q.url,'failure':q.failure}))
+                      item=dict(r); slug=f"{idx:03d}-{r['target']}-{hashlib.sha1(r['url'].encode()).hexdigest()[:9]}"
+                      try:
+                          await page.goto(r['url'],wait_until='domcontentloaded',timeout=90000)
+                          await page.wait_for_timeout(10000)
+                          h=await page.evaluate('document.documentElement.scrollHeight')
+                          for y in range(0,max(h,844)+844,560):
+                              await page.evaluate('(y)=>window.scrollTo(0,y)',y); await page.wait_for_timeout(120)
+                          await page.evaluate('window.scrollTo(0,0)'); await page.wait_for_timeout(500)
+                          await page.screenshot(path=str(OUT/f'{slug}-full.png'),full_page=True)
+                          text=await page.locator('body').inner_text(timeout=15000); dom=await page.content()
+                          (OUT/f'{slug}-text.txt').write_text(text,errors='ignore')
+                          (OUT/f'{slug}-dom.html').write_text(dom,errors='ignore')
+                          low=(text+' '+dom).lower()
+                          item['render']={'title':await page.title(),'url':page.url,'height':await page.evaluate('document.documentElement.scrollHeight'),'width':await page.evaluate('document.documentElement.scrollWidth'),'text':text[:30000],'network':net,'errors':errors,'failed':failed,'screenshot':f'{slug}-full.png'}
+                          item['keyword_hits']=[k for k in TARGETS[r['target']]['keywords'] if k.lower() in low]
+                      except Exception as exc: item['render']={'error':repr(exc),'network':net,'errors':errors,'failed':failed}
+                      rendered.append(item); await page.close()
+                  await browser.close()
+              return rendered
+          rendered=asyncio.run(render_candidates())
+          (OUT/'rendered.json').write_text(json.dumps(rendered,ensure_ascii=False,indent=2))
+
+          # 5) Strict verdict. No generic shell, single-screen placeholder, or unrelated page is accepted.
+          confirmed=[]
+          for item in rendered:
+              rr=item.get('render') or {}; text=(rr.get('text') or '').lower(); hits=item.get('keyword_hits') or []
+              if hits and rr.get('height',0)>900 and not any(g in text for g in GENERIC): confirmed.append(item)
+          (OUT/'confirmed.json').write_text(json.dumps(confirmed,ensure_ascii=False,indent=2))
+
+          report=['# Pro-Yalla public deep probe','',f'Root/template requests: {len(rows)}',f'Archive queries: {len(archive_results)}',f'Candidate SPA shells: {len(candidates)}',f'Target-confirmed rich SPAs: {len(confirmed)}','']
+          for target in TARGETS:
+              report += [f'## {target}','']
+              roots=parsed.get(target,{}).get('roots',[])
+              if roots: report += ['Archive root candidates: '+', '.join(f'{r} ({n})' for r,n in roots[:40]),'']
+              hits=[x for x in confirmed if x.get('target')==target]
+              if hits:
+                  for x in hits:
+                      report += [f"- CONFIRMED `{x.get('url')}`",f"  - keyword hits: {x.get('keyword_hits')}",f"  - height: {(x.get('render') or {}).get('height')}",f"  - screenshot: {(x.get('render') or {}).get('screenshot')}"]
+              else: report += ['- No target-confirmed rich SPA after this pass. HTTP 200 generic templates and single-page/ended shells were rejected.']
+              report += ['']
+          (OUT/'REPORT.md').write_text('\n'.join(report),encoding='utf-8')
+          PY
+          python /tmp/probe.py
+
+      - name: Write report to summary
+        if: always()
+        run: |
+          test -f artifacts/pro-yalla-public-deep/REPORT.md && cat artifacts/pro-yalla-public-deep/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-public-deep-probe
+          path: artifacts/pro-yalla-public-deep
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
