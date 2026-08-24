@@ -1,0 +1,58 @@
+name: FSB Interface Discovery
+
+on:
+  push:
+    branches:
+      - research/fsb-interface-discovery-20260824
+    paths:
+      - 'research/fsb-interface-discovery/**'
+      - '.github/workflows/fsb-interface-discovery.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'research/fsb-interface-discovery/**'
+      - '.github/workflows/fsb-interface-discovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependency
+        run: python -m pip install --disable-pip-version-check requests==2.32.5
+      - name: Run public read-only probes
+        env:
+          FSB_DISCOVERY_OUT: research/fsb-interface-discovery/results
+        run: python research/fsb-interface-discovery/discover.py | tee research/fsb-interface-discovery/run.log
+      - name: Upload sanitized results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsb-interface-discovery
+          path: |
+            research/fsb-interface-discovery/results
+            research/fsb-interface-discovery/run.log
+          if-no-files-found: error
+          retention-days: 7
+      - name: Commit results on push run
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/fsb-interface-discovery/results research/fsb-interface-discovery/run.log
+          if git diff --cached --quiet; then
+            echo 'No changes'
+          else
+            git commit -m 'research: record FSB interface discovery results'
+            git push origin HEAD:research/fsb-interface-discovery-20260824
+          fi
