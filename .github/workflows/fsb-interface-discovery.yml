@@ -33,13 +33,19 @@ jobs:
         env:
           FSB_FILING_QUERY_OUT: research/fsb-interface-discovery/filing-query-results
         run: python research/fsb-interface-discovery/query_filing.py | tee research/fsb-interface-discovery/filing-query-run.log
-      - name: Upload filing result
+      - name: Probe evidence-derived FSB store candidate
+        env:
+          FSB_CANDIDATE_OUT: research/fsb-interface-discovery/candidate-results
+        run: python research/fsb-interface-discovery/probe_evidence_candidates.py | tee research/fsb-interface-discovery/candidate-run.log
+      - name: Upload focused results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: fsb-interface-discovery
           path: |
             research/fsb-interface-discovery/filing-query-results
+            research/fsb-interface-discovery/candidate-results
             research/fsb-interface-discovery/filing-query-run.log
+            research/fsb-interface-discovery/candidate-run.log
           if-no-files-found: error
           retention-days: 7
