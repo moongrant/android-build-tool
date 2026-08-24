@@ -1,0 +1,132 @@
+{
+  "label": "candidate-08",
+  "method": "POST",
+  "path": "/wxapi/AppointmentVenue/LoadClassRooms",
+  "requestBody": {
+    "userId": 6038652
+  },
+  "storeHeader": "6038652",
+  "statusCode": 200,
+  "elapsedMs": 236,
+  "responseHeaders": {
+    "Server": "openresty",
+    "Date": "Mon, 24 Aug 2026 08:51:42 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Cache-Control": "private",
+    "Content-Encoding": "gzip"
+  },
+  "bodyText": "{\"successed\":true,\"status\":\"success\",\"errorCode\":0,\"result\":{\"classrooms\":[{\"txtAreaUid\":\"0\",\"txtUid\":\"1775556146897330236\",\"txtProjectUid\":\"1775556129325750199\",\"txtParentClassroomUid\":\"0\",\"id\":39226,\"userId\":6038652,\"uid\":1775556146897330236,\"areaUid\":0,\"name\":\"1号风雨场\",\"projectUserId\":6038652,\"projectUid\":1775556129325750199,\"createdDatetime\":\"2026-04-07 18:02:26\",\"updatedDatetime\":\"0001-01-01 00:00:00\",\"parentClassroomUid\":0,\"classroomType\":0},{\"txtAreaUid\":\"0\",\"txtUid\":\"1775631557343122400\",\"txtProjectUid\":\"1775556129325750199\",\"txtParentClassroomUid\":\"0\",\"id\":39278,\"userId\":6038652,\"uid\":1775631557343122400,\"areaUid\":0,\"name\":\"2号风雨场\",\"projectUserId\":6038652,\"projectUid\":1775556129325750199,\"createdDatetime\":\"2026-04-08 14:59:17\",\"updatedDatetime\":\"0001-01-01 00:00:00\",\"parentClassroomUid\":0,\"classroomType\":0},{\"txtAreaUid\":\"0\",\"txtUid\":\"1775631565182174014\",\"txtProjectUid\":\"1775556129325750199\",\"txtParentClassroomUid\":\"0\",\"id\":39279,\"userId\":6038652,\"uid\":1775631565182174014,\"areaUid\":0,\"name\":\"3号风雨场\",\"projectUserId\":6038652,\"projectUid\":1775556129325750199,\"createdDatetime\":\"2026-04-08 14:59:25\",\"updatedDatetime\":\"0001-01-01 00:00:00\",\"parentClassroomUid\":0,\"classroomType\":0},{\"txtAreaUid\":\"0\",\"txtUid\":\"1775631573222897407\",\"txtProjectUid\":\"1775556129325750199\",\"txtParentClassroomUid\":\"0\",\"id\":39280,\"userId\":6038652,\"uid\":1775631573222897407,\"areaUid\":0,\"name\":\"4号风雨场\",\"projectUserId\":6038652,\"projectUid\":1775556129325750199,\"createdDatetime\":\"2026-04-08 14:59:33\",\"updatedDatetime\":\"0001-01-01 00:00:00\",\"parentClassroomUid\":0,\"classroomType\":0},{\"txtAreaUid\":\"0\",\"txtUid\":\"1775631580445117372\",\"txtProjectUid\":\"1775556129325750199\",\"txtParentClassroomUid\":\"0\",\"id\":39281,\"userId\":6038652,\"uid\":1775631580445117372,\"areaUid\":0,\"name\":\"5号风雨场\",\"projectUserId\":6038652,\"projectUid\":1775556129325750199,\"createdDatetime\":\"2026-04-08 14:59:40\",\"updatedDatetime\":\"0001-01-01 00:00:00\",\"parentClassroomUid\":0,\"classroomType\":0},{\"txtAreaUid\":\"0\",\"txtUid\":\"1775631587476422627\",\"txtProjectUid\":\"1775556129325750199\",\"txtParentClassroomUid\":\"0\",\"id\":39282,\"userId\":6038652,\"uid\":1775631587476422627,\"areaUid\":0,\"name\":\"6号风雨场\",\"projectUserId\":6038652,\"projectUid\":1775556129325750199,\"createdDatetime\":\"2026-04-08 14:59:47\",\"updatedDatetime\":\"0001-01-01 00:00:00\",\"parentClassroomUid\":0,\"classroomType\":0}]}}",
+  "bodyJson": {
+    "successed": true,
+    "status": "success",
+    "errorCode": 0,
+    "result": {
+      "classrooms": [
+        {
+          "txtAreaUid": "0",
+          "txtUid": "1775556146897330236",
+          "txtProjectUid": "1775556129325750199",
+          "txtParentClassroomUid": "0",
+          "id": 39226,
+          "userId": 6038652,
+          "uid": 1775556146897330236,
+          "areaUid": 0,
+          "name": "1号风雨场",
+          "projectUserId": 6038652,
+          "projectUid": 1775556129325750199,
+          "createdDatetime": "2026-04-07 18:02:26",
+          "updatedDatetime": "0001-01-01 00:00:00",
+          "parentClassroomUid": 0,
+          "classroomType": 0
+        },
+        {
+          "txtAreaUid": "0",
+          "txtUid": "1775631557343122400",
+          "txtProjectUid": "1775556129325750199",
+          "txtParentClassroomUid": "0",
+          "id": 39278,
+          "userId": 6038652,
+          "uid": 1775631557343122400,
+          "areaUid": 0,
+          "name": "2号风雨场",
+          "projectUserId": 6038652,
+          "projectUid": 1775556129325750199,
+          "createdDatetime": "2026-04-08 14:59:17",
+          "updatedDatetime": "0001-01-01 00:00:00",
+          "parentClassroomUid": 0,
+          "classroomType": 0
+        },
+        {
+          "txtAreaUid": "0",
+          "txtUid": "1775631565182174014",
+          "txtProjectUid": "1775556129325750199",
+          "txtParentClassroomUid": "0",
+          "id": 39279,
+          "userId": 6038652,
+          "uid": 1775631565182174014,
+          "areaUid": 0,
+          "name": "3号风雨场",
+          "projectUserId": 6038652,
+          "projectUid": 1775556129325750199,
+          "createdDatetime": "2026-04-08 14:59:25",
+          "updatedDatetime": "0001-01-01 00:00:00",
+          "parentClassroomUid": 0,
+          "classroomType": 0
+        },
+        {
+          "txtAreaUid": "0",
+          "txtUid": "1775631573222897407",
+          "txtProjectUid": "1775556129325750199",
+          "txtParentClassroomUid": "0",
+          "id": 39280,
+          "userId": 6038652,
+          "uid": 1775631573222897407,
+          "areaUid": 0,
+          "name": "4号风雨场",
+          "projectUserId": 6038652,
+          "projectUid": 1775556129325750199,
+          "createdDatetime": "2026-04-08 14:59:33",
+          "updatedDatetime": "0001-01-01 00:00:00",
+          "parentClassroomUid": 0,
+          "classroomType": 0
+        },
+        {
+          "txtAreaUid": "0",
+          "txtUid": "1775631580445117372",
+          "txtProjectUid": "1775556129325750199",
+          "txtParentClassroomUid": "0",
+          "id": 39281,
+          "userId": 6038652,
+          "uid": 1775631580445117372,
+          "areaUid": 0,
+          "name": "5号风雨场",
+          "projectUserId": 6038652,
+          "projectUid": 1775556129325750199,
+          "createdDatetime": "2026-04-08 14:59:40",
+          "updatedDatetime": "0001-01-01 00:00:00",
+          "parentClassroomUid": 0,
+          "classroomType": 0
+        },
+        {
+          "txtAreaUid": "0",
+          "txtUid": "1775631587476422627",
+          "txtProjectUid": "1775556129325750199",
+          "txtParentClassroomUid": "0",
+          "id": 39282,
+          "userId": 6038652,
+          "uid": 1775631587476422627,
+          "areaUid": 0,
+          "name": "6号风雨场",
+          "projectUserId": 6038652,
+          "projectUid": 1775556129325750199,
+          "createdDatetime": "2026-04-08 14:59:47",
+          "updatedDatetime": "0001-01-01 00:00:00",
+          "parentClassroomUid": 0,
+          "classroomType": 0
+        }
+      ]
+    }
+  }
+}

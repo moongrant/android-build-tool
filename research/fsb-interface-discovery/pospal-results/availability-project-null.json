@@ -1,13 +1,17 @@
 {
-  "label": "pospal-fuzhongfu-readonly-baseline",
+  "label": "availability-project-null",
   "method": "POST",
-  "url": "https://wxservice-stg48.pospal.cn/wxapi/AppointmentVenue/LoadValidClassRoomApptSettingV2",
-  "status": 200,
-  "finalUrl": "https://wxservice-stg48.pospal.cn/wxapi/AppointmentVenue/LoadValidClassRoomApptSettingV2",
-  "elapsedMs": 1357,
+  "path": "/wxapi/AppointmentVenue/LoadValidClassRoomApptSettingV2",
+  "requestBody": {
+    "dateTime": "2026-08-24",
+    "projectUid": null
+  },
+  "storeHeader": "6038652",
+  "statusCode": 200,
+  "elapsedMs": 428,
   "responseHeaders": {
     "Server": "openresty",
-    "Date": "Mon, 24 Aug 2026 08:51:31 GMT",
+    "Date": "Mon, 24 Aug 2026 08:51:35 GMT",
     "Content-Type": "application/json; charset=utf-8",
     "Transfer-Encoding": "chunked",
     "Connection": "keep-alive",

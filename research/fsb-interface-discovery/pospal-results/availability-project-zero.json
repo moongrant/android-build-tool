@@ -1,0 +1,31 @@
+{
+  "label": "availability-project-zero",
+  "method": "POST",
+  "path": "/wxapi/AppointmentVenue/LoadValidClassRoomApptSettingV2",
+  "requestBody": {
+    "dateTime": "2026-08-24",
+    "projectUid": "0"
+  },
+  "storeHeader": "6038652",
+  "statusCode": 200,
+  "elapsedMs": 343,
+  "responseHeaders": {
+    "Server": "openresty",
+    "Date": "Mon, 24 Aug 2026 08:51:37 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "111",
+    "Connection": "keep-alive",
+    "Cache-Control": "private"
+  },
+  "bodyText": "{\"successed\":true,\"status\":\"success\",\"errorCode\":0,\"result\":{\"slots\":[],\"validClassRooms\":[],\"enrollSlots\":[]}}",
+  "bodyJson": {
+    "successed": true,
+    "status": "success",
+    "errorCode": 0,
+    "result": {
+      "slots": [],
+      "validClassRooms": [],
+      "enrollSlots": []
+    }
+  }
+}
