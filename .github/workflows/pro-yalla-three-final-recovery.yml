@@ -1,0 +1,333 @@
+name: Pro Yalla three campaign final recovery
+
+on:
+  push:
+    branches:
+      - research/yalla-three-final-recovery-20260824
+    paths:
+      - .github/workflows/pro-yalla-three-final-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/yalla-three-final-recovery-20260824
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install recovery dependencies
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep unzip jq ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml pillow playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Download emulator and historical evidence artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/yalla-artifacts research-output/raw
+          runs=(32700624402 32700900958 32699033183 32698335260 32699393407)
+          for run in "${runs[@]}"; do
+            dir="/tmp/yalla-artifacts/$run"
+            mkdir -p "$dir"
+            gh run view "$run" --repo "$GITHUB_REPOSITORY" --json status,conclusion,name,url,jobs > "research-output/raw/run-$run.json" || true
+            for attempt in 1 2 3 4 5; do
+              if gh run download "$run" --repo "$GITHUB_REPOSITORY" --dir "$dir"; then break; fi
+              sleep $((attempt*12))
+            done
+          done
+          find /tmp/yalla-artifacts -type f -printf '%p\t%s\n' | sort > research-output/raw/downloaded-files.tsv
+
+      - name: Recover exact SPA roots, assets and screenshots
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/recover.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio, base64, hashlib, json, os, re, shutil, subprocess, time, zipfile
+          from collections import defaultdict
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse, unquote
+
+          import requests
+          from bs4 import BeautifulSoup
+          from PIL import Image, ImageDraw, ImageFont
+          from playwright.async_api import async_playwright
+
+          ROOT = Path('/tmp/yalla-artifacts')
+          OUT = Path('research-output')
+          OUT.mkdir(exist_ok=True)
+          TEXT = OUT/'text-evidence'; TEXT.mkdir(exist_ok=True)
+          SESSION = requests.Session()
+          SESSION.headers.update({
+              'User-Agent':'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36',
+              'Accept-Language':'en-US,en;q=.9,ar;q=.7',
+              'Accept':'*/*',
+          })
+
+          TARGETS = {
+              'sweet-love-2024': re.compile(r'sweet\s*[-_ ]?love|sweet\s*[-_ ]?moment|love\s*[-_ ]?points|valentine|couple|cp\s*[-_ ]?task|6475700703',re.I),
+              'lucky-carnival-2024': re.compile(r'lucky\s*[-_ ]?carnival|prize\s*[-_ ]?pool|lucky\s*[-_ ]?moment|lottery|6737220863',re.I),
+              'treasure-tycoon-2026': re.compile(r'treasure\s*[-_ ]?tycoon|wealth\s*[-_ ]?path|lucky\s*[-_ ]?treasure|pony\s*[-_ ]?treasure|1021917730722093',re.I),
+          }
+          URL_RE = re.compile(r'https?://[^\s"\'<>\\)\]}]+',re.I)
+          TEXT_EXT = {'.txt','.md','.json','.java','.xml','.html','.htm','.js','.css','.yml','.yaml','.csv','.tsv','.properties','.log','.smali'}
+          IMG_EXT = {'.png','.jpg','.jpeg','.webp','.gif','.svg'}
+          GENERIC = ['404 not found','page not found','the activity has ended','activity has ended','more coming soon','sorry, you have been blocked','temporarily offline','domain is for sale']
+
+          # Expand nested ZIPs and preserve relevant small text/image evidence.
+          extracted = []
+          queue = [p for p in ROOT.rglob('*') if p.is_file()]
+          seen_archives = set()
+          for p in list(queue):
+              if p.suffix.lower()=='.zip' and p not in seen_archives:
+                  seen_archives.add(p)
+                  dest = p.with_suffix('')
+                  dest.mkdir(exist_ok=True)
+                  try:
+                      with zipfile.ZipFile(p) as z:
+                          z.extractall(dest)
+                  except Exception:
+                      pass
+          files = [p for p in ROOT.rglob('*') if p.is_file()]
+
+          all_urls = defaultdict(lambda:{'files':set(),'targets':set(),'contexts':[]})
+          target_hits = {k:[] for k in TARGETS}
+          images = {k:[] for k in TARGETS}
+          reports = []
+
+          for p in files:
+              ext=p.suffix.lower()
+              if ext in TEXT_EXT and p.stat().st_size <= 20*1024*1024:
+                  try:text=p.read_text(errors='ignore')
+                  except Exception:continue
+                  rel=str(p.relative_to(ROOT))
+                  matches=[]
+                  for target,pat in TARGETS.items():
+                      if pat.search(text):
+                          matches.append(target)
+                          for m in list(pat.finditer(text))[:50]:
+                              target_hits[target].append({'file':rel,'match':m.group(0),'context':text[max(0,m.start()-500):min(len(text),m.end()+1200)]})
+                  for m in URL_RE.finditer(text):
+                      u=m.group(0).rstrip('.,;:').replace('\\/','/').rstrip('\\')
+                      if len(u)>2200:continue
+                      rec=all_urls[u]; rec['files'].add(rel)
+                      for t in matches:rec['targets'].add(t)
+                      if len(rec['contexts'])<4:rec['contexts'].append(text[max(0,m.start()-300):min(len(text),m.end()+500)])
+                  if p.name.lower() in {'report.md','summary.json','captured-urls.json','captured-events.json','target-context.txt','all-urls.txt','domain-context.txt','network-activity-context.txt'}:
+                      out=TEXT/(hashlib.sha1(rel.encode()).hexdigest()[:10]+'-'+p.name)
+                      out.write_text(text[:500000],errors='ignore')
+                      reports.append({'source':rel,'copy':str(out.relative_to(OUT))})
+              elif ext in IMG_EXT and p.stat().st_size<=25*1024*1024:
+                  low=str(p).lower()
+                  for target,pat in TARGETS.items():
+                      if pat.search(low):images[target].append(str(p))
+
+          # Score exact URLs.
+          url_rows=[]
+          for u,r in all_urls.items():
+              ul=u.lower();score=0
+              if 'activity2.yalla' in ul:score+=100
+              if 'event.yalla' in ul:score+=90
+              if 'h5client' in ul:score+=60
+              if '/activity/' in ul:score+=35
+              if 'templateactivity' in ul:score+=30
+              if any(x in ul for x in ['sweet','love','valentine','carnival','lucky','treasure','tycoon','wealth']):score+=55
+              if ul.endswith(('.js','.css','.json','.html','/')):score+=10
+              if 'web.archive.org' in ul or 'arquivo.pt' in ul:score+=15
+              if 'github.com' in ul or 'api.github' in ul:score-=50
+              url_rows.append({'url':u,'score':score,'files':sorted(r['files']),'targets':sorted(r['targets']),'contexts':r['contexts']})
+          url_rows.sort(key=lambda x:(x['score'],len(x['files'])),reverse=True)
+          (OUT/'all-candidate-urls.json').write_text(json.dumps(url_rows,ensure_ascii=False,indent=2))
+          (OUT/'target-context-hits.json').write_text(json.dumps(target_hits,ensure_ascii=False,indent=2))
+
+          # Merge explicit hypotheses with any URLs found by emulator/API forensics.
+          explicit=[]
+          patterns={
+            'sweet-love-2024':('2024dist',['sweetLove','SweetLove','sweetMoment','SweetMoment','valentine','Valentine','sweetValentine','SweetValentine','loveChallenge','LoveChallenge']),
+            'lucky-carnival-2024':('2024dist',['luckyCarnival','LuckyCarnival','luckyMoment','LuckyMoment','luckyPool','LuckyPool','prizePool','PrizePool','luckyDraw','LuckyDraw']),
+            'treasure-tycoon-2026':('2026dist',['treasureTycoon','TreasureTycoon','wealthPath','WealthPath','treasureHunt','TreasureHunt','luckyTreasure','LuckyTreasure','treasurePath','TreasurePath','ponyTreasure','PonyTreasure']),
+          }
+          for target,(year,names) in patterns.items():
+              for name in names:
+                  explicit.append({'target':target,'url':f'https://activity2.yalla.live/activity/{year}/{name}/','source':'explicit-path-hypothesis'})
+          for row in url_rows[:1200]:
+              u=row['url'].replace('\\u0026','&')
+              ul=u.lower()
+              if not any(h in ul for h in ['activity2.yalla','event.yalla','h5client','web.archive.org/web/','arquivo.pt/wayback']):continue
+              if not any(x in ul for x in ['/activity/','templateactivity','sweet','valentine','carnival','treasure','tycoon','wealth','lucky']):continue
+              if row['targets']:
+                  for target in row['targets']:explicit.append({'target':target,'url':u,'source':'forensic-evidence'})
+              else:
+                  for target,pat in TARGETS.items():
+                      if pat.search(u):explicit.append({'target':target,'url':u,'source':'url-keyword'})
+
+          # Deduplicate.
+          candidates=[];seen=set()
+          for x in explicit:
+              u=x['url'].replace('\\/','/').rstrip('\\')
+              key=(x['target'],u)
+              if key in seen:continue
+              seen.add(key);x=dict(x);x['url']=u;candidates.append(x)
+
+          probe_dir=OUT/'probe-bodies';probe_dir.mkdir(exist_ok=True)
+          probes=[]
+          for idx,x in enumerate(candidates[:1200]):
+              u=x['url'];rec=dict(x)
+              try:
+                  r=SESSION.get(u,timeout=(10,35),allow_redirects=True)
+                  raw=r.content;text=raw[:800000].decode('utf-8','ignore');low=text.lower();soup=BeautifulSoup(text,'lxml')
+                  refs=[]
+                  for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src')]:
+                      for el in soup.find_all(tag):
+                          v=el.get(attr)
+                          if v:refs.append(urljoin(r.url,v))
+                  body_text=re.sub(r'\s+',' ',soup.get_text(' ',strip=True))[:6000]
+                  rec.update(http=r.status_code,effective=r.url,bytes=len(raw),content_type=r.headers.get('content-type'),title=soup.title.get_text(strip=True) if soup.title else '',refs=refs[:400],body_text=body_text,sha256=hashlib.sha256(raw).hexdigest())
+                  combined=(text+' '+body_text).lower()
+                  rec['generic']=any(g in combined for g in GENERIC)
+                  rec['spa_signals']=sum(1 for s in ['js/app.','css/app.','chunk-vendors','webpack','__webpack_require__','vue.runtime','manifest.json'] if s in combined)
+                  rec['identity_hits']=[m.group(0) for m in list(TARGETS[x['target']].finditer(text+' '+body_text))[:20]]
+                  rec['promising']=r.status_code==200 and not rec['generic'] and len(raw)>500 and (rec['spa_signals']>0 or len([z for z in refs if re.search(r'\.(js|css)(\?|$)',z,re.I)])>=2)
+                  if rec['promising']:
+                      (probe_dir/f'{idx:04d}-{x["target"]}.html').write_bytes(raw)
+              except Exception as e:
+                  rec['error']=repr(e);rec['promising']=False
+              probes.append(rec)
+          (OUT/'url-probes.json').write_text(json.dumps(probes,ensure_ascii=False,indent=2))
+
+          # Select unique promising SPA roots, requiring either direct identity or forensic association.
+          selected=[];seen_sha=set()
+          for r in sorted([p for p in probes if p.get('promising')],key=lambda p:(len(p.get('identity_hits',[])),p.get('spa_signals',0),p.get('bytes',0)),reverse=True):
+              sha=r.get('sha256')
+              if sha in seen_sha:continue
+              seen_sha.add(sha);selected.append(r)
+          (OUT/'selected-roots.json').write_text(json.dumps(selected,ensure_ascii=False,indent=2))
+
+          async def capture_roots():
+              if not selected:return []
+              rendered=[]
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch()
+                  for i,root in enumerate(selected[:60]):
+                      target=root['target'];folder=OUT/'renders'/target/f'{i:02d}-{hashlib.sha1(root["url"].encode()).hexdigest()[:10]}'
+                      folder.mkdir(parents=True,exist_ok=True)
+                      context=await browser.new_context(viewport={'width':390,'height':844},device_scale_factor=1,user_agent='Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36',locale='en-US')
+                      page=await context.new_page();net=[];errors=[];console=[]
+                      page.on('response',lambda r,net=net:net.append({'url':r.url,'status':r.status,'type':r.request.resource_type,'method':r.request.method}))
+                      page.on('pageerror',lambda e,errors=errors:errors.append(str(e)))
+                      page.on('console',lambda m,console=console:console.append({'type':m.type,'text':m.text}) if m.type in ('error','warning') else None)
+                      try:
+                          await page.goto(root.get('effective') or root['url'],wait_until='domcontentloaded',timeout=90000)
+                          await page.wait_for_timeout(12000)
+                          h=await page.evaluate('document.documentElement.scrollHeight')
+                          for y in range(0,max(h,844)+844,560):
+                              await page.evaluate('(y)=>window.scrollTo(0,y)',y);await page.wait_for_timeout(120)
+                          await page.evaluate('window.scrollTo(0,0)');await page.wait_for_timeout(600)
+                          await page.screenshot(path=str(folder/'full.png'),full_page=True)
+                          await page.screenshot(path=str(folder/'viewport.png'),full_page=False)
+                          body=await page.locator('body').inner_text(timeout=20000);dom=await page.content()
+                          (folder/'body.txt').write_text(body,errors='ignore');(folder/'dom.html').write_text(dom,errors='ignore');(folder/'network.json').write_text(json.dumps(net,ensure_ascii=False,indent=2));(folder/'errors.json').write_text(json.dumps({'page':errors,'console':console},ensure_ascii=False,indent=2))
+                          item=dict(root);item['render']={'folder':str(folder.relative_to(OUT)),'title':await page.title(),'url':page.url,'height':await page.evaluate('document.documentElement.scrollHeight'),'body':body[:20000],'network_errors':[x for x in net if x['status']>=400],'page_errors':errors,'console_errors':console,'identity_hits':[m.group(0) for m in list(TARGETS[target].finditer(body+' '+dom))[:30]]}
+                      except Exception as e:
+                          item=dict(root);item['render']={'folder':str(folder.relative_to(OUT)),'error':repr(e),'network_errors':[x for x in net if x['status']>=400],'page_errors':errors,'console_errors':console}
+                      rendered.append(item);await context.close()
+                  await browser.close()
+              return rendered
+          rendered=asyncio.run(capture_roots())
+          (OUT/'rendered-roots.json').write_text(json.dumps(rendered,ensure_ascii=False,indent=2))
+
+          # Conservative final classification.
+          finals=[]
+          for target in TARGETS:
+              target_renders=[r for r in rendered if r['target']==target and r.get('render',{}).get('folder')]
+              verified=[]
+              for r in target_renders:
+                  rr=r.get('render',{})
+                  if rr.get('error'):continue
+                  folder=OUT/rr['folder']
+                  screenshot=folder/'full.png'
+                  if not screenshot.exists():continue
+                  try:im=Image.open(screenshot);real_size=im.height>=844 and im.width>=300
+                  except Exception:real_size=False
+                  if not real_size:continue
+                  # A verified SPA must have target identity in rendered page/DOM or an exact forensic URL association plus multiple real app assets.
+                  identity=bool(rr.get('identity_hits'))
+                  asset_count=len([n for n in (folder/'network.json').read_text(errors='ignore').splitlines() if 'image' in n or 'script' in n or 'stylesheet' in n]) if (folder/'network.json').exists() else 0
+                  if identity and asset_count>=3:verified.append(r)
+              if verified:
+                  status='A_OFFICIAL_SPA_REVIEWABLE';best=verified[0]
+              elif target_renders:
+                  status='B_RENDERED_SHELL_NEEDS_IDENTITY_OR_CLOSURE';best=target_renders[0]
+              else:
+                  status='C_NO_VERIFIED_SPA';best=None
+              finals.append({'target':target,'status':status,'best':best,'context_hits':len(target_hits[target]),'candidate_urls':len([u for u in url_rows if target in u['targets']]),'image_evidence':len(images[target])})
+          (OUT/'FINAL-STATUS.json').write_text(json.dumps(finals,ensure_ascii=False,indent=2))
+
+          # Build contact sheet only from actual browser-rendered SPA pages. Never use promo images here.
+          sheet_paths=[]
+          for final in finals:
+              target=final['target'];best=final.get('best')
+              if not best:continue
+              fp=OUT/best['render']['folder']/'full.png'
+              if fp.exists():sheet_paths.append((target,fp,final['status']))
+          if sheet_paths:
+              font_path='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+              title_font=ImageFont.truetype(font_path,26);body_font=ImageFont.truetype(font_path,18)
+              cell_w=520;preview_h=1200;caption=75;cols=min(3,len(sheet_paths));rows=(len(sheet_paths)+cols-1)//cols
+              sheet=Image.new('RGB',(cell_w*cols,rows*(preview_h+caption)),(242,239,232));draw=ImageDraw.Draw(sheet)
+              for i,(target,fp,status) in enumerate(sheet_paths):
+                  im=Image.open(fp).convert('RGB');im.thumbnail((cell_w-30,preview_h-20));x=(i%cols)*cell_w+(cell_w-im.width)//2;y=(i//cols)*(preview_h+caption)+caption
+                  sheet.paste(im,(x,y));draw.text(((i%cols)*cell_w+15,(i//cols)*(preview_h+caption)+10),target,font=title_font,fill=(25,25,22));draw.text(((i%cols)*cell_w+15,(i//cols)*(preview_h+caption)+42),status,font=body_font,fill=(100,55,45))
+              sheet.save(OUT/'ACTUAL-SPA-REVIEW-BOARD.jpg',quality=93)
+
+          lines=['# Pro‑Yalla three-campaign final recovery','', 'Only browser-rendered official SPA pages count as recovered. Promo images and social video frames are excluded from the review board.','']
+          for f in finals:
+              lines += [f"## {f['target']}",f"- Status: **{f['status']}**",f"- Context hits: {f['context_hits']}",f"- Candidate URLs: {f['candidate_urls']}",f"- Supporting image evidence: {f['image_evidence']}"]
+              if f.get('best'):
+                  lines += [f"- Best root: `{f['best'].get('effective') or f['best'].get('url')}`",f"- Render folder: `{f['best']['render']['folder']}`"]
+              lines += ['']
+          (OUT/'FINAL-REPORT.md').write_text('\n'.join(lines))
+          PY
+          python /tmp/recover.py
+
+      - name: Commit concise recovery results
+        run: |
+          set -Eeuo pipefail
+          # Never commit large raw artifacts or private account data. Commit only the generated forensic report and public page screenshots.
+          rm -rf research-output/raw
+          find research-output -type f -size +15M -delete
+          git config user.name 'JKL'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git add research-output
+          if git diff --cached --quiet; then
+            echo 'No result files to commit'
+          else
+            git commit -m 'Publish Yalla three-campaign recovery results'
+            git push origin HEAD:research/yalla-three-final-recovery-20260824
+          fi
+
+      - name: Upload complete recovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-three-final-recovery
+          path: research-output
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
