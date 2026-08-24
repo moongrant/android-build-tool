@@ -11,7 +11,7 @@ src = re.sub(
     src,
     count=1,
 )
-src = src.replace('ProFallaArchive/4.0', 'ProFallaSep24Archive/1.0', 1)
+src = src.replace('ProFallaArchive/4.0', 'ProFallaSep24Archive/1.1', 1)
 
 campaigns = r'''const campaigns = [
   {
@@ -82,14 +82,70 @@ if needle not in src:
     raise SystemExit('fixture insertion point not found')
 src = src.replace(needle, custom, 1)
 
-# Avoid carrying a previous batch's manually enumerated static URLs into this batch.
-start = src.find('async function prefetchKnownStatic(){')
-if start != -1:
-    end = src.find('\nasync function captureOffline', start)
-    if end == -1:
-        raise SystemExit('prefetchKnownStatic end not found')
-    src = src[:start] + src[end+1:]
-    src = src.replace('const closureAdded=await staticClosure();const knownStaticAdded=await prefetchKnownStatic();', 'const closureAdded=await staticClosure();const knownStaticAdded=0;', 1)
+old_bad = """async function badJsonRecord(rec){
+  if(!rec||!/json/i.test(rec.contentType||''))return false;
+  try{const obj=JSON.parse((await fs.readFile(path.join(OUT,rec.objectPath))).toString('utf8'));return obj&&typeof obj==='object'&&'code'in obj&&Number(obj.code)!==0;}catch{return false;}
+}
+"""
+new_bad = """async function badJsonRecord(rec){
+  if(!rec)return false;
+  if(Number(rec.status||200)>=400)return true;
+  if(!/json/i.test(rec.contentType||''))return false;
+  try{const obj=JSON.parse((await fs.readFile(path.join(OUT,rec.objectPath))).toString('utf8'));return obj&&typeof obj==='object'&&'code'in obj&&Number(obj.code)!==0;}catch{return false;}
+}
+"""
+if old_bad not in src:
+    raise SystemExit('badJsonRecord block not found')
+src = src.replace(old_bad, new_bad, 1)
+
+anchor = "async function captureOffline(browser,online){"
+prefetch = r'''async function savePrefetchedRecord({method='GET',url,sourceUrl=url,body,status=200,statusText='OK',headers={},postData='',pageId='prefetch'}){
+  const bodyHash=sha(body),objectPath=`objects/${bodyHash}${extFrom(url,headers['content-type']||'')}`;
+  try{await fs.access(path.join(OUT,objectPath));}catch{await fs.writeFile(path.join(OUT,objectPath),body);}
+  const rec={key:requestKey(method,url,postData),method,url,sourceUrl,postDataHash:sha(postData),status,statusText,headers,objectPath,bytes:body.length,sha256:bodyHash,contentType:headers['content-type']||'',pageIds:[pageId]};
+  records.set(rec.key,rec);byUrl.set(urlKey(method,url),rec);byPath.set(pathKey(method,url),rec);return rec;
+}
+async function prefetchActivityConfigs(){
+  const endpoints=['https://api.apifalla.com/api/web/activities_config/act','https://apihk.falla.live/api/web/activities_config/act'];
+  const units=campaigns.flatMap(c=>c.units);let added=0;
+  for(const unit of units){
+    let original=null,sourceUrl=null,headers=null,status=0;
+    const payloads=[{activitiesId:unit.activityId},{activityId:unit.activityId},{id:unit.activityId}];
+    for(const endpoint of endpoints){
+      for(const payload of payloads){
+        try{const r=await fetch(endpoint,{method:'POST',headers:{'user-agent':UA,'accept':'application/json,text/plain,*/*','content-type':'application/json;charset=UTF-8','origin':'https://web.fallaweb.com','referer':'https://web.fallaweb.com/'},body:JSON.stringify(payload),redirect:'follow',signal:AbortSignal.timeout(25000)});const b=Buffer.from(await r.arrayBuffer());let ok=false;try{const o=JSON.parse(b.toString('utf8'));ok=r.ok&&Number(o?.code)===0&&o?.res;}catch{}if(ok){original=b;sourceUrl=endpoint;headers=Object.fromEntries(r.headers.entries());status=r.status;break;}}catch{}
+      }
+      if(original)break;
+    }
+    if(!original)continue;
+    for(const endpoint of endpoints){
+      for(const payload of payloads){await savePrefetchedRecord({method:'POST',url:endpoint,sourceUrl,body:original,status:status||200,headers:headers||{'content-type':'application/json; charset=utf-8'},postData:JSON.stringify(payload),pageId:`activity-config-${unit.activityId}`});added++;}
+    }
+  }
+  return added;
+}
+async function prefetchSep24Static(){
+  const urls=['https://web.fallaweb.com/falla-web/act-country-elect/prod/0.1.0/assets/8048095648185daae6b5.png'];let added=0;
+  for(const url of urls){if(byUrl.has(urlKey('GET',url))||byPath.has(pathKey('GET',url)))continue;try{const r=await fetch(url,{headers:{'user-agent':UA,'accept':'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'},redirect:'follow',signal:AbortSignal.timeout(25000)});if(!r.ok)continue;const body=Buffer.from(await r.arrayBuffer());await savePrefetchedRecord({url,sourceUrl:String(r.url),body,status:r.status,statusText:r.statusText,headers:Object.fromEntries(r.headers.entries()),pageId:'sep24-static-closure'});added++;}catch{}}
+  return added;
+}
+
+'''
+if anchor not in src:
+    raise SystemExit('captureOffline anchor not found')
+src = src.replace(anchor, prefetch + anchor, 1)
+
+old_call = "const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});console.log(`ONLINE ${defs.length}`);const online=await mapLimit(defs,CONCURRENCY,(d,i)=>captureOnline(browser,d,i));const closureAdded=await staticClosure();console.log(`OFFLINE ${online.length}`);"
+new_call = "const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});console.log(`ONLINE ${defs.length}`);const online=await mapLimit(defs,CONCURRENCY,(d,i)=>captureOnline(browser,d,i));const closureAdded=await staticClosure();const activityConfigAdded=await prefetchActivityConfigs();const knownStaticAdded=await prefetchSep24Static();console.log(`OFFLINE ${online.length}`);"
+if old_call not in src:
+    raise SystemExit('main execution block not found')
+src = src.replace(old_call, new_call, 1)
+
+old_manifest = "staticClosureAdded:closureAdded,captureErrors:captureErrors.length"
+new_manifest = "staticClosureAdded:closureAdded,activityConfigAdded,knownStaticAdded,captureErrors:captureErrors.length"
+if old_manifest not in src:
+    raise SystemExit('manifest field insertion point not found')
+src = src.replace(old_manifest, new_manifest, 1)
 
 out = Path('tools/pro-falla-sep24/archive_sep24.mjs')
 out.parent.mkdir(parents=True, exist_ok=True)
