@@ -105,8 +105,8 @@ def main() -> int:
         try:
             response = S.get(
                 "https://sourcegraph.com/.api/search/stream",
-                params={"q": query, "v": "V3", "display": "short"},
-                timeout=60,
+                params={"q": query, "v": "V3", "display": "1000"},
+                timeout=90,
                 allow_redirects=True,
             )
             text = response.text
