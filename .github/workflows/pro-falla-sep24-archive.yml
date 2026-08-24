@@ -36,8 +36,9 @@ jobs:
       - name: Generate Sep 24 archiver
         run: |
           set -Eeuo pipefail
-          python -m py_compile tools/pro-falla-sep24/make_archiver.py
+          python -m py_compile tools/pro-falla-sep24/make_archiver.py tools/pro-falla-sep24/patch_v2.py
           python tools/pro-falla-sep24/make_archiver.py
+          python tools/pro-falla-sep24/patch_v2.py
           node --check tools/pro-falla-sep24/archive_sep24.mjs
       - name: Capture and replay original Falla SPAs
         env:
