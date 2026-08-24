@@ -33,11 +33,12 @@ jobs:
           python -m pip install --disable-pip-version-check pillow
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk
-      - name: Generate archiver
+      - name: Generate and repair archiver
         run: |
           set -Eeuo pipefail
-          python -m py_compile tools/pro-falla-sep24-batch2/make_archiver.py
+          python -m py_compile tools/pro-falla-sep24-batch2/make_archiver.py tools/pro-falla-sep24-batch2/patch_archive.py
           python tools/pro-falla-sep24-batch2/make_archiver.py
+          python tools/pro-falla-sep24-batch2/patch_archive.py
           node --check tools/pro-falla-sep24-batch2/archive_sep24_batch2.mjs
       - name: Capture and replay original Falla SPAs
         env:
