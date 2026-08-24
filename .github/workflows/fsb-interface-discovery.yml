@@ -27,8 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependency
-        run: python -m pip install --disable-pip-version-check requests==2.32.5
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests==2.32.5 beautifulsoup4==4.13.5
       - name: Run public metadata probe
         env:
           FSB_DISCOVERY_OUT: research/fsb-interface-discovery/results
@@ -37,6 +37,10 @@ jobs:
         env:
           FSB_POSPAL_OUT: research/fsb-interface-discovery/pospal-results
         run: python research/fsb-interface-discovery/probe_pospal.py | tee research/fsb-interface-discovery/pospal-run.log
+      - name: Inspect public mini-program lookup frontend
+        env:
+          FSB_KAINY_OUT: research/fsb-interface-discovery/kainy-results
+        run: python research/fsb-interface-discovery/probe_kainy_frontend.py | tee research/fsb-interface-discovery/kainy-run.log
       - name: Upload sanitized results
         if: always()
         uses: actions/upload-artifact@v4
@@ -45,8 +49,10 @@ jobs:
           path: |
             research/fsb-interface-discovery/results
             research/fsb-interface-discovery/pospal-results
+            research/fsb-interface-discovery/kainy-results
             research/fsb-interface-discovery/run.log
             research/fsb-interface-discovery/pospal-run.log
+            research/fsb-interface-discovery/kainy-run.log
           if-no-files-found: error
           retention-days: 7
       - name: Commit results on push run
@@ -55,7 +61,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/fsb-interface-discovery/results research/fsb-interface-discovery/pospal-results research/fsb-interface-discovery/run.log research/fsb-interface-discovery/pospal-run.log
+          git add research/fsb-interface-discovery/results research/fsb-interface-discovery/pospal-results research/fsb-interface-discovery/kainy-results research/fsb-interface-discovery/run.log research/fsb-interface-discovery/pospal-run.log research/fsb-interface-discovery/kainy-run.log
           if git diff --cached --quiet; then
             echo 'No changes'
           else
