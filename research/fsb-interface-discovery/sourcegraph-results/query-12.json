@@ -1,0 +1,20 @@
+{
+  "query": "context:global patternType:literal \"SwitchStore\" \"wxapi\"",
+  "statusCode": 200,
+  "elapsedMs": 76,
+  "finalUrl": "https://sourcegraph.com/.api/search/stream?q=context%3Aglobal+patternType%3Aliteral+%22SwitchStore%22+%22wxapi%22&v=V3&display=short",
+  "result": {
+    "matches": [],
+    "progress": [],
+    "alerts": [
+      {
+        "event": "error",
+        "data": {
+          "message": "display must be an integer, got \"short\": strconv.Atoi: parsing \"short\": invalid syntax"
+        }
+      }
+    ],
+    "matchCount": 0
+  },
+  "rawPreview": "event: error\ndata: {\"message\":\"display must be an integer, got \\\"short\\\": strconv.Atoi: parsing \\\"short\\\": invalid syntax\"}\n\nevent: done\ndata: {}\n\n"
+}
