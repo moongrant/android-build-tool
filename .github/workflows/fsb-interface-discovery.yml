@@ -16,73 +16,30 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install dependencies
-        run: python -m pip install --disable-pip-version-check requests==2.32.5 beautifulsoup4==4.13.5
-      - name: Run public metadata probe
-        env:
-          FSB_DISCOVERY_OUT: research/fsb-interface-discovery/results
-        run: python research/fsb-interface-discovery/discover.py | tee research/fsb-interface-discovery/run.log
-      - name: Run bounded Pospal read-only probe
-        env:
-          FSB_POSPAL_OUT: research/fsb-interface-discovery/pospal-results
-        run: python research/fsb-interface-discovery/probe_pospal.py | tee research/fsb-interface-discovery/pospal-run.log
-      - name: Inspect public mini-program lookup frontend
-        env:
-          FSB_KAINY_OUT: research/fsb-interface-discovery/kainy-results
-        run: python research/fsb-interface-discovery/probe_kainy_frontend.py | tee research/fsb-interface-discovery/kainy-run.log
-      - name: Inspect public mini-program filing routes
-        env:
-          FSB_ICP_OUT: research/fsb-interface-discovery/icp-results
-        run: python research/fsb-interface-discovery/probe_icp_registry.py | tee research/fsb-interface-discovery/icp-run.log
+      - name: Install dependency
+        run: python -m pip install --disable-pip-version-check requests==2.32.5
       - name: Query public mini-program filing record
         env:
           FSB_FILING_QUERY_OUT: research/fsb-interface-discovery/filing-query-results
         run: python research/fsb-interface-discovery/query_filing.py | tee research/fsb-interface-discovery/filing-query-run.log
-      - name: Search grep.app public code index
-        env:
-          FSB_CODE_SEARCH_OUT: research/fsb-interface-discovery/code-search-results
-        run: python research/fsb-interface-discovery/probe_code_search.py | tee research/fsb-interface-discovery/code-search-run.log
-      - name: Search Sourcegraph public code index
-        env:
-          FSB_SOURCEGRAPH_OUT: research/fsb-interface-discovery/sourcegraph-results
-        run: python research/fsb-interface-discovery/probe_sourcegraph.py | tee research/fsb-interface-discovery/sourcegraph-run.log
-      - name: Upload sanitized results
+      - name: Upload filing result
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: fsb-interface-discovery
           path: |
-            research/fsb-interface-discovery/results
-            research/fsb-interface-discovery/pospal-results
-            research/fsb-interface-discovery/kainy-results
-            research/fsb-interface-discovery/icp-results
             research/fsb-interface-discovery/filing-query-results
-            research/fsb-interface-discovery/code-search-results
-            research/fsb-interface-discovery/sourcegraph-results
-            research/fsb-interface-discovery/*.log
+            research/fsb-interface-discovery/filing-query-run.log
           if-no-files-found: error
           retention-days: 7
-      - name: Commit results on push run
-        if: github.event_name == 'push'
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/fsb-interface-discovery/results research/fsb-interface-discovery/pospal-results research/fsb-interface-discovery/kainy-results research/fsb-interface-discovery/icp-results research/fsb-interface-discovery/filing-query-results research/fsb-interface-discovery/code-search-results research/fsb-interface-discovery/sourcegraph-results research/fsb-interface-discovery/*.log
-          if git diff --cached --quiet; then
-            echo 'No changes'
-          else
-            git commit -m 'research: record FSB interface discovery results'
-            git push origin HEAD:research/fsb-interface-discovery-20260824
-          fi
