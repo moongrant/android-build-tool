@@ -1,0 +1,70 @@
+name: Pro Falla Sep 24 low-change SPA recovery batch 2
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pro-falla-sep24-batch2-archive.yml'
+      - 'tools/pro-falla-sep24-batch2/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-sep24-batch2-20260824
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Generate archiver
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-sep24-batch2/make_archiver.py
+          python tools/pro-falla-sep24-batch2/make_archiver.py
+          node --check tools/pro-falla-sep24-batch2/archive_sep24_batch2.mjs
+      - name: Capture and replay original Falla SPAs
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-sep24-batch2-original-spa
+          ONLINE_WAIT_MS: '6500'
+          OFFLINE_WAIT_MS: '5200'
+          PAGE_CONCURRENCY: '3'
+        run: |
+          set -Eeuo pipefail
+          node tools/pro-falla-sep24-batch2/archive_sep24_batch2.mjs
+      - name: Build campaign contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-sep24-batch2-original-spa
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch4/contact_sheets_original.py
+          python tools/pro-falla-batch4/contact_sheets_original.py
+      - name: Print QA
+        if: always()
+        run: |
+          cat artifacts/pro-falla-sep24-batch2-original-spa/QA-FINAL.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-sep24-batch2-original-spa || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-sep24-batch2-original-spa
+          path: artifacts/pro-falla-sep24-batch2-original-spa
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
