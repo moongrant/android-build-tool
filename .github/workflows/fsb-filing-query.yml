@@ -1,0 +1,38 @@
+name: FSB Filing Query
+
+on:
+  push:
+    branches:
+      - research/fsb-interface-discovery-20260824
+    paths:
+      - 'research/fsb-interface-discovery/query_filing.py'
+      - '.github/workflows/fsb-filing-query.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  query:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests==2.32.5
+      - name: Query public filing record
+        env:
+          FSB_FILING_QUERY_OUT: fsb-filing-query-output
+        run: python research/fsb-interface-discovery/query_filing.py | tee fsb-filing-query.log
+      - name: Upload filing result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsb-filing-query
+          path: |
+            fsb-filing-query-output
+            fsb-filing-query.log
+          if-no-files-found: error
+          retention-days: 7
