@@ -1,0 +1,207 @@
+name: Pro Yalla historical emulator activity capture
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-historical-emulator-capture.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '2.25.1'
+            target: sweet-love-2024
+          - version: '2.28.0'
+            target: lucky-carnival-2024
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download historical public Yalla XAPK
+        env:
+          VERSION: ${{ matrix.version }}
+          TARGET: ${{ matrix.target }}
+        run: |
+          set -Eeuo pipefail
+          out="artifacts/$TARGET-$VERSION"
+          mkdir -p "$out" /tmp/apkeep /tmp/yalla-xapk
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable \
+            -a "com.weieyu.yalla@$VERSION" -d apk-pure /output \
+            > "$out/apkeep.stdout.txt" 2> "$out/apkeep.stderr.txt"
+          package="$(find /tmp/apkeep -type f \( -name '*.apk' -o -name '*.xapk' -o -name '*.apks' -o -name '*.zip' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-xapk/base.apk; else unzip -q "$package" -d /tmp/yalla-xapk; fi
+          find /tmp/yalla-xapk -type f -name '*.apk' -print | sort > "$out/apk-splits.txt"
+          test -s "$out/apk-splits.txt"
+          sha256sum $(cat "$out/apk-splits.txt") > "$out/apk-splits.sha256"
+
+      - name: Install Frida tooling
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install frida-tools lxml pillow
+          python - <<'PY' > /tmp/frida-version.txt
+          import frida
+          print(frida.__version__)
+          PY
+
+      - name: Run historical app and capture activity records
+        uses: reactivecircus/android-emulator-runner@v2
+        env:
+          VERSION: ${{ matrix.version }}
+          TARGET: ${{ matrix.target }}
+        with:
+          api-level: 28
+          arch: arm64-v8a
+          target: google_apis
+          profile: pixel_2
+          cores: 4
+          ram-size: 4096M
+          heap-size: 1024M
+          disk-size: 8192M
+          disable-animations: true
+          disable-linux-hw-accel: true
+          emulator-boot-timeout: 1200
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot
+          script: |
+            cat > /tmp/run-historical-capture.sh <<'BASH'
+            set -Eeuo pipefail
+            out="artifacts/$TARGET-$VERSION"
+            adb wait-for-device
+            adb root || true
+            adb wait-for-device
+            adb shell settings put global window_animation_scale 0 || true
+            adb shell settings put global transition_animation_scale 0 || true
+            adb shell settings put global animator_duration_scale 0 || true
+            adb shell settings put system system_locales en-US || true
+            adb install-multiple -r $(cat "$out/apk-splits.txt") > "$out/install.txt" 2>&1
+            adb shell dumpsys package com.weieyu.yalla > "$out/package-dump.txt" || true
+
+            version="$(cat /tmp/frida-version.txt)"
+            curl --fail --location --retry 5 --retry-all-errors \
+              -o /tmp/frida-server.xz \
+              "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-arm64.xz"
+            xz -d -f /tmp/frida-server.xz
+            adb push /tmp/frida-server /data/local/tmp/frida-server
+            adb shell chmod 755 /data/local/tmp/frida-server
+            adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida-server.log 2>&1 &' || true
+            sleep 4
+
+            cat > /tmp/hook.js <<'JS'
+            'use strict';
+            function emit(tag,obj){send({tag:tag,payload:obj});}
+            function interesting(s){var x=String(s||''),l=x.toLowerCase();return l.indexOf('activityurl')>=0||l.indexOf('activity_url')>=0||l.indexOf('h5entranceurl')>=0||l.indexOf('sweet love')>=0||l.indexOf('sweet moment')>=0||l.indexOf('love points')>=0||l.indexOf('lucky carnival')>=0||l.indexOf('prize pool')>=0||l.indexOf('lottery')>=0||l.indexOf('carnival')>=0||l.indexOf('activitylist')>=0;}
+            Java.perform(function(){
+              function safe(name){try{return Java.use(name);}catch(e){emit('HOOK_MISSING',{name:name,error:String(e)});return null;}}
+              var RB=safe('okhttp3.ResponseBody');
+              if(RB){try{var st=RB.string.overload();st.implementation=function(){var s=st.call(this);if(interesting(s))emit('RESPONSE_BODY',{body:String(s)});return s;};emit('HOOK_OK',{class:'ResponseBody',method:'string'});}catch(e){emit('HOOK_ERROR',{class:'ResponseBody',error:String(e)});}}
+              var Gson=safe('com.google.gson.Gson');
+              if(Gson){
+                try{var fjt=Gson.fromJson.overload('java.lang.String','java.lang.reflect.Type');fjt.implementation=function(s,t){if(interesting(s))emit('GSON_JSON',{body:String(s),type:String(t)});return fjt.call(this,s,t);};}catch(e){}
+                try{var fjc=Gson.fromJson.overload('java.lang.String','java.lang.Class');fjc.implementation=function(s,c){if(interesting(s))emit('GSON_JSON',{body:String(s),clazz:String(c)});return fjc.call(this,s,c);};}catch(e){}
+              }
+              var Share=safe('com.yalla.yalla.data.db.table.ChatMessage$ShareActivityInfo')||safe('com.yalla.yalla.data.p021db.table.ChatMessage$ShareActivityInfo');
+              if(Share){try{var gu=Share.getActivityUrl;gu.implementation=function(){var u=gu.call(this);emit('SHARE_ACTIVITY',{activityUrl:String(u)});return u;};}catch(e){}}
+              var WP=safe('com.yalla.yalla.util.WebPageInfo');
+              if(WP){try{var ovs=WP.OooO0o0.overloads;ovs.forEach(function(m){m.implementation=function(){var args=[].slice.call(arguments),r=m.apply(this,args);if(args.length>0)emit('WEBPAGE_URL',{method:'OooO0o0',value:String(args[0])});return r;};});}catch(e){}}
+              var WebView=safe('android.webkit.WebView');
+              if(WebView){try{var lu=WebView.loadUrl.overload('java.lang.String');lu.implementation=function(u){emit('WEBVIEW_URL',{url:String(u)});return lu.call(this,u);};}catch(e){}}
+            });
+            JS
+
+            cat > /tmp/frida_runner.py <<'PY'
+            from __future__ import annotations
+            import frida,json,time,traceback
+            from pathlib import Path
+            out=Path('artifacts')/f"{__import__('os').environ['TARGET']}-{__import__('os').environ['VERSION']}"
+            log=(out/'frida-messages.jsonl').open('w',encoding='utf-8')
+            def cb(message,data):
+              rec={'message':message}; log.write(json.dumps(rec,ensure_ascii=False)+'\n');log.flush();print(json.dumps(rec,ensure_ascii=False),flush=True)
+            try:
+              d=frida.get_usb_device(timeout=20);pid=d.spawn(['com.weieyu.yalla']);s=d.attach(pid);sc=s.create_script(Path('/tmp/hook.js').read_text());sc.on('message',cb);sc.load();d.resume(pid);(out/'frida-session.txt').write_text(f'pid={pid}\n');time.sleep(540)
+            except Exception:(out/'frida-runner-error.txt').write_text(traceback.format_exc())
+            finally:log.close()
+            PY
+            (timeout 570 python /tmp/frida_runner.py > "$out/frida-runner.stdout.txt" 2> "$out/frida-runner.stderr.txt" || true) &
+            frida_pid=$!
+            sleep 25
+
+            # Try the historical Activities Notice screen directly, then continue with generic UI automation.
+            adb shell am start -n com.weieyu.yalla/com.yalla.yalla.module.message.activity.ActivitiesNoticeActivity > "$out/start-activities-notice.txt" 2>&1 || true
+            sleep 12
+
+            cat > /tmp/navigate.py <<'PY'
+            import subprocess,time,re,xml.etree.ElementTree as ET,os
+            from pathlib import Path
+            out=Path('artifacts')/f"{os.environ['TARGET']}-{os.environ['VERSION']}"
+            words=['agree','accept','allow','continue','next','skip','start','enter','guest','visitor','later','not now','got it','ok','close','message','messages','activity','activities','notice','event','discover','explore','home','room','rooms']
+            def sh(*args):return subprocess.run(args,capture_output=True,text=True)
+            for step in range(72):
+              sh('adb','shell','uiautomator','dump','/sdcard/window.xml');sh('adb','pull','/sdcard/window.xml',str(out/f'window-{step:02d}.xml'))
+              (out/f'screen-{step:02d}.png').write_bytes(subprocess.run(['adb','exec-out','screencap','-p'],capture_output=True).stdout)
+              clicked=False
+              try:
+                nodes=list(ET.parse(out/f'window-{step:02d}.xml').getroot().iter('node'))
+                for word in words:
+                  for node in nodes:
+                    blob=(node.attrib.get('text','')+' '+node.attrib.get('content-desc','')).lower()
+                    if word not in blob:continue
+                    nums=[int(x) for x in re.findall(r'\d+',node.attrib.get('bounds',''))]
+                    if len(nums)==4:sh('adb','shell','input','tap',str((nums[0]+nums[2])//2),str((nums[1]+nums[3])//2));clicked=True;break
+                  if clicked:break
+                if not clicked and step in {2,5,8,11,14,18,22}:sh('adb','shell','input','tap','540','1700');clicked=True
+                if step in {24,30,36,42,48,54,60,66}:
+                  for x in ('135','405','675','945'):sh('adb','shell','input','tap',x,'1830');time.sleep(1)
+                  sh('adb','shell','am','start','-n','com.weieyu.yalla/com.yalla.yalla.module.message.activity.ActivitiesNoticeActivity');time.sleep(4)
+              except Exception:pass
+              time.sleep(5 if clicked else 4)
+            PY
+            python /tmp/navigate.py > "$out/navigation.stdout.txt" 2> "$out/navigation.stderr.txt" || true
+            sleep 40
+            kill "$frida_pid" || true;wait "$frida_pid" || true
+            adb logcat -d > "$out/logcat.txt" || true
+            adb shell cat /data/local/tmp/frida-server.log > "$out/frida-server.log" || true
+
+            python - <<'PY'
+            from pathlib import Path
+            import json,re,os
+            out=Path('artifacts')/f"{os.environ['TARGET']}-{os.environ['VERSION']}"
+            recs=[]
+            p=out/'frida-messages.jsonl'
+            if p.exists():
+              for line in p.read_text(errors='ignore').splitlines():
+                try:recs.append(json.loads(line))
+                except Exception:pass
+            payloads=[]
+            for r in recs:
+              m=r.get('message',{})
+              if m.get('type')=='send':payloads.append(m.get('payload'))
+            selected=[x for x in payloads if isinstance(x,dict) and x.get('tag') in {'RESPONSE_BODY','GSON_JSON','SHARE_ACTIVITY','WEBPAGE_URL','WEBVIEW_URL'}]
+            urls=sorted(set(u.rstrip('\\') for x in selected for u in re.findall(r'https?://[^"\\\s}]+',json.dumps(x,ensure_ascii=False))))
+            (out/'captured-events.json').write_text(json.dumps(selected,ensure_ascii=False,indent=2));(out/'captured-urls.json').write_text(json.dumps(urls,indent=2))
+            (out/'REPORT.md').write_text('\n'.join([f'# Historical Yalla activity capture {os.environ["VERSION"]}','',f'- target: {os.environ["TARGET"]}',f'- Frida messages: {len(recs)}',f'- selected events: {len(selected)}',f'- URLs: {len(urls)}','','## URLs','```','\n'.join(urls),'```','','## Events','```',json.dumps(selected,ensure_ascii=False,indent=2)[:250000],'```']))
+            PY
+            BASH
+            bash /tmp/run-historical-capture.sh
+
+      - name: Upload historical capture
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-historical-emulator-${{ matrix.target }}
+          path: artifacts/${{ matrix.target }}-${{ matrix.version }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
