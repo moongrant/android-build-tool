@@ -1,0 +1,131 @@
+name: Pro Yalla network core extraction v2
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-network-core-extract-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ['2.28.0','3.6.2']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools and download APK
+        env:
+          VERSION: ${{ matrix.version }}
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep unzip default-jre-headless
+          mkdir -p /tmp/apkeep /tmp/pkg artifacts/network-core-$VERSION
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable \
+            -a "com.weieyu.yalla@$VERSION" -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.apk' -o -name '*.xapk' -o -name '*.apks' -o -name '*.zip' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/base.apk; else
+            unzip -q "$package" -d /tmp/pkg
+            base="$(find /tmp/pkg -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            test -n "$base"; cp "$base" /tmp/base.apk
+          fi
+          sha256sum /tmp/base.apk > artifacts/network-core-$VERSION/APK.sha256
+          asset_url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' \
+            https://api.github.com/repos/skylot/jadx/releases/latest \
+            | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$asset_url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+
+      - name: Full decompile and exact-source preservation
+        env:
+          VERSION: ${{ matrix.version }}
+        run: |
+          set -Eeuo pipefail
+          out=artifacts/network-core-$VERSION
+          /tmp/jadx/bin/jadx --threads-count 4 --deobf --show-bad-code --no-res \
+            -d /tmp/jadx-out /tmp/base.apk > "$out/jadx.stdout.txt" 2> "$out/jadx.stderr.txt" || true
+          src=/tmp/jadx-out/sources
+          test -d "$src"
+          mkdir -p "$out/sources"
+
+          # Copy entire small network/API source packages, not just a truncated grep list.
+          for rel in \
+            com/yalla/yalla/api/call \
+            com/yalla/yalla/http \
+            com/yalla/yalla/data/repository \
+            com/yalla/yalla/model \
+            com/yalla/yalla/module/event \
+            com/yalla/yalla/module/main \
+            com/yalla/yalla/module/room; do
+            if [[ -d "$src/$rel" ]]; then
+              mkdir -p "$out/sources/$rel"
+            fi
+          done
+
+          # Preserve every file in core call/http packages.
+          for rel in com/yalla/yalla/api/call com/yalla/yalla/http; do
+            if [[ -d "$src/$rel" ]]; then
+              while IFS= read -r f; do
+                r="${f#$src/}"; d="$out/sources/$r"; mkdir -p "$(dirname "$d")"; cp "$f" "$d"
+              done < <(find "$src/$rel" -type f -name '*.java')
+            fi
+          done
+
+          # Preserve all sources related to dynamic activity URLs, activity-center, official action, room activity,
+          # base URL construction, request headers/signatures and app config/domain selection.
+          pattern='ActivityCenter|OfficialAction|RoomActivity|ActivityListForCenter|activityUrl|activityurl|h5EntranceUrl|ParamsWrapper|UnChangeDomain|yl-rep|Abnormal|xsignature|xtimestamp|signature|BaseUrl|baseUrl|event\.yalla|dev-event|api\.yalla|yallalive\.cn|OooO0o0\(String|domain|CommonRequest'
+          rg -l -i "$pattern" "$src" | sort -u > "$out/relevant-files.txt" || true
+          i=0
+          while IFS= read -r f; do
+            [[ -f "$f" ]] || continue
+            i=$((i+1)); [[ $i -le 1800 ]] || break
+            r="${f#$src/}"; d="$out/sources/$r"; mkdir -p "$(dirname "$d")"; cp "$f" "$d"
+          done < "$out/relevant-files.txt"
+
+          # Context reports focused on actual request construction and dynamic URL fields.
+          rg -n -i -C 18 'GetActivityListForCenter|MainRoomDialogRepo.*OfficialAction|ActivityCenterRepo|ActivityCenterItemModel|OfficialActionModel|RoomActivityModel|OooO0o0\(String|ParamsWrapper|UnChangeDomain|yl-rep|xsignature|xtimestamp|Authorization|addHeader|addQueryParameter' \
+            "$out/sources" > "$out/network-activity-context.txt" || true
+          rg -n -i -C 12 'https://event\.yalla\.live|https://dev-event\.yallalive\.cn|https://[^" ]*(?:api|event|h5client)[^" ]*|baseUrl|domain' \
+            "$out/sources" > "$out/domain-context.txt" || true
+          rg -o -N 'https?://[^"[:space:]<>)]+' "$src" | sed 's#^[^:]*:##' | sort -u > "$out/all-urls.txt" || true
+          rg -o -N '/(?:Webservers|api|Api)/[A-Za-z0-9_./?=&-]+' "$src" | sed 's#^[^:]*:##' | sort -u > "$out/all-routes.txt" || true
+
+          python - <<'PY'
+          from pathlib import Path
+          import os,json,re
+          version=os.environ['VERSION']; out=Path('artifacts')/f'network-core-{version}'
+          files=list((out/'sources').rglob('*.java'))
+          summary={
+              'version':version,
+              'preserved_java_files':len(files),
+              'relevant_file_hits':len((out/'relevant-files.txt').read_text(errors='ignore').splitlines()) if (out/'relevant-files.txt').exists() else 0,
+              'urls':len((out/'all-urls.txt').read_text(errors='ignore').splitlines()) if (out/'all-urls.txt').exists() else 0,
+              'routes':len((out/'all-routes.txt').read_text(errors='ignore').splitlines()) if (out/'all-routes.txt').exists() else 0,
+          }
+          (out/'summary.json').write_text(json.dumps(summary,indent=2))
+          report=[f'# Yalla network core extraction {version}','']+[f'- {k}: {v}' for k,v in summary.items()]
+          report+=['','## Domain context','```',(out/'domain-context.txt').read_text(errors='ignore')[:100000],'```','','## Activity request context','```',(out/'network-activity-context.txt').read_text(errors='ignore')[:160000],'```']
+          (out/'REPORT.md').write_text('\n'.join(report))
+          PY
+
+      - name: Upload exact network core
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-network-core-${{ matrix.version }}
+          path: artifacts/network-core-${{ matrix.version }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
