@@ -1,0 +1,266 @@
+name: Pro Yalla current emulator URL capture v2
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-current-emulator-url-capture-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download current public Yalla XAPK and prepare splits
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-emulator-v2 /tmp/apkeep /tmp/yalla-xapk
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable \
+            -a 'com.weieyu.yalla@3.6.2' -d apk-pure /output \
+            > artifacts/pro-yalla-emulator-v2/apkeep.stdout.txt \
+            2> artifacts/pro-yalla-emulator-v2/apkeep.stderr.txt
+          package="$(find /tmp/apkeep -type f \( -name '*.apk' -o -name '*.xapk' -o -name '*.apks' -o -name '*.zip' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then
+            cp "$package" /tmp/yalla-xapk/base.apk
+          else
+            unzip -q "$package" -d /tmp/yalla-xapk
+          fi
+          # Keep the base APK and the ARM32/config-density splits used by this public package.
+          find /tmp/yalla-xapk -type f -name '*.apk' -print | sort > artifacts/pro-yalla-emulator-v2/apk-splits.txt
+          test -s artifacts/pro-yalla-emulator-v2/apk-splits.txt
+          sha256sum $(cat artifacts/pro-yalla-emulator-v2/apk-splits.txt) > artifacts/pro-yalla-emulator-v2/apk-splits.sha256
+
+      - name: Install Frida tooling
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install frida-tools lxml pillow
+          python - <<'PY' > /tmp/frida-version.txt
+          import frida
+          print(frida.__version__)
+          PY
+          cat /tmp/frida-version.txt
+
+      - name: Run ARM emulator and capture dynamic activity URLs
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 28
+          arch: arm64-v8a
+          target: google_apis
+          profile: pixel_2
+          cores: 4
+          ram-size: 4096M
+          heap-size: 1024M
+          disk-size: 8192M
+          disable-animations: true
+          disable-linux-hw-accel: true
+          emulator-boot-timeout: 1200
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot
+          script: |
+            cat > /tmp/run-yalla-capture.sh <<'BASH'
+            set -Eeuo pipefail
+            out=artifacts/pro-yalla-emulator-v2
+            adb wait-for-device
+            adb root || true
+            adb wait-for-device
+            adb shell settings put global window_animation_scale 0 || true
+            adb shell settings put global transition_animation_scale 0 || true
+            adb shell settings put global animator_duration_scale 0 || true
+            adb shell settings put system system_locales en-US || true
+            adb install-multiple -r $(cat "$out/apk-splits.txt") > "$out/install.txt" 2>&1
+            adb shell pm list packages | grep com.weieyu.yalla > "$out/package-installed.txt"
+            adb shell dumpsys package com.weieyu.yalla > "$out/package-dump.txt" || true
+
+            version="$(cat /tmp/frida-version.txt)"
+            curl --fail --location --retry 5 --retry-all-errors \
+              -o /tmp/frida-server.xz \
+              "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-arm64.xz"
+            xz -d -f /tmp/frida-server.xz
+            adb push /tmp/frida-server /data/local/tmp/frida-server
+            adb shell chmod 755 /data/local/tmp/frida-server
+            adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida-server.log 2>&1 &' || true
+            sleep 4
+            frida-ps -U > "$out/frida-ps.txt" 2>&1 || true
+
+            cat > /tmp/hook.js <<'JS'
+            'use strict';
+            function emit(tag, obj) { send({tag:tag, payload:obj}); }
+            Java.perform(function () {
+              function safeUse(name) { try { return Java.use(name); } catch (e) { emit('HOOK_MISSING',{name:name,error:String(e)}); return null; } }
+              var Parser=safeUse('com.yalla.yalla.api.call.OooO0OO');
+              if(Parser){
+                try{
+                  var parse=Parser.OooO00o.overload('okhttp3.ResponseBody');
+                  parse.implementation=function(body){
+                    var value=parse.call(this,body);
+                    try{
+                      var s=String(value),low=s.toLowerCase();
+                      if(low.indexOf('activityurl')>=0||low.indexOf('h5entranceurl')>=0||low.indexOf('treasure')>=0||low.indexOf('wealth path')>=0||low.indexOf('carnival')>=0||low.indexOf('sweet love')>=0||low.indexOf('activity center')>=0){ emit('API_RESPONSE',{body:s}); }
+                    }catch(e){}
+                    return value;
+                  };
+                  emit('HOOK_OK',{class:'Parser',method:'OooO00o'});
+                }catch(e){emit('HOOK_ERROR',{class:'Parser',error:String(e)});}
+              }
+              var Item=safeUse('com.yalla.yalla.model.ActivityCenterItemModel');
+              if(Item){
+                try{
+                  var getUrl=Item.getActivityUrl;
+                  getUrl.implementation=function(){
+                    var u=getUrl.call(this),x={activityUrl:String(u)};
+                    try{x.title=String(this.getTitle());}catch(e){}
+                    try{x.summary=String(this.getSummary());}catch(e){}
+                    try{x.thumbnail=String(this.getThumbnail());}catch(e){}
+                    try{x.releaseTime=String(this.getReleaseTime());}catch(e){}
+                    emit('ACTIVITY_ITEM',x);return u;
+                  };
+                  emit('HOOK_OK',{class:'ActivityCenterItemModel',method:'getActivityUrl'});
+                }catch(e){emit('HOOK_ERROR',{class:'ActivityCenterItemModel',error:String(e)});}
+              }
+              var Official=safeUse('com.yalla.yalla.model.user.OfficialActionModel');
+              if(Official){
+                try{
+                  var getH5=Official.getH5EntranceUrl;
+                  getH5.implementation=function(){
+                    var u=getH5.call(this),x={h5EntranceUrl:String(u)};
+                    try{x.activityId=String(this.getActivityId());}catch(e){}
+                    try{x.entranceImgUrl=String(this.getEntranceImgUrl());}catch(e){}
+                    emit('OFFICIAL_ACTION',x);return u;
+                  };
+                }catch(e){emit('HOOK_ERROR',{class:'OfficialActionModel',error:String(e)});}
+              }
+              var Room=safeUse('com.yalla.yalla.model.room.RoomActivityModel$RoomActivity');
+              if(Room){
+                try{
+                  var gr=Room.getActivityurl;
+                  gr.implementation=function(){var u=gr.call(this);emit('ROOM_ACTIVITY',{activityurl:String(u)});return u;};
+                }catch(e){emit('HOOK_ERROR',{class:'RoomActivity',error:String(e)});}
+              }
+            });
+            JS
+
+            cat > /tmp/frida_runner.py <<'PY'
+            from __future__ import annotations
+            import frida,json,time,traceback
+            from pathlib import Path
+            out=Path('artifacts/pro-yalla-emulator-v2')
+            log=(out/'frida-messages.jsonl').open('w',encoding='utf-8')
+            def on_message(message,data):
+              record={'message':message}
+              if data is not None: record['data_len']=len(data)
+              log.write(json.dumps(record,ensure_ascii=False)+'\n');log.flush()
+              print(json.dumps(record,ensure_ascii=False),flush=True)
+            try:
+              device=frida.get_usb_device(timeout=20)
+              pid=device.spawn(['com.weieyu.yalla'])
+              session=device.attach(pid)
+              source=Path('/tmp/hook.js').read_text()
+              script=session.create_script(source)
+              script.on('message',on_message)
+              script.load()
+              device.resume(pid)
+              (out/'frida-session.txt').write_text(f'pid={pid}\n')
+              time.sleep(540)
+            except Exception:
+              (out/'frida-runner-error.txt').write_text(traceback.format_exc())
+            finally:
+              log.close()
+            PY
+            (timeout 570 python /tmp/frida_runner.py > "$out/frida-runner.stdout.txt" 2> "$out/frida-runner.stderr.txt" || true) &
+            frida_pid=$!
+            sleep 25
+
+            cat > /tmp/navigate.py <<'PY'
+            from __future__ import annotations
+            import subprocess,time,re,xml.etree.ElementTree as ET
+            from pathlib import Path
+            out=Path('artifacts/pro-yalla-emulator-v2')
+            words=['agree','accept','allow','continue','next','skip','start','enter','guest','visitor','later','not now','got it','ok','close','explore','activities','activity center','event','discover','home']
+            def sh(*args): return subprocess.run(args,capture_output=True,text=True)
+            for step in range(72):
+              sh('adb','shell','uiautomator','dump','/sdcard/window.xml')
+              sh('adb','pull','/sdcard/window.xml',str(out/f'window-{step:02d}.xml'))
+              (out/f'screen-{step:02d}.png').write_bytes(subprocess.run(['adb','exec-out','screencap','-p'],capture_output=True).stdout)
+              clicked=False
+              try:
+                nodes=list(ET.parse(out/f'window-{step:02d}.xml').getroot().iter('node'))
+                for word in words:
+                  for node in nodes:
+                    blob=(node.attrib.get('text','')+' '+node.attrib.get('content-desc','')).lower()
+                    if word not in blob: continue
+                    nums=[int(x) for x in re.findall(r'\d+',node.attrib.get('bounds',''))]
+                    if len(nums)==4:
+                      sh('adb','shell','input','tap',str((nums[0]+nums[2])//2),str((nums[1]+nums[3])//2));clicked=True;break
+                  if clicked:break
+                if not clicked and step in {2,5,8,11,14,18,22}:
+                  sh('adb','shell','input','tap','540','1700');clicked=True
+                # Sweep bottom navigation and common activity-entry zones after onboarding.
+                if step in {24,28,32,36,40,44,48,52,56,60,64,68}:
+                  for x in ('135','405','675','945'):
+                    sh('adb','shell','input','tap',x,'1830');time.sleep(1)
+                  for x,y in [('540','340'),('540','520'),('880','220'),('920','500'),('540','900')]:
+                    sh('adb','shell','input','tap',x,y);time.sleep(1)
+              except Exception: pass
+              time.sleep(5 if clicked else 4)
+            PY
+            python /tmp/navigate.py > "$out/navigation.stdout.txt" 2> "$out/navigation.stderr.txt" || true
+            sleep 40
+            kill "$frida_pid" || true
+            wait "$frida_pid" || true
+            adb shell cat /data/local/tmp/frida-server.log > "$out/frida-server.log" || true
+            adb logcat -d > "$out/logcat.txt" || true
+
+            python - <<'PY'
+            from pathlib import Path
+            import json,re
+            out=Path('artifacts/pro-yalla-emulator-v2')
+            records=[]
+            path=out/'frida-messages.jsonl'
+            if path.exists():
+              for line in path.read_text(errors='ignore').splitlines():
+                try: records.append(json.loads(line))
+                except Exception: pass
+            payloads=[]
+            for r in records:
+              m=r.get('message',{})
+              if m.get('type')=='send': payloads.append(m.get('payload'))
+            selected=[p for p in payloads if isinstance(p,dict) and p.get('tag') in {'API_RESPONSE','ACTIVITY_ITEM','OFFICIAL_ACTION','ROOM_ACTIVITY'}]
+            urls=[]
+            for p in selected:
+              blob=json.dumps(p,ensure_ascii=False)
+              urls += re.findall(r'https?://[^"\\\s}]+',blob)
+            urls=sorted(set(u.rstrip('\\') for u in urls))
+            (out/'captured-events.json').write_text(json.dumps(selected,ensure_ascii=False,indent=2))
+            (out/'captured-urls.json').write_text(json.dumps(urls,indent=2))
+            (out/'REPORT.md').write_text('\n'.join([
+              '# Yalla current emulator activity URL capture v2','',
+              f'- all Frida messages: {len(records)}',
+              f'- selected activity events: {len(selected)}',
+              f'- unique URLs: {len(urls)}','',
+              '## URLs','```','\n'.join(urls),'```','',
+              '## Events','```',json.dumps(selected,ensure_ascii=False,indent=2)[:200000],'```'
+            ]))
+            PY
+            BASH
+            bash /tmp/run-yalla-capture.sh
+
+      - name: Upload emulator capture
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-current-emulator-url-capture-v2
+          path: artifacts/pro-yalla-emulator-v2
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
