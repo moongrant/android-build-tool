@@ -1,0 +1,159 @@
+name: Pro Yalla Sweet Love APK fallback
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-sweet-love-apk-fallback.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep unzip apktool default-jre-headless
+          python -m pip install --upgrade pip
+          python -m pip install pillow
+          asset_url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' \
+            https://api.github.com/repos/skylot/jadx/releases/latest \
+            | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$asset_url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          docker pull ghcr.io/efforg/apkeep:stable
+
+      - name: Try multiple official package version identifiers
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-sweet-apk /tmp/attempts /tmp/pkg
+          specs=(
+            'com.weieyu.yalla@2.25.1'
+            'com.weieyu.yalla@2102'
+            'com.weieyu.yalla@2.25.0'
+            'com.weieyu.yalla@2101'
+            'com.weieyu.yalla@2.24.1'
+            'com.weieyu.yalla@2001'
+            'com.weieyu.yalla@2.26.0'
+            'com.weieyu.yalla@3202'
+          )
+          selected=''
+          for spec in "${specs[@]}"; do
+            safe="${spec//@/_}"
+            dest="/tmp/attempts/$safe"
+            mkdir -p "$dest"
+            set +e
+            docker run --rm -v "$dest:/output" ghcr.io/efforg/apkeep:stable \
+              -a "$spec" -d apk-pure /output \
+              > "artifacts/pro-yalla-sweet-apk/$safe.stdout.txt" \
+              2> "artifacts/pro-yalla-sweet-apk/$safe.stderr.txt"
+            code=$?
+            set -e
+            candidate="$(find "$dest" -type f \( -name '*.apk' -o -name '*.xapk' -o -name '*.apks' -o -name '*.zip' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            printf '%s\t%s\t%s\n' "$spec" "$code" "$candidate" >> artifacts/pro-yalla-sweet-apk/attempts.tsv
+            if [[ -n "$candidate" ]]; then selected="$candidate"; echo "$spec" > artifacts/pro-yalla-sweet-apk/selected-spec.txt; break; fi
+          done
+          test -n "$selected"
+          cp "$selected" artifacts/pro-yalla-sweet-apk/downloaded-package.bin
+          if [[ "$selected" == *.apk ]]; then
+            cp "$selected" /tmp/base.apk
+          else
+            rm -rf /tmp/pkg; mkdir -p /tmp/pkg
+            unzip -q "$selected" -d /tmp/pkg
+            base="$(find /tmp/pkg -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            test -n "$base"; cp "$base" /tmp/base.apk
+          fi
+          sha256sum /tmp/base.apk > artifacts/pro-yalla-sweet-apk/base.apk.sha256
+          stat -c '%s' /tmp/base.apk > artifacts/pro-yalla-sweet-apk/base.apk.size
+
+      - name: Decompile and extract Sweet Love evidence
+        run: |
+          set -Eeuo pipefail
+          out=artifacts/pro-yalla-sweet-apk
+          mkdir -p /tmp/jadx-out /tmp/apktool-out "$out/sources" "$out/assets"
+          /tmp/jadx/bin/jadx --threads-count 4 --show-bad-code --deobf \
+            -d /tmp/jadx-out /tmp/base.apk > "$out/jadx.stdout.txt" 2> "$out/jadx.stderr.txt" || true
+          apktool d -f -o /tmp/apktool-out /tmp/base.apk > "$out/apktool.stdout.txt" 2> "$out/apktool.stderr.txt" || true
+
+          pattern='sweet[ _-]?love|sweet[ _-]?moment|love[ _-]?points|valentine|couple|cp[ _-]?task|ferris|limited[ _-]?time[ _-]?items|6475700703|activityUrl|h5EntranceUrl|GetActivityListForCenter|ActivityCenterItemModel|OfficialActionModel|RoomActivityModel'
+          rg -n -i -C 12 "$pattern" /tmp/jadx-out /tmp/apktool-out > "$out/target-context.txt" || true
+          rg -l -i "$pattern" /tmp/jadx-out /tmp/apktool-out | sort -u > "$out/target-files.txt" || true
+          rg -o -N 'https?://[^"[:space:]<>)]+' /tmp/jadx-out /tmp/apktool-out | sed 's#^[^:]*:##' | sort -u > "$out/all-urls.txt" || true
+          rg -o -N '/?(?:api|Api|Webservers)/[A-Za-z0-9_./?=&-]+' /tmp/jadx-out/sources | sed 's#^[^:]*:##' | sort -u > "$out/api-routes.txt" || true
+
+          # Preserve exact dynamic activity and request-wrapper sources.
+          : > "$out/relevant-source-files.txt"
+          for term in 'ActivityCenterRepo' 'ActivityCenterItemModel' 'OfficialActionModel' 'RoomActivityModel' 'ParamsWrapper' 'GetActivityListForCenter' 'OooO0o0' 'addHeader' 'xsignature' 'xtimestamp'; do
+            rg -l -i "$term" /tmp/jadx-out/sources >> "$out/relevant-source-files.txt" || true
+          done
+          sort -u -o "$out/relevant-source-files.txt" "$out/relevant-source-files.txt" || true
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            i=$((i+1)); [[ $i -le 300 ]] || break
+            rel="${file#/tmp/jadx-out/sources/}"
+            dest="$out/sources/$rel"; mkdir -p "$(dirname "$dest")"; cp "$file" "$dest"
+          done < "$out/relevant-source-files.txt"
+
+          find /tmp/apktool-out -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+            | grep -Ei 'sweet|love|valentine|couple|ferris|heart|rose|cp' > "$out/target-images.txt" || true
+          j=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            j=$((j+1)); [[ $j -le 400 ]] || break
+            rel="${file#/tmp/apktool-out/}"
+            dest="$out/assets/$rel"; mkdir -p "$(dirname "$dest")"; cp "$file" "$dest"
+          done < "$out/target-images.txt"
+
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw
+          import json
+          out=Path('artifacts/pro-yalla-sweet-apk')
+          imgs=[]
+          for p in (out/'assets').rglob('*'):
+              if p.suffix.lower() not in {'.png','.jpg','.jpeg','.webp'}: continue
+              try: im=Image.open(p).convert('RGB')
+              except Exception: continue
+              if im.width<80 or im.height<80: continue
+              imgs.append((p,im))
+          if imgs:
+              imgs=imgs[:90]; cols=3; cw,ch=360,290; rows=(len(imgs)+cols-1)//cols
+              sheet=Image.new('RGB',(cols*cw,rows*ch),(244,242,238)); draw=ImageDraw.Draw(sheet)
+              for n,(p,im) in enumerate(imgs):
+                  im.thumbnail((cw-20,ch-48)); x=(n%cols)*cw+(cw-im.width)//2; y=(n//cols)*ch+34
+                  sheet.paste(im,(x,y)); draw.text(((n%cols)*cw+8,(n//cols)*ch+8),p.name[:50],fill=(20,20,20))
+              sheet.save(out/'target-images-contact-sheet.jpg',quality=92)
+          summary={
+            'selected_spec':(out/'selected-spec.txt').read_text().strip(),
+            'target_hit_files':len((out/'target-files.txt').read_text(errors='ignore').splitlines()),
+            'urls':len((out/'all-urls.txt').read_text(errors='ignore').splitlines()),
+            'api_routes':len((out/'api-routes.txt').read_text(errors='ignore').splitlines()),
+            'target_images':len(imgs),
+          }
+          (out/'summary.json').write_text(json.dumps(summary,indent=2))
+          report=['# Sweet Love historical APK recovery','']+[f'- {k}: {v}' for k,v in summary.items()]
+          report+=['','## Target context','```',(out/'target-context.txt').read_text(errors='ignore')[:80000],'```']
+          (out/'REPORT.md').write_text('\n'.join(report))
+          PY
+
+      - name: Upload Sweet Love APK evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-sweet-love-apk-fallback
+          path: artifacts/pro-yalla-sweet-apk
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
