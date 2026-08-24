@@ -44,6 +44,14 @@ src = src.replace(
     1,
 )
 
+# Age of Navigation's map component requires taskList[0].actTaskInfo rather than a flat list.
+# This zero-state fixture restores only the expected response shape. It does not invent progress or rewards.
+rank_branch = "if(p.includes('/rank')||p.includes('ranklist')||p.includes('carousel')||p.includes('/records')){res=[];kind='empty-list';}"
+age_map = "if(campaignId==='age-of-navigation-2022'&&p.includes('/activities/rank/prize/info')){res={taskList:[{myScore:0,actTaskInfo:[{needScore:1,taskPrizeTitle:'',taskPrizeList:[]},{needScore:2,taskPrizeTitle:'',taskPrizeList:[]},{needScore:3,taskPrizeTitle:'',taskPrizeList:[]},{needScore:4,taskPrizeTitle:'',taskPrizeList:[]},{needScore:5,taskPrizeTitle:'',taskPrizeList:[]},{needScore:6,taskPrizeTitle:'',taskPrizeList:[]}]}]};kind='age-navigation-map-progress';}\n  else " + rank_branch
+if rank_branch not in src:
+    raise SystemExit('generic rank fixture branch not found')
+src = src.replace(rank_branch, age_map, 1)
+
 old_user = "else if(p.includes('activities_config/user')||p.includes('/user/info')||p.includes('/user/simple/info')){res={uid:0,nickName:'',avatar:'',isLogin:false};kind='anonymous-user';}"
 new_user = "else if(p.includes('activities_config/user')||p.includes('/user/info')||p.includes('/user/simple/info')){const region=campaignId==='age-of-navigation-2022'?'ES':campaignId==='onam-boat-race-2022'?'EN':'';res={uid:0,nickName:'',avatar:'',isLogin:false,region};kind='anonymous-user';}"
 if old_user not in src:
