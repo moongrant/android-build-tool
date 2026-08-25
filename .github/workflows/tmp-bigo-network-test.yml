@@ -1,0 +1,37 @@
+name: Temporary BIGO network probe
+on:
+  push:
+    branches: [tmp-bigo-increment-assets-20260825]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch official BIGO config and one asset
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p out
+          curl -fL --retry 3 --connect-timeout 15 -A 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 BIGO/6.34.0' \
+            -e 'https://activity.bigo.tv/live/act/act_16907/index.html?id=77022' \
+            'https://ta.bigolive.tv/bigo_act_template_api/act_machineV2/index?actid=77022&actId=77022' -o out/77022.json
+          python - <<'PY'
+          import json,re,urllib.request,pathlib
+          j=json.load(open('out/77022.json'))
+          s=json.dumps(j,ensure_ascii=False)
+          u=re.search(r'https://static-comm\.bigolive\.tv/[^"\\]+',s).group(0).replace('\\/','/')
+          print(u)
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+          pathlib.Path('out/asset.bin').write_bytes(urllib.request.urlopen(req,timeout=30).read())
+          PY
+          file out/*
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tmp-bigo-network-probe
+          path: out
+          retention-days: 1
