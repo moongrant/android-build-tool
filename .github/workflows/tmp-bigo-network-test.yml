@@ -14,10 +14,19 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch official configs, shells, and referenced assets
+      - name: Fix URL parser, then fetch official configs, shells, and referenced assets
         shell: bash
         run: |
           set -euxo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tmp-bigo-increment-assets-20260825/fetch_bigo_assets.py')
+          lines = p.read_text(encoding='utf-8').splitlines()
+          for i, line in enumerate(lines):
+              if line.startswith('URL_RE = '):
+                  lines[i] = 'URL_RE = re.compile(r"https?://[^\\s\\\"\'<>\\\\]+")'
+          p.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+          PY
           python tmp-bigo-increment-assets-20260825/fetch_bigo_assets.py | tee bigo-increment-source-collector.log
           zip -qr PRO-BIGO-INCREMENT-01-OFFICIAL-SOURCE.zip bigo-increment-source
           sha256sum PRO-BIGO-INCREMENT-01-OFFICIAL-SOURCE.zip > PRO-BIGO-INCREMENT-01-OFFICIAL-SOURCE.sha256
