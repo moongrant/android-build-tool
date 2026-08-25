@@ -1,0 +1,57 @@
+name: Pro Falla live registry snapshot
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pro-falla-live-registry-snapshot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch8-20260825
+      - name: Fetch and parse live registry
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/falla-live-registry
+          python - <<'PY'
+          import json, re, urllib.request
+          from pathlib import Path
+          urls = [
+              'https://campaigns-collected.jekae.chatgpt.site/data/activities.js',
+              'https://campaigns-collected.jekae.chatgpt.site/data/falla-hierarchy.js',
+              'https://campaigns-collected.jekae.chatgpt.site/data/falla-hierarchy.json',
+          ]
+          out = Path('artifacts/falla-live-registry')
+          rows = []
+          for url in urls:
+              try:
+                  req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 ProFallaAudit/8.0'})
+                  data = urllib.request.urlopen(req, timeout=30).read()
+                  name = url.rsplit('/',1)[-1]
+                  (out/name).write_bytes(data)
+                  rows.append({'url':url,'status':200,'bytes':len(data),'file':name})
+              except Exception as e:
+                  rows.append({'url':url,'status':0,'error':repr(e)})
+          text = (out/'activities.js').read_text('utf-8', errors='replace') if (out/'activities.js').exists() else ''
+          projects = sorted(set(re.findall(r'act-[a-z0-9][a-z0-9-]{2,}', text, flags=re.I)))
+          cards = sorted(set(re.findall(r'card-falla-[a-z0-9-]+', text, flags=re.I)))
+          summary = {'source':'live-site','projectCount':len(projects),'cardCount':len(cards),'projects':projects,'cards':cards,'fetches':rows}
+          (out/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
+          (out/'REPORT.md').write_text('# Falla Live Registry Snapshot\n\n- Projects: %d\n- Falla card IDs: %d\n\n## Projects\n\n%s\n\n## Cards\n\n%s\n' % (len(projects),len(cards),'\n'.join('- `'+x+'`' for x in projects),'\n'.join('- `'+x+'`' for x in cards)),encoding='utf-8')
+          print(json.dumps({'projectCount':len(projects),'cardCount':len(cards),'fetches':rows},ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-live-registry-snapshot
+          path: artifacts/falla-live-registry
+          if-no-files-found: error
+          retention-days: 14
