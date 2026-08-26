@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta http-equiv="x-dns-prefetch-control" content="on"><title></title><style>@-webkit-keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+
+      @keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+      /* 骨架屏图片闪烁动画 */
+      @keyframes skeleton-img-flash {
+        0% { opacity: 1; }
+        50% { opacity: 0.4; }
+        100% { opacity: 1; }
+      }
+      .skeleton-img-flash {
+        animation: skeleton-img-flash 1.2s ease-in-out infinite;
+      }
+      
+      #SkeletonScreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 99999;
+      }
+      #finishToast {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: none;
+        z-index: 9999;
+        background: #fff;
+      }
+      .icon-act-exit {
+        width: 24px;
+        height: 24px;
+        /* margin: 0 16px; */
+        position: fixed;
+        top: 10px;
+        left: 16px;
+      }
+      #ar .icon-act-exit {
+        left: auto;
+        right: 16px;
+        transform: rotateY(180deg);
+      }
+      .xiaoma {
+        width: 30%;
+        margin: 200px auto 10px;
+      }
+      #actEndText {
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+        padding: 0 10px;
+      }</style><script>const isAnd = () => {
+        return window.navigator.userAgent.includes('Android')
+      }
+      // H5 自定义 level 1-info 2-error
+      const sailfishLog = (level, text, tag) => {
+        try {
+          if (!isAnd()) {
+            window.webkit.messageHandlers.sailfishLog.postMessage({
+              level: level === 1 ? 2 : 4,
+              text,
+              tag
+            })
+            // @ts-ignore
+          } else Yalla.sailfishLog(level === 1 ? 4 : 6, text, tag)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      // window.addEventListener(
+      //   'error',
+      //   function (e) {
+      //     console.log('捕捉错误', e.message)
+      //     sailfishLog(2, e.message, 'sailfishDemo')
+      //   },
+      //   true
+      // )</script><script src="./js/vue.runtime.global.min.js"></script><script src="./js/axios.min.js"></script><script src="./js/jsencrypt.min.js"></script><script src="./js/qs.min.js"></script><link href="/activity/2026dist/carKing/css/chunk-vendors.bf629af4.css" rel="stylesheet"><link href="/activity/2026dist/carKing/css/app.b64bf443.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/activity/2026dist/carKing/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/activity/2026dist/carKing/favicon.ico"><link rel="manifest" href="/activity/2026dist/carKing/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="carKing"><link rel="apple-touch-icon" href="/activity/2026dist/carKing/favicon.ico"><link rel="mask-icon" href="/activity/2026dist/carKing/favicon.ico" color="#4DBA87"><meta name="msapplication-TileImage" content="/activity/2026dist/carKing/favicon.ico"><meta name="msapplication-TileColor" content="#000000"></head><body><div id="finishToast"><img class="icon-act-exit" src="./images/icon_return_normal.png"> <img class="xiaoma" src="./images/horse2.png"><div id="actEndText">The activity has ended.More coming soon…</div></div><div id="app"><img class="skeleton-img-flash" id="SkeletonScreen" src="./images/SkeletonScreen.png" alt=""></div><script src="/activity/2026dist/carKing/js/chunk-vendors.77a44fc2.js"></script><script src="/activity/2026dist/carKing/js/app.b8ed9f0f.js"></script></body></html>
