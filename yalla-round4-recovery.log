@@ -1,0 +1,89 @@
+/home/runner/work/android-build-tool/android-build-tool/tools/yalla-rich-recovery/recover.py:582: SyntaxWarning: invalid escape sequence '\s'
+  info = await page.evaluate("""() => ({title:document.title,width:Math.max(document.documentElement.scrollWidth,document.body?.scrollWidth||0),height:Math.max(document.documentElement.scrollHeight,document.body?.scrollHeight||0),images:[...document.images].map(x=>({src:x.currentSrc||x.src,w:x.naturalWidth,h:x.naturalHeight,complete:x.complete})),iframes:[...document.querySelectorAll('iframe')].map(x=>x.src),clickables:[...document.querySelectorAll('button,a,[role="button"],[class*="tab" i],[class*="btn" i],[class*="menu" i]')].filter(e=>{const r=e.getBoundingClientRect();return r.width>22&&r.height>16}).map((e,i)=>({i,text:(e.innerText||e.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim().slice(0,120),href:e.href||''})).filter(x=>x.text||x.href).slice(0,160)})""")
+{
+  "schemaVersion": "4.0",
+  "generatedAt": "2026-08-26T03:05:33.618888+00:00",
+  "release": "pro-yalla-rich-spa-increment-round4",
+  "verifiedDefinition": "Official SPA root + original resource closure + at least three distinct states + local request-interception replay + all QA gates zero.",
+  "summary": {
+    "OFFICIAL_URL_EXPIRED": 3
+  },
+  "contactSheet": null,
+  "activities": [
+    {
+      "id": "yalla-sea-dominator-2024",
+      "name": "Sea Dominator",
+      "year": 2024,
+      "campaign": "Yalla WonderLand / New Year 2025",
+      "parentCampaign": "Yalla WonderLand / New Year 2025",
+      "officialUrl": "https://activity2.yalla.live/activity/2024dist/seaDominator/",
+      "spaRoot": "/activity/2024dist/seaDominator/",
+      "projectSlug": "seaDominator",
+      "status": "OFFICIAL_URL_EXPIRED",
+      "quality": "C",
+      "currentReleaseVerified": false,
+      "fileCount": 69,
+      "assetCount": 0,
+      "stateCount": 0,
+      "routeCount": 0,
+      "routes": [],
+      "localReplay": false,
+      "screenshot": false,
+      "screenshots": [],
+      "qa": {},
+      "notes": [
+        "No non-generic official SPA root was recovered in this run."
+      ]
+    },
+    {
+      "id": "yalla-royal-victory-2025",
+      "name": "Royal Victory",
+      "year": 2025,
+      "campaign": "Yalla Royal Victory 2025",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2025dist/RoyalVictory/",
+      "spaRoot": "/activity/2025dist/RoyalVictory/",
+      "projectSlug": "RoyalVictory",
+      "status": "OFFICIAL_URL_EXPIRED",
+      "quality": "C",
+      "currentReleaseVerified": false,
+      "fileCount": 29,
+      "assetCount": 0,
+      "stateCount": 0,
+      "routeCount": 0,
+      "routes": [],
+      "localReplay": false,
+      "screenshot": false,
+      "screenshots": [],
+      "qa": {},
+      "notes": [
+        "No non-generic official SPA root was recovered in this run."
+      ]
+    },
+    {
+      "id": "yalla-happy-ferris-wheel-2025",
+      "name": "Happy Ferris Wheel · Castle Edition",
+      "year": 2025,
+      "campaign": "Yalla WonderLand / New Year 2025",
+      "parentCampaign": "Yalla WonderLand / New Year 2025",
+      "officialUrl": "https://activity2.yalla.live/activity/2024dist/ferrisWheel/",
+      "spaRoot": "/activity/2024dist/ferrisWheel/",
+      "projectSlug": "ferrisWheel",
+      "status": "OFFICIAL_URL_EXPIRED",
+      "quality": "C",
+      "currentReleaseVerified": false,
+      "fileCount": 74,
+      "assetCount": 0,
+      "stateCount": 0,
+      "routeCount": 0,
+      "routes": [],
+      "localReplay": false,
+      "screenshot": false,
+      "screenshots": [],
+      "qa": {},
+      "notes": [
+        "No non-generic official SPA root was recovered in this run."
+      ]
+    }
+  ]
+}
