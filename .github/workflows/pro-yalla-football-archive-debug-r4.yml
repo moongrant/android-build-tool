@@ -30,23 +30,23 @@ jobs:
           base64 --decode /tmp/crawler.b64 | gzip --decompress > tools/pro-yalla/pro_yalla_archive_v2.py
           echo 'e505de4a67241d259f0e1a169a790f2b38e9b07fc9898ce40a12ac00e87f22bd  tools/pro-yalla/pro_yalla_archive_v2.py' | sha256sum --check
       - name: Install crawler dependencies
-        run: python -m pip install --quiet requests beautifulsoup4 lxml
+        run: python -m pip install --quiet requests beautifulsoup4 lxml playwright
       - name: Recover Football Carnival closure
         env:
           PYTHONUNBUFFERED: '1'
         run: |
           python - <<'PY'
-          import importlib.util, json, pathlib, traceback
+          import importlib.util, json, pathlib, traceback, sys
           root=pathlib.Path('artifacts/football-archive-debug')
           closure=root/'closure'
           root.mkdir(parents=True,exist_ok=True)
           spec=importlib.util.spec_from_file_location('crawler','tools/pro-yalla/pro_yalla_archive_v2.py')
-          m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+          m=importlib.util.module_from_spec(spec); sys.modules[spec.name]=m; spec.loader.exec_module(m)
           m.MAX_FILES=5000; m.MAX_TOTAL=400*1024*1024
           try:
             result=m.crawl(closure,'https://activity2.yalla.live/activity/2023dist/footballCarnival/','official-live-plus-public-archive')
             error=None
-          except Exception as exc:
+          except Exception:
             result=None; error=traceback.format_exc()
           files=[]
           for p in sorted(closure.rglob('*')):
@@ -70,6 +70,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add research-output/pro-yalla-football-archive-debug-r4
           git commit -m 'Publish Football Carnival archive debug r4 [skip ci]' || true
+          git pull --rebase origin "${GITHUB_REF_NAME}" || true
           git push origin "HEAD:${GITHUB_REF_NAME}"
       - uses: actions/upload-artifact@v4
         if: always()
