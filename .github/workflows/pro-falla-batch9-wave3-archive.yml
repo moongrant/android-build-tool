@@ -36,8 +36,10 @@ jobs:
       - name: Generate archiver
         run: |
           set -Eeuo pipefail
-          python -m py_compile tools/pro-falla-batch9-wave3/make_archiver.py
-          python tools/pro-falla-batch9-wave3/make_archiver.py
+          python -m py_compile tools/pro-falla-batch9-wave3/patch_generator.py
+          python tools/pro-falla-batch9-wave3/patch_generator.py
+          python -m py_compile tools/pro-falla-batch9-wave3/make_archiver_fixed.py
+          python tools/pro-falla-batch9-wave3/make_archiver_fixed.py
           python -m py_compile tools/pro-falla-batch9-wave3/_builder_generated.py
           python tools/pro-falla-batch9-wave3/_builder_generated.py
           node --check tools/pro-falla-batch9-wave3/archive_wave3.mjs
