@@ -1,0 +1,135 @@
+name: Pro Yalla official SPA increment round 4
+
+on:
+  push:
+    branches:
+      - research/pro-yalla-official-increment-r4-20260826
+    paths:
+      - .github/workflows/pro-yalla-official-increment-r4.yml
+      - tools/pro-yalla/**
+      - tools/pro-yalla-increment-v4/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PACKAGE_ID: pro-yalla-official-spa-increment-round-4
+
+concurrency:
+  group: pro-yalla-official-increment-r4
+  cancel-in-progress: false
+
+jobs:
+  build-increment:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+
+    steps:
+      - name: Check out public execution branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Free runner disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /opt/ghc /usr/share/dotnet || true
+          df -h
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore verified Yalla closure crawler
+        run: |
+          set -Eeuo pipefail
+          cat tools/pro-yalla/v2.part.* > /tmp/pro-yalla-crawler.b64
+          echo "9e95cb71e8b568915884c5c91a7c7cf5a8eeea14152610495ffb2a52f594cabe  /tmp/pro-yalla-crawler.b64" | sha256sum --check
+          base64 --decode /tmp/pro-yalla-crawler.b64 | gzip --decompress > tools/pro-yalla/pro_yalla_archive_v2.py
+          echo "e505de4a67241d259f0e1a169a790f2b38e9b07fc9898ce40a12ac00e87f22bd  tools/pro-yalla/pro_yalla_archive_v2.py" | sha256sum --check
+          python -m py_compile tools/pro-yalla/pro_yalla_archive_v2.py
+
+      - name: Restore and verify increment builder
+        run: |
+          set -Eeuo pipefail
+          cat tools/pro-yalla-increment-v4/capture_and_package.py.gz.b64.part.* > /tmp/pro-yalla-increment-builder.py.gz.b64
+          echo "06a7ce9a9d7d34a2d96a2aeacbb825db3641021b72d06d94d8a4e593ae5516e0  /tmp/pro-yalla-increment-builder.py.gz.b64" | sha256sum --check
+          base64 --decode /tmp/pro-yalla-increment-builder.py.gz.b64 | gzip --decompress > tools/pro-yalla-increment-v4/capture_and_package.py
+          echo "e66e92aec20bd73835d50d5cef464b54f3b82dd7377986dc21df83dd9f508efc  tools/pro-yalla-increment-v4/capture_and_package.py" | sha256sum --check
+          python -m py_compile tools/pro-yalla-increment-v4/capture_and_package.py
+
+      - name: Install crawler, browser, image and archive dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml playwright pillow
+          python -m playwright install --with-deps chromium
+
+      - name: Build official SPA increment
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-yalla-increment-v4/capture_and_package.py
+
+      - name: Validate package and SHA
+        run: |
+          set -Eeuo pipefail
+          test -s "artifacts/${PACKAGE_ID}.zip"
+          test -s "artifacts/${PACKAGE_ID}.zip.sha256"
+          (cd artifacts && sha256sum --check "${PACKAGE_ID}.zip.sha256")
+          unzip -t "artifacts/${PACKAGE_ID}.zip" >/tmp/unzip-test.txt
+          tail -n 3 /tmp/unzip-test.txt
+          test -s "artifacts/${PACKAGE_ID}/registry/yalla-activity-registry.json"
+          test -s "artifacts/${PACKAGE_ID}/QA.md"
+          test -s "artifacts/${PACKAGE_ID}/RESULT-BOARD.md"
+
+      - name: Upload increment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-official-spa-increment-round-4
+          path: |
+            artifacts/pro-yalla-official-spa-increment-round-4.zip
+            artifacts/pro-yalla-official-spa-increment-round-4.zip.sha256
+            artifacts/pro-yalla-official-spa-increment-round-4/RESULT-BOARD.md
+            artifacts/pro-yalla-official-spa-increment-round-4/QA.md
+            artifacts/pro-yalla-official-spa-increment-round-4/README.md
+            artifacts/pro-yalla-official-spa-increment-round-4/registry
+            artifacts/pro-yalla-official-spa-increment-round-4/screenshots
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
+
+      - name: Publish run pointer and compact result
+        if: success()
+        run: |
+          set -Eeuo pipefail
+          POINTER="research-output/pro-yalla-official-spa-increment-r4"
+          mkdir -p "$POINTER"
+          cp "artifacts/${PACKAGE_ID}/RESULT-BOARD.md" "$POINTER/RESULT-BOARD.md"
+          cp "artifacts/${PACKAGE_ID}/QA.md" "$POINTER/QA.md"
+          cp "artifacts/${PACKAGE_ID}/registry/yalla-activity-registry.json" "$POINTER/registry.json"
+          cat > "$POINTER/run.json" <<JSON
+          {
+            "run_id": ${GITHUB_RUN_ID},
+            "run_attempt": ${GITHUB_RUN_ATTEMPT},
+            "sha": "${GITHUB_SHA}",
+            "branch": "${GITHUB_REF_NAME}",
+            "artifact": "pro-yalla-official-spa-increment-round-4",
+            "zip": "pro-yalla-official-spa-increment-round-4.zip"
+          }
+          JSON
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$POINTER"
+          git commit -m "Publish Pro-Yalla official SPA increment round 4 results [skip ci]" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Write job summary
+        if: always()
+        run: |
+          if [[ -f "artifacts/${PACKAGE_ID}/RESULT-BOARD.md" ]]; then
+            cat "artifacts/${PACKAGE_ID}/RESULT-BOARD.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Increment builder did not produce RESULT-BOARD.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
