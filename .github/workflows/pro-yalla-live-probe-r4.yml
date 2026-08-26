@@ -1,0 +1,108 @@
+name: Pro Yalla live root probe round 4
+
+on:
+  push:
+    branches:
+      - research/pro-yalla-official-increment-r4-20260826
+    paths:
+      - .github/workflows/pro-yalla-live-probe-r4.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe official roots and first-order HTML assets
+        run: |
+          python -m pip install --quiet requests beautifulsoup4
+          python - <<'PY'
+          import hashlib, json, pathlib, re, urllib.parse
+          import requests
+          from bs4 import BeautifulSoup
+
+          roots = {
+            'football-carnival-2024': 'https://activity2.yalla.live/activity/2023dist/footballCarnival/',
+            'monthly-driving-king-2026': 'https://activity2.yalla.live/activity/2026dist/carKing/',
+            'royal-victory-2025': 'https://activity2.yalla.live/activity/2025dist/RoyalVictory/',
+            'wonderland-2025': 'https://activity2.yalla.live/activity/2024dist/2025NewYear/',
+            'sea-dominator': 'https://activity2.yalla.live/activity/2024dist/seaDominator/',
+            'super-roller-coaster': 'https://activity2.yalla.live/activity/2024dist/rollerCoaster/',
+            'happy-ferris-wheel-new-year': 'https://activity2.yalla.live/activity/2024dist/fw_newyear/',
+            'happy-ferris-wheel-castle': 'https://activity2.yalla.live/activity/2024dist/ferrisWheel/',
+            'activity-illustrated-map': 'https://activity2.yalla.live/activity/2024dist/activityMap/',
+            'ramadan-kareem-2026': 'https://activity2.yalla.live/activity/2026dist/Ramadan/',
+            'ramadan-bless-2026': 'https://activity2.yalla.live/activity/2026dist/ramadanBless/',
+            '8th-anniversary': 'https://activity2.yalla.live/activity/2024dist/8thAnniversary/',
+            '9th-anniversary': 'https://activity2.yalla.live/activity/2025dist/9thAnniversary/',
+            'yalla-season-2026': 'https://activity2.yalla.live/activity/2025dist/yallaSeason/',
+            '10th-anniversary': 'https://activity2.yalla.live/activity/2026dist/10thAnniversary/',
+            'sheep-farm-2026': 'https://activity2.yalla.live/activity/2024dist/adha/',
+            'recall-and-recruit': 'https://activity2.yalla.live/activity/2024dist/recallAndRecruit/',
+          }
+          out = pathlib.Path('research-output/pro-yalla-live-probe-r4')
+          out.mkdir(parents=True, exist_ok=True)
+          session = requests.Session()
+          session.headers['User-Agent'] = 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36'
+          markers = ['the activity has ended', 'more coming soon', 'activity has ended', '活动已结束']
+          results=[]
+          for slug,url in roots.items():
+            rec={'id':slug,'url':url}
+            try:
+              r=session.get(url,timeout=30,allow_redirects=True)
+              data=r.content
+              text=data.decode(r.encoding or 'utf-8',errors='ignore')
+              soup=BeautifulSoup(text,'html.parser')
+              refs=[]
+              for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src')]:
+                for node in soup.find_all(tag):
+                  v=node.get(attr)
+                  if v: refs.append(urllib.parse.urljoin(r.url,v))
+              visible=' '.join(soup.stripped_strings)
+              rec.update({
+                'status':r.status_code,'finalUrl':r.url,'bytes':len(data),
+                'sha256':hashlib.sha256(data).hexdigest(),
+                'title':soup.title.string.strip() if soup.title and soup.title.string else '',
+                'visibleText':visible[:1000],
+                'genericEnded':any(m in visible.lower() for m in markers),
+                'referenceCount':len(refs),'references':refs,
+              })
+              (out/f'{slug}.html').write_bytes(data)
+              asset_rows=[]
+              for ref in refs[:40]:
+                try:
+                  ar=session.get(ref,timeout=30,allow_redirects=True)
+                  asset_rows.append({'url':ref,'status':ar.status_code,'bytes':len(ar.content),'sha256':hashlib.sha256(ar.content).hexdigest(),'contentType':ar.headers.get('content-type','')})
+                except Exception as exc:
+                  asset_rows.append({'url':ref,'error':repr(exc)})
+              rec['firstOrderAssets']=asset_rows
+            except Exception as exc:
+              rec['error']=repr(exc)
+            results.append(rec)
+          (out/'live-probe.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
+          lines=['# Pro-Yalla live root probe r4','','| Activity | HTTP | HTML bytes | refs | generic ended | title |','|---|---:|---:|---:|---|---|']
+          for r in results:
+            lines.append(f"| {r['id']} | {r.get('status','-')} | {r.get('bytes','-')} | {r.get('referenceCount','-')} | {r.get('genericEnded','-')} | {str(r.get('title','')).replace('|','/')} |")
+          (out/'REPORT.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+      - name: Publish compact probe result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research-output/pro-yalla-live-probe-r4
+          git commit -m 'Publish Pro-Yalla live root probe r4 [skip ci]' || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-live-root-probe-r4
+          path: research-output/pro-yalla-live-probe-r4
+          retention-days: 30
