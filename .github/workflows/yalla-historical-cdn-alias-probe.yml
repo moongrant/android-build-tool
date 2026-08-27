@@ -1,0 +1,78 @@
+name: Yalla historical CDN alias probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-historical-cdn-alias-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      RESULT_BRANCH: pro-yalla-historical-cdn-alias-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe current production aliases for exact historical bundles
+        run: |
+          python -m pip install requests
+          mkdir -p out
+          python - <<'PY'
+          import concurrent.futures,hashlib,json,re
+          from pathlib import Path
+          import requests
+          hosts=['file.yalla.live','file.windgh.com','file.ylapi.cc','file.yallalive.cn','static.yalla.live','static.windgh.com']
+          assets=[
+           ('MagicLamp','dist/js/app.9ea63e0b.js'),('MagicLamp','dist/css/app.17610a55.css'),
+           ('beatPinata','dist/js/app.02d89888.js'),('beatPinata','dist/css/app.31752a2d.css'),
+           ('LuckyCard','Dist/static/js/app.557bdbc773260ccabf46.js'),('LuckyCard','Dist/static/js/vendor.d551255b704b838552f0.js'),('LuckyCard','Dist/static/js/vonders.dll.4d5b447.js'),('LuckyCard','Dist/static/css/app.56762d6306992e3ce75d248bc2c9b451.css'),
+           ('NationalDayTemplate','dist/static/js/app.dd642dc0c58c734cf9aa.js'),('NationalDayTemplate','dist/static/js/vendor.798ad0a290dc821a375d.js'),('NationalDayTemplate','dist/static/js/vonders.dll.b6b0c48.js'),('NationalDayTemplate','dist/static/css/app.63de259f4fac17df5508b2bc0357c794.css'),
+          ]
+          urls=[]
+          for host in hosts:
+           for folder,path in assets:
+            for scheme in ['https','http']:
+             for activity in ['activity','Activity']:
+              urls.append((folder,path,f'{scheme}://{host}/{activity}/{folder}/{path}'))
+          s=requests.Session();s.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'*/*'})
+          def one(item):
+           folder,path,url=item
+           try:
+            r=s.get(url,timeout=(8,25),allow_redirects=True)
+            d=r.content;return {'folder':folder,'path':path,'url':url,'status':r.status_code,'finalUrl':r.url,'bytes':len(d),'contentType':r.headers.get('content-type',''),'sha256':hashlib.sha256(d).hexdigest(),'sample':d[:120].decode('utf-8','ignore')}
+           except Exception as e:return {'folder':folder,'path':path,'url':url,'error':repr(e)}
+          rows=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=24) as ex:
+           for x in ex.map(one,urls):rows.append(x)
+          good=[x for x in rows if x.get('status')==200 and x.get('bytes',0)>100 and not ('text/html' in x.get('contentType','').lower() and any(w in x.get('sample','').lower() for w in ['not found','activity has ended']))]
+          Path('out/results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2));Path('out/good.json').write_text(json.dumps(good,ensure_ascii=False,indent=2))
+          lines=['# Yalla Historical CDN Alias Probe','',f'- Requests: {len(rows)}',f'- Valid bundles: {len(good)}','']+[f"- `{x['url']}` · {x['bytes']} bytes · `{x['contentType']}`" for x in good];Path('out/REPORT.md').write_text('\n'.join(lines));print(json.dumps({'good':[x['url'] for x in good]},indent=2))
+          PY
+      - name: Publish alias results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-alias-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish Yalla historical CDN alias probe ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-historical-cdn-alias-probe
+          path: out
+          if-no-files-found: warn
+          retention-days: 30
