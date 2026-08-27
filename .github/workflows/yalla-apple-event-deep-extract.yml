@@ -1,0 +1,84 @@
+name: Yalla Apple in-app-event deep metadata extract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-apple-event-deep-extract.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      RESULT_BRANCH: pro-yalla-apple-event-deep-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch prior Apple records and extract every event action clue
+        run: |
+          set -Eeuo pipefail
+          mkdir -p out
+          curl --fail --location --retry 5 --retry-all-errors \
+            -o /tmp/records.json \
+            'https://raw.githubusercontent.com/moongrant/gpt-work-bootstrap/research/pro-yalla-next-batch-20260817/research-output/pro-yalla-apple-events-v2/records.json'
+          python - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          data=json.load(open('/tmp/records.json'))
+          clues=[];urls=[];ids=[];contexts=[]
+          key_terms=re.compile(r'event|deep|action|target|dest|campaign|activity|link|url|product|content|tap|open|offer|promotion',re.I)
+          def walk(x,path='$',parent=None):
+           if isinstance(x,dict):
+            for k,v in x.items():
+             p=path+'.'+str(k)
+             if key_terms.search(str(k)) and not isinstance(v,(dict,list)):
+              clues.append({'path':p,'key':k,'value':v,'parent':x if len(json.dumps(x,ensure_ascii=False))<12000 else None})
+             walk(v,p,x)
+           elif isinstance(x,list):
+            for i,v in enumerate(x):walk(v,f'{path}[{i}]',x)
+           elif isinstance(x,str):
+            s=html.unescape(x).replace('\\/','/')
+            for u in re.findall(r'(?:https?|yalla|itms-apps)://[^\s"\'<>\\)]+',s,re.I):urls.append({'path':path,'url':u.rstrip(',.;]})
+            for m in re.finditer(r'(?i)(?:event|activity|campaign|content|product)[_ -]?(?:id)?[=:"\']{1,5}([0-9]{5,18})',s):ids.append({'path':path,'id':m.group(1),'context':s[max(0,m.start()-300):m.end()+500]})
+            if any(t in s.lower() for t in ['activity2.','yalla://','deeplink','eventid','actionurl','targeturl','campaignid','activityid']):contexts.append({'path':path,'text':s[:30000]})
+          walk(data)
+          # dedupe compactly
+          def dedupe(seq,key):
+           d={}
+           for x in seq:d.setdefault(key(x),x)
+           return list(d.values())
+          clues=dedupe(clues,lambda x:(x['path'],str(x['value'])[:1000]));urls=dedupe(urls,lambda x:x['url']);ids=dedupe(ids,lambda x:(x['id'],x['path']));contexts=dedupe(contexts,lambda x:(x['path'],x['text'][:500]))
+          relevant=[x for x in clues if any(t in str(x['value']).lower() or t in str(x['key']).lower() for t in ['yalla','event','activity','deep','action','target','campaign','url','link'])]
+          result={'clues':relevant,'urls':urls,'ids':ids,'contexts':contexts}
+          Path('out/deep-metadata.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          lines=['# Yalla Apple Event Deep Metadata','',f'- Relevant key/value clues: {len(relevant)}',f'- URLs: {len(urls)}',f'- ID clues: {len(ids)}',f'- Deep-link contexts: {len(contexts)}','', '## URLs','']+[f"- `{x['url']}` — `{x['path']}`" for x in urls[:500]]+['','## Candidate IDs','']+[f"- `{x['id']}` — `{x['path']}` — {x.get('context','')[:500]}" for x in ids[:500]]
+          Path('out/REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'clues':len(relevant),'urls':[x['url'] for x in urls],'ids':[x['id'] for x in ids[:100]]},ensure_ascii=False,indent=2))
+          PY
+      - name: Publish metadata branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-apple-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish Yalla Apple event deep metadata ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-apple-event-deep-metadata
+          path: out
+          if-no-files-found: warn
+          retention-days: 30
