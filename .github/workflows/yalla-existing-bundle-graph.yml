@@ -1,0 +1,56 @@
+name: Yalla hidden-root scan across collected bundles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/scan_existing_bundles.py
+      - .github/workflows/yalla-existing-bundle-graph.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      RESULT_BRANCH: pro-yalla-existing-bundle-graph-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Mirror and scan all collected Yalla bundles
+        run: |
+          python -m pip install requests beautifulsoup4 lxml
+          python -m py_compile tools/yalla-next-batch/scan_existing_bundles.py
+          rm -rf pro-yalla-existing-bundle-graph
+          python tools/yalla-next-batch/scan_existing_bundles.py 2>&1 | tee yalla-existing-bundle-graph.log
+      - name: Publish graph branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-bundle-graph
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md existing-bundle-graph.json mirror-summary.json; do cp "pro-yalla-existing-bundle-graph/$f" "$stage/" 2>/dev/null || true; done
+          cp yalla-existing-bundle-graph.log "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-graph-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla hidden-root graph ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload graph artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-existing-bundle-graph
+          path: pro-yalla-existing-bundle-graph
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
