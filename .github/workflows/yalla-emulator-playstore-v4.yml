@@ -1,0 +1,171 @@
+name: Yalla guest activity-center on Play Store emulator v4
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-emulator-playstore-v4.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 210
+    env:
+      RESULT_BRANCH: pro-yalla-emulator-playstore-v4-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Free disk and download current public Yalla splits
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /usr/local/lib/android /opt/ghc /usr/share/dotnet || true
+          mkdir -p /tmp/apkeep /tmp/yalla-splits artifacts/yalla-emulator-playstore-v4
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-splits/com.weieyu.yalla.apk; else unzip -q "$package" -d /tmp/yalla-splits; fi
+          find /tmp/yalla-splits -type f -name '*.apk' -printf '%s %p\n' | sort -nr | tee artifacts/yalla-emulator-playstore-v4/apk-splits.txt
+      - name: Install Frida
+        run: |
+          python -m pip install 'frida==17.17.0' 'frida-tools==14.10.4'
+          version="$(python -c 'import frida; print(frida.__version__)')"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/frida-server.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86_64.xz"
+          xz -d -f /tmp/frida-server.xz && chmod +x /tmp/frida-server
+      - name: Write Java-hook guest API extractor
+        run: |
+          cat > /tmp/hook.js <<'JS'
+          'use strict';
+          function emit(tag,data){send({tag:tag,data:data});}
+          function s(v){try{return String(v)}catch(_){return ''}}
+          Java.perform(function(){
+            try{
+              var Main=Java.use('com.yalla.yalla.api.old.OooOOO');
+              var Lazy=Java.use('kotlin.Lazy');
+              var fields=Main.class.getDeclaredFields();
+              var client=null,report=[];
+              for(var i=0;i<fields.length;i++){
+                try{
+                  var f=fields[i];f.setAccessible(true);var raw=f.get(null),value=raw;
+                  var rawName=raw?s(raw.getClass().getName()):'null';
+                  if(raw&&rawName.toLowerCase().indexOf('lazy')>=0){try{value=Java.cast(raw,Lazy).getValue()}catch(_){} }
+                  var name=value?s(value.getClass().getName()):'null';report.push({field:s(f.getName()),raw:rawName,value:name});
+                  if(!client&&name.indexOf('okhttp3.OkHttpClient')>=0)client=value;
+                }catch(e){report.push({error:s(e)})}
+              }
+              emit('fields',report);if(!client)throw new Error('OkHttpClient not found');
+              emit('client',{className:s(client.getClass().getName()),interceptors:s(client.interceptors())});
+              var Thread=Java.use('java.lang.Thread'),Runnable=Java.use('java.lang.Runnable');
+              var RequestBuilder=Java.use('okhttp3.Request$Builder'),FormBuilder=Java.use('okhttp3.FormBody$Builder');
+              function headersObj(h){var o={};try{var n=h.names().toArray();for(var i=0;i<n.length;i++){var k=s(n[i]);o[k]=s(h.get(k))}}catch(_){}return o}
+              function call(method,url,form){var b=RequestBuilder.$new().url(url).header('Abnormal','true');if(method==='POST'){var fb=FormBuilder.$new();Object.keys(form||{}).forEach(function(k){fb.add(k,s(form[k]))});b.post(fb.build())}else b.get();var req=b.build(),res=client.newCall(req).execute(),finalReq=res.request(),bodyObj=res.body(),body=bodyObj?s(bodyObj.string()):'';var out={method:method,requestedUrl:url,originalHeaders:headersObj(req.headers()),finalUrl:s(finalReq.url()),finalHeaders:headersObj(finalReq.headers()),code:res.code(),responseHeaders:headersObj(res.headers()),body:body};res.close();return out}
+              var Job=Java.registerClass({name:'com.openai.YallaGuestPlay'+Date.now(),implements:[Runnable],methods:{run:function(){
+                var loginForms=[
+                  {countryCode:'US',afId:'',visitType:0,promotionParam:'',isSimulator:1},
+                  {countryCode:'AE',afId:'',visitType:0,promotionParam:'',isSimulator:1},
+                  {countryCode:'SA',afId:'',visitType:0,promotionParam:'',isSimulator:1},
+                  {CountryCode:'US',AfId:'',VisitType:0,PromotionParam:'',IsSimulator:1}
+                ];
+                loginForms.forEach(function(form){try{emit('visitor-login',call('POST','https://apiv2.yalla.live/Webservers/User/VisitorLogin',form))}catch(e){emit('visitor-error',{form:form,error:s(e.stack||e)})}});
+                ['https://apiv2.yalla.live/Webservers/Messages/GetActivityListForCenter?isExploreIndex=0','https://apiv2.yalla.live/Webservers/Messages/GetActivityListForCenter?isExploreIndex=1','https://apiv2.yalla.live/Webservers/User/GetNewUserPopup?popupType=0&defaultModule=0','https://apiv2.yalla.live/Webservers/User/GetNewUserPopup?popupType=1&defaultModule=0'].forEach(function(url){try{emit('api-response',call('GET',url,null))}catch(e){emit('api-error',{url:url,error:s(e.stack||e)})}});emit('done',{})
+              }}});Thread.$new(Job.$new()).start();
+            }catch(e){emit('fatal',{error:s(e.stack||e)})}
+          });
+          JS
+          cat > /tmp/run.py <<'PY'
+          import frida,json,time,sys
+          from pathlib import Path
+          out=Path('artifacts/yalla-emulator-playstore-v4');out.mkdir(parents=True,exist_ok=True);messages=[]
+          def cb(message,data):messages.append(message);print(json.dumps(message,ensure_ascii=False),flush=True)
+          dev=frida.get_usb_device(timeout=60);pid=dev.spawn(['com.weieyu.yalla']);ses=dev.attach(pid);script=ses.create_script(Path('/tmp/hook.js').read_text());script.on('message',cb);script.load();dev.resume(pid)
+          end=time.time()+150
+          while time.time()<end:
+            if any(m.get('type')=='send' and m.get('payload',{}).get('tag') in {'done','fatal'} for m in messages):break
+            time.sleep(.5)
+          (out/'messages.json').write_text(json.dumps(messages,ensure_ascii=False,indent=2))
+          payload=[m.get('payload',{}) for m in messages if m.get('type')=='send'];(out/'payloads.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
+          for tag in ['fields','client','visitor-login','visitor-error','api-response','api-error','fatal']:(out/(tag+'.json')).write_text(json.dumps([x.get('data') for x in payload if x.get('tag')==tag],ensure_ascii=False,indent=2))
+          if not any(x.get('tag')=='api-response' for x in payload):sys.exit(3)
+          PY
+      - name: Boot Play Store emulator and extract guest activity center
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis_playstore
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          heap-size: 512M
+          disk-size: 6G
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          script: |
+            set -Eeuo pipefail
+            out=artifacts/yalla-emulator-playstore-v4
+            adb wait-for-device
+            adb shell getprop ro.dalvik.vm.native.bridge | tee "$out/native-bridge.txt"
+            adb shell getprop ro.product.cpu.abilist | tee "$out/abilist.txt"
+            mapfile -t apks < <(find /tmp/yalla-splits -type f -name '*.apk' | sort)
+            set +e
+            adb install-multiple -r "${apks[@]}" 2>&1 | tee "$out/install.log";rc=${PIPESTATUS[0]};set -e
+            if [[ $rc -ne 0 ]]; then
+              # Retry base-only; some Play Store images expose native translation for base but reject split ABI declarations.
+              base="$(find /tmp/yalla-splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)"
+              adb install -r "$base" 2>&1 | tee "$out/install-base.log"
+            fi
+            adb shell pm path com.weieyu.yalla | tee "$out/pm-path.txt"
+            adb root || true;adb wait-for-device
+            adb push /tmp/frida-server /data/local/tmp/frida-server
+            adb shell chmod 755 /data/local/tmp/frida-server
+            adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &'
+            sleep 5
+            set +e
+            python /tmp/run.py 2>&1 | tee "$out/frida-run.log";code=${PIPESTATUS[0]};set -e
+            adb logcat -d -t 16000 > "$out/logcat.txt" || true
+            adb shell cat /data/local/tmp/frida.log > "$out/frida-server.log" || true
+            exit "$code"
+      - name: Parse URLs and publish
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,re,os
+          from pathlib import Path
+          from urllib.parse import urlparse
+          out=Path('artifacts/yalla-emulator-playstore-v4');out.mkdir(parents=True,exist_ok=True)
+          try:payload=json.loads((out/'payloads.json').read_text())
+          except Exception:payload=[]
+          responses=[x.get('data') for x in payload if x.get('tag')=='api-response'];urls=[]
+          for response in responses:
+            body=(response or {}).get('body','')
+            for url in re.findall(r'https?://[^\s"\'<>\\)]+',body):urls.append(url.rstrip(',.;'))
+          roots=[]
+          for url in urls:
+            try:
+              p=urlparse(url);parts=[x for x in p.path.split('/') if x]
+              if len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):roots.append({'url':url,'bucket':parts[1],'project':parts[2],'root':f'{p.scheme}://{p.netloc}/activity/{parts[1]}/{parts[2]}/'})
+            except Exception:pass
+          unique={x['root']:x for x in roots};result={'generatedAt':os.popen('date -u +%FT%TZ').read().strip(),'apiResponses':responses,'urls':urls,'roots':sorted(unique.values(),key=lambda x:(x['bucket'],x['project']))}
+          (out/'activity-center.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));lines=['# Yalla Play Store Emulator Guest Activity Center','',f"API responses: {len(responses)}",f"URLs: {len(urls)}",f"Roots: {len(unique)}",'']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in result['roots']];(out/'REPORT.md').write_text('\n'.join(lines))
+          PY
+          stage=/tmp/yalla-playstore-v4
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp -R artifacts/yalla-emulator-playstore-v4/. "$stage/"
+          git config user.name 'pro-yalla-emulator-bot';git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1 || true;cp -a "$stage"/. .;git add .;git commit -m "Publish Yalla Play Store emulator guest API ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-emulator-playstore-v4
+          path: artifacts/yalla-emulator-playstore-v4
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
