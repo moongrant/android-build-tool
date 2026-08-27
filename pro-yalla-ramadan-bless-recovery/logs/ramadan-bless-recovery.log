@@ -1,0 +1,21 @@
+/home/runner/work/android-build-tool/android-build-tool/tools/yalla-next-batch/recover_ramadan_bless.py:160: SyntaxWarning: invalid escape sequence '\s'
+  info=await page.evaluate("""()=>({title:document.title,text:(document.body?.innerText||'').replace(/\s+/g,' ').trim().slice(0,25000),height:Math.max(document.documentElement.scrollHeight,document.body?.scrollHeight||0),width:Math.max(document.documentElement.scrollWidth,document.body?.scrollWidth||0),appHTMLLength:document.getElementById('app')?.innerHTML.length||0,images:[...document.images].map(x=>({src:x.currentSrc||x.src,complete:x.complete,width:x.naturalWidth,height:x.naturalHeight})),iframes:[...document.querySelectorAll('iframe')].map(x=>x.src),clickables:[...document.querySelectorAll('button,a,[role="button"],[class*="tab" i],[class*="btn" i],[class*="menu" i]')].filter(e=>{const r=e.getBoundingClientRect();return r.width>22&&r.height>16}).map((e,i)=>({i,text:(e.innerText||e.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim().slice(0,120),href:e.href||''})).filter(x=>x.text||x.href).slice(0,180)})""")
+/home/runner/work/android-build-tool/android-build-tool/tools/yalla-next-batch/recover_ramadan_bless.py:199: SyntaxWarning: invalid escape sequence '\s'
+  await reveal();await scroll();metrics=await page.evaluate("""()=>({images:[...document.images].map(x=>({complete:x.complete,width:x.naturalWidth,height:x.naturalHeight})),iframes:[...document.querySelectorAll('iframe')].map(x=>x.src),height:Math.max(document.documentElement.scrollHeight,document.body?.scrollHeight||0),text:(document.body?.innerText||'').replace(/\s+/g,' ').trim().slice(0,10000)})""")
+Traceback (most recent call last):
+  File "/home/runner/work/android-build-tool/android-build-tool/tools/yalla-next-batch/recover_ramadan_bless.py", line 207, in <module>
+    online,qa=asyncio.run(run_browser())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/android-build-tool/android-build-tool/tools/yalla-next-batch/recover_ramadan_bless.py", line 139, in run_browser
+    await context.add_init_script("""({fixed})=>{const R=Date;class D extends R{constructor(...a){super(...(a.length?a:[fixed]));}static now(){return fixed;}}Object.setPrototypeOf(D,R);window.Date=D;const n=()=>{},e=()=>'';window.YallaBridge=window.YallaBridge||{getToken:e,getUserInfo:()=>null,close:n,share:n,openRoom:n};window.Android=window.Android||{getToken:e,getUserInfo:e,closeWebView:n,share:n};}""",{'fixed':int(datetime(2026,2,20,tzinfo=timezone.utc).timestamp()*1000)})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BrowserContext.add_init_script() takes from 1 to 2 positional arguments but 3 were given
