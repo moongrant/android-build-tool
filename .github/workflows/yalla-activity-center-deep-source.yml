@@ -1,0 +1,130 @@
+name: Yalla activity-center deep source and route extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-activity-center-deep-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    env:
+      RESULT_BRANCH: pro-yalla-activity-center-deep-source-results
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download current public Yalla package
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/apkeep-output /tmp/yalla-xapk /tmp/jadx deep-source
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep-output:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep-output -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          stat -c '%n %s' "$package" | tee deep-source/package.txt
+          sha256sum "$package" | tee deep-source/package.sha256
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-base.apk; else
+            unzip -q "$package" -d /tmp/yalla-xapk
+            base="$(find /tmp/yalla-xapk -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            test -f "$base"; cp "$base" /tmp/yalla-base.apk
+          fi
+          sha256sum /tmp/yalla-base.apk | tee deep-source/base-apk.sha256
+
+      - name: Download JADX and decompile request pipeline
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep
+          asset_url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' https://api.github.com/repos/skylot/jadx/releases/latest | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors --output /tmp/jadx.zip "$asset_url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          out=deep-source/classes; mkdir -p "$out"
+          classes=(
+            'com.yalla.yalla.data.repository.OooO0O0'
+            'com.yalla.yalla.api.call.core.HttpCoreRequest'
+            'com.yalla.yalla.api.call.core.IHttpService'
+            'com.yalla.yalla.api.call.OooO'
+            'com.yalla.yalla.api.call.request.ParamsWrapper'
+            'com.yalla.yalla.api.old.Oooo0'
+            'com.yalla.yalla.api.old.OooOOO'
+            'com.yalla.yalla.domain.OooOo00'
+            'com.code.android.util.o0Oo0oo'
+          )
+          for cls in "${classes[@]}"; do
+            safe="$(printf '%s' "$cls" | tr '.' '_')"
+            /tmp/jadx/bin/jadx --no-res --show-bad-code --single-class "$cls" --single-class-output "$out/${safe}.java" /tmp/yalla-base.apk > "$out/${safe}.stdout.txt" 2> "$out/${safe}.stderr.txt" || true
+          done
+          # Full package decompilation is intentionally limited to sources, not resources.
+          /tmp/jadx/bin/jadx --no-res --show-bad-code --threads-count 4 --output-dir /tmp/yalla-jadx /tmp/yalla-base.apk > deep-source/jadx-full.stdout.txt 2> deep-source/jadx-full.stderr.txt || true
+          rg -n -i -C 35 'GetActivityListForCenter|isExploreIndex|ParamsWrapper|postForm|postJson|getAsync|sign|signature|userid|deviceid|token|timestamp|HeaderMap|activityUrl|h5EntranceUrl|jumpUrl|shareUrl|redirectUrl|activity2\.' /tmp/yalla-jadx/sources > deep-source/request-pipeline-context.txt || true
+          find /tmp/yalla-jadx/sources -type f -print0 | xargs -0 -r grep -Il 'GetActivityListForCenter' | sort > deep-source/activity-center-files.txt || true
+          mkdir -p deep-source/activity-center-files
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue; i=$((i+1)); rel="${file#/tmp/yalla-jadx/sources/}"; safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr -cd '[:alnum:]_.-$')"; cp "$file" "deep-source/activity-center-files/${i}-${safe}"
+          done < deep-source/activity-center-files.txt
+          find /tmp/yalla-jadx/sources -type f -print0 | xargs -0 -r grep -IlE 'activity2\.(yalla\.live|qrsshine\.com)|/activity/(20[0-9]{2}dist|YallaActivity20[0-9]{2})' | sort > deep-source/activity-url-files.txt || true
+          mkdir -p deep-source/activity-url-snippets
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue; i=$((i+1)); [[ $i -le 250 ]] || break
+            rel="${file#/tmp/yalla-jadx/sources/}"; safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr -cd '[:alnum:]_.-$')"
+            rg -n -i -C 20 'activity2\.(yalla\.live|qrsshine\.com)|/activity/(20[0-9]{2}dist|YallaActivity20[0-9]{2})|activityUrl|h5EntranceUrl|jumpUrl|shareUrl|redirectUrl' "$file" > "deep-source/activity-url-snippets/${i}-${safe}.txt" || true
+          done < deep-source/activity-url-files.txt
+
+      - name: Extract URL and project slug union
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          from urllib.parse import urlparse
+          root=Path('deep-source')
+          text='\n'.join(p.read_text(errors='ignore') for p in root.rglob('*') if p.is_file() and p.stat().st_size<20_000_000)
+          urls=sorted(set(x.rstrip('),.;') for x in re.findall(r'https?://[^\s"\'<>\\)]+',text)))
+          roots=[]
+          for url in urls:
+            try:
+              p=urlparse(url);parts=[x for x in p.path.split('/') if x]
+              if p.hostname and ('yalla' in p.hostname or 'peakxyz' in p.hostname) and len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):
+                roots.append({'url':url,'host':p.hostname,'bucket':parts[1],'project':parts[2],'root':f'{p.scheme}://{p.netloc}/activity/{parts[1]}/{parts[2]}/'})
+            except Exception: pass
+          unique={x['root']:x for x in roots}
+          payload={'urls':urls,'roots':sorted(unique.values(),key=lambda x:(x['bucket'],x['project'])),'projects':sorted({x['project'] for x in unique.values()})}
+          (root/'route-union.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
+          lines=['# Yalla Activity Center Deep Source','',f"URLs: {len(urls)}",f"Exact roots: {len(unique)}",'']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in payload['roots']]
+          (root/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'urls':len(urls),'roots':len(unique),'projects':payload['projects']},ensure_ascii=False,indent=2))
+          PY
+
+      - name: Publish focused source branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-deep-source
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp -R deep-source/. "$stage/"
+          git config user.name 'pro-yalla-source-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla activity-center deep source ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload deep source artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-activity-center-deep-source
+          path: deep-source
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
