@@ -1,0 +1,131 @@
+name: Pro Falla batch 12 quick project index
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch11-wave1-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch12-quick-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch12-20260828
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan current registry and all public activity configs
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp
+          mkdir -p artifacts/pro-falla-batch12-quick-index
+          python - <<'PY'
+          import asyncio, aiohttp, json, re
+          from pathlib import Path
+
+          OUT=Path('artifacts/pro-falla-batch12-quick-index')
+          API='https://api.apifalla.com/api/web/activities_config/act'
+          SITE='https://campaigns-collected.jekae.chatgpt.site/data/activities.js'
+          HIER='https://campaigns-collected.jekae.chatgpt.site/data/falla-hierarchy.json'
+          UA='Mozilla/5.0 ProFallaBatch12Quick/1.0'
+          PROJECT_RE=re.compile(r'act-[a-z0-9][a-z0-9-]{2,}',re.I)
+          CARD_RE=re.compile(r'card-falla-[a-z0-9-]+',re.I)
+          HARD_EXCLUDE={
+            'act-special-gift','act-pop-star','act-super-car-club','act-corban-festival',
+            'act-super-lucky-bag','act-happy-newyear-25','act-arabian-nights',
+            'act-newcomer-package','act-endless-gift','act-game-competition-2509',
+            'act-slots-pack','act-football-game-tr','act-elves-journey-25',
+            'act-country-elect','act-elect-template','act-travel-2310','act-family-pk-2409',
+            'act-recall-friend','act-age-of-navigation','act-onam-day',
+            'act-qatar-world-cup','act-world-cup-group-stage','act-world-cup-semifinal',
+            'act-world-cup-finals','act-magic-awake-25','act-undersea-treasure',
+            'act-medal-collect','act-christmas-new-year-24','act-welcome-spring-festival',
+            'act-aladdin-magic-lamp','act-hot-air-balloon','act-new-king-competition',
+            'act-game-championship','act-country-pk-2507','act-room-tournament',
+            'act-team-treasure-2512','act-world-travel-25','act-treasure-hunt'
+          }
+
+          def parse_ext(v):
+            if isinstance(v,dict): return v
+            if isinstance(v,str):
+              try:
+                o=json.loads(v); return o if isinstance(o,dict) else {}
+              except Exception: return {}
+            return {}
+
+          async def main():
+            conn=aiohttp.TCPConnector(limit=128,ssl=False)
+            headers={'User-Agent':UA}
+            async with aiohttp.ClientSession(connector=conn,headers=headers) as s:
+              async def get_text(url):
+                try:
+                  async with s.get(url,timeout=45) as r: return await r.text(errors='replace')
+                except Exception as e: return f'ERROR {e!r}'
+              site,hier=await asyncio.gather(get_text(SITE),get_text(HIER))
+              (OUT/'site-activities.js').write_text(site,encoding='utf-8')
+              (OUT/'site-falla-hierarchy.json').write_text(hier,encoding='utf-8')
+              combined=site+'\n'+hier
+              site_projects={m.group(0).lower() for m in PROJECT_RE.finditer(combined)}
+              site_cards={m.group(0).lower() for m in CARD_RE.finditer(combined)}
+              exclusions=site_projects|HARD_EXCLUDE
+              sem=asyncio.Semaphore(128)
+              async def one(aid):
+                async with sem:
+                  try:
+                    async with s.post(API,json={'activitiesId':aid},headers={
+                      'Content-Type':'application/json;charset=UTF-8',
+                      'Origin':'https://web.fallaweb.com','Referer':'https://web.fallaweb.com/'
+                    },timeout=20) as r:
+                      if r.status!=200:return None
+                      o=await r.json(content_type=None)
+                  except Exception:return None
+                res=o.get('res') if isinstance(o,dict) and o.get('code')==0 else None
+                if not isinstance(res,dict) or not res.get('id'):return None
+                ext=parse_ext(res.get('extConfig'))
+                txt=json.dumps(ext,ensure_ascii=False)
+                m=PROJECT_RE.search(txt)
+                if not m:return None
+                project=m.group(0).lower()
+                web=ext.get('web') if isinstance(ext.get('web'),dict) else {}
+                pc=web.get('pageConfig') if isinstance(web.get('pageConfig'),dict) else {}
+                return {
+                  'activityId':int(res['id']),'project':project,
+                  'translateId':pc.get('translateId'),'activityUrl':web.get('activityUrl'),
+                  'startTime':res.get('startTime'),'endTime':res.get('endTime'),
+                  'regions':res.get('regionList') or [],'giftCount':len(res.get('giftInfoList') or []),
+                  'knownOnSite':project in site_projects,'hardExcluded':project in HARD_EXCLUDE,
+                  'serverConfig':res.get('serverConfig'),'extConfig':res.get('extConfig')
+                }
+              rows=[x for x in await asyncio.gather(*(one(i) for i in range(1,2501))) if x]
+              rows=sorted(rows,key=lambda x:x['activityId'],reverse=True)
+              by={}
+              for x in rows:
+                by.setdefault(x['project'],x)
+              unique=list(by.values())
+              unknown=[x for x in unique if x['project'] not in exclusions]
+              (OUT/'all-instances.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+              (OUT/'latest-projects.json').write_text(json.dumps(unique,ensure_ascii=False,indent=2),encoding='utf-8')
+              (OUT/'unknown-projects.json').write_text(json.dumps(unknown,ensure_ascii=False,indent=2),encoding='utf-8')
+              summary={
+                'siteProjectCount':len(site_projects),'siteCardCount':len(site_cards),
+                'hardExcludeCount':len(HARD_EXCLUDE),'validInstances':len(rows),
+                'validUniqueProjects':len(unique),'unknownProjectCount':len(unknown),
+                'topUnknown':unknown[:80]
+              }
+              (OUT/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
+              print(json.dumps(summary,ensure_ascii=False,indent=2))
+          asyncio.run(main())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-batch12-quick-index
+          path: artifacts/pro-falla-batch12-quick-index
+          if-no-files-found: error
+          retention-days: 14
