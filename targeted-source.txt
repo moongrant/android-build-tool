@@ -1,0 +1,1120 @@
+package com.yalla.yalla.api.call;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.facebook.internal.ServerProtocol;
+import java.util.LinkedHashMap;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+public final class OooO {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public final String f44947OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    public final int f44948OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NotNull
+    public final LinkedHashMap f44949OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    @NotNull
+    public final LinkedHashMap f44950OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    @Nullable
+    public JSONObject f44951OooO0o0;
+
+    public OooO(@NotNull String url, int i) {
+        Intrinsics.checkNotNullParameter(url, "url");
+        this.f44947OooO00o = url;
+        this.f44948OooO0O0 = i;
+        this.f44949OooO0OO = new LinkedHashMap();
+        this.f44950OooO0Oo = new LinkedHashMap();
+    }
+
+    @NotNull
+    public final void OooO00o() {
+        this.f44950OooO0Oo.put("Abnormal", ServerProtocol.DIALOG_RETURN_SCOPES_TRUE);
+    }
+
+    @NotNull
+    public final void OooO0O0() {
+        this.f44950OooO0Oo.put("yl-rep", ServerProtocol.DIALOG_RETURN_SCOPES_TRUE);
+    }
+
+    @NotNull
+    public final void OooO0OO(@Nullable Object obj, @NotNull String key) throws JSONException {
+        Intrinsics.checkNotNullParameter(key, "key");
+        if (obj != null) {
+            if (this.f44951OooO0o0 == null) {
+                this.f44951OooO0o0 = new JSONObject();
+            }
+            JSONObject jSONObject = this.f44951OooO0o0;
+            if (jSONObject != null) {
+                jSONObject.put(key, obj);
+            }
+        }
+    }
+
+    @NotNull
+    public final void OooO0Oo(@Nullable Object obj, @NotNull String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        if (obj != null) {
+            this.f44949OooO0OO.put(key, obj);
+        }
+    }
+
+    @NotNull
+    public final void OooO0o0() {
+        this.f44950OooO0Oo.put("UnChangeDomain", ServerProtocol.DIALOG_RETURN_SCOPES_TRUE);
+    }
+}
+package com.yalla.yalla.api.call;
+
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.domain.OooOo00;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsJVMKt;
+import kotlin.text.StringsKt__StringsKt;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes6.dex */
+public final class OooO0o {
+    @NotNull
+    public static final String OooO(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Search);
+    }
+
+    public static final String OooO00o(String str, DomainType domainType) {
+        StringBuilder sb;
+        if (StringsKt__StringsJVMKt.startsWith$default(str, "http://", false, 2, null) || StringsKt__StringsJVMKt.startsWith$default(str, "https://", false, 2, null)) {
+            sb = new StringBuilder(str);
+        } else if (StringsKt__StringsJVMKt.startsWith$default(str, "/", false, 2, null)) {
+            sb = new StringBuilder(OooOo00.OooO0Oo(domainType));
+            if (StringsKt__StringsKt.endsWith$default(sb, (CharSequence) "/", false, 2, (Object) null)) {
+                String strSubstring = str.substring(1);
+                Intrinsics.checkNotNullExpressionValue(strSubstring, "substring(...)");
+                sb.append(strSubstring);
+            } else {
+                String strSubstring2 = str.substring(0);
+                Intrinsics.checkNotNullExpressionValue(strSubstring2, "substring(...)");
+                sb.append(strSubstring2);
+            }
+            Intrinsics.checkNotNull(sb);
+        } else {
+            sb = new StringBuilder(OooOo00.OooO0Oo(domainType));
+            if (StringsKt__StringsKt.endsWith$default(sb, (CharSequence) "/", false, 2, (Object) null)) {
+                sb.append(str);
+            } else {
+                sb.append("/");
+                sb.append(str);
+            }
+            Intrinsics.checkNotNull(sb);
+        }
+        String string = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(string, "toString(...)");
+        return string;
+    }
+
+    @NotNull
+    public static final String OooO0O0(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Event);
+    }
+
+    @NotNull
+    public static final String OooO0OO(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Log);
+    }
+
+    @NotNull
+    public static final String OooO0Oo(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Login);
+    }
+
+    @NotNull
+    public static final String OooO0o(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Moment);
+    }
+
+    @NotNull
+    public static final String OooO0o0(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Main);
+    }
+
+    @NotNull
+    public static final String OooO0oO(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Pay);
+    }
+
+    @NotNull
+    public static final String OooO0oo(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        return OooO00o(str, DomainType.Room);
+    }
+}
+package com.yalla.yalla.api.call.core;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.yalla.yalla.api.old.OooOOO;
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.domain.OooOo00;
+import java.util.Map;
+import kotlin.Lazy;
+import kotlin.Metadata;
+import kotlin.coroutines.Continuation;
+import kotlin.jvm.internal.Intrinsics;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import retrofit2.Retrofit;
+import retrofit2.http.HeaderMap;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0003¢\u0006\u0004\b\u0002\u0010\u0003J.\u0010\t\u001a\u00020\b2\u0014\b\u0001\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0007\u001a\u00020\u0005H\u0086@¢\u0006\u0004\b\t\u0010\nJ.\u0010\u000b\u001a\u00020\b2\u0014\b\u0001\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0007\u001a\u00020\u0005H\u0086@¢\u0006\u0004\b\u000b\u0010\nJB\u0010\r\u001a\u00020\b2\u0014\b\u0001\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0007\u001a\u00020\u00052\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00010\u0004H\u0086@¢\u0006\u0004\b\r\u0010\u000eJ6\u0010\u000f\u001a\u00020\b2\u0014\b\u0001\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u0001H\u0086@¢\u0006\u0004\b\u000f\u0010\u0010J6\u0010\u0013\u001a\u00020\b2\u0014\b\u0001\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u00042\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u0011H\u0086@¢\u0006\u0004\b\u0013\u0010\u0014¨\u0006\u0015"}, d2 = {"Lcom/yalla/yalla/api/call/core/HttpCoreRequest;", "", "<init>", "()V", "", "", "headers", "url", "Lokhttp3/ResponseBody;", "get", "(Ljava/util/Map;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "post", "paras", "postForm", "(Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "postJson", "(Ljava/util/Map;Ljava/lang/String;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lokhttp3/RequestBody;", "body", "postBody", "(Ljava/util/Map;Ljava/lang/String;Lokhttp3/RequestBody;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class HttpCoreRequest {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public static final HttpCoreRequest f44958OooO00o = new HttpCoreRequest();
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @Nullable
+    public static Retrofit f44959OooO0O0;
+
+    public static IHttpService OooO00o() {
+        if (f44959OooO0O0 == null) {
+            Retrofit.Builder builderClient = new Retrofit.Builder().client((OkHttpClient) OooOOO.f45025OooO00o.getValue());
+            Lazy lazy = OooOo00.f49344OooO00o;
+            f44959OooO0O0 = builderClient.baseUrl(OooOo00.OooO0Oo(DomainType.Main)).build();
+        }
+        Retrofit retrofit = f44959OooO0O0;
+        Intrinsics.checkNotNull(retrofit);
+        Object objCreate = retrofit.create(IHttpService.class);
+        Intrinsics.checkNotNullExpressionValue(objCreate, "create(...)");
+        return (IHttpService) objCreate;
+    }
+
+    @Nullable
+    public final Object get(@HeaderMap @NotNull Map<String, String> map, @NotNull String str, @NotNull Continuation<? super ResponseBody> continuation) {
+        return OooO00o().getAsync(map, str, continuation);
+    }
+
+    @Nullable
+    public final Object post(@HeaderMap @NotNull Map<String, String> map, @NotNull String str, @NotNull Continuation<? super ResponseBody> continuation) {
+        return OooO00o().postAsync(map, str, continuation);
+    }
+
+    @Nullable
+    public final Object postBody(@HeaderMap @NotNull Map<String, String> map, @NotNull String str, @NotNull RequestBody requestBody, @NotNull Continuation<? super ResponseBody> continuation) {
+        return OooO00o().postBodyAsync(map, str, requestBody, continuation);
+    }
+
+    @Nullable
+    public final Object postForm(@HeaderMap @NotNull Map<String, String> map, @NotNull String str, @NotNull Map<String, ? extends Object> map2, @NotNull Continuation<? super ResponseBody> continuation) {
+        return OooO00o().postFormAsync(map, str, map2, continuation);
+    }
+
+    @Nullable
+    public final Object postJson(@HeaderMap @NotNull Map<String, String> map, @NotNull String str, @NotNull Object obj, @NotNull Continuation<? super ResponseBody> continuation) {
+        return OooO00o().postJsonAsync(map, str, obj, continuation);
+    }
+}
+package com.yalla.yalla.api.call.core;
+
+import com.facebook.internal.NativeProtocol;
+import java.util.Map;
+import kotlin.Metadata;
+import kotlin.coroutines.Continuation;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import retrofit2.http.Body;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.HeaderMap;
+import retrofit2.http.POST;
+import retrofit2.http.Url;
+
+/* JADX INFO: loaded from: classes6.dex */
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\bf\u0018\u00002\u00020\u0001J.\u0010\u0002\u001a\u00020\u00032\u0014\b\u0001\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00052\b\b\u0001\u0010\u0007\u001a\u00020\u0006H§@¢\u0006\u0002\u0010\bJ.\u0010\t\u001a\u00020\u00032\u0014\b\u0001\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00052\b\b\u0001\u0010\u0007\u001a\u00020\u0006H§@¢\u0006\u0002\u0010\bJI\u0010\n\u001a\u00020\u00032\u0014\b\u0001\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00052\b\b\u0001\u0010\u0007\u001a\u00020\u00062\u0019\b\u0001\u0010\u000b\u001a\u0013\u0012\u0004\u0012\u00020\u0006\u0012\t\u0012\u00070\u0001¢\u0006\u0002\b\f0\u0005H§@¢\u0006\u0002\u0010\rJ8\u0010\u000e\u001a\u00020\u00032\u0014\b\u0001\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00052\b\b\u0001\u0010\u0007\u001a\u00020\u00062\b\b\u0001\u0010\u000f\u001a\u00020\u0010H§@¢\u0006\u0002\u0010\u0011J8\u0010\u0012\u001a\u00020\u00032\u0014\b\u0001\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00052\b\b\u0001\u0010\u0007\u001a\u00020\u00062\b\b\u0001\u0010\u0013\u001a\u00020\u0001H§@¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {"Lcom/yalla/yalla/api/call/core/IHttpService;", "", "getAsync", "Lokhttp3/ResponseBody;", "headers", "", "", "url", "(Ljava/util/Map;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "postAsync", "postFormAsync", "data", "Lkotlin/jvm/JvmSuppressWildcards;", "(Ljava/util/Map;Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "postBodyAsync", "body", "Lokhttp3/RequestBody;", "(Ljava/util/Map;Ljava/lang/String;Lokhttp3/RequestBody;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "postJsonAsync", NativeProtocol.WEB_DIALOG_PARAMS, "(Ljava/util/Map;Ljava/lang/String;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public interface IHttpService {
+    @GET
+    @Nullable
+    Object getAsync(@HeaderMap @NotNull Map<String, String> map, @Url @NotNull String str, @NotNull Continuation<? super ResponseBody> continuation);
+
+    @POST
+    @Nullable
+    Object postAsync(@HeaderMap @NotNull Map<String, String> map, @Url @NotNull String str, @NotNull Continuation<? super ResponseBody> continuation);
+
+    @POST
+    @Nullable
+    Object postBodyAsync(@HeaderMap @NotNull Map<String, String> map, @Url @NotNull String str, @Body @NotNull RequestBody requestBody, @NotNull Continuation<? super ResponseBody> continuation);
+
+    @FormUrlEncoded
+    @POST
+    @Nullable
+    Object postFormAsync(@HeaderMap @NotNull Map<String, String> map, @Url @NotNull String str, @FieldMap @NotNull Map<String, Object> map2, @NotNull Continuation<? super ResponseBody> continuation);
+
+    @POST
+    @Nullable
+    Object postJsonAsync(@HeaderMap @NotNull Map<String, String> map, @Url @NotNull String str, @Body @NotNull Object obj, @NotNull Continuation<? super ResponseBody> continuation);
+}
+package com.yalla.yalla.api.call.request;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import java.util.Map;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import retrofit2.http.HeaderMap;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001BC\u0012\u0016\b\u0002\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0002\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0001\u0012\u0016\b\u0003\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u0002¢\u0006\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Lcom/yalla/yalla/api/call/request/ParamsWrapper;", "", "", "", "formParams", "json", "headers", "<init>", "(Ljava/util/Map;Ljava/lang/Object;Ljava/util/Map;)V", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class ParamsWrapper {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @Nullable
+    public final Map<String, Object> f44960OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @Nullable
+    public final Object f44961OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @Nullable
+    public final Map<String, String> f44962OooO0OO;
+
+    public ParamsWrapper() {
+        this(null, null, null);
+    }
+
+    @NotNull
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        Map<String, Object> map = this.f44960OooO00o;
+        if (map != null) {
+            sb.append("formParams:" + map + "  ");
+        }
+        Object obj = this.f44961OooO0O0;
+        if (obj != null) {
+            sb.append("json:" + obj + "  ");
+        }
+        String string = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(string, "toString(...)");
+        return string;
+    }
+
+    public ParamsWrapper(@Nullable Map<String, ? extends Object> map, @Nullable Object obj, @HeaderMap @Nullable Map<String, String> map2) {
+        this.f44960OooO00o = map;
+        this.f44961OooO0O0 = obj;
+        this.f44962OooO0OO = map2;
+    }
+}
+package com.yalla.yalla.api.old;
+
+import com.app.base.protobuf.room.Room2;
+import com.common.support.apm.otlp.biz.OtlpHttpEventListener;
+import com.common.support.apm.otlp.biz.OtlpInterceptor;
+import com.common.support.firebreak.http.FireBreakInterceptor;
+import com.yalla.yalla.mixedroom.roomdata.RoomData;
+import com.yalla.yalla.mixedroom.roomdata.RoomGiftScoreboardData;
+import com.yalla.yalla.mixedroom.service.RoomLiveService;
+import java.util.concurrent.TimeUnit;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.X509TrustManager;
+import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
+import okhttp3.OkHttpClient;
+import p483o0o00O0O.o0000;
+import p483o0o00O0O.o00000;
+import p483o0o00O0O.o000000;
+import p483o0o00O0O.o000000O;
+import p483o0o00O0O.o00000O;
+import p483o0o00O0O.o00000O0;
+import p483o0o00O0O.o00000OO;
+import p483o0o00O0O.o00oO0o;
+import p483o0o00O0O.o0OOO0o;
+import p483o0o00O0O.o0Oo0oo;
+import p483o0o00O0O.o0ooOOo;
+
+/* JADX INFO: loaded from: classes6.dex */
+public final /* synthetic */ class OooO implements Function0 {
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public final /* synthetic */ int f45016OooO0oO;
+
+    public /* synthetic */ OooO(int i) {
+        this.f45016OooO0oO = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        switch (this.f45016OooO0oO) {
+            case 0:
+                Lazy lazy = OooOOO.f45025OooO00o;
+                OkHttpClient.Builder builder = new OkHttpClient.Builder();
+                TimeUnit timeUnit = TimeUnit.SECONDS;
+                builder.callTimeout(15L, timeUnit);
+                builder.connectTimeout(7L, timeUnit);
+                builder.readTimeout(7L, timeUnit);
+                builder.writeTimeout(7L, timeUnit);
+                if (!p447o0Ooo00.OooOOO0.OooOO0O()) {
+                    com.yalla.yalla.http.OooOOOO.OooO00o OooO00o2 = com.yalla.yalla.http.OooOOOO.OooO00o();
+                    SSLSocketFactory sSLSocketFactory = OooO00o2.f49674OooO00o;
+                    Intrinsics.checkNotNullExpressionValue(sSLSocketFactory, "sSLSocketFactory");
+                    X509TrustManager trustManager = OooO00o2.f49675OooO0O0;
+                    Intrinsics.checkNotNullExpressionValue(trustManager, "trustManager");
+                    builder.sslSocketFactory(sSLSocketFactory, trustManager);
+                }
+                builder.addInterceptor(new o0ooOOo());
+                OooOOO.OooO0O0(builder);
+                builder.addInterceptor(new o00000());
+                builder.addInterceptor(new o000000());
+                builder.addInterceptor(new o000000O());
+                builder.addInterceptor(new o00oO0o());
+                builder.addInterceptor(new o00000O());
+                builder.addInterceptor(new o0Oo0oo());
+                builder.addInterceptor(new o00000OO());
+                builder.addInterceptor(new o0000());
+                builder.addInterceptor(new o0OOO0o());
+                builder.addInterceptor(new OtlpInterceptor("8267947"));
+                builder.eventListenerFactory(OtlpHttpEventListener.INSTANCE.get("8267947"));
+                OooOOO.OooO00o(builder);
+                builder.addInterceptor(new FireBreakInterceptor(0L, 1, null));
+                builder.addInterceptor(new o00000O0());
+                return builder.build();
+            case 1:
+                return Integer.valueOf(RoomGiftScoreboardData.ruleCrystalNum_delegate$lambda$19());
+            case 2:
+                com.yalla.yalla.statistical.buriedpoint.OooO00o.OooO0O0("101110");
+                return Unit.INSTANCE;
+            case 3:
+                if (RoomData.getRacingGame().getHaveGamePermission()) {
+                    Room2.RoomModelSwitchIn.Builder builderNewBuilder = Room2.RoomModelSwitchIn.newBuilder();
+                    builderNewBuilder.setRoomId(RoomData.getInfo().getRoomId());
+                    builderNewBuilder.setRoomModel(Room2.RoomModel.RoomChat);
+                    com.yalla.yalla.statistical.dev.OooO00o.OooOo0O(com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o, "sendCommand SWITCH_GAME_MODE", "model: " + builderNewBuilder.getRoomModel(), 4);
+                    RoomLiveService roomLiveService = RoomLiveService.f50123Oooo000;
+                    if (roomLiveService != null) {
+                        roomLiveService.OooO0oo(1100100, builderNewBuilder.build().toByteArray());
+                    }
+                }
+                return Unit.INSTANCE;
+            case 4:
+                com.yalla.yalla.statistical.buriedpoint.OooO00o.OooO0O0("102071");
+                return Unit.INSTANCE;
+            default:
+                return new o0o0000.OooO0o();
+        }
+    }
+}
+package com.yalla.yalla.api.old;
+
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.mixedroom.roomdata.RoomGiftScoreboardData;
+import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import retrofit2.Retrofit;
+
+/* JADX INFO: loaded from: classes6.dex */
+public final /* synthetic */ class OooOO0 implements Function0 {
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public final /* synthetic */ int f45023OooO0oO;
+
+    public /* synthetic */ OooOO0(int i) {
+        this.f45023OooO0oO = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        switch (this.f45023OooO0oO) {
+            case 0:
+                Retrofit.Builder builderOooO0OO = OooOOO.OooO0OO();
+                Lazy lazy = com.yalla.yalla.domain.OooOo00.f49344OooO00o;
+                return builderOooO0OO.baseUrl(com.yalla.yalla.domain.OooOo00.OooO0Oo(DomainType.Main)).build();
+            case 1:
+                return Integer.valueOf(RoomGiftScoreboardData.ruleCrystalFraction_delegate$lambda$20());
+            case 2:
+                return Unit.INSTANCE;
+            case 3:
+                return Unit.INSTANCE;
+            default:
+                return new o0o0000.OooOOOO();
+        }
+    }
+}
+package com.yalla.yalla.api.old;
+
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.mixedroom.roomdata.RoomGiftScoreboardData;
+import com.yalla.yalla.ui.composable.common.TipBubble;
+import kotlin.Lazy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import retrofit2.Retrofit;
+
+/* JADX INFO: loaded from: classes6.dex */
+public final /* synthetic */ class OooOO0O implements Function0 {
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public final /* synthetic */ int f45024OooO0oO;
+
+    public /* synthetic */ OooOO0O(int i) {
+        this.f45024OooO0oO = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        switch (this.f45024OooO0oO) {
+            case 0:
+                Retrofit.Builder builderOooO0OO = OooOOO.OooO0OO();
+                Lazy lazy = com.yalla.yalla.domain.OooOo00.f49344OooO00o;
+                return builderOooO0OO.baseUrl(com.yalla.yalla.domain.OooOo00.OooO0Oo(DomainType.Moment)).build();
+            case 1:
+                return Boolean.valueOf(RoomGiftScoreboardData.showCountdownVisibleAnim_delegate$lambda$21());
+            case 2:
+                TipBubble tipBubble = TipBubble.f76282OooO00o;
+                TipBubble.OooO0O0();
+                return Unit.INSTANCE;
+            default:
+                return new o0o0000.OooOo();
+        }
+    }
+}
+package com.yalla.yalla.api.old;
+
+import android.os.Looper;
+import androidx.compose.material3.am;
+import androidx.compose.material3.bm;
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.code.android.json.JsonUtil;
+import com.code.android.util.o00OOO0;
+import com.code.android.util.o0o0Oo;
+import java.util.Iterator;
+import kotlin.Deprecated;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.StringsKt;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import org.jetbrains.annotations.NotNull;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+@Deprecated(message = "")
+@SourceDebugExtension({"SMAP\nApiClient.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiClient.kt\ncom/yalla/yalla/api/old/ApiClient\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,145:1\n1869#2,2:146\n1869#2,2:148\n*S KotlinDebug\n*F\n+ 1 ApiClient.kt\ncom/yalla/yalla/api/old/ApiClient\n*L\n108#1:146,2\n134#1:148,2\n*E\n"})
+public final class OooOOO {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public static final Lazy f45025OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NotNull
+    public static final Lazy f45026OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NotNull
+    public static final Lazy f45027OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    @NotNull
+    public static final Lazy f45028OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    @NotNull
+    public static final Lazy f45029OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    @NotNull
+    public static final Lazy f45030OooO0o0;
+
+    static {
+        int i = 0;
+        f45025OooO00o = LazyKt.lazy(new OooO(i));
+        f45026OooO0O0 = LazyKt.lazy(new OooOO0(i));
+        f45027OooO0OO = LazyKt.lazy(new OooOO0O(i));
+        f45028OooO0Oo = LazyKt.lazy(new OooOOO0(i));
+        int i2 = 1;
+        f45030OooO0o0 = LazyKt.lazy(new am(i2));
+        f45029OooO0o = LazyKt.lazy(new bm(i2));
+    }
+
+    public static void OooO00o(@NotNull OkHttpClient.Builder builder) {
+        Object objM7825constructorimpl;
+        String string;
+        Intrinsics.checkNotNullParameter(builder, "builder");
+        if (p447o0Ooo00.OooOOO0.OooOO0O()) {
+            return;
+        }
+        try {
+            Result.Companion companion = Result.INSTANCE;
+            Iterator it = CollectionsKt.listOf((Object[]) new String[]{"com.yalla.android.netmonitor.MonitorInterceptor", "com.didichuxing.doraemonkit.kit.network.okhttp.interceptor.DokitWeakNetworkInterceptor"}).iterator();
+            while (it.hasNext()) {
+                Object objNewInstance = Class.forName((String) it.next()).newInstance();
+                Intrinsics.checkNotNull(objNewInstance, "null cannot be cast to non-null type okhttp3.Interceptor");
+                builder.addInterceptor((Interceptor) objNewInstance);
+            }
+            objM7825constructorimpl = Result.m7825constructorimpl(Unit.INSTANCE);
+        } catch (Throwable th) {
+            Result.Companion companion2 = Result.INSTANCE;
+            objM7825constructorimpl = Result.m7825constructorimpl(ResultKt.createFailure(th));
+        }
+        Throwable thM7828exceptionOrNullimpl = Result.m7828exceptionOrNullimpl(objM7825constructorimpl);
+        if (thM7828exceptionOrNullimpl == null || (string = thM7828exceptionOrNullimpl.toString()) == null || StringsKt.isBlank(string)) {
+            return;
+        }
+        androidx.lifecycle.OooO0O0 oooO0O0OooO00o = o00OOO0.OooO00o(string, "runnable");
+        if (Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper())) {
+            oooO0O0OooO00o.run();
+        } else {
+            o0o0Oo.OooO0OO().post(oooO0O0OooO00o);
+        }
+    }
+
+    public static void OooO0O0(@NotNull OkHttpClient.Builder builder) {
+        Object objM7825constructorimpl;
+        String string;
+        Intrinsics.checkNotNullParameter(builder, "builder");
+        if (p447o0Ooo00.OooOOO0.OooOO0O()) {
+            return;
+        }
+        try {
+            Result.Companion companion = Result.INSTANCE;
+            Iterator it = CollectionsKt.listOf("com.didichuxing.doraemonkit.kit.network.okhttp.interceptor.DokitMockInterceptor").iterator();
+            while (it.hasNext()) {
+                Object objNewInstance = Class.forName((String) it.next()).newInstance();
+                Intrinsics.checkNotNull(objNewInstance, "null cannot be cast to non-null type okhttp3.Interceptor");
+                builder.addInterceptor((Interceptor) objNewInstance);
+            }
+            objM7825constructorimpl = Result.m7825constructorimpl(builder.addInterceptor(new p474o0o000O0.o000oOoO()));
+        } catch (Throwable th) {
+            Result.Companion companion2 = Result.INSTANCE;
+            objM7825constructorimpl = Result.m7825constructorimpl(ResultKt.createFailure(th));
+        }
+        Throwable thM7828exceptionOrNullimpl = Result.m7828exceptionOrNullimpl(objM7825constructorimpl);
+        if (thM7828exceptionOrNullimpl == null || (string = thM7828exceptionOrNullimpl.toString()) == null || StringsKt.isBlank(string)) {
+            return;
+        }
+        androidx.lifecycle.OooO0O0 oooO0O0OooO00o = o00OOO0.OooO00o(string, "runnable");
+        if (Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper())) {
+            oooO0O0OooO00o.run();
+        } else {
+            o0o0Oo.OooO0OO().post(oooO0O0OooO00o);
+        }
+    }
+
+    public static Retrofit.Builder OooO0OO() {
+        Retrofit.Builder builderClient = new Retrofit.Builder().client((OkHttpClient) f45025OooO00o.getValue());
+        JsonUtil.f27146OooO00o.getClass();
+        Retrofit.Builder builderAddConverterFactory = builderClient.addConverterFactory(GsonConverterFactory.create(JsonUtil.OooO0O0()));
+        Intrinsics.checkNotNullExpressionValue(builderAddConverterFactory, "addConverterFactory(...)");
+        return builderAddConverterFactory;
+    }
+}
+package com.yalla.yalla.api.old;
+
+import com.yalla.yalla.data.kv.table.DomainTable;
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.mixedroom.roomdata.RoomInfoData;
+import kotlin.Lazy;
+import kotlin.jvm.functions.Function0;
+import retrofit2.Retrofit;
+
+/* JADX INFO: loaded from: classes6.dex */
+public final /* synthetic */ class OooOOO0 implements Function0 {
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public final /* synthetic */ int f45031OooO0oO;
+
+    public /* synthetic */ OooOOO0(int i) {
+        this.f45031OooO0oO = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        switch (this.f45031OooO0oO) {
+            case 0:
+                Retrofit.Builder builderOooO0OO = OooOOO.OooO0OO();
+                Lazy lazy = com.yalla.yalla.domain.OooOo00.f49344OooO00o;
+                return builderOooO0OO.baseUrl(com.yalla.yalla.domain.OooOo00.OooO0Oo(DomainType.Room)).build();
+            case 1:
+                return Long.valueOf(RoomInfoData.roomId_delegate$lambda$0());
+            default:
+                return new DomainTable();
+        }
+    }
+}
+package com.yalla.yalla.data.manager;
+
+import kotlin.ResultKt;
+import kotlin.jvm.internal.Intrinsics;
+
+/* JADX INFO: loaded from: classes7.dex */
+public final /* synthetic */ class OooO00o {
+    public static String OooO00o(Object obj, String str, String str2) {
+        ResultKt.throwOnFailure(obj);
+        String strOooO0Oo = com.yalla.yalla.api.call.OooO0o.OooO0Oo(str);
+        Intrinsics.checkNotNullParameter(strOooO0Oo, str2);
+        return strOooO0Oo;
+    }
+}
+package com.yalla.yalla.data.repository;
+
+import androidx.exifinterface.media.ExifInterface;
+import com.code.android.json.JsonUtil;
+import com.facebook.share.internal.ShareConstants;
+import com.google.gson.reflect.TypeToken;
+import com.yalla.yalla.api.call.request.ParamsWrapper;
+import com.yalla.yalla.api.result.ApiError;
+import com.yalla.yalla.api.result.ApiResult;
+import com.yalla.yalla.model.ActivityListModel;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.concurrent.CancellationException;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.jvm.internal.TypeIntrinsics;
+import kotlinx.coroutines.CoroutineScope;
+import okhttp3.ResponseBody;
+import org.json.JSONObject;
+import p442o0OoOoo.o00;
+import p442o0OoOoo.o000OOo0;
+import p442o0OoOoo.o00O0000;
+
+/* JADX INFO: loaded from: classes7.dex */
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\f\b\u0000\u0010\u0002\u0018\u0001*\u0004\u0018\u00010\u0003*\u00020\u0004H\n¨\u0006\u0005"}, d2 = {"<anonymous>", "Lcom/yalla/yalla/api/result/ApiResult;", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/CoroutineScope;", "com/yalla/yalla/api/call/YLApi$CommonRequest$call$apiResult$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "com.yalla.yalla.api.call.YLApi$CommonRequest$call$apiResult$1", f = "YLApi.kt", i = {}, l = {95}, m = "invokeSuspend", n = {}, s = {})
+@SourceDebugExtension({"SMAP\nYLApi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 YLApi.kt\ncom/yalla/yalla/api/call/YLApi$CommonRequest$call$apiResult$1\n+ 2 ApiCall.kt\ncom/yalla/yalla/http/ApiCallKt\n+ 3 ResponseBodyParseUtils.kt\ncom/yalla/yalla/api/call/ResponseBodyParseUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 JsonUtil.kt\ncom/code/android/json/JsonUtil\n*L\n1#1,124:1\n12#2,2:125\n14#2,6:141\n20#2,12:148\n32#3,13:127\n1#4:140\n189#5:147\n*S KotlinDebug\n*F\n+ 1 YLApi.kt\ncom/yalla/yalla/api/call/YLApi$CommonRequest$call$apiResult$1\n*L\n94#1:125,2\n94#1:141,6\n94#1:148,12\n96#1:127,13\n94#1:147\n*E\n"})
+public final class ActivityCenterRepo$getActivityList$$inlined$call$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ApiResult<List<ActivityListModel>>>, Object> {
+
+    /* JADX INFO: renamed from: OooO, reason: collision with root package name */
+    public final /* synthetic */ com.yalla.yalla.api.call.OooO f46019OooO;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public com.yalla.yalla.api.call.OooO f46020OooO0oO;
+
+    /* JADX INFO: renamed from: OooO0oo, reason: collision with root package name */
+    public int f46021OooO0oo;
+
+    public static final class OooO00o implements Function0<String> {
+
+        /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+        public final /* synthetic */ Exception f46022OooO0oO;
+
+        public OooO00o(Exception exc) {
+            this.f46022OooO0oO = exc;
+        }
+
+        @Override // kotlin.jvm.functions.Function0
+        public final String invoke() {
+            Exception exc = this.f46022OooO0oO;
+            String message = exc.getMessage();
+            return message == null ? exc.getClass().getName() : message;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ActivityCenterRepo$getActivityList$$inlined$call$1(com.yalla.yalla.api.call.OooO oooO, Continuation continuation) {
+        super(2, continuation);
+        this.f46019OooO = oooO;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new ActivityCenterRepo$getActivityList$$inlined$call$1(this.f46019OooO, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(CoroutineScope coroutineScope, Continuation<? super ApiResult<List<ActivityListModel>>> continuation) {
+        return ((ActivityCenterRepo$getActivityList$$inlined$call$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object objOooO00o;
+        com.yalla.yalla.api.call.OooO oooO;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.f46021OooO0oo;
+        Object obj2 = null;
+        try {
+            if (i == 0) {
+                ResultKt.throwOnFailure(obj);
+                com.yalla.yalla.api.call.OooO oooO2 = this.f46019OooO;
+                int i2 = oooO2.f44948OooO0O0;
+                String url = oooO2.f44947OooO00o;
+                LinkedHashMap linkedHashMap = oooO2.f44949OooO0OO;
+                JSONObject jSONObject = oooO2.f44951OooO0o0;
+                ParamsWrapper paramsWrapper = new ParamsWrapper(linkedHashMap, jSONObject != null ? jSONObject.toString() : null, oooO2.f44950OooO0Oo);
+                Intrinsics.checkNotNullParameter(url, "url");
+                Intrinsics.checkNotNullParameter(paramsWrapper, "paramsWrapper");
+                o000OOo0 o00Var = (i2 == 0 || i2 != 1) ? new o00(url, paramsWrapper) : new o00O0000(url, paramsWrapper);
+                this.f46020OooO0oO = oooO2;
+                this.f46021OooO0oo = 1;
+                objOooO00o = o00Var.OooO00o(this);
+                if (objOooO00o == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                oooO = oooO2;
+            } else {
+                if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                oooO = this.f46020OooO0oO;
+                ResultKt.throwOnFailure(obj);
+                objOooO00o = obj;
+            }
+            com.yalla.yalla.api.call.OooO0OO oooO0OO = com.yalla.yalla.api.call.OooO0OO.f44954OooO00o;
+            Type type = new TypeToken<ApiResult<List<ActivityListModel>>>() { // from class: com.yalla.yalla.data.repository.ActivityCenterRepo$getActivityList$$inlined$call$1.1
+            }.getType();
+            oooO0OO.getClass();
+            String strOooO00o = com.yalla.yalla.api.call.OooO0OO.OooO00o((ResponseBody) objOooO00o);
+            Intrinsics.checkNotNull(type);
+            ApiResult apiResult = (ApiResult) p247o00oo0oO.o000OO0O.OooO0O0(strOooO00o, type);
+            if (apiResult == null) {
+                apiResult = new ApiResult();
+                JSONObject jSONObject2 = new JSONObject(strOooO00o);
+                apiResult.setCode(jSONObject2.optInt("code", -1));
+                apiResult.setMessage(jSONObject2.optString(ShareConstants.WEB_DIALOG_PARAM_MESSAGE, ""));
+                apiResult.setDateSort(jSONObject2.optLong("dateSort", 0L));
+                JsonUtil jsonUtil = JsonUtil.f27146OooO00o;
+                Type type2 = new TypeToken<List<ActivityListModel>>() { // from class: com.yalla.yalla.data.repository.ActivityCenterRepo$getActivityList$$inlined$call$1.2
+                }.getType();
+                Intrinsics.checkNotNullExpressionValue(type2, "getType(...)");
+                jsonUtil.getClass();
+                Object objOooO0o0 = JsonUtil.OooO0o0(strOooO00o, type2);
+                if (TypeIntrinsics.isMutableList(objOooO0o0)) {
+                    obj2 = objOooO0o0;
+                }
+                apiResult.setData((List) obj2);
+            }
+            apiResult.setUrl(oooO.f44947OooO00o);
+            return apiResult;
+        } catch (IOException e) {
+            com.yalla.yalla.util.log.OooOO0.OooO0oO("WebAPIException", e, com.yalla.yalla.http.OooO00o.f49666OooO0oO, 2);
+            com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o.OooOo00(String.valueOf(e.getMessage()));
+            String strOooO0O0 = com.yalla.yalla.api.old.o000oOoO.OooO0O0(JsonUtil.f27146OooO00o, new ApiError(1, "time out", null, null, 12, null));
+            Object objOooO0Oo = JsonUtil.OooO0Oo(ApiResult.class, strOooO0O0 != null ? strOooO0O0 : "");
+            Intrinsics.checkNotNull(objOooO0Oo);
+            return objOooO0Oo;
+        } catch (CancellationException e2) {
+            com.yalla.yalla.api.old.o0OoOo0.OooO00o(e2, com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o);
+            com.yalla.yalla.util.log.OooOO0.OooO0oO("WebAPIException", e2, com.yalla.yalla.http.OooO0O0.f49667OooO0oO, 2);
+            String strOooO0O1 = com.yalla.yalla.api.old.o000oOoO.OooO0O0(JsonUtil.f27146OooO00o, new ApiError(3, "canceled", null, null, 12, null));
+            Object objOooO0Oo2 = JsonUtil.OooO0Oo(ApiResult.class, strOooO0O1 != null ? strOooO0O1 : "");
+            Intrinsics.checkNotNull(objOooO0Oo2);
+            return objOooO0Oo2;
+        } catch (Exception e3) {
+            com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o.OooOo00(String.valueOf(e3.getMessage()));
+            com.yalla.yalla.util.log.OooOO0.OooO0oO("WebAPIException", e3, new OooO00o(e3), 2);
+            String message = e3.getMessage();
+            if (message == null) {
+                message = e3.getClass().getName();
+            }
+            String str = message;
+            Intrinsics.checkNotNull(str);
+            String strOooO0O2 = com.yalla.yalla.api.old.o000oOoO.OooO0O0(JsonUtil.f27146OooO00o, new ApiError(2, str, null, null, 12, null));
+            Object objOooO0Oo3 = JsonUtil.OooO0Oo(ApiResult.class, strOooO0O2 != null ? strOooO0O2 : "");
+            Intrinsics.checkNotNull(objOooO0Oo3);
+            return objOooO0Oo3;
+        }
+    }
+}
+package com.yalla.yalla.data.repository;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.yalla.yalla.api.result.ApiResult;
+import kotlin.ResultKt;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.jvm.internal.SourceDebugExtension;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+@SourceDebugExtension({"SMAP\nActivityCenterRepo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ActivityCenterRepo.kt\ncom/yalla/yalla/data/repository/ActivityCenterRepo\n+ 2 YLApi.kt\ncom/yalla/yalla/api/call/YLApi$CommonRequest\n*L\n1#1,15:1\n91#2,14:16\n*S KotlinDebug\n*F\n+ 1 ActivityCenterRepo.kt\ncom/yalla/yalla/data/repository/ActivityCenterRepo\n*L\n14#1:16,14\n*E\n"})
+public final class OooO0O0 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public static final OooO0O0 f47315OooO00o = new OooO0O0();
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    @Nullable
+    public final Object OooO00o(int i, @NotNull ContinuationImpl continuationImpl) {
+        ActivityCenterRepo$getActivityList$1 activityCenterRepo$getActivityList$1;
+        com.yalla.yalla.api.call.OooO oooO;
+        if (continuationImpl instanceof ActivityCenterRepo$getActivityList$1) {
+            activityCenterRepo$getActivityList$1 = (ActivityCenterRepo$getActivityList$1) continuationImpl;
+            int i2 = activityCenterRepo$getActivityList$1.f46026OooOO0;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                activityCenterRepo$getActivityList$1.f46026OooOO0 = i2 - Integer.MIN_VALUE;
+            } else {
+                activityCenterRepo$getActivityList$1 = new ActivityCenterRepo$getActivityList$1(this, continuationImpl);
+            }
+        } else {
+            activityCenterRepo$getActivityList$1 = new ActivityCenterRepo$getActivityList$1(this, continuationImpl);
+        }
+        Object objOooO0Oo = activityCenterRepo$getActivityList$1.f46025OooO0oo;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i3 = activityCenterRepo$getActivityList$1.f46026OooOO0;
+        if (i3 == 0) {
+            com.yalla.yalla.api.call.OooO oooO2 = new com.yalla.yalla.api.call.OooO(com.yalla.yalla.api.old.Oooo0.OooO0OO(objOooO0Oo, "/Webservers/Messages/GetActivityListForCenter", "url"), 0);
+            oooO2.OooO0Oo(Boxing.boxInt(i), "isExploreIndex");
+            ActivityCenterRepo$getActivityList$$inlined$call$1 activityCenterRepo$getActivityList$$inlined$call$1 = new ActivityCenterRepo$getActivityList$$inlined$call$1(oooO2, null);
+            activityCenterRepo$getActivityList$1.f46024OooO0oO = oooO2;
+            activityCenterRepo$getActivityList$1.f46026OooOO0 = 1;
+            objOooO0Oo = com.code.android.util.o0Oo0oo.OooO0Oo(activityCenterRepo$getActivityList$$inlined$call$1, activityCenterRepo$getActivityList$1);
+            if (objOooO0Oo == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+            oooO = oooO2;
+        } else {
+            if (i3 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            oooO = activityCenterRepo$getActivityList$1.f46024OooO0oO;
+            ResultKt.throwOnFailure(objOooO0Oo);
+        }
+        ApiResult apiResult = (ApiResult) objOooO0Oo;
+        if (!apiResult.isSuccess()) {
+            com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o.OooO0OO(oooO.f44947OooO00o, false, 0L, apiResult.getMessage());
+        }
+        return apiResult;
+    }
+}
+package p442o0OoOoo;
+
+import android.text.TextUtils;
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.yalla.yalla.api.call.core.HttpCoreRequest;
+import com.yalla.yalla.api.call.request.ParamsWrapper;
+import java.util.HashMap;
+import java.util.Map;
+import kotlin.coroutines.Continuation;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+@SourceDebugExtension({"SMAP\nGetRequest.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GetRequest.kt\ncom/yalla/yalla/api/call/request/GetRequest\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,36:1\n216#2,2:37\n*S KotlinDebug\n*F\n+ 1 GetRequest.kt\ncom/yalla/yalla/api/call/request/GetRequest\n*L\n15#1:37,2\n*E\n"})
+public final class o00 extends o000OOo0 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public final String f93012OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @Nullable
+    public final ParamsWrapper f93013OooO0O0;
+
+    public o00(@NotNull String url, @Nullable ParamsWrapper paramsWrapper) {
+        Intrinsics.checkNotNullParameter(url, "url");
+        this.f93012OooO00o = url;
+        this.f93013OooO0O0 = paramsWrapper;
+    }
+
+    @Override // p442o0OoOoo.o000OOo0
+    @Nullable
+    public final Object OooO00o(@NotNull Continuation<? super ResponseBody> continuation) {
+        Map<String, String> map;
+        Map<String, Object> map2;
+        StringBuilder sb = new StringBuilder();
+        ParamsWrapper paramsWrapper = this.f93013OooO0O0;
+        if (paramsWrapper != null && (map2 = paramsWrapper.f44960OooO00o) != null && !map2.isEmpty()) {
+            boolean z = true;
+            for (Map.Entry<String, Object> entry : map2.entrySet()) {
+                if (!TextUtils.isEmpty(entry.getKey())) {
+                    if (z) {
+                        sb.append("?");
+                        z = false;
+                    } else {
+                        sb.append("&");
+                    }
+                    sb.append(entry.getKey());
+                    sb.append("=");
+                    sb.append(entry.getValue());
+                }
+            }
+        }
+        HashMap map3 = new HashMap();
+        if (paramsWrapper != null && (map = paramsWrapper.f44962OooO0OO) != null) {
+            map3.putAll(map);
+        }
+        return HttpCoreRequest.f44958OooO00o.get(map3, this.f93012OooO00o + ((Object) sb), continuation);
+    }
+}
+package p442o0OoOoo;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import kotlin.coroutines.Continuation;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 1)
+public abstract class o000OOo0 {
+    @Nullable
+    public abstract Object OooO00o(@NotNull Continuation<? super ResponseBody> continuation);
+}
+package p442o0OoOoo;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.yalla.yalla.api.call.core.HttpCoreRequest;
+import com.yalla.yalla.api.call.request.ParamsWrapper;
+import java.util.HashMap;
+import java.util.Map;
+import kotlin.coroutines.Continuation;
+import kotlin.jvm.internal.Intrinsics;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+public final class o00O0000 extends o000OOo0 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public final String f93014OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NotNull
+    public final ParamsWrapper f93015OooO0O0;
+
+    public o00O0000(@NotNull String url, @NotNull ParamsWrapper paramsWrapper) {
+        Intrinsics.checkNotNullParameter(url, "url");
+        Intrinsics.checkNotNullParameter(paramsWrapper, "paramsWrapper");
+        this.f93014OooO00o = url;
+        this.f93015OooO0O0 = paramsWrapper;
+    }
+
+    @Override // p442o0OoOoo.o000OOo0
+    @Nullable
+    public final Object OooO00o(@NotNull Continuation<? super ResponseBody> continuation) {
+        HashMap map = new HashMap();
+        ParamsWrapper paramsWrapper = this.f93015OooO0O0;
+        Map<String, String> map2 = paramsWrapper.f44962OooO0OO;
+        if (map2 != null) {
+            map.putAll(map2);
+        }
+        Object obj = paramsWrapper.f44961OooO0O0;
+        String str = this.f93014OooO00o;
+        if (obj == null) {
+            Map<String, ? extends Object> map3 = paramsWrapper.f44960OooO00o;
+            return map3 != null ? HttpCoreRequest.f44958OooO00o.postForm(map, str, map3, continuation) : HttpCoreRequest.f44958OooO00o.post(map, str, continuation);
+        }
+        if (obj instanceof String) {
+            return HttpCoreRequest.f44958OooO00o.postBody(map, str, RequestBody.INSTANCE.create((String) obj, MediaType.INSTANCE.parse("application/json; charset=utf-8")), continuation);
+        }
+        return HttpCoreRequest.f44958OooO00o.postJson(map, str, obj, continuation);
+    }
+}
+package p474o0o000O0;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.compose.runtime.snapshots.SnapshotStateMap;
+import androidx.lifecycle.MutableLiveData;
+import com.code.android.util.o00OOO0O;
+import com.yalla.yalla.util.log.OooOO0;
+import com.yalla.yalla.util.o000OO00;
+import kotlin.Pair;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsJVMKt;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Protocol;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import p472o0o0000o.OooOO0O;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+public final class o000oOoO implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) {
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        String strEncodedPath = request.url().encodedPath();
+        String strReplace$default = StringsKt__StringsJVMKt.replace$default(strEncodedPath, "/", "_", false, 4, (Object) null);
+        OooOO0.OooO0OO("MockInterceptor", "urlPath   " + strEncodedPath + "   " + strReplace$default);
+        if (Intrinsics.areEqual(((MutableLiveData) OooOO0O.OooO0o0().f93784OooO0O0.getValue()).getValue(), Boolean.TRUE)) {
+            SnapshotStateMap<String, Pair<String, String>> snapshotStateMap = o000OO00.f81072OooO00o;
+            if (snapshotStateMap.containsKey(strReplace$default)) {
+                try {
+                    Result.Companion companion = Result.INSTANCE;
+                    Pair<String, String> pair = snapshotStateMap.get(strReplace$default);
+                    String second = pair != null ? pair.getSecond() : null;
+                    o00OOO0O.OooO0O0("Mock Success");
+                    ResponseBody.Companion companion2 = ResponseBody.INSTANCE;
+                    Intrinsics.checkNotNull(second);
+                    return new Response.Builder().code(200).protocol(Protocol.HTTP_2).body(companion2.create(second, MediaType.INSTANCE.get("text/plain; charset=utf-8"))).message("code=200,Mock Data").request(chain.request()).receivedResponseAtMillis(System.currentTimeMillis()).build();
+                } catch (Throwable th) {
+                    Result.Companion companion3 = Result.INSTANCE;
+                    if (Result.m7828exceptionOrNullimpl(Result.m7825constructorimpl(ResultKt.createFailure(th))) != null) {
+                        return chain.proceed(request);
+                    }
+                }
+            }
+        }
+        return chain.proceed(request);
+    }
+}
