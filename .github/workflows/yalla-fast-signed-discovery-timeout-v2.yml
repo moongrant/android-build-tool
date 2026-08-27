@@ -1,0 +1,150 @@
+name: Yalla signed discovery with extended startup timeout v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-fast-signed-discovery-timeout-v2.yml
+      - .github/workflows/yalla-fast-signed-discovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    env:
+      OUT_DIR: artifacts/yalla-fast-signed-timeout-v2
+      RESULT_BRANCH: pro-yalla-fast-signed-timeout-v2-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download Yalla and Frida
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          mkdir -p /tmp/apkeep /tmp/yalla-splits "$OUT_DIR"
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-splits/com.weieyu.yalla.apk; else unzip -q "$package" -d /tmp/yalla-splits; fi
+          find /tmp/yalla-splits -type f -name '*.apk' -printf '%s %p\n' | sort -nr > "$OUT_DIR/apk-splits.txt"
+          python -m pip install 'frida==17.17.0' 'frida-tools==14.10.4'
+          version="$(python -c 'import frida;print(frida.__version__)')"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/frida.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86.xz"
+          xz -d -f /tmp/frida.xz && chmod +x /tmp/frida
+      - name: Reuse signed extractor hook and write attach runner
+        run: |
+          python - <<'PY'
+          import re,textwrap
+          from pathlib import Path
+          source=Path('.github/workflows/yalla-fast-signed-discovery.yml').read_text()
+          match=re.search(r"cat > /tmp/hook\.js <<'JS'\n(.*?)\n\s+JS\n",source,re.S)
+          if not match:raise SystemExit('hook heredoc not found')
+          Path('/tmp/hook.js').write_text(textwrap.dedent(match.group(1)))
+          PY
+          cat > /tmp/run_attach.py <<'PY'
+          import frida,json,sys,time
+          from pathlib import Path
+          out=Path('artifacts/yalla-fast-signed-timeout-v2');out.mkdir(parents=True,exist_ok=True);messages=[]
+          def callback(message,data):messages.append(message);print(json.dumps(message,ensure_ascii=False),flush=True)
+          device=frida.get_usb_device(timeout=90);package='com.weieyu.yalla'
+          pid=None
+          for process in device.enumerate_processes():
+              if process.name==package or process.name.endswith('yalla'):
+                  pid=process.pid;break
+          if pid is None:
+              pid=device.spawn([package]);session=device.attach(pid);spawned=True
+          else:
+              session=device.attach(pid);spawned=False
+          script=session.create_script(Path('/tmp/hook.js').read_text());script.on('message',callback);script.load()
+          if spawned:device.resume(pid)
+          deadline=time.time()+300
+          while time.time()<deadline:
+              if any(item.get('type')=='send' and item.get('payload',{}).get('tag') in {'done','fatal'} for item in messages):break
+              time.sleep(.5)
+          payloads=[item.get('payload',{}) for item in messages if item.get('type')=='send']
+          (out/'messages.json').write_text(json.dumps(messages,ensure_ascii=False,indent=2));(out/'payloads.json').write_text(json.dumps(payloads,ensure_ascii=False,indent=2))
+          for tag in ['fields','client','constants','common','login','response','error','notice-candidates','fatal','done']:
+              (out/(tag+'.json')).write_text(json.dumps([x.get('data') for x in payloads if x.get('tag')==tag],ensure_ascii=False,indent=2))
+          if not any(x.get('tag')=='response' for x in payloads):sys.exit(3)
+          PY
+          cat > /tmp/emulator.sh <<'SH'
+          #!/usr/bin/env bash
+          set -Eeuo pipefail
+          out="artifacts/yalla-fast-signed-timeout-v2";adb wait-for-device
+          adb shell getprop ro.hw_timeout_multiplier | tee "$out/hw-timeout-multiplier.txt"
+          adb shell getprop ro.dalvik.vm.native.bridge > "$out/native-bridge.txt";adb shell getprop ro.product.cpu.abilist > "$out/abilist.txt"
+          mapfile -t apks < <(find /tmp/yalla-splits -type f -name '*.apk' | sort)
+          set +e;adb install-multiple -r "${apks[@]}" 2>&1 | tee "$out/install.log";rc=${PIPESTATUS[0]};set -e
+          if [[ $rc -ne 0 ]]; then base="$(find /tmp/yalla-splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)";adb install -r "$base" 2>&1 | tee "$out/install-base.log";fi
+          adb root || true;adb wait-for-device;adb push /tmp/frida /data/local/tmp/frida-server;adb shell chmod 755 /data/local/tmp/frida-server;adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &';sleep 4
+          adb shell am force-stop com.weieyu.yalla || true
+          adb shell am start -W -n com.weieyu.yalla/.YallaDefault 2>&1 | tee "$out/am-start.log" &
+          for i in $(seq 1 180);do pid="$(adb shell pidof com.weieyu.yalla 2>/dev/null|tr -d '\r')";if [[ -n "$pid" ]];then echo "$i $pid"|tee -a "$out/pid-wait.log";sleep 25;break;fi;sleep 1;done
+          set +e;python /tmp/run_attach.py 2>&1 | tee "$out/frida-run.log";code=${PIPESTATUS[0]};set -e
+          adb logcat -d -t 25000 > "$out/logcat.txt" || true;adb shell cat /data/local/tmp/frida.log > "$out/frida-server.log" || true;exit "$code"
+          SH
+          chmod +x /tmp/emulator.sh
+      - name: Boot emulator and run signed extraction
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 28
+          target: google_apis
+          arch: x86
+          profile: pixel_2
+          cores: 2
+          ram-size: 4096M
+          heap-size: 768M
+          disk-size: 7G
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -prop ro.hw_timeout_multiplier=20
+          script: bash /tmp/emulator.sh
+      - name: Parse all activity URLs and publish
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          from urllib.parse import urlparse
+          out=Path('artifacts/yalla-fast-signed-timeout-v2');out.mkdir(parents=True,exist_ok=True)
+          try:payloads=json.loads((out/'payloads.json').read_text())
+          except Exception:payloads=[]
+          responses=[x.get('data') for x in payloads if x.get('tag')=='response'];urls=[];objects=[];parsed=[]
+          def walk(value,path='$'):
+              if isinstance(value,dict):
+                  if any(key.lower() in {'activityurl','activity_url','h5entranceurl','jumpurl','url','shareurl','redirecturl'} for key in value):objects.append({'path':path,'object':value})
+                  for key,child in value.items():
+                      if isinstance(child,str):
+                          for found in re.findall(r'https?://[^\s"\'<>\\)]+',child.replace('\\/','/')):urls.append({'path':path+'.'+key,'url':found.rstrip(',.;]})')})
+                      walk(child,path+'.'+key)
+              elif isinstance(value,list):
+                  for index,child in enumerate(value):walk(child,f'{path}[{index}]')
+          for response in responses:
+              try:obj=json.loads((response or {}).get('body',''));parsed.append({'country':response.get('country'),'kind':response.get('kind'),'json':obj});walk(obj)
+              except Exception:pass
+          roots=[]
+          for item in urls:
+              try:
+                  parsed_url=urlparse(item['url']);parts=[x for x in parsed_url.path.split('/') if x]
+                  if len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):
+                      roots.append({**item,'bucket':parts[1],'project':parts[2],'root':f'{parsed_url.scheme}://{parsed_url.netloc}/activity/{parts[1]}/{parts[2]}/'})
+              except Exception:pass
+          unique={x['root']:x for x in roots};result={'responses':responses,'objects':objects,'urls':urls,'roots':sorted(unique.values(),key=lambda x:(x['bucket'],x['project'])),'parsed':parsed};(out/'discovery.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));(out/'REPORT.md').write_text('\n'.join(['# Yalla Signed Discovery Extended Timeout v2','',f'- Responses: {len(responses)}',f'- URL-bearing objects: {len(objects)}',f'- URLs: {len(urls)}',f'- Exact roots: {len(unique)}','']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in result['roots']]))
+          PY
+          stage=/tmp/yalla-fast-timeout;rm -rf "$stage"&&mkdir -p "$stage";cp -R "$OUT_DIR"/. "$stage/";git config user.name 'pro-yalla-fast-bot';git config user.email '53897102+moongrant@users.noreply.github.com';git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1||true;cp -a "$stage"/. .;git add .;git commit -m "Publish Yalla signed timeout discovery ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-fast-signed-timeout-v2
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
