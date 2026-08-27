@@ -1,0 +1,134 @@
+name: Yalla guest API via x86 ARM translation emulator v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-emulator-arm-translation-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 210
+    env:
+      RESULT_BRANCH: pro-yalla-emulator-arm-translation-v2-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Free non-Android disk and download current Yalla
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          mkdir -p /tmp/apkeep /tmp/yalla-splits artifacts/yalla-emulator-arm-translation-v2
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-splits/com.weieyu.yalla.apk; else unzip -q "$package" -d /tmp/yalla-splits; fi
+          find /tmp/yalla-splits -type f -name '*.apk' -printf '%s %p\n' | sort -nr > artifacts/yalla-emulator-arm-translation-v2/apk-splits.txt
+      - name: Install Frida
+        run: |
+          python -m pip install 'frida==17.17.0' 'frida-tools==14.10.4'
+          version="$(python -c 'import frida;print(frida.__version__)')"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/frida.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86.xz"
+          xz -d -f /tmp/frida.xz && chmod +x /tmp/frida
+      - name: Write app-client API hook
+        run: |
+          cat > /tmp/hook.js <<'JS'
+          'use strict';
+          function emit(tag,data){send({tag:tag,data:data})} function s(v){try{return String(v)}catch(_){return ''}}
+          Java.perform(function(){try{
+            var Main=Java.use('com.yalla.yalla.api.old.OooOOO'),Lazy=Java.use('kotlin.Lazy'),fields=Main.class.getDeclaredFields(),client=null,report=[];
+            for(var i=0;i<fields.length;i++){try{var f=fields[i];f.setAccessible(true);var raw=f.get(null),v=raw,rn=raw?s(raw.getClass().getName()):'null';if(raw&&rn.toLowerCase().indexOf('lazy')>=0){try{v=Java.cast(raw,Lazy).getValue()}catch(_){}}var n=v?s(v.getClass().getName()):'null';report.push({field:s(f.getName()),raw:rn,value:n});if(!client&&n.indexOf('okhttp3.OkHttpClient')>=0)client=v}catch(e){report.push({error:s(e)})}}
+            emit('fields',report);if(!client)throw new Error('OkHttpClient not found');emit('client',{className:s(client.getClass().getName()),interceptors:s(client.interceptors())});
+            var Thread=Java.use('java.lang.Thread'),Runnable=Java.use('java.lang.Runnable'),RB=Java.use('okhttp3.Request$Builder'),FB=Java.use('okhttp3.FormBody$Builder');
+            function ho(h){var o={};try{var a=h.names().toArray();for(var i=0;i<a.length;i++){var k=s(a[i]);o[k]=s(h.get(k))}}catch(_){}return o}
+            function call(method,url,form){var b=RB.$new().url(url).header('Abnormal','true');if(method==='POST'){var fb=FB.$new();Object.keys(form||{}).forEach(function(k){fb.add(k,s(form[k]))});b.post(fb.build())}else b.get();var req=b.build(),res=client.newCall(req).execute(),fr=res.request(),bo=res.body(),body=bo?s(bo.string()):'';var out={method:method,requestedUrl:url,originalHeaders:ho(req.headers()),finalUrl:s(fr.url()),finalHeaders:ho(fr.headers()),code:res.code(),responseHeaders:ho(res.headers()),body:body};res.close();return out}
+            function derive(body){try{var obj=JSON.parse(body),stack=[obj],token='',uid='',region='';while(stack.length){var x=stack.pop();if(Array.isArray(x)){x.forEach(v=>stack.push(v));continue}if(x&&typeof x==='object'){Object.keys(x).forEach(function(k){var v=x[k],l=k.toLowerCase();if(typeof v==='object')stack.push(v);else{if(!token&&l.indexOf('token')>=0&&s(v).length>3)token=s(v);if(!uid&&['userid','user_id','uid'].indexOf(l)>=0&&s(v)&&s(v)!=='0')uid=s(v);if(!region&&['region','regionid'].indexOf(l)>=0&&s(v))region=s(v)}})}}return{token:token,userId:uid,region:region,json:obj}}catch(e){return{error:s(e)}}}
+            var Job=Java.registerClass({name:'com.openai.YallaArmGuestV2'+Date.now(),implements:[Runnable],methods:{run:function(){
+              var auth=null,forms=[{countryCode:'US',afId:'',visitType:0,promotionParam:''},{countryCode:'AE',afId:'',visitType:0,promotionParam:''},{countryCode:'SA',afId:'',visitType:0,promotionParam:''},{countryCode:'EG',afId:'',visitType:0,promotionParam:''}];
+              for(var i=0;i<forms.length;i++){try{var r=call('POST','https://apiv2.yalla.live/Webservers/User/VisitorLogin',forms[i]);r.form=forms[i];r.derived=derive(r.body);emit('visitor-login',r);if(r.derived.token&&r.derived.userId){auth=r.derived;break}}catch(e){emit('visitor-error',{form:forms[i],error:s(e.stack||e)})}}
+              var endpoints=['https://apiv2.yalla.live/Webservers/Messages/GetActivityListForCenter?isExploreIndex=0','https://apiv2.yalla.live/Webservers/Messages/GetActivityListForCenter?isExploreIndex=1','https://apiv2.yalla.live/Webservers/User/GetNewUserPopup?popupType=0&defaultModule=0'];
+              endpoints.forEach(function(u){try{var r=call('GET',u,null);r.auth=auth;emit('api-response',r)}catch(e){emit('api-error',{url:u,error:s(e.stack||e)})}});emit('done',{auth:auth})
+            }}});Thread.$new(Job.$new()).start();
+          }catch(e){emit('fatal',{error:s(e.stack||e)})}})
+          JS
+          cat > /tmp/run.py <<'PY'
+          import frida,json,time,sys
+          from pathlib import Path
+          out=Path('artifacts/yalla-emulator-arm-translation-v2');messages=[]
+          def cb(m,d):messages.append(m);print(json.dumps(m,ensure_ascii=False),flush=True)
+          dev=frida.get_usb_device(timeout=60);pid=dev.spawn(['com.weieyu.yalla']);ses=dev.attach(pid);script=ses.create_script(Path('/tmp/hook.js').read_text());script.on('message',cb);script.load();dev.resume(pid)
+          end=time.time()+170
+          while time.time()<end:
+            if any(m.get('type')=='send' and m.get('payload',{}).get('tag') in {'done','fatal'} for m in messages):break
+            time.sleep(.5)
+          out.mkdir(parents=True,exist_ok=True);(out/'messages.json').write_text(json.dumps(messages,ensure_ascii=False,indent=2));payload=[m.get('payload',{}) for m in messages if m.get('type')=='send'];(out/'payloads.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
+          for tag in ['fields','client','visitor-login','visitor-error','api-response','api-error','fatal']:(out/(tag+'.json')).write_text(json.dumps([x.get('data') for x in payload if x.get('tag')==tag],ensure_ascii=False,indent=2))
+          if not any(x.get('tag')=='api-response' for x in payload):sys.exit(3)
+          PY
+      - name: Boot x86 API 28 image with native bridge and query Yalla
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 28
+          target: google_apis
+          arch: x86
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          heap-size: 512M
+          disk-size: 6G
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          script: |
+            set -Eeuo pipefail
+            out=artifacts/yalla-emulator-arm-translation-v2
+            adb wait-for-device
+            adb shell getprop ro.dalvik.vm.native.bridge | tee "$out/native-bridge.txt"
+            adb shell getprop ro.product.cpu.abilist | tee "$out/abilist.txt"
+            mapfile -t apks < <(find /tmp/yalla-splits -type f -name '*.apk' | sort)
+            set +e
+            adb install-multiple -r "${apks[@]}" 2>&1 | tee "$out/install.log";rc=${PIPESTATUS[0]};set -e
+            if [[ $rc -ne 0 ]]; then base="$(find /tmp/yalla-splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)";adb install -r "$base" 2>&1 | tee "$out/install-base.log";fi
+            adb shell pm path com.weieyu.yalla | tee "$out/pm-path.txt"
+            adb root || true;adb wait-for-device;adb push /tmp/frida /data/local/tmp/frida-server;adb shell chmod 755 /data/local/tmp/frida-server;adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &';sleep 5
+            set +e;python /tmp/run.py 2>&1 | tee "$out/frida-run.log";code=${PIPESTATUS[0]};set -e
+            adb logcat -d -t 14000 > "$out/logcat.txt" || true;adb shell cat /data/local/tmp/frida.log > "$out/frida-server.log" || true;exit "$code"
+      - name: Parse and publish activity center
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          from urllib.parse import urlparse
+          out=Path('artifacts/yalla-emulator-arm-translation-v2');out.mkdir(parents=True,exist_ok=True)
+          try:payload=json.loads((out/'payloads.json').read_text())
+          except Exception:payload=[]
+          responses=[x.get('data') for x in payload if x.get('tag')=='api-response'];urls=[]
+          for r in responses:
+            for u in re.findall(r'https?://[^\s"\'<>\\)]+',(r or {}).get('body','')):urls.append(u.rstrip(',.;'))
+          roots=[]
+          for u in urls:
+            try:
+              p=urlparse(u);parts=[x for x in p.path.split('/') if x]
+              if len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):roots.append({'url':u,'bucket':parts[1],'project':parts[2],'root':f'{p.scheme}://{p.netloc}/activity/{parts[1]}/{parts[2]}/'})
+            except Exception:pass
+          unique={x['root']:x for x in roots};result={'apiResponses':responses,'urls':urls,'roots':sorted(unique.values(),key=lambda x:(x['bucket'],x['project']))};(out/'activity-center.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));(out/'REPORT.md').write_text('\n'.join(['# Yalla ARM Translation Guest API v2','',f"API responses: {len(responses)}",f"URLs: {len(urls)}",f"Roots: {len(unique)}",'']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in result['roots']]))
+          PY
+          stage=/tmp/yalla-arm-v2;rm -rf "$stage" && mkdir -p "$stage";cp -R artifacts/yalla-emulator-arm-translation-v2/. "$stage/";git config user.name 'pro-yalla-emulator-bot';git config user.email '53897102+moongrant@users.noreply.github.com';git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1 || true;cp -a "$stage"/. .;git add .;git commit -m "Publish Yalla ARM guest API v2 ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-emulator-arm-translation-v2
+          path: artifacts/yalla-emulator-arm-translation-v2
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
