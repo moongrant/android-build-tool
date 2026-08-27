@@ -1,0 +1,53 @@
+name: Pro-BIGO Increment 04 Deep Campaign Recovery
+
+on:
+  push:
+    branches:
+      - pro-bigo-increment04-deep-20260828
+    paths:
+      - 'tmp/pro-bigo-increment04/**'
+      - '.github/workflows/pro-bigo-increment04.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install runtime
+        run: |
+          python -m pip install --disable-pip-version-check requests beautifulsoup4 pillow playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Recover official SPA, assets and offline states
+        run: python tmp/pro-bigo-increment04/recover.py
+
+      - name: Verify ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          unzip -t pro-bigo-increment-04-five-deep-campaigns-offline-assembled-rc1.zip >/tmp/zip-test.log
+          tail -5 /tmp/zip-test.log
+
+      - name: Upload complete increment package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-bigo-increment-04-five-deep-campaigns-offline-assembled-rc1
+          path: |
+            pro-bigo-increment-04-five-deep-campaigns-offline-assembled-rc1
+            pro-bigo-increment-04-five-deep-campaigns-offline-assembled-rc1.zip
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14
