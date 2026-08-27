@@ -1,0 +1,95 @@
+name: Yalla direct public API response probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-direct-api-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    env:
+      RESULT_BRANCH: pro-yalla-direct-api-probe-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe visitor login and activity center without private account data
+        run: |
+          cat > /tmp/probe.py <<'PY'
+          import itertools,json,os,time,uuid
+          from pathlib import Path
+          import requests
+          out=Path('yalla-direct-api-probe');out.mkdir(exist_ok=True)
+          s=requests.Session();s.headers.update({'User-Agent':'Yalla/3.6.2 (Android 14; Pixel 8)','Accept':'application/json,text/plain,*/*','Accept-Language':'en-US,en;q=.9','Abnormal':'true'})
+          rows=[]
+          def call(method,url,**kwargs):
+            row={'method':method,'url':url,'kwargs':kwargs}
+            try:
+              r=s.request(method,url,timeout=(15,60),allow_redirects=True,**kwargs)
+              row.update(status=r.status_code,finalUrl=r.url,headers=dict(r.headers),bytes=len(r.content),body=r.text[:200000])
+            except Exception as e:row['error']=repr(e)
+            rows.append(row);print(json.dumps({k:row.get(k) for k in ['method','url','status','bytes','body','error']},ensure_ascii=False)[:4000],flush=True)
+            return row
+          base='https://apiv2.yalla.live/Webservers'
+          smid=str(uuid.uuid4()).replace('-','')
+          common_variants=[
+            {'p':'2','v':'30620','userid':'0','token':'','pagesize':'15','region':'0','deviceLang':'en','smid':smid},
+            {'p':'2','v':'3602','userid':'0','token':'','pagesize':'15','region':'0','deviceLang':'en','smid':smid},
+            {'p':'2','v':'30620','userid':'-1','token':'','pagesize':'15','region':'0','deviceLang':'en','smid':smid},
+            {'p':'2','v':'30620','userid':'0','token':'0','pagesize':'15','region':'0','deviceLang':'en','smid':smid},
+          ]
+          login_forms=[]
+          for country in ['US','AE','SA','EG']:
+            for visit in [0,1,2]:
+              login_forms += [
+                {'countryCode':country,'afId':'','visitType':str(visit),'promotionParam':'','isSimulator':'1'},
+                {'CountryCode':country,'AfId':'','VisitType':str(visit),'PromotionParam':'','IsSimulator':'1'},
+              ]
+          for form in login_forms:
+            for common in common_variants[:2]:
+              payload={**form,**common}
+              call('POST',base+'/User/VisitorLogin',data=payload,headers={'Content-Type':'application/x-www-form-urlencoded','Abnormal':'true'})
+          for common in common_variants:
+            for explore in ['0','1']:
+              call('GET',base+'/Messages/GetActivityListForCenter',params={**common,'isExploreIndex':explore})
+          # Also try public data check bypass and no injected params.
+          for explore in ['0','1']:
+            call('GET',base+'/Messages/GetActivityListForCenter',params={'isExploreIndex':explore},headers={'Custom':'true','Abnormal':'true'})
+          Path(out/'responses.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          lines=['# Yalla Direct API Probe','',f'- Requests: {len(rows)}','']
+          for i,row in enumerate(rows,1):
+            lines += [f"## {i}. {row['method']} {row['url']} · HTTP {row.get('status')}",'```',row.get('body','')[:8000],'```','']
+          Path(out/'REPORT.md').write_text('\n'.join(lines))
+          PY
+          python -m pip install requests
+          python /tmp/probe.py | tee yalla-direct-api-probe.log
+      - name: Publish probe branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          cp yalla-direct-api-probe.log yalla-direct-api-probe/ 2>/dev/null || true
+          git config user.name 'pro-yalla-api-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a yalla-direct-api-probe/. .
+          git add .
+          git commit -m "Publish Yalla direct API probe ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-direct-api-probe
+          path: yalla-direct-api-probe
+          if-no-files-found: warn
+          retention-days: 30
