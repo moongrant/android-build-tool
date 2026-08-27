@@ -1,0 +1,33 @@
+name: Pro-BIGO Increment 04 Missing Asset Recovery
+
+on:
+  push:
+    branches:
+      - pro-bigo-increment04-deep-20260828
+    paths:
+      - 'tmp/pro-bigo-increment04/recover-missing.py'
+      - '.github/workflows/pro-bigo-increment04-missing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install requests
+      - run: python tmp/pro-bigo-increment04/recover-missing.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-bigo-increment04-missing-assets
+          path: pro-bigo-increment04-missing-assets
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14
