@@ -1,0 +1,450 @@
+name: Yalla multi-source public URL archaeology
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-public-url-archaeology.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-public-url-archaeology-results
+      OUT_DIR: pro-yalla-public-url-archaeology
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Query Wayback, Common Crawl, GitHub code search and live roots
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          rm -rf "$OUT_DIR"
+          mkdir -p "$OUT_DIR/raw"
+          cat > /tmp/archaeology.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import hashlib
+          import json
+          import os
+          import re
+          import time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT = Path(os.environ.get('OUT_DIR', 'pro-yalla-public-url-archaeology'))
+          RAW = OUT / 'raw'
+          RAW.mkdir(parents=True, exist_ok=True)
+          S = requests.Session()
+          S.headers.update({
+              'User-Agent': 'Mozilla/5.0 Chrome/127 Safari/537.36 ProYallaResearch/3.0',
+              'Accept': 'application/json,text/plain,text/html,*/*',
+          })
+          KNOWN = {x.lower() for x in [
+              '8thAnniversary','9thAnniversary','yallaSeason','ferrisWheel','fw_newyear',
+              'rollerCoaster','activityMap','adha','10thAnniversary','2025NewYear',
+              'RoyalVictory','Ramadan','ramadanBless','recallAndRecruit','recallLanding',
+              'recall','seaDominator','footballCarnival','carKing','ActivityOver',
+          ]}
+          GENERIC = ['the activity has ended','activity has ended','more coming soon','404 not found','page not found']
+          WAYBACK_PATTERNS = []
+          hosts = [
+              'activity2.yalla.live','activity2.windgh.com','activity2.qrsshine.com',
+              'activity2.ylapi.cc','activitytest2.yalla.live','event.yalla.live',
+              'file.yalla.live','file.windgh.com','file.ylapi.cc',
+          ]
+          for host in hosts[:5]:
+              for year in range(2019, 2027):
+                  WAYBACK_PATTERNS.append(f'https://{host}/activity/{year}dist/*')
+                  WAYBACK_PATTERNS.append(f'https://{host}/activity/YallaActivity{year}/*')
+          WAYBACK_PATTERNS += [
+              'https://file.yalla.live/Activity/*',
+              'https://file.yalla.live/activity/*',
+              'https://file.windgh.com/Activity/*',
+              'https://file.ylapi.cc/Activity/*',
+              'https://event.yalla.live/*',
+          ]
+          CC_PATTERNS = [
+              'activity2.yalla.live/activity/*',
+              'activity2.windgh.com/activity/*',
+              'activity2.qrsshine.com/activity/*',
+              'file.yalla.live/Activity/*',
+              'file.yalla.live/activity/*',
+              'event.yalla.live/*',
+          ]
+          GH_QUERIES = [
+              '"activity2.yalla.live/activity/"',
+              '"activity2.windgh.com/activity/"',
+              '"activity2.qrsshine.com/activity/"',
+              '"file.yalla.live/Activity/"',
+              '"file.yalla.live/activity/"',
+              '"templateActivity" "activityId" "yalla"',
+          ]
+
+          def get(url, *, params=None, headers=None, timeout=(20, 120), tries=4):
+              last = None
+              for attempt in range(tries):
+                  try:
+                      response = S.get(url, params=params, headers=headers, timeout=timeout, allow_redirects=True)
+                      if response.status_code in {429, 500, 502, 503, 504} and attempt + 1 < tries:
+                          time.sleep(1.5 * (attempt + 1))
+                          continue
+                      return response
+                  except Exception as exc:
+                      last = exc
+                      if attempt + 1 < tries:
+                          time.sleep(1.5 * (attempt + 1))
+              return last
+
+          def wayback(pattern, index):
+              params = {
+                  'url': pattern,
+                  'output': 'json',
+                  'fl': 'timestamp,original,statuscode,mimetype,digest,length',
+                  'filter': 'statuscode:200',
+                  'collapse': 'urlkey',
+                  'limit': '100000',
+                  'from': '2019',
+                  'to': '2026',
+              }
+              response = get('https://web.archive.org/cdx/search/cdx', params=params, timeout=(30, 240), tries=3)
+              meta = {'pattern': pattern}
+              rows = []
+              if hasattr(response, 'status_code'):
+                  meta.update(status=response.status_code, bytes=len(response.content), finalUrl=response.url)
+                  (RAW / f'wayback-{index:04d}.txt').write_bytes(response.content)
+                  try:
+                      data = response.json()
+                      if isinstance(data, list) and data:
+                          header = data[0]
+                          rows = [dict(zip(header, item)) for item in data[1:] if isinstance(item, list) and len(item) == len(header)]
+                  except Exception as exc:
+                      meta['parseError'] = repr(exc)
+              else:
+                  meta['error'] = repr(response)
+              meta['rows'] = len(rows)
+              return meta, rows
+
+          wayback_meta = []
+          wayback_rows = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+              futures = [pool.submit(wayback, pattern, index) for index, pattern in enumerate(WAYBACK_PATTERNS)]
+              for future in concurrent.futures.as_completed(futures):
+                  try:
+                      meta, rows = future.result()
+                      wayback_meta.append(meta)
+                      wayback_rows.extend(rows)
+                  except Exception as exc:
+                      wayback_meta.append({'error': repr(exc)})
+          (OUT / 'wayback-meta.json').write_text(json.dumps(wayback_meta, ensure_ascii=False, indent=2))
+
+          collections = get('https://index.commoncrawl.org/collinfo.json', timeout=(20, 90), tries=3)
+          indexes = []
+          if hasattr(collections, 'status_code') and collections.status_code == 200:
+              for item in collections.json():
+                  match = re.search(r'CC-MAIN-(20\d{2})-', str(item.get('id', '')))
+                  if match and 2019 <= int(match.group(1)) <= 2026:
+                      indexes.append(item)
+          by_year = defaultdict(list)
+          for item in indexes:
+              year = int(re.search(r'CC-MAIN-(20\d{2})-', item['id']).group(1))
+              by_year[year].append(item)
+          selected_indexes = [sorted(items, key=lambda x: x['id'], reverse=True)[0] for year, items in sorted(by_year.items()) if items]
+
+          def commoncrawl(index, pattern, serial):
+              endpoint = index['cdx-api']
+              params = {
+                  'url': pattern,
+                  'output': 'json',
+                  'filter': 'status:200',
+                  'collapse': 'urlkey',
+                  'pageSize': '5',
+              }
+              response = get(endpoint, params=params, timeout=(30, 180), tries=3)
+              rows = []
+              meta = {'index': index['id'], 'pattern': pattern}
+              if hasattr(response, 'status_code'):
+                  meta.update(status=response.status_code, bytes=len(response.content), finalUrl=response.url)
+                  (RAW / f'cc-{serial:04d}.jsonl').write_bytes(response.content)
+                  for line in response.text.splitlines():
+                      try:
+                          item = json.loads(line)
+                          if isinstance(item, dict):
+                              item['_index'] = index['id']
+                              rows.append(item)
+                      except Exception:
+                          pass
+              else:
+                  meta['error'] = repr(response)
+              meta['rows'] = len(rows)
+              return meta, rows
+
+          cc_meta = []
+          cc_rows = []
+          serial = 0
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+              futures = []
+              for index in selected_indexes:
+                  for pattern in CC_PATTERNS:
+                      futures.append(pool.submit(commoncrawl, index, pattern, serial))
+                      serial += 1
+              for future in concurrent.futures.as_completed(futures):
+                  try:
+                      meta, rows = future.result()
+                      cc_meta.append(meta)
+                      cc_rows.extend(rows)
+                  except Exception as exc:
+                      cc_meta.append({'error': repr(exc)})
+          (OUT / 'commoncrawl-meta.json').write_text(json.dumps(cc_meta, ensure_ascii=False, indent=2))
+
+          gh_rows = []
+          token = os.environ.get('GH_TOKEN', '')
+          headers = {'Accept': 'application/vnd.github+json'}
+          if token:
+              headers['Authorization'] = f'Bearer {token}'
+              headers['X-GitHub-Api-Version'] = '2022-11-28'
+          for index, query_text in enumerate(GH_QUERIES):
+              response = get('https://api.github.com/search/code', params={'q': query_text, 'per_page': 100}, headers=headers, timeout=(20, 90), tries=2)
+              item = {'query': query_text}
+              if hasattr(response, 'status_code'):
+                  item.update(status=response.status_code, bytes=len(response.content))
+                  (RAW / f'github-{index:02d}.json').write_bytes(response.content)
+                  try:
+                      payload = response.json()
+                      for match in payload.get('items', []):
+                          gh_rows.append({
+                              'query': query_text,
+                              'repository': (match.get('repository') or {}).get('full_name'),
+                              'path': match.get('path'),
+                              'htmlUrl': match.get('html_url'),
+                              'gitUrl': match.get('git_url'),
+                          })
+                      item['items'] = len(payload.get('items', []))
+                  except Exception as exc:
+                      item['parseError'] = repr(exc)
+              (OUT / f'github-meta-{index:02d}.json').write_text(json.dumps(item, ensure_ascii=False, indent=2))
+
+          all_urls = []
+          for row in wayback_rows:
+              if row.get('original'):
+                  all_urls.append({'source': 'wayback', 'url': row['original'], 'timestamp': row.get('timestamp'), 'mimetype': row.get('mimetype'), 'length': row.get('length')})
+          for row in cc_rows:
+              url = row.get('url') or row.get('original')
+              if url:
+                  all_urls.append({'source': 'commoncrawl', 'url': url, 'timestamp': row.get('timestamp'), 'mimetype': row.get('mime'), 'length': row.get('length'), 'index': row.get('_index')})
+
+          root_re = re.compile(r'/activity/(20\d{2}dist|YallaActivity20\d{2})/([^/?#]+)', re.I)
+          roots = defaultdict(list)
+          cdn_folders = defaultdict(list)
+          template_ids = defaultdict(list)
+          for item in all_urls:
+              url = str(item.get('url', '')).replace('\\/', '/')
+              match = root_re.search(url)
+              if match:
+                  parsed = urlparse(url)
+                  bucket, project = match.group(1), match.group(2)
+                  root = f'{parsed.scheme or "https"}://{parsed.netloc}/activity/{bucket}/{project}/'
+                  roots[(parsed.netloc.lower(), bucket, project, root)].append(item)
+              parsed = urlparse(url)
+              parts = [x for x in parsed.path.split('/') if x]
+              for marker in ['Activity', 'activity']:
+                  if marker in parts:
+                      pos = parts.index(marker)
+                      if len(parts) > pos + 1 and parsed.netloc.lower().startswith('file.'):
+                          folder = parts[pos + 1]
+                          cdn_folders[(parsed.netloc.lower(), marker, folder)].append(item)
+              for found in re.findall(r'(?:activityId=|activityId%3D)(\d{5,14})', url, re.I):
+                  template_ids[found].append(item)
+
+          def extension(url):
+              path = urlparse(url).path
+              match = re.search(r'(\.[A-Za-z0-9]{1,8})$', path)
+              return match.group(1).lower() if match else ''
+
+          root_items = []
+          for (host, bucket, project, root), items in roots.items():
+              urls = {x['url'] for x in items}
+              ext = Counter(extension(url) for url in urls)
+              timestamps = sorted(str(x.get('timestamp') or '') for x in items if x.get('timestamp'))
+              root_items.append({
+                  'host': host,
+                  'bucket': bucket,
+                  'project': project,
+                  'root': root,
+                  'known': project.lower() in KNOWN,
+                  'fileCount': len(urls),
+                  'recordCount': len(items),
+                  'jsCount': ext['.js'] + ext['.mjs'],
+                  'cssCount': ext['.css'],
+                  'imageCount': sum(ext[x] for x in ['.png','.jpg','.jpeg','.webp','.gif','.svg','.avif']),
+                  'jsonCount': ext['.json'],
+                  'fontCount': sum(ext[x] for x in ['.woff','.woff2','.ttf','.otf','.eot']),
+                  'mediaCount': sum(ext[x] for x in ['.mp3','.wav','.ogg','.mp4','.webm']),
+                  'firstCapture': timestamps[0] if timestamps else None,
+                  'lastCapture': timestamps[-1] if timestamps else None,
+                  'extensions': dict(ext),
+                  'sampleUrls': sorted(urls)[:100],
+              })
+          root_items.sort(key=lambda x: (x['known'], -x['fileCount'], x['bucket'], x['project']))
+
+          folder_items = []
+          for (host, marker, folder), items in cdn_folders.items():
+              urls = {x['url'] for x in items}
+              ext = Counter(extension(url) for url in urls)
+              folder_items.append({
+                  'host': host,
+                  'marker': marker,
+                  'folder': folder,
+                  'known': folder.lower() in KNOWN,
+                  'fileCount': len(urls),
+                  'jsCount': ext['.js'] + ext['.mjs'],
+                  'cssCount': ext['.css'],
+                  'imageCount': sum(ext[x] for x in ['.png','.jpg','.jpeg','.webp','.gif','.svg','.avif']),
+                  'jsonCount': ext['.json'],
+                  'extensions': dict(ext),
+                  'sampleUrls': sorted(urls)[:100],
+              })
+          folder_items.sort(key=lambda x: (x['known'], -x['fileCount'], x['folder'].lower()))
+
+          live_candidates = [x for x in root_items if not x['known']]
+          def probe(item):
+              attempts = []
+              for url in [item['root'], item['root'] + 'index.html']:
+                  response = get(url, timeout=(15, 60), tries=2)
+                  if not hasattr(response, 'status_code'):
+                      attempts.append({'url': url, 'error': repr(response)})
+                      continue
+                  data = response.content
+                  text = data[:700000].decode('utf-8', 'ignore')
+                  soup = BeautifulSoup(text, 'html.parser')
+                  visible = ' '.join(soup.get_text(' ', strip=True).split())[:5000]
+                  lower = (text + ' ' + visible).lower()
+                  refs = []
+                  for tag, attr in [('script','src'),('link','href'),('img','src'),('source','src')]:
+                      refs.extend(el.get(attr) for el in soup.find_all(tag) if el.get(attr))
+                  attempts.append({
+                      'url': url,
+                      'status': response.status_code,
+                      'finalUrl': response.url,
+                      'bytes': len(data),
+                      'sha256': hashlib.sha256(data).hexdigest(),
+                      'contentType': response.headers.get('content-type'),
+                      'title': soup.title.get_text(strip=True) if soup.title else '',
+                      'visibleText': visible,
+                      'refs': refs[:300],
+                      'generic': any(value in lower for value in GENERIC),
+                      'spaSignals': sum(value in lower for value in ['chunk-vendors','js/app.','css/app.','webpack','__webpack','vue','react','manifest.json']),
+                  })
+              return {**item, 'live': attempts}
+
+          probed = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
+              for result in pool.map(probe, live_candidates[:250]):
+                  probed.append(result)
+
+          output = {
+              'generatedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+              'waybackQueries': len(WAYBACK_PATTERNS),
+              'waybackRows': len(wayback_rows),
+              'commonCrawlIndexes': [x['id'] for x in selected_indexes],
+              'commonCrawlRows': len(cc_rows),
+              'githubCodeMatches': gh_rows,
+              'roots': root_items,
+              'newRootsProbed': probed,
+              'cdnFolders': folder_items,
+              'templateActivityIds': [
+                  {'activityId': key, 'hitCount': len(value), 'hits': value[:50]}
+                  for key, value in sorted(template_ids.items())
+              ],
+          }
+          (OUT / 'inventory.json').write_text(json.dumps(output, ensure_ascii=False, indent=2))
+          (OUT / 'roots.json').write_text(json.dumps(root_items, ensure_ascii=False, indent=2))
+          (OUT / 'new-roots-probed.json').write_text(json.dumps(probed, ensure_ascii=False, indent=2))
+          (OUT / 'cdn-folders.json').write_text(json.dumps(folder_items, ensure_ascii=False, indent=2))
+
+          credible = []
+          for item in probed:
+              live = [x for x in item.get('live', []) if x.get('status') == 200 and not x.get('generic') and x.get('bytes', 0) >= 500 and (x.get('spaSignals', 0) >= 1 or len(x.get('refs', [])) >= 2)]
+              if live or (item['fileCount'] >= 8 and item['jsCount'] >= 1):
+                  credible.append({**item, 'credibleLive': live})
+          credible.sort(key=lambda x: (0 if x.get('credibleLive') else 1, -x['fileCount'], -x['imageCount']))
+          (OUT / 'credible-new-roots.json').write_text(json.dumps(credible, ensure_ascii=False, indent=2))
+
+          lines = [
+              '# Yalla Public URL Archaeology',
+              '',
+              f'- Wayback queries: {len(WAYBACK_PATTERNS)}',
+              f'- Wayback rows: {len(wayback_rows)}',
+              f'- Common Crawl indexes: {len(selected_indexes)}',
+              f'- Common Crawl rows: {len(cc_rows)}',
+              f'- Exact roots: {len(root_items)}',
+              f'- Non-site roots: {len(live_candidates)}',
+              f'- Credible new roots: {len(credible)}',
+              f'- CDN folders: {len(folder_items)}',
+              '',
+              '## Credible new roots',
+              '',
+              '| # | Root | Files | JS/CSS/Images | Live | Captures |',
+              '|---:|---|---:|---|---|---|',
+          ]
+          for index, item in enumerate(credible[:100], 1):
+              live = item.get('credibleLive') or []
+              live_text = ', '.join(f"{x.get('status')}:{x.get('bytes')}:{x.get('title')}" for x in live) or 'archive-only'
+              lines.append(f"| {index} | `{item['host']}/{item['bucket']}/{item['project']}` | {item['fileCount']} | {item['jsCount']}/{item['cssCount']}/{item['imageCount']} | {live_text.replace('|','/')} | {item.get('firstCapture')} → {item.get('lastCapture')} |")
+          lines += ['', '## New CDN folders', '', '| # | Folder | Files | JS/CSS/Images |', '|---:|---|---:|---|']
+          new_folders = [x for x in folder_items if not x['known']]
+          for index, item in enumerate(new_folders[:200], 1):
+              lines.append(f"| {index} | `{item['host']}/{item['marker']}/{item['folder']}` | {item['fileCount']} | {item['jsCount']}/{item['cssCount']}/{item['imageCount']} |")
+          (OUT / 'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({
+              'waybackRows': len(wayback_rows),
+              'commonCrawlRows': len(cc_rows),
+              'roots': len(root_items),
+              'credibleNewRoots': [x['project'] for x in credible[:50]],
+              'newCdnFolders': [x['folder'] for x in new_folders[:100]],
+          }, ensure_ascii=False, indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" GH_TOKEN="$GH_TOKEN" python /tmp/archaeology.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact result branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-archaeology
+          rm -rf "$stage" && mkdir -p "$stage"
+          for file in REPORT.md inventory.json roots.json new-roots-probed.json credible-new-roots.json cdn-folders.json wayback-meta.json commoncrawl-meta.json run.log; do
+            cp "$OUT_DIR/$file" "$stage/" 2>/dev/null || true
+          done
+          git config user.name 'pro-yalla-archaeology-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla public URL archaeology ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete archaeology artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-public-url-archaeology
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
