@@ -1,0 +1,104 @@
+name: Yalla visitor login quick targeted source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-visitor-login-quick-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  decompile:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      RESULT_BRANCH: pro-yalla-visitor-login-quick-results
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download public Yalla APK
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/apkeep /tmp/yalla out/classes
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla/base.apk; else
+            unzip -q "$package" -d /tmp/yalla/splits
+            base="$(find /tmp/yalla/splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            cp "$base" /tmp/yalla/base.apk
+          fi
+
+      - name: Install JADX and decompile only guest-login classes
+        run: |
+          set -Eeuo pipefail
+          url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' https://api.github.com/repos/skylot/jadx/releases/latest | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          classes=(
+            'com.yalla.yalla.ui.activity.main.StartActivity'
+            'com.yalla.yalla.ui.activity.main.StartActivity$autoVisitorLogin$1'
+            'com.yalla.yalla.ui.activity.main.StartActivity$handleAutoVisitorLoginAsync$1'
+            'p445o0Ooo.OooO0O0'
+            'p445o0Ooo.OooOO0O'
+            'p445o0Ooo.OooO00o'
+            'p445o0Ooo.OooO0OO'
+            'p445o0Ooo.OooO0o'
+            'p445o0Ooo.OooOO0'
+            'com.yalla.yalla.model.LoginModel'
+            'com.yalla.yalla.model.LoginToken'
+          )
+          for cls in "${classes[@]}"; do
+            safe="$(printf '%s' "$cls" | tr '.' '_' | tr '$' '@')"
+            /tmp/jadx/bin/jadx --no-res --show-bad-code --single-class "$cls" --single-class-output "out/classes/${safe}.java" /tmp/yalla/base.apk > "out/classes/${safe}.stdout.txt" 2> "out/classes/${safe}.stderr.txt" || true
+          done
+          cat out/classes/*.java > out/all-source.txt
+          rg -n -i -C 100 'VisitorLogin|autoVisitorLogin|handleAutoVisitorLoginAsync|OooO0oO\(|countryCode|visitType|promotionParam|isSimulator|afId|login|visitor|LoginModel|LoginToken' out/classes > out/focused.txt || true
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          text=Path('out/all-source.txt').read_text(errors='ignore')
+          contexts=[]
+          for pattern in ['VisitorLogin','OooO0oO(', 'handleAutoVisitorLoginAsync', 'autoVisitorLogin']:
+              for match in re.finditer(re.escape(pattern),text,re.I):
+                  contexts.append({'pattern':pattern,'context':text[max(0,match.start()-2000):min(len(text),match.end()+5000)]})
+          literals=sorted(set(re.findall(r'"([^"\\]{1,120})"',text)))
+          relevant=[x for x in literals if any(k in x.lower() for k in ['visit','country','promotion','simulator','afid','af_id','device','language','region','token','userid','login'])]
+          Path('out/analysis.json').write_text(json.dumps({'relevantLiterals':relevant,'contexts':contexts[:120]},ensure_ascii=False,indent=2))
+          PY
+          {
+            echo '# Yalla Visitor Login Quick Source'
+            echo
+            find out/classes -name '*.java' -printf '%f %s bytes\n' | sort
+            echo
+            echo '```'
+            sed -n '1,12000p' out/focused.txt
+            echo '```'
+          } > out/REPORT.md
+
+      - name: Publish quick source
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-source-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish Yalla visitor login quick source ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload quick source artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-visitor-login-quick-source
+          path: out
+          if-no-files-found: warn
+          retention-days: 30
