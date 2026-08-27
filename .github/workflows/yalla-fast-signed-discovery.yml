@@ -1,0 +1,158 @@
+name: Yalla fast signed activity discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-fast-signed-discovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      OUT_DIR: artifacts/yalla-fast-signed-discovery
+      RESULT_BRANCH: pro-yalla-fast-signed-discovery-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download Yalla and Frida
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          mkdir -p /tmp/apkeep /tmp/yalla-splits "$OUT_DIR"
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-splits/com.weieyu.yalla.apk; else unzip -q "$package" -d /tmp/yalla-splits; fi
+          find /tmp/yalla-splits -type f -name '*.apk' -printf '%s %p\n' | sort -nr > "$OUT_DIR/apk-splits.txt"
+          python -m pip install 'frida==17.17.0' 'frida-tools==14.10.4'
+          version="$(python -c 'import frida;print(frida.__version__)')"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/frida.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86.xz"
+          xz -d -f /tmp/frida.xz && chmod +x /tmp/frida
+      - name: Write fast signed extractor
+        run: |
+          cat > /tmp/hook.js <<'JS'
+          'use strict';
+          function emit(tag,data){send({tag:tag,data:data})} function s(v){try{return String(v)}catch(_){return ''}}
+          Java.perform(function(){try{
+            var H=Java.use('com.yalla.yalla.api.old.OooOOO'),L=Java.use('kotlin.Lazy'),fs=H.class.getDeclaredFields(),client=null,fieldReport=[];
+            for(var i=0;i<fs.length;i++){try{var f=fs[i];f.setAccessible(true);var raw=f.get(null),v=raw,rn=raw?s(raw.getClass().getName()):'null';if(raw&&rn.toLowerCase().indexOf('lazy')>=0){try{v=Java.cast(raw,L).getValue()}catch(_){}}var vn=v?s(v.getClass().getName()):'null';fieldReport.push({field:s(f.getName()),raw:rn,value:vn});if(!client&&vn.indexOf('okhttp3.OkHttpClient')>=0)client=v}catch(e){}}
+            emit('fields',fieldReport);if(!client)throw new Error('OkHttpClient not found');emit('client',{interceptors:s(client.interceptors())});
+            var constants={};try{var C=Java.use('com.yalla.yalla.api.old.OooOo00'),cfs=C.class.getDeclaredFields();for(var ci=0;ci<cfs.length;ci++){try{var cf=cfs[ci];cf.setAccessible(true);constants[s(cf.getName())]=s(cf.get(null))}catch(_){}}}catch(e){constants.error=s(e)}emit('constants',constants);
+            var common={};try{var P=Java.use('p470o0o00.OooO0O0'),m=P.OooO00o(),es=m.entrySet().toArray();for(var ei=0;ei<es.length;ei++)common[s(es[ei].getKey())]=s(es[ei].getValue())}catch(e){common.error=s(e)}emit('common',common);
+            var T=Java.use('java.lang.Thread'),R=Java.use('java.lang.Runnable'),RB=Java.use('okhttp3.Request$Builder'),FB=Java.use('okhttp3.FormBody$Builder');
+            function ho(h){var o={};try{var a=h.names().toArray();for(var i=0;i<a.length;i++){var k=s(a[i]);o[k]=s(h.get(k))}}catch(_){}return o}
+            function qs(url,p){var a=[];Object.keys(p||{}).forEach(function(k){a.push(encodeURIComponent(k)+'='+encodeURIComponent(s(p[k])))});return url+(url.indexOf('?')>=0?'&':'?')+a.join('&')}
+            function call(method,url,form,headers){var b=RB.$new().url(url).header('Abnormal','true');Object.keys(headers||{}).forEach(function(k){b.header(k,s(headers[k]))});if(method==='POST'){var fb=FB.$new();Object.keys(form||{}).forEach(function(k){fb.add(k,s(form[k]))});b.post(fb.build())}else b.get();var req=b.build(),res=client.newCall(req).execute(),fr=res.request(),bo=res.body(),body=bo?s(bo.string()):'';var out={method:method,requestedUrl:url,finalUrl:s(fr.url()),finalHeaders:ho(fr.headers()),code:res.code(),responseHeaders:ho(res.headers()),body:body};res.close();return out}
+            function authOf(body){var r={token:'',userId:'',region:''};try{var root=JSON.parse(body),st=[root];while(st.length){var x=st.pop();if(Array.isArray(x)){x.forEach(function(v){st.push(v)})}else if(x&&typeof x==='object'){Object.keys(x).forEach(function(k){var v=x[k],l=k.toLowerCase(),t=s(v);if(v&&typeof v==='object')st.push(v);else{if(!r.token&&l.indexOf('token')>=0&&t.length>3)r.token=t;if(!r.userId&&['userid','user_id','uid'].indexOf(l)>=0&&t&&t!=='0')r.userId=t;if(!r.region&&['region','regionid'].indexOf(l)>=0&&t)r.region=t}})}}}catch(e){r.error=s(e)}return r}
+            function join(base,path){if(/^https?:\/\//i.test(path||''))return path;return String(base||'').replace(/\/$/,'')+'/'+String(path||'').replace(/^\//,'')}
+            var Job=Java.registerClass({name:'com.openai.YallaFastSigned'+Date.now(),implements:[R],methods:{run:function(){
+              var countries=['US','AE','SA','EG','IN','ID','TR','BR'],seenBodies={};
+              for(var ci=0;ci<countries.length;ci++){
+                var country=countries[ci],auth=null;
+                try{var login=call('POST','https://apiv2.yalla.live/Webservers/User/VisitorLogin',{countryCode:country,afId:'',visitType:0,promotionParam:''},{});login.country=country;login.auth=authOf(login.body);emit('login',login);auth=login.auth}catch(e){emit('error',{stage:'login',country:country,error:s(e.stack||e)});continue}
+                if(!auth||!auth.token||!auth.userId)continue;
+                var headers={token:auth.token,userid:auth.userId,userId:auth.userId},region=auth.region||0;
+                var endpoints=[
+                  ['activity-center-0','https://apiv2.yalla.live/Webservers/Messages/GetActivityListForCenter',{isExploreIndex:0,userid:auth.userId,token:auth.token,region:region,pagesize:100}],
+                  ['activity-center-1','https://apiv2.yalla.live/Webservers/Messages/GetActivityListForCenter',{isExploreIndex:1,userid:auth.userId,token:auth.token,region:region,pagesize:100}],
+                  ['official-action','https://apiv2.yalla.live/Webservers/User/GetUserReturnInfo',{type:1,userid:auth.userId,token:auth.token,region:region}],
+                  ['popup','https://apiv2.yalla.live/Webservers/User/GetNewUserPopup',{popupType:0,defaultModule:0,userid:auth.userId,token:auth.token,region:region}]
+                ];
+                endpoints.forEach(function(ep){try{var r=call('GET',qs(ep[1],ep[2]),null,headers);r.country=country;r.kind=ep[0];r.authRegion=region;var key=r.kind+'|'+r.body;if(!seenBodies[key]){seenBodies[key]=true;emit('response',r)}}catch(e){emit('error',{stage:ep[0],country:country,error:s(e.stack||e)})}})
+              }
+              var f1=constants['f45037OooO00o']||'',f2=constants['f45060OooOoO']||'',candidates=[];['https://apiv2.yalla.live','https://apiv2.windgh.com'].forEach(function(base){candidates.push(join(base,f1));candidates.push(join(base,f2));candidates.push(join(join(base,f1),f2));candidates.push(join(join(base,f2),f1))});if(/^https?:\/\//i.test(f1))candidates.push(join(f1,f2));if(/^https?:\/\//i.test(f2))candidates.push(join(f2,f1));candidates=candidates.filter(function(v,i,a){return /^https?:\/\//i.test(v)&&a.indexOf(v)===i});emit('notice-candidates',{f1:f1,f2:f2,urls:candidates});
+              emit('done',{countries:countries.length,uniqueResponses:Object.keys(seenBodies).length})
+            }}});T.$new(Job.$new()).start();
+          }catch(e){emit('fatal',{error:s(e.stack||e)})}})
+          JS
+          cat > /tmp/run.py <<'PY'
+          import frida,json,time,sys
+          from pathlib import Path
+          out=Path('artifacts/yalla-fast-signed-discovery');out.mkdir(parents=True,exist_ok=True);msgs=[]
+          def cb(m,d):msgs.append(m);print(json.dumps(m,ensure_ascii=False),flush=True)
+          dev=frida.get_usb_device(timeout=60);pid=dev.spawn(['com.weieyu.yalla']);ses=dev.attach(pid);sc=ses.create_script(Path('/tmp/hook.js').read_text());sc.on('message',cb);sc.load();dev.resume(pid)
+          end=time.time()+180
+          while time.time()<end:
+            if any(m.get('type')=='send' and m.get('payload',{}).get('tag') in {'done','fatal'} for m in msgs):break
+            time.sleep(.5)
+          payload=[m.get('payload',{}) for m in msgs if m.get('type')=='send'];(out/'payloads.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2));(out/'messages.json').write_text(json.dumps(msgs,ensure_ascii=False,indent=2))
+          for tag in ['fields','client','constants','common','login','response','error','notice-candidates','fatal','done']:(out/(tag+'.json')).write_text(json.dumps([x.get('data') for x in payload if x.get('tag')==tag],ensure_ascii=False,indent=2))
+          if not any(x.get('tag')=='response' for x in payload):sys.exit(3)
+          PY
+          cat > /tmp/emulator.sh <<'SH'
+          #!/usr/bin/env bash
+          set -Eeuo pipefail
+          out="artifacts/yalla-fast-signed-discovery";adb wait-for-device
+          adb shell getprop ro.dalvik.vm.native.bridge > "$out/native-bridge.txt";adb shell getprop ro.product.cpu.abilist > "$out/abilist.txt"
+          mapfile -t apks < <(find /tmp/yalla-splits -type f -name '*.apk' | sort)
+          set +e;adb install-multiple -r "${apks[@]}" 2>&1 | tee "$out/install.log";rc=${PIPESTATUS[0]};set -e
+          if [[ $rc -ne 0 ]]; then base="$(find /tmp/yalla-splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)";adb install -r "$base" 2>&1 | tee "$out/install-base.log";fi
+          adb root || true;adb wait-for-device;adb push /tmp/frida /data/local/tmp/frida-server;adb shell chmod 755 /data/local/tmp/frida-server;adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &';sleep 4
+          set +e;python /tmp/run.py 2>&1 | tee "$out/frida-run.log";code=${PIPESTATUS[0]};set -e;adb logcat -d -t 15000 > "$out/logcat.txt" || true;exit "$code"
+          SH
+          chmod +x /tmp/emulator.sh
+      - name: Boot emulator and run fast signed extraction
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 28
+          target: google_apis
+          arch: x86
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          heap-size: 512M
+          disk-size: 6G
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          script: bash /tmp/emulator.sh
+      - name: Parse all activity URLs
+        if: always()
+        run: |
+          python - <<'PY'
+          import json,re,os
+          from pathlib import Path
+          from urllib.parse import urlparse
+          out=Path('artifacts/yalla-fast-signed-discovery');out.mkdir(parents=True,exist_ok=True)
+          try:p=json.loads((out/'payloads.json').read_text())
+          except Exception:p=[]
+          responses=[x.get('data') for x in p if x.get('tag')=='response'];urls=[];objects=[];parsed=[]
+          def walk(v,path='$'):
+            if isinstance(v,dict):
+              if any(k.lower() in {'activityurl','activity_url','h5entranceurl','jumpurl','url','shareurl','redirecturl'} for k in v):objects.append({'path':path,'object':v})
+              for k,c in v.items():
+                if isinstance(c,str):
+                  for u in re.findall(r'https?://[^\s"\'<>\\)]+',c.replace('\\/','/')):urls.append({'path':path+'.'+k,'url':u.rstrip(',.;]})')})
+                walk(c,path+'.'+k)
+            elif isinstance(v,list):
+              for i,c in enumerate(v):walk(c,f'{path}[{i}]')
+          for r in responses:
+            try:o=json.loads((r or {}).get('body',''));parsed.append({'country':r.get('country'),'kind':r.get('kind'),'json':o});walk(o)
+            except Exception:pass
+          roots=[]
+          for x in urls:
+            try:
+              q=urlparse(x['url']);parts=[z for z in q.path.split('/') if z]
+              if len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):roots.append({**x,'bucket':parts[1],'project':parts[2],'root':f'{q.scheme}://{q.netloc}/activity/{parts[1]}/{parts[2]}/'})
+            except Exception:pass
+          unique={x['root']:x for x in roots};result={'responses':responses,'objects':objects,'urls':urls,'roots':sorted(unique.values(),key=lambda x:(x['bucket'],x['project'])),'parsed':parsed};(out/'discovery.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));(out/'REPORT.md').write_text('\n'.join(['# Yalla Fast Signed Discovery','',f'- Responses: {len(responses)}',f'- URL-bearing objects: {len(objects)}',f'- URLs: {len(urls)}',f'- Exact roots: {len(unique)}','']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in result['roots']]))
+          PY
+          stage=/tmp/yalla-fast-signed;rm -rf "$stage"&&mkdir -p "$stage";cp -R "$OUT_DIR"/. "$stage/";git config user.name 'pro-yalla-fast-bot';git config user.email '53897102+moongrant@users.noreply.github.com';git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1||true;cp -a "$stage"/. .;git add .;git commit -m "Publish Yalla fast signed discovery ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-fast-signed-discovery
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
