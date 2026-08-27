@@ -49,7 +49,7 @@ campaign_block = """const campaigns = [
 
 base, n = re.subn(
     r"campaigns = r'''const campaigns = \[.*?\n\];'''",
-    'campaigns = ' + repr(campaign_block),
+    lambda _m: 'campaigns = ' + repr(campaign_block),
     base,
     count=1,
     flags=re.S,
@@ -61,7 +61,7 @@ custom_block = """  if(p.includes('/act/ramadan/luckyact/v2/userprocess')){res={
 
 base, n = re.subn(
     r'custom = """.*?"""\nif needle not in src:',
-    'custom = ' + repr(custom_block) + '\nif needle not in src:',
+    lambda _m: 'custom = ' + repr(custom_block) + '\nif needle not in src:',
     base,
     count=1,
     flags=re.S,
