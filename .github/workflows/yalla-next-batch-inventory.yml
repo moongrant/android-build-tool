@@ -1,0 +1,61 @@
+name: Yalla next batch current-site inventory
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/inventory.mjs
+      - .github/workflows/yalla-next-batch-inventory.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      RESULT_BRANCH: pro-yalla-next-batch-inventory-results
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Inventory current site
+        run: node tools/yalla-next-batch/inventory.mjs | tee yalla-next-batch-inventory.log
+      - name: Publish compact inventory branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-inventory
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp pro-yalla-next-batch-inventory/yalla-site-inventory.json "$stage/" 2>/dev/null || true
+          cp pro-yalla-next-batch-inventory/YALLA-SITE-INVENTORY.md "$stage/" 2>/dev/null || true
+          cp pro-yalla-next-batch-inventory/site-overview.png "$stage/" 2>/dev/null || true
+          cp yalla-next-batch-inventory.log "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-inventory-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish current Yalla site inventory ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload inventory artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-next-batch-inventory
+          path: pro-yalla-next-batch-inventory
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
