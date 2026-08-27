@@ -1,0 +1,559 @@
+{
+  "schemaVersion": "5.1",
+  "generatedAt": "2026-08-27T03:13:03.825Z",
+  "release": "pro-yalla-rich-spa-increment-round5-exact",
+  "minimumDepth": "Falla Rocket Takeoff 2026 or deeper; no simple ranking-only activities.",
+  "summary": {
+    "VERIFIED_PARTIAL_SPA": 8
+  },
+  "activities": [
+    {
+      "id": "yalla-8th-anniversary-2024",
+      "name": "8th Anniversary · Explore the Yalla World",
+      "year": 2024,
+      "campaign": "Yalla 8th Anniversary 2024",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2024dist/8thAnniversary/",
+      "spaRoot": "/activity/2024dist/8thAnniversary/",
+      "projectSlug": "8thAnniversary",
+      "routes": [
+        "/",
+        "/secretTreasure",
+        "/exploreMedals",
+        "/riskIsland",
+        "/memoryGate",
+        "/privacy",
+        "/:catchAll(.*)"
+      ],
+      "routeCount": 7,
+      "stateCount": 2,
+      "fileCount": 89,
+      "assetCount": 86,
+      "apiCount": 1,
+      "fixtureCount": 1,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-8th-anniversary-2024/01-home-online.png",
+        "screenshots/yalla-8th-anniversary-2024/02-Illustrated_Card_Exploration-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 4926272,
+        "jsCount": 19,
+        "cssCount": 13,
+        "imageCount": 49,
+        "fontCount": 0,
+        "richStateCount": 1,
+        "keywordHits": [
+          "memory gate"
+        ],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 2,
+        "missingChunks": 0,
+        "unmappedRequests": 6,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 2
+      },
+      "mechanism": "World-map exploration with challenge islands, treasure, medals, memory content and staged rewards.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-9th-anniversary-2025",
+      "name": "9th Anniversary · Starlight Gala",
+      "year": 2025,
+      "campaign": "Yalla 9th Anniversary 2025",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+      "spaRoot": "/activity/2025dist/9thAnniversary/",
+      "projectSlug": "9thAnniversary",
+      "routes": [
+        "/",
+        "/main",
+        "/mysteryPlanet",
+        "/honor",
+        "/rewards",
+        "/rank",
+        "/rules",
+        "/home",
+        "/myBase",
+        "/memory",
+        "/resourcePlanet",
+        "/competitivePlanet",
+        "/mysteriousPlanet",
+        "/:catchAll(.*)"
+      ],
+      "routeCount": 14,
+      "stateCount": 4,
+      "fileCount": 99,
+      "assetCount": 80,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-9th-anniversary-2025/01-home-online.png",
+        "screenshots/yalla-9th-anniversary-2025/02-Resource_Planet-online.png",
+        "screenshots/yalla-9th-anniversary-2025/03-Arena_Planet-online.png",
+        "screenshots/yalla-9th-anniversary-2025/04-Mystery_Planet-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 4428807,
+        "jsCount": 35,
+        "cssCount": 32,
+        "imageCount": 27,
+        "fontCount": 0,
+        "richStateCount": 4,
+        "keywordHits": [
+          "mystery planet",
+          "planet",
+          "9th anniversary",
+          "anniversary"
+        ],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 2,
+        "consoleFatalErrors": 0,
+        "missingChunks": 0,
+        "unmappedRequests": 12,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 2
+      },
+      "mechanism": "Starlight journey campaign with planets, missions, honors and reward layers.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-season-2026",
+      "name": "Yalla Season · Four Surprises",
+      "year": 2026,
+      "campaign": "Yalla Season 2026",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2025dist/yallaSeason/",
+      "spaRoot": "/activity/2025dist/yallaSeason/",
+      "projectSlug": "yallaSeason",
+      "routes": [
+        "/",
+        "/signIn",
+        "/signInRewards",
+        "/discountStore",
+        "/cruiseParty",
+        "/rechargeBenefits",
+        "/nationalDay",
+        "/home",
+        "/sign",
+        "/limitShop",
+        "/nationalday",
+        "/:catchAll(.*)"
+      ],
+      "routeCount": 12,
+      "stateCount": 6,
+      "fileCount": 25,
+      "assetCount": 19,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-season-2026/01-home-online.png",
+        "screenshots/yalla-season-2026/02-signIn-online.png",
+        "screenshots/yalla-season-2026/03-discountStore-online.png",
+        "screenshots/yalla-season-2026/04-cruiseParty-online.png",
+        "screenshots/yalla-season-2026/05-nationalday-online.png",
+        "screenshots/yalla-season-2026/06-Sign-in_Rewards-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 1909469,
+        "jsCount": 8,
+        "cssCount": 6,
+        "imageCount": 5,
+        "fontCount": 0,
+        "richStateCount": 6,
+        "keywordHits": [
+          "sign-in",
+          "discount store",
+          "cruise party"
+        ],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 23,
+        "missingChunks": 0,
+        "unmappedRequests": 7,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 1
+      },
+      "mechanism": "Seasonal campaign combining sign-in retention, discount commerce, cruise-party interaction, recharge benefits and a national-day branch.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-10th-anniversary-2026",
+      "name": "10th Anniversary · Crowned with Honor",
+      "year": 2026,
+      "campaign": "Yalla 10th Anniversary 2026",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/",
+      "spaRoot": "/activity/2026dist/10thAnniversary/",
+      "projectSlug": "10thAnniversary",
+      "routes": [
+        "/",
+        "/main",
+        "/mission",
+        "/collection",
+        "/honor",
+        "/rewards",
+        "/rank",
+        "/rules",
+        "/home",
+        "/honorAssemble",
+        "/brilliantReward",
+        "/10thGift",
+        "/timeHall",
+        "/memory",
+        "/hallOfFame",
+        "/:catchAll(.*)"
+      ],
+      "routeCount": 16,
+      "stateCount": 1,
+      "fileCount": 15,
+      "assetCount": 14,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-10th-anniversary-2026/01-home-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 1913295,
+        "jsCount": 7,
+        "cssCount": 3,
+        "imageCount": 3,
+        "fontCount": 0,
+        "richStateCount": 0,
+        "keywordHits": [],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 3,
+        "missingChunks": 0,
+        "unmappedRequests": 5,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 1
+      },
+      "mechanism": "Flagship anniversary SPA with missions, collection, honor, reward and competitive layers.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-ramadan-kareem-2026",
+      "name": "Ramadan Kareem 2026",
+      "year": 2026,
+      "campaign": "Yalla Ramadan 2026",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2026dist/Ramadan/",
+      "spaRoot": "/activity/2026dist/Ramadan/",
+      "projectSlug": "Ramadan",
+      "routes": [
+        "/",
+        "/main",
+        "/cards",
+        "/store",
+        "/rank",
+        "/rewards",
+        "/rules",
+        "/records"
+      ],
+      "routeCount": 8,
+      "stateCount": 8,
+      "fileCount": 17,
+      "assetCount": 16,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-ramadan-kareem-2026/01-home-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/02-main-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/03-cards-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/04-store-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/05-rank-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/06-rewards-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/07-rules-online.png",
+        "screenshots/yalla-ramadan-kareem-2026/08-records-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 2141338,
+        "jsCount": 2,
+        "cssCount": 2,
+        "imageCount": 11,
+        "fontCount": 0,
+        "richStateCount": 8,
+        "keywordHits": [
+          "ramadan",
+          "kareem",
+          "discount",
+          "store",
+          "card",
+          "ranking"
+        ],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 1,
+        "missingChunks": 0,
+        "unmappedRequests": 2,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 0
+      },
+      "mechanism": "Gift-driven four-item unlock loop with milestone rewards, discount commerce, cards and dual rankings.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-sheep-farm-2026",
+      "name": "Sheep Farm · Eid al-Adha",
+      "year": 2026,
+      "campaign": "Yalla Sheep Farm 2026",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2024dist/adha/",
+      "spaRoot": "/activity/2024dist/adha/",
+      "projectSlug": "adha",
+      "routes": [
+        "/",
+        "/rewards",
+        "/games",
+        "/wallet",
+        "/invite",
+        "/feed",
+        "/store",
+        "/tasks",
+        "/barn"
+      ],
+      "routeCount": 9,
+      "stateCount": 1,
+      "fileCount": 15,
+      "assetCount": 14,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-sheep-farm-2026/01-home-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 1445710,
+        "jsCount": 7,
+        "cssCount": 3,
+        "imageCount": 3,
+        "fontCount": 0,
+        "richStateCount": 0,
+        "keywordHits": [],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 2,
+        "missingChunks": 0,
+        "unmappedRequests": 3,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 0
+      },
+      "mechanism": "Farm-growth activity with feeding, tasks, wallet, invitation, games, store, barn and rewards.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-super-roller-coaster-2024",
+      "name": "Super Roller Coaster",
+      "year": 2024,
+      "campaign": "Yalla WonderLand / New Year 2025",
+      "parentCampaign": "Yalla WonderLand / New Year 2025",
+      "officialUrl": "https://activity2.yalla.live/activity/2024dist/rollerCoaster/",
+      "spaRoot": "/activity/2024dist/rollerCoaster/",
+      "projectSlug": "rollerCoaster",
+      "routes": [
+        "/",
+        "/main",
+        "/rewards",
+        "/records",
+        "/rank",
+        "/rules"
+      ],
+      "routeCount": 6,
+      "stateCount": 6,
+      "fileCount": 55,
+      "assetCount": 49,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-super-roller-coaster-2024/01-home-online.png",
+        "screenshots/yalla-super-roller-coaster-2024/02-main-online.png",
+        "screenshots/yalla-super-roller-coaster-2024/03-rewards-online.png",
+        "screenshots/yalla-super-roller-coaster-2024/04-records-online.png",
+        "screenshots/yalla-super-roller-coaster-2024/05-rank-online.png",
+        "screenshots/yalla-super-roller-coaster-2024/06-rules-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 2860288,
+        "jsCount": 17,
+        "cssCount": 13,
+        "imageCount": 22,
+        "fontCount": 0,
+        "richStateCount": 6,
+        "keywordHits": [
+          "roller coaster",
+          "ride",
+          "ticket",
+          "reward"
+        ],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 2,
+        "missingChunks": 0,
+        "unmappedRequests": 8,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 5
+      },
+      "mechanism": "Ticket-driven ride progression with visual track advancement, upgrades, records and rewards.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    },
+    {
+      "id": "yalla-wonderland-new-year-2025",
+      "name": "WonderLand · New Year Carnival",
+      "year": 2025,
+      "campaign": "Yalla WonderLand / New Year 2025",
+      "parentCampaign": null,
+      "officialUrl": "https://activity2.yalla.live/activity/2024dist/2025NewYear/",
+      "spaRoot": "/activity/2024dist/2025NewYear/",
+      "projectSlug": "2025NewYear",
+      "routes": [
+        "/",
+        "/main",
+        "/treasure",
+        "/cards",
+        "/roomRank",
+        "/rules"
+      ],
+      "routeCount": 6,
+      "stateCount": 5,
+      "fileCount": 38,
+      "assetCount": 37,
+      "apiCount": 0,
+      "fixtureCount": 0,
+      "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-wonderland-new-year-2025/01-home-online.png",
+        "screenshots/yalla-wonderland-new-year-2025/02-main-online.png",
+        "screenshots/yalla-wonderland-new-year-2025/03-treasure-online.png",
+        "screenshots/yalla-wonderland-new-year-2025/04-roomRank-online.png",
+        "screenshots/yalla-wonderland-new-year-2025/05-rules-online.png"
+      ],
+      "metrics": {
+        "totalBytes": 2095824,
+        "jsCount": 12,
+        "cssCount": 8,
+        "imageCount": 13,
+        "fontCount": 0,
+        "richStateCount": 5,
+        "keywordHits": [
+          "wonderland",
+          "sea dominator",
+          "roller coaster",
+          "ferris wheel",
+          "illustrated cards"
+        ],
+        "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+      },
+      "qa": {
+        "brokenImages": 10,
+        "consoleFatalErrors": 1,
+        "missingChunks": 0,
+        "unmappedRequests": 7,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 5
+      },
+      "mechanism": "Parent campaign map connecting independent child SPAs, a shared card system, treasure chest and room ranking.",
+      "notes": [
+        "Original responses from Yalla production/CDN hosts were preserved.",
+        "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+        "No fabricated user, ranking, reward or gameplay result is included."
+      ]
+    }
+  ]
+}

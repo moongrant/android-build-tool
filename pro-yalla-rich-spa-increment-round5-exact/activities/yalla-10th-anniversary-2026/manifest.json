@@ -1,0 +1,345 @@
+{
+  "activity": {
+    "id": "yalla-10th-anniversary-2026",
+    "name": "10th Anniversary · Crowned with Honor",
+    "year": 2026,
+    "campaign": "Yalla 10th Anniversary 2026",
+    "parentCampaign": null,
+    "officialUrl": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/",
+    "spaRoot": "/activity/2026dist/10thAnniversary/",
+    "projectSlug": "10thAnniversary",
+    "routes": [
+      "/",
+      "/main",
+      "/mission",
+      "/collection",
+      "/honor",
+      "/rewards",
+      "/rank",
+      "/rules",
+      "/home",
+      "/honorAssemble",
+      "/brilliantReward",
+      "/10thGift",
+      "/timeHall",
+      "/memory",
+      "/hallOfFame",
+      "/:catchAll(.*)"
+    ],
+    "routeCount": 16,
+    "stateCount": 1,
+    "fileCount": 15,
+    "assetCount": 14,
+    "apiCount": 0,
+    "fixtureCount": 0,
+    "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+    "status": "VERIFIED_PARTIAL_SPA",
+    "quality": "B+",
+    "localReplay": true,
+    "screenshot": true,
+    "currentReleaseVerified": false,
+    "screenshots": [
+      "screenshots/yalla-10th-anniversary-2026/01-home-online.png"
+    ],
+    "metrics": {
+      "totalBytes": 1913295,
+      "jsCount": 7,
+      "cssCount": 3,
+      "imageCount": 3,
+      "fontCount": 0,
+      "richStateCount": 0,
+      "keywordHits": [],
+      "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+    },
+    "qa": {
+      "brokenImages": 0,
+      "consoleFatalErrors": 3,
+      "missingChunks": 0,
+      "unmappedRequests": 5,
+      "remoteIframes": 0,
+      "remoteRuntimeFallback": 0,
+      "missingStaticAssets": 1
+    },
+    "mechanism": "Flagship anniversary SPA with missions, collection, honor, reward and competitive layers.",
+    "notes": [
+      "Original responses from Yalla production/CDN hosts were preserved.",
+      "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+      "No fabricated user, ranking, reward or gameplay result is included."
+    ]
+  },
+  "records": [
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/?archive=1&fromH5=1&lang=en&language=en&p=2&region=0&s=3&showTopBar=false&t=1779699600000&token=archive-replay&userId=10000001&v=999",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 4643,
+      "sha256": "a94709d5d3c64d02efe5e42c32bd04672d1217022e1958749d5a55bb74cf7035",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/index__q_a6a010c3b0f4.html",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/images/horse2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 7119,
+      "sha256": "aca344c588072bca011ab132a17ded78e03bdd14beec3f9c2f032f77219e9eaf",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/images/horse2.png",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/css/chunk-vendors.055e6531.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 73076,
+      "sha256": "c1a6df4830ceb9b82f9dc500f3f22ad60462e070b8174e0c9acd8accb5edd6cc",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/css/chunk-vendors.055e6531.css",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/vue.runtime.global.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 111102,
+      "sha256": "dac657dad9cc8c58fb613679c0182b976452df53afebfea00bf7b8f77d33cca2",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/vue.runtime.global.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/images/icon_return_normal.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 145,
+      "sha256": "c1f68f30c7dfe9945871a23ab0f743cc13953f1b37986328ec4688393a9ce4c3",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/images/icon_return_normal.png",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/css/app.eecb626f.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 2310,
+      "sha256": "06832142233adafc42d8d21c2429688a339921d906577160660902c125773792",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/css/app.eecb626f.css",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/jsencrypt.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 55390,
+      "sha256": "0442096d116963a886f96eb1016038d01a79879b287075b670cf2de3eb548f5e",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/jsencrypt.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/qs.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 31906,
+      "sha256": "baa6df07999cfc16e3041d4e4a6ee1e4cf4d93b90667cf19af3e492248671210",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/qs.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/axios.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 26580,
+      "sha256": "ffb6e270a7bbb1ea1b797965ae85e35760b38b98744478a4151ddee79a31d215",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/axios.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/images/SkeletonScreen.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 3128,
+      "sha256": "8e0dde20469250183cb3c74d7423084875553e4b1f102eb62b127e7825f4ab31",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/images/SkeletonScreen.png",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/app.a0036d25.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 59458,
+      "sha256": "4178500501bb622deba8c02010a7d25206f363d4b89b8498e3e83f464d159516",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/app.a0036d25.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/chunk-vendors.f6bbfad4.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 1389188,
+      "sha256": "2298dde05b188f9dd2b7c5297c2443997f23335517b339e77a6e1966e8ebbe5c",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/chunk-vendors.f6bbfad4.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/js/home.421fa265.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 26604,
+      "sha256": "8f6ffc105113fc9e768d81cee461544b5b2a708182cb5396df2d68f4be7f6c24",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/js/home.421fa265.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/css/home.c7683dbd.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 93983,
+      "sha256": "296612c2d2a5def72f71e4c1a25355d1f5a9690415817486f445988998250f0d",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/css/home.c7683dbd.css",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/lang/en.json?activityId=&region=0&token=archive-replay&userId=10000001",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 28663,
+      "sha256": "1b5087859753253e4a8d97e2f7201788b13629cf3d7ab4d0801e61ed9d4f2cf1",
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/10thAnniversary/lang/en__q_ca9c3482750b.json",
+      "method": "GET",
+      "source": "official-browser-response"
+    }
+  ],
+  "states": [
+    {
+      "label": "home",
+      "source": "configured-route",
+      "requestedUrl": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/?region=0&showTopBar=false&archive=1&fromH5=1&userId=10000001&token=archive-replay&v=999&s=3&p=2&t=1779699600000&lang=en&language=en",
+      "finalUrl": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/home?region=0&showTopBar=false&archive=1&fromH5=1&userId=10000001&token=archive-replay&v=999&s=3&p=2&t=1779699600000&lang=en&language=en",
+      "navigationError": null,
+      "screenshot": "screenshots/yalla-10th-anniversary-2026/01-home-online.png",
+      "localScreenshot": "screenshots/01-home-online.png",
+      "html": "replay/01-home.html",
+      "sha256": "58dabc536ff224366c1924ae918151df4843cedd6ba17ef91a97a2c729041a40",
+      "generic": false,
+      "title": "",
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/home?region=0&showTopBar=false&archive=1&fromH5=1&userId=10000001&token=archive-replay&v=999&s=3&p=2&t=1779699600000&lang=en&language=en",
+      "bodyText": "",
+      "width": 390,
+      "height": 844,
+      "appHTMLLength": 120,
+      "images": [
+        {
+          "src": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/images/icon_return_normal.png",
+          "complete": true,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "src": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/images/horse2.png",
+          "complete": true,
+          "width": 151,
+          "height": 175
+        }
+      ],
+      "iframes": [],
+      "clickables": []
+    }
+  ],
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 3,
+    "missingChunks": 0,
+    "unmappedRequests": 5,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 1,
+    "states": [
+      {
+        "label": "home",
+        "screenshot": "screenshots/yalla-10th-anniversary-2026/01-home-offline.png",
+        "brokenImages": 0,
+        "remoteIframes": 0,
+        "unmappedRequests": 5,
+        "console": [
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "pageerror",
+            "text": "AxiosError: _"
+          },
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "pageerror",
+            "text": "AxiosError: _"
+          },
+          {
+            "type": "pageerror",
+            "text": "AxiosError: _"
+          }
+        ],
+        "height": 844,
+        "bodyText": ""
+      }
+    ],
+    "unmapped": [
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+        "method": "GET",
+        "resourceType": "script",
+        "category": "api"
+      },
+      {
+        "url": "https://activity2.yalla.live/api/TenthAnniversary/Init?region=0&activityId=&userId=10000001&token=archive-replay",
+        "method": "GET",
+        "resourceType": "xhr",
+        "category": "api"
+      },
+      {
+        "url": "https://activity2.yalla.live/api/Buried/GetCopywritingAddress?region=0&activityId=&userId=10000001&token=archive-replay",
+        "method": "GET",
+        "resourceType": "xhr",
+        "category": "api"
+      },
+      {
+        "url": "https://activity2.yalla.live/api/Buried/ManagerBuriedV2",
+        "method": "POST",
+        "resourceType": "xhr",
+        "category": "api"
+      },
+      {
+        "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/media/bgm.8cf44feb.mp3",
+        "method": "GET",
+        "resourceType": "media",
+        "category": "static"
+      }
+    ]
+  },
+  "generatedAt": "2026-08-27T03:03:22.595Z"
+}

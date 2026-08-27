@@ -1,0 +1,73 @@
+{
+  "id": "yalla-season-2026",
+  "name": "Yalla Season · Four Surprises",
+  "year": 2026,
+  "campaign": "Yalla Season 2026",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2025dist/yallaSeason/",
+  "spaRoot": "/activity/2025dist/yallaSeason/",
+  "projectSlug": "yallaSeason",
+  "routes": [
+    "/",
+    "/signIn",
+    "/signInRewards",
+    "/discountStore",
+    "/cruiseParty",
+    "/rechargeBenefits",
+    "/nationalDay",
+    "/home",
+    "/sign",
+    "/limitShop",
+    "/nationalday",
+    "/:catchAll(.*)"
+  ],
+  "routeCount": 12,
+  "stateCount": 6,
+  "fileCount": 25,
+  "assetCount": 19,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-season-2026/01-home-online.png",
+    "screenshots/yalla-season-2026/02-signIn-online.png",
+    "screenshots/yalla-season-2026/03-discountStore-online.png",
+    "screenshots/yalla-season-2026/04-cruiseParty-online.png",
+    "screenshots/yalla-season-2026/05-nationalday-online.png",
+    "screenshots/yalla-season-2026/06-Sign-in_Rewards-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 1909469,
+    "jsCount": 8,
+    "cssCount": 6,
+    "imageCount": 5,
+    "fontCount": 0,
+    "richStateCount": 6,
+    "keywordHits": [
+      "sign-in",
+      "discount store",
+      "cruise party"
+    ],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 23,
+    "missingChunks": 0,
+    "unmappedRequests": 7,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 1
+  },
+  "mechanism": "Seasonal campaign combining sign-in retention, discount commerce, cruise-party interaction, recharge benefits and a national-day branch.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "yalla-ramadan-kareem-2026",
+  "name": "Ramadan Kareem 2026",
+  "year": 2026,
+  "campaign": "Yalla Ramadan 2026",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2026dist/Ramadan/",
+  "spaRoot": "/activity/2026dist/Ramadan/",
+  "projectSlug": "Ramadan",
+  "routes": [
+    "/",
+    "/main",
+    "/cards",
+    "/store",
+    "/rank",
+    "/rewards",
+    "/rules",
+    "/records"
+  ],
+  "routeCount": 8,
+  "stateCount": 8,
+  "fileCount": 17,
+  "assetCount": 16,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-ramadan-kareem-2026/01-home-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/02-main-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/03-cards-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/04-store-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/05-rank-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/06-rewards-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/07-rules-online.png",
+    "screenshots/yalla-ramadan-kareem-2026/08-records-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 2141338,
+    "jsCount": 2,
+    "cssCount": 2,
+    "imageCount": 11,
+    "fontCount": 0,
+    "richStateCount": 8,
+    "keywordHits": [
+      "ramadan",
+      "kareem",
+      "discount",
+      "store",
+      "card",
+      "ranking"
+    ],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 1,
+    "missingChunks": 0,
+    "unmappedRequests": 2,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 0
+  },
+  "mechanism": "Gift-driven four-item unlock loop with milestone rewards, discount commerce, cards and dual rankings.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "yalla-wonderland-new-year-2025",
+  "name": "WonderLand · New Year Carnival",
+  "year": 2025,
+  "campaign": "Yalla WonderLand / New Year 2025",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2024dist/2025NewYear/",
+  "spaRoot": "/activity/2024dist/2025NewYear/",
+  "projectSlug": "2025NewYear",
+  "routes": [
+    "/",
+    "/main",
+    "/treasure",
+    "/cards",
+    "/roomRank",
+    "/rules"
+  ],
+  "routeCount": 6,
+  "stateCount": 5,
+  "fileCount": 38,
+  "assetCount": 37,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-wonderland-new-year-2025/01-home-online.png",
+    "screenshots/yalla-wonderland-new-year-2025/02-main-online.png",
+    "screenshots/yalla-wonderland-new-year-2025/03-treasure-online.png",
+    "screenshots/yalla-wonderland-new-year-2025/04-roomRank-online.png",
+    "screenshots/yalla-wonderland-new-year-2025/05-rules-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 2095824,
+    "jsCount": 12,
+    "cssCount": 8,
+    "imageCount": 13,
+    "fontCount": 0,
+    "richStateCount": 5,
+    "keywordHits": [
+      "wonderland",
+      "sea dominator",
+      "roller coaster",
+      "ferris wheel",
+      "illustrated cards"
+    ],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 10,
+    "consoleFatalErrors": 1,
+    "missingChunks": 0,
+    "unmappedRequests": 7,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 5
+  },
+  "mechanism": "Parent campaign map connecting independent child SPAs, a shared card system, treasure chest and room ranking.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

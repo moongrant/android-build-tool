@@ -1,0 +1,68 @@
+{
+  "id": "yalla-10th-anniversary-2026",
+  "name": "10th Anniversary · Crowned with Honor",
+  "year": 2026,
+  "campaign": "Yalla 10th Anniversary 2026",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/",
+  "spaRoot": "/activity/2026dist/10thAnniversary/",
+  "projectSlug": "10thAnniversary",
+  "routes": [
+    "/",
+    "/main",
+    "/mission",
+    "/collection",
+    "/honor",
+    "/rewards",
+    "/rank",
+    "/rules",
+    "/home",
+    "/honorAssemble",
+    "/brilliantReward",
+    "/10thGift",
+    "/timeHall",
+    "/memory",
+    "/hallOfFame",
+    "/:catchAll(.*)"
+  ],
+  "routeCount": 16,
+  "stateCount": 1,
+  "fileCount": 15,
+  "assetCount": 14,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-10th-anniversary-2026/01-home-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 1913295,
+    "jsCount": 7,
+    "cssCount": 3,
+    "imageCount": 3,
+    "fontCount": 0,
+    "richStateCount": 0,
+    "keywordHits": [],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 3,
+    "missingChunks": 0,
+    "unmappedRequests": 5,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 1
+  },
+  "mechanism": "Flagship anniversary SPA with missions, collection, honor, reward and competitive layers.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

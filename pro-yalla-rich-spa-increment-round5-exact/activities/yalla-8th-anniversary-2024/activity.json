@@ -1,0 +1,62 @@
+{
+  "id": "yalla-8th-anniversary-2024",
+  "name": "8th Anniversary · Explore the Yalla World",
+  "year": 2024,
+  "campaign": "Yalla 8th Anniversary 2024",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2024dist/8thAnniversary/",
+  "spaRoot": "/activity/2024dist/8thAnniversary/",
+  "projectSlug": "8thAnniversary",
+  "routes": [
+    "/",
+    "/secretTreasure",
+    "/exploreMedals",
+    "/riskIsland",
+    "/memoryGate",
+    "/privacy",
+    "/:catchAll(.*)"
+  ],
+  "routeCount": 7,
+  "stateCount": 2,
+  "fileCount": 89,
+  "assetCount": 86,
+  "apiCount": 1,
+  "fixtureCount": 1,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-8th-anniversary-2024/01-home-online.png",
+    "screenshots/yalla-8th-anniversary-2024/02-Illustrated_Card_Exploration-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 4926272,
+    "jsCount": 19,
+    "cssCount": 13,
+    "imageCount": 49,
+    "fontCount": 0,
+    "richStateCount": 1,
+    "keywordHits": [
+      "memory gate"
+    ],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 2,
+    "missingChunks": 0,
+    "unmappedRequests": 6,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 2
+  },
+  "mechanism": "World-map exploration with challenge islands, treasure, medals, memory content and staged rewards.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

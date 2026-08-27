@@ -1,0 +1,61 @@
+{
+  "id": "yalla-sheep-farm-2026",
+  "name": "Sheep Farm · Eid al-Adha",
+  "year": 2026,
+  "campaign": "Yalla Sheep Farm 2026",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2024dist/adha/",
+  "spaRoot": "/activity/2024dist/adha/",
+  "projectSlug": "adha",
+  "routes": [
+    "/",
+    "/rewards",
+    "/games",
+    "/wallet",
+    "/invite",
+    "/feed",
+    "/store",
+    "/tasks",
+    "/barn"
+  ],
+  "routeCount": 9,
+  "stateCount": 1,
+  "fileCount": 15,
+  "assetCount": 14,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-sheep-farm-2026/01-home-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 1445710,
+    "jsCount": 7,
+    "cssCount": 3,
+    "imageCount": 3,
+    "fontCount": 0,
+    "richStateCount": 0,
+    "keywordHits": [],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 2,
+    "missingChunks": 0,
+    "unmappedRequests": 3,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 0
+  },
+  "mechanism": "Farm-growth activity with feeding, tasks, wallet, invitation, games, store, barn and rewards.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

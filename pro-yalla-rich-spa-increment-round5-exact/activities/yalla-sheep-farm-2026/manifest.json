@@ -1,0 +1,314 @@
+{
+  "activity": {
+    "id": "yalla-sheep-farm-2026",
+    "name": "Sheep Farm · Eid al-Adha",
+    "year": 2026,
+    "campaign": "Yalla Sheep Farm 2026",
+    "parentCampaign": null,
+    "officialUrl": "https://activity2.yalla.live/activity/2024dist/adha/",
+    "spaRoot": "/activity/2024dist/adha/",
+    "projectSlug": "adha",
+    "routes": [
+      "/",
+      "/rewards",
+      "/games",
+      "/wallet",
+      "/invite",
+      "/feed",
+      "/store",
+      "/tasks",
+      "/barn"
+    ],
+    "routeCount": 9,
+    "stateCount": 1,
+    "fileCount": 15,
+    "assetCount": 14,
+    "apiCount": 0,
+    "fixtureCount": 0,
+    "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+    "status": "VERIFIED_PARTIAL_SPA",
+    "quality": "B+",
+    "localReplay": true,
+    "screenshot": true,
+    "currentReleaseVerified": false,
+    "screenshots": [
+      "screenshots/yalla-sheep-farm-2026/01-home-online.png"
+    ],
+    "metrics": {
+      "totalBytes": 1445710,
+      "jsCount": 7,
+      "cssCount": 3,
+      "imageCount": 3,
+      "fontCount": 0,
+      "richStateCount": 0,
+      "keywordHits": [],
+      "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+    },
+    "qa": {
+      "brokenImages": 0,
+      "consoleFatalErrors": 2,
+      "missingChunks": 0,
+      "unmappedRequests": 3,
+      "remoteIframes": 0,
+      "remoteRuntimeFallback": 0,
+      "missingStaticAssets": 0
+    },
+    "mechanism": "Farm-growth activity with feeding, tasks, wallet, invitation, games, store, barn and rewards.",
+    "notes": [
+      "Original responses from Yalla production/CDN hosts were preserved.",
+      "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+      "No fabricated user, ranking, reward or gameplay result is included."
+    ]
+  },
+  "records": [
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/?archive=1&fromH5=1&lang=en&language=en&p=2&region=0&s=3&showTopBar=false&t=1779699600000&token=archive-replay&userId=10000001&v=999",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 3829,
+      "sha256": "a1c2145c0b78a24f277c320e15573b578550ffbdd7a997955a4e76f686d5134f",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/index__q_a6a010c3b0f4.html",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/axios.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 26580,
+      "sha256": "ffb6e270a7bbb1ea1b797965ae85e35760b38b98744478a4151ddee79a31d215",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/axios.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/css/chunk-vendors.0bc6f1c6.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 66152,
+      "sha256": "c4e1a94e737f1e38c612675d14b13a09df4d73403888466388c3def2d75db34d",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/css/chunk-vendors.0bc6f1c6.css",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/pic/icon_return_normal.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 145,
+      "sha256": "c1f68f30c7dfe9945871a23ab0f743cc13953f1b37986328ec4688393a9ce4c3",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/pic/icon_return_normal.png",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/qs.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 31906,
+      "sha256": "baa6df07999cfc16e3041d4e4a6ee1e4cf4d93b90667cf19af3e492248671210",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/qs.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 111102,
+      "sha256": "dac657dad9cc8c58fb613679c0182b976452df53afebfea00bf7b8f77d33cca2",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/pic/xiaoma.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 18714,
+      "sha256": "bbab6d0947238f36592e23217fc795e31090a2669ddda5305dedc3556d305ee6",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/pic/xiaoma.png",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/css/app.b5e104df.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 179474,
+      "sha256": "898fb9007ce04c1b0c86b4d6c75e91c25d2b24acd4dada97149544c495afeb72",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/css/app.b5e104df.css",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/jsencrypt.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 55390,
+      "sha256": "0442096d116963a886f96eb1016038d01a79879b287075b670cf2de3eb548f5e",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/jsencrypt.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/spine-player.min.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 229172,
+      "sha256": "e3e19b7208e1d5b11eb7c026f60921e0cebd17c8a68c3b1cafa0eeebc456ec67",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/spine-player.min.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/chunk-vendors.56b09f0e.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 374267,
+      "sha256": "014e8e5a31767d9c03ffa0410bd758781dad62c272f1afd8db8c915126677d99",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/chunk-vendors.56b09f0e.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/js/app.6cd63f7d.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 289336,
+      "sha256": "9683b7ed9b586d277dff6045f4ff686bb4d458bfce577092728125e86b790b99",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/js/app.6cd63f7d.js",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/css/spine-player.css",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 27395,
+      "sha256": "2ce8e4f63557164fa77205aa4469c74950cf834f1ac91c222d794e6e66ae7e0c",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/css/spine-player.css",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/pic/loading.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 18557,
+      "sha256": "a992f2e6da025d17a51e4f98b83b57f8f9a4f0492ff8783406b6f15f4afd1537",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/pic/loading.png",
+      "method": "GET",
+      "source": "official-browser-response"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/lang/en.json?activityId=&region=0&token=archive-replay&userId=10000001",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 13691,
+      "sha256": "4acf1a822ae605f2aa08c40f35fadbb2d2659e7ae8c51f022978cf053d7c4d61",
+      "file": "spa/origins/activity2.yalla.live/activity/2024dist/adha/lang/en__q_ca9c3482750b.json",
+      "method": "GET",
+      "source": "official-browser-response"
+    }
+  ],
+  "states": [
+    {
+      "label": "home",
+      "source": "configured-route",
+      "requestedUrl": "https://activity2.yalla.live/activity/2024dist/adha/?region=0&showTopBar=false&archive=1&fromH5=1&userId=10000001&token=archive-replay&v=999&s=3&p=2&t=1779699600000&lang=en&language=en",
+      "finalUrl": "https://activity2.yalla.live/activity/2024dist/adha/?region=0&showTopBar=false&archive=1&fromH5=1&userId=10000001&token=archive-replay&v=999&s=3&p=2&t=1779699600000&lang=en&language=en",
+      "navigationError": null,
+      "screenshot": "screenshots/yalla-sheep-farm-2026/01-home-online.png",
+      "localScreenshot": "screenshots/01-home-online.png",
+      "html": "replay/01-home.html",
+      "sha256": "abb0970becf7438bc5eb5507f5309e6e5b0d37537562544f0fc4fe6dc5603e35",
+      "generic": false,
+      "title": "Sheep Farm",
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/?region=0&showTopBar=false&archive=1&fromH5=1&userId=10000001&token=archive-replay&v=999&s=3&p=2&t=1779699600000&lang=en&language=en",
+      "bodyText": "",
+      "width": 390,
+      "height": 844,
+      "appHTMLLength": 7,
+      "images": [
+        {
+          "src": "https://activity2.yalla.live/activity/2024dist/adha/pic/icon_return_normal.png",
+          "complete": true,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "src": "https://activity2.yalla.live/activity/2024dist/adha/pic/xiaoma.png",
+          "complete": true,
+          "width": 151,
+          "height": 175
+        }
+      ],
+      "iframes": [],
+      "clickables": []
+    }
+  ],
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 2,
+    "missingChunks": 0,
+    "unmappedRequests": 3,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 0,
+    "states": [
+      {
+        "label": "home",
+        "screenshot": "screenshots/yalla-sheep-farm-2026/01-home-offline.png",
+        "brokenImages": 0,
+        "remoteIframes": 0,
+        "unmappedRequests": 3,
+        "console": [
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "console",
+            "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          },
+          {
+            "type": "pageerror",
+            "text": "AxiosError: _"
+          },
+          {
+            "type": "pageerror",
+            "text": "AxiosError: _"
+          }
+        ],
+        "height": 844,
+        "bodyText": ""
+      }
+    ],
+    "unmapped": [
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+        "method": "GET",
+        "resourceType": "script",
+        "category": "api"
+      },
+      {
+        "url": "https://activity2.yalla.live/api/TwentyThreeCorbanFestival/Init?sharedUserId=0&region=0&activityId=&userId=10000001&token=archive-replay",
+        "method": "GET",
+        "resourceType": "xhr",
+        "category": "api"
+      },
+      {
+        "url": "https://activity2.yalla.live/api/Buried/GetCopywritingAddress?region=0&activityId=&userId=10000001&token=archive-replay",
+        "method": "GET",
+        "resourceType": "xhr",
+        "category": "api"
+      }
+    ]
+  },
+  "generatedAt": "2026-08-27T03:08:27.819Z"
+}

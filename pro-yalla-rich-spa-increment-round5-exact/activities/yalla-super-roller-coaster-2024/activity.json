@@ -1,0 +1,68 @@
+{
+  "id": "yalla-super-roller-coaster-2024",
+  "name": "Super Roller Coaster",
+  "year": 2024,
+  "campaign": "Yalla WonderLand / New Year 2025",
+  "parentCampaign": "Yalla WonderLand / New Year 2025",
+  "officialUrl": "https://activity2.yalla.live/activity/2024dist/rollerCoaster/",
+  "spaRoot": "/activity/2024dist/rollerCoaster/",
+  "projectSlug": "rollerCoaster",
+  "routes": [
+    "/",
+    "/main",
+    "/rewards",
+    "/records",
+    "/rank",
+    "/rules"
+  ],
+  "routeCount": 6,
+  "stateCount": 6,
+  "fileCount": 55,
+  "assetCount": 49,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-super-roller-coaster-2024/01-home-online.png",
+    "screenshots/yalla-super-roller-coaster-2024/02-main-online.png",
+    "screenshots/yalla-super-roller-coaster-2024/03-rewards-online.png",
+    "screenshots/yalla-super-roller-coaster-2024/04-records-online.png",
+    "screenshots/yalla-super-roller-coaster-2024/05-rank-online.png",
+    "screenshots/yalla-super-roller-coaster-2024/06-rules-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 2860288,
+    "jsCount": 17,
+    "cssCount": 13,
+    "imageCount": 22,
+    "fontCount": 0,
+    "richStateCount": 6,
+    "keywordHits": [
+      "roller coaster",
+      "ride",
+      "ticket",
+      "reward"
+    ],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 2,
+    "missingChunks": 0,
+    "unmappedRequests": 8,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 5
+  },
+  "mechanism": "Ticket-driven ride progression with visual track advancement, upgrades, records and rewards.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "type": "info",
+    "text": "You are running a development build of Vue.\nMake sure to use the production build (*.prod.js) when deploying for production."
+  },
+  {
+    "type": "log",
+    "text": "ReferenceError: Yalla is not defined\n    at https://activity2.yalla.live/activity/2024dist/adha/js/app.6cd63f7d.js:1:285890\n    at setup (https://activity2.yalla.live/activity/2024dist/adha/js/app.6cd63f7d.js:1:286210)\n    at P (https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:3:1378)\n    at https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:8:8739\n    at q (https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:8:9153)\n    at O (https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:8:2762)\n    at r (https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:8:15308)\n    at mount (https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:3:36714)\n    at r.mount (https://activity2.yalla.live/activity/2024dist/adha/js/vue.runtime.global.min.js:9:25029)\n    at Ii (https://activity2.yalla.live/activity/2024dist/adha/js/app.6cd63f7d.js:1:288089) 444444"
+  },
+  {
+    "type": "log",
+    "text": "{userId: 10000001, region: 0, token: archive-replay, v: 999, s: 3} 3333333333"
+  },
+  {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 401 ()"
+  },
+  {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 401 ()"
+  },
+  {
+    "type": "pageerror",
+    "text": "AxiosError: _"
+  },
+  {
+    "type": "pageerror",
+    "text": "AxiosError: _"
+  },
+  {
+    "type": "log",
+    "text": "Service worker has been registered."
+  },
+  {
+    "type": "log",
+    "text": "New content is downloading."
+  },
+  {
+    "type": "log",
+    "text": "Content has been cached for offline use."
+  },
+  {
+    "type": "log",
+    "text": "App is being served from cache by a service worker.\nFor more details, visit https://goo.gl/AFskqB"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "id": "yalla-9th-anniversary-2025",
+  "name": "9th Anniversary · Starlight Gala",
+  "year": 2025,
+  "campaign": "Yalla 9th Anniversary 2025",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+  "spaRoot": "/activity/2025dist/9thAnniversary/",
+  "projectSlug": "9thAnniversary",
+  "routes": [
+    "/",
+    "/main",
+    "/mysteryPlanet",
+    "/honor",
+    "/rewards",
+    "/rank",
+    "/rules",
+    "/home",
+    "/myBase",
+    "/memory",
+    "/resourcePlanet",
+    "/competitivePlanet",
+    "/mysteriousPlanet",
+    "/:catchAll(.*)"
+  ],
+  "routeCount": 14,
+  "stateCount": 4,
+  "fileCount": 99,
+  "assetCount": 80,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_PRODUCTION_FIXED_TIME_BROWSER_CLOSURE",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-9th-anniversary-2025/01-home-online.png",
+    "screenshots/yalla-9th-anniversary-2025/02-Resource_Planet-online.png",
+    "screenshots/yalla-9th-anniversary-2025/03-Arena_Planet-online.png",
+    "screenshots/yalla-9th-anniversary-2025/04-Mystery_Planet-online.png"
+  ],
+  "metrics": {
+    "totalBytes": 4428807,
+    "jsCount": 35,
+    "cssCount": 32,
+    "imageCount": 27,
+    "fontCount": 0,
+    "richStateCount": 4,
+    "keywordHits": [
+      "mystery planet",
+      "planet",
+      "9th anniversary",
+      "anniversary"
+    ],
+    "placeholderContext": "Static archival shell only; no fabricated users, rankings, rewards or outcomes."
+  },
+  "qa": {
+    "brokenImages": 2,
+    "consoleFatalErrors": 0,
+    "missingChunks": 0,
+    "unmappedRequests": 12,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 2
+  },
+  "mechanism": "Starlight journey campaign with planets, missions, honors and reward layers.",
+  "notes": [
+    "Original responses from Yalla production/CDN hosts were preserved.",
+    "The historical clock and inert archive query reveal the original static SPA beneath the ended overlay.",
+    "No fabricated user, ranking, reward or gameplay result is included."
+  ]
+}
