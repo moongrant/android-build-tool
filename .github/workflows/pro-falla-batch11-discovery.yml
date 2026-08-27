@@ -1,0 +1,59 @@
+name: Pro Falla batch 11 live-registry deduplicated discovery
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch10-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch11-discovery.yml'
+      - 'tools/pro-falla-batch4/discover.py'
+      - 'tools/pro-falla-batch4/contact_sheet.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch11-20260827
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install discovery dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Scan live registry and unknown Falla projects
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch11-discovery
+          START_ID: '1'
+          END_ID: '6500'
+          HTTP_CONCURRENCY: '60'
+          CAPTURE_LIMIT: '160'
+          CAPTURE_CONCURRENCY: '8'
+          CAPTURE_WAIT_MS: '6200'
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch4/discover.py tools/pro-falla-batch4/contact_sheet.py
+          python tools/pro-falla-batch4/discover.py
+          python tools/pro-falla-batch4/contact_sheet.py
+      - name: Print report
+        if: always()
+        run: |
+          cat artifacts/pro-falla-batch11-discovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-batch11-discovery || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch11-discovery
+          path: artifacts/pro-falla-batch11-discovery
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
