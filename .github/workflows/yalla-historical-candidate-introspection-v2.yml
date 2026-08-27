@@ -1,0 +1,57 @@
+name: Yalla historical candidate introspection v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/historical_candidate_introspection.py
+      - .github/workflows/yalla-historical-candidate-introspection-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    env:
+      OUT_DIR: pro-yalla-historical-candidate-introspection-v2
+      RESULT_BRANCH: pro-yalla-historical-introspection-v2-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch archived HTML and bundles, then extract mechanisms
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          rm -rf "$OUT_DIR"
+          python tools/yalla-next-batch/historical_candidate_introspection.py 2>&1 | tee yalla-introspection-v2.log
+      - name: Publish results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          cp yalla-introspection-v2.log "$OUT_DIR/" 2>/dev/null || true
+          stage=/tmp/yalla-introspection-v2
+          rm -rf "$stage" && mkdir -p "$stage"
+          for file in REPORT.md inventory.json yalla-introspection-v2.log; do cp "$OUT_DIR/$file" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-introspection-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish historical Yalla candidate introspection v2 ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-historical-candidate-introspection-v2
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
