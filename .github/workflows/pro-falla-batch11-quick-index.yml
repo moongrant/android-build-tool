@@ -1,0 +1,81 @@
+name: Pro Falla batch 11 quick latest project index
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch10-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch11-quick-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch11-quick-20260827
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan latest Falla public activity configs
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp
+          mkdir -p artifacts/pro-falla-batch11-quick-index
+          python - <<'PY'
+          import asyncio, aiohttp, json, re
+          from pathlib import Path
+          OUT=Path('artifacts/pro-falla-batch11-quick-index')
+          API='https://api.apifalla.com/api/web/activities_config/act'
+          SITE='https://campaigns-collected.jekae.chatgpt.site/data/activities.js'
+          UA='Mozilla/5.0 ProFallaBatch11Quick/1.0'
+          PROJECT_RE=re.compile(r'act-[a-z0-9][a-z0-9-]{2,}',re.I)
+          async def main():
+            conn=aiohttp.TCPConnector(limit=96,ssl=False)
+            async with aiohttp.ClientSession(connector=conn,headers={'User-Agent':UA}) as s:
+              try:
+                async with s.get(SITE,timeout=40) as r: site=await r.text(errors='replace')
+              except Exception as e: site=f'ERROR {e!r}'
+              (OUT/'site-activities.js').write_text(site,encoding='utf-8')
+              site_projects=sorted(set(m.group(0).lower() for m in PROJECT_RE.finditer(site)))
+              sem=asyncio.Semaphore(96)
+              async def one(aid):
+                async with sem:
+                  try:
+                    async with s.post(API,json={'activitiesId':aid},headers={'Content-Type':'application/json;charset=UTF-8','Origin':'https://web.fallaweb.com','Referer':'https://web.fallaweb.com/'},timeout=18) as r:
+                      if r.status!=200:return None
+                      o=await r.json(content_type=None)
+                  except Exception:return None
+                res=o.get('res') if isinstance(o,dict) and o.get('code')==0 else None
+                if not isinstance(res,dict) or not res.get('id'):return None
+                ext=res.get('extConfig') or {}
+                if isinstance(ext,str):
+                  try:ext=json.loads(ext)
+                  except:ext={}
+                txt=json.dumps(ext,ensure_ascii=False)
+                m=PROJECT_RE.search(txt)
+                if not m:return None
+                project=m.group(0).lower()
+                web=ext.get('web') if isinstance(ext.get('web'),dict) else {}
+                pc=web.get('pageConfig') if isinstance(web.get('pageConfig'),dict) else {}
+                return {'activityId':int(res['id']),'project':project,'translateId':pc.get('translateId'),'activityUrl':web.get('activityUrl'),'startTime':res.get('startTime'),'endTime':res.get('endTime'),'regions':res.get('regionList') or [],'giftCount':len(res.get('giftInfoList') or []),'knownOnSite':project in site_projects}
+              rows=[x for x in await asyncio.gather(*(one(i) for i in range(1450,2201))) if x]
+              by={}
+              for x in rows:
+                if x['project'] not in by or x['activityId']>by[x['project']]['activityId']:by[x['project']]=x
+              rows=sorted(by.values(),key=lambda x:x['activityId'],reverse=True)
+              (OUT/'latest-projects.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+              (OUT/'summary.json').write_text(json.dumps({'siteProjectCount':len(site_projects),'validUniqueProjects':len(rows),'unknownProjects':[x for x in rows if not x['knownOnSite']]},ensure_ascii=False,indent=2),encoding='utf-8')
+              print(json.dumps({'siteProjectCount':len(site_projects),'validUniqueProjects':len(rows),'unknownCount':sum(not x['knownOnSite'] for x in rows),'topUnknown':[x for x in rows if not x['knownOnSite']][:30]},ensure_ascii=False,indent=2))
+          asyncio.run(main())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-batch11-quick-index
+          path: artifacts/pro-falla-batch11-quick-index
+          if-no-files-found: error
+          retention-days: 14
