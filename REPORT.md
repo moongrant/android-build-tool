@@ -1,0 +1,26 @@
+# Collected Yalla Bundle Graph · Compact
+
+## Hidden roots
+
+- `2026dist/ramadanBless` — 1 hits
+
+## Template activity IDs
+
+
+## API modules
+
+- `AsianCup` — 18 calls — sources: yalla-football-carnival-2024 — actions: ChoiceTitle, GetActivityInfo, GetActivityRedpacket, GetMyTaskInfo, GetProcessLogTop50, GetProcessReward, GetRank, GetRedpacketLogById, GetRedpacketLogByUserId, GetRedpacketLogTop50, GetSignInfo, GetUserInfo, Init, ReceiveActivityRedpacket, ReceiveReward, RewardTask, SignIn, shared
+- `Buried` — 25 calls — sources: yalla-10th-anniversary, yalla-8th-anniversary, yalla-9th-anniversary, yalla-activity-illustrated-cards, yalla-football-carnival-2024, yalla-happy-ferris-wheel-castle-2025, yalla-monthly-driving-king-2026, yalla-ramadan-2026, yalla-recall-recruit, yalla-royal-victory, yalla-sea-dominator, yalla-season-2025, yalla-sheep-farm, yalla-super-roller-coaster, yalla-wonderland-2025 — actions: Buried, BuriedV2, GetCopywritingAddress, GetDomainV2, IsNotDailyRemindV2, ManagerBuried, ManagerBuriedV2, NotDailyRemindV2
+- `DeepSea` — 10 calls — sources: yalla-sea-dominator — actions: BuyTicket, ExchangeMedal, GetActivityInfo, GetExchangeMedalCount, GetMedalConfigList, GetRankInfo, GetRewardInfo, GetUserInfo, Init, Lottery
+- `EighthAnniversary` — 9 calls — sources: yalla-8th-anniversary — actions: ExchangeMedal, GetActivityInfo, GetExchangeMedalCount, GetMedalConfigList, GetMyTaskInfo, GetSignInfo, GetUserInfo, Init, RewardTask
+- `FerrisWheel` — 14 calls — sources: yalla-happy-ferris-wheel-castle-2025 — actions: BuyTicket, GetActivityInfo, GetBarrageInfo, GetCastleRewardRecords, GetCastleTeamUpList, GetFerrisWheelList, GetFerrisWheelLog, GetFerrisWheelRank, GetProcessReward, GetRewardInfo, GetUserInfo, Init, Lottery, ReceiveReward
+- `KingCar` — 14 calls — sources: yalla-monthly-driving-king-2026 — actions: GetActivityInfo, GetKingCarMonthly, GetKingCarRankList, GetLotteryInfo, GetRankRewardInfo, GetRewardByRecordId, GetRewardInfo, GetTotalProgressInfo, GetUserInfo, Init, MultLottery, ReceiveReturnProgressInfo, ReceiveTotalProgressInfo, UpLotteryLevel
+- `Medal` — 12 calls — sources: yalla-activity-illustrated-cards — actions: AskForMedal, GetAllRank, GetFriendsRank, GetMedalConfigList, GetNewMedalCollection, GetShareUserInfo, GetUserMedalCollectionList, GetUserMedalPoints, GiveMedal, Init, ReceiveMedal, RenderMedal
+- `NewYear2025` — 20 calls — sources: yalla-wonderland-2025 — actions: ExchangeMedal, GetActivityInfo, GetBarrageGameRank, GetBarrageGameRoomId, GetBigPrizeRank, GetExchangeMedalCount, GetMedalConfigList, GetProgressInfo, GetTopRoomList, Init, RewardProgress
+- `NinthAnniversary` — 38 calls — sources: yalla-9th-anniversary — actions: AddFamilyApplyRecord, AduitFamilyApplyRecord, AnyGroupChatLog, BannedSendMessage, CreateFamily, GetActivityInfo, GetActivityRedpacket, GetChatProp, GetFamilyApplyRecord, GetFamilyMemberInfo, GetFamilyRank, GetGroupChatLog, GetHallofFames, GetJoinTeamInfo, GetKaBlessings, GetMemoirsReward, GetMyFamilyInfo, GetMyTaskInfo, GetProcess, GetProcessReward, GetRank, GetRedpacketLogById, GetSignInfo, GetUserHisData, GetUserInfo, Init, IsNotRemind, JoinTeam, NotRemind, NoticeFriend, RecallFamilyMember, ReceiveActivityRedpacket, ReceiveReward, RecruitmentFamilyMember, RewardProcess, RewardSignIn, RewardTask, Shared
+- `Ramadan` — 12 calls — sources: yalla-ramadan-2026 — actions: ExchangeMedal, GetExchangeMedalCount, GetMedalConfigList, GetProductList, GetProgressSate, GetRank, GetUserInfo, Init, PurchaseProduct, ReceiveBenefits, ReceiveExtraPackage, ReceiveProgressReward
+- `RollerCoaster` — 14 calls — sources: yalla-super-roller-coaster — actions: ExchangeMedal, GetActivityInfo, GetExchangeMedalCount, GetJoinTeamInfo, GetMedalConfigList, GetProcessInfo, GetRankInfo, GetRewardByRecordId, GetRewardInfo, GetUserInfo, Init, JoinTeam, Lottery, ProgressReward
+- `RoyalVictory` — 15 calls — sources: yalla-royal-victory — actions: ExchangeMedal, GetActivityInfo, GetExchangeMedalCount, GetMedalConfigList, GetRankInfo, GetRechargeProcessInfo, GetRewardByRecordId, GetRewardInfo, GetUserData, Init, MultLottery, RechargeProgressAutoReward, RechargeProgressReward, SingleDraw, SingleLottery
+- `TenthAnniversary` — 17 calls — sources: yalla-10th-anniversary — actions: AddTeamApplyRecord, AduitTeamApplyRecord, GetActivityInfo, GetCityMap, GetJoinTeamInfo, GetMyTeamInfo, GetProcessReward, GetTeamApplyRecord, GetTeamCityIlluminationRank, GetTeamCityIlluminationRecords, GetUserCityIlluminationRecords, GetUserInfo, IlluminateCity, Init, JoinTeam, ReceiveReward, Shared
+- `TwentyThreeCorbanFestival` — 16 calls — sources: yalla-sheep-farm — actions: ActivityInfo, GetBarrageInfo, GetMyTaskInfo, GetOrderList, GetProductList, GetRank, GetRewardInfo, Init, Invite, InviteFriendLottory, PurchaseProduct, RaiseSheep, ReceiveFeed, RewardTask, Shared, UserInfo
+- `YallaSeason` — 7 calls — sources: yalla-season-2025 — actions: ExchangeMedal, GetActivityInfo, GetExchangeMedalCount, GetMedalConfigList, GetNotices, GetUserInfo, Init

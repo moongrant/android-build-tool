@@ -1,0 +1,385 @@
+{
+  "hiddenRoots": [
+    {
+      "bucket": "2026dist",
+      "project": "ramadanBless",
+      "root": "https://activity2.yalla.live/activity/2026dist/ramadanBless/",
+      "hitCount": 1,
+      "hits": [
+        {
+          "sourceFolder": "yalla-ramadan-2026",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-ramadan-2026/js/app.af7f26b1.js",
+          "file": "pro-yalla-existing-bundle-graph/mirrors/yalla-ramadan-2026/site/activities/yalla-ramadan-2026/js/app.af7f26b1.js",
+          "context": "UserInfo.benefitsType,!A.UserInfo.isBlackUser&&A.UserInfo.isFirst&&(A.rewardsPop=!0)},s=()=>{0===A.UserInfo.ramadanblessState?Object(y.a)(A.i18n.t118):1===A.UserInfo.ramadanblessState&&(window.location.href=\"https://\"+window.location.host+\"/activity/2026dist/ramadanBless/?region=\"+A.language+\"&userid=\"+A.parameter.userid+\"&token=\"+A.parameter.token+\"&v=\"+A.parameter.v+\"&s=\"+A.parameter.s+\"&t=\"+A.parameter.t+\"&fromH5=1&showTopBar=false&activityId=260212\")},d=()=>{window.location.href=\"https://\"+window.location.host+\"/activity/2024dist/activityMap/?region=\"+A.language+\"&userid=\"+A.parameter.userid+\"&token=\"+A.parameter.token+"
+        }
+      ]
+    }
+  ],
+  "templateActivityIds": [],
+  "apiModules": [
+    {
+      "module": "AsianCup",
+      "actions": [
+        "ChoiceTitle",
+        "GetActivityInfo",
+        "GetActivityRedpacket",
+        "GetMyTaskInfo",
+        "GetProcessLogTop50",
+        "GetProcessReward",
+        "GetRank",
+        "GetRedpacketLogById",
+        "GetRedpacketLogByUserId",
+        "GetRedpacketLogTop50",
+        "GetSignInfo",
+        "GetUserInfo",
+        "Init",
+        "ReceiveActivityRedpacket",
+        "ReceiveReward",
+        "RewardTask",
+        "SignIn",
+        "shared"
+      ],
+      "hitCount": 18,
+      "sources": [
+        "yalla-football-carnival-2024"
+      ]
+    },
+    {
+      "module": "Buried",
+      "actions": [
+        "Buried",
+        "BuriedV2",
+        "GetCopywritingAddress",
+        "GetDomainV2",
+        "IsNotDailyRemindV2",
+        "ManagerBuried",
+        "ManagerBuriedV2",
+        "NotDailyRemindV2"
+      ],
+      "hitCount": 25,
+      "sources": [
+        "yalla-10th-anniversary",
+        "yalla-8th-anniversary",
+        "yalla-9th-anniversary",
+        "yalla-activity-illustrated-cards",
+        "yalla-football-carnival-2024",
+        "yalla-happy-ferris-wheel-castle-2025",
+        "yalla-monthly-driving-king-2026",
+        "yalla-ramadan-2026",
+        "yalla-recall-recruit",
+        "yalla-royal-victory",
+        "yalla-sea-dominator",
+        "yalla-season-2025",
+        "yalla-sheep-farm",
+        "yalla-super-roller-coaster",
+        "yalla-wonderland-2025"
+      ]
+    },
+    {
+      "module": "DeepSea",
+      "actions": [
+        "BuyTicket",
+        "ExchangeMedal",
+        "GetActivityInfo",
+        "GetExchangeMedalCount",
+        "GetMedalConfigList",
+        "GetRankInfo",
+        "GetRewardInfo",
+        "GetUserInfo",
+        "Init",
+        "Lottery"
+      ],
+      "hitCount": 10,
+      "sources": [
+        "yalla-sea-dominator"
+      ]
+    },
+    {
+      "module": "EighthAnniversary",
+      "actions": [
+        "ExchangeMedal",
+        "GetActivityInfo",
+        "GetExchangeMedalCount",
+        "GetMedalConfigList",
+        "GetMyTaskInfo",
+        "GetSignInfo",
+        "GetUserInfo",
+        "Init",
+        "RewardTask"
+      ],
+      "hitCount": 9,
+      "sources": [
+        "yalla-8th-anniversary"
+      ]
+    },
+    {
+      "module": "FerrisWheel",
+      "actions": [
+        "BuyTicket",
+        "GetActivityInfo",
+        "GetBarrageInfo",
+        "GetCastleRewardRecords",
+        "GetCastleTeamUpList",
+        "GetFerrisWheelList",
+        "GetFerrisWheelLog",
+        "GetFerrisWheelRank",
+        "GetProcessReward",
+        "GetRewardInfo",
+        "GetUserInfo",
+        "Init",
+        "Lottery",
+        "ReceiveReward"
+      ],
+      "hitCount": 14,
+      "sources": [
+        "yalla-happy-ferris-wheel-castle-2025"
+      ]
+    },
+    {
+      "module": "KingCar",
+      "actions": [
+        "GetActivityInfo",
+        "GetKingCarMonthly",
+        "GetKingCarRankList",
+        "GetLotteryInfo",
+        "GetRankRewardInfo",
+        "GetRewardByRecordId",
+        "GetRewardInfo",
+        "GetTotalProgressInfo",
+        "GetUserInfo",
+        "Init",
+        "MultLottery",
+        "ReceiveReturnProgressInfo",
+        "ReceiveTotalProgressInfo",
+        "UpLotteryLevel"
+      ],
+      "hitCount": 14,
+      "sources": [
+        "yalla-monthly-driving-king-2026"
+      ]
+    },
+    {
+      "module": "Medal",
+      "actions": [
+        "AskForMedal",
+        "GetAllRank",
+        "GetFriendsRank",
+        "GetMedalConfigList",
+        "GetNewMedalCollection",
+        "GetShareUserInfo",
+        "GetUserMedalCollectionList",
+        "GetUserMedalPoints",
+        "GiveMedal",
+        "Init",
+        "ReceiveMedal",
+        "RenderMedal"
+      ],
+      "hitCount": 12,
+      "sources": [
+        "yalla-activity-illustrated-cards"
+      ]
+    },
+    {
+      "module": "NewYear2025",
+      "actions": [
+        "ExchangeMedal",
+        "GetActivityInfo",
+        "GetBarrageGameRank",
+        "GetBarrageGameRoomId",
+        "GetBigPrizeRank",
+        "GetExchangeMedalCount",
+        "GetMedalConfigList",
+        "GetProgressInfo",
+        "GetTopRoomList",
+        "Init",
+        "RewardProgress"
+      ],
+      "hitCount": 20,
+      "sources": [
+        "yalla-wonderland-2025"
+      ]
+    },
+    {
+      "module": "NinthAnniversary",
+      "actions": [
+        "AddFamilyApplyRecord",
+        "AduitFamilyApplyRecord",
+        "AnyGroupChatLog",
+        "BannedSendMessage",
+        "CreateFamily",
+        "GetActivityInfo",
+        "GetActivityRedpacket",
+        "GetChatProp",
+        "GetFamilyApplyRecord",
+        "GetFamilyMemberInfo",
+        "GetFamilyRank",
+        "GetGroupChatLog",
+        "GetHallofFames",
+        "GetJoinTeamInfo",
+        "GetKaBlessings",
+        "GetMemoirsReward",
+        "GetMyFamilyInfo",
+        "GetMyTaskInfo",
+        "GetProcess",
+        "GetProcessReward",
+        "GetRank",
+        "GetRedpacketLogById",
+        "GetSignInfo",
+        "GetUserHisData",
+        "GetUserInfo",
+        "Init",
+        "IsNotRemind",
+        "JoinTeam",
+        "NotRemind",
+        "NoticeFriend",
+        "RecallFamilyMember",
+        "ReceiveActivityRedpacket",
+        "ReceiveReward",
+        "RecruitmentFamilyMember",
+        "RewardProcess",
+        "RewardSignIn",
+        "RewardTask",
+        "Shared"
+      ],
+      "hitCount": 38,
+      "sources": [
+        "yalla-9th-anniversary"
+      ]
+    },
+    {
+      "module": "Ramadan",
+      "actions": [
+        "ExchangeMedal",
+        "GetExchangeMedalCount",
+        "GetMedalConfigList",
+        "GetProductList",
+        "GetProgressSate",
+        "GetRank",
+        "GetUserInfo",
+        "Init",
+        "PurchaseProduct",
+        "ReceiveBenefits",
+        "ReceiveExtraPackage",
+        "ReceiveProgressReward"
+      ],
+      "hitCount": 12,
+      "sources": [
+        "yalla-ramadan-2026"
+      ]
+    },
+    {
+      "module": "RollerCoaster",
+      "actions": [
+        "ExchangeMedal",
+        "GetActivityInfo",
+        "GetExchangeMedalCount",
+        "GetJoinTeamInfo",
+        "GetMedalConfigList",
+        "GetProcessInfo",
+        "GetRankInfo",
+        "GetRewardByRecordId",
+        "GetRewardInfo",
+        "GetUserInfo",
+        "Init",
+        "JoinTeam",
+        "Lottery",
+        "ProgressReward"
+      ],
+      "hitCount": 14,
+      "sources": [
+        "yalla-super-roller-coaster"
+      ]
+    },
+    {
+      "module": "RoyalVictory",
+      "actions": [
+        "ExchangeMedal",
+        "GetActivityInfo",
+        "GetExchangeMedalCount",
+        "GetMedalConfigList",
+        "GetRankInfo",
+        "GetRechargeProcessInfo",
+        "GetRewardByRecordId",
+        "GetRewardInfo",
+        "GetUserData",
+        "Init",
+        "MultLottery",
+        "RechargeProgressAutoReward",
+        "RechargeProgressReward",
+        "SingleDraw",
+        "SingleLottery"
+      ],
+      "hitCount": 15,
+      "sources": [
+        "yalla-royal-victory"
+      ]
+    },
+    {
+      "module": "TenthAnniversary",
+      "actions": [
+        "AddTeamApplyRecord",
+        "AduitTeamApplyRecord",
+        "GetActivityInfo",
+        "GetCityMap",
+        "GetJoinTeamInfo",
+        "GetMyTeamInfo",
+        "GetProcessReward",
+        "GetTeamApplyRecord",
+        "GetTeamCityIlluminationRank",
+        "GetTeamCityIlluminationRecords",
+        "GetUserCityIlluminationRecords",
+        "GetUserInfo",
+        "IlluminateCity",
+        "Init",
+        "JoinTeam",
+        "ReceiveReward",
+        "Shared"
+      ],
+      "hitCount": 17,
+      "sources": [
+        "yalla-10th-anniversary"
+      ]
+    },
+    {
+      "module": "TwentyThreeCorbanFestival",
+      "actions": [
+        "ActivityInfo",
+        "GetBarrageInfo",
+        "GetMyTaskInfo",
+        "GetOrderList",
+        "GetProductList",
+        "GetRank",
+        "GetRewardInfo",
+        "Init",
+        "Invite",
+        "InviteFriendLottory",
+        "PurchaseProduct",
+        "RaiseSheep",
+        "ReceiveFeed",
+        "RewardTask",
+        "Shared",
+        "UserInfo"
+      ],
+      "hitCount": 16,
+      "sources": [
+        "yalla-sheep-farm"
+      ]
+    },
+    {
+      "module": "YallaSeason",
+      "actions": [
+        "ExchangeMedal",
+        "GetActivityInfo",
+        "GetExchangeMedalCount",
+        "GetMedalConfigList",
+        "GetNotices",
+        "GetUserInfo",
+        "Init"
+      ],
+      "hitCount": 7,
+      "sources": [
+        "yalla-season-2025"
+      ]
+    }
+  ]
+}
