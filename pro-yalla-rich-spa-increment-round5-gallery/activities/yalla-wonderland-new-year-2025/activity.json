@@ -1,0 +1,52 @@
+{
+  "id": "yalla-wonderland-new-year-2025",
+  "name": "WonderLand · New Year Carnival",
+  "year": 2025,
+  "campaign": "Yalla WonderLand / New Year 2025",
+  "parentCampaign": null,
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-wonderland-2025/",
+  "projectSlug": "yalla-wonderland-2025",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/",
+  "routes": [
+    "/"
+  ],
+  "routeCount": 1,
+  "stateCount": 1,
+  "fileCount": 35,
+  "assetCount": 33,
+  "apiCount": 3,
+  "fixtureCount": 3,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-wonderland-new-year-2025/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 1,
+    "consoleFatalErrors": 0,
+    "missingChunks": 2,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 34
+  },
+  "metrics": {
+    "totalBytes": 2966050,
+    "jsCount": 7,
+    "cssCount": 2,
+    "imageCount": 20,
+    "fontCount": 0,
+    "mirrorErrors": 47,
+    "coreActivity": true
+  },
+  "mechanism": "Parent campaign map linking child SPAs, a shared card system, treasure chest and room ranking.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

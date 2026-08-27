@@ -1,0 +1,58 @@
+{
+  "id": "yalla-8th-anniversary-2024",
+  "name": "8th Anniversary · Explore the Yalla World",
+  "year": 2024,
+  "campaign": "Yalla 8th Anniversary 2024",
+  "parentCampaign": null,
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-8th-anniversary/",
+  "projectSlug": "yalla-8th-anniversary",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-8th-anniversary/",
+  "routes": [
+    "/",
+    "/:catchAll(.*)",
+    "/exploreMedals",
+    "/memoryGate",
+    "/privacy",
+    "/riskIsland",
+    "/secretTreasure"
+  ],
+  "routeCount": 7,
+  "stateCount": 1,
+  "fileCount": 18,
+  "assetCount": 16,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-8th-anniversary-2024/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 1,
+    "consoleFatalErrors": 0,
+    "missingChunks": 5,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 9
+  },
+  "metrics": {
+    "totalBytes": 1136764,
+    "jsCount": 7,
+    "cssCount": 2,
+    "imageCount": 4,
+    "fontCount": 0,
+    "mirrorErrors": 23,
+    "coreActivity": true
+  },
+  "mechanism": "World-map exploration with challenge islands, treasure, medals, memories and staged rewards.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

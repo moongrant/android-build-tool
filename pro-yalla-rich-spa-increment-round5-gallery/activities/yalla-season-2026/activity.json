@@ -1,0 +1,58 @@
+{
+  "id": "yalla-season-2026",
+  "name": "Yalla Season · Four Surprises",
+  "year": 2026,
+  "campaign": "Yalla Season 2026",
+  "parentCampaign": null,
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-season-2025/",
+  "projectSlug": "yalla-season-2025",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-season-2025/",
+  "routes": [
+    "/",
+    "/:catchAll(.*)",
+    "/home",
+    "/limitShop",
+    "/nationalday",
+    "/rechargeBenefits",
+    "/sign"
+  ],
+  "routeCount": 7,
+  "stateCount": 1,
+  "fileCount": 10,
+  "assetCount": 8,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "OFFICIAL_URL_EXPIRED",
+  "quality": "C",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-season-2026/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 1,
+    "consoleFatalErrors": 0,
+    "missingChunks": 4,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 7
+  },
+  "metrics": {
+    "totalBytes": 1058817,
+    "jsCount": 3,
+    "cssCount": 2,
+    "imageCount": 1,
+    "fontCount": 0,
+    "mirrorErrors": 22,
+    "coreActivity": true
+  },
+  "mechanism": "Sign-in retention, discount store, cruise-party interaction, recharge benefits and a national-day branch.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

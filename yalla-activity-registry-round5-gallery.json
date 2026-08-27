@@ -1,0 +1,511 @@
+{
+  "schemaVersion": "5.2",
+  "generatedAt": "2026-08-27T02:58:43.990046+00:00",
+  "release": "pro-yalla-rich-spa-increment-round5-gallery",
+  "minimumDepth": "At least five non-ranking Yalla activities; Falla Rocket Takeoff 2026 is the reference floor.",
+  "summary": {
+    "OFFICIAL_URL_EXPIRED": 2,
+    "VERIFIED_PARTIAL_SPA": 7
+  },
+  "coreActivityCount": 8,
+  "contactSheet": "screenshots/round5-contact-sheet.jpg",
+  "activities": [
+    {
+      "id": "yalla-8th-anniversary-2024",
+      "name": "8th Anniversary · Explore the Yalla World",
+      "year": 2024,
+      "campaign": "Yalla 8th Anniversary 2024",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-8th-anniversary/",
+      "projectSlug": "yalla-8th-anniversary",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-8th-anniversary/",
+      "routes": [
+        "/",
+        "/:catchAll(.*)",
+        "/exploreMedals",
+        "/memoryGate",
+        "/privacy",
+        "/riskIsland",
+        "/secretTreasure"
+      ],
+      "routeCount": 7,
+      "stateCount": 1,
+      "fileCount": 18,
+      "assetCount": 16,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-8th-anniversary-2024/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 1,
+        "consoleFatalErrors": 0,
+        "missingChunks": 5,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 9
+      },
+      "metrics": {
+        "totalBytes": 1136764,
+        "jsCount": 7,
+        "cssCount": 2,
+        "imageCount": 4,
+        "fontCount": 0,
+        "mirrorErrors": 23,
+        "coreActivity": true
+      },
+      "mechanism": "World-map exploration with challenge islands, treasure, medals, memories and staged rewards.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-9th-anniversary-2025",
+      "name": "9th Anniversary · Starlight Gala",
+      "year": 2025,
+      "campaign": "Yalla 9th Anniversary 2025",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-9th-anniversary/",
+      "projectSlug": "yalla-9th-anniversary",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-9th-anniversary/",
+      "routes": [
+        "/",
+        "/:catchAll(.*)",
+        "/competitivePlanet",
+        "/home",
+        "/memory",
+        "/myBase",
+        "/mysteriousPlanet",
+        "/resourcePlanet"
+      ],
+      "routeCount": 8,
+      "stateCount": 1,
+      "fileCount": 10,
+      "assetCount": 8,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "OFFICIAL_URL_EXPIRED",
+      "quality": "C",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-9th-anniversary-2025/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 0,
+        "consoleFatalErrors": 0,
+        "missingChunks": 5,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 8
+      },
+      "metrics": {
+        "totalBytes": 895850,
+        "jsCount": 3,
+        "cssCount": 2,
+        "imageCount": 0,
+        "fontCount": 0,
+        "mirrorErrors": 24,
+        "coreActivity": true
+      },
+      "mechanism": "Starlight journey campaign with planets, missions, honors and reward layers.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-season-2026",
+      "name": "Yalla Season · Four Surprises",
+      "year": 2026,
+      "campaign": "Yalla Season 2026",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-season-2025/",
+      "projectSlug": "yalla-season-2025",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-season-2025/",
+      "routes": [
+        "/",
+        "/:catchAll(.*)",
+        "/home",
+        "/limitShop",
+        "/nationalday",
+        "/rechargeBenefits",
+        "/sign"
+      ],
+      "routeCount": 7,
+      "stateCount": 1,
+      "fileCount": 10,
+      "assetCount": 8,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "OFFICIAL_URL_EXPIRED",
+      "quality": "C",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-season-2026/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 1,
+        "consoleFatalErrors": 0,
+        "missingChunks": 4,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 7
+      },
+      "metrics": {
+        "totalBytes": 1058817,
+        "jsCount": 3,
+        "cssCount": 2,
+        "imageCount": 1,
+        "fontCount": 0,
+        "mirrorErrors": 22,
+        "coreActivity": true
+      },
+      "mechanism": "Sign-in retention, discount store, cruise-party interaction, recharge benefits and a national-day branch.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-super-roller-coaster-2024",
+      "name": "Super Roller Coaster",
+      "year": 2024,
+      "campaign": "Yalla WonderLand / New Year 2025",
+      "parentCampaign": "Yalla WonderLand / New Year 2025",
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-super-roller-coaster/",
+      "projectSlug": "yalla-super-roller-coaster",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-super-roller-coaster/",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "stateCount": 1,
+      "fileCount": 39,
+      "assetCount": 37,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-super-roller-coaster-2024/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 1,
+        "consoleFatalErrors": 0,
+        "missingChunks": 2,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 25
+      },
+      "metrics": {
+        "totalBytes": 3070560,
+        "jsCount": 7,
+        "cssCount": 2,
+        "imageCount": 25,
+        "fontCount": 0,
+        "mirrorErrors": 38,
+        "coreActivity": true
+      },
+      "mechanism": "Ticket-driven ride progression with visual track advancement, upgrades, records and rewards.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-sheep-farm-2026",
+      "name": "Sheep Farm · Eid al-Adha",
+      "year": 2026,
+      "campaign": "Yalla Sheep Farm 2026",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-sheep-farm/",
+      "projectSlug": "yalla-sheep-farm",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-sheep-farm/",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "stateCount": 1,
+      "fileCount": 32,
+      "assetCount": 30,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-sheep-farm-2026/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 2,
+        "consoleFatalErrors": 0,
+        "missingChunks": 3,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 34
+      },
+      "metrics": {
+        "totalBytes": 1751170,
+        "jsCount": 8,
+        "cssCount": 3,
+        "imageCount": 16,
+        "fontCount": 0,
+        "mirrorErrors": 49,
+        "coreActivity": true
+      },
+      "mechanism": "Farm growth with feeding, tasks, wallet, invitation, games, store, barn and rewards.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-10th-anniversary-2026",
+      "name": "10th Anniversary · Crowned with Honor",
+      "year": 2026,
+      "campaign": "Yalla 10th Anniversary 2026",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-10th-anniversary/",
+      "projectSlug": "yalla-10th-anniversary",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-10th-anniversary/",
+      "routes": [
+        "/",
+        "/10thGift",
+        "/:catchAll(.*)",
+        "/brilliantReward",
+        "/hallOfFame",
+        "/home",
+        "/honorAssemble",
+        "/memory",
+        "/timeHall"
+      ],
+      "routeCount": 9,
+      "stateCount": 1,
+      "fileCount": 25,
+      "assetCount": 23,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-10th-anniversary-2026/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 3,
+        "consoleFatalErrors": 0,
+        "missingChunks": 2,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 16
+      },
+      "metrics": {
+        "totalBytes": 2080479,
+        "jsCount": 7,
+        "cssCount": 2,
+        "imageCount": 11,
+        "fontCount": 0,
+        "mirrorErrors": 38,
+        "coreActivity": true
+      },
+      "mechanism": "Flagship anniversary SPA with missions, collection, honor, reward and competitive layers.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-ramadan-kareem-2026",
+      "name": "Ramadan Kareem 2026",
+      "year": 2026,
+      "campaign": "Yalla Ramadan 2026",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-ramadan-2026/",
+      "projectSlug": "yalla-ramadan-2026",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-ramadan-2026/",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "stateCount": 1,
+      "fileCount": 21,
+      "assetCount": 19,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-ramadan-kareem-2026/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 7,
+        "consoleFatalErrors": 1,
+        "missingChunks": 5,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 44
+      },
+      "metrics": {
+        "totalBytes": 2084368,
+        "jsCount": 3,
+        "cssCount": 2,
+        "imageCount": 11,
+        "fontCount": 0,
+        "mirrorErrors": 51,
+        "coreActivity": true
+      },
+      "mechanism": "Gift-driven item unlocks, milestones, discount commerce, cards and dual rankings.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-wonderland-new-year-2025",
+      "name": "WonderLand · New Year Carnival",
+      "year": 2025,
+      "campaign": "Yalla WonderLand / New Year 2025",
+      "parentCampaign": null,
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-wonderland-2025/",
+      "projectSlug": "yalla-wonderland-2025",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/",
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "stateCount": 1,
+      "fileCount": 35,
+      "assetCount": 33,
+      "apiCount": 3,
+      "fixtureCount": 3,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-wonderland-new-year-2025/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 1,
+        "consoleFatalErrors": 0,
+        "missingChunks": 2,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 34
+      },
+      "metrics": {
+        "totalBytes": 2966050,
+        "jsCount": 7,
+        "cssCount": 2,
+        "imageCount": 20,
+        "fontCount": 0,
+        "mirrorErrors": 47,
+        "coreActivity": true
+      },
+      "mechanism": "Parent campaign map linking child SPAs, a shared card system, treasure chest and room ranking.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    },
+    {
+      "id": "yalla-activity-illustrated-cards-2024",
+      "name": "Activity Illustrated Cards",
+      "year": 2024,
+      "campaign": "Yalla Activity Illustrated Cards System",
+      "parentCampaign": "Yalla WonderLand / New Year 2025",
+      "officialUrl": null,
+      "spaRoot": "activities/yalla-activity-illustrated-cards/",
+      "projectSlug": "yalla-activity-illustrated-cards",
+      "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-activity-illustrated-cards/",
+      "routes": [
+        "/",
+        "/:catchAll(.*)",
+        "/rank"
+      ],
+      "routeCount": 3,
+      "stateCount": 1,
+      "fileCount": 17,
+      "assetCount": 15,
+      "apiCount": 2,
+      "fixtureCount": 2,
+      "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+      "status": "VERIFIED_PARTIAL_SPA",
+      "quality": "B+",
+      "localReplay": true,
+      "screenshot": true,
+      "currentReleaseVerified": false,
+      "screenshots": [
+        "screenshots/yalla-activity-illustrated-cards-2024/01-home.png"
+      ],
+      "qa": {
+        "brokenImages": 1,
+        "consoleFatalErrors": 0,
+        "missingChunks": 6,
+        "unmappedRequests": 0,
+        "remoteIframes": 0,
+        "remoteRuntimeFallback": 0,
+        "missingStaticAssets": 9
+      },
+      "metrics": {
+        "totalBytes": 1094723,
+        "jsCount": 7,
+        "cssCount": 2,
+        "imageCount": 3,
+        "fontCount": 0,
+        "mirrorErrors": 23,
+        "coreActivity": false
+      },
+      "mechanism": "Cross-activity collection and album system; included as a system layer, not counted as a core campaign.",
+      "notes": [
+        "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+        "No promotional image or hand-written replacement UI is counted as an official SPA."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "yalla-sheep-farm-2026",
+  "name": "Sheep Farm · Eid al-Adha",
+  "year": 2026,
+  "campaign": "Yalla Sheep Farm 2026",
+  "parentCampaign": null,
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-sheep-farm/",
+  "projectSlug": "yalla-sheep-farm",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-sheep-farm/",
+  "routes": [
+    "/"
+  ],
+  "routeCount": 1,
+  "stateCount": 1,
+  "fileCount": 32,
+  "assetCount": 30,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-sheep-farm-2026/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 2,
+    "consoleFatalErrors": 0,
+    "missingChunks": 3,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 34
+  },
+  "metrics": {
+    "totalBytes": 1751170,
+    "jsCount": 8,
+    "cssCount": 3,
+    "imageCount": 16,
+    "fontCount": 0,
+    "mirrorErrors": 49,
+    "coreActivity": true
+  },
+  "mechanism": "Farm growth with feeding, tasks, wallet, invitation, games, store, barn and rewards.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

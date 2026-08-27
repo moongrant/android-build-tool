@@ -1,0 +1,52 @@
+{
+  "id": "yalla-super-roller-coaster-2024",
+  "name": "Super Roller Coaster",
+  "year": 2024,
+  "campaign": "Yalla WonderLand / New Year 2025",
+  "parentCampaign": "Yalla WonderLand / New Year 2025",
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-super-roller-coaster/",
+  "projectSlug": "yalla-super-roller-coaster",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-super-roller-coaster/",
+  "routes": [
+    "/"
+  ],
+  "routeCount": 1,
+  "stateCount": 1,
+  "fileCount": 39,
+  "assetCount": 37,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-super-roller-coaster-2024/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 1,
+    "consoleFatalErrors": 0,
+    "missingChunks": 2,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 25
+  },
+  "metrics": {
+    "totalBytes": 3070560,
+    "jsCount": 7,
+    "cssCount": 2,
+    "imageCount": 25,
+    "fontCount": 0,
+    "mirrorErrors": 38,
+    "coreActivity": true
+  },
+  "mechanism": "Ticket-driven ride progression with visual track advancement, upgrades, records and rewards.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

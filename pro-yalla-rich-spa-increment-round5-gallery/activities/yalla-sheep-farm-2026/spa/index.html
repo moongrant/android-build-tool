@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta http-equiv="x-dns-prefetch-control" content="on"><script src="/activities/yalla-sheep-farm/js/spine-player.min.js"></script><link rel="stylesheet" href="/activities/yalla-sheep-farm/css/spine-player.css" crossorigin="anonymous"><title></title><style>@-webkit-keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+
+      @keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+
+      #loadingGif {
+        width: 75px;
+        height: 45px;
+        display: block;
+        background-image: url('./pic/loading.png');
+        background-size: 2250px 45px;
+        background-repeat: no-repeat;
+        -webkit-animation: test_anim 1.2s steps(30) both infinite;
+        animation: test_anim 1.2s steps(30) both infinite;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 10000;
+      }
+
+      #finishToast {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: none;
+        z-index: 9999;
+        background: #fff;
+      }
+      .icon-act-exit {
+        width: 24px;
+        height: 24px;
+        /* margin: 0 16px; */
+        position: fixed;
+        top: 10px;
+        left: 16px;
+      }
+      #ar .icon-act-exit {
+        left: auto;
+        right: 16px;
+        transform: rotateY(180deg);
+      }
+
+      .xiaoma {
+        width: 30%;
+        margin: 200px auto 10px;
+      }
+
+      #actEndText {
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+        padding: 0 10px;
+      }</style><script src="/activities/yalla-sheep-farm/js/vue.runtime.global.min.js"></script><script src="/activities/yalla-sheep-farm/js/axios.min.js"></script><script src="/activities/yalla-sheep-farm/js/jsencrypt.min.js"></script><script src="/activities/yalla-sheep-farm/js/qs.min.js"></script><link href="/activities/yalla-sheep-farm/css/chunk-vendors.0bc6f1c6.css" rel="stylesheet"><link href="/activities/yalla-sheep-farm/css/app.b5e104df.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/activities/yalla-sheep-farm/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/activities/yalla-sheep-farm/favicon.ico"><link rel="manifest" href="/activities/yalla-sheep-farm/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="adha"><link rel="apple-touch-icon" href="/activities/yalla-sheep-farm/favicon.ico"><link rel="mask-icon" href="/activities/yalla-sheep-farm/favicon.ico" color="#4DBA87"><meta name="msapplication-TileImage" content="/activities/yalla-sheep-farm/favicon.ico"><meta name="msapplication-TileColor" content="#000000"><script src="/activities/yalla-sheep-farm/local-runtime/replay.js?v=20260814-store-data"></script></head><body><div id="finishToast"><img class="icon-act-exit" src="/activities/yalla-sheep-farm/pic/icon_return_normal.png"> <img class="xiaoma" src="/activities/yalla-sheep-farm/pic/xiaoma.png"><div id="actEndText">The activity has ended.More coming soon…</div></div><div id="app"><div id="loadingGif"></div></div><script src="/activities/yalla-sheep-farm/js/chunk-vendors.56b09f0e.js"></script><script src="/activities/yalla-sheep-farm/js/app.6cd63f7d.js?v=20260813-cards-return"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a317cc1649b09d42',t:'MTc4Nzc5OTMyNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

@@ -1,0 +1,12 @@
+/home/runner/work/android-build-tool/android-build-tool/tools/yalla-gallery-round5/mirror_and_qa.py:362: SyntaxWarning: invalid escape sequence '\s'
+  text: (document.body?.innerText || '').replace(/\s+/g,' ').trim().slice(0,20000),
+/home/runner/work/android-build-tool/android-build-tool/tools/yalla-gallery-round5/mirror_and_qa.py:411: SyntaxWarning: invalid escape sequence '\s'
+  info = await page.evaluate("""() => ({title:document.title,text:(document.body?.innerText||'').replace(/\s+/g,' ').trim().slice(0,20000),width:Math.max(document.documentElement.scrollWidth,document.body?.scrollWidth||0),height:Math.max(document.documentElement.scrollHeight,document.body?.scrollHeight||0),images:[...document.images].map(x=>({src:x.currentSrc||x.src,complete:x.complete,width:x.naturalWidth,height:x.naturalHeight})),iframes:[...document.querySelectorAll('iframe')].map(x=>x.src),clickables:[]})""")
+{
+  "activities": 9,
+  "coreActivities": 8,
+  "verified": 0,
+  "partial": 7,
+  "expired": 2,
+  "contactSheet": "screenshots/round5-contact-sheet.jpg"
+}

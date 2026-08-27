@@ -1,0 +1,59 @@
+{
+  "id": "yalla-9th-anniversary-2025",
+  "name": "9th Anniversary · Starlight Gala",
+  "year": 2025,
+  "campaign": "Yalla 9th Anniversary 2025",
+  "parentCampaign": null,
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-9th-anniversary/",
+  "projectSlug": "yalla-9th-anniversary",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-9th-anniversary/",
+  "routes": [
+    "/",
+    "/:catchAll(.*)",
+    "/competitivePlanet",
+    "/home",
+    "/memory",
+    "/myBase",
+    "/mysteriousPlanet",
+    "/resourcePlanet"
+  ],
+  "routeCount": 8,
+  "stateCount": 1,
+  "fileCount": 10,
+  "assetCount": 8,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "OFFICIAL_URL_EXPIRED",
+  "quality": "C",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-9th-anniversary-2025/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 0,
+    "missingChunks": 5,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 8
+  },
+  "metrics": {
+    "totalBytes": 895850,
+    "jsCount": 3,
+    "cssCount": 2,
+    "imageCount": 0,
+    "fontCount": 0,
+    "mirrorErrors": 24,
+    "coreActivity": true
+  },
+  "mechanism": "Starlight journey campaign with planets, missions, honors and reward layers.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "yalla-10th-anniversary-2026",
+  "name": "10th Anniversary · Crowned with Honor",
+  "year": 2026,
+  "campaign": "Yalla 10th Anniversary 2026",
+  "parentCampaign": null,
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-10th-anniversary/",
+  "projectSlug": "yalla-10th-anniversary",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-10th-anniversary/",
+  "routes": [
+    "/",
+    "/10thGift",
+    "/:catchAll(.*)",
+    "/brilliantReward",
+    "/hallOfFame",
+    "/home",
+    "/honorAssemble",
+    "/memory",
+    "/timeHall"
+  ],
+  "routeCount": 9,
+  "stateCount": 1,
+  "fileCount": 25,
+  "assetCount": 23,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-10th-anniversary-2026/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 3,
+    "consoleFatalErrors": 0,
+    "missingChunks": 2,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 16
+  },
+  "metrics": {
+    "totalBytes": 2080479,
+    "jsCount": 7,
+    "cssCount": 2,
+    "imageCount": 11,
+    "fontCount": 0,
+    "mirrorErrors": 38,
+    "coreActivity": true
+  },
+  "mechanism": "Flagship anniversary SPA with missions, collection, honor, reward and competitive layers.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}

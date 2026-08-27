@@ -1,0 +1,54 @@
+{
+  "id": "yalla-activity-illustrated-cards-2024",
+  "name": "Activity Illustrated Cards",
+  "year": 2024,
+  "campaign": "Yalla Activity Illustrated Cards System",
+  "parentCampaign": "Yalla WonderLand / New Year 2025",
+  "officialUrl": null,
+  "spaRoot": "activities/yalla-activity-illustrated-cards/",
+  "projectSlug": "yalla-activity-illustrated-cards",
+  "archiveSourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-activity-illustrated-cards/",
+  "routes": [
+    "/",
+    "/:catchAll(.*)",
+    "/rank"
+  ],
+  "routeCount": 3,
+  "stateCount": 1,
+  "fileCount": 17,
+  "assetCount": 15,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "DEPLOYED_OFFICIAL_SPA_ARCHIVE_MIRROR",
+  "status": "VERIFIED_PARTIAL_SPA",
+  "quality": "B+",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-activity-illustrated-cards-2024/01-home.png"
+  ],
+  "qa": {
+    "brokenImages": 1,
+    "consoleFatalErrors": 0,
+    "missingChunks": 6,
+    "unmappedRequests": 0,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 9
+  },
+  "metrics": {
+    "totalBytes": 1094723,
+    "jsCount": 7,
+    "cssCount": 2,
+    "imageCount": 3,
+    "fontCount": 0,
+    "mirrorErrors": 23,
+    "coreActivity": false
+  },
+  "mechanism": "Cross-activity collection and album system; included as a system layer, not counted as a core campaign.",
+  "notes": [
+    "Mirrored from the deployed Campaigns Collected replay folder that preserves the previously archived official Yalla SPA.",
+    "No promotional image or hand-written replacement UI is counted as an official SPA."
+  ]
+}
