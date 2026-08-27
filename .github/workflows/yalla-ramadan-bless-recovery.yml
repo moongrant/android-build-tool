@@ -1,0 +1,74 @@
+name: Yalla Ramadan Bless independent child SPA recovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/recover_ramadan_bless.py
+      - .github/workflows/yalla-ramadan-bless-recovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      OUT_DIR: pro-yalla-ramadan-bless-recovery
+      ZIP_NAME: pro-yalla-ramadan-bless-recovery.zip
+      RESULT_BRANCH: pro-yalla-ramadan-bless-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install and recover original child SPA
+        run: |
+          python -m pip install requests beautifulsoup4 lxml pillow playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          python -m py_compile tools/yalla-next-batch/recover_ramadan_bless.py
+          rm -rf "$OUT_DIR"
+          YALLA_RAMADAN_BLESS_OUT="$OUT_DIR" python tools/yalla-next-batch/recover_ramadan_bless.py 2>&1 | tee ramadan-bless-recovery.log
+      - name: Package and verify
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$OUT_DIR/logs"; cp ramadan-bless-recovery.log "$OUT_DIR/logs/" 2>/dev/null || true
+          test -f "$OUT_DIR/registry/yalla-ramadan-bless-registry.json"
+          zip -q -r "$ZIP_NAME" "$OUT_DIR"
+          unzip -t "$ZIP_NAME" | tail -n 4
+          sha256sum "$ZIP_NAME" | tee "$ZIP_NAME.sha256"
+      - name: Publish compact results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/ramadan-bless
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp "$OUT_DIR/RESULT-BOARD.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/QA.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/registry/yalla-ramadan-bless-registry.json" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/screenshots/ramadan-bless-contact-sheet.jpg" "$stage/" 2>/dev/null || true
+          cp "$ZIP_NAME.sha256" "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-recovery-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Ramadan Bless child SPA recovery ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload full artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-ramadan-bless-recovery
+          path: |
+            ${{ env.ZIP_NAME }}
+            ${{ env.ZIP_NAME }}.sha256
+            ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
