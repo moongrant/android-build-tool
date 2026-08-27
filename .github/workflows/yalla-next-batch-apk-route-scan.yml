@@ -1,0 +1,152 @@
+name: Yalla next batch APK route scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-next-batch-apk-route-scan.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ['2.25.0','2.29.0','3.0.0','3.2.0','3.4.0','3.5.0','3.6.0','3.6.2']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download public Yalla package
+        env:
+          VERSION: ${{ matrix.version }}
+        run: |
+          set -Eeuo pipefail
+          slug="${VERSION//./_}"
+          mkdir -p "/tmp/apkeep-$slug" "/tmp/yalla-$slug" "artifacts/yalla-apk-routes/$VERSION"
+          docker pull ghcr.io/efforg/apkeep:stable
+          set +e
+          docker run --rm -v "/tmp/apkeep-$slug:/output" ghcr.io/efforg/apkeep:stable -a "com.weieyu.yalla@$VERSION" -d apk-pure /output > "artifacts/yalla-apk-routes/$VERSION/apkeep.stdout.txt" 2> "artifacts/yalla-apk-routes/$VERSION/apkeep.stderr.txt"
+          code=$?
+          set -e
+          package="$(find "/tmp/apkeep-$slug" -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          if [[ -z "$package" ]]; then
+            echo "package download failed: $code" > "artifacts/yalla-apk-routes/$VERSION/NO_PACKAGE.txt"
+            exit 0
+          fi
+          sha256sum "$package" > "artifacts/yalla-apk-routes/$VERSION/package.sha256"
+          stat -c '%n %s bytes' "$package" > "artifacts/yalla-apk-routes/$VERSION/package.txt"
+          if [[ "$package" == *.apk ]]; then
+            cp "$package" "/tmp/yalla-$slug/base.apk"
+          else
+            unzip -q "$package" -d "/tmp/yalla-$slug/unpacked"
+            base="$(find "/tmp/yalla-$slug/unpacked" -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' -o -name '*base*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            test -f "$base" && cp "$base" "/tmp/yalla-$slug/base.apk" || true
+          fi
+          test -f "/tmp/yalla-$slug/base.apk" || { echo 'base.apk missing' > "artifacts/yalla-apk-routes/$VERSION/NO_BASE.txt"; exit 0; }
+          unzip -q "/tmp/yalla-$slug/base.apk" -d "/tmp/yalla-$slug/base"
+
+      - name: Extract official H5 roots, routes and campaign strings
+        env:
+          VERSION: ${{ matrix.version }}
+        run: |
+          set -Eeuo pipefail
+          slug="${VERSION//./_}"; root="/tmp/yalla-$slug/base"; out="artifacts/yalla-apk-routes/$VERSION"
+          if [[ ! -d "$root" ]]; then exit 0; fi
+          find "$root" -type f -size -120M -print0 | xargs -0 -r strings -a -n 4 2>/dev/null | sort -u > "/tmp/all-$slug-strings.txt"
+          grep -Eaio 'https?://[^[:space:]"'"'<>\\)]+' "/tmp/all-$slug-strings.txt" | sed 's/[),.;:]$//' | sort -u > "$out/all-urls.txt" || true
+          grep -Eai 'activity2\.(yalla\.live|qrsshine\.com)|activitytest2|/activity/(20[0-9]{2}dist|YallaActivity20[0-9]{2})|templateActivity|activityId|campaignId|eventId|jumpUrl|shareUrl|redirectUrl|h5EntranceUrl|activityUrl|GetActivityListForCenter' "/tmp/all-$slug-strings.txt" | sort -u > "$out/activity-matches.txt" || true
+          grep -Eai 'activity2|activitytest2|yalla\.live.*activity|peakxyz.*activity|campaign|event|h5|webview' "$out/all-urls.txt" | sort -u > "$out/relevant-urls.txt" || true
+          python - <<'PY'
+          import json,os,re
+          from pathlib import Path
+          from urllib.parse import urlparse
+          version=os.environ['VERSION']; out=Path('artifacts/yalla-apk-routes')/version
+          text='\n'.join((out/f).read_text(errors='ignore') if (out/f).exists() else '' for f in ['activity-matches.txt','relevant-urls.txt'])
+          urls=sorted(set(re.findall(r'https?://[^\s"\'<>\\)]+',text)))
+          roots=[]
+          for url in urls:
+            try:
+              p=urlparse(url); parts=[x for x in p.path.split('/') if x]
+              if p.hostname and ('yalla' in p.hostname or 'peakxyz' in p.hostname) and len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):
+                roots.append({'url':url,'host':p.hostname,'bucket':parts[1],'project':parts[2],'root':f'{p.scheme}://{p.netloc}/activity/{parts[1]}/{parts[2]}/'})
+            except Exception: pass
+          projects=sorted({x['project'] for x in roots})
+          (out/'roots.json').write_text(json.dumps({'version':version,'roots':roots,'projects':projects},ensure_ascii=False,indent=2))
+          PY
+          {
+            echo "# Yalla $VERSION APK route scan"
+            echo
+            echo "Activity matches: $(wc -l < "$out/activity-matches.txt")"
+            echo "Relevant URLs: $(wc -l < "$out/relevant-urls.txt")"
+            echo
+            echo '## Exact roots'
+            python -c "import json;d=json.load(open('$out/roots.json'));[print('-',x) for x in d['projects']]"
+            echo
+            echo '## Activity matches'
+            echo '```'
+            sed -n '1,2200p' "$out/activity-matches.txt"
+            echo '```'
+          } > "$out/REPORT.md"
+
+      - name: Upload one APK scan
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-apk-routes-${{ matrix.version }}
+          path: artifacts/yalla-apk-routes/${{ matrix.version }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
+
+  summarize:
+    runs-on: ubuntu-22.04
+    needs: scan
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all scan artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/apk-scans
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --dir /tmp/apk-scans || true
+      - name: Build union and publish
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/apk-route-summary
+          rm -rf "$stage" && mkdir -p "$stage"
+          python - <<'PY'
+          import json,glob
+          from pathlib import Path
+          roots=[]; versions=[]
+          for p in glob.glob('/tmp/apk-scans/**/roots.json',recursive=True):
+            try:
+              d=json.load(open(p)); versions.append({'version':d.get('version'),'projects':d.get('projects',[])}); roots.extend(d.get('roots',[]))
+            except Exception: pass
+          unique={x.get('root'):x for x in roots if x.get('root')}
+          payload={'generatedAt':'${GITHUB_RUN_ID}','versions':versions,'roots':sorted(unique.values(),key=lambda x:(x.get('bucket',''),x.get('project',''))),'projects':sorted({x.get('project') for x in unique.values() if x.get('project')})}
+          Path('/tmp/apk-route-summary/yalla-apk-route-union.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
+          lines=['# Yalla APK Route Union','',f"Versions: {len(versions)}",f"Distinct roots: {len(unique)}",'']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in payload['roots']]
+          Path('/tmp/apk-route-summary/REPORT.md').write_text('\n'.join(lines))
+          PY
+          git config user.name 'pro-yalla-apk-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan pro-yalla-next-batch-apk-results
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla APK route scan ${GITHUB_RUN_ID}"
+          git push --force origin pro-yalla-next-batch-apk-results
+      - name: Upload union
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-apk-route-union
+          path: /tmp/apk-route-summary
+          if-no-files-found: warn
+          retention-days: 30
