@@ -1,0 +1,66 @@
+name: Yalla App Store event and deep-link crawl
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/crawl_appstore_events.py
+      - .github/workflows/yalla-appstore-events.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  crawl:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      RESULT_BRANCH: pro-yalla-appstore-events-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch helper order and crawl Yalla events
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/yalla-next-batch/crawl_appstore_events.py')
+          text=p.read_text()
+          anchor="r=get(APPSHUNTER_APP);app_text=r.text if r else '';(RAW/'app-page.html').write_text(app_text,encoding='utf-8')"
+          replacement="def safe_name(url):return re.sub(r'[^A-Za-z0-9._-]+','_',url)[:180]\n\n"+anchor
+          if anchor not in text: raise SystemExit('anchor missing')
+          p.write_text(text.replace(anchor,replacement,1))
+          PY
+          python -m pip install requests beautifulsoup4 lxml
+          python -m py_compile tools/yalla-next-batch/crawl_appstore_events.py
+          rm -rf pro-yalla-appstore-events
+          python tools/yalla-next-batch/crawl_appstore_events.py 2>&1 | tee yalla-appstore-events.log
+      - name: Publish event inventory
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-events
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md yalla-events.json; do cp "pro-yalla-appstore-events/$f" "$stage/" 2>/dev/null || true; done
+          cp yalla-appstore-events.log "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-events-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla App Store events ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload event artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-appstore-events
+          path: pro-yalla-appstore-events
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
