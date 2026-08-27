@@ -1,0 +1,118 @@
+name: Yalla exact Common Crawl historical bundles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-exact-commoncrawl-bundles.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      RESULT_BRANCH: pro-yalla-exact-commoncrawl-bundles-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Query exact archived bundle URLs and recover WARC bytes
+        run: |
+          python -m pip install requests warcio
+          mkdir -p out/files
+          cat > /tmp/recover.py <<'PY'
+          import concurrent.futures,hashlib,io,json,re,time
+          from pathlib import Path
+          import requests
+          from warcio.archiveiterator import ArchiveIterator
+          s=requests.Session();s.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'application/json,*/*'})
+          assets={
+           'MagicLamp/app.js':'https://file.yalla.live/activity/MagicLamp/dist/js/app.9ea63e0b.js',
+           'MagicLamp/app.css':'https://file.yalla.live/activity/MagicLamp/dist/css/app.17610a55.css',
+           'beatPinata/app.js':'https://file.yalla.live/activity/beatPinata/dist/js/app.02d89888.js',
+           'beatPinata/app.css':'https://file.yalla.live/activity/beatPinata/dist/css/app.31752a2d.css',
+           'LuckyCard/app.js':'https://file.yalla.live/activity/LuckyCard/Dist/static/js/app.557bdbc773260ccabf46.js',
+           'LuckyCard/vendor.js':'https://file.yalla.live/activity/LuckyCard/Dist/static/js/vendor.d551255b704b838552f0.js',
+           'LuckyCard/vonders.js':'https://file.yalla.live/activity/LuckyCard/Dist/static/js/vonders.dll.4d5b447.js',
+           'LuckyCard/app.css':'https://file.yalla.live/activity/LuckyCard/Dist/static/css/app.56762d6306992e3ce75d248bc2c9b451.css',
+           'NationalDayTemplate/app.js':'https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/app.dd642dc0c58c734cf9aa.js',
+           'NationalDayTemplate/vendor.js':'https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/vendor.798ad0a290dc821a375d.js',
+           'NationalDayTemplate/vonders.js':'https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/vonders.dll.b6b0c48.js',
+           'NationalDayTemplate/app.css':'https://file.yalla.live/activity/NationalDayTemplate/dist/static/css/app.63de259f4fac17df5508b2bc0357c794.css',
+          }
+          def get(url,params=None,headers=None,timeout=(15,80),tries=2):
+           last=None
+           for i in range(tries):
+            try:
+             r=s.get(url,params=params,headers=headers,timeout=timeout,allow_redirects=True);last=r
+             if r.status_code in {200,206}:return r
+            except Exception as e:last=e
+            time.sleep(i+1)
+           return last
+          coll=get('https://index.commoncrawl.org/collinfo.json',timeout=(15,45));indexes=[]
+          for x in coll.json() if hasattr(coll,'json') else []:
+           m=re.search(r'CC-MAIN-(20\d{2})-',x.get('id',''))
+           if m and 2020<=int(m.group(1))<=2023:indexes.append(x)
+          indexes=sorted(indexes,key=lambda x:x['id'],reverse=True)
+          def query(args):
+           key,url,index=args;r=get(index['cdx-api'],params={'url':url,'output':'json','filter':'status:200','collapse':'digest'},timeout=(15,50),tries=1);rows=[]
+           if hasattr(r,'status_code') and r.status_code==200:
+            for line in r.text.splitlines():
+             try:o=json.loads(line)
+             except Exception:continue
+             if isinstance(o,dict):o['_index']=index['id'];rows.append(o)
+           return key,url,rows
+          hits={k:[] for k in assets}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=24) as ex:
+           fs=[ex.submit(query,(k,u,i)) for k,u in assets.items() for i in indexes]
+           for f in concurrent.futures.as_completed(fs):
+            try:k,u,rows=f.result();hits[k].extend(rows)
+            except Exception:pass
+          def fetch_warc(key,url,row):
+           try:
+            length=int(row['length']);offset=int(row['offset']);r=get('https://data.commoncrawl.org/'+row['filename'],headers={'Range':f'bytes={offset}-{offset+length-1}'},timeout=(25,120),tries=3)
+            if not hasattr(r,'status_code') or r.status_code not in {200,206}:return None
+            for rec in ArchiveIterator(io.BytesIO(r.content)):
+             if rec.rec_type=='response':
+              body=rec.content_stream().read(100_000_000);ctype=rec.http_headers.get_header('Content-Type') if rec.http_headers else '';return body,ctype or ''
+           except Exception:return None
+          result=[]
+          for key,url in assets.items():
+           rows=hits[key];saved=None
+           for row in sorted(rows,key=lambda x:str(x.get('timestamp','')),reverse=True):
+            got=fetch_warc(key,url,row)
+            if got:
+             body,ctype=got;path=Path('out/files')/key;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(body);saved={'key':key,'url':url,'status':'recovered','bytes':len(body),'sha256':hashlib.sha256(body).hexdigest(),'contentType':ctype,'timestamp':row.get('timestamp'),'index':row.get('_index'),'row':row};break
+           if not saved:saved={'key':key,'url':url,'status':'missing','hitRows':len(rows)}
+           result.append(saved);print(key,saved['status'],saved.get('bytes'),len(rows),flush=True)
+          Path('out/results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));lines=['# Exact Common Crawl Historical Bundles','', '| Bundle | Status | Rows | Bytes | Capture | Index |','|---|---|---:|---:|---|---|']
+          for x in result:lines.append(f"| `{x['key']}` | {x['status']} | {x.get('hitRows',1 if x['status']=='recovered' else 0)} | {x.get('bytes',0)} | {x.get('timestamp','')} | {x.get('index','')} |")
+          Path('out/REPORT.md').write_text('\n'.join(lines))
+          PY
+          python /tmp/recover.py 2>&1 | tee out/run.log
+      - name: Publish exact bundle results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-cc-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish exact Yalla Common Crawl bundles ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-exact-commoncrawl-bundles
+          path: out
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
