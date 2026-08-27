@@ -1,0 +1,99 @@
+name: Pro Falla batch 11 Star Pass API probe
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch10-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch11-starpass-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch11-starpass-probe-20260827
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe historical Star Pass endpoints
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-falla-batch11-starpass-probe
+          python - <<'PY'
+          import json, urllib.request, urllib.error
+          from pathlib import Path
+          out=Path('artifacts/pro-falla-batch11-starpass-probe')
+          headers={
+            'User-Agent':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/126 Mobile Safari/537.36',
+            'Accept':'application/json,text/plain,*/*',
+            'Content-Type':'application/json;charset=UTF-8',
+            'Origin':'https://web-test.falla.live',
+            'Referer':'https://web-test.falla.live/activity-web/app-task-center/index.html',
+            'X-Language':'EN',
+          }
+          hosts=['https://api.apifalla.com','https://apihk.falla.live']
+          endpoints=[
+            ('POST','/api/web/activities_config/act',{'activitiesId':520}),
+            ('POST','/api/web/act/2024/passport/state',{}),
+            ('POST','/api/web/act/2024/passport/userProcess',{}),
+            ('POST','/api/web/act/2024/passpart/taskInfo',{}),
+            ('POST','/api/web/act/2024/passport/upgrageInfo',{}),
+            ('POST','/api/web/act/2024/passport/records',{'scroll':'','limit':20}),
+            ('POST','/api/web/user/info',{}),
+            ('POST','/api/web/family/info',{}),
+          ]
+          rows=[]
+          for host in hosts:
+            for method,path,payload in endpoints:
+              url=host+path
+              data=json.dumps(payload).encode()
+              req=urllib.request.Request(url,data=data,headers=headers,method=method)
+              try:
+                with urllib.request.urlopen(req,timeout=25) as r:
+                  raw=r.read(); status=r.status; final=r.url; rh=dict(r.headers)
+              except urllib.error.HTTPError as e:
+                raw=e.read(); status=e.code; final=url; rh=dict(e.headers)
+              except Exception as e:
+                rows.append({'url':url,'status':0,'error':repr(e)}); continue
+              name=(host.split('//',1)[1]+'_'+path.strip('/').replace('/','_'))+'.bin'
+              (out/name).write_bytes(raw)
+              try: parsed=json.loads(raw.decode('utf-8-sig','replace'))
+              except Exception: parsed=None
+              rows.append({'url':url,'status':status,'bytes':len(raw),'finalUrl':final,'headers':rh,'json':parsed,'file':name})
+          urls=[
+            'https://web.falla.live/activity_gift_config_v3/test/pre/h5_520_EN.json',
+            'https://web.falla.live/activity_gift_config_v3/pre/h5_520_EN.json',
+            'https://web.falla.live/activity_gift_config_v3/prod/h5_520_EN.json',
+            'https://web.fallaweb.com/activity_gift_config_v3/h5_520_EN.json',
+            'https://web.falla.live/api/config/2/203-prod.json',
+            'https://web.falla.live/lang_conf/pre/h5_115.json',
+          ]
+          for url in urls:
+            req=urllib.request.Request(url,headers={'User-Agent':headers['User-Agent'],'Accept':'application/json,*/*','Referer':headers['Referer']})
+            try:
+              with urllib.request.urlopen(req,timeout=25) as r:
+                raw=r.read(); status=r.status; final=r.url; rh=dict(r.headers)
+            except urllib.error.HTTPError as e:
+              raw=e.read(); status=e.code; final=url; rh=dict(e.headers)
+            except Exception as e:
+              rows.append({'url':url,'status':0,'error':repr(e)}); continue
+            name=url.split('//',1)[1].replace('/','_').replace('?','_')+'.bin'
+            (out/name).write_bytes(raw)
+            try: parsed=json.loads(raw.decode('utf-8-sig','replace'))
+            except Exception: parsed=None
+            rows.append({'url':url,'status':status,'bytes':len(raw),'finalUrl':final,'headers':rh,'json':parsed,'file':name})
+          (out/'results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps([{'url':r['url'],'status':r.get('status'),'bytes':r.get('bytes'),'code':(r.get('json') or {}).get('code') if isinstance(r.get('json'),dict) else None,'resType':type((r.get('json') or {}).get('res')).__name__ if isinstance(r.get('json'),dict) else None} for r in rows],ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-batch11-starpass-probe
+          path: artifacts/pro-falla-batch11-starpass-probe
+          if-no-files-found: error
+          retention-days: 14
