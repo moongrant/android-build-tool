@@ -1,0 +1,59 @@
+{
+  "id": "yalla-national-day-2021",
+  "name": "National Day 2021",
+  "year": 2021,
+  "campaign": "Yalla National Day 2021",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla02/NationalDay/dist/",
+  "spaRoot": "/activity/YallaActivity2021/Yalla02/NationalDay/dist/",
+  "activityId": null,
+  "projectSlug": "Yalla02/NationalDay/dist",
+  "routes": [
+    "/"
+  ],
+  "routeCount": 1,
+  "stateCount": 1,
+  "assetCount": 1,
+  "fileCount": 5,
+  "apiCount": 0,
+  "fixtureCount": 0,
+  "sourceType": "OFFICIAL_SPA_LIVE_AND_ARCHIVE_CLOSURE",
+  "status": "OFFICIAL_URL_EXPIRED",
+  "quality": "C",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-national-day-2021/01-National_Day.png"
+  ],
+  "metrics": {
+    "totalBytes": 60031,
+    "jsCount": 1,
+    "cssCount": 0,
+    "imageCount": 1,
+    "fontCount": 0,
+    "archivedFileCount": 2,
+    "liveFileCount": 3,
+    "richStateCount": 0,
+    "keywordHits": [],
+    "closureOk": false,
+    "runtimeOk": true,
+    "fixtureOk": false,
+    "depthOk": false,
+    "assetOk": false
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 0,
+    "missingChunks": 2,
+    "unmappedRequests": 3,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 0
+  },
+  "notes": [
+    "Original official HTML, JS, CSS, chunks and assets are preserved from Yalla production URLs and public web archives.",
+    "Offline replay blocks every remote request and uses captured responses only.",
+    "No users, rankings, rewards or gameplay outcomes are fabricated."
+  ]
+}

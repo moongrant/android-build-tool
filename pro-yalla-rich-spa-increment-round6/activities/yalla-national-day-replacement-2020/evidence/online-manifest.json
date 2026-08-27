@@ -1,0 +1,71 @@
+{
+  "url": "https://activity2.yalla.live/activity/YallaActivity2020/NationalDayReplacement/dist/",
+  "finalUrl": "https://activity2.yalla.live/activity/YallaActivity2020/NationalDayReplacement/dist/?lang=en&language=en&region=SA",
+  "navigationError": null,
+  "bodyText": "The activity has ended.More coming soon…",
+  "domLength": 3061,
+  "responses": [
+    {
+      "url": "https://activity2.yalla.live/activity/YallaActivity2020/NationalDayReplacement/dist/?lang=en&language=en&region=SA",
+      "status": 404,
+      "bytes": 3252,
+      "file": "spa/origins/activity2.yalla.live/activity/YallaActivity2020/NationalDayReplacement/dist/index__q_d7e32340fe1d.html"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925",
+      "status": 200,
+      "bytes": 28467,
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925.js"
+    },
+    {
+      "url": "https://file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "status": 200,
+      "bytes": 24552,
+      "file": "assets/origins/file.yalla.live/Activity/ActivityOver/xiaoma.png"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/jquery-3.3.1.js",
+      "status": 404,
+      "bytes": 0,
+      "file": null
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/flexible.js",
+      "status": 404,
+      "bytes": 0,
+      "file": null
+    },
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "status": 204,
+      "bytes": 0,
+      "file": null
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ],
+  "requestFailures": [
+    {
+      "url": "https://activity2.yalla.live/activity/libs/jquery-3.3.1.js",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/flexible.js",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    }
+  ]
+}

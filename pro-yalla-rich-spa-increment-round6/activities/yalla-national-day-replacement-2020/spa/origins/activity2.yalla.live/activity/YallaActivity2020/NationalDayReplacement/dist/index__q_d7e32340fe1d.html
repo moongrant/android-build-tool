@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/activity/libs/jquery-3.3.1.js" type="text/javascript"></script>
+    <script src="/activity/libs/flexible.js" type="text/javascript"></script>
+    <title lang></title>
+</head>
+
+<body>
+    <div id="activityOver" style="width:100%;height:100%;text-align:center;">
+        <img style="width:24%;margin:4rem 0 1rem;" src="https://file.yalla.live/Activity/ActivityOver/xiaoma.png">
+        <div id="tips1" style="width:80%;margin:0 auto 0.3rem;font-size:0.5rem;color:#5f5f5f;">
+            The activity has ended.More coming soon…
+        </div>
+    </div>
+    
+    <script>
+        //  参数过滤
+        function filterSearch() {
+            var str = window.location.search.replace("?", "");
+            var obj = {
+            };
+            if (str.length < 1) return obj;
+            var keyValues = str.split("&");
+            keyValues.forEach(function (keyValue) {
+                var tempArr = keyValue.split("=");
+                var key = tempArr[0];
+                var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+                obj[key] = value;
+            });
+            if (obj['userid']) {
+                obj['userId'] = obj['userid'];
+            }
+            return obj;
+        }
+        var search = filterSearch();
+        search.region = parseInt(search.region);
+
+    </script>
+    <script type="text/javascript">
+        var region = search.region;
+        switch (region) {
+            case 1:
+                $("#tips1").css("direction", "rtl").text("لقد تأخرت، انتهى النشاط! المزيد من النشاط قادم قريبا…");
+                break;
+            case 2:
+                $("#tips1").text("Bu aktivite sona erdi. Yeni aktiviteler çok yakında!");
+                break;
+            case 3:
+                $("#tips1").text("Anda terlambat. Aktivitas telah selesai Aktivitas selanjutnya akan datang.");
+                break;
+            case 5:
+                $("#tips1").text("A atividade já terminou. Mais atividades interessantes em breve......");
+                break;
+            case 6:
+                $("#tips1").text("La actividad ha terminado. Más muy pronto…");
+                break;
+            case 7:
+                $("#tips1").text("गतिविधि समाप्त हो गई है। अधिक,जल्द आ रहा…");
+                break;
+            case 8:
+                $("#tips1").css("direction", "rtl").text("سرگرمی ختم ہوگئی ہے، مزید جلد آ رہی ہیں۔۔");
+                break;
+        }
+    </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"e4c8ec30f5e9433a9674a93e2852e3a0"}' crossorigin="anonymous"></script>
+</body>
+
+</html>

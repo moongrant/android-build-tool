@@ -1,0 +1,50 @@
+{
+  "url": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+  "finalUrl": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/?lang=en&language=en&region=SA",
+  "navigationError": null,
+  "bodyText": "",
+  "domLength": 2266,
+  "responses": [
+    {
+      "url": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/?lang=en&language=en&region=SA",
+      "status": 200,
+      "bytes": 2206,
+      "file": "spa/origins/activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/index__q_d7e32340fe1d.html"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925",
+      "status": 200,
+      "bytes": 28467,
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "status": 204,
+      "bytes": 0,
+      "file": null
+    }
+  ],
+  "console": [],
+  "requestFailures": [
+    {
+      "url": "https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/vendor.4e2b92af8fb8e39f42d7.js",
+      "method": "GET",
+      "error": "net::ERR_BLOCKED_BY_ORB"
+    },
+    {
+      "url": "https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/app.1cb79dc4ad8285ae8640.js",
+      "method": "GET",
+      "error": "net::ERR_BLOCKED_BY_ORB"
+    },
+    {
+      "url": "https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/vonders.dll.b6b0c48.js",
+      "method": "GET",
+      "error": "net::ERR_BLOCKED_BY_ORB"
+    },
+    {
+      "url": "https://file.yalla.live/activity/NationalDayTemplate/dist/static/css/app.3e2e883c07f7670da6c0eee4a3909eb5.css",
+      "method": "GET",
+      "error": "net::ERR_BLOCKED_BY_ORB"
+    }
+  ]
+}

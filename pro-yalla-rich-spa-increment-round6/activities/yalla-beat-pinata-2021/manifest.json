@@ -1,0 +1,175 @@
+{
+  "activity": {
+    "id": "yalla-beat-pinata-2021",
+    "name": "Beat Piñata 2021",
+    "year": 2021,
+    "campaign": "Yalla Beat Piñata 2021",
+    "parentCampaign": null,
+    "officialUrl": "https://activity2.yalla.live/activity/2021dist/beatPinata/",
+    "spaRoot": "/activity/2021dist/beatPinata/",
+    "activityId": null,
+    "projectSlug": "beatPinata",
+    "routes": [
+      "/"
+    ],
+    "routeCount": 1,
+    "stateCount": 1,
+    "assetCount": 1,
+    "fileCount": 6,
+    "apiCount": 0,
+    "fixtureCount": 0,
+    "sourceType": "OFFICIAL_SPA_LIVE_AND_ARCHIVE_CLOSURE",
+    "status": "OFFICIAL_URL_EXPIRED",
+    "quality": "C",
+    "localReplay": true,
+    "screenshot": true,
+    "currentReleaseVerified": false,
+    "screenshots": [
+      "screenshots/yalla-beat-pinata-2021/01-Beat_Pi_ata.png"
+    ],
+    "metrics": {
+      "totalBytes": 68517,
+      "jsCount": 1,
+      "cssCount": 0,
+      "imageCount": 1,
+      "fontCount": 0,
+      "archivedFileCount": 3,
+      "liveFileCount": 3,
+      "richStateCount": 0,
+      "keywordHits": [],
+      "closureOk": false,
+      "runtimeOk": true,
+      "fixtureOk": false,
+      "depthOk": false,
+      "assetOk": false
+    },
+    "qa": {
+      "brokenImages": 0,
+      "consoleFatalErrors": 0,
+      "missingChunks": 2,
+      "unmappedRequests": 3,
+      "remoteIframes": 0,
+      "remoteRuntimeFallback": 0,
+      "missingStaticAssets": 0
+    },
+    "notes": [
+      "Original official HTML, JS, CSS, chunks and assets are preserved from Yalla production URLs and public web archives.",
+      "Offline replay blocks every remote request and uses captured responses only.",
+      "No users, rankings, rewards or gameplay outcomes are fabricated."
+    ]
+  },
+  "records": [
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/?lang=en&language=en&region=SA",
+      "method": "GET",
+      "status": 404,
+      "contentType": "text/html",
+      "bytes": 3252,
+      "sha256": "09104bb34d9a97cbf0ce8380eb3f7b8f468accf1f9898166d7f3e9b075d32cfa",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/beatPinata/index__q_d7e32340fe1d.html",
+      "snapshot": null,
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/javascript;charset=UTF-8",
+      "bytes": 31612,
+      "sha256": "e1ac4849b9d4a498b68f8aca01e6ed99a11d94b35a2cec533b3916b8fb722fd6",
+      "source": "online-browser",
+      "category": "assets",
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "public, max-age=86400",
+        "content-type": "text/javascript;charset=UTF-8",
+        "etag": "W/\"2026.6.0\"",
+        "last-modified": "Mon, 24 Aug 2026 16:13:46 GMT"
+      }
+    },
+    {
+      "url": "https://file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "method": "GET",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 24552,
+      "sha256": "9722381bd3f084ee30d1d782219e9d951a744a4e55b9983bbc8919d719ccb1fa",
+      "source": "online-browser",
+      "category": "assets",
+      "file": "assets/origins/file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "image/png",
+        "etag": "\"Ft7D4zNPL2wYWB3wZA_nA1d3cTTr\"",
+        "last-modified": "Mon, 11 May 2020 11:44:41 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 3032,
+      "sha256": "44f67f50343288b59a3ba4f70329330800fd1f7bb47b123b73f3c017a8047eb9",
+      "source": "wayback",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/beatPinata/index.html",
+      "snapshot": {
+        "timestamp": "20210818051325",
+        "original": "https://activity2.yalla.live/activity/2021dist/beatPinata/?region=5&t=1629253468109&p=2&v=222",
+        "statuscode": "200",
+        "mimetype": "text/html",
+        "digest": "LAU7DTWK4IRRUVUU7H6HGAWUUMEFNCS3",
+        "length": 818
+      },
+      "headers": {}
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/?p=2&region=5&s=3&t=1629253481415&v=222",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 3037,
+      "sha256": "b8d33735eb07743f2b9721e5f99cb6a6ee988dcdd05b9230561aab96b11f8be4",
+      "source": "wayback",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/beatPinata/index__q_126aa4517818.html",
+      "snapshot": {
+        "timestamp": "20210828091321",
+        "original": "https://activity2.yalla.live/activity/2021dist/beatPinata/?region=5&s=3&t=1629253481415&p=2&v=222",
+        "statuscode": "200",
+        "mimetype": "text/html",
+        "digest": "XRTYJMTGASTTP3FU2IC6HGHB56IA7WH2",
+        "length": 824
+      },
+      "headers": {}
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/?p=2&region=5&t=1629253468109&v=222",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 3032,
+      "sha256": "44f67f50343288b59a3ba4f70329330800fd1f7bb47b123b73f3c017a8047eb9",
+      "source": "wayback",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/beatPinata/index__q_dbc1eedbe764.html",
+      "snapshot": {
+        "timestamp": "20210818051325",
+        "original": "https://activity2.yalla.live/activity/2021dist/beatPinata/?region=5&t=1629253468109&p=2&v=222",
+        "statuscode": "200",
+        "mimetype": "text/html",
+        "digest": "LAU7DTWK4IRRUVUU7H6HGAWUUMEFNCS3",
+        "length": 818
+      },
+      "headers": {}
+    }
+  ],
+  "generatedAt": "2026-08-27T17:43:23.212896+00:00"
+}

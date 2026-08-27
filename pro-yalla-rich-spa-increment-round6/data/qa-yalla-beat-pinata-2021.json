@@ -1,0 +1,91 @@
+{
+  "brokenImages": 0,
+  "consoleFatalErrors": 0,
+  "missingChunks": 2,
+  "unmappedRequests": 3,
+  "remoteIframes": 0,
+  "remoteRuntimeFallback": 0,
+  "missingStaticAssets": 0,
+  "states": [
+    {
+      "label": "Beat Piñata",
+      "source": "root",
+      "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/?lang=en&language=en&region=SA",
+      "screenshot": "screenshots/yalla-beat-pinata-2021/01-Beat_Pi_ata.png",
+      "sha256": "7b175dd4d29ec5cf872e6aa59aa5102bd3f8427dab518433feb1eb0f9ba2cd75",
+      "bodyText": "The activity has ended.More coming soon…",
+      "domLength": 3061,
+      "width": 390,
+      "height": 844,
+      "imageCount": 1,
+      "brokenImages": 0,
+      "remoteIframes": 0,
+      "unmapped": [
+        {
+          "url": "https://activity2.yalla.live/activity/libs/jquery-3.3.1.js",
+          "method": "GET",
+          "resourceType": "script",
+          "category": "chunk"
+        },
+        {
+          "url": "https://activity2.yalla.live/activity/libs/flexible.js",
+          "method": "GET",
+          "resourceType": "script",
+          "category": "chunk"
+        },
+        {
+          "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+          "method": "POST",
+          "resourceType": "xhr",
+          "category": "api"
+        }
+      ],
+      "console": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        }
+      ],
+      "clickables": [],
+      "keywordHits": []
+    }
+  ],
+  "unmapped": [
+    {
+      "url": "https://activity2.yalla.live/activity/libs/jquery-3.3.1.js",
+      "method": "GET",
+      "resourceType": "script",
+      "category": "chunk"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/flexible.js",
+      "method": "GET",
+      "resourceType": "script",
+      "category": "chunk"
+    },
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "method": "POST",
+      "resourceType": "xhr",
+      "category": "api"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ]
+}

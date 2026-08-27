@@ -1,0 +1,71 @@
+{
+  "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/",
+  "finalUrl": "https://activity2.yalla.live/activity/2021dist/beatPinata/?lang=en&language=en&region=SA",
+  "navigationError": null,
+  "bodyText": "The activity has ended.More coming soon…",
+  "domLength": 3061,
+  "responses": [
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/beatPinata/?lang=en&language=en&region=SA",
+      "status": 404,
+      "bytes": 3252,
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/beatPinata/index__q_d7e32340fe1d.html"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "status": 200,
+      "bytes": 31612,
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496.js"
+    },
+    {
+      "url": "https://file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "status": 200,
+      "bytes": 24552,
+      "file": "assets/origins/file.yalla.live/Activity/ActivityOver/xiaoma.png"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/jquery-3.3.1.js",
+      "status": 404,
+      "bytes": 0,
+      "file": null
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/flexible.js",
+      "status": 404,
+      "bytes": 0,
+      "file": null
+    },
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "status": 204,
+      "bytes": 0,
+      "file": null
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ],
+  "requestFailures": [
+    {
+      "url": "https://activity2.yalla.live/activity/libs/jquery-3.3.1.js",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/libs/flexible.js",
+      "method": "GET",
+      "error": "net::ERR_ABORTED"
+    }
+  ]
+}

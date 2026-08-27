@@ -1,0 +1,102 @@
+{
+  "activity": {
+    "id": "yalla-national-day-template-2021",
+    "name": "National Day Template 2021",
+    "year": 2021,
+    "campaign": "Yalla National Day Template 2021",
+    "parentCampaign": null,
+    "officialUrl": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+    "spaRoot": "/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+    "projectSlug": "Yalla03/NationalDayTemplate/dist",
+    "expected": [
+      "National Day",
+      "Rules",
+      "Rewards",
+      "Records",
+      "Ranking"
+    ],
+    "keywords": [
+      "national day",
+      "template",
+      "reward",
+      "record",
+      "rule",
+      "rank",
+      "gift"
+    ]
+  },
+  "generatedAt": "2026-08-27T18:03:33.825988+00:00",
+  "rootUrl": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+  "rootRecord": {
+    "url": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+    "method": "GET",
+    "status": 200,
+    "contentType": "text/html",
+    "bytes": 1853,
+    "sha256": "52921f4e9c15f651405500d4defa399a1a07d13d69ec53afefc52579c1784511",
+    "source": "live",
+    "category": "spa",
+    "file": "spa/origins/activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/index.html",
+    "snapshot": null,
+    "headers": {}
+  },
+  "records": {
+    "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/?lang=en&language=en&region=SA": {
+      "url": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/?lang=en&language=en&region=SA",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 2206,
+      "sha256": "7bfc4a97c346f6c64abc64f30e5d874c44cbe5eb2567c3fe9d16cb81f2a0a274",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/index__q_d7e32340fe1d.html",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=120,public",
+        "content-type": "text/html",
+        "last-modified": "Fri, 14 Aug 2026 06:15:36 GMT"
+      }
+    },
+    "https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925": {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/javascript;charset=UTF-8",
+      "bytes": 28467,
+      "sha256": "ed266825df2ff85cc4f27593f50f15249848b8464712bb4371e9b7566b007f92",
+      "source": "online-browser",
+      "category": "assets",
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "public, max-age=86400",
+        "content-type": "text/javascript;charset=UTF-8",
+        "etag": "W/\"2026.8.4\"",
+        "last-modified": "Mon, 24 Aug 2026 16:13:46 GMT"
+      }
+    },
+    "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/": {
+      "url": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 1853,
+      "sha256": "52921f4e9c15f651405500d4defa399a1a07d13d69ec53afefc52579c1784511",
+      "source": "live",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/index.html",
+      "snapshot": null,
+      "headers": {}
+    }
+  },
+  "pathIndex": {
+    "activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/": [
+      "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/?lang=en&language=en&region=SA",
+      "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/"
+    ],
+    "static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925": [
+      "https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925"
+    ]
+  }
+}

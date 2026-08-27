@@ -1,0 +1,175 @@
+{
+  "activity": {
+    "id": "yalla-magic-lamp-2021",
+    "name": "Magic Lamp 2021",
+    "year": 2021,
+    "campaign": "Yalla Magic Lamp 2021",
+    "parentCampaign": null,
+    "officialUrl": "https://activity2.yalla.live/activity/2021dist/MagicLamp/",
+    "spaRoot": "/activity/2021dist/MagicLamp/",
+    "activityId": null,
+    "projectSlug": "MagicLamp",
+    "routes": [
+      "/"
+    ],
+    "routeCount": 1,
+    "stateCount": 1,
+    "assetCount": 2,
+    "fileCount": 6,
+    "apiCount": 0,
+    "fixtureCount": 0,
+    "sourceType": "OFFICIAL_SPA_LIVE_AND_ARCHIVE_CLOSURE",
+    "status": "OFFICIAL_URL_EXPIRED",
+    "quality": "C",
+    "localReplay": true,
+    "screenshot": true,
+    "currentReleaseVerified": false,
+    "screenshots": [
+      "screenshots/yalla-magic-lamp-2021/01-Magic_Lamp.png"
+    ],
+    "metrics": {
+      "totalBytes": 288617,
+      "jsCount": 1,
+      "cssCount": 1,
+      "imageCount": 1,
+      "fontCount": 0,
+      "archivedFileCount": 3,
+      "liveFileCount": 3,
+      "richStateCount": 0,
+      "keywordHits": [],
+      "closureOk": false,
+      "runtimeOk": true,
+      "fixtureOk": false,
+      "depthOk": false,
+      "assetOk": false
+    },
+    "qa": {
+      "brokenImages": 0,
+      "consoleFatalErrors": 0,
+      "missingChunks": 2,
+      "unmappedRequests": 3,
+      "remoteIframes": 0,
+      "remoteRuntimeFallback": 0,
+      "missingStaticAssets": 0
+    },
+    "notes": [
+      "Original official HTML, JS, CSS, chunks and assets are preserved from Yalla production URLs and public web archives.",
+      "Offline replay blocks every remote request and uses captured responses only.",
+      "No users, rankings, rewards or gameplay outcomes are fabricated."
+    ]
+  },
+  "records": [
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/MagicLamp/?lang=en&language=en&region=SA",
+      "method": "GET",
+      "status": 404,
+      "contentType": "text/html",
+      "bytes": 3252,
+      "sha256": "411f2d0f175e85a1115c55aee8eb9cc05fe2759a48f7c0bf17a2446eebf8d9fc",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/MagicLamp/index__q_d7e32340fe1d.html",
+      "snapshot": null,
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "url": "https://file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "method": "GET",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 24552,
+      "sha256": "9722381bd3f084ee30d1d782219e9d951a744a4e55b9983bbc8919d719ccb1fa",
+      "source": "online-browser",
+      "category": "assets",
+      "file": "assets/origins/file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "public, max-age=31536000",
+        "content-type": "image/png",
+        "etag": "\"Ft7D4zNPL2wYWB3wZA_nA1d3cTTr\"",
+        "last-modified": "Mon, 11 May 2020 11:44:41 GMT"
+      }
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/javascript;charset=UTF-8",
+      "bytes": 28467,
+      "sha256": "ed266825df2ff85cc4f27593f50f15249848b8464712bb4371e9b7566b007f92",
+      "source": "online-browser",
+      "category": "assets",
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "public, max-age=86400",
+        "content-type": "text/javascript;charset=UTF-8",
+        "etag": "W/\"2026.8.4\"",
+        "last-modified": "Mon, 24 Aug 2026 16:13:46 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/MagicLamp/",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 2806,
+      "sha256": "15c51117a0d404662542a1483ec6d932f11f94c419131ae532d91bd8ea1d5f53",
+      "source": "wayback",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/MagicLamp/index.html",
+      "snapshot": {
+        "timestamp": "20210814012934",
+        "original": "https://activity2.yalla.live/activity/2021dist/MagicLamp/?region=1&s=3&userid=21295575",
+        "statuscode": "200",
+        "mimetype": "text/html",
+        "digest": "KUK6DI32YCFC2B7ALZRMIXPF657M2OKT",
+        "length": 807
+      },
+      "headers": {}
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/MagicLamp/css/app.b6c59bea.css",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 226742,
+      "sha256": "37e1bbe5176f4b3d6dfe0039d6b68c305ce899e39f295509c7c9914c1ea58e86",
+      "source": "wayback",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/MagicLamp/css/app.b6c59bea.css",
+      "snapshot": {
+        "timestamp": "20210911112926",
+        "original": "https://activity2.yalla.live/activity/2021dist/MagicLamp/css/app.b6c59bea.css",
+        "statuscode": "200",
+        "mimetype": "text/css",
+        "digest": "OE532BTPEJIPOVF2DWEMWCBW7ZWZCFIF",
+        "length": 97369
+      },
+      "headers": {}
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2021dist/MagicLamp/?region=1&userid=21295575",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 2798,
+      "sha256": "35e9e3f20891439a78bf8f45ff7dec6bbdc92bef62555d2a351328e7df0f4934",
+      "source": "wayback",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2021dist/MagicLamp/index__q_c7c63a00f5ff.html",
+      "snapshot": {
+        "timestamp": "20210814013022",
+        "original": "https://activity2.yalla.live/activity/2021dist/MagicLamp/?region=1&userid=21295575",
+        "statuscode": "200",
+        "mimetype": "text/html",
+        "digest": "RYDKU467VTKODBMX7BDT6FPO4H4HXCAQ",
+        "length": 799
+      },
+      "headers": {}
+    }
+  ],
+  "generatedAt": "2026-08-27T17:36:33.812217+00:00"
+}
