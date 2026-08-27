@@ -1,0 +1,80 @@
+name: Yalla Wayback CDN prefix quick inventory
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-wayback-cdn-prefix-quick.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    env:
+      RESULT_BRANCH: pro-yalla-wayback-cdn-prefix-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Query exact historical CDN prefixes
+        run: |
+          python -m pip install requests
+          mkdir -p out
+          python - <<'PY'
+          import json,time
+          from pathlib import Path
+          import requests
+          s=requests.Session();s.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'application/json,*/*'})
+          targets={
+           'MagicLamp':'https://file.yalla.live/activity/MagicLamp/*',
+           'beatPinata':'https://file.yalla.live/activity/beatPinata/*',
+           'LuckyCard':'https://file.yalla.live/activity/LuckyCard/*',
+           'NationalDayTemplate':'https://file.yalla.live/activity/NationalDayTemplate/*',
+           'NationalDay':'https://file.yalla.live/activity/NationalDay/*',
+           'TurkeyFatherDay':'https://file.yalla.live/activity/TurkeyFatherDay/*',
+          }
+          result={}
+          for name,url in targets.items():
+           params={'url':url,'output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','collapse':'urlkey','limit':'100000','from':'2020','to':'2022'}
+           row={'url':url,'rows':[]}
+           for attempt in range(4):
+            try:
+             r=s.get('https://web.archive.org/cdx/search/cdx',params=params,timeout=(20,160))
+             row.update(status=r.status_code,bytes=len(r.content),finalUrl=r.url,sample=r.text[:500])
+             if r.status_code==200:
+              d=r.json();h=d[0] if d and isinstance(d[0],list) else [];row['rows']=[dict(zip(h,x)) for x in d[1:] if isinstance(x,list) and len(x)==len(h)];break
+            except Exception as e:row['error']=repr(e)
+            time.sleep(3*(attempt+1))
+           result[name]=row;print(name,len(row['rows']),row.get('status'),flush=True)
+          Path('out/results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          lines=['# Yalla Wayback CDN Prefix Quick Inventory','', '| Prefix | HTTP | Rows | Bytes | Sample assets |','|---|---:|---:|---:|---|']
+          for name,row in result.items():
+           assets=', '.join(x.get('original','').split('/')[-1] for x in row['rows'][:8]);lines.append(f"| `{name}` | {row.get('status')} | {len(row['rows'])} | {row.get('bytes')} | {assets} |")
+          Path('out/REPORT.md').write_text('\n'.join(lines))
+          PY
+      - name: Publish results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-wayback-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish Yalla Wayback CDN prefix inventory ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-wayback-cdn-prefix
+          path: out
+          if-no-files-found: warn
+          retention-days: 30
