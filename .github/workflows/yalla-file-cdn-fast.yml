@@ -1,0 +1,56 @@
+name: Yalla File CDN fast inventory
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/file_cdn_inventory_fast.py
+      - .github/workflows/yalla-file-cdn-fast.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      RESULT_BRANCH: pro-yalla-file-cdn-fast-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inventory recent Common Crawl Yalla CDN folders
+        run: |
+          python -m pip install requests
+          python -m py_compile tools/yalla-next-batch/file_cdn_inventory_fast.py
+          rm -rf pro-yalla-file-cdn-fast
+          python tools/yalla-next-batch/file_cdn_inventory_fast.py 2>&1 | tee yalla-file-cdn-fast.log
+      - name: Publish fast inventory branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-file-cdn-fast
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp -R pro-yalla-file-cdn-fast/. "$stage/" 2>/dev/null || true
+          cp yalla-file-cdn-fast.log "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-cdn-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish fast Yalla CDN inventory ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload inventory artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-file-cdn-fast
+          path: pro-yalla-file-cdn-fast
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
