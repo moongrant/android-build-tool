@@ -1,0 +1,1458 @@
+package com.code.android.util;
+
+import kotlin.jvm.internal.Intrinsics;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final /* synthetic */ class o00OOO0 {
+    public static androidx.lifecycle.OooO0O0 OooO00o(String str, String str2) {
+        androidx.lifecycle.OooO0O0 oooO0O0 = new androidx.lifecycle.OooO0O0(str, 1);
+        Intrinsics.checkNotNullParameter(oooO0O0, str2);
+        return oooO0O0;
+    }
+}
+package com.code.android.util;
+
+import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineStart;
+import kotlinx.coroutines.Deferred;
+import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class o0Oo0oo {
+    public static Deferred OooO00o(CoroutineScope coroutineScope, Function2 block) {
+        CoroutineStart start = CoroutineStart.DEFAULT;
+        Intrinsics.checkNotNullParameter(coroutineScope, "<this>");
+        Intrinsics.checkNotNullParameter(start, "start");
+        Intrinsics.checkNotNullParameter(block, "block");
+        return BuildersKt.async(coroutineScope, Dispatchers.getIO(), start, block);
+    }
+
+    public static Job OooO0O0(CoroutineScope coroutineScope, Function2 block) {
+        CoroutineStart start = CoroutineStart.DEFAULT;
+        Intrinsics.checkNotNullParameter(coroutineScope, "<this>");
+        Intrinsics.checkNotNullParameter(start, "start");
+        Intrinsics.checkNotNullParameter(block, "block");
+        return BuildersKt.launch(coroutineScope, Dispatchers.getIO(), start, block);
+    }
+
+    public static Job OooO0OO(CoroutineScope coroutineScope, Function2 block) {
+        CoroutineStart start = CoroutineStart.DEFAULT;
+        Intrinsics.checkNotNullParameter(coroutineScope, "<this>");
+        Intrinsics.checkNotNullParameter(start, "start");
+        Intrinsics.checkNotNullParameter(block, "block");
+        return BuildersKt.launch(coroutineScope, Dispatchers.getMain(), start, block);
+    }
+
+    @Nullable
+    public static final <T> Object OooO0Oo(@NotNull Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, @NotNull Continuation<? super T> continuation) {
+        return BuildersKt.withContext(Dispatchers.getIO(), function2, continuation);
+    }
+
+    @Nullable
+    public static final <T> Object OooO0o0(@NotNull Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, @NotNull Continuation<? super T> continuation) {
+        return BuildersKt.withContext(Dispatchers.getMain(), function2, continuation);
+    }
+}
+package com.yalla.yalla.api.call.request;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import java.util.Map;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import retrofit2.http.HeaderMap;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0007\u0018\u00002\u00020\u0001BC\u0012\u0016\b\u0002\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0002\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0001\u0012\u0016\b\u0003\u0010\u0006\u001a\u0010\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u0002¢\u0006\u0004\b\u0007\u0010\b¨\u0006\t"}, d2 = {"Lcom/yalla/yalla/api/call/request/ParamsWrapper;", "", "", "", "formParams", "json", "headers", "<init>", "(Ljava/util/Map;Ljava/lang/Object;Ljava/util/Map;)V", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class ParamsWrapper {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @Nullable
+    public final Map<String, Object> f44960OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @Nullable
+    public final Object f44961OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @Nullable
+    public final Map<String, String> f44962OooO0OO;
+
+    public ParamsWrapper() {
+        this(null, null, null);
+    }
+
+    @NotNull
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        Map<String, Object> map = this.f44960OooO00o;
+        if (map != null) {
+            sb.append("formParams:" + map + "  ");
+        }
+        Object obj = this.f44961OooO0O0;
+        if (obj != null) {
+            sb.append("json:" + obj + "  ");
+        }
+        String string = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(string, "toString(...)");
+        return string;
+    }
+
+    public ParamsWrapper(@Nullable Map<String, ? extends Object> map, @Nullable Object obj, @HeaderMap @Nullable Map<String, String> map2) {
+        this.f44960OooO00o = map;
+        this.f44961OooO0O0 = obj;
+        this.f44962OooO0OO = map2;
+    }
+}
+package com.yalla.yalla.http;
+
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+/* JADX INFO: loaded from: classes7.dex */
+public class OooOOOO {
+
+    public static class OooO00o {
+
+        /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+        public SSLSocketFactory f49674OooO00o;
+
+        /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+        public X509TrustManager f49675OooO0O0;
+    }
+
+    public static class OooO0O0 implements X509TrustManager {
+        @Override // javax.net.ssl.X509TrustManager
+        public final void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) throws CertificateException {
+        }
+
+        @Override // javax.net.ssl.X509TrustManager
+        public final void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) throws CertificateException {
+        }
+
+        @Override // javax.net.ssl.X509TrustManager
+        public final X509Certificate[] getAcceptedIssuers() {
+            return new X509Certificate[0];
+        }
+    }
+
+    public static OooO00o OooO00o() {
+        OooO00o oooO00o = new OooO00o();
+        try {
+            SSLContext sSLContext = SSLContext.getInstance("TLS");
+            OooO0O0 oooO0O0 = new OooO0O0();
+            sSLContext.init(null, new TrustManager[]{oooO0O0}, null);
+            oooO00o.f49674OooO00o = sSLContext.getSocketFactory();
+            oooO00o.f49675OooO0O0 = oooO0O0;
+            return oooO00o;
+        } catch (KeyManagementException e) {
+            throw new AssertionError(e);
+        } catch (KeyStoreException e2) {
+            throw new AssertionError(e2);
+        } catch (NoSuchAlgorithmException e3) {
+            throw new AssertionError(e3);
+        }
+    }
+}
+package p474o0o000O0;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.compose.runtime.snapshots.SnapshotStateMap;
+import androidx.lifecycle.MutableLiveData;
+import com.code.android.util.o00OOO0O;
+import com.yalla.yalla.util.log.OooOO0;
+import com.yalla.yalla.util.o000OO00;
+import kotlin.Pair;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsJVMKt;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Protocol;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import p472o0o0000o.OooOO0O;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+public final class o000oOoO implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) {
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        String strEncodedPath = request.url().encodedPath();
+        String strReplace$default = StringsKt__StringsJVMKt.replace$default(strEncodedPath, "/", "_", false, 4, (Object) null);
+        OooOO0.OooO0OO("MockInterceptor", "urlPath   " + strEncodedPath + "   " + strReplace$default);
+        if (Intrinsics.areEqual(((MutableLiveData) OooOO0O.OooO0o0().f93784OooO0O0.getValue()).getValue(), Boolean.TRUE)) {
+            SnapshotStateMap<String, Pair<String, String>> snapshotStateMap = o000OO00.f81072OooO00o;
+            if (snapshotStateMap.containsKey(strReplace$default)) {
+                try {
+                    Result.Companion companion = Result.INSTANCE;
+                    Pair<String, String> pair = snapshotStateMap.get(strReplace$default);
+                    String second = pair != null ? pair.getSecond() : null;
+                    o00OOO0O.OooO0O0("Mock Success");
+                    ResponseBody.Companion companion2 = ResponseBody.INSTANCE;
+                    Intrinsics.checkNotNull(second);
+                    return new Response.Builder().code(200).protocol(Protocol.HTTP_2).body(companion2.create(second, MediaType.INSTANCE.get("text/plain; charset=utf-8"))).message("code=200,Mock Data").request(chain.request()).receivedResponseAtMillis(System.currentTimeMillis()).build();
+                } catch (Throwable th) {
+                    Result.Companion companion3 = Result.INSTANCE;
+                    if (Result.m7828exceptionOrNullimpl(Result.m7825constructorimpl(ResultKt.createFailure(th))) != null) {
+                        return chain.proceed(request);
+                    }
+                }
+            }
+        }
+        return chain.proceed(request);
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.facebook.internal.ServerProtocol;
+import com.yalla.yalla.statistical.dev.OooO00o;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.OooO;
+import okio.OooOOO0;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 0)
+@SourceDebugExtension({"SMAP\nApiStatisticalInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiStatisticalInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiStatisticalInterceptor\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,43:1\n1#2:44\n*E\n"})
+public final class o0000 implements Interceptor {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final Charset f94093OooO00o = Charset.forName("UTF-8");
+
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws IOException {
+        Object objM7825constructorimpl;
+        String str;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        Request request = chain.request();
+        String strHeader = request.header("yl-rep");
+        Response responseProceed = chain.proceed(request);
+        long jCurrentTimeMillis2 = System.currentTimeMillis() - jCurrentTimeMillis;
+        if (responseProceed.isSuccessful() && !Intrinsics.areEqual(strHeader, ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+            return responseProceed;
+        }
+        ResponseBody responseBodyBody = responseProceed.body();
+        if (responseBodyBody == null) {
+            str = "";
+        } else {
+            Intrinsics.checkNotNull(responseBodyBody);
+            OooOOO0 oooOOO0Source = responseBodyBody.source();
+            oooOOO0Source.request(Long.MAX_VALUE);
+            try {
+                Result.Companion companion = Result.INSTANCE;
+                OooO oooOClone = oooOOO0Source.OooO00o().clone();
+                Charset charset = this.f94093OooO00o;
+                Intrinsics.checkNotNullExpressionValue(charset, "charset");
+                objM7825constructorimpl = Result.m7825constructorimpl(oooOClone.o0000oO0(charset));
+            } catch (Throwable th) {
+                Result.Companion companion2 = Result.INSTANCE;
+                objM7825constructorimpl = Result.m7825constructorimpl(ResultKt.createFailure(th));
+            }
+            if (Result.m7828exceptionOrNullimpl(objM7825constructorimpl) != null) {
+                objM7825constructorimpl = "body read fail";
+            }
+            str = (String) objM7825constructorimpl;
+        }
+        OooO00o.f75601OooO00o.OooO0OO(request.url().getUrl(), responseProceed.isSuccessful(), jCurrentTimeMillis2, str);
+        return responseProceed;
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.material3.internal.o0000O0O;
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.facebook.internal.ServerProtocol;
+import com.yalla.yalla.repository.Account;
+import com.yalla.yalla.service.OooO0O0;
+import java.util.Locale;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.StringsKt;
+import kotlin.text.StringsKt__StringsJVMKt;
+import okhttp3.FormBody;
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+import p447o0Ooo00.OooOOO0;
+import p621o0ooO0O.o000O0Oo;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+@SourceDebugExtension({"SMAP\nApiParamsInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiParamsInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiParamsInterceptor\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,123:1\n1#2:124\n*E\n"})
+public final class o00000 implements Interceptor {
+    /* JADX WARN: Code duplicated, block: B:55:0x018b  */
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) {
+        boolean z;
+        boolean z2;
+        int iOooO0o0;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        if (Intrinsics.areEqual(request.header("Custom"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+            return chain.proceed(request);
+        }
+        Request.Builder builderNewBuilder = request.newBuilder();
+        if (StringsKt__StringsJVMKt.equals(request.method(), "GET", true)) {
+            HttpUrl.Builder builderNewBuilder2 = request.url().newBuilder();
+            builderNewBuilder2.setQueryParameter("p", "2");
+            OooOOO0.f93072OooO00o.getClass();
+            builderNewBuilder2.setQueryParameter("v", String.valueOf(OooOOO0.OooO0oO()));
+            String strQueryParameter = request.url().queryParameter("userid");
+            if (strQueryParameter == null || StringsKt.isBlank(strQueryParameter)) {
+                Account account = Account.f74684OooO00o;
+                builderNewBuilder2.setQueryParameter("userid", String.valueOf(((Number) o0000O0O.OooO0OO()).longValue()));
+            }
+            String strQueryParameter2 = request.url().queryParameter("token");
+            if (strQueryParameter2 == null || StringsKt.isBlank(strQueryParameter2)) {
+                Account account2 = Account.f74684OooO00o;
+                T value = Account.OooOOoo().getValue();
+                Intrinsics.checkNotNull(value);
+                builderNewBuilder2.setQueryParameter("token", (String) value);
+            }
+            String strQueryParameter3 = request.url().queryParameter("pagesize");
+            if (strQueryParameter3 == null || StringsKt.isBlank(strQueryParameter3)) {
+                builderNewBuilder2.setQueryParameter("pagesize", "15");
+            }
+            String strQueryParameter4 = request.url().queryParameter("region");
+            if (strQueryParameter4 == null || StringsKt.isBlank(strQueryParameter4)) {
+                Account account3 = Account.f74684OooO00o;
+                Integer num = (Integer) Account.OooOOOO().getValue();
+                int iIntValue = num != null ? num.intValue() : -1;
+                if (iIntValue == -1) {
+                    iIntValue = o000O0Oo.OooO0o0();
+                }
+                builderNewBuilder2.setQueryParameter("region", String.valueOf(iIntValue));
+            }
+            builderNewBuilder2.setQueryParameter("deviceLang", Locale.getDefault().getLanguage());
+            builderNewBuilder2.setQueryParameter("smid", OooO0O0.f75449OooO00o);
+            builderNewBuilder.url(builderNewBuilder2.build());
+        } else if (StringsKt__StringsJVMKt.equals(request.method(), "POST", true)) {
+            RequestBody requestBodyBody = request.body();
+            Object[] objArr = 0;
+            Object[] objArr2 = 0;
+            MediaType mediaTypeContentType = requestBodyBody != null ? requestBodyBody.contentType() : null;
+            if (Intrinsics.areEqual(mediaTypeContentType != null ? mediaTypeContentType.type() : null, "application") && Intrinsics.areEqual(mediaTypeContentType.subtype(), "json")) {
+                Request.Builder builderAddHeader = builderNewBuilder.addHeader("p", "2");
+                OooOOO0.f93072OooO00o.getClass();
+                Request.Builder builderAddHeader2 = builderAddHeader.addHeader("v", String.valueOf(OooOOO0.OooO0oO()));
+                Account account4 = Account.f74684OooO00o;
+                Request.Builder builderAddHeader3 = builderAddHeader2.addHeader("userid", String.valueOf(((Number) o0000O0O.OooO0OO()).longValue()));
+                T value2 = Account.OooOo00().getValue();
+                Intrinsics.checkNotNull(value2);
+                Request.Builder builderAddHeader4 = builderAddHeader3.addHeader("token", (String) value2);
+                Integer num2 = (Integer) Account.OooOOOO().getValue();
+                if (num2 == null) {
+                    iOooO0o0 = o000O0Oo.OooO0o0();
+                } else {
+                    Integer num3 = num2.intValue() != -1 ? num2 : null;
+                    if (num3 != null) {
+                        iOooO0o0 = num3.intValue();
+                    } else {
+                        iOooO0o0 = o000O0Oo.OooO0o0();
+                    }
+                }
+                Request.Builder builderAddHeader5 = builderAddHeader4.addHeader("region", String.valueOf(iOooO0o0));
+                String language = Locale.getDefault().getLanguage();
+                Intrinsics.checkNotNullExpressionValue(language, "getLanguage(...)");
+                builderAddHeader5.addHeader("deviceLang", language).addHeader("smid", OooO0O0.f75449OooO00o);
+            } else {
+                FormBody.Builder builder = new FormBody.Builder(objArr2 == true ? 1 : 0, 1, objArr == true ? 1 : 0);
+                boolean z3 = false;
+                if (request.body() instanceof FormBody) {
+                    RequestBody requestBodyBody2 = request.body();
+                    Intrinsics.checkNotNull(requestBodyBody2, "null cannot be cast to non-null type okhttp3.FormBody");
+                    FormBody formBody = (FormBody) requestBodyBody2;
+                    int i = 0;
+                    boolean z4 = false;
+                    z2 = false;
+                    for (int size = formBody.size(); i < size; size = size) {
+                        String strName = formBody.name(i);
+                        if (Intrinsics.areEqual(strName, "region")) {
+                            z3 = true;
+                        }
+                        if (Intrinsics.areEqual(strName, "userid")) {
+                            z4 = true;
+                        }
+                        if (Intrinsics.areEqual(strName, "token")) {
+                            z2 = true;
+                        }
+                        builder.add(strName, formBody.value(i));
+                        i++;
+                    }
+                    z = z3;
+                    z3 = z4;
+                } else {
+                    z = false;
+                    z2 = false;
+                }
+                builder.add("p", "2");
+                OooOOO0.f93072OooO00o.getClass();
+                builder.add("v", String.valueOf(OooOOO0.OooO0oO()));
+                if (!z3) {
+                    Account account5 = Account.f74684OooO00o;
+                    builder.add("userid", String.valueOf(((Number) o0000O0O.OooO0OO()).longValue()));
+                }
+                if (!z2) {
+                    Account account6 = Account.f74684OooO00o;
+                    T value3 = Account.OooOOoo().getValue();
+                    Intrinsics.checkNotNull(value3);
+                    builder.add("token", (String) value3);
+                }
+                if (!z) {
+                    Account account7 = Account.f74684OooO00o;
+                    Integer num4 = (Integer) Account.OooOOOO().getValue();
+                    int iIntValue2 = num4 != null ? num4.intValue() : -1;
+                    if (iIntValue2 == -1) {
+                        iIntValue2 = o000O0Oo.OooO0o0();
+                    }
+                    builder.add("region", String.valueOf(iIntValue2));
+                }
+                String language2 = Locale.getDefault().getLanguage();
+                Intrinsics.checkNotNullExpressionValue(language2, "getLanguage(...)");
+                builder.add("deviceLang", language2);
+                builder.add("smid", OooO0O0.f75449OooO00o);
+                builderNewBuilder.post(builder.build());
+            }
+        }
+        return chain.proceed(builderNewBuilder.build());
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.alibaba.sdk.android.oss.signer.SignParameters;
+import com.code.android.util.o00OO000;
+import com.code.android.util.oo0o0Oo;
+import com.common.support.crypto.AESKt;
+import com.common.support.crypto.Base64ExtensionsKt;
+import com.common.support.crypto.HashKt;
+import com.common.support.crypto.RSAKt;
+import com.common.support.zeus.Zeus;
+import com.common.support.zeus.ZeusEntity;
+import com.facebook.devicerequests.internal.DeviceRequestsHelper;
+import com.facebook.internal.ServerProtocol;
+import com.yalla.yalla.common.Oooo000;
+import com.yalla.yalla.util.OooO00o;
+import com.yalla.yalla.util.o00Ooo;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Locale;
+import java.util.Map;
+import kotlin.Pair;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.Charsets;
+import kotlin.text.StringsKt__StringsJVMKt;
+import okhttp3.FormBody;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+import p037OoooOOO.o000OO00;
+import p336o0OO0ooO.o0000O0O;
+import p447o0Ooo00.OooO;
+import p447o0Ooo00.OooOOO0;
+import p447o0Ooo00.OooOo00;
+import p471o0o000.OooOo;
+import p472o0o0000o.OooOO0O;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+@SourceDebugExtension({"SMAP\nApiHeaderInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiHeaderInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiHeaderInterceptor\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,171:1\n216#2:172\n217#2:174\n1#3:173\n1869#4,2:175\n1869#4,2:177\n1011#4,2:179\n*S KotlinDebug\n*F\n+ 1 ApiHeaderInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiHeaderInterceptor\n*L\n65#1:172\n65#1:174\n89#1:175,2\n101#1:177,2\n157#1:179,2\n*E\n"})
+public final class o000000 implements Interceptor {
+    /* JADX WARN: Code duplicated, block: B:110:0x01f7 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:111:0x034f A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:114:0x031c A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:116:0x034c A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:51:0x01a8  */
+    /* JADX WARN: Code duplicated, block: B:53:0x01ba  */
+    /* JADX WARN: Code duplicated, block: B:56:0x01ce  */
+    /* JADX WARN: Code duplicated, block: B:58:0x01f2  */
+    /* JADX WARN: Code duplicated, block: B:63:0x029d  */
+    /* JADX WARN: Code duplicated, block: B:66:0x02b4  */
+    /* JADX WARN: Code duplicated, block: B:74:0x02d4 A[Catch: all -> 0x02d2, TryCatch #0 {all -> 0x02d2, blocks: (B:67:0x02b9, B:69:0x02bf, B:75:0x02e4, B:74:0x02d4), top: B:101:0x02b9 }] */
+    /* JADX WARN: Code duplicated, block: B:80:0x02f9  */
+    /* JADX WARN: Code duplicated, block: B:83:0x0306  */
+    /* JADX WARN: Code duplicated, block: B:85:0x030a  */
+    /* JADX WARN: Code duplicated, block: B:87:0x0310  */
+    /* JADX WARN: Code duplicated, block: B:90:0x0322  */
+    /* JADX WARN: Code duplicated, block: B:93:0x0336  */
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) {
+        Request request;
+        String string;
+        ZeusEntity zeusEntityOooO0O0;
+        Iterator<Pair<? extends String, ? extends String>> it;
+        Pair<? extends String, ? extends String> next;
+        Object objM7825constructorimpl;
+        Throwable thM7828exceptionOrNullimpl;
+        String str;
+        ZeusEntity zeusEntitySignWithHmac$default;
+        ArrayList arrayList;
+        StringBuilder sb;
+        int size;
+        int i;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request2 = chain.request();
+        if (Intrinsics.areEqual(request2.header("Custom"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+            return chain.proceed(request2);
+        }
+        Request.Builder builderNewBuilder = request2.newBuilder();
+        String strOooO0OO = o00Ooo.OooO0OO();
+        o00Ooo.f81116OooO00o.getClass();
+        String string2 = "";
+        String strReplace$default = StringsKt__StringsJVMKt.replace$default(RSAKt.rsaEncrypt(strOooO0OO, o00Ooo.OooO0O0("K1")), SignParameters.NEW_LINE, "", false, 4, (Object) null);
+        String strOooO0OO2 = o00Ooo.OooO0OO();
+        long jCurrentTimeMillis = OooO.f93060OooO00o + (System.currentTimeMillis() / ((long) 1000));
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        if (!StringsKt__StringsJVMKt.equals(request2.method(), "GET", true)) {
+            if (StringsKt__StringsJVMKt.equals(request2.method(), "POST", true)) {
+                RequestBody requestBodyBody = request2.body();
+                MediaType mediaTypeContentType = requestBodyBody != null ? requestBodyBody.contentType() : null;
+                if (Intrinsics.areEqual(mediaTypeContentType != null ? mediaTypeContentType.type() : null, "application") && Intrinsics.areEqual(mediaTypeContentType.subtype(), "json")) {
+                    LinkedHashMap linkedHashMap2 = new LinkedHashMap();
+                    for (String str2 : CollectionsKt.listOf((Object[]) new String[]{"p", "v", "region", "userid", "token", "deviceLang", "smid"})) {
+                        String strHeader = request2.header(str2);
+                        if (strHeader != null) {
+                            String lowerCase = str2.toLowerCase(Locale.ROOT);
+                            Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
+                            linkedHashMap2.put(lowerCase, strHeader);
+                        }
+                    }
+                    linkedHashMap.putAll(linkedHashMap2);
+                    RequestBody requestBodyBody2 = request2.body();
+                    if (requestBodyBody2 != null) {
+                        okio.OooO oooO = new okio.OooO();
+                        try {
+                            requestBodyBody2.writeTo(oooO);
+                            String strOooooO0 = oooO.OooooO0();
+                            linkedHashMap.put("biz_body", HashKt.md5(strOooooO0));
+                            OooOo oooOoOooO0oo = OooOO0O.OooO0oo();
+                            oooOoOooO0oo.getClass();
+                            request = request2;
+                            builderNewBuilder.addHeader("flags", oooOoOooO0oo.OooO0oO("imId", o00OO000.OooO0OO(Oooo000.single_imId)));
+                            String strMethod = request.method();
+                            RequestBody.Companion companion = RequestBody.INSTANCE;
+                            byte[] bytes = strOooooO0.getBytes(Charsets.UTF_8);
+                            Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                            builderNewBuilder.method(strMethod, RequestBody.Companion.create$default(companion, AESKt.aesEncrypt$default(bytes, OooOO0O.OooO0oo().f93824OooO0O0, OooOO0O.OooO0oo().f93825OooO0OO, (String) null, 4, (Object) null), mediaTypeContentType, 0, 0, 6, (Object) null));
+                            oooO.OooO0O0();
+                        } catch (Throwable th) {
+                            oooO.OooO0O0();
+                            throw th;
+                        }
+                    }
+                } else {
+                    request = request2;
+                    RequestBody requestBodyBody3 = request.body();
+                    if (requestBodyBody3 instanceof FormBody) {
+                        FormBody formBody = (FormBody) requestBodyBody3;
+                        int size2 = formBody.size();
+                        for (int i2 = 0; i2 < size2; i2++) {
+                            linkedHashMap.put(formBody.name(i2), formBody.value(i2));
+                        }
+                    }
+                }
+            }
+            if (!oo0o0Oo.OooO00o(linkedHashMap)) {
+                arrayList = new ArrayList(linkedHashMap.entrySet());
+                if (arrayList.size() > 1) {
+                    CollectionsKt.sortWith(arrayList, new o000OOo());
+                }
+                sb = new StringBuilder();
+                size = arrayList.size();
+                for (i = 0; i < size; i++) {
+                    Map.Entry entry = (Map.Entry) arrayList.get(i);
+                    String str3 = (String) entry.getKey();
+                    String str4 = (String) entry.getValue();
+                    sb.append(str3);
+                    sb.append("=");
+                    sb.append(str4);
+                    if (i != arrayList.size() - 1) {
+                        sb.append("&");
+                    }
+                }
+                string2 = sb.toString();
+                Intrinsics.checkNotNullExpressionValue(string2, "toString(...)");
+            }
+            String strMd5 = HashKt.md5(string2);
+            String strOooO0O0 = OooOo00.OooO0O0();
+            OooOOO0.f93072OooO00o.getClass();
+            int iOooO0oO = OooOOO0.OooO0oO();
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(strMd5);
+            sb2.append("|");
+            sb2.append(strOooO0O0);
+            sb2.append("|");
+            o000OO00.OooO00o(jCurrentTimeMillis, "|", strOooO0OO2, sb2);
+            sb2.append("|");
+            sb2.append(iOooO0oO);
+            string = sb2.toString();
+            builderNewBuilder.addHeader("Connection", "close").addHeader("bf", strReplace$default).addHeader("timestamp", String.valueOf(jCurrentTimeMillis)).addHeader("nonce", strOooO0OO2).addHeader(DeviceRequestsHelper.DEVICE_INFO_DEVICE, OooOo00.OooO0O0()).addHeader("sign", Base64ExtensionsKt.base64EncodeToString(AESKt.aesEncrypt$default(string, strOooO0OO, OooO00o.f80879OooO00o, (String) null, 4, (Object) null))).addHeader("appver", OooOOO0.OooO0oo()).addHeader("x-sim-country", OooOo00.OooO0o()).addHeader("x-device-country", OooOo00.OooO00o()).addHeader("x-net-operator", OooOo00.OooO0OO());
+            if (OooOOO0.OooOO0()) {
+                builderNewBuilder.addHeader("Server-Env", "pre");
+            }
+            if (Intrinsics.areEqual(request.headers().get("atd_fast_sign"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+                Intrinsics.checkNotNullParameter(string, "string");
+                try {
+                    Result.Companion companion2 = Result.INSTANCE;
+                    str = OooOOO0.f93091OooOo00;
+                    if (str != null || (zeusEntitySignWithHmac$default = Zeus.signWithHmacAndEnableShield$default(Zeus.INSTANCE, string, str, (String) null, (Long) null, (Boolean) null, 28, (Object) null)) == null) {
+                        zeusEntitySignWithHmac$default = Zeus.signWithHmac$default(Zeus.INSTANCE, string, (String) null, (Long) null, (Boolean) null, 14, (Object) null);
+                    }
+                    objM7825constructorimpl = Result.m7825constructorimpl(zeusEntitySignWithHmac$default);
+                } catch (Throwable th2) {
+                    Result.Companion companion3 = Result.INSTANCE;
+                    objM7825constructorimpl = Result.m7825constructorimpl(ResultKt.createFailure(th2));
+                }
+                thM7828exceptionOrNullimpl = Result.m7828exceptionOrNullimpl(objM7825constructorimpl);
+                if (thM7828exceptionOrNullimpl != null) {
+                    o0000O0O.OooO00o().OooO0OO(thM7828exceptionOrNullimpl);
+                }
+                if (Result.m7831isFailureimpl(objM7825constructorimpl)) {
+                    objM7825constructorimpl = null;
+                }
+                zeusEntityOooO0O0 = (ZeusEntity) objM7825constructorimpl;
+            } else {
+                zeusEntityOooO0O0 = OooOOO0.OooO0O0(string);
+            }
+            if (zeusEntityOooO0O0 != null) {
+                for (Map.Entry<String, String> entry2 : zeusEntityOooO0O0.headers().entrySet()) {
+                    it = request.headers().iterator();
+                    do {
+                        if (it.hasNext()) {
+                            next = null;
+                            break;
+                        }
+                        next = it.next();
+                    } while (!Intrinsics.areEqual(next.getFirst(), entry2.getKey()));
+                    if (next == null) {
+                        builderNewBuilder.addHeader(entry2.getKey(), entry2.getValue());
+                    }
+                }
+            }
+            return chain.proceed(builderNewBuilder.build());
+        }
+        for (String str5 : request2.url().queryParameterNames()) {
+            String strQueryParameter = request2.url().queryParameter(str5);
+            if (strQueryParameter == null) {
+                strQueryParameter = "";
+            }
+            linkedHashMap.put(str5, strQueryParameter);
+        }
+        request = request2;
+        if (!oo0o0Oo.OooO00o(linkedHashMap)) {
+            arrayList = new ArrayList(linkedHashMap.entrySet());
+            if (arrayList.size() > 1) {
+                CollectionsKt.sortWith(arrayList, new o000OOo());
+            }
+            sb = new StringBuilder();
+            size = arrayList.size();
+            while (i < size) {
+                Map.Entry entry3 = (Map.Entry) arrayList.get(i);
+                String str6 = (String) entry3.getKey();
+                String str7 = (String) entry3.getValue();
+                sb.append(str6);
+                sb.append("=");
+                sb.append(str7);
+                if (i != arrayList.size() - 1) {
+                    sb.append("&");
+                }
+            }
+            string2 = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(string2, "toString(...)");
+        }
+        String strMd6 = HashKt.md5(string2);
+        String strOooO0O1 = OooOo00.OooO0O0();
+        OooOOO0.f93072OooO00o.getClass();
+        int iOooO0oO2 = OooOOO0.OooO0oO();
+        StringBuilder sb3 = new StringBuilder();
+        sb3.append(strMd6);
+        sb3.append("|");
+        sb3.append(strOooO0O1);
+        sb3.append("|");
+        o000OO00.OooO00o(jCurrentTimeMillis, "|", strOooO0OO2, sb3);
+        sb3.append("|");
+        sb3.append(iOooO0oO2);
+        string = sb3.toString();
+        builderNewBuilder.addHeader("Connection", "close").addHeader("bf", strReplace$default).addHeader("timestamp", String.valueOf(jCurrentTimeMillis)).addHeader("nonce", strOooO0OO2).addHeader(DeviceRequestsHelper.DEVICE_INFO_DEVICE, OooOo00.OooO0O0()).addHeader("sign", Base64ExtensionsKt.base64EncodeToString(AESKt.aesEncrypt$default(string, strOooO0OO, OooO00o.f80879OooO00o, (String) null, 4, (Object) null))).addHeader("appver", OooOOO0.OooO0oo()).addHeader("x-sim-country", OooOo00.OooO0o()).addHeader("x-device-country", OooOo00.OooO00o()).addHeader("x-net-operator", OooOo00.OooO0OO());
+        if (OooOOO0.OooOO0()) {
+            builderNewBuilder.addHeader("Server-Env", "pre");
+        }
+        if (Intrinsics.areEqual(request.headers().get("atd_fast_sign"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+            Intrinsics.checkNotNullParameter(string, "string");
+            Result.Companion companion4 = Result.INSTANCE;
+            str = OooOOO0.f93091OooOo00;
+            if (str != null) {
+                zeusEntitySignWithHmac$default = Zeus.signWithHmac$default(Zeus.INSTANCE, string, (String) null, (Long) null, (Boolean) null, 14, (Object) null);
+            } else {
+                zeusEntitySignWithHmac$default = Zeus.signWithHmac$default(Zeus.INSTANCE, string, (String) null, (Long) null, (Boolean) null, 14, (Object) null);
+            }
+            objM7825constructorimpl = Result.m7825constructorimpl(zeusEntitySignWithHmac$default);
+            thM7828exceptionOrNullimpl = Result.m7828exceptionOrNullimpl(objM7825constructorimpl);
+            if (thM7828exceptionOrNullimpl != null) {
+                o0000O0O.OooO00o().OooO0OO(thM7828exceptionOrNullimpl);
+            }
+            if (Result.m7831isFailureimpl(objM7825constructorimpl)) {
+                objM7825constructorimpl = null;
+            }
+            zeusEntityOooO0O0 = (ZeusEntity) objM7825constructorimpl;
+        } else {
+            zeusEntityOooO0O0 = OooOOO0.OooO0O0(string);
+        }
+        if (zeusEntityOooO0O0 != null) {
+            while (r0.hasNext()) {
+                it = request.headers().iterator();
+                do {
+                    if (it.hasNext()) {
+                        next = null;
+                        break;
+                    }
+                    next = it.next();
+                } while (!Intrinsics.areEqual(next.getFirst(), entry2.getKey()));
+                if (next == null) {
+                    builderNewBuilder.addHeader(entry2.getKey(), entry2.getValue());
+                }
+            }
+        }
+        return chain.proceed(builderNewBuilder.build());
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.alibaba.sdk.android.oss.signer.SignParameters;
+import com.code.android.json.JsonUtil;
+import com.yalla.yalla.util.log.OooOO0;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import kotlin.Unit;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.Regex;
+import kotlin.text.StringsKt__StringsKt;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.OooO;
+import okio.OooOOO0;
+import org.jetbrains.annotations.NotNull;
+import p014OooOo0O.Oooo000;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 0)
+@SourceDebugExtension({"SMAP\nApiLogInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiLogInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiLogInterceptor\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,104:1\n1869#2,2:105\n*S KotlinDebug\n*F\n+ 1 ApiLogInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiLogInterceptor\n*L\n65#1:105,2\n*E\n"})
+public final class o000000O implements Interceptor {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final Charset f94094OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NotNull
+    public final String f94095OooO0O0;
+
+    public o000000O() {
+        Intrinsics.checkNotNullParameter("WebApi", "logTag");
+        this.f94094OooO00o = Charset.forName("UTF-8");
+        String property = System.getProperty("line.separator");
+        this.f94095OooO0O0 = property == null ? SignParameters.NEW_LINE : property;
+    }
+
+    public final String OooO00o(ResponseBody responseBody) throws IOException {
+        if (responseBody == null) {
+            return "";
+        }
+        Intrinsics.checkNotNull(responseBody);
+        OooOOO0 oooOOO0Source = responseBody.source();
+        oooOOO0Source.request(Long.MAX_VALUE);
+        OooO oooOClone = oooOOO0Source.OooO00o().clone();
+        Charset charset = this.f94094OooO00o;
+        Intrinsics.checkNotNullExpressionValue(charset, "charset");
+        return oooOClone.o0000oO0(charset);
+    }
+
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws IOException {
+        String strOooO0O0;
+        MediaType mediaTypeContentType;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        if (p447o0Ooo00.OooOOO0.OooOO0O()) {
+            return chain.proceed(chain.request());
+        }
+        Request request = chain.request();
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        StringBuilder sb = new StringBuilder(" WebAPI ->\n╔═发起请求════════════════════════════════════════════════════════════════════════════\n");
+        sb.append("  URL: " + request.url() + SignParameters.NEW_LINE);
+        sb.append("  Method: " + request.method() + SignParameters.NEW_LINE);
+        if (request.body() != null) {
+            try {
+                Request requestBuild = request.newBuilder().build();
+                OooO oooO = new OooO();
+                if (requestBuild.body() == null) {
+                    strOooO0O0 = "";
+                } else {
+                    RequestBody requestBodyBody = requestBuild.body();
+                    if (requestBodyBody != null) {
+                        requestBodyBody.writeTo(oooO);
+                    }
+                    JsonUtil jsonUtil = JsonUtil.f27146OooO00o;
+                    String strOooooO0 = oooO.OooooO0();
+                    jsonUtil.getClass();
+                    strOooO0O0 = JsonUtil.OooO00o(strOooooO0);
+                }
+            } catch (IOException e) {
+                strOooO0O0 = Oooo000.OooO0O0("{\"err\": \"", e.getMessage(), "\"}");
+            }
+            sb.append("  RequestBody: " + strOooO0O0 + SignParameters.NEW_LINE);
+        }
+        sb.append("╚═══════════════════════════════════════════════════════════════════════════════════");
+        String string = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(string, "toString(...)");
+        OooOO0.OooO0OO("WebApi", string);
+        Response responseProceed = chain.proceed(request);
+        long jCurrentTimeMillis2 = System.currentTimeMillis() - jCurrentTimeMillis;
+        StringBuilder sb2 = new StringBuilder(" WebAPI ->\n╔═接收响应═══════════════════════════════════════════════════════════════════════════\n");
+        sb2.append("  URL: " + request.url() + SignParameters.NEW_LINE);
+        sb2.append("  is success : " + responseProceed.isSuccessful() + " - Received in: " + jCurrentTimeMillis2 + "ms\n");
+        int iCode = responseProceed.code();
+        StringBuilder sb3 = new StringBuilder("  Status Code: ");
+        sb3.append(iCode);
+        sb3.append(SignParameters.NEW_LINE);
+        sb2.append(sb3.toString());
+        if (responseProceed.isSuccessful()) {
+            sb2.append("  Body:\n");
+            ResponseBody responseBodyBody = responseProceed.body();
+            String strSubtype = (responseBodyBody == null || (mediaTypeContentType = responseBodyBody.contentType()) == null) ? null : mediaTypeContentType.subtype();
+            if (strSubtype == null || !(StringsKt__StringsKt.contains$default(strSubtype, "json", false, 2, (Object) null) || StringsKt__StringsKt.contains$default(strSubtype, "xml", false, 2, (Object) null) || StringsKt__StringsKt.contains$default(strSubtype, "plain", false, 2, (Object) null) || StringsKt__StringsKt.contains$default(strSubtype, "html", false, 2, (Object) null))) {
+                sb2.append("  body is file");
+            } else {
+                String strOooO00o = OooO00o(responseProceed.body());
+                JsonUtil.f27146OooO00o.getClass();
+                Iterator<T> it = new Regex(this.f94095OooO0O0).split(JsonUtil.OooO00o(strOooO00o), 0).iterator();
+                while (it.hasNext()) {
+                    sb2.append("  " + ((String) it.next()) + SignParameters.NEW_LINE);
+                }
+                Unit unit = Unit.INSTANCE;
+            }
+        } else {
+            sb2.append("  error:" + OooO00o(responseProceed.body()) + SignParameters.NEW_LINE);
+        }
+        sb2.append("╚═══════════════════════════════════════════════════════════════════════════════════");
+        String string2 = sb2.toString();
+        Intrinsics.checkNotNullExpressionValue(string2, "toString(...)");
+        OooOO0.OooO0OO("WebApi", string2);
+        return responseProceed;
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.common.support.crypto.AESKt;
+import com.facebook.internal.ServerProtocol;
+import com.facebook.share.internal.ShareConstants;
+import com.yalla.yalla.api.result.ApiError;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.Charsets;
+import kotlin.text.StringsKt__StringsJVMKt;
+import kotlin.text.StringsKt__StringsKt;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
+import p247o00oo0oO.o000OO0O;
+import p472o0o0000o.OooOO0O;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+public final class o00000O implements Interceptor {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public static final Charset f94096OooO00o = Charsets.UTF_8;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NotNull
+    public static final MediaType f94097OooO0O0 = MediaType.INSTANCE.get("text/plain; charset=utf-8");
+
+    public static final class OooO00o {
+        @NotNull
+        public static String OooO00o(@NotNull String string, boolean z) throws JSONException {
+            Intrinsics.checkNotNullParameter(string, "string");
+            JSONObject jSONObject = new JSONObject(string);
+            JSONObject jSONObject2 = new JSONObject();
+            if (!jSONObject.has("page")) {
+                Iterator<String> itKeys = jSONObject.keys();
+                while (itKeys.hasNext()) {
+                    String next = itKeys.next();
+                    if (StringsKt__StringsJVMKt.equals(next, "pageindex", true) || StringsKt__StringsJVMKt.equals(next, "index", true) || StringsKt__StringsJVMKt.equals(next, "pagesize", true) || StringsKt__StringsJVMKt.equals(next, "datasort", true)) {
+                        jSONObject2.put(next, jSONObject.get(next));
+                        itKeys.remove();
+                    }
+                }
+            }
+            if (jSONObject2.length() > 0) {
+                jSONObject.put("page", jSONObject2);
+            }
+            if (!Intrinsics.areEqual(jSONObject.get("code"), "1000") && !Intrinsics.areEqual(jSONObject.get("code"), (Object) 1000)) {
+                JSONObject jSONObject3 = new JSONObject();
+                if (jSONObject.has("data")) {
+                    jSONObject3.put("data", jSONObject.get("data"));
+                    jSONObject.remove("data");
+                }
+                if (jSONObject.has(ShareConstants.WEB_DIALOG_PARAM_MESSAGE)) {
+                    jSONObject3.put(ShareConstants.WEB_DIALOG_PARAM_MESSAGE, jSONObject.get(ShareConstants.WEB_DIALOG_PARAM_MESSAGE));
+                }
+                Iterator<String> itKeys2 = jSONObject.keys();
+                while (itKeys2.hasNext()) {
+                    String next2 = itKeys2.next();
+                    if (!Intrinsics.areEqual(next2, "code") && !Intrinsics.areEqual(next2, "page") && !Intrinsics.areEqual(next2, "errMessage")) {
+                        jSONObject3.put(next2, jSONObject.get(next2));
+                        itKeys2.remove();
+                    }
+                }
+                if (jSONObject3.length() > 0) {
+                    jSONObject.put(ShareConstants.WEB_DIALOG_PARAM_MESSAGE, "\"" + jSONObject3 + "\"");
+                }
+            } else if (z) {
+                JSONObject jSONObject4 = new JSONObject();
+                Iterator<String> itKeys3 = jSONObject.keys();
+                while (itKeys3.hasNext()) {
+                    String next3 = itKeys3.next();
+                    if (!Intrinsics.areEqual(next3, "code") && !Intrinsics.areEqual(next3, ShareConstants.WEB_DIALOG_PARAM_MESSAGE) && !Intrinsics.areEqual(next3, "page")) {
+                        jSONObject4.put(next3, jSONObject.get(next3));
+                        itKeys3.remove();
+                    }
+                }
+                if (jSONObject4.length() > 0) {
+                    jSONObject.put("data", jSONObject4);
+                }
+            }
+            String string2 = jSONObject.toString();
+            Intrinsics.checkNotNullExpressionValue(string2, "toString(...)");
+            return string2;
+        }
+    }
+
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws IOException {
+        ResponseBody responseBodyBody;
+        MediaType mediaTypeContentType;
+        String strSubtype;
+        String strString;
+        RequestBody requestBodyBody;
+        MediaType mediaTypeContentType2;
+        String strHeader$default;
+        byte[] bArrBytes;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        Response responseProceed = chain.proceed(request);
+        if (Intrinsics.areEqual(request.header("Custom"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE) || (responseBodyBody = responseProceed.body()) == null || (mediaTypeContentType = responseBodyBody.contentType()) == null || (strSubtype = mediaTypeContentType.subtype()) == null) {
+            return responseProceed;
+        }
+        if (!StringsKt__StringsKt.contains$default(strSubtype, "json", false, 2, (Object) null) && !StringsKt__StringsKt.contains$default(strSubtype, "xml", false, 2, (Object) null) && !StringsKt__StringsKt.contains$default(strSubtype, "plain", false, 2, (Object) null) && !StringsKt__StringsKt.contains$default(strSubtype, "html", false, 2, (Object) null)) {
+            return responseProceed;
+        }
+        String strHeader = request.header("AbortDataCheck");
+        if (strHeader != null && Boolean.parseBoolean(strHeader)) {
+            return responseProceed;
+        }
+        boolean zEquals = StringsKt__StringsJVMKt.equals(request.method(), "POST", true);
+        MediaType mediaType = f94097OooO0O0;
+        if (!zEquals || (requestBodyBody = request.body()) == null || (mediaTypeContentType2 = requestBodyBody.contentType()) == null || !Intrinsics.areEqual(mediaTypeContentType2.type(), "application") || !Intrinsics.areEqual(mediaTypeContentType2.subtype(), "json") || (strHeader$default = Response.header$default(responseProceed, "flags", null, 2, null)) == null || strHeader$default.length() == 0) {
+            ResponseBody responseBodyBody2 = responseProceed.body();
+            if (responseBodyBody2 == null || (strString = responseBodyBody2.string()) == null) {
+                strString = "";
+            }
+            String strHeader2 = request.header("Abnormal");
+            return responseProceed.newBuilder().body(ResponseBody.INSTANCE.create(OooO00o.OooO00o(strString, strHeader2 != null ? Boolean.parseBoolean(strHeader2) : false), mediaType)).build();
+        }
+        try {
+            ResponseBody responseBodyBody3 = responseProceed.body();
+            if (responseBodyBody3 == null || (bArrBytes = responseBodyBody3.bytes()) == null) {
+                bArrBytes = new byte[0];
+            }
+            String str = new String(AESKt.aesDecrypt$default(bArrBytes, OooOO0O.OooO0oo().f93824OooO0O0, OooOO0O.OooO0oo().f93825OooO0OO, (String) null, 4, (Object) null), f94096OooO00o);
+            String strHeader3 = request.header("Abnormal");
+            return responseProceed.newBuilder().body(ResponseBody.INSTANCE.create(OooO00o.OooO00o(str, strHeader3 != null ? Boolean.parseBoolean(strHeader3) : false), mediaType)).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return responseProceed.newBuilder().body(ResponseBody.INSTANCE.create(o000OO0O.OooO00o(new ApiError(1, "data error", null, null, 12, null)), mediaType)).build();
+        }
+    }
+}
+package p483o0o00O0O;
+
+import android.os.SystemClock;
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.common.support.apm.otlp.biz.entity.ErrorCode;
+import com.yalla.yalla.app.startup.SailfishApm;
+import java.io.IOException;
+import kotlin.jvm.internal.Intrinsics;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+public final class o00000O0 implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws IOException {
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        long jElapsedRealtime = SystemClock.elapsedRealtime();
+        Request request = chain.request();
+        String strEncodedPath = request.url().encodedPath();
+        Response responseProceed = chain.proceed(request);
+        int iElapsedRealtime = (int) (SystemClock.elapsedRealtime() - jElapsedRealtime);
+        if (responseProceed.isSuccessful()) {
+            SailfishApm.OooO0OO(iElapsedRealtime, ErrorCode.CODE_SUCCESS.INSTANCE, strEncodedPath, request.url().host());
+            return responseProceed;
+        }
+        int iCode = responseProceed.code();
+        SailfishApm.OooO0OO(iElapsedRealtime, (iCode == 403 || iCode == 451) ? ErrorCode.CODE_ERROR1.INSTANCE : ErrorCode.CODE_ERROR20.INSTANCE, strEncodedPath, request.url().host());
+        return responseProceed;
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.code.android.util.o00O000o;
+import com.code.android.util.o0o0Oo;
+import com.common.support.networkstate.NetworkStateUtil;
+import com.facebook.internal.ServerProtocol;
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.domain.OooOo00;
+import com.yalla.yalla.util.log.OooOO0;
+import java.io.IOException;
+import java.util.List;
+import kotlin.jvm.internal.Intrinsics;
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+import p037OoooOOO.o000OOo0;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+public final class o00000OO implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws IOException {
+        int iCode;
+        String strHeader;
+        String strHeader2;
+        DomainType domainTypeOooO0OO;
+        String str;
+        int i;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        Response responseProceed = chain.proceed(request);
+        if (!Intrinsics.areEqual(request.header("Custom"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE) && (iCode = responseProceed.code()) != 400 && iCode != 401 && iCode != 500 && iCode != 505 && iCode < 600 && !responseProceed.isSuccessful() && NetworkStateUtil.INSTANCE.isConnected(o0o0Oo.OooO00o()) && !Intrinsics.areEqual(Response.header$default(responseProceed, "domain_head_is_canceled", null, 2, null), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE) && (strHeader = chain.request().header("domain_head_tag")) != null && (strHeader2 = chain.request().header("domain_head_index")) != null && (domainTypeOooO0OO = OooOo00.OooO0OO(strHeader)) != null) {
+            int iOooO00o = OooOo00.OooO00o(domainTypeOooO0OO);
+            if (o00O000o.OooO0o0(strHeader2) == iOooO00o) {
+                i = iOooO00o + 1;
+                str = "域名失败切换";
+                if (i >= OooOo00.OooO0O0(domainTypeOooO0OO).size()) {
+                    i = 0;
+                }
+            } else {
+                str = "域名已经被其它接口切了，直接用最新的";
+                i = iOooO00o;
+            }
+            HttpUrl httpUrlUrl = request.url();
+            List listOooO0O0 = OooOo00.OooO0O0(domainTypeOooO0OO);
+            StringBuilder sb = new StringBuilder("域名切换 - tag = ");
+            sb.append(str);
+            sb.append("\noriginalUrl= ");
+            sb.append(httpUrlUrl);
+            sb.append("\ndomainTag= ");
+            o000OOo0.OooO0OO(sb, strHeader, "\ndomainIndex= ", strHeader2, "\ncurrentIndex= ");
+            sb.append(iOooO00o);
+            sb.append("\ndomainType= ");
+            sb.append(domainTypeOooO0OO);
+            sb.append("\nnextIndex= ");
+            sb.append(i);
+            sb.append("\ngetDomainList= ");
+            sb.append(listOooO0O0);
+            OooOO0.OooO0O0(sb.toString());
+            OooOo00.OooO0o0(domainTypeOooO0OO, i);
+        }
+        return responseProceed;
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.facebook.internal.ServerProtocol;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt__StringsKt;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.OooO;
+import okio.OooOOO0;
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 0)
+public final class o00oO0o implements Interceptor {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final Charset f94099OooO00o = Charset.forName("UTF-8");
+
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws JSONException, IOException {
+        String strHeader;
+        String strO0000oO0;
+        MediaType mediaTypeContentType;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        Response responseProceed = chain.proceed(request);
+        if (Intrinsics.areEqual(request.header("Custom"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+            return responseProceed;
+        }
+        ResponseBody responseBodyBody = responseProceed.body();
+        String strSubtype = (responseBodyBody == null || (mediaTypeContentType = responseBodyBody.contentType()) == null) ? null : mediaTypeContentType.subtype();
+        if (strSubtype != null && ((StringsKt__StringsKt.contains$default(strSubtype, "json", false, 2, (Object) null) || StringsKt__StringsKt.contains$default(strSubtype, "xml", false, 2, (Object) null) || StringsKt__StringsKt.contains$default(strSubtype, "plain", false, 2, (Object) null) || StringsKt__StringsKt.contains$default(strSubtype, "html", false, 2, (Object) null)) && ((strHeader = request.header("AbortDataCheck")) == null || !Boolean.parseBoolean(strHeader)))) {
+            ResponseBody responseBodyBody2 = responseProceed.body();
+            if (responseBodyBody2 == null) {
+                strO0000oO0 = "";
+            } else {
+                Intrinsics.checkNotNull(responseBodyBody2);
+                OooOOO0 oooOOO0Source = responseBodyBody2.source();
+                oooOOO0Source.request(Long.MAX_VALUE);
+                OooO oooOClone = oooOOO0Source.OooO00o().clone();
+                Charset charset = this.f94099OooO00o;
+                Intrinsics.checkNotNullExpressionValue(charset, "charset");
+                strO0000oO0 = oooOClone.o0000oO0(charset);
+            }
+            JSONObject jSONObject = new JSONObject(strO0000oO0);
+            if (jSONObject.has("code")) {
+                Object obj = jSONObject.get("code");
+                if (Intrinsics.areEqual(obj, "101") || Intrinsics.areEqual(obj, "3000")) {
+                    request.url().getUrl();
+                    int size = request.headers().size();
+                    for (int i = 0; i < size; i++) {
+                        request.headers().name(i);
+                        request.headers().value(i);
+                    }
+                    "\nResponse = ".concat(strO0000oO0);
+                }
+            }
+        }
+        return responseProceed;
+    }
+}
+package p483o0o00O0O;
+
+import android.os.SystemClock;
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.code.android.json.JsonUtil;
+import com.code.android.util.o000000;
+import com.common.support.apm.otlp.biz.entity.ErrorCode;
+import com.yalla.yalla.api.old.o000oOoO;
+import com.yalla.yalla.api.result.ApiError;
+import com.yalla.yalla.app.startup.SailfishApm;
+import java.io.IOException;
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
+import javax.net.ssl.SSLException;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Protocol;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okhttp3.internal.connection.RouteException;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+@SourceDebugExtension({"SMAP\nApiExceptionInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiExceptionInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiExceptionInterceptor\n+ 2 JsonUtil.kt\ncom/code/android/json/JsonUtil\n*L\n1#1,122:1\n189#2:123\n*S KotlinDebug\n*F\n+ 1 ApiExceptionInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiExceptionInterceptor\n*L\n61#1:123\n*E\n"})
+public final class o0OOO0o implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) {
+        String message;
+        ErrorCode errorCode;
+        String str;
+        Response responseProceed;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        ErrorCode.CODE_SUCCESS code_success = ErrorCode.CODE_SUCCESS.INSTANCE;
+        long jElapsedRealtime = SystemClock.elapsedRealtime();
+        boolean z = false;
+        try {
+            responseProceed = chain.proceed(chain.request());
+            str = null;
+        } catch (UnknownHostException e) {
+            message = e.getMessage();
+            if (message == null) {
+                message = "UnknownHostException";
+            }
+            str = message;
+            responseProceed = null;
+        } catch (IOException e2) {
+            if (e2 instanceof UnknownHostException) {
+                errorCode = ErrorCode.CODE_ERROR1.INSTANCE;
+            } else if (e2 instanceof ConnectException) {
+                errorCode = ErrorCode.CODE_ERROR2.INSTANCE;
+            } else {
+                errorCode = (!(e2 instanceof SocketTimeoutException) && (e2 instanceof SSLException)) ? ErrorCode.CODE_ERROR20.INSTANCE : ErrorCode.CODE_ERROR20.INSTANCE;
+            }
+            SailfishApm.OooO0OO((int) (SystemClock.elapsedRealtime() - jElapsedRealtime), errorCode, request.url().encodedPath(), request.url().host());
+            z = Intrinsics.areEqual(e2.getMessage(), "Canceled") || Intrinsics.areEqual(e2.getMessage(), "canceled");
+            message = e2.getMessage();
+            if (message == null) {
+                message = "IOException";
+            }
+            str = message;
+            responseProceed = null;
+        } catch (RouteException e3) {
+            message = e3.getMessage();
+            if (message == null) {
+                message = "RouteException";
+            }
+            str = message;
+            responseProceed = null;
+        } catch (Exception e4) {
+            message = e4.getMessage();
+            if (message == null) {
+                message = "Exception";
+            }
+            str = message;
+            responseProceed = null;
+        }
+        if (responseProceed != null && responseProceed.isSuccessful()) {
+            return responseProceed;
+        }
+        String str2 = "code=" + (responseProceed != null ? Integer.valueOf(responseProceed.code()) : null) + "," + str;
+        String strOooO0O0 = o000oOoO.OooO0O0(JsonUtil.f27146OooO00o, new ApiError(z ? 3 : 1, str2, null, null, 12, null));
+        if (strOooO0O0 == null) {
+            strOooO0O0 = "";
+        }
+        return new Response.Builder().code(1).protocol(Protocol.HTTP_2).body(ResponseBody.INSTANCE.create(strOooO0O0, MediaType.INSTANCE.get("text/plain; charset=utf-8"))).header("domain_head_is_canceled", o000000.OooOOOO(Boolean.valueOf(z))).header("real_response_code", String.valueOf(responseProceed != null ? Integer.valueOf(responseProceed.code()) : null)).message(str2).request(chain.request()).receivedResponseAtMillis(System.currentTimeMillis()).build();
+    }
+}
+package p483o0o00O0O;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.code.android.json.JsonUtil;
+import com.facebook.internal.ServerProtocol;
+import com.yalla.yalla.api.old.o000oOoO;
+import com.yalla.yalla.api.result.ApiError;
+import java.io.IOException;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import okhttp3.Interceptor;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+@SourceDebugExtension({"SMAP\nApiFailInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiFailInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiFailInterceptor\n+ 2 JsonUtil.kt\ncom/code/android/json/JsonUtil\n*L\n1#1,33:1\n189#2:34\n*S KotlinDebug\n*F\n+ 1 ApiFailInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiFailInterceptor\n*L\n29#1:34\n*E\n"})
+public final class o0Oo0oo implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) throws IOException {
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        Response responseProceed = chain.proceed(request);
+        if (responseProceed.isSuccessful() || Intrinsics.areEqual(request.header("Custom"), ServerProtocol.DIALOG_RETURN_SCOPES_TRUE)) {
+            return responseProceed;
+        }
+        String strOooO0O0 = o000oOoO.OooO0O0(JsonUtil.f27146OooO00o, new ApiError(responseProceed.code(), responseProceed.message(), null, null, 12, null));
+        if (strOooO0O0 == null) {
+            strOooO0O0 = "";
+        }
+        return responseProceed.newBuilder().code(200).body(ResponseBody.INSTANCE.create(strOooO0O0, MediaType.INSTANCE.get("text/plain; charset=utf-8"))).build();
+    }
+}
+package p483o0o00O0O;
+
+import androidx.camera.camera2.internal.o000O0;
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.yalla.yalla.domain.DomainConfig;
+import com.yalla.yalla.domain.DomainType;
+import com.yalla.yalla.domain.OooOo00;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.net.URL;
+import java.util.List;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.ranges.RangesKt;
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+import p469o0OooooO.oOO0OO;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 1)
+@SourceDebugExtension({"SMAP\nApiDomainTagReplaceInterceptor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ApiDomainTagReplaceInterceptor.kt\ncom/yalla/yalla/http/interceptor/ApiDomainTagReplaceInterceptor\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,60:1\n1#2:61\n*E\n"})
+public final class o0ooOOo implements Interceptor {
+    @Override // okhttp3.Interceptor
+    @NotNull
+    public final Response intercept(@NotNull Interceptor.Chain chain) {
+        String str;
+        int iIntValue;
+        Intrinsics.checkNotNullParameter(chain, "chain");
+        Request request = chain.request();
+        String strHeader = request.header("UnChangeDomain");
+        if (strHeader != null && Boolean.parseBoolean(strHeader)) {
+            return chain.proceed(request);
+        }
+        HttpUrl httpUrlUrl = request.url();
+        String strOooO0OO = o000O0.OooO0OO(httpUrlUrl.scheme(), "://", httpUrlUrl.host());
+        DomainType domainType = OooOo00.OooO0OO(strOooO0OO);
+        if (domainType == null) {
+            DomainConfig.f49178OooO00o.getClass();
+            Pair pairOooO = DomainConfig.OooO(strOooO0OO);
+            if (pairOooO != null && (str = (String) pairOooO.getSecond()) != null) {
+                if (str.length() <= 0) {
+                    str = null;
+                }
+                if (str != null) {
+                    HttpUrl.Builder builderNewBuilder = httpUrlUrl.newBuilder();
+                    String host = new URL(str).getHost();
+                    Intrinsics.checkNotNullExpressionValue(host, "getHost(...)");
+                    return chain.proceed(request.newBuilder().url(builderNewBuilder.host(host).build()).build());
+                }
+            }
+            return chain.proceed(request);
+        }
+        Intrinsics.checkNotNullParameter(domainType, "domainType");
+        List list = (List) ((ConcurrentHashMap) OooOo00.f49344OooO00o.getValue()).get(domainType);
+        switch (OooOo00.OooO0O0.$EnumSwitchMapping$0[domainType.ordinal()]) {
+            case 1:
+                iIntValue = oOO0OO.OooO0Oo().f45735OooO0Oo.OooO00o().intValue();
+                break;
+            case 2:
+                iIntValue = oOO0OO.OooO0Oo().f45737OooO0o0.OooO00o().intValue();
+                break;
+            case 3:
+                iIntValue = oOO0OO.OooO0Oo().f45736OooO0o.OooO00o().intValue();
+                break;
+            case 4:
+                iIntValue = oOO0OO.OooO0Oo().f45738OooO0oO.OooO00o().intValue();
+                break;
+            case 5:
+                iIntValue = oOO0OO.OooO0Oo().f45739OooO0oo.OooO00o().intValue();
+                break;
+            case 6:
+                iIntValue = oOO0OO.OooO0Oo().f45731OooO.OooO00o().intValue();
+                break;
+            case 7:
+                iIntValue = oOO0OO.OooO0Oo().f45740OooOO0.OooO00o().intValue();
+                break;
+            case 8:
+                iIntValue = oOO0OO.OooO0Oo().f45746OooOOOo.OooO00o().intValue();
+                break;
+            case 9:
+                iIntValue = oOO0OO.OooO0Oo().f45741OooOO0O.OooO00o().intValue();
+                break;
+            case 10:
+                iIntValue = oOO0OO.OooO0Oo().f45742OooOO0o.OooO00o().intValue();
+                break;
+            case 11:
+                iIntValue = oOO0OO.OooO0Oo().f45744OooOOO0.OooO00o().intValue();
+                break;
+            case 12:
+                iIntValue = oOO0OO.OooO0Oo().f45743OooOOO.OooO00o().intValue();
+                break;
+            case 13:
+                iIntValue = oOO0OO.OooO0Oo().f45745OooOOOO.OooO00o().intValue();
+                break;
+            default:
+                throw new NoWhenBranchMatchedException();
+        }
+        Intrinsics.checkNotNull(list);
+        int iCoerceIn = RangesKt.coerceIn(iIntValue, 0, list.size() - 1);
+        Object obj = (iCoerceIn < 0 || iCoerceIn >= list.size()) ? (String) list.get(0) : list.get(iCoerceIn);
+        int iOooO00o = OooOo00.OooO00o(domainType);
+        HttpUrl.Builder builderNewBuilder2 = httpUrlUrl.newBuilder();
+        String host2 = new URL((String) obj).getHost();
+        Intrinsics.checkNotNullExpressionValue(host2, "getHost(...)");
+        return chain.proceed(request.newBuilder().url(builderNewBuilder2.host(host2).build()).header("domain_head_tag", strOooO0OO).header("domain_head_index", String.valueOf(iOooO00o)).build());
+    }
+}
