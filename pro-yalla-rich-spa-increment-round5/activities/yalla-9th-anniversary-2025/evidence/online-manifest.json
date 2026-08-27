@@ -1,0 +1,116 @@
+{
+  "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+  "finalUrl": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/home?lang=en&language=en&region=SA",
+  "navigationError": null,
+  "bodyText": "",
+  "domLength": 3452,
+  "responses": [
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/?lang=en&language=en&region=SA",
+      "status": 200,
+      "bytes": 3128,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/index__q_d7e32340fe1d.html"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "status": 200,
+      "bytes": 31612,
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/npm..pnpm.a12e1750.css",
+      "status": 200,
+      "bytes": 67742,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/css/npm..pnpm.a12e1750.css"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js",
+      "status": 200,
+      "bytes": 66217,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/app.72a81038.css",
+      "status": 200,
+      "bytes": 10202,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/css/app.72a81038.css"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js",
+      "status": 200,
+      "bytes": 731109,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/lang/en.json?region=SA&activityId=&userId=&token=",
+      "status": 200,
+      "bytes": 38850,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/lang/en__q_959e0c91c6d6.json"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/home.19b012a3.js",
+      "status": 200,
+      "bytes": 15876,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/js/home.19b012a3.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/home.c1934c2a.css",
+      "status": 200,
+      "bytes": 59597,
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/css/home.c1934c2a.css"
+    },
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "status": 204,
+      "bytes": 0,
+      "file": null
+    },
+    {
+      "url": "https://activity2.yalla.live/api/NinthAnniversary/Init?region=SA&activityId=&userId=&token=",
+      "status": 401,
+      "bytes": 162,
+      "file": "fixtures/origins/activity2.yalla.live/api/NinthAnniversary/Init__q_959e0c91c6d6.bin"
+    },
+    {
+      "url": "https://activity2.yalla.live/api/Buried/GetCopywritingAddress?region=SA&activityId=&userId=&token=",
+      "status": 401,
+      "bytes": 162,
+      "file": "fixtures/origins/activity2.yalla.live/api/Buried/GetCopywritingAddress__q_959e0c91c6d6.bin"
+    }
+  ],
+  "console": [
+    {
+      "type": "log",
+      "text": "TypeError: Cannot read properties of undefined (reading 'messageHandlers')\n    at l (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js:1:61981)\n    at setup (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js:1:54876)\n    at a (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:627212)\n    at https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:679515\n    at Xt (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:679697)\n    at _ (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:664714)\n    at j (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:664607)\n    at w (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:661482)\n    at AA (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:671444)\n    at mount (https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js:2:656812)"
+    },
+    {
+      "type": "log",
+      "text": "客户端参数 {userId: , region: SA, token: , v: , s: }"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    },
+    {
+      "type": "pageerror",
+      "text": "Cannot read properties of undefined (reading '401')"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    },
+    {
+      "type": "pageerror",
+      "text": "Cannot read properties of undefined (reading '401')"
+    },
+    {
+      "type": "log",
+      "text": "Service worker has been registered."
+    },
+    {
+      "type": "log",
+      "text": "New content is downloading."
+    }
+  ],
+  "requestFailures": []
+}

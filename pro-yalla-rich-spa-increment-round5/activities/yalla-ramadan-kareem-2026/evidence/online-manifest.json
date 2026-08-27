@@ -1,0 +1,104 @@
+{
+  "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/",
+  "finalUrl": "https://activity2.yalla.live/activity/2026dist/Ramadan/?lang=en&language=en&region=SA",
+  "navigationError": null,
+  "bodyText": "",
+  "domLength": 3087,
+  "responses": [
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/?lang=en&language=en&region=SA",
+      "status": 200,
+      "bytes": 3013,
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/Ramadan/index__q_d7e32340fe1d.html"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "status": 200,
+      "bytes": 31612,
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496.js"
+    },
+    {
+      "url": "https://file.yalla.live/Activity/ActivityOver/xiaoma.png",
+      "status": 200,
+      "bytes": 24552,
+      "file": "assets/origins/file.yalla.live/Activity/ActivityOver/xiaoma.png"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js",
+      "status": 200,
+      "bytes": 649407,
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/js/app.af7f26b1.js",
+      "status": 200,
+      "bytes": 457035,
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/Ramadan/js/app.af7f26b1.js"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/css/app.c546cecc.css",
+      "status": 200,
+      "bytes": 203761,
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/Ramadan/css/app.c546cecc.css"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/css/chunk-vendors.02cf16a8.css",
+      "status": 200,
+      "bytes": 58610,
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/Ramadan/css/chunk-vendors.02cf16a8.css"
+    },
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "status": 204,
+      "bytes": 0,
+      "file": null
+    },
+    {
+      "url": "https://activity2.yalla.live/api/Ramadan/Init?region=SA&activityId=&userId=&token=",
+      "status": 401,
+      "bytes": 162,
+      "file": "fixtures/origins/activity2.yalla.live/api/Ramadan/Init__q_959e0c91c6d6.bin"
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/lang/en.json?region=SA&activityId=&userId=&token=",
+      "status": 200,
+      "bytes": 6397,
+      "file": "spa/origins/activity2.yalla.live/activity/2026dist/Ramadan/lang/en__q_959e0c91c6d6.json"
+    }
+  ],
+  "console": [
+    {
+      "type": "log",
+      "text": "TypeError: Cannot read properties of undefined (reading 'messageHandlers')\n    at https://activity2.yalla.live/activity/2026dist/Ramadan/js/app.af7f26b1.js:1:454685\n    at setup (https://activity2.yalla.live/activity/2026dist/Ramadan/js/app.af7f26b1.js:1:454758)\n    at u (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:551385)\n    at https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:603688\n    at Zn (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:603870)\n    at B (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:588887)\n    at D (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:588780)\n    at y (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:585655)\n    at tt (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:595617)\n    at mount (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:580985)"
+    },
+    {
+      "type": "log",
+      "text": "客户端参数 {userId: , region: SA, token: , v: , s: }"
+    },
+    {
+      "type": "error",
+      "text": "TypeError: Cannot read properties of undefined (reading 'top1')\n    at Proxy.<anonymous> (https://activity2.yalla.live/activity/2026dist/Ramadan/js/app.af7f26b1.js:1:443067)\n    at q (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:555214)\n    at y.fn (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:590320)\n    at y.run (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:461626)\n    at N.t.update (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:590571)\n    at N (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:590597)\n    at B (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:588982)\n    at D (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:588780)\n    at y (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:585655)\n    at C (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:587086)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 ()"
+    },
+    {
+      "type": "pageerror",
+      "text": "Cannot read properties of undefined (reading '401')"
+    },
+    {
+      "type": "error",
+      "text": "TypeError: Cannot read properties of undefined (reading 'top1')\n    at Proxy.<anonymous> (https://activity2.yalla.live/activity/2026dist/Ramadan/js/app.af7f26b1.js:1:443067)\n    at q (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:555214)\n    at y.fn (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:589850)\n    at y.run (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:461626)\n    at N.t.update (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:590571)\n    at u (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:551393)\n    at A (https://activity2.yalla.live/activity/2026dist/Ramadan/js/chunk-vendors.367544dc.js:2:552933)"
+    },
+    {
+      "type": "log",
+      "text": "Service worker has been registered."
+    },
+    {
+      "type": "log",
+      "text": "New content is downloading."
+    }
+  ],
+  "requestFailures": []
+}

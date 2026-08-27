@@ -1,0 +1,10 @@
+/home/runner/work/android-build-tool/android-build-tool/tools/yalla-rich-recovery/recover.py:582: SyntaxWarning: invalid escape sequence '\s'
+  info = await page.evaluate("""() => ({title:document.title,width:Math.max(document.documentElement.scrollWidth,document.body?.scrollWidth||0),height:Math.max(document.documentElement.scrollHeight,document.body?.scrollHeight||0),images:[...document.images].map(x=>({src:x.currentSrc||x.src,w:x.naturalWidth,h:x.naturalHeight,complete:x.complete})),iframes:[...document.querySelectorAll('iframe')].map(x=>x.src),clickables:[...document.querySelectorAll('button,a,[role="button"],[class*="tab" i],[class*="btn" i],[class*="menu" i]')].filter(e=>{const r=e.getBoundingClientRect();return r.width>22&&r.height>16}).map((e,i)=>({i,text:(e.innerText||e.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim().slice(0,120),href:e.href||''})).filter(x=>x.text||x.href).slice(0,160)})""")
+{
+  "release": "pro-yalla-rich-spa-increment-round5",
+  "activities": 8,
+  "verified": 0,
+  "partial": 0,
+  "expired": 8,
+  "contactSheet": "screenshots/round5-contact-sheet.jpg"
+}

@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-27T02:55:02.826690+00:00",
+  "nodes": [
+    {
+      "id": "yalla-8th-anniversary-2024",
+      "type": "activity",
+      "name": "8th Anniversary · Explore the Yalla World",
+      "url": "https://activity2.yalla.live/activity/2024dist/8thAnniversary/"
+    },
+    {
+      "id": "yalla-9th-anniversary-2025",
+      "type": "activity",
+      "name": "9th Anniversary · Starlight Gala",
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/?lang=en&language=en&region=SA",
+      "type": "spa",
+      "contentType": "text/html",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "type": "assets",
+      "contentType": "text/javascript;charset=UTF-8",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/npm..pnpm.a12e1750.css",
+      "type": "spa",
+      "contentType": "text/css",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js",
+      "type": "spa",
+      "contentType": "application/javascript",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/app.72a81038.css",
+      "type": "spa",
+      "contentType": "text/css",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js",
+      "type": "spa",
+      "contentType": "application/javascript",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/lang/en.json?activityId=&region=SA&token=&userId=",
+      "type": "spa",
+      "contentType": "application/json",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/home.19b012a3.js",
+      "type": "spa",
+      "contentType": "application/javascript",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/home.c1934c2a.css",
+      "type": "spa",
+      "contentType": "text/css",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/api/NinthAnniversary/Init?activityId=&region=SA&token=&userId=",
+      "type": "fixtures",
+      "contentType": "application/problem+json; charset=utf-8",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/api/Buried/GetCopywritingAddress?activityId=&region=SA&token=&userId=",
+      "type": "fixtures",
+      "contentType": "application/problem+json; charset=utf-8",
+      "source": "online-browser"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+      "type": "spa",
+      "contentType": "text/html",
+      "source": "live"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/manifest.json",
+      "type": "spa",
+      "contentType": "application/json",
+      "source": "live"
+    },
+    {
+      "id": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/favicon.ico",
+      "type": "spa",
+      "contentType": "image/x-icon",
+      "source": "live"
+    },
+    {
+      "id": "yalla-season-2026",
+      "type": "activity",
+      "name": "Yalla Season · Four Surprises",
+      "url": "https://activity2.yalla.live/activity/2025dist/yallaSeason/"
+    },
+    {
+      "id": "yalla-10th-anniversary-2026",
+      "type": "activity",
+      "name": "10th Anniversary · Crowned with Honor",
+      "url": "https://activity2.yalla.live/activity/2026dist/10thAnniversary/"
+    },
+    {
+      "id": "yalla-ramadan-kareem-2026",
+      "type": "activity",
+      "name": "Ramadan Kareem 2026",
+      "url": "https://activity2.yalla.live/activity/2026dist/Ramadan/"
+    },
+    {
+      "id": "yalla-sheep-farm-2026",
+      "type": "activity",
+      "name": "Sheep Farm · Eid al-Adha",
+      "url": "https://activity2.yalla.live/activity/2024dist/adha/"
+    },
+    {
+      "id": "yalla-super-roller-coaster-2024",
+      "type": "activity",
+      "name": "Super Roller Coaster",
+      "url": "https://activity2.yalla.live/activity/2024dist/rollerCoaster/"
+    },
+    {
+      "id": "campaign:Yalla WonderLand / New Year 2025",
+      "type": "campaign",
+      "name": "Yalla WonderLand / New Year 2025"
+    },
+    {
+      "id": "yalla-wonderland-new-year-2025",
+      "type": "activity",
+      "name": "WonderLand · New Year Carnival",
+      "url": "https://activity2.yalla.live/activity/2024dist/2025NewYear/"
+    }
+  ],
+  "edges": [
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/?lang=en&language=en&region=SA",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/npm..pnpm.a12e1750.css",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/app.72a81038.css",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/lang/en.json?activityId=&region=SA&token=&userId=",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/home.19b012a3.js",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/home.c1934c2a.css",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/api/NinthAnniversary/Init?activityId=&region=SA&token=&userId=",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/api/Buried/GetCopywritingAddress?activityId=&region=SA&token=&userId=",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/manifest.json",
+      "type": "requests"
+    },
+    {
+      "from": "yalla-9th-anniversary-2025",
+      "to": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/favicon.ico",
+      "type": "requests"
+    },
+    {
+      "from": "campaign:Yalla WonderLand / New Year 2025",
+      "to": "yalla-super-roller-coaster-2024",
+      "type": "contains"
+    }
+  ]
+}

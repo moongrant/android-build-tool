@@ -1,0 +1,305 @@
+{
+  "activity": {
+    "id": "yalla-9th-anniversary-2025",
+    "name": "9th Anniversary · Starlight Gala",
+    "year": 2025,
+    "campaign": "Yalla 9th Anniversary 2025",
+    "parentCampaign": null,
+    "officialUrl": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+    "spaRoot": "/activity/2025dist/9thAnniversary/",
+    "activityId": null,
+    "projectSlug": "9thAnniversary",
+    "routes": [
+      "/",
+      "/:catchAll(.*)",
+      "/competitivePlanet",
+      "/home",
+      "/memory",
+      "/myBase",
+      "/mysteriousPlanet",
+      "/resourcePlanet"
+    ],
+    "routeCount": 8,
+    "stateCount": 1,
+    "assetCount": 9,
+    "fileCount": 14,
+    "apiCount": 2,
+    "fixtureCount": 2,
+    "sourceType": "OFFICIAL_SPA_LIVE_AND_ARCHIVE_CLOSURE",
+    "status": "OFFICIAL_URL_EXPIRED",
+    "quality": "C",
+    "localReplay": true,
+    "screenshot": true,
+    "currentReleaseVerified": false,
+    "screenshots": [
+      "screenshots/yalla-9th-anniversary-2025/01-Starlight_Gala.png"
+    ],
+    "metrics": {
+      "totalBytes": 1031876,
+      "jsCount": 4,
+      "cssCount": 3,
+      "imageCount": 1,
+      "fontCount": 0,
+      "archivedFileCount": 0,
+      "liveFileCount": 14,
+      "richStateCount": 1,
+      "keywordHits": [
+        "anniversary"
+      ],
+      "closureOk": true,
+      "runtimeOk": true,
+      "fixtureOk": false,
+      "depthOk": false,
+      "assetOk": false
+    },
+    "qa": {
+      "brokenImages": 0,
+      "consoleFatalErrors": 0,
+      "missingChunks": 0,
+      "unmappedRequests": 1,
+      "remoteIframes": 0,
+      "remoteRuntimeFallback": 0,
+      "missingStaticAssets": 0
+    },
+    "notes": [
+      "Original official HTML, JS, CSS, chunks and assets are preserved from Yalla production URLs and public web archives.",
+      "Offline replay blocks every remote request and uses captured responses only.",
+      "No users, rankings, rewards or gameplay outcomes are fabricated."
+    ]
+  },
+  "records": [
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/?lang=en&language=en&region=SA",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 3128,
+      "sha256": "fd2a1133fa25727debc2056e5677532eaf8d87427d78a46dc30953d42ae82c90",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/index__q_d7e32340fe1d.html",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=120,public",
+        "content-type": "text/html",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/javascript;charset=UTF-8",
+      "bytes": 31612,
+      "sha256": "e1ac4849b9d4a498b68f8aca01e6ed99a11d94b35a2cec533b3916b8fb722fd6",
+      "source": "online-browser",
+      "category": "assets",
+      "file": "assets/origins/static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "public, max-age=86400",
+        "content-type": "text/javascript;charset=UTF-8",
+        "etag": "W/\"2026.6.0\"",
+        "last-modified": "Mon, 24 Aug 2026 16:13:46 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/npm..pnpm.a12e1750.css",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 67742,
+      "sha256": "38f9b543aa708179852e1fc7ab2e51f7c8960bd5c75015b2b691cd8fc0e2e231",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/css/npm..pnpm.a12e1750.css",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=2592000,public",
+        "content-type": "text/css",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js",
+      "method": "GET",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 66217,
+      "sha256": "32a3e6aae8b85624c750bdadb66826babd2a4a2d9d764c84fbeacf70d12e1102",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/js/app.ed270ac2.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=2592000,public",
+        "content-type": "application/javascript",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/app.72a81038.css",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 10202,
+      "sha256": "3e30264ad5c0db90b11ef3cede141194c8af6dd2cae569e38b67375e3deb6412",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/css/app.72a81038.css",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=2592000,public",
+        "content-type": "text/css",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js",
+      "method": "GET",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 731109,
+      "sha256": "c9be7a3715651a76668186d5fa89ef6f61463a7447e362fc5f2546f0360849a4",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/js/npm..pnpm.793dfc63.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=2592000,public",
+        "content-type": "application/javascript",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/lang/en.json?activityId=&region=SA&token=&userId=",
+      "method": "GET",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 38850,
+      "sha256": "0afc3129e198fc61e162003f0a5f5948eb3825b6fcaf75b05409b01eae532af4",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/lang/en__q_959e0c91c6d6.json",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=120,public",
+        "content-type": "application/json",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/js/home.19b012a3.js",
+      "method": "GET",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 15876,
+      "sha256": "6fc49fb1a80953c44928dd4c62e92930418ed1be9a97630dd0dffe7c5a5dce17",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/js/home.19b012a3.js",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=2592000,public",
+        "content-type": "application/javascript",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/css/home.c1934c2a.css",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/css",
+      "bytes": 59597,
+      "sha256": "321aa6781052721d6610032303ccd447a53a575d8c282fcb18669469aa15b67e",
+      "source": "online-browser",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/css/home.c1934c2a.css",
+      "snapshot": null,
+      "headers": {
+        "cache-control": "max-age=2592000,public",
+        "content-type": "text/css",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/api/NinthAnniversary/Init?activityId=&region=SA&token=&userId=",
+      "method": "GET",
+      "status": 401,
+      "contentType": "application/problem+json; charset=utf-8",
+      "bytes": 162,
+      "sha256": "1a4cc643a2d910e9e84489f0f4129e13640dd8d909a23cac4dabb1f16af442bc",
+      "source": "online-browser",
+      "category": "fixtures",
+      "file": "fixtures/origins/activity2.yalla.live/api/NinthAnniversary/Init__q_959e0c91c6d6.bin",
+      "snapshot": null,
+      "headers": {
+        "content-type": "application/problem+json; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/api/Buried/GetCopywritingAddress?activityId=&region=SA&token=&userId=",
+      "method": "GET",
+      "status": 401,
+      "contentType": "application/problem+json; charset=utf-8",
+      "bytes": 162,
+      "sha256": "1e9888b39bbcf60a26acfed30f575bd8acec10f70fd687323f2e05bdba773b74",
+      "source": "online-browser",
+      "category": "fixtures",
+      "file": "fixtures/origins/activity2.yalla.live/api/Buried/GetCopywritingAddress__q_959e0c91c6d6.bin",
+      "snapshot": null,
+      "headers": {
+        "content-type": "application/problem+json; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+      "method": "GET",
+      "status": 200,
+      "contentType": "text/html",
+      "bytes": 2775,
+      "sha256": "f5ef23e6565961d4db198fbf81b5ef4760c142d5d5f49a76165c85ec2cae60b8",
+      "source": "live",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/index.html",
+      "snapshot": null,
+      "headers": {}
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/manifest.json",
+      "method": "GET",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 158,
+      "sha256": "2a1bfe8892a50ac691d954af19d2621561d83922c86742132bc46cc319c5dee3",
+      "source": "live",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/manifest.json",
+      "snapshot": null,
+      "headers": {
+        "content-type": "application/json",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT",
+        "cache-control": "max-age=120,public",
+        "etag": "W/\"6a7eb286-9e\""
+      }
+    },
+    {
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/favicon.ico",
+      "method": "GET",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "bytes": 4286,
+      "sha256": "ad2af348490d761f21951658410b5de8fac135e423bf427fa5d36a50556db107",
+      "source": "live",
+      "category": "spa",
+      "file": "spa/origins/activity2.yalla.live/activity/2025dist/9thAnniversary/favicon.ico",
+      "snapshot": null,
+      "headers": {
+        "content-type": "image/x-icon",
+        "last-modified": "Fri, 14 Aug 2026 06:15:34 GMT",
+        "cache-control": "max-age=2592000,public"
+      }
+    }
+  ],
+  "generatedAt": "2026-08-27T02:45:12.953697+00:00"
+}

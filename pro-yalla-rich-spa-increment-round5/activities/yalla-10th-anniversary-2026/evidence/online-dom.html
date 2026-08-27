@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="" style="background: rgb(48, 19, 0);"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta http-equiv="x-dns-prefetch-control" content="on"><title></title><style>@-webkit-keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+
+      @keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+      /* 骨架屏图片闪烁动画 */
+      @keyframes skeleton-img-flash {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .skeleton-img-flash {
+        animation: skeleton-img-flash 1.2s ease-in-out infinite;
+      }
+
+      #SkeletonScreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 99999;
+      }
+      #finishToast {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: none;
+        z-index: 9999;
+        background: #fff;
+      }
+      .icon-act-exit {
+        width: 24px;
+        height: 24px;
+        /* margin: 0 16px; */
+        position: fixed;
+        top: 10px;
+        left: 16px;
+      }
+      #ar .icon-act-exit {
+        left: auto;
+        right: 16px;
+        transform: rotateY(180deg);
+      }
+      .xiaoma {
+        width: 30%;
+        margin: 200px auto 10px;
+      }
+      #actEndText {
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+        padding: 0 10px;
+      }</style><script>const isAnd = () => {
+        return window.navigator.userAgent.includes('Android')
+      }
+      // H5 自定义 level 1-info 2-error
+      const sailfishLog = (level, text, tag) => {
+        try {
+          if (!isAnd()) {
+            window.webkit.messageHandlers.sailfishLog.postMessage({
+              level: level === 1 ? 2 : 4,
+              text,
+              tag
+            })
+            // @ts-ignore
+          } else Yalla.sailfishLog(level === 1 ? 4 : 6, text, tag)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      window.addEventListener(
+        'error',
+        function (e) {
+          sailfishLog(2, e.message, '10thAnniversary')
+        },
+        true
+      )</script><script src="./js/vue.runtime.global.min.js"></script><script src="./js/axios.min.js"></script><script src="./js/jsencrypt.min.js"></script><script src="./js/qs.min.js"></script><link href="/activity/2026dist/10thAnniversary/css/chunk-vendors.055e6531.css" rel="stylesheet"><link href="/activity/2026dist/10thAnniversary/css/app.eecb626f.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/activity/2026dist/10thAnniversary/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/activity/2026dist/10thAnniversary/favicon.ico"><link rel="manifest" href="/activity/2026dist/10thAnniversary/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="10thAnniversary"><link rel="apple-touch-icon" href="/activity/2026dist/10thAnniversary/favicon.ico"><link rel="mask-icon" href="/activity/2026dist/10thAnniversary/favicon.ico" color="#4DBA87"><meta name="msapplication-TileImage" content="/activity/2026dist/10thAnniversary/favicon.ico"><meta name="msapplication-TileColor" content="#000000"><link rel="stylesheet" type="text/css" href="/activity/2026dist/10thAnniversary/css/home.c7683dbd.css"><script charset="utf-8" src="/activity/2026dist/10thAnniversary/js/home.421fa265.js"></script></head><body style="background: rgb(48, 19, 0);"><div id="finishToast"><img class="icon-act-exit" src="./images/icon_return_normal.png"> <img class="xiaoma" src="./images/horse2.png"><div id="actEndText">The activity has ended.More coming soon…</div></div><div id="app" data-v-app=""><!----><audio loop=""><source src="/activity/2026dist/10thAnniversary/media/bgm.8cf44feb.mp3" type="audio/mpeg"></audio></div><script src="/activity/2026dist/10thAnniversary/js/chunk-vendors.f6bbfad4.js"></script><script src="/activity/2026dist/10thAnniversary/js/app.a0036d25.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;e4c8ec30f5e9433a9674a93e2852e3a0&quot;}" crossorigin="anonymous"></script>
+<div data-v-app=""><!--teleport start--><!--teleport end--></div><!----><div class="van-popup van-popup--center van-toast van-toast--middle van-toast--text" style="z-index: 2001; display: none;"><!----><div class="van-toast__text">Please refresh the page</div><!----></div></body></html>

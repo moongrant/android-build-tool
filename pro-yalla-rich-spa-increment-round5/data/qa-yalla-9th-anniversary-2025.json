@@ -1,0 +1,73 @@
+{
+  "brokenImages": 0,
+  "consoleFatalErrors": 0,
+  "missingChunks": 0,
+  "unmappedRequests": 1,
+  "remoteIframes": 0,
+  "remoteRuntimeFallback": 0,
+  "missingStaticAssets": 0,
+  "states": [
+    {
+      "label": "Starlight Gala",
+      "source": "root",
+      "url": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/home?lang=en&language=en&region=SA",
+      "screenshot": "screenshots/yalla-9th-anniversary-2025/01-Starlight_Gala.png",
+      "sha256": "125beaa87d8f35bb373561dccbeddaca286f014c5c9d3077c07a6d3025b6c426",
+      "bodyText": "",
+      "domLength": 3431,
+      "width": 390,
+      "height": 844,
+      "imageCount": 0,
+      "brokenImages": 0,
+      "remoteIframes": 0,
+      "unmapped": [
+        {
+          "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+          "method": "POST",
+          "resourceType": "xhr",
+          "category": "api"
+        }
+      ],
+      "console": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        },
+        {
+          "type": "log",
+          "text": "Service worker has been registered."
+        },
+        {
+          "type": "log",
+          "text": "New content is downloading."
+        }
+      ],
+      "clickables": [],
+      "keywordHits": [
+        "anniversary"
+      ]
+    }
+  ],
+  "unmapped": [
+    {
+      "url": "https://activity2.yalla.live/cdn-cgi/rum?",
+      "method": "POST",
+      "resourceType": "xhr",
+      "category": "api"
+    }
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "log",
+      "text": "Service worker has been registered."
+    },
+    {
+      "type": "log",
+      "text": "New content is downloading."
+    }
+  ]
+}

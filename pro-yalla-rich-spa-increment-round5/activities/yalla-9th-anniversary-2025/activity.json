@@ -1,0 +1,68 @@
+{
+  "id": "yalla-9th-anniversary-2025",
+  "name": "9th Anniversary · Starlight Gala",
+  "year": 2025,
+  "campaign": "Yalla 9th Anniversary 2025",
+  "parentCampaign": null,
+  "officialUrl": "https://activity2.yalla.live/activity/2025dist/9thAnniversary/",
+  "spaRoot": "/activity/2025dist/9thAnniversary/",
+  "activityId": null,
+  "projectSlug": "9thAnniversary",
+  "routes": [
+    "/",
+    "/:catchAll(.*)",
+    "/competitivePlanet",
+    "/home",
+    "/memory",
+    "/myBase",
+    "/mysteriousPlanet",
+    "/resourcePlanet"
+  ],
+  "routeCount": 8,
+  "stateCount": 1,
+  "assetCount": 9,
+  "fileCount": 14,
+  "apiCount": 2,
+  "fixtureCount": 2,
+  "sourceType": "OFFICIAL_SPA_LIVE_AND_ARCHIVE_CLOSURE",
+  "status": "OFFICIAL_URL_EXPIRED",
+  "quality": "C",
+  "localReplay": true,
+  "screenshot": true,
+  "currentReleaseVerified": false,
+  "screenshots": [
+    "screenshots/yalla-9th-anniversary-2025/01-Starlight_Gala.png"
+  ],
+  "metrics": {
+    "totalBytes": 1031876,
+    "jsCount": 4,
+    "cssCount": 3,
+    "imageCount": 1,
+    "fontCount": 0,
+    "archivedFileCount": 0,
+    "liveFileCount": 14,
+    "richStateCount": 1,
+    "keywordHits": [
+      "anniversary"
+    ],
+    "closureOk": true,
+    "runtimeOk": true,
+    "fixtureOk": false,
+    "depthOk": false,
+    "assetOk": false
+  },
+  "qa": {
+    "brokenImages": 0,
+    "consoleFatalErrors": 0,
+    "missingChunks": 0,
+    "unmappedRequests": 1,
+    "remoteIframes": 0,
+    "remoteRuntimeFallback": 0,
+    "missingStaticAssets": 0
+  },
+  "notes": [
+    "Original official HTML, JS, CSS, chunks and assets are preserved from Yalla production URLs and public web archives.",
+    "Offline replay blocks every remote request and uses captured responses only.",
+    "No users, rankings, rewards or gameplay outcomes are fabricated."
+  ]
+}
