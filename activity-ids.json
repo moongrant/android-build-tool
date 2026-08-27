@@ -1,0 +1,448 @@
+{
+  "summary": [
+    {
+      "folder": "yalla-8th-anniversary",
+      "files": 18
+    },
+    {
+      "folder": "yalla-9th-anniversary",
+      "files": 10
+    },
+    {
+      "folder": "yalla-season-2025",
+      "files": 10
+    },
+    {
+      "folder": "yalla-happy-ferris-wheel-castle-2025",
+      "files": 32
+    },
+    {
+      "folder": "yalla-super-roller-coaster",
+      "files": 39
+    },
+    {
+      "folder": "yalla-activity-illustrated-cards",
+      "files": 17
+    },
+    {
+      "folder": "yalla-sheep-farm",
+      "files": 32
+    },
+    {
+      "folder": "yalla-10th-anniversary",
+      "files": 25
+    },
+    {
+      "folder": "yalla-wonderland-2025",
+      "files": 35
+    },
+    {
+      "folder": "yalla-royal-victory",
+      "files": 26
+    },
+    {
+      "folder": "yalla-ramadan-2026",
+      "files": 21
+    },
+    {
+      "folder": "yalla-recall-recruit",
+      "files": 25
+    },
+    {
+      "folder": "yalla-sea-dominator",
+      "files": 49
+    },
+    {
+      "folder": "yalla-football-carnival-2024",
+      "files": 41
+    },
+    {
+      "folder": "yalla-monthly-driving-king-2026",
+      "files": 20
+    }
+  ],
+  "activityIds": [
+    {
+      "activityId": "250101",
+      "hitCount": 9,
+      "sources": [
+        "yalla-wonderland-2025"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "Id:0,roomName:\"\",roomUrl:\"/activities/yalla-wonderland-2025/assets/external/file.bcdflash.com/Activity/horse.png\",totalNum:0,teamMemberList:[]},barrageGameRankCountdown:0,bigPrizeRankCountdown:0,topRoomRankCountdown:0,bigPrizeDateList:[],dateIndex:0,seaTop1:{headurl:\"\"},rollerCosterTop1:[],ferrisWheelTop1:[]});Object(s.c)((e=>{window.appInfo=e,j.setAppInfo(e);const t=String(e.region);\"\"===Object(s.d)(\"region\")&&j.setAppi18n(t),Object(s.d)(\"landPage\")&&(u.openInWeb=!0),u.openInWeb||Object(pe.j)({activityId:250101}).then((e=>{console.log(e),e.data>=0&&(O(),E(),C(),k(),Y(),j.timeShow=e.timeShow),Object(pe.k)({activityId:250101,Type:Object(s.d)(\"s\")||1})}))}));const k=()=>{Object(pe.b)({activityId:250101}).then((e=>{console.log(e),e.data&&(e.data.topRoomRankCountdown>=0?(u.activityProgress=3,u.tabNum=3):e.data.bigPrizeRankCountdown>=0&&(u.activityProgress=2,u.tabNum=2),e.data.bigPrizeRankDay>0&&f(e.data.bigPrizeRankDay),u.signUpNum=e.data.signUpNum,u.seaTop1=e.data.seaTop1,e.data.rollerCosterTop1.teamMemberList&&(u.rollerCosterTop1=e.data.rollerCosterTop1.teamMemberList),e.data.ferrisWheelTop1.teamMemberList&&(u.ferrisWheelTop1=e.data.ferrisWheelTop1.teamMemberList)),u.bigPrizeDateList=[];const{bigPrizeRankDay:t,bigPrizeRankStartDate:a}=e.data;if(t>0){const e=new Date(a);for(let a=0;a<t;a++){let t=new Date;t.setDate(e.getDate()+a),u.bigPrizeDateList.push(x(t))}u.dateIndex=u.bigPrizeDateList.length-"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "totalNum:0,teamMemberList:[]},barrageGameRankCountdown:0,bigPrizeRankCountdown:0,topRoomRankCountdown:0,bigPrizeDateList:[],dateIndex:0,seaTop1:{headurl:\"\"},rollerCosterTop1:[],ferrisWheelTop1:[]});Object(s.c)((e=>{window.appInfo=e,j.setAppInfo(e);const t=String(e.region);\"\"===Object(s.d)(\"region\")&&j.setAppi18n(t),Object(s.d)(\"landPage\")&&(u.openInWeb=!0),u.openInWeb||Object(pe.j)({activityId:250101}).then((e=>{console.log(e),e.data>=0&&(O(),E(),C(),k(),Y(),j.timeShow=e.timeShow),Object(pe.k)({activityId:250101,Type:Object(s.d)(\"s\")||1})}))}));const k=()=>{Object(pe.b)({activityId:250101}).then((e=>{console.log(e),e.data&&(e.data.topRoomRankCountdown>=0?(u.activityProgress=3,u.tabNum=3):e.data.bigPrizeRankCountdown>=0&&(u.activityProgress=2,u.tabNum=2),e.data.bigPrizeRankDay>0&&f(e.data.bigPrizeRankDay),u.signUpNum=e.data.signUpNum,u.seaTop1=e.data.seaTop1,e.data.rollerCosterTop1.teamMemberList&&(u.rollerCosterTop1=e.data.rollerCosterTop1.teamMemberList),e.data.ferrisWheelTop1.teamMemberList&&(u.ferrisWheelTop1=e.data.ferrisWheelTop1.teamMemberList)),u.bigPrizeDateList=[];const{bigPrizeRankDay:t,bigPrizeRankStartDate:a}=e.data;if(t>0){const e=new Date(a);for(let a=0;a<t;a++){let t=new Date;t.setDate(e.getDate()+a),u.bigPrizeDateList.push(x(t))}u.dateIndex=u.bigPrizeDateList.length-1}u.barrageGameRankCountdown=e.data.barrageGameRankCountdown>0?e.data.barrageGameRankCountdown:0,u.bigPrizeRankCou"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": ":0,topRoomRankCountdown:0,bigPrizeDateList:[],dateIndex:0,seaTop1:{headurl:\"\"},rollerCosterTop1:[],ferrisWheelTop1:[]});Object(s.c)((e=>{window.appInfo=e,j.setAppInfo(e);const t=String(e.region);\"\"===Object(s.d)(\"region\")&&j.setAppi18n(t),Object(s.d)(\"landPage\")&&(u.openInWeb=!0),u.openInWeb||Object(pe.j)({activityId:250101}).then((e=>{console.log(e),e.data>=0&&(O(),E(),C(),k(),Y(),j.timeShow=e.timeShow),Object(pe.k)({activityId:250101,Type:Object(s.d)(\"s\")||1})}))}));const k=()=>{Object(pe.b)({activityId:250101}).then((e=>{console.log(e),e.data&&(e.data.topRoomRankCountdown>=0?(u.activityProgress=3,u.tabNum=3):e.data.bigPrizeRankCountdown>=0&&(u.activityProgress=2,u.tabNum=2),e.data.bigPrizeRankDay>0&&f(e.data.bigPrizeRankDay),u.signUpNum=e.data.signUpNum,u.seaTop1=e.data.seaTop1,e.data.rollerCosterTop1.teamMemberList&&(u.rollerCosterTop1=e.data.rollerCosterTop1.teamMemberList),e.data.ferrisWheelTop1.teamMemberList&&(u.ferrisWheelTop1=e.data.ferrisWheelTop1.teamMemberList)),u.bigPrizeDateList=[];const{bigPrizeRankDay:t,bigPrizeRankStartDate:a}=e.data;if(t>0){const e=new Date(a);for(let a=0;a<t;a++){let t=new Date;t.setDate(e.getDate()+a),u.bigPrizeDateList.push(x(t))}u.dateIndex=u.bigPrizeDateList.length-1}u.barrageGameRankCountdown=e.data.barrageGameRankCountdown>0?e.data.barrageGameRankCountdown:0,u.bigPrizeRankCountdown=e.data.bigPrizeRankCountdown>0?e.data.bigPrizeRankCountdown:0,u.topRoom"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "List.length-1}u.barrageGameRankCountdown=e.data.barrageGameRankCountdown>0?e.data.barrageGameRankCountdown:0,u.bigPrizeRankCountdown=e.data.bigPrizeRankCountdown>0?e.data.bigPrizeRankCountdown:0,u.topRoomRankCountdown=e.data.topRoomRankCountdown>0?e.data.topRoomRankCountdown:0,setInterval((()=>{u.barrageGameRankCountdown>0&&(u.barrageGameRankCountdown-=1),u.bigPrizeRankCountdown>0&&(u.bigPrizeRankCountdown-=1),u.topRoomRankCountdown>0&&(u.topRoomRankCountdown-=1)}),1e3)}))},O=()=>{Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,e.data.some((e=>3===e.status))&&(setTimeout((()=>{Object(h.a)(u.i18n.t193)}),1e3),setTimeout((()=>{m.value.showPopup(u.progressInfo)}),2e3)))}))},E=()=>{Object(pe.c)({activityId:2024122502}).then((e=>{e.data&&(u.barrageGameRank=e.data.rankInfo,u.myBarrageData=e.data.userInfo)}))},f=e=>{Object(pe.e)({activityId:2025010102,day:e}).then((e=>{e.data&&(u.bigPrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progress"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "pe.c)({activityId:2024122502}).then((e=>{e.data&&(u.barrageGameRank=e.data.rankInfo,u.myBarrageData=e.data.userInfo)}))},f=e=>{Object(pe.e)({activityId:2025010102,day:e}).then((e=>{e.data&&(u.bigPrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progressInfo))}))},w=e=>{Object(pe.k)({activityId:250101,Type:110+e}),2!==e||1!==u.activityProgress?3===e&&u.activityProgress<3?Object(h.a)(u.i18n.t36):location.href=R(e):Object(h.a)(u.i18n.t35)},R=e=>{const t=`${window.location.origin}/activities/`,a=`?showTopBar=${Object(s.d)(\"showTopBar\")}&token=${Object(s.d)(\"token\")}&userid=${Object(s.d)(\"userid\")}&statusHeight=${Object(s.d)(\"statusHeight\")}&halfScreen=${Object(s.d)(\"halfScreen\")}&region=${Object(s.d)(\"region\")}&s=${Object(s.d)(\"s\")}&v=${Object(s.d)(\"v\")}`;return 1===e?t+\"yalla-sea-dominator/\"+a:2===e?t+\"yalla-super-roller-coaster/\"+a:3===e?t+\"yalla-happy-ferris-wheel-castle-2025/\"+a:void 0},N=e=>{b.value.showPopup(e)},V=e=>{g.value.showPopup(e)},I=e=>{d.value.showPopup(e)},D=e=>{1===e?u.ballRule"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "data&&(u.barrageGameRank=e.data.rankInfo,u.myBarrageData=e.data.userInfo)}))},f=e=>{Object(pe.e)({activityId:2025010102,day:e}).then((e=>{e.data&&(u.bigPrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progressInfo))}))},w=e=>{Object(pe.k)({activityId:250101,Type:110+e}),2!==e||1!==u.activityProgress?3===e&&u.activityProgress<3?Object(h.a)(u.i18n.t36):location.href=R(e):Object(h.a)(u.i18n.t35)},R=e=>{const t=`${window.location.origin}/activities/`,a=`?showTopBar=${Object(s.d)(\"showTopBar\")}&token=${Object(s.d)(\"token\")}&userid=${Object(s.d)(\"userid\")}&statusHeight=${Object(s.d)(\"statusHeight\")}&halfScreen=${Object(s.d)(\"halfScreen\")}&region=${Object(s.d)(\"region\")}&s=${Object(s.d)(\"s\")}&v=${Object(s.d)(\"v\")}`;return 1===e?t+\"yalla-sea-dominator/\"+a:2===e?t+\"yalla-super-roller-coaster/\"+a:3===e?t+\"yalla-happy-ferris-wheel-castle-2025/\"+a:void 0},N=e=>{b.value.showPopup(e)},V=e=>{g.value.showPopup(e)},I=e=>{d.value.showPopup(e)},D=e=>{1===e?u.ballRuleShow=!0:2===e?u.luckyRuleShow=!0:3===e&&(u."
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "PrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progressInfo))}))},w=e=>{Object(pe.k)({activityId:250101,Type:110+e}),2!==e||1!==u.activityProgress?3===e&&u.activityProgress<3?Object(h.a)(u.i18n.t36):location.href=R(e):Object(h.a)(u.i18n.t35)},R=e=>{const t=`${window.location.origin}/activities/`,a=`?showTopBar=${Object(s.d)(\"showTopBar\")}&token=${Object(s.d)(\"token\")}&userid=${Object(s.d)(\"userid\")}&statusHeight=${Object(s.d)(\"statusHeight\")}&halfScreen=${Object(s.d)(\"halfScreen\")}&region=${Object(s.d)(\"region\")}&s=${Object(s.d)(\"s\")}&v=${Object(s.d)(\"v\")}`;return 1===e?t+\"yalla-sea-dominator/\"+a:2===e?t+\"yalla-super-roller-coaster/\"+a:3===e?t+\"yalla-happy-ferris-wheel-castle-2025/\"+a:void 0},N=e=>{b.value.showPopup(e)},V=e=>{g.value.showPopup(e)},I=e=>{d.value.showPopup(e)},D=e=>{1===e?u.ballRuleShow=!0:2===e?u.luckyRuleShow=!0:3===e&&(u.coinRuleShow=!0),setTimeout((()=>{u.ballRuleShow=!1,u.luckyRuleShow=!1,u.coinRuleShow=!1}),5e3)},Q=e=>{1===e?u.ballComputeRuleShow=!0:2===e?u.luckyCompu"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "===Object(s.d)(\"s\")&&setTimeout((()=>{Object(s.b)()}),1500)},T=()=>{p.value.showPopup()},M=e=>{const t=Math.floor(e/86400);e%=86400;const a=Math.floor(e/3600);e%=3600;const n=Math.floor(e/60),o=e%60;if(u.i18n.t18)return u.i18n.t18.replace(\"XXX\",t).replace(\"YYY\",a).replace(\"ZZZ\",n).replace(\"OOO\",o)},x=e=>e.getDate()+\"/\"+(e.getMonth()+1),F=e=>{console.log(u.dateIndex),-1===e&&0===u.dateIndex||1===e&&u.dateIndex===u.bigPrizeDateList.length-1||(u.dateIndex+=e,f(u.dateIndex+1))},Y=()=>{Object(pe.g)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(j.medalList=e.data)})),Object(pe.f)({activityId:250101}).then((e=>{console.log(e),e.data&&(j.medalCount=e.data)}))},G=()=>{Object(h.a)(u.i18n.t230)};return(e,a)=>(Object(r.openBlock)(),Object(r.createElementBlock)(\"div\",{class:Object(r.normalizeClass)(`home home${u.language}`)},[Object(r.createElementVNode)(\"div\",{class:Object(r.normalizeClass)({top_area:!0,top_area_old:!P()})},[1===u.activityProgress?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",ue)):Object(r.createCommentVNode)(\"\",!0),2===u.activityProgress?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",ke)):Object(r.createCommentVNode)(\"\",!0),3===u.activityProgress?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",Oe)):Object(r.createCommentVNode)(\"\",!0),P()?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",{key:3,class:\"top_area_btn\",onClick:"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "floor(e/86400);e%=86400;const a=Math.floor(e/3600);e%=3600;const n=Math.floor(e/60),o=e%60;if(u.i18n.t18)return u.i18n.t18.replace(\"XXX\",t).replace(\"YYY\",a).replace(\"ZZZ\",n).replace(\"OOO\",o)},x=e=>e.getDate()+\"/\"+(e.getMonth()+1),F=e=>{console.log(u.dateIndex),-1===e&&0===u.dateIndex||1===e&&u.dateIndex===u.bigPrizeDateList.length-1||(u.dateIndex+=e,f(u.dateIndex+1))},Y=()=>{Object(pe.g)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(j.medalList=e.data)})),Object(pe.f)({activityId:250101}).then((e=>{console.log(e),e.data&&(j.medalCount=e.data)}))},G=()=>{Object(h.a)(u.i18n.t230)};return(e,a)=>(Object(r.openBlock)(),Object(r.createElementBlock)(\"div\",{class:Object(r.normalizeClass)(`home home${u.language}`)},[Object(r.createElementVNode)(\"div\",{class:Object(r.normalizeClass)({top_area:!0,top_area_old:!P()})},[1===u.activityProgress?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",ue)):Object(r.createCommentVNode)(\"\",!0),2===u.activityProgress?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",ke)):Object(r.createCommentVNode)(\"\",!0),3===u.activityProgress?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",Oe)):Object(r.createCommentVNode)(\"\",!0),P()?(Object(r.openBlock)(),Object(r.createElementBlock)(\"img\",{key:3,class:\"top_area_btn\",onClick:S,src:\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABECAYAAADwf3lkAAAAAXNSR0IArs4c6QAAHuJJREFUeF7tfAl"
+        }
+      ]
+    },
+    {
+      "activityId": "20260526",
+      "hitCount": 4,
+      "sources": [
+        "yalla-10th-anniversary",
+        "yalla-activity-illustrated-cards"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-activity-illustrated-cards",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-activity-illustrated-cards/local-runtime/replay.js?v=20260813-showcase-data",
+          "kind": "object",
+          "module": null,
+          "context": "s\":0,\"count\":0},{\"id\":0,\"status\":0,\"count\":0},{\"id\":0,\"status\":0,\"count\":0},{\"id\":0,\"status\":0,\"count\":0},{\"id\":0,\"status\":0,\"count\":0},{\"id\":0,\"status\":0,\"count\":0},{\"id\":0,\"status\":0,\"count\":0}],\"rewardInfos\":[{\"rewardId\":1,\"rewardStatus\":0,\"status\":0,\"count\":0},{\"rewardId\":2,\"rewardStatus\":0,\"status\":0,\"count\":0},{\"rewardId\":3,\"rewardStatus\":0,\"status\":0,\"count\":0},{\"rewardId\":4,\"rewardStatus\":0,\"status\":0,\"count\":0}]},P=B+\"/assets/external/file.yalla.live/Activity/activityMap/demo.png\",C=[{\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"serialNumber\":1,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"picture\":P,\"userMedalNum\":1,\"totalMedalNum\":1}],M={\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"timeZone\":2,\"medalConfigList\":[{\"id\":2026052601,\"picture\":P,\"totalNum\":1,\"usableNum\":0,\"grade\":3,\"cTime\":\"2026-05-26\",\"description\":\"Replay fixture · official archived illustrated-card artwork\",\"link\":\"\"}]},K=[{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 01\",\"num\":96,\"countryId\":4,\"ranking\":1,\"kavipLv\":0,\"pictures\":[P]},{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 02\",\"num\":78,\"countryId\":69,\"ranking\":2,\"kavipLv\":0,\"pictures\":[P]},{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 03\","
+        },
+        {
+          "sourceFolder": "yalla-activity-illustrated-cards",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-activity-illustrated-cards/local-runtime/replay.js?v=20260813-showcase-data",
+          "kind": "object",
+          "module": null,
+          "context": "tatus\":0,\"count\":0}],\"rewardInfos\":[{\"rewardId\":1,\"rewardStatus\":0,\"status\":0,\"count\":0},{\"rewardId\":2,\"rewardStatus\":0,\"status\":0,\"count\":0},{\"rewardId\":3,\"rewardStatus\":0,\"status\":0,\"count\":0},{\"rewardId\":4,\"rewardStatus\":0,\"status\":0,\"count\":0}]},P=B+\"/assets/external/file.yalla.live/Activity/activityMap/demo.png\",C=[{\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"serialNumber\":1,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"picture\":P,\"userMedalNum\":1,\"totalMedalNum\":1}],M={\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"timeZone\":2,\"medalConfigList\":[{\"id\":2026052601,\"picture\":P,\"totalNum\":1,\"usableNum\":0,\"grade\":3,\"cTime\":\"2026-05-26\",\"description\":\"Replay fixture · official archived illustrated-card artwork\",\"link\":\"\"}]},K=[{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 01\",\"num\":96,\"countryId\":4,\"ranking\":1,\"kavipLv\":0,\"pictures\":[P]},{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 02\",\"num\":78,\"countryId\":69,\"ranking\":2,\"kavipLv\":0,\"pictures\":[P]},{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 03\",\"num\":64,\"countryId\":34,\"ranking\":3,\"kavipLv\":0,\"pictures\":[P]},{\"headurl\":B+\"/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Visitor\",\"num\":15,\"country"
+        },
+        {
+          "sourceFolder": "yalla-10th-anniversary",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-10th-anniversary/local-runtime/replay.js",
+          "kind": "object",
+          "module": null,
+          "context": ":5,\"sku\":4,\"isUsable\":false},{\"rewardId\":8,\"price\":360,\"fCount\":0,\"total\":3,\"sku\":3,\"isUsable\":false},{\"rewardId\":9,\"price\":520,\"fCount\":0,\"total\":2,\"sku\":2,\"isUsable\":false}],O=[{\"addTime\":\"2026-06-03 18:42\",\"rewardId\":9},{\"addTime\":\"2026-06-02 21:16\",\"rewardId\":6},{\"addTime\":\"2026-05-30 14:08\",\"rewardId\":3},{\"addTime\":\"2026-05-27 09:35\",\"rewardId\":2}],D=[{\"cTimeStr\":\"2026-06-03 08:00\",\"rewardId\":1},{\"cTimeStr\":\"2026-06-02 08:00\",\"rewardId\":2},{\"cTimeStr\":\"2026-06-01 08:00\",\"rewardId\":3}],C=[{\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"serialNumber\":1,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"picture\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/activityMap/demo.png\",\"userMedalNum\":1,\"totalMedalNum\":1}],M={\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"timeZone\":2,\"medalConfigList\":[{\"id\":2026052601,\"picture\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/activityMap/demo.png\",\"totalNum\":1,\"usableNum\":0,\"grade\":3,\"cTime\":\"2026-05-26\",\"description\":\"Replay fixture · official archived illustrated-card artwork\",\"link\":\"\"}]},K=[{\"headurl\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 01\",\"num\":96,\"countryId\":4,\"ranking\":1,\"kavipLv\":0,\"pictures\":[\"/activities/yalla-10th-anniversary/assets"
+        },
+        {
+          "sourceFolder": "yalla-10th-anniversary",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-10th-anniversary/local-runtime/replay.js",
+          "kind": "object",
+          "module": null,
+          "context": "ime\":\"2026-05-30 14:08\",\"rewardId\":3},{\"addTime\":\"2026-05-27 09:35\",\"rewardId\":2}],D=[{\"cTimeStr\":\"2026-06-03 08:00\",\"rewardId\":1},{\"cTimeStr\":\"2026-06-02 08:00\",\"rewardId\":2},{\"cTimeStr\":\"2026-06-01 08:00\",\"rewardId\":3}],C=[{\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"serialNumber\":1,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"picture\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/activityMap/demo.png\",\"userMedalNum\":1,\"totalMedalNum\":1}],M={\"activityId\":20260526,\"endTime\":\"2026-06-04\",\"fStatus\":0,\"link\":\"\",\"name\":\"Sheep Farm · Replay Collection\",\"timeZone\":2,\"medalConfigList\":[{\"id\":2026052601,\"picture\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/activityMap/demo.png\",\"totalNum\":1,\"usableNum\":0,\"grade\":3,\"cTime\":\"2026-05-26\",\"description\":\"Replay fixture · official archived illustrated-card artwork\",\"link\":\"\"}]},K=[{\"headurl\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 01\",\"num\":96,\"countryId\":4,\"ranking\":1,\"kavipLv\":0,\"pictures\":[\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/activityMap/demo.png\"]},{\"headurl\":\"/activities/yalla-10th-anniversary/assets/external/file.yalla.live/Activity/horse.png\",\"nickname\":\"Replay Collector 02\",\"num\":78,\"countryId\":69,\"ranking\":2,\"kavipLv\":0,\"pictures\":[\"/activities/yalla-10t"
+        }
+      ]
+    },
+    {
+      "activityId": "2025010101",
+      "hitCount": 4,
+      "sources": [
+        "yalla-super-roller-coaster"
+      ],
+      "kinds": [
+        "object",
+        "query"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-super-roller-coaster",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-super-roller-coaster/js/app.b2b08e47.js?v=2",
+          "kind": "query",
+          "module": null,
+          "context": ".userInfo.remainNum<0)return void w.value.showPopup();if(C.teamMemberList.length>1)return;const e={image1:\"/activities/yalla-super-roller-coaster/external/file.yalla.live/activity/car/share-img.png\",image2:`/activities/yalla-super-roller-coaster/external/file.yalla.live/activity/car/activityPic${Number(C.language)>2?0:C.language}.jpg`,text1:C.i18n.t91,text2:\"\",text3:C.i18n.t91,url:`${window.location.protocol}//${window.location.host+window.location.pathname}?shareUserId=${C.appInfo.userId}&s=11&activityId=2025010101&showTopBar=false`,type:1,activity:2025010101,parm1:\"备用参数1\"};try{(e=>{try{$()?Yalla.shareActivity(JSON.stringify(e)):window.webkit.messageHandlers.shareActivityToFriends.postMessage(e)}catch(t){console.log(t)}})(e)}catch(t){console.log(t)}},H=()=>{C.appInfo.appVersionCode>1300?(Object(_.a)({activityid:2025010101,userid:C.appInfo.userId,eventid:101,page_name:\"recharge_button\"}),(()=>{try{$()?Yalla.quickRecharch():window.webkit.messageHandlers.quickRecharch.postMessage(null)}catch(e){console.log(e)}})()):Object(p.a)()},J=async()=>{const e=await Object(_.k)();if(e.data){if(C.userInfo=e.data,C.teamInfo=C.userInfo.teamInfo,C.teamMemberList=C.userInfo.teamInfo.teamMemberList,C.userInfo.remainNum<0)return void w.value.showPopup();C.userInfo.teamInfo.num>=1e4?C.myStageNow=4:C.userInfo.teamInfo.num>=2e3&&C.userInfo.teamInfo.num<=9999?(C.nextLevelNums=1e4-C.userInfo.teamInfo.num,C.myStageNow=3):C."
+        },
+        {
+          "sourceFolder": "yalla-super-roller-coaster",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-super-roller-coaster/js/app.b2b08e47.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "eturn I})),n.d(t,\"b\",(function(){return C})),n.d(t,\"h\",(function(){return P})),n.d(t,\"o\",(function(){return N})),n.d(t,\"a\",(function(){return E})),n.d(t,\"q\",(function(){return k}));n(\"2cd2\");var a=n(\"6b5f\"),o=n(\"cebe\"),c=n.n(o),i=n(\"7e1d\"),r=n(\"796d\"),l=n.n(r);let s=!1;const A=c.a.create({baseURL:\"/\",timeout:5e3});A.interceptors.request.use((e=>{const t=window.appInfo||{},n={region:Object(i.e)(\"region\")||t.region+\"\",userId:t.userId+\"\",token:t.token+\"\",v:t.appVersionCode+\"\",s:Object(i.e)(\"s\")+\"\",activityId:2025010101};e.headers=n;try{const t=new Date,a=Date.parse(t),o=String(a),c=Object(i.f)(\"-----BEGIN PUBLIC KEY-----\\n  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2\\n  UJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o\\n  yT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K\\n  UusZI5pu5Gm9+ML4NQIDAQAB\\n  -----END PUBLIC KEY-----\",n.token+\"|\"+o+\"|Yalla-Activity-Headers\");e.headers.xtimestamp=o,e.headers.xsignature=c.xsignature}catch(a){console.log(a)}return e.data?e.data=Object.assign(e.data,n):e.data=n,\"get\"===e.method&&(e.url=`${e.url}?${l.a.stringify(e.data)}`),e}),(e=>Promise.reject(e))),A.interceptors.response.use((e=>{s||204!==e.status||(s=!0,u());const t=e.data;return Promise.resolve(t)}),(e=>{var t;if([400,401,500].includes(null===(t=e.response)||void 0===t?void 0:t.status)){const t=[{400:\"Unknown error, please contact customer service  400\",401:\""
+        },
+        {
+          "sourceFolder": "yalla-super-roller-coaster",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-super-roller-coaster/js/app.b2b08e47.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": ".userInfo.remainNum<0)return void w.value.showPopup();if(C.teamMemberList.length>1)return;const e={image1:\"/activities/yalla-super-roller-coaster/external/file.yalla.live/activity/car/share-img.png\",image2:`/activities/yalla-super-roller-coaster/external/file.yalla.live/activity/car/activityPic${Number(C.language)>2?0:C.language}.jpg`,text1:C.i18n.t91,text2:\"\",text3:C.i18n.t91,url:`${window.location.protocol}//${window.location.host+window.location.pathname}?shareUserId=${C.appInfo.userId}&s=11&activityId=2025010101&showTopBar=false`,type:1,activity:2025010101,parm1:\"备用参数1\"};try{(e=>{try{$()?Yalla.shareActivity(JSON.stringify(e)):window.webkit.messageHandlers.shareActivityToFriends.postMessage(e)}catch(t){console.log(t)}})(e)}catch(t){console.log(t)}},H=()=>{C.appInfo.appVersionCode>1300?(Object(_.a)({activityid:2025010101,userid:C.appInfo.userId,eventid:101,page_name:\"recharge_button\"}),(()=>{try{$()?Yalla.quickRecharch():window.webkit.messageHandlers.quickRecharch.postMessage(null)}catch(e){console.log(e)}})()):Object(p.a)()},J=async()=>{const e=await Object(_.k)();if(e.data){if(C.userInfo=e.data,C.teamInfo=C.userInfo.teamInfo,C.teamMemberList=C.userInfo.teamInfo.teamMemberList,C.userInfo.remainNum<0)return void w.value.showPopup();C.userInfo.teamInfo.num>=1e4?C.myStageNow=4:C.userInfo.teamInfo.num>=2e3&&C.userInfo.teamInfo.num<=9999?(C.nextLevelNums=1e4-C.userInfo.teamInfo.num,C.myStageNow=3):C."
+        },
+        {
+          "sourceFolder": "yalla-super-roller-coaster",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-super-roller-coaster/js/app.b2b08e47.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "e)>2?0:C.language}.jpg`,text1:C.i18n.t91,text2:\"\",text3:C.i18n.t91,url:`${window.location.protocol}//${window.location.host+window.location.pathname}?shareUserId=${C.appInfo.userId}&s=11&activityId=2025010101&showTopBar=false`,type:1,activity:2025010101,parm1:\"备用参数1\"};try{(e=>{try{$()?Yalla.shareActivity(JSON.stringify(e)):window.webkit.messageHandlers.shareActivityToFriends.postMessage(e)}catch(t){console.log(t)}})(e)}catch(t){console.log(t)}},H=()=>{C.appInfo.appVersionCode>1300?(Object(_.a)({activityid:2025010101,userid:C.appInfo.userId,eventid:101,page_name:\"recharge_button\"}),(()=>{try{$()?Yalla.quickRecharch():window.webkit.messageHandlers.quickRecharch.postMessage(null)}catch(e){console.log(e)}})()):Object(p.a)()},J=async()=>{const e=await Object(_.k)();if(e.data){if(C.userInfo=e.data,C.teamInfo=C.userInfo.teamInfo,C.teamMemberList=C.userInfo.teamInfo.teamMemberList,C.userInfo.remainNum<0)return void w.value.showPopup();C.userInfo.teamInfo.num>=1e4?C.myStageNow=4:C.userInfo.teamInfo.num>=2e3&&C.userInfo.teamInfo.num<=9999?(C.nextLevelNums=1e4-C.userInfo.teamInfo.num,C.myStageNow=3):C.userInfo.teamInfo.num>=300&&C.userInfo.teamInfo.num<=1999?(C.nextLevelNums=2e3-C.userInfo.teamInfo.num,C.myStageNow=2):C.userInfo.teamInfo.num<300&&(C.nextLevelNums=300-C.userInfo.teamInfo.num,C.myStageNow=1);const t=document.getElementById(\"langPicBox\");t&&(t.scrollLeft=0,\"1\"===C.language?t.scrollLeft+=-375*(C."
+        }
+      ]
+    },
+    {
+      "activityId": "260212",
+      "hitCount": 2,
+      "sources": [
+        "yalla-ramadan-2026"
+      ],
+      "kinds": [
+        "object",
+        "query"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-ramadan-2026",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-ramadan-2026/js/app.af7f26b1.js",
+          "kind": "query",
+          "module": null,
+          "context": "od:\"get\",data:t});var t;A.UserInfo=e.data,A.rewardsNumShow=A.UserInfo.benefitsType,!A.UserInfo.isBlackUser&&A.UserInfo.isFirst&&(A.rewardsPop=!0)},s=()=>{0===A.UserInfo.ramadanblessState?Object(y.a)(A.i18n.t118):1===A.UserInfo.ramadanblessState&&(window.location.href=\"https://\"+window.location.host+\"/activity/2026dist/ramadanBless/?region=\"+A.language+\"&userid=\"+A.parameter.userid+\"&token=\"+A.parameter.token+\"&v=\"+A.parameter.v+\"&s=\"+A.parameter.s+\"&t=\"+A.parameter.t+\"&fromH5=1&showTopBar=false&activityId=260212\")},d=()=>{window.location.href=\"https://\"+window.location.host+\"/activity/2024dist/activityMap/?region=\"+A.language+\"&userid=\"+A.parameter.userid+\"&token=\"+A.parameter.token+\"&v=\"+A.parameter.v+\"&s=\"+A.parameter.s+\"&t=\"+A.parameter.t+\"&fromH5=1\"},p=Ze((async()=>{var e;await Fe({url:\"/api/Ramadan/ReceiveBenefits\",method:\"post\",data:e}),A.rewardsPop=!1,c()}),2e3,!0),w=()=>{2!==A.UserInfo.productPackageState&&(A.rewardsPop=!0)},u=async()=>{const e=await Fe({url:\"/api/Ramadan/GetProgressSate\",method:\"get\",data:t});var t;A.ProgressSate=e.data,1===A.ProgressSate.level?A.prgWidth=\"21%\":2===A.ProgressSate.level?A.prgWidth=\"45.5%\":3===A.ProgressSate.level?A.prgWidth=\"70.5%\":4===A.ProgressSate.level&&(A.prgWidth=\"93%\"),A.ProgressSate.rewardInfos.forEach(((e,t)=>{A.rewardInfosBox.forEach(((A,n)=>{t===n&&(A.rewardStatus=e.rewardStatus,A.rewardId=e.rewardId)}))}))},h=Ze((async()=>{var e;await(e={rew"
+        },
+        {
+          "sourceFolder": "yalla-ramadan-2026",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-ramadan-2026/js/app.af7f26b1.js",
+          "kind": "object",
+          "module": null,
+          "context": "od:\"get\",data:t});var t;A.UserInfo=e.data,A.rewardsNumShow=A.UserInfo.benefitsType,!A.UserInfo.isBlackUser&&A.UserInfo.isFirst&&(A.rewardsPop=!0)},s=()=>{0===A.UserInfo.ramadanblessState?Object(y.a)(A.i18n.t118):1===A.UserInfo.ramadanblessState&&(window.location.href=\"https://\"+window.location.host+\"/activity/2026dist/ramadanBless/?region=\"+A.language+\"&userid=\"+A.parameter.userid+\"&token=\"+A.parameter.token+\"&v=\"+A.parameter.v+\"&s=\"+A.parameter.s+\"&t=\"+A.parameter.t+\"&fromH5=1&showTopBar=false&activityId=260212\")},d=()=>{window.location.href=\"https://\"+window.location.host+\"/activity/2024dist/activityMap/?region=\"+A.language+\"&userid=\"+A.parameter.userid+\"&token=\"+A.parameter.token+\"&v=\"+A.parameter.v+\"&s=\"+A.parameter.s+\"&t=\"+A.parameter.t+\"&fromH5=1\"},p=Ze((async()=>{var e;await Fe({url:\"/api/Ramadan/ReceiveBenefits\",method:\"post\",data:e}),A.rewardsPop=!1,c()}),2e3,!0),w=()=>{2!==A.UserInfo.productPackageState&&(A.rewardsPop=!0)},u=async()=>{const e=await Fe({url:\"/api/Ramadan/GetProgressSate\",method:\"get\",data:t});var t;A.ProgressSate=e.data,1===A.ProgressSate.level?A.prgWidth=\"21%\":2===A.ProgressSate.level?A.prgWidth=\"45.5%\":3===A.ProgressSate.level?A.prgWidth=\"70.5%\":4===A.ProgressSate.level&&(A.prgWidth=\"93%\"),A.ProgressSate.rewardInfos.forEach(((e,t)=>{A.rewardInfosBox.forEach(((A,n)=>{t===n&&(A.rewardStatus=e.rewardStatus,A.rewardId=e.rewardId)}))}))},h=Ze((async()=>{var e;await(e={rew"
+        }
+      ]
+    },
+    {
+      "activityId": "2024122501",
+      "hitCount": 2,
+      "sources": [
+        "yalla-sea-dominator"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-sea-dominator",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-sea-dominator/js/app.9e942358.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "eturn f})),n.d(t,\"e\",(function(){return h})),n.d(t,\"c\",(function(){return w})),n.d(t,\"l\",(function(){return E})),n.d(t,\"a\",(function(){return k})),n.d(t,\"m\",(function(){return D}));n(\"2cd2\");var a=n(\"6b5f\"),c=n(\"cebe\"),i=n.n(c),l=n(\"7e1d\"),r=n(\"796d\"),o=n.n(r);let s=!1;const d=i.a.create({baseURL:\"/\",timeout:5e3});d.interceptors.request.use((e=>{const t=window.appInfo||{},n={region:Object(l.e)(\"region\")||t.region+\"\",userId:t.userId+\"\",token:t.token+\"\",v:t.appVersionCode+\"\",s:Object(l.e)(\"s\")+\"\",activityId:2024122501};e.headers=n;try{const t=new Date,a=Date.parse(t),c=String(a),i=Object(l.f)(\"-----BEGIN PUBLIC KEY-----\\n  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2\\n  UJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o\\n  yT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K\\n  UusZI5pu5Gm9+ML4NQIDAQAB\\n  -----END PUBLIC KEY-----\",n.token+\"|\"+c+\"|Yalla-Activity-Headers\");e.headers.xtimestamp=c,e.headers.xsignature=i.xsignature}catch(a){console.log(a)}return e.data?e.data=Object.assign(e.data,n):e.data=n,\"get\"===e.method&&(e.url=`${e.url}?${o.a.stringify(e.data)}`),e}),(e=>Promise.reject(e))),d.interceptors.response.use((e=>{s||204!==e.status||(s=!0,A());const t=e.data;return Promise.resolve(t)}),(e=>{var t;if([400,401,500].includes(null===(t=e.response)||void 0===t?void 0:t.status)){const t=[{400:\"Unknown error, please contact customer service  400\",401:\""
+        },
+        {
+          "sourceFolder": "yalla-sea-dominator",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-sea-dominator/js/app.9e942358.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "havior:\"smooth\"})},X=async()=>{const e=await Object(_.i)();f.UserInfo=e.data,f.UserInfo.remainNum<0&&(setTimeout((()=>{Object(I.a)({message:f.i18n.t122,duration:4e3})}),100),setTimeout((()=>{Object(u.i)()}),3e3)),f.UserInfo.divingDepth>=1e4?f.maxLevelSea=2:f.UserInfo.divingDepth<1e4&&f.UserInfo.divingDepth>=1e3?f.maxLevelSea=1:f.UserInfo.divingDepth<1e3&&(f.maxLevelSea=0)},Q=async()=>{const e=await Object(_.d)();f.activityInfo=e.data,oa()},K=e=>{1===e?f.appInfo.appVersionCode>1300?(Object(_.a)({activityid:2024122501,userid:f.appInfo.userId,eventid:101,page_name:\"recharge_button\"}),(()=>{try{$()?Yalla.quickRecharch():window.webkit.messageHandlers.quickRecharch.postMessage(null)}catch(e){console.log(e)}})()):Object(u.a)():j.value.showPopup()},ee=()=>{window.location.href=`/activities/yalla-wonderland-2025/?archive=1&fromH5=1&s=${Object(u.e)(\"s\")}&time=${(new Date).getTime()}&halfScreen=${Object(u.e)(\"halfScreen\")}`},oa=async()=>{const e=await Object(_.g)({weekNum:0});e.data&&e.data.rankInfo&&(f.thisWeekList=e.data.rankInfo,f.thisWeekUserInfo=e.data.userInfo,f.ListData=f.thisWeekList,f.myListData=f.thisWeekUserInfo)},sa=e=>{f.ListTabIndex=e,1===f.ListTabIndex&&(f.ListData=f.thisWeekList,f.myListData=f.thisWeekUserInfo),2===f.ListTabIndex&&(f.ListData=f.lastWeekList,f.myListData=f.lastWeekUserInfo)};return Object(u.d)((e=>{window.appInfo=e,y.setAppInfo(e),console.log(\"客户端参数\",e);\"\"===Object(u.e)(\"region"
+        }
+      ]
+    },
+    {
+      "activityId": "2024122502",
+      "hitCount": 2,
+      "sources": [
+        "yalla-wonderland-2025"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "omRankCountdown:0,setInterval((()=>{u.barrageGameRankCountdown>0&&(u.barrageGameRankCountdown-=1),u.bigPrizeRankCountdown>0&&(u.bigPrizeRankCountdown-=1),u.topRoomRankCountdown>0&&(u.topRoomRankCountdown-=1)}),1e3)}))},O=()=>{Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,e.data.some((e=>3===e.status))&&(setTimeout((()=>{Object(h.a)(u.i18n.t193)}),1e3),setTimeout((()=>{m.value.showPopup(u.progressInfo)}),2e3)))}))},E=()=>{Object(pe.c)({activityId:2024122502}).then((e=>{e.data&&(u.barrageGameRank=e.data.rankInfo,u.myBarrageData=e.data.userInfo)}))},f=e=>{Object(pe.e)({activityId:2025010102,day:e}).then((e=>{e.data&&(u.bigPrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progressInfo))}))},w=e=>{Object(pe.k)({activityId:250101,Type:110+e}),2!==e||1!==u.activityProgress?3===e&&u.activityProgress<3?Object(h.a)(u.i18n.t36):location.href=R(e):Object(h.a)(u.i18n.t35)},R=e=>{const t=`${window.location.origin}/activities/`,a=`?showTopBar=${Objec"
+        },
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "location.href=\"/activities/yalla-wonderland-2025/local-runtime/blocked.json\"}),2500);const n=`/activities/yalla-wonderland-2025/local-runtime/blocked.json`;window.location.href=`yalla://screen/web?url=${n}`,setTimeout((()=>{u.isAnd?window.location.href=\"/activities/yalla-wonderland-2025/local-runtime/blocked.json\":window.location.href=\"/activities/yalla-wonderland-2025/local-runtime/blocked.json\"}),2500)},S=()=>{\"1\"===Object(s.d)(\"fromH5\")?history.go(-1):Object(s.b)()},z=e=>{1===e?Object(pe.d)({activityId:2024122502}).then((e=>{e.data&&e.data>0?Object(s.g)(e.data):Object(s.f)(0),\"3\"===Object(s.d)(\"s\")&&setTimeout((()=>{Object(s.b)()}),500)})):2===e?(u.appInfo.roomID?-1!==location.href.indexOf(\"test\")?Object(s.h)(u.appInfo.roomID,783):Object(s.h)(u.appInfo.roomID,753):Object(s.f)(0),\"3\"===Object(s.d)(\"s\")&&setTimeout((()=>{Object(s.b)()}),500)):3===e&&(u.appInfo.roomID?-1!==location.href.indexOf(\"test\")?Object(s.h)(u.appInfo.roomID,839):Object(s.h)(u.appInfo.roomID,774):Object(s.f)(0),\"3\"===Object(s.d)(\"s\")&&setTimeout((()=>{Object(s.b)()}),500)),\"3\"===Object(s.d)(\"s\")&&setTimeout((()=>{Object(s.b)()}),1500)},T=()=>{p.value.showPopup()},M=e=>{const t=Math.floor(e/86400);e%=86400;const a=Math.floor(e/3600);e%=3600;const n=Math.floor(e/60),o=e%60;if(u.i18n.t18)return u.i18n.t18.replace(\"XXX\",t).replace(\"YYY\",a).replace(\"ZZZ\",n).replace(\"OOO\",o)},x=e=>e.getDate()+\"/\"+(e.getMonth()+1),F=e=>{console.log("
+        }
+      ]
+    },
+    {
+      "activityId": "230518",
+      "hitCount": 1,
+      "sources": [
+        "yalla-football-carnival-2024"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-football-carnival-2024",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-football-carnival-2024/js/app.a069a643.js",
+          "kind": "object",
+          "module": null,
+          "context": "},so={key:1,class:\"coin_number3\"},bo={class:\"copyright\"};var po=Object(A.defineComponent)({__name:\"home\",setup(e){const t=Object(A.ref)(),c=Object(A.ref)(),n=Object(A.ref)(),o=Object(A.ref)(),l=Object(A.ref)(),r=x(),s=T(),b=Object(A.reactive)({appInfo:Object(A.computed)((()=>r.appInfo)),activityInfo:Object(A.computed)((()=>r.activityInfo)),userInfo:Object(A.computed)((()=>r.userInfo)),language:Object(A.computed)((()=>r.language)),i18n:Object(A.computed)((()=>r.i18n)),pageInfo:{reachCount:0,id:1,activityId:230518,fName:\"第一波\",needCount:0,fCount:0,bonusAmout:0,fState:0,msgKey:\"第一波\",isReceive:!0,fSort:0},giftProcess:0,dressProcess:0,tabNumber:1,rankTabNumber:1,rankList:[],dailyRank:[],totalRank:[],barrage:[],showBarrage:!1,swiper:{},dressInfo:[{rewardId:24011201,level:24011201,rewardStatus:0},{rewardId:24011202,level:24011202,rewardStatus:0},{rewardId:24011203,level:24011203,rewardStatus:0},{rewardId:24011204,level:24011204,rewardStatus:0},{rewardId:24011205,level:24011205,rewardStatus:0}],dressTotalNum:0,dressLevel:0,getDressLevel:0,coinSpineSuccess:!1,beyoundPercent:0,initCoin:!1}),p=[[1777,1077,777],[5777,3777,1777],[1177,777,577],[1177,777,577],[],[777,577,377],[777,577,377],[777,577,377],[777,577,377]],g=[[{coin:11777,gift:3},{coin:7777,gift:2},{coin:5777,gift:1},{coin:3777,gift:1},{coin:1777,gift:1}],[{coin:57777,gift:10},{coin:37777,gift:10},{coin:17777,gift:10},{coin:7777,gift:7},{coin:5777"
+        }
+      ]
+    },
+    {
+      "activityId": "240112",
+      "hitCount": 1,
+      "sources": [
+        "yalla-football-carnival-2024"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-football-carnival-2024",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-football-carnival-2024/js/app.a069a643.js",
+          "kind": "object",
+          "module": null,
+          "context": "String(a[2]):null};const E=\"region|userId|token|userIdx|userLevel|vipLevel|appVersionName|appVersionCode|phoneBrand|phoneModel|systemVersionCode|systemVersionName|netType|networkOperatorName|kaVipLevel|zeus|roomID|userToken|recentRoomID\";var y=a(\"cebe\"),V=a.n(y),h=a(\"796d\"),S=a.n(h);let I=!1;const Q=V.a.create({baseURL:\"/\",timeout:5e3});Q.interceptors.request.use((e=>{const t=window.appInfo||{},a={region:t.region+\"\",userId:t.userId+\"\",token:t.token+\"\",v:t.appVersionCode+\"\",s:Object(i.d)(\"s\")+\"\",activityId:240112};e.headers=a;try{const t=new Date,c=Date.parse(t),n=String(c),A=Object(i.e)(\"-----BEGIN PUBLIC KEY-----\\n  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2\\n  UJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o\\n  yT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K\\n  UusZI5pu5Gm9+ML4NQIDAQAB\\n  -----END PUBLIC KEY-----\",a.token+\"|\"+n+\"|Yalla-Activity-Headers\");e.headers.xtimestamp=n,e.headers.xsignature=A.xsignature}catch(c){console.log(c)}return e.data?e.data=Object.assign(e.data,a):e.data=a,\"get\"===e.method&&(e.url=`${e.url}?${S.a.stringify(e.data)}`),e}),(e=>Promise.reject(e))),Q.interceptors.response.use((e=>{I||204!==e.status||(I=!0,R());const t=e.data;return Promise.resolve(t)}),(e=>Promise.reject(e)));const R=()=>{const e=[\"The activity ends now\",\"ينتهي النشاط الآن\",\"Etkinlik sona erdi\",\"Aktivitas telah berakhir\",\"\",\"A atividade está  en"
+        }
+      ]
+    },
+    {
+      "activityId": "240516",
+      "hitCount": 1,
+      "sources": [
+        "yalla-8th-anniversary"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-8th-anniversary",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-8th-anniversary/js/app.a0aac9ae.js",
+          "kind": "object",
+          "module": null,
+          "context": "e.background=\"#310F5C\"):\"privacy\"===e.name&&(document.documentElement.style.background=\"#7753FF\",document.body.style.background=\"#7753FF\"),r()}))},e423:function(e,t,r){\"use strict\";r(\"fbb6\");var n=r(\"1a74\"),o=r(\"4ade\"),a=r.n(o),s=r(\"7e1d\"),i=r(\"0a05\"),c=r.n(i);let l=!1;const u=a.a.create({baseURL:\"/\",timeout:5e3});u.interceptors.request.use((e=>{const t=window.appInfo||{},r={region:Number(Object(s.f)(\"region\")),userId:Number(t.userId),token:t.token+\"\",v:t.appVersionCode+\"\",s:Object(s.f)(\"s\")+\"\",activityId:240516};e.headers=r;try{const t=new Date,n=Date.parse(t),o=String(n),a=Object(s.g)(\"-----BEGIN PUBLIC KEY-----\\n  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2\\n  UJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o\\n  yT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K\\n  UusZI5pu5Gm9+ML4NQIDAQAB\\n  -----END PUBLIC KEY-----\",r.token+\"|\"+o+\"|Yalla-Activity-Headers\");e.headers.xtimestamp=o,e.headers.xsignature=a.xsignature}catch(n){console.log(n)}return e.data?e.data=Object.assign(e.data,r):e.data=r,\"get\"===e.method&&(e.url=`${e.url}?${c.a.stringify(e.data)}`),e}),(e=>Promise.reject(e))),u.interceptors.response.use((e=>{l||204!==e.status||(l=!0,d());const t=e.data;return Promise.resolve(t)}),(e=>{var t;if([400,401,500].includes(null===(t=e.response)||void 0===t?void 0:t.status)){const t=[{400:\"Unknown error, please contact customer service  400\",401:\""
+        }
+      ]
+    },
+    {
+      "activityId": "20240501",
+      "hitCount": 1,
+      "sources": [
+        "yalla-activity-illustrated-cards"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-activity-illustrated-cards",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-activity-illustrated-cards/js/app.aee03e93.js?v=20260813-cards-return",
+          "kind": "object",
+          "module": null,
+          "context": "eturn O})),n.d(t,\"c\",(function(){return j})),n.d(t,\"b\",(function(){return I})),n.d(t,\"f\",(function(){return k})),n.d(t,\"k\",(function(){return E})),n.d(t,\"n\",(function(){return B}));n(\"2cd2\");var r=n(\"6b5f\"),o=n(\"4ade\"),a=n.n(o),i=n(\"7e1d\"),s=n(\"a7ad\"),c=n.n(s);let l=!1;const u=a.a.create({baseURL:\"/\",timeout:5e3});u.interceptors.request.use((e=>{const t=window.appInfo||{},n={region:Object(i.d)(\"region\")||t.region+\"\",userId:t.userId+\"\",token:t.token+\"\",v:t.appVersionCode+\"\",s:Object(i.d)(\"s\")+\"\",activityId:20240501};e.headers=n;try{const t=new Date,r=Date.parse(t),o=String(r),a=Object(i.e)(\"-----BEGIN PUBLIC KEY-----\\n  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2\\n  UJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o\\n  yT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K\\n  UusZI5pu5Gm9+ML4NQIDAQAB\\n  -----END PUBLIC KEY-----\",n.token+\"|\"+o+\"|Yalla-Activity-Headers\");e.headers.xtimestamp=o,e.headers.xsignature=a.xsignature}catch(r){console.log(r)}return e.data?e.data=Object.assign(e.data,n):e.data=n,\"get\"===e.method&&(e.url=`${e.url}?${c.a.stringify(e.data)}`),e}),(e=>Promise.reject(e))),u.interceptors.response.use((e=>{l||204!==e.status||(l=!0,d());const t=e.data;return Promise.resolve(t)}),(e=>{if([400,401,500].includes(e.response.status)){console.log(77777);const t=[{400:\"Unknown error, please contact customer service  400\",401:\"Please refresh the "
+        }
+      ]
+    },
+    {
+      "activityId": "2025010102",
+      "hitCount": 1,
+      "sources": [
+        "yalla-wonderland-2025"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "zeRankCountdown-=1),u.topRoomRankCountdown>0&&(u.topRoomRankCountdown-=1)}),1e3)}))},O=()=>{Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,e.data.some((e=>3===e.status))&&(setTimeout((()=>{Object(h.a)(u.i18n.t193)}),1e3),setTimeout((()=>{m.value.showPopup(u.progressInfo)}),2e3)))}))},E=()=>{Object(pe.c)({activityId:2024122502}).then((e=>{e.data&&(u.barrageGameRank=e.data.rankInfo,u.myBarrageData=e.data.userInfo)}))},f=e=>{Object(pe.e)({activityId:2025010102,day:e}).then((e=>{e.data&&(u.bigPrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progressInfo))}))},w=e=>{Object(pe.k)({activityId:250101,Type:110+e}),2!==e||1!==u.activityProgress?3===e&&u.activityProgress<3?Object(h.a)(u.i18n.t36):location.href=R(e):Object(h.a)(u.i18n.t35)},R=e=>{const t=`${window.location.origin}/activities/`,a=`?showTopBar=${Object(s.d)(\"showTopBar\")}&token=${Object(s.d)(\"token\")}&userid=${Object(s.d)(\"userid\")}&statusHeight=${Object(s.d)(\"statusHeight\")}&halfSc"
+        }
+      ]
+    },
+    {
+      "activityId": "2025010801",
+      "hitCount": 1,
+      "sources": [
+        "yalla-happy-ferris-wheel-castle-2025"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-happy-ferris-wheel-castle-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-happy-ferris-wheel-castle-2025/js/app.f6227294.js",
+          "kind": "object",
+          "module": null,
+          "context": "7,pictures:`${location.origin}${location.pathname}images/reward/gift1.png`,desc:\"钻戒背包礼物\"},{id:8,pictures:`${location.origin}${location.pathname}images/reward/gift2-new.png`,desc:\"飞屋环游背包礼物\"}],lotteryInfo:{isLotterying:!1,prizeId:0,prizeIndex:0,lotterySpeed:200,times:0,lotteryCount:8,lotteryIndex:0,timer:null,lotteryCycle:20}}),P=()=>n(\"8606\"),S=()=>{j.value.showPopup()},z=()=>{f.value.showPopup()},D=e=>{L.tabNumber=e},M=e=>{Object(V.a)(e)},W=e=>{1===e?L.appInfo.appVersionCode>1300?(Object(pe.b)({activityid:2025010801,userid:L.appInfo.userId,eventid:101,page_name:\"recharge_button\"}),(()=>{try{be()?Yalla.quickRecharch():window.webkit.messageHandlers.quickRecharch.postMessage(null)}catch(e){console.log(e)}})()):Object(u.a)((()=>{})):h.value.showPopup()},x=()=>{v.value.showPopup()},T=()=>{O.value.showPopup()},F=e=>{L.lotteryInfo.isLotterying||(L.userInfo.remainNum<=0||L.userInfo.remainNum<10&&e?Object(V.a)(L.i18n.t31):(L.lotteryInfo.isLotterying=!0,Object(pe.n)({isTen:e}).then((e=>{console.log(e),1===e.data.result&&(L.lotteryInfo.prizeId=e.data.rewards[0].rewardId,L.lotteryInfo.prizeIndex=e.data.rewards[0].rewardId-1,L.lotteryInfo.lotterySpeed=200,te(e.data.rewards),R.getUserInfo())})).catch((()=>{L.lotteryInfo.isLotterying=!1}))))},H=()=>{E.value.showPopup()},G=()=>{const e=Object(u.e)(\"s\");return 3===Number(e)||\"1\"===Object(u.e)(\"halfScreen\")||L.appInfo.appVersionCode<3600?\"-55px\":0},U=()=>{const e=Ob"
+        }
+      ]
+    },
+    {
+      "activityId": "2025010802",
+      "hitCount": 1,
+      "sources": [
+        "yalla-wonderland-2025"
+      ],
+      "kinds": [
+        "object"
+      ],
+      "modules": [],
+      "hits": [
+        {
+          "sourceFolder": "yalla-wonderland-2025",
+          "sourceUrl": "https://campaigns-collected.jekae.chatgpt.site/activities/yalla-wonderland-2025/js/app.d24d1eaa.js?v=2",
+          "kind": "object",
+          "module": null,
+          "context": "sole.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,e.data.some((e=>3===e.status))&&(setTimeout((()=>{Object(h.a)(u.i18n.t193)}),1e3),setTimeout((()=>{m.value.showPopup(u.progressInfo)}),2e3)))}))},E=()=>{Object(pe.c)({activityId:2024122502}).then((e=>{e.data&&(u.barrageGameRank=e.data.rankInfo,u.myBarrageData=e.data.userInfo)}))},f=e=>{Object(pe.e)({activityId:2025010102,day:e}).then((e=>{e.data&&(u.bigPrizeRank=e.data.rankInfo,u.myBigPrizeData=e.data.userInfo)}))},C=()=>{Object(pe.i)({activityId:2025010802}).then((e=>{e.data&&e.data.rankInfo&&e.data.rankInfo.length>0&&(u.topRoomRank=e.data.rankInfo,u.myTopRoomData=e.data.userInfo)}))},y=e=>{u.tabNum=e},B=()=>{A.value.showPopup()},v=()=>{Object(pe.k)({activityId:250101,Type:114}),Object(pe.h)({activityId:250101}).then((e=>{console.log(e),e.data&&e.data.length>0&&(u.progressInfo=e.data,m.value.showPopup(u.progressInfo))}))},w=e=>{Object(pe.k)({activityId:250101,Type:110+e}),2!==e||1!==u.activityProgress?3===e&&u.activityProgress<3?Object(h.a)(u.i18n.t36):location.href=R(e):Object(h.a)(u.i18n.t35)},R=e=>{const t=`${window.location.origin}/activities/`,a=`?showTopBar=${Object(s.d)(\"showTopBar\")}&token=${Object(s.d)(\"token\")}&userid=${Object(s.d)(\"userid\")}&statusHeight=${Object(s.d)(\"statusHeight\")}&halfScreen=${Object(s.d)(\"halfScreen\")}&region=${Object(s.d)(\"region\")}&s=${Object(s.d)(\"s\")}&v=${Object(s.d)(\"v\")}`;return 1===e?t+\"yalla-sea-do"
+        }
+      ]
+    }
+  ]
+}
