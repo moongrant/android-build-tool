@@ -1,0 +1,44 @@
+{
+  "id": "beat-pinata-2021",
+  "name": "Beat Piñata 2021",
+  "root": "https://activity2.yalla.live/activity/2021dist/beatPinata/",
+  "rootTs": "20210818043342",
+  "prefix": "https://file.yalla.live/activity/beatPinata/",
+  "rootReplay": "https://web.archive.org/web/20210818043342id_/https://activity2.yalla.live/activity/2021dist/beatPinata/?region=5&s=3&t=1629253468109&p=2&v=222",
+  "metrics": {
+    "files": 2,
+    "bytes": 29433,
+    "js": 1,
+    "css": 0,
+    "images": 0,
+    "json": 0,
+    "fonts": 0,
+    "media": 0,
+    "routes": 1,
+    "apis": 0,
+    "waybackRows": 0,
+    "commonCrawlRows": 0
+  },
+  "routes": [
+    "/"
+  ],
+  "apis": [],
+  "records": [
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js",
+      "file": "origins/beacon.min.js",
+      "bytes": 28467,
+      "sha256": "ed266825df2ff85cc4f27593f50f15249848b8464712bb4371e9b7566b007f92",
+      "contentType": "text/javascript;charset=UTF-8",
+      "source": "live",
+      "timestamp": null,
+      "index": null
+    }
+  ],
+  "initialRefs": [
+    "https://activity2.yalla.live/favicon.ico",
+    "https://file.yalla.live/activity/beatPinata/dist/css/app.31752a2d.css",
+    "https://file.yalla.live/activity/beatPinata/dist/js/app.02d89888.js",
+    "https://static.cloudflareinsights.com/beacon.min.js"
+  ]
+}

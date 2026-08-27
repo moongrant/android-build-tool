@@ -1,0 +1,45 @@
+{
+  "id": "national-day-template-2021",
+  "name": "National Day Template 2021",
+  "root": "https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+  "rootTs": "20210725055818",
+  "prefix": "https://file.yalla.live/activity/NationalDayTemplate/",
+  "rootReplay": "https://web.archive.org/web/20210725055818id_/https://activity2.yalla.live/activity/YallaActivity2021/Yalla03/NationalDayTemplate/dist/",
+  "metrics": {
+    "files": 2,
+    "bytes": 30335,
+    "js": 1,
+    "css": 0,
+    "images": 0,
+    "json": 0,
+    "fonts": 0,
+    "media": 0,
+    "routes": 1,
+    "apis": 0,
+    "waybackRows": 0,
+    "commonCrawlRows": 0
+  },
+  "routes": [
+    "/"
+  ],
+  "apis": [],
+  "records": [
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js",
+      "file": "origins/beacon.min.js",
+      "bytes": 28467,
+      "sha256": "ed266825df2ff85cc4f27593f50f15249848b8464712bb4371e9b7566b007f92",
+      "contentType": "text/javascript;charset=UTF-8",
+      "source": "live",
+      "timestamp": null,
+      "index": null
+    }
+  ],
+  "initialRefs": [
+    "https://file.yalla.live/activity/NationalDayTemplate/dist/static/css/app.63de259f4fac17df5508b2bc0357c794.css",
+    "https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/app.dd642dc0c58c734cf9aa.js",
+    "https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/vendor.798ad0a290dc821a375d.js",
+    "https://file.yalla.live/activity/NationalDayTemplate/dist/static/js/vonders.dll.b6b0c48.js",
+    "https://static.cloudflareinsights.com/beacon.min.js"
+  ]
+}

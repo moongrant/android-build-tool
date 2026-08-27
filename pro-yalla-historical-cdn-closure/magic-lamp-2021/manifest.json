@@ -1,0 +1,44 @@
+{
+  "id": "magic-lamp-2021",
+  "name": "Magic Lamp 2021",
+  "root": "https://activity2.yalla.live/activity/2021dist/MagicLamp/",
+  "rootTs": "20210802033525",
+  "prefix": "https://file.yalla.live/activity/MagicLamp/",
+  "rootReplay": "https://web.archive.org/web/20210802033525id_/https://activity2.yalla.live/activity/2021dist/MagicLamp/",
+  "metrics": {
+    "files": 2,
+    "bytes": 29429,
+    "js": 1,
+    "css": 0,
+    "images": 0,
+    "json": 0,
+    "fonts": 0,
+    "media": 0,
+    "routes": 1,
+    "apis": 0,
+    "waybackRows": 0,
+    "commonCrawlRows": 0
+  },
+  "routes": [
+    "/"
+  ],
+  "apis": [],
+  "records": [
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js",
+      "file": "origins/beacon.min.js",
+      "bytes": 28467,
+      "sha256": "ed266825df2ff85cc4f27593f50f15249848b8464712bb4371e9b7566b007f92",
+      "contentType": "text/javascript;charset=UTF-8",
+      "source": "live",
+      "timestamp": null,
+      "index": null
+    }
+  ],
+  "initialRefs": [
+    "https://activity2.yalla.live/favicon.ico",
+    "https://file.yalla.live/activity/MagicLamp/dist/css/app.17610a55.css",
+    "https://file.yalla.live/activity/MagicLamp/dist/js/app.9ea63e0b.js",
+    "https://static.cloudflareinsights.com/beacon.min.js"
+  ]
+}
