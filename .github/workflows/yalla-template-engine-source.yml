@@ -1,0 +1,81 @@
+name: Yalla template activity engine source extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-template-engine-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    env:
+      OUT_DIR: pro-yalla-template-engine-source
+      RESULT_BRANCH: pro-yalla-template-engine-source-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download live engine assets and inspect API protocol
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 jsbeautifier
+          rm -rf "$OUT_DIR" && mkdir -p "$OUT_DIR/assets"
+          cat > /tmp/template_engine_extract.py <<'PY'
+          from __future__ import annotations
+          import hashlib,json,re
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse
+          import requests,jsbeautifier
+          from bs4 import BeautifulSoup
+          OUT=Path('pro-yalla-template-engine-source');ASSETS=OUT/'assets';ASSETS.mkdir(parents=True,exist_ok=True)
+          ROOT='https://activity2.yalla.live/activity/2024dist/templateActivity/?activityId=240815&region=0&lang=en&fromH5=1'
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36 Yalla/3.6.2','Accept':'*/*','Referer':ROOT})
+          r=S.get(ROOT,timeout=(20,90),allow_redirects=True);r.raise_for_status();html=r.text;(OUT/'index.html').write_text(html)
+          soup=BeautifulSoup(html,'html.parser');urls=[]
+          for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src')]:
+            for el in soup.find_all(tag):
+              if el.get(attr):urls.append(urljoin(r.url,el.get(attr)))
+          records=[];texts=[]
+          for i,url in enumerate(dict.fromkeys(urls)):
+            try:
+              x=S.get(url,timeout=(20,120),allow_redirects=True);data=x.content;p=urlparse(x.url);name=Path(p.path).name or f'asset-{i}';dest=ASSETS/name
+              if dest.exists():dest=ASSETS/f'{i:02d}-{name}'
+              dest.write_bytes(data);rec={'url':url,'finalUrl':x.url,'status':x.status_code,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'contentType':x.headers.get('content-type'),'file':dest.relative_to(OUT).as_posix()};records.append(rec)
+              if 'javascript' in (rec['contentType'] or '').lower() or dest.suffix in {'.js','.mjs'}:
+                text=data.decode('utf-8','ignore');texts.append((url,text));(OUT/(dest.stem+'.pretty.js')).write_text(jsbeautifier.beautify(text))
+            except Exception as e:records.append({'url':url,'error':repr(e)})
+          joined='\n'.join(t for _,t in texts).replace('\\/','/')
+          endpoints=sorted(set(re.findall(r'/(?:api|Api)/[A-Za-z0-9_./?=&%${}-]{2,240}',joined)))
+          url_strings=sorted(set(u.rstrip(',.;)]}') for u in re.findall(r'https?://[^\s"\'<>`)\\]+',joined)))
+          path_strings=sorted(set(x for x in re.findall(r'["\'](/[^"\'\n\r]{2,220})["\']',joined) if any(k in x.lower() for k in ['api','activity','template','init','rank','record','rule','reward','config'])))
+          keys=sorted(set(x for x in re.findall(r'["\']([A-Za-z][A-Za-z0-9_]{2,80})["\']',joined) if any(k in x.lower() for k in ['activity','template','campaign','encrypt','decrypt','publickey','token','userid','region','rank','record','reward','rule','config'])))
+          contexts=[]
+          for pattern in ['activityId','templateActivity','JSEncrypt','publicKey','privateKey','encrypt','decrypt','axios','baseURL','/api/','Init','GetActivity']:
+            for m in re.finditer(re.escape(pattern),joined,re.I):contexts.append({'pattern':pattern,'context':joined[max(0,m.start()-800):min(len(joined),m.end()+1800)]})
+          result={'root':ROOT,'htmlBytes':len(r.content),'assetRecords':records,'endpoints':endpoints,'urlStrings':url_strings,'pathStrings':path_strings,'keys':keys,'contexts':contexts[:300]};(OUT/'protocol.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          lines=['# Yalla Template Activity Engine Source','',f'- HTML: {len(r.content)} bytes',f'- Assets: {len(records)}',f'- JS files: {len(texts)}',f'- API endpoints: {len(endpoints)}',f'- Relevant paths: {len(path_strings)}','', '## API endpoints','']+[f'- `{x}`' for x in endpoints]+['','## Relevant paths','']+[f'- `{x}`' for x in path_strings[:300]]+['','## Keys','',', '.join(keys)]
+          (OUT/'REPORT.md').write_text('\n'.join(lines));print(json.dumps({'assets':len(records),'js':len(texts),'endpoints':endpoints,'paths':path_strings[:100]},ensure_ascii=False,indent=2))
+          PY
+          python /tmp/template_engine_extract.py 2>&1 | tee "$OUT_DIR/run.log"
+      - name: Publish source branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-template-bot';git config user.email '53897102+moongrant@users.noreply.github.com';git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1||true;cp -a "$OUT_DIR"/. .;git add .;git commit -m "Publish Yalla template engine source ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-template-engine-source
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
