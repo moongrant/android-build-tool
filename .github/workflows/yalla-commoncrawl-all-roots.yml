@@ -1,0 +1,56 @@
+name: Yalla all-index Common Crawl root discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/commoncrawl_all_roots.py
+      - .github/workflows/yalla-commoncrawl-all-roots.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-commoncrawl-all-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run all-index Common Crawl discovery
+        run: |
+          python -m pip install requests beautifulsoup4 lxml warcio
+          python -m py_compile tools/yalla-next-batch/commoncrawl_all_roots.py
+          rm -rf pro-yalla-commoncrawl-all-roots
+          python tools/yalla-next-batch/commoncrawl_all_roots.py 2>&1 | tee yalla-commoncrawl-all.log
+      - name: Publish results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-commoncrawl
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md indexes.json record-count.txt root-candidates.json inspected.json eligible.json; do cp "pro-yalla-commoncrawl-all-roots/$f" "$stage/" 2>/dev/null || true; done
+          cp yalla-commoncrawl-all.log "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-cc-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish all-index Yalla Common Crawl roots ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-commoncrawl-all-roots
+          path: pro-yalla-commoncrawl-all-roots
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
