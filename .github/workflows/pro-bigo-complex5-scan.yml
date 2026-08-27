@@ -1,0 +1,44 @@
+name: Pro-BIGO 2026 Complex Campaign Scan
+
+on:
+  push:
+    branches:
+      - pro-bigo-complex5-20260827
+    paths:
+      - 'tmp/pro-bigo-complex5/**'
+      - '.github/workflows/pro-bigo-complex5-scan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      START_ID: '90000'
+      END_ID: '106000'
+      WORKERS: '56'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests
+      - name: Scan BIGO template API
+        run: python tmp/pro-bigo-complex5/scan_2026.py
+      - name: Package results
+        if: always()
+        run: zip -qr pro-bigo-complex5-scan-output.zip pro-bigo-complex5-scan-output || true
+      - name: Upload scan artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-bigo-complex5-scan-output
+          path: |
+            pro-bigo-complex5-scan-output
+            pro-bigo-complex5-scan-output.zip
+          if-no-files-found: warn
+          compression-level: 3
+          retention-days: 14
