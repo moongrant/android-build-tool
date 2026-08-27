@@ -1,0 +1,162 @@
+name: Yalla historical candidate introspection
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-historical-candidate-introspection.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      OUT_DIR: pro-yalla-historical-candidate-introspection
+      RESULT_BRANCH: pro-yalla-historical-introspection-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch archived HTML and bundles, then extract mechanisms
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          rm -rf "$OUT_DIR" && mkdir -p "$OUT_DIR"
+          cat > /tmp/inspect.py <<'PY'
+          from __future__ import annotations
+          import hashlib,json,re,time
+          from collections import deque
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          OUT=Path('pro-yalla-historical-candidate-introspection');OUT.mkdir(exist_ok=True)
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'*/*'})
+          TARGETS=[
+            {'id':'magic-lamp','name':'Magic Lamp 2021','root':'https://activity2.yalla.live/activity/2021dist/MagicLamp/','target':'20210805'},
+            {'id':'beat-pinata','name':'Beat Piñata 2021','root':'https://activity2.yalla.live/activity/2021dist/beatPinata/','target':'20210822'},
+            {'id':'lucky-card','name':'Lucky Card 2021','root':'https://activity2.yalla.live/activity/YallaActivity2021/Yalla01/LuckyCard/Dist/','target':'20210201'},
+          ]
+          FEATURES={
+            'task':['task','mission','daily','sign','checkin','check-in'],
+            'lottery':['lottery','draw','spin','lucky','random','prize','jackpot'],
+            'growth':['level','progress','stage','upgrade','unlock','milestone'],
+            'collect':['collect','collection','album','card','fragment','piece'],
+            'shop':['shop','store','exchange','redeem','mall'],
+            'rank':['rank','ranking','leaderboard','toplist'],
+            'game':['hit','beat','hammer','lamp','genie','wish','pinata','piñata','candy'],
+            'record':['record','history','log'],
+            'reward':['reward','gift','prize','benefit'],
+          }
+          def get(url,params=None,timeout=(20,100),tries=4):
+            for i in range(tries):
+              try:
+                r=S.get(url,params=params,timeout=timeout,allow_redirects=True)
+                if r.status_code in {429,500,502,503,504} and i+1<tries:time.sleep(1.5*(i+1));continue
+                return r
+              except Exception:
+                if i+1<tries:time.sleep(1.5*(i+1))
+            return None
+          def cdx(url,match=None):
+            p={'url':url,'output':'json','fl':'timestamp,original,statuscode,mimetype,digest,length','filter':'statuscode:200','collapse':'urlkey','limit':'5000'}
+            if match:p['matchType']=match
+            r=get('https://web.archive.org/cdx/search/cdx',p,timeout=(30,180),tries=3)
+            if not r or r.status_code!=200:return []
+            try:d=r.json()
+            except Exception:return []
+            if not isinstance(d,list) or not d:return []
+            h=d[0];return [dict(zip(h,x)) for x in d[1:] if isinstance(x,list) and len(x)==len(h)]
+          def choose(rows,target):
+            if not rows:return None
+            t=int((target+'0'*14)[:14])
+            return min(rows,key=lambda x:abs(int((x.get('timestamp','0')+'0'*14)[:14])-t))
+          def fetch_archived(url,target):
+            row=choose(cdx(url),target)
+            if not row:return None
+            replay=f"https://web.archive.org/web/{row['timestamp']}id_/{row['original']}"
+            r=get(replay,timeout=(30,180),tries=3)
+            if not r or r.status_code!=200:return None
+            return {'url':url,'row':row,'replay':replay,'content':r.content,'contentType':r.headers.get('content-type','')}
+          def refs(text,base):
+            out=set();text=text.replace('\\/','/').replace('\\u002F','/')
+            if '<' in text[:5000]:
+              try:
+                soup=BeautifulSoup(text,'html.parser')
+                for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src'),('video','src'),('audio','src')]:
+                  for el in soup.find_all(tag):
+                    if el.get(attr):out.add(urljoin(base,el.get(attr)))
+              except Exception:pass
+            for u in re.findall(r'https?://[^\s"\'<>`)\\]+',text):out.add(u.rstrip(',.;)]}'))
+            for u in re.findall(r'url\(\s*["\']?([^"\')\s]+)',text,re.I):out.add(urljoin(base,u))
+            for u in re.findall(r'["\']([^"\'\n\r]{1,500}\.(?:js|mjs|css|json|png|jpe?g|webp|gif|svg|woff2?|ttf|otf|mp3|wav|ogg|mp4|webm|map)(?:\?[^"\']*)?)["\']',text,re.I):out.add(urljoin(base,u))
+            return {u for u in out if urlparse(u).scheme in {'http','https'}}
+          def safe(url):
+            p=urlparse(url);path=p.path.strip('/') or 'index.html';path=re.sub(r'[^A-Za-z0-9._/-]+','_',path)
+            if path.endswith('/'):path+='index.html'
+            if p.query:path+='__q_'+hashlib.sha1(p.query.encode()).hexdigest()[:10]
+            return Path(re.sub(r'[^A-Za-z0-9._-]+','_',p.netloc))/path
+          reports=[]
+          for t in TARGETS:
+            base=OUT/t['id'];base.mkdir(parents=True,exist_ok=True)
+            root_rows=cdx(t['root'],'prefix');(base/'cdx-prefix.json').write_text(json.dumps(root_rows,ensure_ascii=False,indent=2))
+            initial=fetch_archived(t['root'],t['target']) or fetch_archived(t['root']+'index.html',t['target'])
+            queue=deque();records=[];texts=[]
+            if initial:queue.append(initial)
+            seen=set()
+            while queue and len(records)<400:
+              item=queue.popleft();url=item['url']
+              if url in seen:continue
+              seen.add(url);data=item['content'];ctype=item['contentType'];file=base/'files'/safe(url);file.parent.mkdir(parents=True,exist_ok=True);file.write_bytes(data)
+              rec={'url':url,'replay':item['replay'],'timestamp':item['row'].get('timestamp'),'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'contentType':ctype,'file':file.relative_to(base).as_posix()};records.append(rec)
+              textual=any(x in ctype.lower() for x in ['text','javascript','json','xml']) or file.suffix.lower() in {'.html','.js','.mjs','.css','.json','.map','.svg','.txt','.xml'}
+              if textual and len(data)<30_000_000:
+                text=data.decode('utf-8','ignore');texts.append((url,text))
+                for u in refs(text,url):
+                  if u in seen:continue
+                  # prioritize official Yalla roots/assets only
+                  if not any(x in (urlparse(u).hostname or '').lower() for x in ['yalla','windgh','qrsshine','ylapi']):continue
+                  got=fetch_archived(u,t['target'])
+                  if got:queue.append(got)
+            joined='\n'.join(x[1] for x in texts);low=joined.lower()
+            feature_hits={k:sorted({w for w in words if w in low}) for k,words in FEATURES.items()}
+            routes=set(['/'])
+            for pattern in [r"\bpath\s*:\s*['\"]([^'\"]{1,160})['\"]",r"['\"](#/[A-Za-z0-9_./?=&%-]{1,160})['\"]"]:
+              for route in re.findall(pattern,joined):routes.add(route.lstrip('#') or '/')
+            apis=sorted(set(re.findall(r'/(?:api|Api)/[A-Za-z0-9_./?=&%-]{2,240}',joined)))
+            visible=''
+            if initial:
+              try:visible=' '.join(BeautifulSoup(initial['content'].decode('utf-8','ignore'),'html.parser').get_text(' ',strip=True).split())
+              except Exception:pass
+            simple_rank=bool(feature_hits['rank']) and not any(feature_hits[k] for k in ['task','lottery','growth','collect','shop','game'])
+            report={'id':t['id'],'name':t['name'],'root':t['root'],'rootRows':len(root_rows),'files':len(records),'bytes':sum(x['bytes'] for x in records),'routes':sorted(routes),'apiPaths':apis[:300],'features':feature_hits,'visibleText':visible[:10000],'simpleRankingRisk':simple_rank,'records':records}
+            (base/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));reports.append(report)
+          (OUT/'inventory.json').write_text(json.dumps(reports,ensure_ascii=False,indent=2))
+          lines=['# Historical Yalla Candidate Introspection','', '| Activity | Files | Routes | Feature groups | Simple rank risk |','|---|---:|---:|---|---|']
+          for r in reports:lines.append(f"| {r['name']} | {r['files']} | {len(r['routes'])} | {', '.join(k for k,v in r['features'].items() if v)} | {r['simpleRankingRisk']} |")
+          lines+=['','## Details','']
+          for r in reports:lines += [f"### {r['name']}",f"- Root: `{r['root']}`",f"- APIs: {len(r['apiPaths'])}",f"- Routes: `{r['routes']}`",f"- Features: `{r['features']}`",f"- Visible: {r['visibleText'][:1000]}",'']
+          (OUT/'REPORT.md').write_text('\n'.join(lines));print(json.dumps([{k:r[k] for k in ['id','files','routes','features','simpleRankingRisk']} for r in reports],ensure_ascii=False,indent=2))
+          PY
+          python /tmp/inspect.py 2>&1 | tee "$OUT_DIR/run.log"
+      - name: Publish results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-introspection;rm -rf "$stage"&&mkdir -p "$stage"
+          for f in REPORT.md inventory.json run.log;do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null||true;done
+          git config user.name 'pro-yalla-introspection-bot';git config user.email '53897102+moongrant@users.noreply.github.com';git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1||true;cp -a "$stage"/. .;git add .;git commit -m "Publish historical Yalla candidate introspection ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-historical-candidate-introspection
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
