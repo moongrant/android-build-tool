@@ -1,0 +1,37 @@
+name: Pro-BIGO Complex Five Source Recovery
+
+on:
+  push:
+    branches:
+      - pro-bigo-complex5-recovery-20260827
+    paths:
+      - 'tmp/pro-bigo-complex5/**'
+      - '.github/workflows/pro-bigo-complex5-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Recover official configurations, article assets and SPA bundles
+        run: python tmp/pro-bigo-complex5/recover_sources.py
+      - name: Upload complete source recovery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-bigo-complex5-source-output
+          path: |
+            pro-bigo-complex5-source-output
+            pro-bigo-complex5-source-output.zip
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14
