@@ -1,0 +1,102 @@
+name: Yalla signed GeneralTemplate API probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-template-api-signed-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    env:
+      OUT_DIR: pro-yalla-template-api-signed-probe
+      RESULT_BRANCH: pro-yalla-template-api-signed-probe-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe signed activity configuration endpoints
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests cryptography
+          rm -rf "$OUT_DIR" && mkdir -p "$OUT_DIR"
+          cat > /tmp/probe_template_api.py <<'PY'
+          from __future__ import annotations
+          import base64,concurrent.futures,hashlib,json,time
+          from pathlib import Path
+          import requests
+          from cryptography.hazmat.primitives import serialization
+          from cryptography.hazmat.primitives.asymmetric import padding
+
+          OUT=Path('pro-yalla-template-api-signed-probe');OUT.mkdir(exist_ok=True)
+          KEY=b'''-----BEGIN PUBLIC KEY-----
+          MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqiLQpZmnMJwRIz4O3V0cxxg/2
+          UJ0nBriSSPt0i2HN5hlmq+zQYYQwDAvNiFs1R2OD6f2jJrCiiCLr9RmPhgVp1O+o
+          yT8sH3RJ9f9BGIOPO6U1ar4p1V3b6juGRWDxkfUgN7MOYS/lgywfr+YTavrAvj8K
+          UusZI5pu5Gm9+ML4NQIDAQAB
+          -----END PUBLIC KEY-----'''
+          KEY=b'\n'.join(line.strip() for line in KEY.splitlines())+b'\n'
+          PUBLIC=serialization.load_pem_public_key(KEY)
+          IDS=['240207','240221','240409','240530','240531','240601','240815','241022','250426','260212','20240207','20240221','20240409','20240530','20240531','20240601','20240815','20241022','20250426']
+          AUTH=[
+            {'name':'blank','userId':'','token':'','v':'3602','s':'3'},
+            {'name':'zero','userId':'0','token':'','v':'3602','s':'3'},
+            {'name':'archive','userId':'10000001','token':'archive-replay','v':'3602','s':'3'},
+            {'name':'legacy','userId':'10000001','token':'archive-replay','v':'999','s':'3'},
+          ]
+          HOSTS=['https://activity2.yalla.live','https://activity2.windgh.com']
+          def signature(token,stamp):
+            encrypted=PUBLIC.encrypt(f'{token}|{stamp}|Yalla-Activity-Headers'.encode(),padding.PKCS1v15())
+            return base64.b64encode(encrypted).decode()
+          def one(task):
+            host,aid,auth,method=task;stamp=str(int(time.time()*1000));common={'region':'0','userId':auth['userId'],'token':auth['token'],'v':auth['v'],'s':auth['s'],'activityId':int(aid)};headers={k:str(v) for k,v in common.items()};headers.update({'xtimestamp':stamp,'xsignature':signature(auth['token'],stamp),'User-Agent':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36 Yalla/3.6.2','Accept':'application/json,text/plain,*/*','Referer':f'{host}/activity/2024dist/templateActivity/?activityId={aid}','Origin':host})
+            url=host+('/api/GeneralTemplate/Init' if method=='init' else '/api/GeneralTemplate/GetActivityInfo')
+            row={'host':host,'activityId':aid,'auth':auth['name'],'method':method,'url':url}
+            try:
+              if method=='init':r=requests.post(url,json=common,headers={**headers,'Content-Type':'application/json'},timeout=(15,60),allow_redirects=True)
+              else:r=requests.get(url,params=common,headers=headers,timeout=(15,60),allow_redirects=True)
+              row.update(status=r.status_code,finalUrl=r.url,bytes=len(r.content),sha256=hashlib.sha256(r.content).hexdigest(),contentType=r.headers.get('content-type'),body=r.text[:500000],headers=dict(r.headers))
+              try:row['json']=r.json()
+              except Exception:pass
+            except Exception as e:row['error']=repr(e)
+            return row
+          tasks=[]
+          for host in HOSTS:
+            for aid in IDS:
+              for auth in AUTH:
+                for method in ['init','activity-info']:tasks.append((host,aid,auth,method))
+          rows=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=18) as ex:
+            for row in ex.map(one,tasks):rows.append(row);print(json.dumps({k:row.get(k) for k in ['host','activityId','auth','method','status','bytes','body','error']},ensure_ascii=False)[:2000],flush=True)
+          interesting=[]
+          for row in rows:
+            body=(row.get('body') or '').lower();
+            if row.get('status') not in {204,400,401,403,404,405} or row.get('bytes',0)>200 or any(x in body for x in ['generaltemplateactivityname','materialconfigs','lotteryconfigs','progressconfigs','rankconfigs','starttime','endtime']):interesting.append(row)
+          (OUT/'responses.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2));(OUT/'interesting.json').write_text(json.dumps(interesting,ensure_ascii=False,indent=2))
+          lines=['# Yalla Signed GeneralTemplate API Probe','',f'- Requests: {len(rows)}',f'- Interesting: {len(interesting)}','', '| Activity ID | Host | Auth | Method | HTTP | Bytes | Code / sample |','|---|---|---|---|---:|---:|---|']
+          for row in interesting:lines.append(f"| `{row['activityId']}` | {row['host']} | {row['auth']} | {row['method']} | {row.get('status')} | {row.get('bytes')} | {(row.get('body') or row.get('error') or '')[:240].replace('|','/').replace(chr(10),' ')} |")
+          (OUT/'REPORT.md').write_text('\n'.join(lines));print(json.dumps({'requests':len(rows),'interesting':len(interesting),'ids':sorted({x['activityId'] for x in interesting})},ensure_ascii=False,indent=2))
+          PY
+          python /tmp/probe_template_api.py 2>&1 | tee "$OUT_DIR/run.log"
+      - name: Publish results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-template-bot';git config user.email '53897102+moongrant@users.noreply.github.com';git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1||true;cp -a "$OUT_DIR"/. .;git add .;git commit -m "Publish signed GeneralTemplate probe ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-template-api-signed-probe
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
