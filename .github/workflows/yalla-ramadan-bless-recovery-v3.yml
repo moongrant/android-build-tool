@@ -1,0 +1,86 @@
+name: Yalla Ramadan Bless independent child SPA recovery v3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-ramadan-bless-recovery-v3.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      OUT_DIR: pro-yalla-ramadan-bless-recovery-v3
+      ZIP_NAME: pro-yalla-ramadan-bless-recovery-v3.zip
+      RESULT_BRANCH: pro-yalla-ramadan-bless-v3-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch recovery bugs and run
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tools/yalla-next-batch/recover_ramadan_bless.py')
+          text=p.read_text()
+          old_init='await context.add_init_script("""({fixed})=>{const R=Date;class D extends R{constructor(...a){super(...(a.length?a:[fixed]));}static now(){return fixed;}}Object.setPrototypeOf(D,R);window.Date=D;const n=()=>{},e=()=>\'\';window.YallaBridge=window.YallaBridge||{getToken:e,getUserInfo:()=>null,close:n,share:n,openRoom:n};window.Android=window.Android||{getToken:e,getUserInfo:e,closeWebView:n,share:n};}""",{\'fixed\':int(datetime(2026,2,20,tzinfo=timezone.utc).timestamp()*1000)})'
+          new_init='await context.add_init_script("""()=>{const fixed=1771588800000;const R=Date;class D extends R{constructor(...a){super(...(a.length?a:[fixed]));}static now(){return fixed;}}Object.setPrototypeOf(D,R);window.Date=D;const n=()=>{},e=()=>\'\';window.YallaBridge=window.YallaBridge||{getToken:e,getUserInfo:()=>null,close:n,share:n,openRoom:n};window.Android=window.Android||{getToken:e,getUserInfo:e,closeWebView:n,share:n};}""")'
+          text=text.replace(old_init,new_init)
+          text=text.replace("return urlunparse(((p.scheme or 'https').lower(),p.netloc.lower(),re.sub(r'/{2,}','/',p.path or '/'),' ',q,'')).replace('/ ','/')","return urlunparse(((p.scheme or 'https').lower(),p.netloc.lower(),re.sub(r'/{2,}','/',p.path or '/'),'',q,''))")
+          text=text.replace(').catch(lambda:None)',')')
+          p.write_text(text)
+          PY
+          python -m pip install requests beautifulsoup4 lxml pillow playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          python -m py_compile tools/yalla-next-batch/recover_ramadan_bless.py
+          rm -rf "$OUT_DIR"
+          YALLA_RAMADAN_BLESS_OUT="$OUT_DIR" python tools/yalla-next-batch/recover_ramadan_bless.py 2>&1 | tee ramadan-bless-v3.log
+      - name: Validate, package and verify
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$OUT_DIR/logs"; cp ramadan-bless-v3.log "$OUT_DIR/logs/" 2>/dev/null || true
+          test -s "$OUT_DIR/registry/yalla-ramadan-bless-registry.json"
+          test -s "$OUT_DIR/RESULT-BOARD.md"
+          rm -f "$ZIP_NAME" "$ZIP_NAME.sha256"
+          zip -q -r "$ZIP_NAME" "$OUT_DIR"
+          unzip -t "$ZIP_NAME" | tail -n 4
+          sha256sum "$ZIP_NAME" | tee "$ZIP_NAME.sha256"
+      - name: Publish result branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/ramadan-bless-v3
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in RESULT-BOARD.md QA.md README.md; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          cp "$OUT_DIR/registry/yalla-ramadan-bless-registry.json" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/screenshots/ramadan-bless-contact-sheet.jpg" "$stage/" 2>/dev/null || true
+          cp "$ZIP_NAME.sha256" "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-recovery-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Ramadan Bless recovery v3 ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload full artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-ramadan-bless-recovery-v3
+          path: |
+            ${{ env.ZIP_NAME }}
+            ${{ env.ZIP_NAME }}.sha256
+            ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
