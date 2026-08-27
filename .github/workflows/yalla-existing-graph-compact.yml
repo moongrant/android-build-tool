@@ -1,0 +1,72 @@
+name: Yalla collected-bundle graph compact extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-existing-graph-compact.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  compact:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      RESULT_BRANCH: pro-yalla-existing-graph-compact-results
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch graph and extract compact evidence
+        run: |
+          set -Eeuo pipefail
+          mkdir -p out
+          curl --fail --location --retry 5 --retry-all-errors \
+            -o /tmp/existing-bundle-graph.json \
+            'https://raw.githubusercontent.com/moongrant/android-build-tool/pro-yalla-existing-bundle-graph-results/existing-bundle-graph.json'
+          python - <<'PY'
+          import json,re
+          from pathlib import Path
+          data=json.load(open('/tmp/existing-bundle-graph.json'))
+          compact={
+            'hiddenRoots':data.get('hiddenRoots',[]),
+            'templateActivityIds':data.get('templateActivityIds',[]),
+            'apiModules':data.get('apiModules',[]),
+          }
+          Path('out/compact.json').write_text(json.dumps(compact,ensure_ascii=False,indent=2))
+          lines=['# Collected Yalla Bundle Graph · Compact','']
+          lines += ['## Hidden roots','']+[f"- `{x.get('bucket')}/{x.get('project')}` — {x.get('hitCount')} hits" for x in compact['hiddenRoots']]
+          lines += ['','## Template activity IDs','']
+          for item in compact['templateActivityIds']:
+            lines.append(f"### {item.get('activityId')} · {item.get('hitCount')} hits")
+            for hit in item.get('hits',[]):
+              lines += [f"- Source: `{hit.get('sourceFolder')}` / `{hit.get('sourceUrl')}`",'```',str(hit.get('context',''))[:6000],'```']
+          lines += ['','## API modules','']
+          for item in compact['apiModules']:
+            lines.append(f"- `{item.get('module')}` — {item.get('hitCount')} calls — sources: {', '.join(item.get('sources',[]))} — actions: {', '.join(item.get('actions',[]))}")
+          Path('out/REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'hiddenRoots':len(compact['hiddenRoots']),'templateIds':[x.get('activityId') for x in compact['templateActivityIds']],'apiModules':len(compact['apiModules'])},ensure_ascii=False,indent=2))
+          PY
+
+      - name: Publish compact branch
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-graph-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish compact Yalla bundle graph ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload compact artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-existing-graph-compact
+          path: out
+          if-no-files-found: error
+          retention-days: 30
