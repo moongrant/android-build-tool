@@ -1,0 +1,65 @@
+name: Yalla next batch archive-driven SPA discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-next-batch/discover_roots.py
+      - .github/workflows/yalla-next-batch-discovery.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-next-batch-discovery-results
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install discovery dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml
+          python -m py_compile tools/yalla-next-batch/discover_roots.py
+      - name: Enumerate and score non-site Yalla official SPA roots
+        run: |
+          set -Eeuo pipefail
+          rm -rf pro-yalla-next-batch-root-discovery
+          python tools/yalla-next-batch/discover_roots.py 2>&1 | tee yalla-next-batch-discovery.log
+      - name: Publish discovery result branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-next-discovery
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md site-dedupe.json all-root-candidates.json inspected-root-candidates.json eligible-rich-candidates.json row-count.txt; do
+            cp "pro-yalla-next-batch-root-discovery/$f" "$stage/" 2>/dev/null || true
+          done
+          cp yalla-next-batch-discovery.log "$stage/" 2>/dev/null || true
+          git config user.name 'pro-yalla-discovery-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla next-batch discovery ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+      - name: Upload full discovery artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-next-batch-root-discovery
+          path: pro-yalla-next-batch-root-discovery
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
