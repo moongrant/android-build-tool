@@ -33,13 +33,14 @@ jobs:
           python -m pip install --disable-pip-version-check pillow
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk
-      - name: Generate Batch 10 archiver
+      - name: Generate and patch Batch 10 archiver
         run: |
           set -Eeuo pipefail
-          python -m py_compile tools/pro-falla-batch10/make_archiver.py
+          python -m py_compile tools/pro-falla-batch10/make_archiver.py tools/pro-falla-batch10/patch_archive.py
           python tools/pro-falla-batch10/make_archiver.py
           python -m py_compile tools/pro-falla-batch10/_builder_generated.py
           python tools/pro-falla-batch10/_builder_generated.py
+          python tools/pro-falla-batch10/patch_archive.py
           node --check tools/pro-falla-batch10/archive_batch10.mjs
       - name: Capture and replay original Falla SPAs
         env:
