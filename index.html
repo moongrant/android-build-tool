@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="//activity2.yalla.live"><link rel="preconnect" href="//activity2.yalla.live"><title></title><style>@-webkit-keyframes test_anim {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -2250px 0;
+      }
+    }
+
+    @keyframes test_anim {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -2250px 0;
+      }
+    }
+
+    #loadingGif {
+      width: 75px;
+      height: 45px;
+      display: block;
+      background-image: url('https://file.yalla.live/h5activity/loading.png');
+      background-size: 2250px 45px;
+      background-repeat: no-repeat;
+      -webkit-animation: test_anim 1.2s steps(30) both infinite;
+      animation: test_anim 1.2s steps(30) both infinite;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 10000;
+    }
+
+    #finishToast {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: none;
+      z-index: 100000;
+      background: #fff;
+    }
+
+    .xiaoma {
+      width: 30%;
+      margin: 200px auto 10px;
+    }
+
+    #tips1 {
+      font-size: 18px;
+      color: #666;
+      text-align: center;
+      padding: 0 10px;
+    }</style><script src="./js/vue.runtime.global.min.js"></script><script src="./js/axios.min.js"></script><script src="./js/jsencrypt.min.js"></script><script src="./js/qs.min.js"></script><link href="/activity/2024dist/templateActivity/css/chunk-vendors.353fc510.css" rel="stylesheet"><link href="/activity/2024dist/templateActivity/css/app.813c8406.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/activity/2024dist/templateActivity/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/activity/2024dist/templateActivity/favicon.ico"><link rel="manifest" href="/activity/2024dist/templateActivity/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="templateActivity"><link rel="apple-touch-icon" href="/activity/2024dist/templateActivity/favicon.ico"><link rel="mask-icon" href="/activity/2024dist/templateActivity/favicon.ico" color="#4DBA87"><meta name="msapplication-TileImage" content="/activity/2024dist/templateActivity/favicon.ico"><meta name="msapplication-TileColor" content="#000000"></head><body><div id="finishToast"><img class="xiaoma" src="https://file.yalla.live/Activity/ActivityOver/xiaoma.png"><div id="tips1">The activity has ended.More coming soonâ¦</div></div><div id="app"><div id="loadingGif"></div></div><script src="/activity/2024dist/templateActivity/js/chunk-vendors.c81cfbc5.js"></script><script src="/activity/2024dist/templateActivity/js/app.03cc225b.js"></script></body></html>
