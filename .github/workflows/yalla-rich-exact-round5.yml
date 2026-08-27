@@ -1,0 +1,168 @@
+name: Yalla rich exact browser recovery round 5
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-rich-exact-round5/capture.mjs
+      - .github/workflows/yalla-rich-exact-round5.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    env:
+      OUT_DIR: pro-yalla-rich-spa-increment-round5-exact
+      ZIP_NAME: pro-yalla-rich-spa-increment-round5-exact.zip
+      RESULT_BRANCH: pro-yalla-rich-round5-exact-results
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install browser and image dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+          python -m pip install pillow
+          node --check tools/yalla-rich-exact-round5/capture.mjs
+
+      - name: Capture eight original official Yalla SPAs
+        continue-on-error: true
+        env:
+          YALLA_EXACT_OUT: ${{ env.OUT_DIR }}
+        run: |
+          set -Eeuo pipefail
+          rm -rf "$OUT_DIR"
+          node tools/yalla-rich-exact-round5/capture.mjs 2>&1 | tee yalla-round5-exact.log
+
+      - name: Guarantee package structure and build contact sheet
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$OUT_DIR"/{activities,data,assets,fixtures,screenshots,registry,replay,logs}
+          cp yalla-round5-exact.log "$OUT_DIR/logs/" 2>/dev/null || true
+          test -f "$OUT_DIR/README.md" || printf '# Pro-Yalla Round 5 Exact\n\nCapture did not finish cleanly. No VERIFIED status is granted.\n' > "$OUT_DIR/README.md"
+          test -f "$OUT_DIR/QA.md" || printf '# QA\n\nCapture did not finish cleanly.\n' > "$OUT_DIR/QA.md"
+          test -f "$OUT_DIR/RESULT-BOARD.md" || printf '# Result Board\n\nNo completed activity.\n' > "$OUT_DIR/RESULT-BOARD.md"
+          test -f "$OUT_DIR/LEARNING-BOARD.md" || printf '# Learning Board\n\nNo completed activity.\n' > "$OUT_DIR/LEARNING-BOARD.md"
+          test -f "$OUT_DIR/registry/yalla-activity-registry-round5-exact.json" || printf '{"schemaVersion":"5.1","activities":[]}\n' > "$OUT_DIR/registry/yalla-activity-registry-round5-exact.json"
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw, ImageFont
+          root=Path('pro-yalla-rich-spa-increment-round5-exact')
+          shots=[]
+          for p in sorted((root/'screenshots').rglob('*-online.png')):
+              try:
+                  with Image.open(p) as im:
+                      if im.width>=300 and im.height>=500: shots.append(p)
+              except Exception: pass
+          if not shots:
+              raise SystemExit(0)
+          tw,gap,cols=300,18,4
+          cards=[]
+          for p in shots[:24]:
+              with Image.open(p) as im:
+                  im=im.convert('RGB'); h=max(1,int(im.height*tw/im.width)); cards.append((p,im.resize((tw,h))))
+          heights=[112]*cols; placements=[]
+          for card in cards:
+              col=min(range(cols),key=lambda i:heights[i]); x=gap+col*(tw+gap); y=heights[col]; placements.append((card,x,y)); heights[col]+=card[1].height+62+gap
+          canvas=Image.new('RGB',(gap+cols*(tw+gap),max(heights)+gap),'#080b12'); draw=ImageDraw.Draw(canvas); font=ImageFont.load_default()
+          draw.text((gap,22),'Pro-Yalla Rich SPA Increment - Round 5',fill='white',font=font)
+          draw.text((gap,48),f'Original official browser capture - {len(shots)} visible states',fill='#aeb6c3',font=font)
+          draw.text((gap,70),'No promotional images, mock UI or remote iframe fallback.',fill='#7f8998',font=font)
+          for (p,im),x,y in placements:
+              label=p.parent.name.replace('yalla-','')
+              draw.rounded_rectangle((x,y,x+tw,y+44),radius=10,fill='#171c27'); draw.text((x+9,y+9),label[:42],fill='white',font=font); canvas.paste(im,(x,y+44))
+          canvas.save(root/'screenshots/round5-contact-sheet.jpg',quality=89)
+          PY
+
+      - name: Validate and package exact increment
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('pro-yalla-rich-spa-increment-round5-exact/registry/yalla-activity-registry-round5-exact.json')
+          d=json.loads(p.read_text())
+          print('activities:',len(d.get('activities',[])))
+          for a in d.get('activities',[]): print(a.get('name'),a.get('status'),a.get('stateCount'),a.get('fileCount'))
+          PY
+          rm -f "$ZIP_NAME" "$ZIP_NAME.sha256"
+          zip -q -r "$ZIP_NAME" "$OUT_DIR"
+          unzip -t "$ZIP_NAME" | tail -n 4
+          sha256sum "$ZIP_NAME" | tee "$ZIP_NAME.sha256"
+          find "$OUT_DIR" -type f | wc -l | tee "$OUT_DIR/data/file-count.txt"
+          du -sh "$OUT_DIR" "$ZIP_NAME" | tee "$OUT_DIR/data/size-report.txt"
+
+      - name: Publish downloadable exact result branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-round5-exact-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp "$OUT_DIR/RESULT-BOARD.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/LEARNING-BOARD.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/QA.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/registry/yalla-activity-registry-round5-exact.json" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/screenshots/round5-contact-sheet.jpg" "$stage/" 2>/dev/null || true
+          cp "$ZIP_NAME.sha256" "$stage/"
+          size=$(stat -c%s "$ZIP_NAME")
+          if [ "$size" -lt 95000000 ]; then
+            cp "$ZIP_NAME" "$stage/"; mode=single; files='["pro-yalla-rich-spa-increment-round5-exact.zip"]'
+          else
+            split -b 45000000 -d -a 3 "$ZIP_NAME" "$stage/pro-yalla-rich-spa-increment-round5-exact.zip.part-"; mode=split
+            files=$(cd "$stage" && python - <<'PY'
+          import glob,json
+          print(json.dumps([x.split('/')[-1] for x in sorted(glob.glob('pro-yalla-rich-spa-increment-round5-exact.zip.part-*'))]))
+          PY
+          )
+          fi
+          python - <<PY
+          import json,os
+          from pathlib import Path
+          stage=Path('$stage')
+          (stage/'DOWNLOAD.json').write_text(json.dumps({'runId':'${GITHUB_RUN_ID}','runUrl':'https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}','commit':'${GITHUB_SHA}','generatedAt':os.popen('date -u +%FT%TZ').read().strip(),'mode':'$mode','files':json.loads('''$files'''),'zipSha256':Path('$ZIP_NAME.sha256').read_text().split()[0],'zipBytes':int('$size'),'rawBase':'https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${RESULT_BRANCH}/'},indent=2))
+          PY
+          git config user.name 'pro-yalla-recovery-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Pro-Yalla exact SPA increment round 5 ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete exact artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-rich-spa-increment-round5-exact
+          path: |
+            ${{ env.ZIP_NAME }}
+            ${{ env.ZIP_NAME }}.sha256
+            ${{ env.OUT_DIR }}/RESULT-BOARD.md
+            ${{ env.OUT_DIR }}/LEARNING-BOARD.md
+            ${{ env.OUT_DIR }}/QA.md
+            ${{ env.OUT_DIR }}/registry/yalla-activity-registry-round5-exact.json
+            ${{ env.OUT_DIR }}/registry/yalla-activity-registry-round5-exact.csv
+            ${{ env.OUT_DIR }}/screenshots/round5-contact-sheet.jpg
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
