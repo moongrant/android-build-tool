@@ -1,0 +1,368 @@
+name: Yalla historical activity-notice URL extraction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-activities-message-extraction.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      OUT_DIR: artifacts/yalla-activities-message
+      RESULT_BRANCH: pro-yalla-activities-message-results
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download current Yalla and Frida
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          mkdir -p /tmp/apkeep /tmp/yalla-splits "$OUT_DIR"
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-splits/com.weieyu.yalla.apk; else unzip -q "$package" -d /tmp/yalla-splits; fi
+          find /tmp/yalla-splits -type f -name '*.apk' -printf '%s %p\n' | sort -nr > "$OUT_DIR/apk-splits.txt"
+          python -m pip install 'frida==17.17.0' 'frida-tools==14.10.4'
+          version="$(python -c 'import frida;print(frida.__version__)')"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/frida.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86.xz"
+          xz -d -f /tmp/frida.xz && chmod +x /tmp/frida
+
+      - name: Write reflection and request scripts
+        run: |
+          cat > /tmp/hook.js <<'JS'
+          'use strict';
+          function emit(tag, data) { send({tag: tag, data: data}); }
+          function s(value) { try { return String(value); } catch (_) { return ''; } }
+          Java.perform(function () {
+            try {
+              var Main = Java.use('com.yalla.yalla.api.old.OooOOO');
+              var Lazy = Java.use('kotlin.Lazy');
+              var fields = Main.class.getDeclaredFields();
+              var client = null;
+              for (var i = 0; i < fields.length; i++) {
+                try {
+                  var field = fields[i]; field.setAccessible(true);
+                  var raw = field.get(null), value = raw;
+                  var rawName = raw ? s(raw.getClass().getName()) : 'null';
+                  if (raw && rawName.toLowerCase().indexOf('lazy') >= 0) {
+                    try { value = Java.cast(raw, Lazy).getValue(); } catch (_) {}
+                  }
+                  var valueName = value ? s(value.getClass().getName()) : 'null';
+                  if (!client && valueName.indexOf('okhttp3.OkHttpClient') >= 0) client = value;
+                } catch (_) {}
+              }
+              if (!client) throw new Error('OkHttpClient not found');
+
+              var Constants = Java.use('com.yalla.yalla.api.old.OooOo00');
+              var constantFields = Constants.class.getDeclaredFields();
+              var constants = {};
+              for (var c = 0; c < constantFields.length; c++) {
+                try {
+                  var cf = constantFields[c]; cf.setAccessible(true);
+                  var cv = cf.get(null);
+                  constants[s(cf.getName())] = cv === null ? null : s(cv);
+                } catch (error) {
+                  constants['error-' + c] = s(error);
+                }
+              }
+              emit('constants', constants);
+
+              var common = {};
+              try {
+                var Params = Java.use('p470o0o00.OooO0O0');
+                var javaMap = Params.OooO00o();
+                var entries = javaMap.entrySet().toArray();
+                for (var e = 0; e < entries.length; e++) {
+                  common[s(entries[e].getKey())] = s(entries[e].getValue());
+                }
+              } catch (error) {
+                emit('common-error', {error: s(error.stack || error)});
+              }
+              emit('common-params', common);
+
+              var Thread = Java.use('java.lang.Thread');
+              var Runnable = Java.use('java.lang.Runnable');
+              var RequestBuilder = Java.use('okhttp3.Request$Builder');
+              var FormBuilder = Java.use('okhttp3.FormBody$Builder');
+
+              function headersObject(headers) {
+                var output = {};
+                try {
+                  var names = headers.names().toArray();
+                  for (var i = 0; i < names.length; i++) {
+                    var name = s(names[i]); output[name] = s(headers.get(name));
+                  }
+                } catch (_) {}
+                return output;
+              }
+              function append(url, params) {
+                var pairs = [];
+                Object.keys(params || {}).forEach(function (key) {
+                  pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(s(params[key])));
+                });
+                return url + (url.indexOf('?') >= 0 ? '&' : '?') + pairs.join('&');
+              }
+              function call(method, url, form, headers) {
+                var builder = RequestBuilder.$new().url(url).header('Abnormal', 'true');
+                Object.keys(headers || {}).forEach(function (key) { builder.header(key, s(headers[key])); });
+                if (method === 'POST') {
+                  var fb = FormBuilder.$new();
+                  Object.keys(form || {}).forEach(function (key) { fb.add(key, s(form[key])); });
+                  builder.post(fb.build());
+                } else builder.get();
+                var request = builder.build();
+                var response = client.newCall(request).execute();
+                var finalRequest = response.request();
+                var bodyObject = response.body();
+                var body = bodyObject ? s(bodyObject.string()) : '';
+                var output = {
+                  method: method,
+                  requestedUrl: url,
+                  finalUrl: s(finalRequest.url()),
+                  originalHeaders: headersObject(request.headers()),
+                  finalHeaders: headersObject(finalRequest.headers()),
+                  code: response.code(),
+                  responseHeaders: headersObject(response.headers()),
+                  body: body
+                };
+                response.close();
+                return output;
+              }
+              function derive(body) {
+                var result = {token: '', userId: '', region: ''};
+                try {
+                  var root = JSON.parse(body), stack = [root];
+                  while (stack.length) {
+                    var item = stack.pop();
+                    if (Array.isArray(item)) { item.forEach(function (x) { stack.push(x); }); }
+                    else if (item && typeof item === 'object') {
+                      Object.keys(item).forEach(function (key) {
+                        var value = item[key], lower = key.toLowerCase(), text = s(value);
+                        if (value && typeof value === 'object') stack.push(value);
+                        else {
+                          if (!result.token && lower.indexOf('token') >= 0 && text.length > 3) result.token = text;
+                          if (!result.userId && ['userid','user_id','uid'].indexOf(lower) >= 0 && text && text !== '0') result.userId = text;
+                          if (!result.region && ['region','regionid'].indexOf(lower) >= 0 && text) result.region = text;
+                        }
+                      });
+                    }
+                  }
+                } catch (error) { result.error = s(error); }
+                return result;
+              }
+              function looksUrl(value) { return /^https?:\/\//i.test(value || ''); }
+              function join(base, path) {
+                if (looksUrl(path)) return path;
+                return String(base || '').replace(/\/$/, '') + '/' + String(path || '').replace(/^\//, '');
+              }
+
+              var Job = Java.registerClass({
+                name: 'com.openai.YallaActivityNotices' + Date.now(),
+                implements: [Runnable],
+                methods: { run: function () {
+                  var auth = null;
+                  for (var i = 0; i < 4 && !auth; i++) {
+                    var country = ['US','AE','SA','EG'][i];
+                    try {
+                      var login = call('POST', 'https://apiv2.yalla.live/Webservers/User/VisitorLogin', {countryCode: country, afId: '', visitType: 0, promotionParam: ''}, {});
+                      login.country = country; login.derived = derive(login.body); emit('login', login);
+                      if (login.derived.token && login.derived.userId) auth = login.derived;
+                    } catch (error) { emit('login-error', {country: country, error: s(error.stack || error)}); }
+                  }
+                  if (!auth) { emit('fatal', {error: 'No guest auth'}); return; }
+                  var headers = {token: auth.token, userid: auth.userId, userId: auth.userId};
+                  var f1 = constants['f45037OooO00o'] || '';
+                  var f2 = constants['f45060OooOoO'] || '';
+                  var bases = ['https://apiv2.yalla.live','https://apiv2.windgh.com'];
+                  var candidates = [];
+                  if (looksUrl(f1)) candidates.push(join(f1, f2));
+                  if (looksUrl(f2)) candidates.push(join(f2, f1));
+                  bases.forEach(function (base) {
+                    candidates.push(join(base, f1));
+                    candidates.push(join(base, f2));
+                    candidates.push(join(join(base, f1), f2));
+                    candidates.push(join(join(base, f2), f1));
+                  });
+                  candidates = candidates.filter(function (value, index, self) {
+                    return looksUrl(value) && self.indexOf(value) === index;
+                  });
+                  emit('candidates', {f1: f1, f2: f2, urls: candidates});
+                  candidates.forEach(function (baseUrl) {
+                    for (var page = 1; page <= 30; page++) {
+                      var params = {};
+                      Object.keys(common).forEach(function (key) { params[key] = common[key]; });
+                      params.page = page; params.pageindex = page; params.pagesize = 100;
+                      params.userid = auth.userId; params.token = auth.token; params.region = auth.region || 0;
+                      try {
+                        var getResponse = call('GET', append(baseUrl, params), null, headers);
+                        getResponse.baseCandidate = baseUrl; getResponse.page = page; emit('notice-response', getResponse);
+                        if (getResponse.code === 404 || getResponse.code === 405) break;
+                        if (getResponse.body && getResponse.body.length < 80 && page > 1) break;
+                      } catch (error) { emit('notice-error', {method: 'GET', url: baseUrl, page: page, error: s(error.stack || error)}); break; }
+                    }
+                    try {
+                      var postParams = {};
+                      Object.keys(common).forEach(function (key) { postParams[key] = common[key]; });
+                      postParams.page = 1; postParams.pageindex = 1; postParams.pagesize = 100;
+                      postParams.userid = auth.userId; postParams.token = auth.token; postParams.region = auth.region || 0;
+                      var postResponse = call('POST', baseUrl, postParams, headers);
+                      postResponse.baseCandidate = baseUrl; emit('notice-response', postResponse);
+                    } catch (error) { emit('notice-error', {method: 'POST', url: baseUrl, error: s(error.stack || error)}); }
+                  });
+                  emit('done', {auth: auth, candidates: candidates.length});
+                }}
+              });
+              Thread.$new(Job.$new()).start();
+            } catch (error) { emit('fatal', {error: s(error.stack || error)}); }
+          });
+          JS
+
+          cat > /tmp/run.py <<'PY'
+          import frida, json, sys, time
+          from pathlib import Path
+          out = Path('artifacts/yalla-activities-message'); out.mkdir(parents=True, exist_ok=True)
+          messages = []
+          def cb(message, data): messages.append(message); print(json.dumps(message, ensure_ascii=False), flush=True)
+          device = frida.get_usb_device(timeout=60)
+          pid = device.spawn(['com.weieyu.yalla'])
+          session = device.attach(pid)
+          script = session.create_script(Path('/tmp/hook.js').read_text())
+          script.on('message', cb); script.load(); device.resume(pid)
+          deadline = time.time() + 420
+          while time.time() < deadline:
+              if any(x.get('type') == 'send' and x.get('payload', {}).get('tag') in {'done','fatal'} for x in messages): break
+              time.sleep(.5)
+          payloads = [x.get('payload', {}) for x in messages if x.get('type') == 'send']
+          (out/'messages.json').write_text(json.dumps(messages, ensure_ascii=False, indent=2))
+          (out/'payloads.json').write_text(json.dumps(payloads, ensure_ascii=False, indent=2))
+          for tag in ['constants','common-params','common-error','login','login-error','candidates','notice-response','notice-error','fatal','done']:
+              (out/f'{tag}.json').write_text(json.dumps([x.get('data') for x in payloads if x.get('tag') == tag], ensure_ascii=False, indent=2))
+          if not any(x.get('tag') == 'notice-response' for x in payloads): sys.exit(3)
+          PY
+
+          cat > /tmp/emulator.sh <<'SH'
+          #!/usr/bin/env bash
+          set -Eeuo pipefail
+          out="artifacts/yalla-activities-message"
+          adb wait-for-device
+          adb shell getprop ro.dalvik.vm.native.bridge | tee "$out/native-bridge.txt"
+          adb shell getprop ro.product.cpu.abilist | tee "$out/abilist.txt"
+          mapfile -t apks < <(find /tmp/yalla-splits -type f -name '*.apk' | sort)
+          set +e
+          adb install-multiple -r "${apks[@]}" 2>&1 | tee "$out/install.log"
+          rc=${PIPESTATUS[0]}
+          set -e
+          if [[ $rc -ne 0 ]]; then
+            base="$(find /tmp/yalla-splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)"
+            adb install -r "$base" 2>&1 | tee "$out/install-base.log"
+          fi
+          adb shell pm path com.weieyu.yalla | tee "$out/pm-path.txt"
+          adb root || true; adb wait-for-device
+          adb push /tmp/frida /data/local/tmp/frida-server
+          adb shell chmod 755 /data/local/tmp/frida-server
+          adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida.log 2>&1 &'
+          sleep 5
+          set +e
+          python /tmp/run.py 2>&1 | tee "$out/frida-run.log"
+          code=${PIPESTATUS[0]}
+          set -e
+          adb logcat -d -t 22000 > "$out/logcat.txt" || true
+          adb shell cat /data/local/tmp/frida.log > "$out/frida-server.log" || true
+          exit "$code"
+          SH
+          chmod +x /tmp/emulator.sh
+
+      - name: Boot emulator and extract signed historical activity notices
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 28
+          target: google_apis
+          arch: x86
+          profile: pixel_2
+          cores: 2
+          ram-size: 3072M
+          heap-size: 512M
+          disk-size: 6G
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          script: bash /tmp/emulator.sh
+
+      - name: Parse activity URLs and publish
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import json, os, re
+          out = Path('artifacts/yalla-activities-message'); out.mkdir(parents=True, exist_ok=True)
+          try: payloads = json.loads((out/'payloads.json').read_text())
+          except Exception: payloads = []
+          responses = [x.get('data') for x in payloads if x.get('tag') == 'notice-response']
+          urls, notices = [], []
+          def walk(value, path='$'):
+              if isinstance(value, dict):
+                  if any(k.lower() in {'activityurl','activity_url','activitylink','jumpurl','h5url','url'} for k in value):
+                      notices.append({'path': path, 'object': value})
+                  for key, child in value.items():
+                      if isinstance(child, str):
+                          for u in re.findall(r'https?://[^\s"\'<>\\)]+', child.replace('\\/','/')):
+                              urls.append({'path': path+'.'+key, 'url': u.rstrip(',.;]})')})
+                      walk(child, path+'.'+key)
+              elif isinstance(value, list):
+                  for i, child in enumerate(value): walk(child, f'{path}[{i}]')
+          parsed = []
+          for response in responses:
+              body = (response or {}).get('body','')
+              try:
+                  obj = json.loads(body); parsed.append({'request': response.get('finalUrl') or response.get('requestedUrl'), 'json': obj}); walk(obj)
+              except Exception:
+                  for u in re.findall(r'https?://[^\s"\'<>\\)]+', body.replace('\\/','/')):
+                      urls.append({'path': '$raw', 'url': u.rstrip(',.;]})')})
+          roots=[]
+          for item in urls:
+              try:
+                  p=urlparse(item['url']); parts=[x for x in p.path.split('/') if x]
+                  if len(parts)>=3 and parts[0].lower()=='activity' and (re.fullmatch(r'20\d{2}dist',parts[1],re.I) or re.fullmatch(r'YallaActivity20\d{2}',parts[1],re.I)):
+                      roots.append({**item,'host':p.hostname,'bucket':parts[1],'project':parts[2],'root':f'{p.scheme}://{p.netloc}/activity/{parts[1]}/{parts[2]}/'})
+              except Exception: pass
+          unique={x['root']:x for x in roots}
+          result={'generatedAt':os.popen('date -u +%FT%TZ').read().strip(),'responseCount':len(responses),'urlCount':len(urls),'noticeObjects':notices,'roots':sorted(unique.values(),key=lambda x:(x['bucket'],x['project'])),'responses':responses,'parsedJson':parsed}
+          (out/'activity-notices.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          lines=['# Yalla Historical Activity Notices','',f'- Responses: {len(responses)}',f'- URLs: {len(urls)}',f'- Notice objects: {len(notices)}',f'- Exact roots: {len(unique)}','']+[f"- `{x['bucket']}/{x['project']}` — {x['root']}" for x in result['roots']]
+          (out/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'responses':len(responses),'notices':len(notices),'roots':[x['project'] for x in result['roots']]},ensure_ascii=False,indent=2))
+          PY
+          stage=/tmp/yalla-activities-message
+          rm -rf "$stage" && mkdir -p "$stage"
+          cp -R "$OUT_DIR"/. "$stage/"
+          git config user.name 'pro-yalla-message-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla historical activity notices ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-activities-message
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
