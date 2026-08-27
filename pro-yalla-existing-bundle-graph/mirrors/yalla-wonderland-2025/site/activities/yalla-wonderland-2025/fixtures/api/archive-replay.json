@@ -1,0 +1,102 @@
+{
+  "notice": "Deterministic illustrative replay data. This is not a claim about the historical live leaderboard.",
+  "responses": {
+    "/Api/NewYear2025/Init": {
+      "code": 0,
+      "data": 0,
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetActivityInfo": {
+      "code": 0,
+      "data": {
+        "signUpNum": 128640,
+        "barrageGameRankCountdown": 0,
+        "bigPrizeRankCountdown": 0,
+        "topRoomRankCountdown": 0,
+        "bigPrizeRankDay": 7,
+        "bigPrizeRankStartDate": "2025-01-01T00:00:00Z",
+        "seaTop1": {
+          "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png"
+        },
+        "rollerCosterTop1": {
+          "teamMemberList": [
+            { "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png" },
+            { "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png" }
+          ]
+        },
+        "ferrisWheelTop1": {
+          "teamMemberList": [
+            { "headurl": "/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png" },
+            { "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png" }
+          ]
+        }
+      },
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetProgressInfo": {
+      "code": 0,
+      "data": [],
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetMedalConfigList": {
+      "code": 0,
+      "data": [],
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetExchangeMedalCount": {
+      "code": 0,
+      "data": 0,
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetBarrageGameRoomId": {
+      "code": 0,
+      "data": 0,
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetBarrageGameRank": {
+      "code": 0,
+      "data": {
+        "rankInfo": [
+          { "ranking": 1, "countryId": 1, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png", "nickname": "Replay Glory", "num": 986420 },
+          { "ranking": 2, "countryId": 2, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png", "nickname": "Wonder Star", "num": 875310 },
+          { "ranking": 3, "countryId": 3, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png", "nickname": "Carnival Hero", "num": 764200 },
+          { "ranking": 4, "countryId": 4, "headurl": "/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png", "nickname": "Sea Voyager", "num": 653090 },
+          { "ranking": 5, "countryId": 5, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png", "nickname": "Coaster Rider", "num": 541980 },
+          { "ranking": 6, "countryId": 6, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png", "nickname": "Ferris Dream", "num": 430870 }
+        ],
+        "userInfo": { "ranking": 50, "countryId": 1, "headurl": "/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png", "nickname": "Archive Replay", "num": 128640 }
+      },
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetBigPrizeRank": {
+      "code": 0,
+      "data": {
+        "rankInfo": [
+          { "ranking": 1, "countryId": 7, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png", "nickname": "Lucky Star", "kavipLv": 8, "num": 202501 },
+          { "ranking": 2, "countryId": 8, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png", "nickname": "Golden Wish", "kavipLv": 7, "num": 188800 },
+          { "ranking": 3, "countryId": 9, "headurl": "/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png", "nickname": "Bright Future", "kavipLv": 6, "num": 166600 },
+          { "ranking": 4, "countryId": 10, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png", "nickname": "New Year Joy", "kavipLv": 5, "num": 144400 },
+          { "ranking": 5, "countryId": 11, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png", "nickname": "Dream Maker", "kavipLv": 4, "num": 122200 },
+          { "ranking": 6, "countryId": 12, "headurl": "/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png", "nickname": "Lucky Ticket", "kavipLv": 3, "num": 100000 }
+        ],
+        "userInfo": { "ranking": 50, "countryId": 1, "headurl": "/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png", "nickname": "Archive Replay", "kavipLv": 1, "num": 20250 }
+      },
+      "message": "ok"
+    },
+    "/Api/NewYear2025/GetTopRoomList": {
+      "code": 0,
+      "data": {
+        "rankInfo": [
+          { "ranking": 1, "roomCountryId": 13, "roomName": "Wonder Palace", "roomUrl": "/activities/yalla-wonderland-2025/img/room1.cc523a86.png", "totalNum": 880000, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png"},{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png"},{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png"},{"headurl":"/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png"}] },
+          { "ranking": 2, "roomCountryId": 14, "roomName": "Carnival Club", "roomUrl": "/activities/yalla-wonderland-2025/img/room2.e65eddd5.png", "totalNum": 760000, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png"},{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png"},{"headurl":"/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png"}] },
+          { "ranking": 3, "roomCountryId": 15, "roomName": "Yalla Harbor", "roomUrl": "/activities/yalla-wonderland-2025/img/room3.f7c10554.png", "totalNum": 640000, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png"},{"headurl":"/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png"}] },
+          { "ranking": 4, "roomCountryId": 4, "roomName": "Dream Station", "roomUrl": "/activities/yalla-wonderland-2025/img/room1.cc523a86.png", "totalNum": 520000, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png"},{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png"}] },
+          { "ranking": 5, "roomCountryId": 5, "roomName": "Happy Island", "roomUrl": "/activities/yalla-wonderland-2025/img/room2.e65eddd5.png", "totalNum": 410000, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar1.0aef7e06.png"},{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png"}] },
+          { "ranking": 6, "roomCountryId": 6, "roomName": "Roller House", "roomUrl": "/activities/yalla-wonderland-2025/img/room3.f7c10554.png", "totalNum": 300000, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar2.b27c024a.png"},{"headurl":"/activities/yalla-wonderland-2025/img/ballAvatar3.6cfaa12c.png"}] }
+        ],
+        "userInfo": { "ranking": 50, "roomCountryId": 1, "roomName": "Archive Replay", "roomUrl": "/activities/yalla-wonderland-2025/img/room1.cc523a86.png", "totalNum": 128640, "teamMemberList": [{"headurl":"/activities/yalla-wonderland-2025/img/2025avatar.17822f22.png"}] }
+      },
+      "message": "ok"
+    }
+  }
+}

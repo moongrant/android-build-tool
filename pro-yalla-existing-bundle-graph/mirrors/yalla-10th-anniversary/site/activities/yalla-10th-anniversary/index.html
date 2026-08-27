@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta http-equiv="x-dns-prefetch-control" content="on"><title></title><style>@-webkit-keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+
+      @keyframes test_anim {
+        0% {
+          background-position: 0 0;
+        }
+
+        100% {
+          background-position: -2250px 0;
+        }
+      }
+      /* 骨架屏图片闪烁动画 */
+      @keyframes skeleton-img-flash {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .skeleton-img-flash {
+        animation: skeleton-img-flash 1.2s ease-in-out infinite;
+      }
+
+      #SkeletonScreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 99999;
+      }
+      #finishToast {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: none;
+        z-index: 9999;
+        background: #fff;
+      }
+      .icon-act-exit {
+        width: 24px;
+        height: 24px;
+        /* margin: 0 16px; */
+        position: fixed;
+        top: 10px;
+        left: 16px;
+      }
+      #ar .icon-act-exit {
+        left: auto;
+        right: 16px;
+        transform: rotateY(180deg);
+      }
+      .xiaoma {
+        width: 30%;
+        margin: 200px auto 10px;
+      }
+      #actEndText {
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+        padding: 0 10px;
+      }</style><script>const isAnd = () => {
+        return window.navigator.userAgent.includes('Android')
+      }
+      // H5 自定义 level 1-info 2-error
+      const sailfishLog = (level, text, tag) => {
+        try {
+          if (!isAnd()) {
+            window.webkit.messageHandlers.sailfishLog.postMessage({
+              level: level === 1 ? 2 : 4,
+              text,
+              tag
+            })
+            // @ts-ignore
+          } else Yalla.sailfishLog(level === 1 ? 4 : 6, text, tag)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      window.addEventListener(
+        'error',
+        function (e) {
+          sailfishLog(2, e.message, '10thAnniversary')
+        },
+        true
+      )</script><script src="/activities/yalla-10th-anniversary/js/vue.runtime.global.min.js"></script><script src="/activities/yalla-10th-anniversary/js/axios.min.js"></script><script src="/activities/yalla-10th-anniversary/js/jsencrypt.min.js"></script><script src="/activities/yalla-10th-anniversary/js/qs.min.js"></script><link href="/activities/yalla-10th-anniversary/css/chunk-vendors.055e6531.css" rel="stylesheet"><link href="/activities/yalla-10th-anniversary/css/app.eecb626f.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/activities/yalla-10th-anniversary/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/activities/yalla-10th-anniversary/favicon.ico"><link rel="manifest" href="/activities/yalla-10th-anniversary/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="10thAnniversary"><link rel="apple-touch-icon" href="/activities/yalla-10th-anniversary/favicon.ico"><link rel="mask-icon" href="/activities/yalla-10th-anniversary/favicon.ico" color="#4DBA87"><meta name="msapplication-TileImage" content="/activities/yalla-10th-anniversary/favicon.ico"><meta name="msapplication-TileColor" content="#000000"><script src="/activities/yalla-10th-anniversary/local-runtime/replay.js"></script></head><body><div id="finishToast"><img class="icon-act-exit" src="/activities/yalla-10th-anniversary/images/icon_return_normal.png"> <img class="xiaoma" src="/activities/yalla-10th-anniversary/images/horse2.png"><div id="actEndText">The activity has ended.More coming soon…</div></div><div id="app"><img class="skeleton-img-flash" id="SkeletonScreen" src="/activities/yalla-10th-anniversary/images/SkeletonScreen.png" alt=""></div><script src="/activities/yalla-10th-anniversary/js/chunk-vendors.f6bbfad4.js"></script><script src="/activities/yalla-10th-anniversary/js/app.a0036d25.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a31a06160ad35d07',t:'MTc4NzgyMjY3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>
