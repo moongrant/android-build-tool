@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/tmp/run.py", line 5, in <module>
+    dev=frida.get_usb_device(timeout=60);pid=dev.spawn(['com.weieyu.yalla']);ses=dev.attach(pid);sc=ses.create_script(Path('/tmp/hook.js').read_text());sc.on('message',cb);sc.load();dev.resume(pid)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/frida/__init__.py", line 632, in spawn
+    return _invoke(self._impl.spawn, (program, options, ))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/frida/__init__.py", line 226, in _invoke
+    raise error
+frida.NotSupportedError: need Gadget to attach on jailed Android; its default location is: /home/runner/.cache/frida/gadget-android-arm64.so
