@@ -1,0 +1,1144 @@
+package com.yalla.yalla.model;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.google.gson.annotations.SerializedName;
+import com.yalla.yalla.model.user.MyUserInfoModel;
+import kotlin.Metadata;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0004\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u0004\u0018\u00010\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0006\"\u0004\b\u0010\u0010\bR\u001a\u0010\u0011\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0006\"\u0004\b\u0012\u0010\bR\u0018\u0010\u0013\u001a\u0004\u0018\u00010\u00148\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u0017"}, d2 = {"Lcom/yalla/yalla/model/LoginModel;", "", "<init>", "()V", "isFirst", "", "()Z", "setFirst", "(Z)V", "token", "Lcom/yalla/yalla/model/LoginToken;", "getToken", "()Lcom/yalla/yalla/model/LoginToken;", "setToken", "(Lcom/yalla/yalla/model/LoginToken;)V", "isBindRemind", "setBindRemind", "isGameFirst", "setGameFirst", "data", "Lcom/yalla/yalla/model/user/MyUserInfoModel;", "getData", "()Lcom/yalla/yalla/model/user/MyUserInfoModel;", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class LoginModel {
+    public static final int $stable = 8;
+
+    @SerializedName(alternate = {"userInfo"}, value = "data")
+    @Nullable
+    private final MyUserInfoModel data;
+    private boolean isBindRemind;
+    private boolean isFirst;
+    private boolean isGameFirst;
+
+    @Nullable
+    private LoginToken token;
+
+    @Nullable
+    public final MyUserInfoModel getData() {
+        return this.data;
+    }
+
+    @Nullable
+    public final LoginToken getToken() {
+        return this.token;
+    }
+
+    /* JADX INFO: renamed from: isBindRemind, reason: from getter */
+    public final boolean getIsBindRemind() {
+        return this.isBindRemind;
+    }
+
+    /* JADX INFO: renamed from: isFirst, reason: from getter */
+    public final boolean getIsFirst() {
+        return this.isFirst;
+    }
+
+    /* JADX INFO: renamed from: isGameFirst, reason: from getter */
+    public final boolean getIsGameFirst() {
+        return this.isGameFirst;
+    }
+
+    public final void setBindRemind(boolean z) {
+        this.isBindRemind = z;
+    }
+
+    public final void setFirst(boolean z) {
+        this.isFirst = z;
+    }
+
+    public final void setGameFirst(boolean z) {
+        this.isGameFirst = z;
+    }
+
+    public final void setToken(@Nullable LoginToken loginToken) {
+        this.token = loginToken;
+    }
+}
+package com.yalla.yalla.model;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.google.gson.annotations.SerializedName;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes7.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0011\b\u0007\u0018\u00002\u00020\u0001B\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001e\u0010\n\u001a\u00020\u00058\u0006@\u0006X\u0087\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001e\u0010\r\u001a\u00020\u00058\u0006@\u0006X\u0087\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u001e\u0010\u0010\u001a\u00020\u00058\u0006@\u0006X\u0087\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0007\"\u0004\b\u0012\u0010\tR\u001e\u0010\u0013\u001a\u00020\u00058\u0006@\u0006X\u0087\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0007\"\u0004\b\u0015\u0010\t¨\u0006\u0016"}, d2 = {"Lcom/yalla/yalla/model/LoginToken;", "", "<init>", "()V", "token", "", "getToken", "()Ljava/lang/String;", "setToken", "(Ljava/lang/String;)V", "tokenRoom", "getTokenRoom", "setTokenRoom", "tokenActivity", "getTokenActivity", "setTokenActivity", "tokenChat", "getTokenChat", "setTokenChat", "tokenGameSocket", "getTokenGameSocket", "setTokenGameSocket", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+public final class LoginToken {
+    public static final int $stable = 8;
+
+    @NotNull
+    private String token = "";
+
+    @SerializedName("token_room")
+    @NotNull
+    private String tokenRoom = "";
+
+    @SerializedName("token_activity")
+    @NotNull
+    private String tokenActivity = "";
+
+    @SerializedName("token_chat")
+    @NotNull
+    private String tokenChat = "";
+
+    @SerializedName("token_game_socket")
+    @NotNull
+    private String tokenGameSocket = "";
+
+    @NotNull
+    public final String getToken() {
+        return this.token;
+    }
+
+    @NotNull
+    public final String getTokenActivity() {
+        return this.tokenActivity;
+    }
+
+    @NotNull
+    public final String getTokenChat() {
+        return this.tokenChat;
+    }
+
+    @NotNull
+    public final String getTokenGameSocket() {
+        return this.tokenGameSocket;
+    }
+
+    @NotNull
+    public final String getTokenRoom() {
+        return this.tokenRoom;
+    }
+
+    public final void setToken(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.token = str;
+    }
+
+    public final void setTokenActivity(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.tokenActivity = str;
+    }
+
+    public final void setTokenChat(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.tokenChat = str;
+    }
+
+    public final void setTokenGameSocket(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.tokenGameSocket = str;
+    }
+
+    public final void setTokenRoom(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.tokenRoom = str;
+    }
+}
+package com.yalla.yalla.ui.activity.main;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import androidx.compose.foundation.BackgroundKt;
+import androidx.compose.foundation.ImageKt;
+import androidx.compose.foundation.layout.Arrangement;
+import androidx.compose.foundation.layout.BoxKt;
+import androidx.compose.foundation.layout.BoxScopeInstance;
+import androidx.compose.foundation.layout.ColumnKt;
+import androidx.compose.foundation.layout.ColumnScopeInstance;
+import androidx.compose.foundation.layout.SizeKt;
+import androidx.compose.foundation.layout.SpacerKt;
+import androidx.compose.foundation.layout.o0ooOOo;
+import androidx.compose.foundation.text.input.internal.o00000;
+import androidx.compose.material3.TextKt;
+import androidx.compose.runtime.Composable;
+import androidx.compose.runtime.ComposableTarget;
+import androidx.compose.runtime.ComposablesKt;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.CompositionLocalMap;
+import androidx.compose.runtime.EffectsKt;
+import androidx.compose.runtime.MutableState;
+import androidx.compose.runtime.RecomposeScopeImplKt;
+import androidx.compose.runtime.ScopeUpdateScope;
+import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
+import androidx.compose.runtime.Updater;
+import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.compose.ui.Alignment;
+import androidx.compose.ui.ComposedModifierKt;
+import androidx.compose.ui.Modifier;
+import androidx.compose.ui.graphics.ColorFilter;
+import androidx.compose.ui.layout.ContentScale;
+import androidx.compose.ui.layout.MeasurePolicy;
+import androidx.compose.ui.node.ComposeUiNode;
+import androidx.compose.ui.res.PainterResources_androidKt;
+import androidx.compose.ui.res.StringResources_androidKt;
+import androidx.compose.ui.unit.Dp;
+import androidx.compose.ui.unit.TextUnitKt;
+import androidx.lifecycle.LifecycleOwnerKt;
+import com.code.android.uikit.o0000Ooo;
+import com.code.android.uikit.o00O0O0;
+import com.code.android.util.ComposableUtilKt;
+import com.code.android.util.o000OO00;
+import com.code.android.util.o0o0Oo;
+import com.code.android.window.o0OoOo0;
+import com.facebook.appevents.internal.ViewHierarchyConstants;
+import com.jeremyliao.liveeventbus.LiveEventBus;
+import com.qiniu.android.storage.Configuration;
+import com.yalla.yalla.api.result.ApiResult;
+import com.yalla.yalla.base.activity.BaseAppCompatActivity;
+import com.yalla.yalla.common.module_service.IMainModuleService;
+import com.yalla.yalla.manager.RoomStateManager;
+import com.yalla.yalla.model.LoginModel;
+import com.yalla.yalla.model.LoginToken;
+import com.yalla.yalla.model.user.MyUserInfoModel;
+import com.yalla.yalla.module.main.ui.activity.MainActivity;
+import com.yalla.yalla.module.moment.screen.moment.media.o0OO0O0;
+import com.yalla.yalla.repository.Account;
+import com.yalla.yalla.statistical.buriedpoint.BuriedPointEventParameter$LoginFrom;
+import com.yalla.yalla.util.o000O0o;
+import com.yalla.yalla.util.o000Oo0;
+import com.yalla.yalla.util.o00O000o;
+import java.util.Locale;
+import java.util.Stack;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import kotlin.Metadata;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.collections.MapsKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.EmptyCoroutineContext;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.jvm.internal.StringCompanionObject;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineScope;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import p252o00ooO0o.o00OOO00;
+import p469o0OooooO.oOO0OO;
+
+/* JADX INFO: loaded from: classes8.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0001\u0004B\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0007²\u0006\u000e\u0010\u0006\u001a\u00020\u00058\n@\nX\u008a\u008e\u0002"}, d2 = {"Lcom/yalla/yalla/ui/activity/main/StartActivity;", "Lcom/yalla/yalla/base/activity/BaseAppCompatActivity;", "<init>", "()V", "OooO00o", "", "isLoading", "Common_YallaRelease"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nStartActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StartActivity.kt\ncom/yalla/yalla/ui/activity/main/StartActivity\n+ 2 Composer.kt\nandroidx/compose/runtime/ComposerKt\n+ 3 Effects.kt\nandroidx/compose/runtime/EffectsKt\n+ 4 Effects.kt\nandroidx/compose/runtime/EffectsKt$rememberCoroutineScope$1\n+ 5 Column.kt\nandroidx/compose/foundation/layout/ColumnKt\n+ 6 Layout.kt\nandroidx/compose/ui/layout/LayoutKt\n+ 7 Composables.kt\nandroidx/compose/runtime/ComposablesKt\n+ 8 Composer.kt\nandroidx/compose/runtime/Updater\n+ 9 Dp.kt\nandroidx/compose/ui/unit/DpKt\n+ 10 Box.kt\nandroidx/compose/foundation/layout/BoxKt\n+ 11 Uri.kt\nandroidx/core/net/UriKt\n+ 12 SnapshotState.kt\nandroidx/compose/runtime/SnapshotStateKt__SnapshotStateKt\n*L\n1#1,593:1\n1277#2,6:594\n1277#2,3:607\n1280#2,3:611\n1277#2,6:704\n607#3:600\n604#3,6:601\n605#4:610\n87#5:614\n84#5,9:615\n94#5:656\n80#6,6:624\n87#6,3:639\n90#6,2:648\n94#6:655\n80#6,6:668\n87#6,3:683\n90#6,2:692\n94#6:698\n391#7,9:630\n400#7:650\n401#7,2:653\n391#7,9:674\n400#7:694\n401#7,2:696\n4354#8,6:642\n4354#8,6:686\n113#9:651\n113#9:652\n113#9:657\n113#9:695\n113#9:700\n113#9:701\n113#9:702\n113#9:703\n70#10:658\n67#10,9:659\n77#10:699\n29#11:710\n85#12:711\n117#12,2:712\n*S KotlinDebug\n*F\n+ 1 StartActivity.kt\ncom/yalla/yalla/ui/activity/main/StartActivity\n*L\n304#1:594,6\n305#1:607,3\n305#1:611,3\n395#1:704,6\n305#1:600\n305#1:601,6\n305#1:610\n307#1:614\n307#1:615,9\n307#1:656\n307#1:624,6\n307#1:639,3\n307#1:648,2\n307#1:655\n363#1:668,6\n363#1:683,3\n363#1:692,2\n363#1:698\n307#1:630,9\n307#1:650\n307#1:653,2\n363#1:674,9\n363#1:694\n363#1:696,2\n307#1:642,6\n363#1:686,6\n321#1:651\n343#1:652\n363#1:657\n366#1:695\n377#1:700\n379#1:701\n392#1:702\n393#1:703\n363#1:658\n363#1:659,9\n363#1:699\n491#1:710\n304#1:711\n304#1:712,2\n*E\n"})
+public final class StartActivity extends BaseAppCompatActivity {
+
+    /* JADX INFO: renamed from: OooOo0o, reason: collision with root package name */
+    public static final /* synthetic */ int f75869OooOo0o = 0;
+
+    /* JADX INFO: renamed from: OooOo0O, reason: collision with root package name */
+    public final long f75870OooOo0O;
+
+    @SourceDebugExtension({"SMAP\nStartActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StartActivity.kt\ncom/yalla/yalla/ui/activity/main/StartActivity$Companion\n+ 2 Uri.kt\nandroidx/core/net/UriKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,593:1\n29#2:594\n1#3:595\n*S KotlinDebug\n*F\n+ 1 StartActivity.kt\ncom/yalla/yalla/ui/activity/main/StartActivity$Companion\n*L\n107#1:594\n*E\n"})
+    public static final class OooO00o {
+        public static void OooO00o(@NotNull Context context) {
+            Intrinsics.checkNotNullParameter(context, "context");
+            Intrinsics.checkNotNullParameter(context, "context");
+            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("yalla://launch"));
+            intent.setPackage(o0o0Oo.OooO00o().getPackageName());
+            intent.setFlags(268468224);
+            context.startActivity(intent);
+            if (context instanceof Activity) {
+                ((Activity) context).overridePendingTransition(com.yalla.yalla.common.OooO0o.alpha_in, com.yalla.yalla.common.OooO0o.anim_empty);
+            }
+        }
+    }
+
+    public StartActivity() {
+        Intrinsics.checkNotNullParameter("StartActivity init", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j = jCurrentTimeMillis - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity init", j), 4);
+        this.f75870OooOo0O = System.currentTimeMillis();
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0061, code lost:
+    
+        if (r6 == r1) goto L25;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object OooOooO(StartActivity startActivity, ContinuationImpl continuationImpl) {
+        StartActivity$retryVisitorLogin$1 startActivity$retryVisitorLogin$1;
+        if (continuationImpl instanceof StartActivity$retryVisitorLogin$1) {
+            startActivity$retryVisitorLogin$1 = (StartActivity$retryVisitorLogin$1) continuationImpl;
+            int i = startActivity$retryVisitorLogin$1.f75884OooOO0;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                startActivity$retryVisitorLogin$1.f75884OooOO0 = i - Integer.MIN_VALUE;
+            } else {
+                startActivity$retryVisitorLogin$1 = new StartActivity$retryVisitorLogin$1(startActivity, continuationImpl);
+            }
+        } else {
+            startActivity$retryVisitorLogin$1 = new StartActivity$retryVisitorLogin$1(startActivity, continuationImpl);
+        }
+        Object objOooOooo = startActivity$retryVisitorLogin$1.f75883OooO0oo;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i2 = startActivity$retryVisitorLogin$1.f75884OooOO0;
+        if (i2 == 0) {
+            ResultKt.throwOnFailure(objOooOooo);
+            startActivity$retryVisitorLogin$1.f75882OooO0oO = startActivity;
+            startActivity$retryVisitorLogin$1.f75884OooOO0 = 1;
+            objOooOooo = startActivity.OooOooo(startActivity$retryVisitorLogin$1);
+            if (objOooOooo != coroutine_suspended) {
+            }
+            return coroutine_suspended;
+        }
+        if (i2 == 1) {
+            startActivity = startActivity$retryVisitorLogin$1.f75882OooO0oO;
+            ResultKt.throwOnFailure(objOooOooo);
+        } else {
+            if (i2 != 2) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(objOooOooo);
+        }
+        return (ApiResult) objOooOooo;
+        ApiResult apiResult = (ApiResult) objOooOooo;
+        if (apiResult.isSuccess() || apiResult.getCode() == 4075) {
+            return apiResult;
+        }
+        startActivity$retryVisitorLogin$1.f75882OooO0oO = null;
+        startActivity$retryVisitorLogin$1.f75884OooOO0 = 2;
+        objOooOooo = startActivity.OooOooo(startActivity$retryVisitorLogin$1);
+    }
+
+    @ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+    @Composable
+    public final void OooOoO(Composer composer, int i) {
+        Composer composer2;
+        Composer composerStartRestartGroup = composer.startRestartGroup(-1699538473);
+        if ((i & 1) == 0 && composerStartRestartGroup.getSkipping()) {
+            composerStartRestartGroup.skipToGroupEnd();
+            composer2 = composerStartRestartGroup;
+        } else {
+            ImageKt.Image(PainterResources_androidKt.painterResource(com.yalla.yalla.common.OooOOO0.ic_no_network, composerStartRestartGroup, 0), (String) null, SizeKt.m725size3ABfNKs(Modifier.INSTANCE, Dp.m7254constructorimpl(36)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composerStartRestartGroup, 440, 120);
+            ComposableUtilKt.OooO0oO(Dp.m7254constructorimpl(12), null, composerStartRestartGroup, 6, 2);
+            composer2 = composerStartRestartGroup;
+            TextKt.m2792TextNvy7gAk(StringResources_androidKt.stringResource(com.yalla.yalla.common.Oooo000.Network_error, composerStartRestartGroup, 0), null, o00OOO00.OooO0O0(composerStartRestartGroup).f89725OooO, null, TextUnitKt.getSp(15), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 24576, 0, 262122);
+        }
+        ScopeUpdateScope scopeUpdateScopeEndRestartGroup = composer2.endRestartGroup();
+        if (scopeUpdateScopeEndRestartGroup != null) {
+            scopeUpdateScopeEndRestartGroup.updateScope(new com.yalla.yalla.module.message.comp.OooOOO0(this, i, 1));
+        }
+    }
+
+    @ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+    @Composable
+    public final void OooOoOO(final boolean z, Composer composer, final int i) {
+        int i2;
+        Composer composerStartRestartGroup = composer.startRestartGroup(-556605622);
+        if ((i & 14) == 0) {
+            i2 = (composerStartRestartGroup.changed(z) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i2 & 11) == 2 && composerStartRestartGroup.getSkipping()) {
+            composerStartRestartGroup.skipToGroupEnd();
+        } else {
+            Modifier.Companion companion = Modifier.INSTANCE;
+            float f = 90;
+            float f2 = 55;
+            Modifier modifierM727sizeVpY3zN4 = SizeKt.m727sizeVpY3zN4(companion, Dp.m7254constructorimpl(f), Dp.m7254constructorimpl(f2));
+            MeasurePolicy measurePolicyMaybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.INSTANCE.getTopStart(), false);
+            long currentCompositeKeyHashCode = ComposablesKt.getCurrentCompositeKeyHashCode(composerStartRestartGroup, 0);
+            int i3 = (int) (currentCompositeKeyHashCode ^ (currentCompositeKeyHashCode >>> 32));
+            CompositionLocalMap currentCompositionLocalMap = composerStartRestartGroup.getCurrentCompositionLocalMap();
+            Modifier modifierMaterializeModifier = ComposedModifierKt.materializeModifier(composerStartRestartGroup, modifierM727sizeVpY3zN4);
+            ComposeUiNode.Companion companion2 = ComposeUiNode.INSTANCE;
+            Function0<ComposeUiNode> constructor = companion2.getConstructor();
+            if (composerStartRestartGroup.getApplier() == null) {
+                ComposablesKt.invalidApplier();
+            }
+            composerStartRestartGroup.startReusableNode();
+            if (composerStartRestartGroup.getInserting()) {
+                composerStartRestartGroup.createNode(constructor);
+            } else {
+                composerStartRestartGroup.useNode();
+            }
+            Composer composerM4099constructorimpl = Updater.m4099constructorimpl(composerStartRestartGroup);
+            Function2 function2OooO00o = androidx.compose.animation.OooO.OooO00o(companion2, composerM4099constructorimpl, measurePolicyMaybeCachedBoxMeasurePolicy, composerM4099constructorimpl, currentCompositionLocalMap);
+            if (composerM4099constructorimpl.getInserting() || !Intrinsics.areEqual(composerM4099constructorimpl.rememberedValue(), Integer.valueOf(i3))) {
+                androidx.compose.animation.OooO0OO.OooO00o(function2OooO00o, i3, composerM4099constructorimpl, i3);
+            }
+            Updater.m4106setimpl(composerM4099constructorimpl, modifierMaterializeModifier, companion2.getSetModifier());
+            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
+            composerStartRestartGroup.startReplaceGroup(1549378460);
+            if (z) {
+                o0000Ooo.f27563OooO00o.OooO0O0(SizeKt.m727sizeVpY3zN4(companion, Dp.m7254constructorimpl(f), Dp.m7254constructorimpl(f2)), composerStartRestartGroup, 6);
+            }
+            composerStartRestartGroup.endReplaceGroup();
+            composerStartRestartGroup.endNode();
+        }
+        ScopeUpdateScope scopeUpdateScopeEndRestartGroup = composerStartRestartGroup.endRestartGroup();
+        if (scopeUpdateScopeEndRestartGroup != null) {
+            scopeUpdateScopeEndRestartGroup.updateScope(new Function2() { // from class: com.yalla.yalla.ui.activity.main.OooO
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    ((Integer) obj2).getClass();
+                    int i4 = StartActivity.f75869OooOo0o;
+                    StartActivity tmp0_rcvr = this.f75845OooO0oO;
+                    Intrinsics.checkNotNullParameter(tmp0_rcvr, "$tmp0_rcvr");
+                    int iUpdateChangedFlags = RecomposeScopeImplKt.updateChangedFlags(i | 1);
+                    tmp0_rcvr.OooOoOO(z, (Composer) obj, iUpdateChangedFlags);
+                    return Unit.INSTANCE;
+                }
+            });
+        }
+    }
+
+    @ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+    @Composable
+    public final void OooOoo(final boolean z, final OooO0OO oooO0OO, Composer composer, final int i) {
+        int i2;
+        Composer composer2;
+        Composer composerStartRestartGroup = composer.startRestartGroup(622320043);
+        if ((i & 14) == 0) {
+            i2 = (composerStartRestartGroup.changed(z) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 112) == 0) {
+            i2 |= composerStartRestartGroup.changedInstance(oooO0OO) ? 32 : 16;
+        }
+        if ((i2 & 91) == 18 && composerStartRestartGroup.getSkipping()) {
+            composerStartRestartGroup.skipToGroupEnd();
+            composer2 = composerStartRestartGroup;
+        } else {
+            String strStringResource = StringResources_androidKt.stringResource(com.yalla.yalla.common.Oooo000.Reconnect, composerStartRestartGroup, 0);
+            Modifier modifierM732widthInVpY3zN4$default = SizeKt.m732widthInVpY3zN4$default(SizeKt.m711height3ABfNKs(Modifier.INSTANCE, Dp.m7254constructorimpl(40)), Dp.m7254constructorimpl(128), 0.0f, 2, null);
+            boolean z2 = !z;
+            composerStartRestartGroup.startReplaceGroup(1518674565);
+            boolean z3 = (i2 & 112) == 32;
+            Object objRememberedValue = composerStartRestartGroup.rememberedValue();
+            if (z3 || objRememberedValue == Composer.INSTANCE.getEmpty()) {
+                objRememberedValue = new com.yalla.yalla.module.main.ui.page.hot.OooOOOO(oooO0OO, 3);
+                composerStartRestartGroup.updateRememberedValue(objRememberedValue);
+            }
+            composerStartRestartGroup.endReplaceGroup();
+            composer2 = composerStartRestartGroup;
+            o00O0O0.OooO00o(strStringResource, 0L, null, null, null, 0.0f, null, z2, false, 0L, false, null, modifierM732widthInVpY3zN4$default, (Function0) objRememberedValue, composer2, 0, 100663296, 261630);
+        }
+        ScopeUpdateScope scopeUpdateScopeEndRestartGroup = composer2.endRestartGroup();
+        if (scopeUpdateScopeEndRestartGroup != null) {
+            scopeUpdateScopeEndRestartGroup.updateScope(new Function2() { // from class: com.yalla.yalla.ui.activity.main.OooO0o
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    ((Integer) obj2).getClass();
+                    int i3 = StartActivity.f75869OooOo0o;
+                    StartActivity tmp1_rcvr = this.f75857OooO0oO;
+                    Intrinsics.checkNotNullParameter(tmp1_rcvr, "$tmp1_rcvr");
+                    OooO0OO onClick = oooO0OO;
+                    Intrinsics.checkNotNullParameter(onClick, "$onClick");
+                    int iUpdateChangedFlags = RecomposeScopeImplKt.updateChangedFlags(i | 1);
+                    tmp1_rcvr.OooOoo(z, onClick, (Composer) obj, iUpdateChangedFlags);
+                    return Unit.INSTANCE;
+                }
+            });
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @ComposableTarget(applier = "androidx.compose.ui.UiComposable")
+    @Composable
+    public final void OooOoo0(Function1<? super Continuation<? super ApiResult<LoginModel>>, ? extends Object> function1, Composer composer, int i) {
+        Composer composerStartRestartGroup = composer.startRestartGroup(-1248655106);
+        composerStartRestartGroup.startReplaceGroup(-738793405);
+        Object objRememberedValue = composerStartRestartGroup.rememberedValue();
+        Composer.Companion companion = Composer.INSTANCE;
+        if (objRememberedValue == companion.getEmpty()) {
+            objRememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Boolean.FALSE, null, 2, null);
+            composerStartRestartGroup.updateRememberedValue(objRememberedValue);
+        }
+        MutableState mutableState = (MutableState) objRememberedValue;
+        composerStartRestartGroup.endReplaceGroup();
+        Object objRememberedValue2 = composerStartRestartGroup.rememberedValue();
+        if (objRememberedValue2 == companion.getEmpty()) {
+            objRememberedValue2 = EffectsKt.createCompositionCoroutineScope(EmptyCoroutineContext.INSTANCE, composerStartRestartGroup);
+            composerStartRestartGroup.updateRememberedValue(objRememberedValue2);
+        }
+        CoroutineScope coroutineScope = (CoroutineScope) objRememberedValue2;
+        Alignment.Horizontal centerHorizontally = Alignment.INSTANCE.getCenterHorizontally();
+        Modifier.Companion companion2 = Modifier.INSTANCE;
+        Modifier modifierM201backgroundbw27NRU$default = BackgroundKt.m201backgroundbw27NRU$default(SizeKt.fillMaxSize$default(companion2, 0.0f, 1, null), o00OOO00.OooO0O0(composerStartRestartGroup).f89727OooO0O0, null, 2, null);
+        MeasurePolicy measurePolicyColumnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), centerHorizontally, composerStartRestartGroup, 48);
+        long currentCompositeKeyHashCode = ComposablesKt.getCurrentCompositeKeyHashCode(composerStartRestartGroup, 0);
+        int i2 = (int) (currentCompositeKeyHashCode ^ (currentCompositeKeyHashCode >>> 32));
+        CompositionLocalMap currentCompositionLocalMap = composerStartRestartGroup.getCurrentCompositionLocalMap();
+        Modifier modifierMaterializeModifier = ComposedModifierKt.materializeModifier(composerStartRestartGroup, modifierM201backgroundbw27NRU$default);
+        ComposeUiNode.Companion companion3 = ComposeUiNode.INSTANCE;
+        Function0<ComposeUiNode> constructor = companion3.getConstructor();
+        if (composerStartRestartGroup.getApplier() == null) {
+            ComposablesKt.invalidApplier();
+        }
+        composerStartRestartGroup.startReusableNode();
+        if (composerStartRestartGroup.getInserting()) {
+            composerStartRestartGroup.createNode(constructor);
+        } else {
+            composerStartRestartGroup.useNode();
+        }
+        Composer composerM4099constructorimpl = Updater.m4099constructorimpl(composerStartRestartGroup);
+        Function2 function2OooO00o = androidx.compose.animation.OooO.OooO00o(companion3, composerM4099constructorimpl, measurePolicyColumnMeasurePolicy, composerM4099constructorimpl, currentCompositionLocalMap);
+        if (composerM4099constructorimpl.getInserting() || !Intrinsics.areEqual(composerM4099constructorimpl.rememberedValue(), Integer.valueOf(i2))) {
+            androidx.compose.animation.OooO0OO.OooO00o(function2OooO00o, i2, composerM4099constructorimpl, i2);
+        }
+        Updater.m4106setimpl(composerM4099constructorimpl, modifierMaterializeModifier, companion3.getSetModifier());
+        ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
+        SpacerKt.Spacer(o0ooOOo.OooO00o(columnScopeInstance, companion2, 1.0f, false, 2, null), composerStartRestartGroup, 0);
+        ImageKt.Image(PainterResources_androidKt.painterResource(com.yalla.yalla.common.OooOOO0.ic_login_logo, composerStartRestartGroup, 0), (String) null, o000OO00.OooO0O0(SizeKt.m725size3ABfNKs(companion2, Dp.m7254constructorimpl(90)), !p447o0Ooo00.OooOOO0.OooOO0O(), false, 0L, false, new com.yalla.yalla.module.message.comp.OooO(o0OoOo0.OooO0O0(composerStartRestartGroup), 2), new OooO0O0(), 188), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composerStartRestartGroup, 56, 120);
+        SpacerKt.Spacer(o0ooOOo.OooO00o(columnScopeInstance, companion2, 0.8f, false, 2, null), composerStartRestartGroup, 0);
+        OooOoOO(((Boolean) mutableState.getValue()).booleanValue(), composerStartRestartGroup, 64);
+        SpacerKt.Spacer(o0ooOOo.OooO00o(columnScopeInstance, companion2, 0.6f, false, 2, null), composerStartRestartGroup, 0);
+        OooOoO(composerStartRestartGroup, 8);
+        ComposableUtilKt.OooO0oO(Dp.m7254constructorimpl(28), null, composerStartRestartGroup, 6, 2);
+        OooOoo(((Boolean) mutableState.getValue()).booleanValue(), new OooO0OO(coroutineScope, function1, mutableState), composerStartRestartGroup, 512);
+        SpacerKt.Spacer(o0ooOOo.OooO00o(columnScopeInstance, companion2, 1.2f, false, 2, null), composerStartRestartGroup, 0);
+        composerStartRestartGroup.endNode();
+        ScopeUpdateScope scopeUpdateScopeEndRestartGroup = composerStartRestartGroup.endRestartGroup();
+        if (scopeUpdateScopeEndRestartGroup != null) {
+            scopeUpdateScopeEndRestartGroup.updateScope(new o0OO0O0(i, 2, this, function1));
+        }
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    public final Object OooOooo(ContinuationImpl continuationImpl) {
+        StartActivity$autoVisitorLogin$1 startActivity$autoVisitorLogin$1;
+        StartActivity startActivity;
+        if (continuationImpl instanceof StartActivity$autoVisitorLogin$1) {
+            startActivity$autoVisitorLogin$1 = (StartActivity$autoVisitorLogin$1) continuationImpl;
+            int i = startActivity$autoVisitorLogin$1.f75877OooOO0;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                startActivity$autoVisitorLogin$1.f75877OooOO0 = i - Integer.MIN_VALUE;
+            } else {
+                startActivity$autoVisitorLogin$1 = new StartActivity$autoVisitorLogin$1(this, continuationImpl);
+            }
+        } else {
+            startActivity$autoVisitorLogin$1 = new StartActivity$autoVisitorLogin$1(this, continuationImpl);
+        }
+        Object objOooO0oO = startActivity$autoVisitorLogin$1.f75876OooO0oo;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i2 = startActivity$autoVisitorLogin$1.f75877OooOO0;
+        IMainModuleService iMainModuleService = null;
+        if (i2 == 0) {
+            ResultKt.throwOnFailure(objOooO0oO);
+            p445o0Ooo.OooO0O0 oooO0O0 = p445o0Ooo.OooOO0O.f93022OooO00o;
+            if (oooO0O0 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("account");
+                oooO0O0 = null;
+            }
+            startActivity$autoVisitorLogin$1.f75875OooO0oO = this;
+            startActivity$autoVisitorLogin$1.f75877OooOO0 = 1;
+            objOooO0oO = oooO0O0.OooO0oO(startActivity$autoVisitorLogin$1);
+            if (objOooO0oO == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+            startActivity = this;
+        } else {
+            if (i2 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            startActivity = startActivity$autoVisitorLogin$1.f75875OooO0oO;
+            ResultKt.throwOnFailure(objOooO0oO);
+        }
+        ApiResult apiResult = (ApiResult) objOooO0oO;
+        if (apiResult.isSuccess()) {
+            LoginModel loginModel = (LoginModel) apiResult.getData();
+            startActivity.getClass();
+            MyUserInfoModel data = loginModel != null ? loginModel.getData() : null;
+            LoginToken token = loginModel != null ? loginModel.getToken() : null;
+            if (data != null && token != null) {
+                IMainModuleService iMainModuleService2 = p445o0Ooo.OooOO0O.f93024OooO0OO;
+                if (iMainModuleService2 != null) {
+                    iMainModuleService = iMainModuleService2;
+                } else {
+                    Intrinsics.throwUninitializedPropertyAccessException("main");
+                }
+                IMainModuleService.OooO00o.OooO0O0(iMainModuleService, startActivity, 0, 14);
+            }
+            StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
+            com.yalla.yalla.statistical.buriedpoint.OooO00o.OooO0OO("201047", MapsKt.mapOf(TuplesKt.to("strategy_id", 1), TuplesKt.to("time", o00000.OooO0Oo(new Object[]{Float.valueOf((System.currentTimeMillis() - startActivity.f75870OooOo0O) / 1000.0f)}, 1, Locale.ENGLISH, "%.2f", "format(...)"))));
+            oOO0OO.OooO0OO().f93878OooOOo0.OooO0OO(Boolean.FALSE);
+        }
+        return apiResult;
+    }
+
+    public final void Oooo0() {
+        Intrinsics.checkNotNullParameter("StartActivity navigate to LoginActivity", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j = jCurrentTimeMillis - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity navigate to LoginActivity", j), 4);
+        p445o0Ooo.OooO0O0 oooO0O0 = p445o0Ooo.OooOO0O.f93022OooO00o;
+        if (oooO0O0 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("account");
+            oooO0O0 = null;
+        }
+        oooO0O0.OooO(this, false, BuriedPointEventParameter$LoginFrom.Start);
+    }
+
+    public final void Oooo000() {
+        Object obj;
+        if (getIntent().hasExtra("ROOM_PUSH_DATA")) {
+            com.yalla.yalla.tech.OooO0O0.OooO0o0("RoomPushMessage");
+            long longExtra = getIntent().getLongExtra("ROOM_PUSH_DATA", 0L);
+            if (longExtra > 0) {
+                RoomStateManager.OooO(RoomStateManager.f49745OooO00o, longExtra);
+                o00O000o.OooO0O0(String.valueOf(longExtra), false);
+            }
+            long longExtra2 = getIntent().getLongExtra("NotificationType", -1L);
+            if (longExtra2 != -1) {
+                com.yalla.yalla.statistical.buriedpoint.OooO00o.OooO0OO("101106", MapsKt.mapOf(TuplesKt.to("roomid", Long.valueOf(longExtra)), TuplesKt.to("type", Long.valueOf(longExtra2))));
+            }
+        }
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && (obj = extras.get("extra")) != null) {
+            com.yalla.yalla.tech.OooO0O0.OooO0o0("FirebaseMessage");
+            com.yalla.yalla.util.log.OooOO0.OooO0OO("handleFirebaseMessage", "handleFirebaseMessage " + obj);
+            LiveEventBus.get("INTENT_FIREBASE").post(obj);
+        }
+        if (getIntent().hasExtra("extraData")) {
+            com.yalla.yalla.tech.OooO0O0.OooO0o0("IntentSchemeMessage");
+            com.yalla.yalla.util.log.OooOO0.OooO0OO("IntentScheme", "handleIntentSchemeMessage");
+            String stringExtra = getIntent().getStringExtra("extraData");
+            if (stringExtra == null) {
+                return;
+            }
+            com.yalla.yalla.util.log.OooOO0.OooO0OO("IntentScheme", "handleIntentSchemeMessage stringUri: ".concat(stringExtra));
+            if (getIntent().getData() != null) {
+                LiveEventBus.get("INTENT_SCHEME").post(Uri.parse(stringExtra));
+            }
+        }
+    }
+
+    public final void Oooo00O() {
+        o000Oo0.OooO00o("StartActivity handleAuthenticatedUser");
+        Stack<Activity> stack = com.code.android.util.OooO0O0.f28124OooO00o;
+        IMainModuleService iMainModuleService = p445o0Ooo.OooOO0O.f93024OooO0OO;
+        IMainModuleService iMainModuleService2 = null;
+        if (iMainModuleService == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("main");
+            iMainModuleService = null;
+        }
+        iMainModuleService.getClass();
+        if (com.code.android.util.OooO0O0.OooO00o(MainActivity.class) == null) {
+            o000Oo0.OooO00o("StartActivity navigate to MainActivity");
+            IMainModuleService iMainModuleService3 = p445o0Ooo.OooOO0O.f93024OooO0OO;
+            if (iMainModuleService3 != null) {
+                iMainModuleService2 = iMainModuleService3;
+            } else {
+                Intrinsics.throwUninitializedPropertyAccessException("main");
+            }
+            IMainModuleService.OooO00o.OooO0O0(iMainModuleService2, this, 0, 14);
+            o000Oo0.OooO00o("StartActivity navigate to MainActivity2");
+        }
+    }
+
+    public final void Oooo00o() {
+        com.yalla.yalla.tech.OooO0O0.f75620OooOOO0 = true;
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        com.yalla.yalla.util.log.OooOO0.OooO0OO("StartActivity", "loginByVisitor timestamp:" + jCurrentTimeMillis);
+        com.yalla.yalla.statistical.dev.OooO00o.OooOOOO(com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o, "StartActivity loginByVisitor timestamp:" + jCurrentTimeMillis);
+        BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(this), null, null, new StartActivity$handleAutoVisitorLoginAsync$1(this, jCurrentTimeMillis, null), 3, null);
+    }
+
+    @Override // com.yalla.yalla.base.activity.BaseAppCompatActivity, androidx.appcompat.app.AppCompatActivity, android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
+    public final void attachBaseContext(@Nullable Context context) {
+        Intrinsics.checkNotNullParameter("StartActivity attachBaseContext 1", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j = jCurrentTimeMillis - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity attachBaseContext 1", j), 4);
+        super.attachBaseContext(context);
+        Intrinsics.checkNotNullParameter("StartActivity attachBaseContext 2", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis2 = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j2 = jCurrentTimeMillis2 - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis2;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity attachBaseContext 2", j2), 4);
+    }
+
+    @Override // com.yalla.yalla.base.activity.BaseAppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    public final void onCreate(@Nullable Bundle bundle) {
+        Intrinsics.checkNotNullParameter("StartActivity onCreate", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j = jCurrentTimeMillis - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity onCreate", j), 4);
+        super.onCreate(bundle);
+        ((com.yalla.yalla.tech.OooO0O0.OooO00o) com.yalla.yalla.tech.OooO0O0.f75613OooO0o0.getValue()).OooO00o();
+        Intrinsics.checkNotNullParameter("StartActivity onCreate markLauncherActivityOnCreate", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis2 = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j2 = jCurrentTimeMillis2 - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis2;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity onCreate markLauncherActivityOnCreate", j2), 4);
+        com.code.android.startup.OooO00o oooO00o = com.code.android.startup.OooO00o.f27171OooO00o;
+        try {
+            if (com.code.android.startup.OooO00o.f27170OooO.get() > 0) {
+                CountDownLatch countDownLatch = com.code.android.startup.OooO00o.f27178OooO0oo;
+                Intrinsics.checkNotNull(countDownLatch);
+                countDownLatch.await(10000L, TimeUnit.MILLISECONDS);
+            }
+        } catch (InterruptedException unused) {
+        }
+        Intrinsics.checkNotNullParameter("StartActivity onCreate TaskDispatcher.await", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis3 = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j3 = jCurrentTimeMillis3 - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis3;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity onCreate TaskDispatcher.await", j3), 4);
+        if ((getIntent().getFlags() & Configuration.BLOCK_SIZE) != 0) {
+            Intrinsics.checkNotNullParameter("StartActivity onCreate finish()", ViewHierarchyConstants.TEXT_KEY);
+            long jCurrentTimeMillis4 = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+            long j4 = jCurrentTimeMillis4 - o000Oo0.f81081OooO0OO;
+            o000Oo0.f81081OooO0OO = jCurrentTimeMillis4;
+            com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity onCreate finish()", j4), 4);
+            Oooo000();
+            finish();
+            return;
+        }
+        Intrinsics.checkNotNullParameter("StartActivity normal launch start", ViewHierarchyConstants.TEXT_KEY);
+        long jCurrentTimeMillis5 = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+        long j5 = jCurrentTimeMillis5 - o000Oo0.f81081OooO0OO;
+        o000Oo0.f81081OooO0OO = jCurrentTimeMillis5;
+        com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity normal launch start", j5), 4);
+        p447o0Ooo00.OooOOO0.f93072OooO00o.getClass();
+        try {
+            Result.Companion companion = Result.INSTANCE;
+            Account account = Account.f74684OooO00o;
+            if (Account.OooOoOO()) {
+                Oooo00O();
+                Oooo000();
+                finish();
+            } else {
+                boolean zBooleanValue = oOO0OO.OooO0OO().f93878OooOOo0.OooO00o().booleanValue();
+                long jCurrentTimeMillis6 = System.currentTimeMillis();
+                if (!zBooleanValue || jCurrentTimeMillis6 % ((long) 10) >= 8) {
+                    Oooo0();
+                    Oooo000();
+                } else {
+                    Oooo00o();
+                }
+            }
+            Intrinsics.checkNotNullParameter("StartActivity handleAllMessages end", ViewHierarchyConstants.TEXT_KEY);
+            long jCurrentTimeMillis7 = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+            long j6 = jCurrentTimeMillis7 - o000Oo0.f81081OooO0OO;
+            o000Oo0.f81081OooO0OO = jCurrentTimeMillis7;
+            com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity handleAllMessages end", j6), 4);
+            Result.m7825constructorimpl(Unit.INSTANCE);
+        } catch (Throwable th) {
+            Result.Companion companion2 = Result.INSTANCE;
+            Result.m7825constructorimpl(ResultKt.createFailure(th));
+        }
+    }
+}
+package com.yalla.yalla.ui.activity.main;
+
+import kotlin.Metadata;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "com.yalla.yalla.ui.activity.main.StartActivity", f = "StartActivity.kt", i = {0}, l = {405}, m = "autoVisitorLogin", n = {"this"}, s = {"L$0"})
+final class StartActivity$autoVisitorLogin$1 extends ContinuationImpl {
+
+    /* JADX INFO: renamed from: OooO, reason: collision with root package name */
+    public final /* synthetic */ StartActivity f75874OooO;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public StartActivity f75875OooO0oO;
+
+    /* JADX INFO: renamed from: OooO0oo, reason: collision with root package name */
+    public /* synthetic */ Object f75876OooO0oo;
+
+    /* JADX INFO: renamed from: OooOO0, reason: collision with root package name */
+    public int f75877OooOO0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public StartActivity$autoVisitorLogin$1(StartActivity startActivity, ContinuationImpl continuationImpl) {
+        super(continuationImpl);
+        this.f75874OooO = startActivity;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Nullable
+    public final Object invokeSuspend(@NotNull Object obj) {
+        this.f75876OooO0oo = obj;
+        this.f75877OooOO0 |= Integer.MIN_VALUE;
+        int i = StartActivity.f75869OooOo0o;
+        return this.f75874OooO.OooOooo(this);
+    }
+}
+package com.yalla.yalla.ui.activity.main;
+
+import androidx.compose.runtime.internal.ComposableLambdaKt;
+import com.facebook.appevents.internal.ViewHierarchyConstants;
+import com.yalla.yalla.api.result.ApiResult;
+import com.yalla.yalla.util.o000O0o;
+import com.yalla.yalla.util.o000Oo0;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.CoroutineScope;
+
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "com.yalla.yalla.ui.activity.main.StartActivity$handleAutoVisitorLoginAsync$1", f = "StartActivity.kt", i = {}, l = {232}, m = "invokeSuspend", n = {}, s = {})
+public final class StartActivity$handleAutoVisitorLoginAsync$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+
+    /* JADX INFO: renamed from: OooO, reason: collision with root package name */
+    public final /* synthetic */ long f75878OooO;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public int f75879OooO0oO;
+
+    /* JADX INFO: renamed from: OooO0oo, reason: collision with root package name */
+    public final /* synthetic */ StartActivity f75880OooO0oo;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public StartActivity$handleAutoVisitorLoginAsync$1(StartActivity startActivity, long j, Continuation<? super StartActivity$handleAutoVisitorLoginAsync$1> continuation) {
+        super(2, continuation);
+        this.f75880OooO0oo = startActivity;
+        this.f75878OooO = j;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new StartActivity$handleAutoVisitorLoginAsync$1(this.f75880OooO0oo, this.f75878OooO, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
+        return ((StartActivity$handleAutoVisitorLoginAsync$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.f75879OooO0oO;
+        StartActivity startActivity = this.f75880OooO0oo;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            this.f75879OooO0oO = 1;
+            obj = StartActivity.OooOooO(startActivity, this);
+            if (obj == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
+        }
+        ApiResult apiResult = (ApiResult) obj;
+        if (apiResult.isSuccess()) {
+            Intrinsics.checkNotNullParameter("StartActivity auto login success, handleAllMessages", ViewHierarchyConstants.TEXT_KEY);
+            long jCurrentTimeMillis = System.currentTimeMillis() - o000Oo0.f81079OooO00o;
+            long j = jCurrentTimeMillis - o000Oo0.f81081OooO0OO;
+            o000Oo0.f81081OooO0OO = jCurrentTimeMillis;
+            com.yalla.yalla.util.log.OooOO0.OooO0Oo("TaskDispatcher", 1, new o000O0o("StartActivity auto login success, handleAllMessages", j), 4);
+            int i2 = StartActivity.f75869OooOo0o;
+            startActivity.Oooo000();
+            startActivity.finish();
+        } else {
+            if (apiResult.getCode() == 4075) {
+                int i3 = StartActivity.f75869OooOo0o;
+                startActivity.Oooo0();
+            } else {
+                int i4 = StartActivity.f75869OooOo0o;
+                p485o0o00OO0.OooO0OO.OooO0OO(startActivity, ComposableLambdaKt.composableLambdaInstance(96620427, true, new OooOO0(startActivity)));
+            }
+            startActivity.Oooo000();
+        }
+        com.yalla.yalla.statistical.dev.OooO00o.OooOOOO(com.yalla.yalla.statistical.dev.OooO00o.f75601OooO00o, "StartActivity loginByVisitor timestamp:" + this.f75878OooO + " result:" + apiResult.isSuccess() + " " + apiResult.getCode() + " " + apiResult.getMessage());
+        return Unit.INSTANCE;
+    }
+}
+package p445o0Ooo;
+
+import android.app.Activity;
+import androidx.compose.runtime.Composable;
+import androidx.compose.runtime.Composer;
+import com.yalla.yalla.data.constant.ClientCodeType;
+import com.yalla.yalla.mixedroom.roomdata.o0ooOOo;
+import com.yalla.yalla.model.RegistrationRewardDialogType;
+import com.yalla.yalla.statistical.buriedpoint.BuriedPointEventParameter$LoginFrom;
+import kotlin.Unit;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.jvm.functions.Function0;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+public interface OooO0O0 {
+    void OooO(@NotNull Activity activity, boolean z, @NotNull BuriedPointEventParameter$LoginFrom buriedPointEventParameter$LoginFrom);
+
+    void OooO00o(@Nullable Activity activity);
+
+    @Composable
+    void OooO0O0(@Nullable o0ooOOo o0ooooo2, @Nullable Composer composer, int i);
+
+    void OooO0OO();
+
+    void OooO0Oo();
+
+    void OooO0o(@NotNull Activity activity);
+
+    boolean OooO0o0(@NotNull Activity activity);
+
+    @Nullable
+    Object OooO0oO(@NotNull ContinuationImpl continuationImpl);
+
+    @Composable
+    void OooO0oo(@NotNull RegistrationRewardDialogType registrationRewardDialogType, @NotNull Function0<Unit> function0, @Nullable Composer composer, int i);
+
+    void OooOO0(@NotNull Activity activity, @Nullable ClientCodeType clientCodeType);
+}
+package p445o0Ooo;
+
+import androidx.compose.runtime.Composable;
+import androidx.compose.runtime.Composer;
+import com.yalla.yalla.model.game.GameItemModel;
+import com.yalla.yalla.module.wallet.manager.FirstChargeRewardDialogManager$realShow$2$1$1$1$1$2$notInGame$1;
+import java.util.List;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+public interface OooO0OO {
+
+    public static final class OooO00o {
+    }
+
+    void OooO00o(@NotNull GameItemModel gameItemModel, boolean z);
+
+    @Composable
+    void OooO0O0(@Nullable List<GameItemModel> list, boolean z, @Nullable Composer composer, int i);
+
+    void OooO0OO(int i);
+
+    @Nullable
+    Object OooO0Oo(@NotNull FirstChargeRewardDialogManager$realShow$2$1$1$1$1$2$notInGame$1.OooO00o oooO00o, @NotNull ContinuationImpl continuationImpl);
+
+    @Composable
+    void OooO0o(@Nullable Composer composer, int i);
+
+    void OooO0o0();
+
+    void OooO0oO();
+
+    void OooO0oo();
+}
+package p445o0Ooo;
+
+import com.yalla.yalla.model.ReportFromData;
+import java.util.ArrayList;
+import java.util.List;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+public interface OooO0o {
+
+    public static final class OooO00o {
+        public static /* synthetic */ void OooO00o(OooO0o oooO0o, int i, long j, ArrayList arrayList, Long l, Boolean bool, Integer num, String str, Integer num2, int i2) {
+            if ((i2 & 4) != 0) {
+                arrayList = null;
+            }
+            if ((i2 & 8) != 0) {
+                l = null;
+            }
+            if ((i2 & 16) != 0) {
+                bool = null;
+            }
+            if ((i2 & 32) != 0) {
+                num = null;
+            }
+            if ((i2 & 64) != 0) {
+                str = null;
+            }
+            if ((i2 & 128) != 0) {
+                num2 = null;
+            }
+            oooO0o.OooO00o(i, j, arrayList, l, bool, num, str, num2, (i2 & 256) == 0);
+        }
+    }
+
+    void OooO00o(int i, long j, @Nullable List<ReportFromData> list, @Nullable Long l, @Nullable Boolean bool, @Nullable Integer num, @Nullable String str, @Nullable Integer num2, boolean z);
+}
+package p445o0Ooo;
+
+import android.app.Activity;
+import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.compose.runtime.Composable;
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.MutableState;
+import com.yalla.yalla.model.MyOutFitPageTypeChild;
+import com.yalla.yalla.model.MyOutFitPageTypeNameId;
+import com.yalla.yalla.model.PremiumLevel;
+import com.yalla.yalla.model.VipLevel;
+import com.yalla.yalla.model.user.UserInfoModel;
+import com.yalla.yalla.model.vip.VipOfferModel;
+import com.yalla.yalla.model.vip.VipPopUpModel;
+import kotlin.Unit;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes6.dex */
+public interface OooOO0 {
+
+    public static final class OooO00o {
+        public static /* synthetic */ void OooO0O0(OooOO0 oooOO1, MyOutFitPageTypeNameId myOutFitPageTypeNameId, MyOutFitPageTypeChild myOutFitPageTypeChild, int i) {
+            if ((i & 1) != 0) {
+                myOutFitPageTypeNameId = MyOutFitPageTypeNameId.EntryEffect;
+            }
+            if ((i & 2) != 0) {
+                myOutFitPageTypeChild = null;
+            }
+            oooOO1.OooOOoo(myOutFitPageTypeNameId, myOutFitPageTypeChild);
+        }
+
+        public static /* synthetic */ void OooO0OO(OooOO0 oooOO1, VipLevel vipLevel, int i) {
+            if ((i & 1) != 0) {
+                vipLevel = VipLevel.Vip0;
+            }
+            oooOO1.OooOOo0(vipLevel, (i & 2) == 0, (i & 4) != 0 ? null : 1);
+        }
+    }
+
+    void OooO(@NotNull Context context, @NotNull UserInfoModel userInfoModel);
+
+    void OooO00o(@NotNull AppCompatActivity appCompatActivity);
+
+    @Composable
+    void OooO0O0(@NotNull MutableState<Boolean> mutableState, @Nullable Composer composer, int i);
+
+    void OooO0OO();
+
+    void OooO0Oo(long j);
+
+    void OooO0o(@NotNull Context context, @NotNull PremiumLevel premiumLevel);
+
+    void OooO0o0(long j, boolean z);
+
+    void OooO0oO();
+
+    void OooO0oo(@Nullable String str, boolean z, boolean z2);
+
+    @Composable
+    void OooOO0(@NotNull VipPopUpModel vipPopUpModel, @Nullable Composer composer, int i);
+
+    @Composable
+    void OooOO0O(@NotNull VipOfferModel vipOfferModel, @Nullable Composer composer, int i);
+
+    @Nullable
+    Unit OooOO0o(@NotNull String str);
+
+    void OooOOO(@NotNull String str);
+
+    void OooOOO0();
+
+    @Composable
+    void OooOOOO(@NotNull MutableState<Boolean> mutableState, @Nullable Composer composer, int i);
+
+    void OooOOOo();
+
+    @Composable
+    void OooOOo(@NotNull VipPopUpModel vipPopUpModel, @Nullable Composer composer, int i);
+
+    void OooOOo0(@NotNull VipLevel vipLevel, boolean z, @Nullable Integer num);
+
+    void OooOOoo(@NotNull MyOutFitPageTypeNameId myOutFitPageTypeNameId, @Nullable MyOutFitPageTypeChild myOutFitPageTypeChild);
+
+    void OooOo(int i);
+
+    void OooOo0(@NotNull Activity activity);
+
+    void OooOo00(long j);
+
+    void OooOo0O(@NotNull Context context);
+
+    void OooOo0o();
+}
+package p445o0Ooo;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import com.yalla.yalla.common.module_service.IMainModuleService;
+import com.yalla.yalla.common.module_service.IMessageModuleService;
+import com.yalla.yalla.common.module_service.IMomentModuleService;
+import com.yalla.yalla.common.module_service.IRoomModuleService;
+import com.yalla.yalla.common.module_service.IWalletModuleService;
+import com.yalla.yalla.module.event.EventModuleService;
+import p512o0o0O0oO.o0;
+
+/* JADX INFO: loaded from: classes6.dex */
+@StabilityInferred(parameters = 0)
+public final class OooOO0O {
+
+    /* JADX INFO: renamed from: OooO, reason: collision with root package name */
+    public static OooO f93021OooO;
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public static OooO0O0 f93022OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    public static EventModuleService f93023OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    public static IMainModuleService f93024OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public static o0 f93025OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    public static IMomentModuleService f93026OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public static IMessageModuleService f93027OooO0o0;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public static OooO0o f93028OooO0oO;
+
+    /* JADX INFO: renamed from: OooO0oo, reason: collision with root package name */
+    public static IRoomModuleService f93029OooO0oo;
+
+    /* JADX INFO: renamed from: OooOO0, reason: collision with root package name */
+    public static OooOO0 f93030OooOO0;
+
+    /* JADX INFO: renamed from: OooOO0O, reason: collision with root package name */
+    public static IWalletModuleService f93031OooOO0O;
+
+    /* JADX INFO: renamed from: OooOO0o, reason: collision with root package name */
+    public static OooO0OO f93032OooOO0o;
+}
