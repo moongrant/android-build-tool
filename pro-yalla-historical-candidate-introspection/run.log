@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "/tmp/inspect.py", line 6, in <module>
+    import requests
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/requests/__init__.py", line 45, in <module>
+    import urllib3
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/urllib3/__init__.py", line 18, in <module>
+    from .connectionpool import HTTPConnectionPool, HTTPSConnectionPool, connection_from_url
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 15, in <module>
+    from ._request_methods import RequestMethods
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/urllib3/_request_methods.py", line 10, in <module>
+    from .response import BaseHTTPResponse
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/urllib3/response.py", line 31, in <module>
+    from .connection import BaseSSLError, HTTPConnection, HTTPException
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/urllib3/connection.py", line 24, in <module>
+    from .http2 import probe as http2_probe
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/urllib3/http2/__init__.py", line 3, in <module>
+    from importlib.metadata import version
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/importlib/metadata/__init__.py", line 17, in <module>
+    import inspect
+  File "/tmp/inspect.py", line 7, in <module>
+    from bs4 import BeautifulSoup
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/bs4/__init__.py", line 65, in <module>
+    from .builder import (
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/bs4/builder/__init__.py", line 24, in <module>
+    from bs4.element import (
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/bs4/element.py", line 10, in <module>
+    from bs4.css import CSS
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/bs4/css.py", line 28, in <module>
+    from bs4._typing import _NamespaceMapping
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/bs4/_typing.py", line 16, in <module>
+    from typing_extensions import (
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/typing_extensions.py", line 1154, in <module>
+    _TAKES_MODULE = "module" in inspect.signature(typing._type_check).parameters
+                                ^^^^^^^^^^^^^^^^^
+AttributeError: partially initialized module 'inspect' has no attribute 'signature' (most likely due to a circular import)
