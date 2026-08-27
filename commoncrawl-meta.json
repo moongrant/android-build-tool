@@ -1,0 +1,304 @@
+[
+  {
+    "index": "CC-MAIN-2019-51",
+    "pattern": "activity2.yalla.live/activity/*",
+    "status": 404,
+    "bytes": 68,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2019-51-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2020-50",
+    "pattern": "activity2.windgh.com/activity/*",
+    "status": 404,
+    "bytes": 68,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2020-50-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2021-49",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2021-49-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a00710>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2021-49",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2021-49-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a00ad0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2019-51",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2019-51-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd2c60>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2020-50",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2020-50-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a01700>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2019-51",
+    "pattern": "event.yalla.live/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2019-51-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a02840>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2019-51",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2019-51-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a02c60>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2019-51",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2019-51-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a01be0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2020-50",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2020-50-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a02420>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2019-51",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2019-51-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a034a0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2020-50",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2020-50-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a02000>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2020-50",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2020-50-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a03080>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2020-50",
+    "pattern": "event.yalla.live/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2020-50-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a038c0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2021-49",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2021-49-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a33710>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2021-49",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2021-49-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a33c80>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2021-49",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2021-49-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a32ba0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2021-49",
+    "pattern": "event.yalla.live/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2021-49-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a33ad0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2022-49",
+    "pattern": "event.yalla.live/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2022-49-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a32300>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2022-49",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2022-49-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a5ef60>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2022-49",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2022-49-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a33770>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2022-49",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2022-49-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a316a0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2022-49",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2022-49-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a33ce0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2023-50",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2023-50-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a33830>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2022-49",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2022-49-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a30590>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2023-50",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2023-50-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a317f0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2023-50",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2023-50-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a00530>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2023-50",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2023-50-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430a022d0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2024-51",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd1c70>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2023-50",
+    "pattern": "event.yalla.live/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2023-50-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd2540>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2023-50",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2023-50-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd2ba0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2024-51",
+    "pattern": "event.yalla.live/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd0680>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2025-51",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2025-51-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd0e90>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2024-51",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434b15280>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2025-51",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2025-51-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434b14a70>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2024-51",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd1e50>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2024-51",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434bd0620>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2024-51",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2024-51-index?url=activity2.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4434b15460>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2025-51",
+    "pattern": "file.yalla.live/Activity/*",
+    "status": 404,
+    "bytes": 63,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2025-51-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2025-51",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "status": 404,
+    "bytes": 70,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2025-51-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2025-51",
+    "pattern": "file.yalla.live/activity/*",
+    "status": 404,
+    "bytes": 63,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2025-51-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2025-51",
+    "pattern": "event.yalla.live/*",
+    "status": 404,
+    "bytes": 55,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2025-51-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2026-34",
+    "pattern": "event.yalla.live/*",
+    "status": 404,
+    "bytes": 55,
+    "finalUrl": "https://index.commoncrawl.org/CC-MAIN-2026-34-index?url=event.yalla.live%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5",
+    "rows": 1
+  },
+  {
+    "index": "CC-MAIN-2026-34",
+    "pattern": "activity2.yalla.live/activity/*",
+    "error": "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2026-34",
+    "pattern": "file.yalla.live/Activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2026-34-index?url=file.yalla.live%2FActivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430aa0200>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2026-34",
+    "pattern": "file.yalla.live/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2026-34-index?url=file.yalla.live%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430aa01d0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2026-34",
+    "pattern": "activity2.qrsshine.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2026-34-index?url=activity2.qrsshine.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430aa0860>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  },
+  {
+    "index": "CC-MAIN-2026-34",
+    "pattern": "activity2.windgh.com/activity/*",
+    "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='index.commoncrawl.org', port=443): Max retries exceeded with url: /CC-MAIN-2026-34-index?url=activity2.windgh.com%2Factivity%2F%2A&output=json&filter=status%3A200&collapse=urlkey&pageSize=5 (Caused by ConnectTimeoutError(<HTTPSConnection(host='index.commoncrawl.org', port=443) at 0x7f4430aa0bf0>, 'Connection to index.commoncrawl.org timed out. (connect timeout=30)'))\"))",
+    "rows": 0
+  }
+]
