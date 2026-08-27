@@ -1,0 +1,87 @@
+name: Pro Falla batch 11 non-act SPA route scan
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch10-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch11-non-act-scan.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch11-quick-20260827
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enumerate non-act SPA projects and campaign hubs
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp
+          mkdir -p artifacts/pro-falla-batch11-non-act-scan
+          python - <<'PY'
+          import asyncio,aiohttp,json,re,urllib.parse
+          from pathlib import Path
+          OUT=Path('artifacts/pro-falla-batch11-non-act-scan')
+          API='https://api.apifalla.com/api/web/activities_config/act'
+          SITE='https://campaigns-collected.jekae.chatgpt.site/data/activities.js'
+          UA='Mozilla/5.0 ProFallaNonAct/1.0'
+          async def main():
+            conn=aiohttp.TCPConnector(limit=100,ssl=False)
+            async with aiohttp.ClientSession(connector=conn,headers={'User-Agent':UA}) as s:
+              try:
+                async with s.get(SITE,timeout=40) as r:site=await r.text(errors='replace')
+              except Exception as e:site=f'ERROR {e!r}'
+              sem=asyncio.Semaphore(100)
+              async def one(aid):
+                async with sem:
+                  try:
+                    async with s.post(API,json={'activitiesId':aid},headers={'Content-Type':'application/json;charset=UTF-8','Origin':'https://web.fallaweb.com','Referer':'https://web.fallaweb.com/'},timeout=18) as r:
+                      if r.status!=200:return None
+                      o=await r.json(content_type=None)
+                  except Exception:return None
+                res=o.get('res') if isinstance(o,dict) and o.get('code')==0 else None
+                if not isinstance(res,dict) or not res.get('id'):return None
+                ext=res.get('extConfig') or {}
+                if isinstance(ext,str):
+                  try:ext=json.loads(ext)
+                  except:ext={}
+                web=ext.get('web') if isinstance(ext.get('web'),dict) else {}
+                url=str(web.get('activityUrl') or '')
+                if not url:return None
+                frag=urllib.parse.urlparse(url).fragment.lstrip('/')
+                first=frag.split('?',1)[0].split('/',1)[0]
+                path=urllib.parse.urlparse(url).path
+                # Also inspect path segment after falla-web when there is no hash project.
+                m=re.search(r'/falla-web/([^/]+)/',path,re.I)
+                path_project=m.group(1) if m else ''
+                project=first or path_project
+                if not project:return None
+                pc=web.get('pageConfig') if isinstance(web.get('pageConfig'),dict) else {}
+                return {'activityId':int(res['id']),'project':project,'url':url,'translateId':pc.get('translateId'),'startTime':res.get('startTime'),'endTime':res.get('endTime'),'regions':res.get('regionList') or [],'isAct':project.lower().startswith('act-'),'knownOnSite':project.lower() in site.lower()}
+              rows=[x for x in await asyncio.gather(*(one(i) for i in range(1,2201))) if x]
+              by={}
+              for x in rows:
+                key=(x['project'].lower(),x['url'].split('?',1)[0])
+                if key not in by or x['activityId']>by[key]['activityId']:by[key]=x
+              allrows=sorted(by.values(),key=lambda x:x['activityId'],reverse=True)
+              nonact=[x for x in allrows if not x['isAct']]
+              unknown=[x for x in nonact if not x['knownOnSite']]
+              (OUT/'all-non-act.json').write_text(json.dumps(nonact,ensure_ascii=False,indent=2),encoding='utf-8')
+              (OUT/'unknown-non-act.json').write_text(json.dumps(unknown,ensure_ascii=False,indent=2),encoding='utf-8')
+              print(json.dumps({'nonActCount':len(nonact),'unknownCount':len(unknown),'unknown':unknown[:100]},ensure_ascii=False,indent=2))
+          asyncio.run(main())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-batch11-non-act-scan
+          path: artifacts/pro-falla-batch11-non-act-scan
+          if-no-files-found: error
+          retention-days: 14
