@@ -1,0 +1,94 @@
+name: Pro Falla batch 12 wave 3 strict final closure
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch11-wave1-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch12-wave3-v4-archive.yml'
+      - 'tools/pro-falla-batch12-wave3/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch12-20260828
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Generate and patch archiver
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile \
+            tools/pro-falla-batch12-wave3/make_archiver.py \
+            tools/pro-falla-batch12-wave3/patch_wave3_v2.py \
+            tools/pro-falla-batch12-wave3/patch_wave3_v3.py \
+            tools/pro-falla-batch12-wave3/patch_wave3_v4.py
+          python tools/pro-falla-batch12-wave3/make_archiver.py
+          python -m py_compile tools/pro-falla-batch12-wave3/_builder_generated.py
+          python tools/pro-falla-batch12-wave3/_builder_generated.py
+          python tools/pro-falla-batch12-wave3/patch_wave3_v2.py
+          python tools/pro-falla-batch12-wave3/patch_wave3_v3.py
+          python tools/pro-falla-batch12-wave3/patch_wave3_v4.py
+          node --check tools/pro-falla-batch12-wave3/archive_wave3.mjs
+      - name: Capture and replay original Falla SPAs
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch12-wave3-strict-final
+          ONLINE_WAIT_MS: '7000'
+          OFFLINE_WAIT_MS: '5600'
+          PAGE_CONCURRENCY: '3'
+        run: |
+          set -Eeuo pipefail
+          node tools/pro-falla-batch12-wave3/archive_wave3.mjs
+      - name: Build contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch12-wave3-strict-final
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch4/contact_sheets_original.py
+      - name: Enforce strict QA
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('artifacts/pro-falla-batch12-wave3-strict-final/manifest.json').read_text())
+          bad=[]
+          for c in m.get('campaigns',[]):
+              row={k:c.get(k) for k in ('offlineMissing','brokenImages','visibleErrors','navErrors')}
+              if any(int(v or 0) for v in row.values()) or not c.get('originalBundleReplay'):
+                  bad.append({'id':c.get('id'),**row,'originalBundleReplay':c.get('originalBundleReplay')})
+          if bad:
+              raise SystemExit('STRICT_QA_FAILED '+json.dumps(bad,ensure_ascii=False))
+          print(json.dumps({'campaigns':len(m.get('campaigns',[])),'pages':m.get('pageCount'),'strictQA':'PASS'},ensure_ascii=False))
+          PY
+      - name: Print QA
+        if: always()
+        run: |
+          cat artifacts/pro-falla-batch12-wave3-strict-final/QA-FINAL.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-batch12-wave3-strict-final || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch12-wave3-strict-final
+          path: artifacts/pro-falla-batch12-wave3-strict-final
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
