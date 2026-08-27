@@ -1,0 +1,161 @@
+name: Yalla rich SPA recovery round 5
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - tools/yalla-rich-recovery-round5/recover.py
+      - tools/yalla-rich-recovery/recover.py
+      - .github/workflows/yalla-rich-recovery-round5.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 420
+    env:
+      OUT_DIR: pro-yalla-rich-spa-increment-round5
+      ZIP_NAME: pro-yalla-rich-spa-increment-round5.zip
+      RESULT_BRANCH: pro-yalla-rich-round5-results
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install recovery dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 pillow playwright==1.55.0
+          python -m playwright install --with-deps chromium
+
+      - name: Recover eight non-ranking-only official Yalla SPA closures
+        id: recover
+        continue-on-error: true
+        env:
+          YALLA_OUT: ${{ env.OUT_DIR }}
+        run: |
+          set -Eeuo pipefail
+          rm -rf "$OUT_DIR"
+          python tools/yalla-rich-recovery-round5/recover.py 2>&1 | tee yalla-round5-recovery.log
+
+      - name: Guarantee strict increment structure
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$OUT_DIR"/{activities,data,assets,fixtures,screenshots,registry,replay,logs}
+          cp yalla-round5-recovery.log "$OUT_DIR/logs/" 2>/dev/null || true
+          test -f "$OUT_DIR/README.md" || printf '# Pro-Yalla Round 5\n\nRecovery did not finish cleanly. No activity is accepted as VERIFIED.\n' > "$OUT_DIR/README.md"
+          test -f "$OUT_DIR/QA.md" || printf '# QA\n\nRecovery did not finish cleanly. No VERIFIED status is granted.\n' > "$OUT_DIR/QA.md"
+          test -f "$OUT_DIR/RESULT-BOARD.md" || printf '# Result Board\n\nNo completed activity.\n' > "$OUT_DIR/RESULT-BOARD.md"
+          test -f "$OUT_DIR/LEARNING-BOARD.md" || printf '# Activity Learning Board\n\nNo completed activity.\n' > "$OUT_DIR/LEARNING-BOARD.md"
+          test -f "$OUT_DIR/registry/yalla-activity-registry-round5.json" || printf '{"schemaVersion":"5.0","activities":[]}\n' > "$OUT_DIR/registry/yalla-activity-registry-round5.json"
+
+      - name: Validate minimum result before packaging
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('pro-yalla-rich-spa-increment-round5/registry/yalla-activity-registry-round5.json')
+          d=json.loads(p.read_text())
+          acts=d.get('activities',[])
+          print('activities:',len(acts))
+          print('verified:',sum(a.get('status')=='VERIFIED_OFFICIAL_SPA' for a in acts))
+          print('partial:',sum(a.get('status')=='VERIFIED_PARTIAL_SPA' for a in acts))
+          print('expired:',sum(a.get('status')=='OFFICIAL_URL_EXPIRED' for a in acts))
+          if len(acts) < 8:
+              raise SystemExit('Registry must contain all eight attempted activities.')
+          PY
+
+      - name: Package increment and verify ZIP
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          rm -f "$ZIP_NAME" "$ZIP_NAME.sha256"
+          zip -q -r "$ZIP_NAME" "$OUT_DIR"
+          unzip -t "$ZIP_NAME" | tail -n 4
+          sha256sum "$ZIP_NAME" | tee "$ZIP_NAME.sha256"
+          find "$OUT_DIR" -type f | wc -l | tee "$OUT_DIR/data/file-count.txt"
+          du -sh "$OUT_DIR" "$ZIP_NAME" | tee "$OUT_DIR/data/size-report.txt"
+
+      - name: Publish downloadable result branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-round5-public
+          rm -rf "$stage"
+          mkdir -p "$stage"
+          cp "$OUT_DIR/RESULT-BOARD.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/LEARNING-BOARD.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/QA.md" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/registry/yalla-activity-registry-round5.json" "$stage/" 2>/dev/null || true
+          cp "$OUT_DIR/screenshots/round5-contact-sheet.jpg" "$stage/" 2>/dev/null || true
+          cp "$ZIP_NAME.sha256" "$stage/"
+          size=$(stat -c%s "$ZIP_NAME")
+          if [ "$size" -lt 95000000 ]; then
+            cp "$ZIP_NAME" "$stage/"
+            mode=single
+            files='["pro-yalla-rich-spa-increment-round5.zip"]'
+          else
+            split -b 45000000 -d -a 3 "$ZIP_NAME" "$stage/pro-yalla-rich-spa-increment-round5.zip.part-"
+            mode=split
+            files=$(cd "$stage" && python - <<'PY'
+          import json,glob
+          print(json.dumps([x.split('/')[-1] for x in sorted(glob.glob('pro-yalla-rich-spa-increment-round5.zip.part-*'))]))
+          PY
+          )
+          fi
+          python - <<PY
+          import json,os
+          from pathlib import Path
+          stage=Path('$stage')
+          payload={
+            'runId':'${GITHUB_RUN_ID}',
+            'runUrl':'https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}',
+            'commit':'${GITHUB_SHA}',
+            'generatedAt':os.popen('date -u +%FT%TZ').read().strip(),
+            'mode':'$mode',
+            'files':json.loads('''$files'''),
+            'zipSha256':Path('$ZIP_NAME.sha256').read_text().split()[0],
+            'zipBytes':int('$size'),
+            'rawBase':'https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${RESULT_BRANCH}/'
+          }
+          (stage/'DOWNLOAD.json').write_text(json.dumps(payload,indent=2))
+          PY
+          git config user.name 'pro-yalla-recovery-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Pro-Yalla rich SPA increment round 5 ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete Actions artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-rich-spa-increment-round5
+          path: |
+            ${{ env.ZIP_NAME }}
+            ${{ env.ZIP_NAME }}.sha256
+            ${{ env.OUT_DIR }}/RESULT-BOARD.md
+            ${{ env.OUT_DIR }}/LEARNING-BOARD.md
+            ${{ env.OUT_DIR }}/QA.md
+            ${{ env.OUT_DIR }}/registry/yalla-activity-registry-round5.json
+            ${{ env.OUT_DIR }}/registry/yalla-activity-registry-round5.csv
+            ${{ env.OUT_DIR }}/screenshots/round5-contact-sheet.jpg
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 30
