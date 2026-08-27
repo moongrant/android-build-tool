@@ -1,0 +1,128 @@
+name: Yalla StartActivity visitor-login targeted source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-startactivity-visitorlogin-source.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  decompile:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    env:
+      RESULT_BRANCH: pro-yalla-startactivity-visitorlogin-results
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download current public Yalla APK
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/apkeep /tmp/yalla out/classes
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then
+            cp "$package" /tmp/yalla/base.apk
+          else
+            unzip -q "$package" -d /tmp/yalla/splits
+            base="$(find /tmp/yalla/splits -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            test -f "$base"
+            cp "$base" /tmp/yalla/base.apk
+          fi
+          sha256sum /tmp/yalla/base.apk > out/base.sha256
+
+      - name: Install JADX
+        run: |
+          set -Eeuo pipefail
+          url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' https://api.github.com/repos/skylot/jadx/releases/latest | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+
+      - name: Decompile StartActivity and referenced login classes
+        run: |
+          set -Eeuo pipefail
+          classes=(
+            'com.yalla.yalla.ui.activity.main.StartActivity'
+            'com.yalla.yalla.ui.activity.main.StartActivity$handleAutoVisitorLoginAsync$1'
+            'com.yalla.yalla.data.repository.OooO0O0'
+            'com.yalla.yalla.api.call.OooO'
+            'com.yalla.yalla.api.call.core.HttpCoreRequest'
+            'com.yalla.yalla.api.call.request.ParamsWrapper'
+            'com.yalla.yalla.api.old.Oooo0'
+            'com.yalla.yalla.repository.Account'
+          )
+          for cls in "${classes[@]}"; do
+            safe="$(printf '%s' "$cls" | tr '.' '_' | tr '$' '@')"
+            /tmp/jadx/bin/jadx --no-res --show-bad-code --single-class "$cls" --single-class-output "out/classes/${safe}.java" /tmp/yalla/base.apk > "out/classes/${safe}.stdout.txt" 2> "out/classes/${safe}.stderr.txt" || true
+          done
+
+          # Decompile full source tree only once, then copy every class that directly mentions VisitorLogin or StartActivity.OooOooO.
+          /tmp/jadx/bin/jadx --no-res --show-bad-code --threads-count 4 --output-dir /tmp/yalla-jadx /tmp/yalla/base.apk > out/jadx-full.stdout.txt 2> out/jadx-full.stderr.txt || true
+          find /tmp/yalla-jadx/sources -type f -print0 | xargs -0 -r grep -IlE 'VisitorLogin|loginByVisitor|handleAutoVisitorLoginAsync|StartActivity\.OooOooO' | sort > out/visitor-files.txt || true
+          mkdir -p out/visitor-files
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            i=$((i+1))
+            rel="${file#/tmp/yalla-jadx/sources/}"
+            safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr '$' '@' | tr -cd '[:alnum:]_.@-')"
+            cp "$file" "out/visitor-files/${i}-${safe}"
+          done < out/visitor-files.txt
+
+          cat out/classes/*.java out/visitor-files/* > out/all-visitor-source.txt 2>/dev/null || true
+          rg -n -i -C 80 'VisitorLogin|loginByVisitor|handleAutoVisitorLoginAsync|OooOooO\(|countryCode|visitType|promotionParam|isSimulator|afId|Visitor' out/classes out/visitor-files > out/focused.txt || true
+
+          python - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path('out')
+          text=(root/'all-visitor-source.txt').read_text(errors='ignore') if (root/'all-visitor-source.txt').exists() else ''
+          literals=sorted(set(re.findall(r'"([A-Za-z][A-Za-z0-9_]{2,60})"',text)))
+          relevant=[x for x in literals if any(k in x.lower() for k in ['visit','country','promotion','simulator','af','device','language','region','token','user','login'])]
+          calls=[]
+          for match in re.finditer(r'VisitorLogin',text,re.I):
+              calls.append(text[max(0,match.start()-1200):min(len(text),match.end()+2500)])
+          (root/'visitor-login-analysis.json').write_text(json.dumps({'relevantStringLiterals':relevant,'contexts':calls[:80]},ensure_ascii=False,indent=2))
+          PY
+
+          {
+            echo '# Yalla StartActivity Visitor Login Source'
+            echo
+            echo '## Decompilation files'
+            find out/classes out/visitor-files -type f -name '*.java' -printf '%p %s bytes\n' | sort
+            echo
+            echo '## Focused contexts'
+            echo '```'
+            sed -n '1,12000p' out/focused.txt
+            echo '```'
+          } > out/REPORT.md
+
+      - name: Publish targeted source branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'pro-yalla-source-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a out/. .
+          git add .
+          git commit -m "Publish Yalla visitor-login targeted source ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload source artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-startactivity-visitorlogin-source
+          path: out
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
