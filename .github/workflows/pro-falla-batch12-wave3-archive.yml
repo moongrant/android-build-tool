@@ -36,11 +36,11 @@ jobs:
       - name: Generate and patch archiver
         run: |
           set -Eeuo pipefail
-          python -m py_compile tools/pro-falla-batch12-wave3/make_archiver.py tools/pro-falla-batch12-wave3/patch_wave3.py
+          python -m py_compile tools/pro-falla-batch12-wave3/make_archiver.py tools/pro-falla-batch12-wave3/patch_wave3_v2.py
           python tools/pro-falla-batch12-wave3/make_archiver.py
           python -m py_compile tools/pro-falla-batch12-wave3/_builder_generated.py
           python tools/pro-falla-batch12-wave3/_builder_generated.py
-          python tools/pro-falla-batch12-wave3/patch_wave3.py
+          python tools/pro-falla-batch12-wave3/patch_wave3_v2.py
           node --check tools/pro-falla-batch12-wave3/archive_wave3.mjs
       - name: Capture and replay original Falla SPAs
         env:
