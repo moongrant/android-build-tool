@@ -1,0 +1,83 @@
+name: Pro Falla batch 12 remaining repair assets
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch11-wave1-20260827]
+    paths:
+      - '.github/workflows/pro-falla-batch12-repair-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch12-20260828
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch remaining public historical assets
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-falla-batch12-repair-assets/files
+          python - <<'PY'
+          import hashlib,json,urllib.request,urllib.error
+          from pathlib import Path
+          OUT=Path('artifacts/pro-falla-batch12-repair-assets')
+          urls=[
+            'https://res-dubai.fallalive.com/avatar/falla/avatar-loading.png',
+            'https://web-test.falla.live/falla-web/act-ramadan-happy-23/hk/0.0.2/assets/f11a6ae4a5e32d1b99e2.png',
+            'https://web-test.falla.live/falla-web/act-ramadan-competition-23/hk/0.0.17/assets/67b05cf5f45f93c9fab6.png',
+            'https://falla-res1.resygg.com/awss3_2168516_1681381941057340048_2094395677.png',
+            'https://falla-res1.resygg.com/awss3_2168516_1681381982771903830_371893932.png',
+            'https://falla-res1.resygg.com/awss3_2168516_1681378549615527091_716001965.png',
+            'https://res-g.resygg.com/awss3_866790_1711355926521005199_1260971201.png',
+            'https://res-g.resygg.com/awss3_866790_1711355930253465521_3034439728.png',
+            'https://res-g.resygg.com/awss3_866790_1709115350929070397_1317807480.png',
+            'https://res-g.resygg.com/awss3_866790_1709115353033313799_1661640578.png',
+            'https://res-g.resygg.com/awss3_1436068_1709269309327054808_332097678.png',
+            'https://res-g.resygg.com/awss3_1436068_1709269389667942077_3258985212.png',
+            'https://res-g.resygg.com/awss3_1436068_1709269462975177600_1114094107.png',
+            'https://web-test.falla.live/falla-web/act-ramadan-blind-box/hk/0.0.5/assets/984b8c1ed817992de62e.png',
+            'https://res-g.resygg.com/awss3_866790_1708414438866281054_2772079077.png?x-oss-process=image/resize,m_pad,color_ffffff00/format,webp',
+            'https://res-g.resygg.com/awss3_866790_1708414445404110822_2746513048.png'
+          ]
+          def mirrors(url):
+            out=[url]
+            if 'res-g.resygg.com' in url:
+              out += [url.replace('res-g.resygg.com','falla-res1.resygg.com'),url.replace('res-g.resygg.com','falla-res1.falla.live')]
+            if 'falla-res1.resygg.com' in url:
+              out += [url.replace('falla-res1.resygg.com','res-g.resygg.com'),url.replace('falla-res1.resygg.com','falla-res1.falla.live')]
+            if 'web-test.falla.live' in url:
+              out += [url.replace('web-test.falla.live','web.falla.live').replace('/hk/','/pre/'),url.replace('web-test.falla.live','web.fallaweb.com').replace('/hk/','/prod/')]
+            if '?' in url: out.append(url.split('?',1)[0])
+            return list(dict.fromkeys(out))
+          rows=[]
+          for url in urls:
+            row={'url':url,'ok':False,'attempts':[]}
+            for cand in mirrors(url):
+              try:
+                req=urllib.request.Request(cand,headers={'User-Agent':'Mozilla/5.0 ProFallaRepair/12.0','Referer':'https://web.fallaweb.com/','Accept':'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'})
+                with urllib.request.urlopen(req,timeout=25) as r:
+                  data=r.read(); ct=r.headers.get('content-type','application/octet-stream')
+                if not data: raise RuntimeError('empty')
+                h=hashlib.sha256(data).hexdigest(); ext='.webp' if 'webp' in ct else '.png'
+                path=OUT/'files'/f'{h}{ext}'; path.write_bytes(data)
+                row.update({'ok':True,'sourceUrl':cand,'sha256':h,'file':str(path.relative_to(OUT)),'bytes':len(data),'contentType':ct}); break
+              except Exception as e:
+                row['attempts'].append({'url':cand,'error':repr(e)})
+            rows.append(row)
+          (OUT/'results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
+          print(json.dumps({'ok':sum(r['ok'] for r in rows),'total':len(rows),'failed':[r['url'] for r in rows if not r['ok']]},ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-batch12-repair-assets
+          path: artifacts/pro-falla-batch12-repair-assets
+          if-no-files-found: error
+          retention-days: 14
