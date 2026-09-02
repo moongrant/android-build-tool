@@ -1,0 +1,84 @@
+name: Pro Falla Halloween metadata and route probe
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch12-20260828]
+    paths:
+      - '.github/workflows/pro-falla-halloween-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-20260902
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe activity metadata and legacy HTML
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp
+          mkdir -p artifacts/pro-falla-halloween-probe
+          python - <<'PY'
+          import asyncio, aiohttp, json, re
+          from pathlib import Path
+          OUT=Path('artifacts/pro-falla-halloween-probe')
+          API=['https://api.apifalla.com/api/web/activities_config/act','https://apihk.falla.live/api/web/activities_config/act']
+          IDS=[147,346,1391]
+          LEGACY=['https://web.falla.live/','https://web.falla.live/#/activity/21-10-halloween','https://web-test.falla.live/','https://activity.falla.live/']
+          headers={'User-Agent':'Mozilla/5.0 ProFallaHalloweenProbe/1.0','Accept':'application/json,text/plain,*/*','Content-Type':'application/json;charset=UTF-8','Origin':'https://web.fallaweb.com','Referer':'https://web.fallaweb.com/'}
+          async def main():
+            conn=aiohttp.TCPConnector(limit=20,ssl=False)
+            async with aiohttp.ClientSession(connector=conn,headers=headers) as s:
+              rows=[]
+              for aid in IDS:
+                found=None
+                for api in API:
+                  try:
+                    async with s.post(api,json={'activitiesId':aid},timeout=30) as r:
+                      txt=await r.text()
+                      if r.status!=200: continue
+                      o=json.loads(txt)
+                  except Exception as e:
+                    continue
+                  if isinstance(o,dict) and o.get('code')==0 and isinstance(o.get('res'),dict):
+                    found=o['res'];break
+                if not found:
+                  rows.append({'activityId':aid,'error':'not found'});continue
+                ext=found.get('extConfig') or {}
+                if isinstance(ext,str):
+                  try: ext=json.loads(ext)
+                  except: ext={'raw':ext}
+                web=ext.get('web') if isinstance(ext,dict) and isinstance(ext.get('web'),dict) else {}
+                pc=web.get('pageConfig') if isinstance(web.get('pageConfig'),dict) else {}
+                raw=json.dumps(ext,ensure_ascii=False)
+                projects=sorted(set(re.findall(r'(?:act-[A-Za-z0-9][A-Za-z0-9-]{2,}|21-10-halloween)',raw,re.I)))
+                row={'activityId':aid,'startTime':found.get('startTime'),'endTime':found.get('endTime'),'regionList':found.get('regionList'),'giftCount':len(found.get('giftInfoList') or []),'activityUrl':web.get('activityUrl'),'translateId':pc.get('translateId'),'projectCandidates':projects,'extConfig':ext,'serverConfig':found.get('serverConfig')}
+                rows.append(row)
+              legacy=[]
+              for url in LEGACY:
+                try:
+                  async with s.get(url,timeout=30,allow_redirects=True) as r:
+                    b=await r.read(); text=b.decode('utf-8','replace')
+                    legacy.append({'url':url,'finalUrl':str(r.url),'status':r.status,'contentType':r.headers.get('content-type'),'bytes':len(b),'scripts':re.findall(r'<script[^>]+src=["\']([^"\']+)',text,re.I),'links':re.findall(r'<link[^>]+href=["\']([^"\']+)',text,re.I),'hashRoutes':sorted(set(re.findall(r'21-10-halloween[^"\'\s<)]*',text,re.I)))})
+                    (OUT/(re.sub(r'[^a-z0-9]+','-',url.lower()).strip('-')+'.html')).write_bytes(b)
+                except Exception as e:
+                  legacy.append({'url':url,'error':repr(e)})
+              result={'activities':rows,'legacy':legacy}
+              (OUT/'probe.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+              print(json.dumps(result,ensure_ascii=False,indent=2))
+          asyncio.run(main())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-halloween-probe
+          path: artifacts/pro-falla-halloween-probe
+          if-no-files-found: error
+          retention-days: 14
