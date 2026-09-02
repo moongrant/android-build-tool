@@ -1,0 +1,216 @@
+name: Yalla Halloween web archive archaeology
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-web-archive-scan.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-web-archive-results
+      OUT_DIR: artifacts/yalla-halloween-web-archive
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Query October-November archive windows and keyword paths
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR/raw"
+          cat > /tmp/scan.py <<'PY'
+          from __future__ import annotations
+          import concurrent.futures, hashlib, json, re, time
+          from collections import defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path('artifacts/yalla-halloween-web-archive');RAW=OUT/'raw';RAW.mkdir(parents=True,exist_ok=True)
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'*/*'})
+          KEYWORDS={
+            'english':['halloween','pumpkin','ghost','witch','candy','trick or treat','trick-or-treat','haunted','spooky','skeleton','zombie','vampire','horror'],
+            'arabic':['هالوين','اليقطين','قرع','شبح','أشباح','ساحرة','حلوى','خدعة أم حلوى','مخيف','مسكون','هيكل عظمي'],
+            'turkish':['cadılar bayramı','cadilar bayrami','balkabağı','balkabagi','hayalet','cadı','cadi','şeker','seker','korku','perili'],
+            'portuguese':['dia das bruxas','abóbora','abobora','fantasma','bruxa','doces','assombrado'],
+            'spanish':['noche de brujas','calabaza','fantasma','bruja','dulces','embrujado'],
+            'french':['halloween','citrouille','fantôme','fantome','sorcière','sorciere','bonbon','hanté','hante'],
+            'indonesian':['halloween','labu','hantu','penyihir','permen','seram'],
+          }
+          FLAT=[x for values in KEYWORDS.values() for x in values]
+          HOSTS=['activity2.yalla.live','activity2.qrsshine.com','activity2.windgh.com','event.yalla.live','h5client.peakxyz.com']
+          CDN=['file.yalla.live','file.yallalive.net','static.yalla.live']
+          GENERIC=['the activity has ended','activity has ended','more coming soon','404 not found','page not found','access denied']
+
+          def get(url,timeout=(20,120),tries=4):
+            for i in range(tries):
+              try:
+                r=S.get(url,timeout=timeout,allow_redirects=True)
+                if r.status_code in {429,500,502,503,504} and i+1<tries:time.sleep((i+1)*1.3);continue
+                return r
+              except Exception:
+                if i+1<tries:time.sleep((i+1)*1.3)
+            return None
+
+          def cdx(url,year=None,filters=None,collapse='urlkey',limit=5000):
+            params=[('url',url),('output','json'),('fl','timestamp,original,statuscode,mimetype,digest,length'),('filter','statuscode:200'),('collapse',collapse),('limit',str(limit))]
+            if year:
+              params += [('from',f'{year}1001'),('to',f'{year}1115')]
+            for f in filters or []:params.append(('filter',f))
+            query='&'.join(f'{quote(k,safe="")}={quote(v,safe="*:/.()[]|^$+-_")}' for k,v in params)
+            endpoint='https://web.archive.org/cdx/search/cdx?'+query
+            r=get(endpoint,timeout=(30,180),tries=3)
+            result={'endpoint':endpoint,'http':r.status_code if r else None,'bytes':len(r.content) if r else 0,'rows':[]}
+            if not r or r.status_code!=200:return result
+            try:
+              data=r.json()
+              if isinstance(data,list) and data:
+                head=data[0];result['rows']=[dict(zip(head,row)) for row in data[1:] if isinstance(row,list)]
+            except Exception:
+              for line in r.text.splitlines():
+                with __import__('contextlib').suppress(Exception):
+                  item=json.loads(line)
+                  if isinstance(item,dict):result['rows'].append(item)
+            return result
+
+          queries=[]
+          for year in range(2018,2026):
+            for host in HOSTS:
+              queries.append(('window',year,host,cdx(host+'/activity/*',year,['mimetype:text/html'],'digest',8000)))
+          # Explicit keyword-bearing paths on root and CDN hosts, all years.
+          path_terms=['halloween','Halloween','HALLOWEEN','pumpkin','Pumpkin','ghost','Ghost','witch','Witch','candy','Candy','spooky','haunted','trick','monster','Monster','horror']
+          with concurrent.futures.ThreadPoolExecutor(max_workers=14) as ex:
+            future_map={}
+            for host in HOSTS+CDN:
+              for term in path_terms:
+                future_map[ex.submit(cdx,host+'/*'+term+'*',None,None,'urlkey',5000)]=('keyword-path',None,host,term)
+            for fut in concurrent.futures.as_completed(future_map):
+              kind,year,host,term=future_map[fut]
+              try:result=fut.result()
+              except Exception as e:result={'endpoint':'','http':None,'bytes':0,'rows':[],'error':repr(e)}
+              queries.append((kind,year,host,result))
+          Path(OUT/'cdx-query-summary.json').write_text(json.dumps([{'kind':k,'year':y,'host':h,'endpoint':r.get('endpoint'),'http':r.get('http'),'bytes':r.get('bytes'),'rows':len(r.get('rows',[]))} for k,y,h,r in queries],ensure_ascii=False,indent=2))
+
+          rows=[]
+          for kind,year,host,result in queries:
+            for row in result.get('rows',[]):
+              row={**row,'queryKind':kind,'queryYear':year,'queryHost':host};rows.append(row)
+          dedup={}
+          for row in rows:dedup[(row.get('timestamp'),row.get('original'),row.get('digest'))]=row
+          rows=list(dedup.values())
+          Path(OUT/'cdx-rows.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+
+          def root_from(url):
+            try:
+              p=urlparse(url);parts=[x for x in p.path.split('/') if x]
+              if 'activity' not in [x.lower() for x in parts]:return None
+              idx=next(i for i,x in enumerate(parts) if x.lower()=='activity')
+              tail=parts[idx+1:]
+              if not tail:return None
+              # New layout: /activity/2024dist/project/ ; legacy: keep first 3-5 segments until dist/build/Dist.
+              if re.fullmatch(r'20\d{2}dist',tail[0],re.I) and len(tail)>=2:kept=tail[:2]
+              else:
+                kept=[]
+                for bit in tail[:6]:
+                  kept.append(bit)
+                  if bit.lower() in {'dist','build'}:break
+              return f'{p.scheme or "https"}://{p.netloc}/activity/'+('/'.join(kept))+'/'
+            except Exception:return None
+
+          roots=defaultdict(list)
+          for row in rows:
+            root=root_from(str(row.get('original','')))
+            if root:roots[root].append(row)
+          Path(OUT/'root-inventory.json').write_text(json.dumps([{'root':root,'rows':len(items),'first':min(str(x.get('timestamp','')) for x in items),'last':max(str(x.get('timestamp','')) for x in items),'sampleUrls':sorted({str(x.get('original','')) for x in items})[:40]} for root,items in sorted(roots.items())],ensure_ascii=False,indent=2))
+
+          # Fetch unique HTML snapshots and inspect both visible text and raw source.
+          html_rows=[]
+          for row in rows:
+            mime=str(row.get('mimetype','')).lower();url=str(row.get('original',''))
+            if mime.startswith('text/html') or not re.search(r'\.[a-z0-9]{1,6}(?:\?|$)',urlparse(url).path,re.I):html_rows.append(row)
+          # Prefer one newest and one oldest snapshot per root/digest.
+          selected=[];by=defaultdict(list)
+          for row in html_rows:by[root_from(str(row.get('original',''))) or str(row.get('original',''))].append(row)
+          for key,items in by.items():
+            items=sorted(items,key=lambda x:str(x.get('timestamp','')))
+            selected.extend(items[:1]+items[-1:])
+          # Always include keyword-path results.
+          selected += [row for row in html_rows if row.get('queryKind')=='keyword-path']
+          unique={}
+          for row in selected:unique[(row.get('timestamp'),row.get('original'))]=row
+          selected=list(unique.values())[:1400]
+
+          def inspect(row):
+            ts=str(row.get('timestamp',''));original=str(row.get('original',''))
+            replay=f'https://web.archive.org/web/{ts}id_/{original}'
+            r=get(replay,timeout=(25,120),tries=2)
+            item={'timestamp':ts,'original':original,'replay':replay,'http':r.status_code if r else None,'bytes':len(r.content) if r else 0,'root':root_from(original)}
+            if not r or r.status_code!=200:return item
+            data=r.content;text=data[:15_000_000].decode('utf-8','ignore');soup=BeautifulSoup(text,'html.parser');visible=' '.join(soup.get_text(' ',strip=True).split());combined=(text+' '+visible).casefold()
+            hits=sorted({term for term in FLAT if term.casefold() in combined},key=lambda x:(len(x),x))
+            item.update(sha256=hashlib.sha256(data).hexdigest(),title=soup.title.get_text(' ',strip=True) if soup.title else '',visible=visible[:12000],keywordHits=hits,generic=any(x in combined for x in GENERIC))
+            refs=[]
+            for tag,attr in [('script','src'),('link','href'),('img','src'),('source','src'),('video','poster')]:
+              for el in soup.find_all(tag):
+                if el.get(attr):refs.append(el.get(attr))
+            item['refs']=refs[:300]
+            if hits:
+              path=RAW/(hashlib.sha1((ts+original).encode()).hexdigest()+'.html');path.write_bytes(data);item['file']=path.relative_to(OUT).as_posix()
+            return item
+
+          inspected=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as ex:
+            for item in ex.map(inspect,selected):inspected.append(item)
+          candidates=[x for x in inspected if x.get('keywordHits') and not x.get('generic')]
+          # Reject obvious unrelated uses where only generic library words appear and no Yalla activity root.
+          strong_terms={'halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas'}
+          strong=[x for x in candidates if strong_terms.intersection({h.casefold() for h in x.get('keywordHits',[])}) or len(x.get('keywordHits',[]))>=3]
+          Path(OUT/'inspected-html.json').write_text(json.dumps(inspected,ensure_ascii=False,indent=2))
+          Path(OUT/'halloween-candidates.json').write_text(json.dumps(strong,ensure_ascii=False,indent=2))
+
+          lines=['# Yalla Halloween Web Archive Archaeology','',f'- CDX records: {len(rows)}',f'- Distinct activity roots in Oct–Nov windows: {len(roots)}',f'- HTML snapshots inspected: {len(inspected)}',f'- Halloween-family text candidates: {len(candidates)}',f'- Strong candidates: {len(strong)}','', '| # | Capture | Root | Title | Hits | Bytes |','|---:|---|---|---|---|---:|']
+          for i,x in enumerate(strong,1):lines.append(f"| {i} | `{x.get('timestamp')}` | `{x.get('root') or x.get('original')}` | {str(x.get('title','')).replace('|','/')} | {', '.join(x.get('keywordHits',[])[:12])} | {x.get('bytes',0)} |")
+          lines += ['','## All October-November roots','']
+          for root,items in sorted(roots.items()):lines.append(f'- `{root}` · {len(items)} records · {min(str(x.get("timestamp","")) for x in items)} → {max(str(x.get("timestamp","")) for x in items)}')
+          Path(OUT/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'records':len(rows),'roots':len(roots),'inspected':len(inspected),'candidates':len(candidates),'strong':len(strong)},ensure_ascii=False,indent=2))
+          PY
+          python /tmp/scan.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact archive results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-web-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md cdx-query-summary.json root-inventory.json halloween-candidates.json inspected-html.json cdx-rows.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween web archive archaeology ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload full archive artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-web-archive-archaeology
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
