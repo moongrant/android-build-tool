@@ -24,17 +24,35 @@ prefetch = r'''async function prefetchHalloweenResources(){
     'https://falla-res1.resygg.com/awss3_2168516_1666771822340077335_1661585032.png',
     'https://falla-res1.resygg.com/awss3_2168516_1666771929166164260_3601435880.png',
     'https://falla-res1.resygg.com/awss3_1436068_1697441561904813617_1767391401.png',
-    'https://falla-res1.resygg.com/awss3_866790_1697709734068750198_1678038683.png'
+    'https://falla-res1.resygg.com/awss3_866790_1697709734068750198_1678038683.png',
+    'https://web-test.falla.live/falla-web/act-halloween-23/hk/0.0.5/assets/3037a837bab349438577.png',
+    'https://web-test.falla.live/falla-web/act-halloween-23/hk/0.0.5/assets/c866288d8866cc143418.png',
+    'https://web-test.falla.live/falla-web/act-halloween-23/hk/0.0.5/assets/fd8c3ad6c31cfec2d2fd.png',
+    'https://web-test.falla.live/falla-web/act-halloween-23/hk/0.0.5/assets/ed707c87a5fc6e279d61.png'
   ];
   let added=0,failed=[];
   for(const url of imageUrls){
     if(byUrl.has(urlKey('GET',url))||byPath.has(pathKey('GET',url)))continue;
+    const candidates=[url];
     try{
-      const r=await fetch(url,{headers:{'user-agent':UA,'accept':'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8','referer':'https://web.fallaweb.com/'},redirect:'follow',signal:AbortSignal.timeout(25000)});
-      if(!r.ok)throw new Error(`HTTP ${r.status}`);
-      const body=Buffer.from(await r.arrayBuffer()),headers=Object.fromEntries(r.headers.entries());
-      await savePrefetchedRecord({method:'GET',url,sourceUrl:String(r.url),body,status:r.status,headers,pageId:'halloween-static-closure'});added++;
-    }catch(e){failed.push({url,error:String(e)});}
+      const u=new URL(url);
+      if(u.hostname==='web-test.falla.live'){
+        candidates.push('https://web.falla.live'+u.pathname.replace('/hk/','/pre/')+u.search);
+        candidates.push('https://web.fallaweb.com'+u.pathname.replace('/hk/','/prod/')+u.search);
+      }
+    }catch{}
+    let got=null;
+    for(const candidate of candidates){
+      try{
+        const r=await fetch(candidate,{headers:{'user-agent':UA,'accept':'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8','referer':'https://web.fallaweb.com/'},redirect:'follow',signal:AbortSignal.timeout(25000)});
+        if(!r.ok)continue;
+        const body=Buffer.from(await r.arrayBuffer());if(!body.length)continue;
+        got={r,body};break;
+      }catch{}
+    }
+    if(!got){failed.push({url,error:'all mirrors failed'});continue;}
+    const headers=Object.fromEntries(got.r.headers.entries());
+    await savePrefetchedRecord({method:'GET',url,sourceUrl:String(got.r.url),body:got.body,status:got.r.status,headers,pageId:'halloween-static-closure'});added++;
   }
   // Falla removed the historical h5_346 reward JSON. Preserve the original
   // component contract without inventing users, rankings, rewards or values.
