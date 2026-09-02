@@ -1,0 +1,179 @@
+name: Yalla Halloween historical APK archaeology
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-apk-archaeology.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-apk-results
+      OUT_DIR: artifacts/yalla-halloween-apk
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Free disk and prepare scanner
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          mkdir -p "$OUT_DIR"
+          docker pull ghcr.io/efforg/apkeep:stable
+          cat > /tmp/scan_version.py <<'PY'
+          from __future__ import annotations
+          import json, os, re, subprocess
+          from pathlib import Path
+
+          version=os.environ['VERSION']
+          decoded=Path(os.environ['DECODED'])
+          out=Path(os.environ['VERSION_OUT'])
+          out.mkdir(parents=True,exist_ok=True)
+          keywords={
+            'english':['halloween','pumpkin','ghost','witch','candy','trick or treat','trick-or-treat','haunted','spooky','skeleton','zombie','monster','horror','vampire','bat','magic castle','candy bag'],
+            'arabic':['هالوين','اليقطين','قرع','شبح','أشباح','ساحرة','ساحر','حلوى','خدعة أم حلوى','مخيف','مسكون','هيكل عظمي','وحش'],
+            'turkish':['cadılar bayramı','cadilar bayrami','balkabağı','balkabagi','hayalet','cadı','cadi','şeker','seker','korku','perili'],
+            'portuguese':['dia das bruxas','abóbora','abobora','fantasma','bruxa','doces','assombrado','arrepiante'],
+            'spanish':['noche de brujas','calabaza','fantasma','bruja','dulces','embrujado','terrorífico','terrorifico'],
+            'french':['halloween','citrouille','fantôme','fantome','sorcière','sorciere','bonbon','hanté','hante'],
+            'indonesian':['halloween','labu','hantu','penyihir','permen','seram'],
+            'hindi':['हैलोवीन','कद्दू','भूत','चुड़ैल','चुड़ैल','कैंडी','डरावना'],
+            'urdu':['ہالووین','کدو','بھوت','چڑیل','کینڈی','خوفناک'],
+          }
+          flat=[x for values in keywords.values() for x in values]
+          activity_terms=['activity2.','file.yalla.live/activity/','/activity/','activityId','campaignId','eventId','jumpUrl','shareUrl','redirectUrl','h5EntranceUrl','activityUrl','webview','templateActivity','GeneralTemplate']
+          url_re=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          matches=[];urls=set();paths=[];files_scanned=0
+          for path in decoded.rglob('*'):
+            if not path.is_file() or path.stat().st_size>260_000_000:continue
+            files_scanned+=1
+            rel=path.relative_to(decoded).as_posix()
+            if any(term.casefold() in rel.casefold() for term in flat):paths.append(rel)
+            try:
+              proc=subprocess.run(['strings','-a','-n','4',str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=80)
+              text=proc.stdout.decode('utf-8','ignore')
+            except Exception:continue
+            lines=text.splitlines()
+            for i,line in enumerate(lines):
+              low=line.casefold()
+              hit=[term for term in flat if term.casefold() in low]
+              if hit:
+                context='\n'.join(lines[max(0,i-4):min(len(lines),i+5)])[:12000]
+                nearby_urls=[]
+                for u in url_re.findall(context):nearby_urls.append(u.rstrip(',.;:)]}'))
+                matches.append({'file':rel,'line':line[:4000],'keywords':hit[:30],'context':context,'nearbyUrls':nearby_urls})
+              for u in url_re.findall(line):
+                u=u.rstrip(',.;:)]}')
+                if any(term.casefold() in u.casefold() for term in activity_terms+flat):urls.add(u)
+          payload={'version':version,'filesScanned':files_scanned,'keywordMatches':matches,'matchingPaths':sorted(set(paths)),'activityUrls':sorted(urls),'keywordFamilies':keywords}
+          (out/'scan.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween APK Scan '+version,'',f'- Files scanned: {files_scanned}',f'- Keyword matches: {len(matches)}',f'- Matching file paths: {len(set(paths))}',f'- Activity URLs: {len(urls)}','', '## Keyword matches','']
+          for item in matches[:500]:
+            lines += [f"### `{item['file']}` · {', '.join(item['keywords'][:12])}",'```',item['context'][:6000],'```','']
+          lines += ['## Activity URLs','']+[f'- `{u}`' for u in sorted(urls)]
+          (out/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'version':version,'files':files_scanned,'matches':len(matches),'paths':len(set(paths)),'urls':len(urls)},ensure_ascii=False))
+          PY
+
+      - name: Download and scan October-adjacent historical Yalla builds
+        run: |
+          set -Eeuo pipefail
+          versions=(2.11.9 2.11.10 2.12.0 2.17.1 2.18.1 2.23.0 2.23.2 2.28.0 2.29.0 3.0.4 3.0.5 3.0.6)
+          for version in "${versions[@]}"; do
+            echo "===== $version ====="
+            work="/tmp/yalla-halloween/$version"
+            package_dir="$work/package"
+            splits="$work/splits"
+            decoded="$work/decoded"
+            out="$OUT_DIR/$version"
+            rm -rf "$work"; mkdir -p "$package_dir" "$splits" "$decoded" "$out"
+            set +e
+            docker run --rm -v "$package_dir":/output ghcr.io/efforg/apkeep:stable -a "com.weieyu.yalla@$version" -d apk-pure /output > "$out/apkeep.stdout.txt" 2> "$out/apkeep.stderr.txt"
+            rc=$?
+            set -e
+            package="$(find "$package_dir" -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            if [[ $rc -ne 0 || -z "$package" ]]; then
+              echo "download failed $version" | tee "$out/STATUS.txt"
+              continue
+            fi
+            stat -c '%n %s bytes' "$package" > "$out/package.txt"
+            sha256sum "$package" > "$out/package.sha256"
+            if [[ "$package" == *.apk ]]; then cp "$package" "$splits/base.apk"; else unzip -q "$package" -d "$splits" || true; fi
+            find "$splits" -type f -name '*.apk' -printf '%s %p\n' | sort -nr > "$out/apk-splits.txt"
+            i=0
+            while IFS= read -r apk; do
+              i=$((i+1)); mkdir -p "$decoded/split-$i"; unzip -q "$apk" -d "$decoded/split-$i" || true
+            done < <(find "$splits" -type f -name '*.apk' | sort)
+            VERSION="$version" DECODED="$decoded" VERSION_OUT="$out" python /tmp/scan_version.py | tee "$out/summary.txt"
+            rm -rf "$work"
+          done
+
+      - name: Consolidate strict evidence report
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path('artifacts/yalla-halloween-apk')
+          versions=[];all_matches=[];all_urls=[]
+          for p in sorted(root.glob('*/scan.json')):
+            data=json.loads(p.read_text());versions.append({'version':data['version'],'filesScanned':data['filesScanned'],'keywordMatches':len(data['keywordMatches']),'matchingPaths':len(data['matchingPaths']),'activityUrls':len(data['activityUrls'])})
+            for item in data['keywordMatches']:all_matches.append({'version':data['version'],**item})
+            for url in data['activityUrls']:all_urls.append({'version':data['version'],'url':url})
+          # Separate likely genuine event evidence from generic UI/library strings.
+          activity_signal=['activity2.','file.yalla.live/activity/','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl']
+          relevant=[]
+          for item in all_matches:
+            context=(item.get('context') or '').casefold()
+            if any(x in context for x in activity_signal) or item.get('nearbyUrls'):relevant.append(item)
+          result={'versions':versions,'allKeywordMatchCount':len(all_matches),'eventContextMatches':relevant,'activityUrls':all_urls}
+          (root/'consolidated.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween Historical APK Archaeology','',f'- Versions downloaded and scanned: {len(versions)}',f'- Raw Halloween-family matches: {len(all_matches)}',f'- Matches adjacent to activity URLs/IDs: {len(relevant)}',f'- Activity URLs extracted: {len(all_urls)}','', '| Version | Files | Raw matches | Matching paths | Activity URLs |','|---|---:|---:|---:|---:|']
+          for row in versions:lines.append(f"| {row['version']} | {row['filesScanned']} | {row['keywordMatches']} | {row['matchingPaths']} | {row['activityUrls']} |")
+          lines+=['','## Event-context matches','']
+          for item in relevant[:300]:lines += [f"### {item['version']} · `{item['file']}` · {', '.join(item['keywords'][:10])}",'```',item['context'][:5000],'```','']
+          lines+=['## Activity URLs','']+[f"- `{x['version']}` · `{x['url']}`" for x in all_urls]
+          (root/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'versions':len(versions),'rawMatches':len(all_matches),'eventContextMatches':len(relevant),'urls':len(all_urls)},ensure_ascii=False,indent=2))
+          PY
+
+      - name: Publish compact archaeology branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-apk-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md consolidated.json; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for d in "$OUT_DIR"/*; do
+            [[ -d "$d" ]] || continue
+            mkdir -p "$stage/$(basename "$d")"
+            for f in REPORT.md scan.json summary.txt package.txt package.sha256 STATUS.txt; do cp "$d/$f" "$stage/$(basename "$d")/" 2>/dev/null || true; done
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween APK archaeology ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload full archaeology artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-apk-archaeology
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
