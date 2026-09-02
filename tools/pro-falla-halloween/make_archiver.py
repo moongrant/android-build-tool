@@ -4,7 +4,7 @@ import re
 
 base = Path('tools/pro-falla-batch9/make_archiver.py').read_text(encoding='utf-8')
 base = base.replace('artifacts/pro-falla-batch9-original-spa', 'artifacts/pro-falla-halloween-original-spa')
-base = base.replace('ProFallaArchive/9.0', 'ProFallaHalloween/1.0')
+base = base.replace('ProFallaArchive/9.0', 'ProFallaHalloween/1.1')
 base = base.replace('tools/pro-falla-batch9/archive_batch9.mjs', 'tools/pro-falla-halloween/archive_halloween.mjs')
 
 campaign_block = """const campaigns = [
@@ -14,7 +14,7 @@ campaign_block = """const campaigns = [
   },
   {
     id:'halloween-celebrations-2022', title:'Falla Halloween Celebrations 2022', level:'L4',
-    units:[{label:'Halloween Celebrations',project:'act-hallowmas',activityId:147,translateId:267,shell:'https://web-test.falla.live/falla-web/micro-main/index.html',defaultRoute:'/task',routes:['/task','/week','/rank','/rank/week','/__rules']}]
+    units:[{label:'Halloween Celebrations',project:'act-hallowmas',activityId:147,translateId:267,shell:'https://web-test.falla.live/falla-web/micro-main/index.html',defaultRoute:'/task',routes:['/task','/__ranking','/__rules']}]
   },
   {
     id:'halloween-event-2023', title:'Falla Halloween Event 2023', level:'L4',
@@ -29,7 +29,7 @@ base, n = re.subn(r"campaigns = r'''const campaigns = \[.*?\n\];'''", lambda _m:
 if n != 1:
     raise SystemExit(f'campaign block replacement failed: {n}')
 
-custom_block = """  if(p.includes('/halloween/candy')||p.includes('/candy/bag')||p.includes('/candybag')){res={uid:0,nickName:'',avatar:'',isLogin:false,candyCount:0,bagCount:0,score:0,rank:0,progress:0,taskList:[],rankList:[],rewardList:[],records:[],friendList:[],receiveList:[],giftList:[]};kind='empty-candy-bag';}\n  else if(p.includes('/hallowmas')||p.includes('/halloween/23')||p.includes('/halloween23')){res={uid:0,nickName:'',avatar:'',isLogin:false,score:0,rank:0,progress:0,lanternCount:0,taskList:[],rankList:[],rewardList:[],records:[],giftList:[],lanternList:[]};kind='empty-halloween-state';}\n  else if(campaignId==='happy-halloween-2025'&&(p.includes('/act/template')||p.includes('/template/'))){res={uid:0,nickName:'',avatar:'',isLogin:false,score:0,rank:0,progress:0,taskList:[],rankList:[],rewardList:[],records:[],giftList:[]};kind='empty-halloween-template';}\n  else if(p.includes('servertime')){res={serverTime:now,timestamp:now,time:now};kind='server-time';}\n"""
+custom_block = """  if(p.includes('/myaccount')){res={uid:0,nickName:'',avatar:'',isLogin:false,coin:0,balance:0};kind='anonymous-my-account';}\n  else if(p.includes('/halloween/candy')||p.includes('/candy/bag')||p.includes('/candybag')){res={uid:0,nickName:'',avatar:'',isLogin:false,candyCount:0,bagCount:0,score:0,rank:0,progress:0,taskList:[],rankList:[],rewardList:[],records:[],friendList:[],receiveList:[],giftList:[]};kind='empty-candy-bag';}\n  else if(p.includes('/hallowmas')||p.includes('/halloween/23')||p.includes('/halloween23')){res={uid:0,nickName:'',avatar:'',isLogin:false,score:0,rank:0,progress:0,lanternCount:0,taskList:[],rankList:[],rewardList:[],records:[],giftList:[],lanternList:[]};kind='empty-halloween-state';}\n  else if(campaignId==='happy-halloween-2025'&&(p.includes('/act/template')||p.includes('/template/'))){res={uid:0,nickName:'',avatar:'',isLogin:false,score:0,rank:0,progress:0,taskList:[],rankList:[],rewardList:[],records:[],giftList:[]};kind='empty-halloween-template';}\n  else if(p.includes('servertime')){res={serverTime:now,timestamp:now,time:now};kind='server-time';}\n"""
 base, n = re.subn(r'custom = """.*?"""\nif needle not in src:', lambda _m: 'custom = ' + repr(custom_block) + '\nif needle not in src:', base, count=1, flags=re.S)
 if n != 1:
     raise SystemExit(f'fixture block replacement failed: {n}')
