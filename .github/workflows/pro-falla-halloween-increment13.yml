@@ -1,0 +1,76 @@
+name: Pro Falla Halloween Increment 13 package
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch12-20260828]
+    paths:
+      - '.github/workflows/pro-falla-halloween-increment13.yml'
+      - 'tools/pro-falla-halloween/build_increment13.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-20260902
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download finalized Halloween original SPA artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p work/original
+          curl -fL \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/moongrant/android-build-tool/actions/artifacts/9840507972/zip" \
+            -o work/original-artifact.zip
+          unzip -q work/original-artifact.zip -d work/original
+          test -f work/original/manifest.json
+      - name: Build Increment 13
+        env:
+          ORIGINAL_DIR: ${{ github.workspace }}/work/original
+          PACKAGE_DIR: ${{ github.workspace }}/dist/pro-falla-sites-increment-13-halloween-campaigns-complete
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-halloween/build_increment13.py
+          test -f dist/pro-falla-sites-increment-13-halloween-campaigns-complete/site-patch/cards.part-13.json
+          test -f dist/pro-falla-sites-increment-13-halloween-campaigns-complete/site-patch/patch-manifest.json
+          test -f dist/pro-falla-sites-increment-13-halloween-campaigns-complete/WORK_UPLOAD_PROMPT.txt
+          python - <<'PY'
+          import json
+          p='dist/pro-falla-sites-increment-13-halloween-campaigns-complete/qa/QA_REPORT.json'
+          q=json.load(open(p))
+          assert q['offlineReplayComplete'] is True, q
+          assert q['visualAcceptance'] is True, q
+          assert q['campaignCount']==4, q
+          for c in q['campaigns']:
+              assert c['offlineMissing']==0, c
+              assert c['brokenImages']==0, c
+              assert c['visibleErrors']==0, c
+              assert c['navErrors']==0, c
+              assert c['originalBundleReplay'] is True, c
+          print('INCREMENT 13 PACKAGE QA PASS')
+          PY
+      - name: Package audit
+        run: |
+          set -Eeuo pipefail
+          du -sh dist/pro-falla-sites-increment-13-halloween-campaigns-complete
+          find dist/pro-falla-sites-increment-13-halloween-campaigns-complete -type f | wc -l
+          sha256sum dist/pro-falla-sites-increment-13-halloween-campaigns-complete/site-patch/patch-manifest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-sites-increment-13-halloween-campaigns-complete
+          path: dist/pro-falla-sites-increment-13-halloween-campaigns-complete
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6

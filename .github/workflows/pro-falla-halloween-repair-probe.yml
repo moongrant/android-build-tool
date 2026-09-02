@@ -1,0 +1,97 @@
+name: Pro Falla Halloween repair probe
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch12-20260828]
+    paths:
+      - '.github/workflows/pro-falla-halloween-repair-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-20260902
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe historical CDN mirrors
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-falla-halloween-repair-probe/assets
+          python - <<'PY'
+          import json, urllib.request, urllib.error, hashlib, mimetypes
+          from pathlib import Path
+          from urllib.parse import urlsplit
+
+          out=Path('artifacts/pro-falla-halloween-repair-probe')
+          assets=out/'assets'
+          urls=[
+            'https://falla-res1.resygg.com/awss3_2168516_1666771277557556722_3234362521.png',
+            'https://falla-res1.resygg.com/awss3_2168516_1666771646172007327_2675723888.png',
+            'https://falla-res1.resygg.com/awss3_2168516_1666771822340077335_1661585032.png',
+            'https://falla-res1.resygg.com/awss3_2168516_1666771929166164260_3601435880.png',
+            'https://falla-res1.resygg.com/awss3_1436068_1697441561904813617_1767391401.png',
+            'https://falla-res1.resygg.com/awss3_866790_1697709734068750198_1678038683.png',
+          ]
+          hosts=['falla-res1.resygg.com','falla-res1.falla.live','res-g.resygg.com','res-dubai.falla.live','falla-sz.falla.live','res.falla.live']
+          def candidates(url):
+            p=urlsplit(url)
+            path=p.path + (('?'+p.query) if p.query else '')
+            arr=[url]
+            arr += [f'https://{h}{path}' for h in hosts]
+            return list(dict.fromkeys(arr))
+          def get(url):
+            req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 ProFallaHalloweenRepair/1.0','Accept':'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8','Referer':'https://web.fallaweb.com/'})
+            try:
+              with urllib.request.urlopen(req,timeout=25) as r:
+                data=r.read(); return {'ok':200<=r.status<300 and len(data)>0,'status':r.status,'url':r.geturl(),'contentType':r.headers.get('content-type',''),'data':data}
+            except urllib.error.HTTPError as e:return {'ok':False,'status':e.code,'url':url,'error':str(e)}
+            except Exception as e:return {'ok':False,'status':0,'url':url,'error':repr(e)}
+          report=[]
+          for original in urls:
+            attempts=[]; found=None
+            for c in candidates(original):
+              r=get(c); attempts.append({k:v for k,v in r.items() if k!='data'})
+              if r.get('ok'):
+                found=r; break
+            row={'original':original,'attempts':attempts,'found':False}
+            if found:
+              digest=hashlib.sha256(found['data']).hexdigest(); ext=Path(urlsplit(found['url']).path).suffix or '.bin'; fp=assets/f'{digest}{ext}'; fp.write_bytes(found['data'])
+              row.update({'found':True,'sourceUrl':found['url'],'sha256':digest,'bytes':len(found['data']),'contentType':found.get('contentType'),'file':str(fp.relative_to(out))})
+            report.append(row)
+
+          json_urls=[
+            'https://web.falla.live/activity_gift_config_v3/pre/h5_346_ALL.json',
+            'https://web.falla.live/activity_gift_config_v3/prod/h5_346_ALL.json',
+            'https://web.fallaweb.com/activity_gift_config_v3/h5_346_ALL.json',
+            'https://web-test.falla.live/activity_gift_config_v3/h5_346_ALL.json',
+            'https://web.falla.live/activity_gift_config_v2/pre/h5_346_ALL.json',
+          ]
+          json_attempts=[]; json_found=None
+          for u in json_urls:
+            r=get(u); json_attempts.append({k:v for k,v in r.items() if k!='data'})
+            if r.get('ok'):
+              try:json.loads(r['data'].decode('utf-8'))
+              except:continue
+              json_found=r;break
+          jr={'original':'https://web.falla.live/activity_gift_config_v3/pre/h5_346_ALL.json','attempts':json_attempts,'found':False}
+          if json_found:
+            digest=hashlib.sha256(json_found['data']).hexdigest(); fp=assets/f'{digest}.json'; fp.write_bytes(json_found['data']);jr.update({'found':True,'sourceUrl':json_found['url'],'sha256':digest,'bytes':len(json_found['data']),'contentType':json_found.get('contentType'),'file':str(fp.relative_to(out))})
+          report.append(jr)
+          (out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+          (out/'REPORT.md').write_text('# Halloween Repair Probe\n\n'+ '\n'.join(f"- {'FOUND' if x['found'] else 'MISSING'} `{x['original']}`"+(f" -> `{x.get('sourceUrl')}`" if x['found'] else '') for x in report),encoding='utf-8')
+          print(json.dumps([{k:v for k,v in x.items() if k!='attempts'} for x in report],ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-halloween-repair-probe
+          path: artifacts/pro-falla-halloween-repair-probe
+          if-no-files-found: error
+          retention-days: 14
