@@ -1,0 +1,1049 @@
+{
+  "versions": [
+    {
+      "version": "2.28.0",
+      "filesScanned": 5998,
+      "keywordMatches": 2864,
+      "matchingPaths": 47,
+      "activityUrls": 1
+    },
+    {
+      "version": "2.29.0",
+      "filesScanned": 6040,
+      "keywordMatches": 2933,
+      "matchingPaths": 49,
+      "activityUrls": 1
+    },
+    {
+      "version": "3.0.4",
+      "filesScanned": 6177,
+      "keywordMatches": 8367,
+      "matchingPaths": 49,
+      "activityUrls": 3
+    },
+    {
+      "version": "3.0.5",
+      "filesScanned": 6177,
+      "keywordMatches": 8367,
+      "matchingPaths": 49,
+      "activityUrls": 3
+    },
+    {
+      "version": "3.0.6",
+      "filesScanned": 6177,
+      "keywordMatches": 8380,
+      "matchingPaths": 49,
+      "activityUrls": 3
+    }
+  ],
+  "allKeywordMatchCount": 30911,
+  "eventContextMatches": [
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes5.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "|CREATE TABLE IF NOT EXISTS `RoomTheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `roomId` INTEGER NOT NULL, `roomTheme` TEXT)\nCREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes5.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "CREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT, `background` TEXT, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes5.dex",
+      "line": "INSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "keywords": [
+        "bat"
+      ],
+      "context": "INMIC\nINSERT INTO FriendsTableTemp (id, name, head, vip, vip_level, idx, uid, sex, add_from, time, role, sign) SELECT userid, username, headphoto, uservip, supervip, standbyone, standbytwo, standbythree, standbyfour, ctime, role, sign FROM FriendsTable\nUINSERT OR IGNORE INTO `HideContentTable` (`userId`,`contentId`,`type`) VALUES (?,?,?)\nINSERT OR IGNORE INTO `PayOrderTable` (`user_id`,`order_id`,`orderType`,`sku`,`amount`,`usdAmount`,`unit`,`type`,`purchase_token`,`huaWeiAccountFlag`,`isConsume`,`purchaseState`,`isAcknowledged`,`isSubscription`,`subscriptionState`,`subscriptionId`,`subscriptionOrderId`,`createTime`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ChatMessageTable` (`uid`,`mid`,`targetId`,`contentType`,`message`,`time`,`sendState`,`isWarn`,`isAcceptMsg`,`unknownMessage`,`voiceUrl`,`voiceDuration`,`voiceFileName`,`isVoiceRead`,`emoticonType`,`emoticonValue`,`emoticonIsRead`,`giftId`,`giftNumber`,`giftUrl`,`isGiftBlind`,`isGiftBlindBox`,`isGiftBackpack`,`isGiftCustomMade`,`isPreset`,`isGifText`,`gifId`,`gifUrl`,`roomHeader`,`roomName`,`roomId`,`roomIdx`,`roomIp`,`momentId`,`momentImage`,`momentText`,`momentMsg`,`momentType`,`topicId`,`topicImage`,`topicName`,`topicUserCount`,`topicMomentCount`,`topicMsg`,`shareUserId`,`shareUserIdx`,`shareUserHead`,`shareUserName`,`shareUserMessage`,`activityImage`,`activityText1`,`activityText2`,`activityMsg`,`activityUrl`,`invitationCode`,`recallOrRecruite`,`themeBgName`,`themeBgImgUrl`,`themeVideoUrl`,`themeDayLimit`,`themeExpireTime`,`themeGiveId`,`themeState`,`eventId`,`eventName`,`eventImageUrl`,`eventTagId`,`eventStartTime`,`eventEndTime`,`eventRoomId`,`eventRoomName`,`eventRoomIp`,`eventDeleted`,`imageUrl`,`imageFilePath`,`imageWidth`,`imageHeight`,`giftWallGiftId`,`giftWallNum`,`giftWallGiftIcon`,`giftWallExpire`,`giftWallPrice`,`giftWallIlluminateState`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ConversationTable` (`uid`,`targetId`,`mid`,`sendState`,`title`,`message`,`type`,`momentType`,`unReadCount`,`draft`,`time`,`topTime`,`isVoiceAndUnread`,`isAcceptMsg`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ErrorCodeTable` (`code`,`MessgeEn`,`MessgeME`,`MessgeTr`,`MessgeIn`,`MessgePT`,`MessgeES`,`MessgeHi`,`MessgeUr`) VALUES (?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `FriendRequestMessageTable` (`uid`,`targetUserId`,`mid`,`state`,`message`,`time`,`isRead`) VALUES (?,?,?,?,?,?,?)",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes5.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/ProgressBar;\nLandroid/widget/RelativeLayout;\n0Landroid/widget/SeekBar$OnSeekBarChangeListener;\nLandroid/widget/SeekBar;\nLandroid/widget/Switch;\n$Landroid/widget/TextView$BufferType;\nLandroid/widget/TextView;\nLandroid/widget/Toast;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes6.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/RadioButton;\nLandroid/widget/RelativeLayout;\nLandroid/widget/ScrollView;\nLandroid/widget/Space;\nLandroid/widget/Switch;\nLandroid/widget/TableRow;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes2.dex",
+      "line": "batch {",
+      "keywords": [
+        "bat"
+      ],
+      "context": "For more information please visit https://google.github.io/accompanist/systemuicontroller\naccompanist/web is deprecated and the API is no longer maintained. \nWe recommend forking the implementation and customising it to your needs. \nFor more information please visit https://google.github.io/accompanist/web\nbatch {\nevent_filter {\nproperty_filter {\nCloudbridge Configured: \n================",
+      "nearbyUrls": [
+        "https://google.github.io/accompanist/systemuicontroller",
+        "https://google.github.io/accompanist/web"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/LICENSES.txt",
+      "line": "   part or all of the Bison parser skeleton and distribute that work",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   GNU General Public License for more details.\n   You should have received a copy of the GNU General Public License\n   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/LICENSES.txt",
+      "line": "   parser generator using the skeleton or a modified version thereof",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/classes7.dex",
+      "line": "bAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "https://developer.android.com/guide/topics/permissions/overview\n\\Attempted to notify ActivityAware plugins of onActivityResult, but no Activity was attached.\nWAttempted to notify ActivityAware plugins of onNewIntent, but no Activity was attached.\nfAttempted to notify ActivityAware plugins of onRequestPermissionsResult, but no Activity was attached.\nbAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.\n_Attempted to notify ActivityAware plugins of onSaveInstanceState, but no Activity was attached.\n[Attempted to notify ActivityAware plugins of onUserLeaveHint, but no Activity was attached.\nAttempted to register plugin (\n8Attempted to run a DartExecutor that is already running.",
+      "nearbyUrls": [
+        "https://developer.android.com/guide/topics/permissions/overview"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "aerobatic.aero",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// aero : see https://www.information.aero/index.php?id=66\naero\naccident-investigation.aero\naccident-prevention.aero\naerobatic.aero\naeroclub.aero\naerodrome.aero\nagents.aero\naircraft.aero",
+      "nearbyUrls": [
+        "https://www.information.aero/index.php?id=66"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--fiqz9s (\"Zhongguo/China\", Chinese, Traditional) : CN\n// CNNIC\n// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ\n// xn--wgbh1c (\"Egypt/Masr\", Arabic) : EG\n// http://www.dotmasr.eg/\n// xn--e1a4c (\"eu\", Cyrillic) : EU\n// xn--node (\"ge\", Georgian Mkhedruli) : GE",
+      "nearbyUrls": [
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://www.dotmasr.eg/"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "// Submitted by Hanno B\nck <hanno@schokokeks.org>\nschokokeks.net\n// Scry Security : http://www.scrysec.com\n// Submitted by Shante Adam <shante@skyhat.io>\nscrysec.com\n// Securepoint GmbH : https://www.securepoint.de\n// Submitted by Erik Anders <erik.anders@securepoint.de>\nfirewall-gateway.com",
+      "nearbyUrls": [
+        "http://www.scrysec.com",
+        "https://www.securepoint.de"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "applinzi.com\nsinaapp.com\nvipsinaapp.com\n// Skyhat : http://www.skyhat.io\n// Submitted by Shante Adam <shante@skyhat.io>\nbounty-full.com\nalpha.bounty-full.com\nbeta.bounty-full.com\n// staticland : https://static.land",
+      "nearbyUrls": [
+        "http://www.skyhat.io",
+        "https://static.land"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/META-INF/commons-codec-1.10/META-INF/NOTICE.txt",
+      "line": "contains test data from http://aspell.net/test/orig/batch0.tab.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "Copyright 2002-2014 The Apache Software Foundation\nThis product includes software developed at\nThe Apache Software Foundation (http://www.apache.org/).\nsrc/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java\ncontains test data from http://aspell.net/test/orig/batch0.tab.\nCopyright (C) 2002 Kevin Atkinson (kevina@gnu.org)\n===============================================================================\nThe content of package org.apache.commons.codec.language.bm has been translated\nfrom the original php source code available at http://stevemorse.org/phoneticinfo.htm",
+      "nearbyUrls": [
+        "http://www.apache.org/",
+        "http://aspell.net/test/orig/batch0.tab",
+        "http://stevemorse.org/phoneticinfo.htm"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-1/res/layout/main_activity_wrm_test.xml",
+      "line": "\"\"com.yalla.yalla.ui.view.SwitchView",
+      "keywords": [
+        "witch"
+      ],
+      "context": "android\n((androidx.compose.ui.platform.ComposeView\n11androidx.constraintlayout.widget.ConstraintLayout\n''com.yalla.yalla.ui.view.ScrollableViews\n\"\"com.yalla.yalla.ui.view.SwitchView\n''http://schemas.android.com/apk/res-auto\n**http://schemas.android.com/apk/res/android\ninclude\nlayout",
+      "nearbyUrls": [
+        "http://schemas.android.com/apk/res-auto",
+        "http://schemas.android.com/apk/res/android"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "None of the patterns in the switch expression the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.",
+      "keywords": [
+        "witch"
+      ],
+      "context": "_checkCacheSize@159034022\n_errorMessage@14069316\n_GiftRuleGroupComponent&PositionComponent&HasGameRef&HasPaint@566276047\n1-ci kvartal2\nNone of the patterns in the switch expression the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.\ninit:gameRoundIndex\n_SplayTreeValueIterable@3220832\nisInternalRefresh\n_handleAnimationChanged@330443363",
+      "nearbyUrls": [
+        "https://github.com/dart-lang/language/issues/3488"
+      ]
+    },
+    {
+      "version": "2.28.0",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "None of the patterns in the exhaustive switch statement the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.",
+      "keywords": [
+        "witch"
+      ],
+      "context": "aprile\nMaart\nhuhtikuuta\nenero\nNone of the patterns in the exhaustive switch statement the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.\nset:onHorizontalDragUpdate\n_yieldAsyncStar@4048458\nPinPUp\n_await@4048458",
+      "nearbyUrls": [
+        "https://github.com/dart-lang/language/issues/3488"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes5.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "|CREATE TABLE IF NOT EXISTS `RoomTheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `roomId` INTEGER NOT NULL, `roomTheme` TEXT)\nCREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes5.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "CREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT, `background` TEXT, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes5.dex",
+      "line": "INSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "keywords": [
+        "bat"
+      ],
+      "context": "INITIATE_VOTE_REQUEST\nINSERT INTO FriendsTableTemp (id, name, head, vip, vip_level, idx, uid, sex, add_from, time, role, sign) SELECT userid, username, headphoto, uservip, supervip, standbyone, standbytwo, standbythree, standbyfour, ctime, role, sign FROM FriendsTable\nUINSERT OR IGNORE INTO `HideContentTable` (`userId`,`contentId`,`type`) VALUES (?,?,?)\nINSERT OR IGNORE INTO `PayOrderTable` (`user_id`,`order_id`,`orderType`,`sku`,`amount`,`usdAmount`,`unit`,`type`,`purchase_token`,`huaWeiAccountFlag`,`isConsume`,`purchaseState`,`isAcknowledged`,`isSubscription`,`subscriptionState`,`subscriptionId`,`subscriptionOrderId`,`createTime`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ChatMessageTable` (`uid`,`mid`,`targetId`,`contentType`,`message`,`time`,`sendState`,`isWarn`,`isAcceptMsg`,`unknownMessage`,`jsonData`,`voiceUrl`,`voiceDuration`,`voiceFileName`,`isVoiceRead`,`emoticonType`,`emoticonValue`,`emoticonIsRead`,`giftId`,`giftNumber`,`giftUrl`,`isGiftBlind`,`isGiftBlindBox`,`isGiftBackpack`,`isGiftCustomMade`,`isPreset`,`isGifText`,`gifId`,`gifUrl`,`roomHeader`,`roomName`,`roomId`,`roomIdx`,`roomIp`,`momentId`,`momentImage`,`momentText`,`momentMsg`,`momentType`,`topicId`,`topicImage`,`topicName`,`topicUserCount`,`topicMomentCount`,`topicMsg`,`shareUserId`,`shareUserIdx`,`shareUserHead`,`shareUserName`,`shareUserMessage`,`activityImage`,`activityText1`,`activityText2`,`activityMsg`,`activityUrl`,`invitationCode`,`recallOrRecruite`,`themeBgName`,`themeBgImgUrl`,`themeVideoUrl`,`themeDayLimit`,`themeExpireTime`,`themeGiveId`,`themeState`,`eventId`,`eventName`,`eventImageUrl`,`eventTagId`,`eventStartTime`,`eventEndTime`,`eventRoomId`,`eventRoomName`,`eventRoomIp`,`eventDeleted`,`imageUrl`,`imageFilePath`,`imageWidth`,`imageHeight`,`giftWallGiftId`,`giftWallNum`,`giftWallGiftIcon`,`giftWallExpire`,`giftWallPrice`,`giftWallIlluminateState`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ConversationTable` (`uid`,`targetId`,`mid`,`sendState`,`title`,`message`,`type`,`momentType`,`unReadCount`,`draft`,`time`,`topTime`,`isVoiceAndUnread`,`isAcceptMsg`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ErrorCodeTable` (`code`,`MessgeEn`,`MessgeME`,`MessgeTr`,`MessgeIn`,`MessgePT`,`MessgeES`,`MessgeHi`,`MessgeUr`) VALUES (?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `FriendRequestMessageTable` (`uid`,`targetUserId`,`mid`,`state`,`message`,`time`,`isRead`) VALUES (?,?,?,?,?,?,?)",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes5.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/ProgressBar;\nLandroid/widget/RelativeLayout;\n0Landroid/widget/SeekBar$OnSeekBarChangeListener;\nLandroid/widget/SeekBar;\nLandroid/widget/Switch;\n$Landroid/widget/TextView$BufferType;\nLandroid/widget/TextView;\nLandroid/widget/Toast;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes6.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/RadioButton;\nLandroid/widget/RelativeLayout;\nLandroid/widget/ScrollView;\nLandroid/widget/Space;\nLandroid/widget/Switch;\nLandroid/widget/TableRow;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes2.dex",
+      "line": "batch {",
+      "keywords": [
+        "bat"
+      ],
+      "context": "For more information please visit https://google.github.io/accompanist/systemuicontroller\naccompanist/web is deprecated and the API is no longer maintained. \nWe recommend forking the implementation and customising it to your needs. \nFor more information please visit https://google.github.io/accompanist/web\nbatch {\nevent_filter {\nproperty_filter {\nCloudbridge Configured: \n================",
+      "nearbyUrls": [
+        "https://google.github.io/accompanist/systemuicontroller",
+        "https://google.github.io/accompanist/web"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/LICENSES.txt",
+      "line": "   part or all of the Bison parser skeleton and distribute that work",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   GNU General Public License for more details.\n   You should have received a copy of the GNU General Public License\n   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/LICENSES.txt",
+      "line": "   parser generator using the skeleton or a modified version thereof",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/classes7.dex",
+      "line": "bAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "https://developer.android.com/guide/topics/permissions/overview\n\\Attempted to notify ActivityAware plugins of onActivityResult, but no Activity was attached.\nWAttempted to notify ActivityAware plugins of onNewIntent, but no Activity was attached.\nfAttempted to notify ActivityAware plugins of onRequestPermissionsResult, but no Activity was attached.\nbAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.\n_Attempted to notify ActivityAware plugins of onSaveInstanceState, but no Activity was attached.\n[Attempted to notify ActivityAware plugins of onUserLeaveHint, but no Activity was attached.\nAttempted to register plugin (\n8Attempted to run a DartExecutor that is already running.",
+      "nearbyUrls": [
+        "https://developer.android.com/guide/topics/permissions/overview"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "aerobatic.aero",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// aero : see https://www.information.aero/index.php?id=66\naero\naccident-investigation.aero\naccident-prevention.aero\naerobatic.aero\naeroclub.aero\naerodrome.aero\nagents.aero\naircraft.aero",
+      "nearbyUrls": [
+        "https://www.information.aero/index.php?id=66"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--fiqz9s (\"Zhongguo/China\", Chinese, Traditional) : CN\n// CNNIC\n// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ\n// xn--wgbh1c (\"Egypt/Masr\", Arabic) : EG\n// http://www.dotmasr.eg/\n// xn--e1a4c (\"eu\", Cyrillic) : EU\n// xn--node (\"ge\", Georgian Mkhedruli) : GE",
+      "nearbyUrls": [
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://www.dotmasr.eg/"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "// Submitted by Hanno B\nck <hanno@schokokeks.org>\nschokokeks.net\n// Scry Security : http://www.scrysec.com\n// Submitted by Shante Adam <shante@skyhat.io>\nscrysec.com\n// Securepoint GmbH : https://www.securepoint.de\n// Submitted by Erik Anders <erik.anders@securepoint.de>\nfirewall-gateway.com",
+      "nearbyUrls": [
+        "http://www.scrysec.com",
+        "https://www.securepoint.de"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "applinzi.com\nsinaapp.com\nvipsinaapp.com\n// Skyhat : http://www.skyhat.io\n// Submitted by Shante Adam <shante@skyhat.io>\nbounty-full.com\nalpha.bounty-full.com\nbeta.bounty-full.com\n// staticland : https://static.land",
+      "nearbyUrls": [
+        "http://www.skyhat.io",
+        "https://static.land"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/META-INF/commons-codec-1.10/META-INF/NOTICE.txt",
+      "line": "contains test data from http://aspell.net/test/orig/batch0.tab.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "Copyright 2002-2014 The Apache Software Foundation\nThis product includes software developed at\nThe Apache Software Foundation (http://www.apache.org/).\nsrc/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java\ncontains test data from http://aspell.net/test/orig/batch0.tab.\nCopyright (C) 2002 Kevin Atkinson (kevina@gnu.org)\n===============================================================================\nThe content of package org.apache.commons.codec.language.bm has been translated\nfrom the original php source code available at http://stevemorse.org/phoneticinfo.htm",
+      "nearbyUrls": [
+        "http://www.apache.org/",
+        "http://aspell.net/test/orig/batch0.tab",
+        "http://stevemorse.org/phoneticinfo.htm"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-1/res/layout/main_activity_wrm_test.xml",
+      "line": "\"\"com.yalla.yalla.ui.view.SwitchView",
+      "keywords": [
+        "witch"
+      ],
+      "context": "android\n((androidx.compose.ui.platform.ComposeView\n11androidx.constraintlayout.widget.ConstraintLayout\n''com.yalla.yalla.ui.view.ScrollableViews\n\"\"com.yalla.yalla.ui.view.SwitchView\n''http://schemas.android.com/apk/res-auto\n**http://schemas.android.com/apk/res/android\ninclude\nlayout",
+      "nearbyUrls": [
+        "http://schemas.android.com/apk/res-auto",
+        "http://schemas.android.com/apk/res/android"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "None of the patterns in the switch expression the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.",
+      "keywords": [
+        "witch"
+      ],
+      "context": "1-ci kvartal2\n_errorMessage@14069316\n_GiftRuleGroupComponent&PositionComponent&HasGameRef&HasPaint@566276047\ninit:_kEmptyChildList@432082469\nNone of the patterns in the switch expression the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.\ninit:gameRoundIndex\n_SplayTreeValueIterable@3220832\nisInternalRefresh\n_handleAnimationChanged@330443363",
+      "nearbyUrls": [
+        "https://github.com/dart-lang/language/issues/3488"
+      ]
+    },
+    {
+      "version": "2.29.0",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "None of the patterns in the exhaustive switch statement the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.",
+      "keywords": [
+        "witch"
+      ],
+      "context": "aprile\nMaart\nhuhtikuuta\nenero\nNone of the patterns in the exhaustive switch statement the matched input value. See https://github.com/dart-lang/language/issues/3488 for details.\nset:onHorizontalDragUpdate\n_yieldAsyncStar@4048458\nPinPUp\n_await@4048458",
+      "nearbyUrls": [
+        "https://github.com/dart-lang/language/issues/3488"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes8.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/RadioButton;\nLandroid/widget/RelativeLayout;\nLandroid/widget/ScrollView;\nLandroid/widget/Space;\nLandroid/widget/Switch;\nLandroid/widget/TableRow;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes5.dex",
+      "line": "batch {",
+      "keywords": [
+        "bat"
+      ],
+      "context": "For more information please visit https://google.github.io/accompanist/systemuicontroller\naccompanist/web is deprecated and the API is no longer maintained. \nWe recommend forking the implementation and customising it to your needs. \nFor more information please visit https://google.github.io/accompanist/web\nbatch {\nevent_filter {\nfor session \nproperty_filter {\nCloudbridge Configured: ",
+      "nearbyUrls": [
+        "https://google.github.io/accompanist/systemuicontroller",
+        "https://google.github.io/accompanist/web"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes9.dex",
+      "line": "bAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "https://developer.android.com/guide/topics/permissions/overview\n\\Attempted to notify ActivityAware plugins of onActivityResult, but no Activity was attached.\nWAttempted to notify ActivityAware plugins of onNewIntent, but no Activity was attached.\nfAttempted to notify ActivityAware plugins of onRequestPermissionsResult, but no Activity was attached.\nbAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.\n_Attempted to notify ActivityAware plugins of onSaveInstanceState, but no Activity was attached.\n[Attempted to notify ActivityAware plugins of onUserLeaveHint, but no Activity was attached.\nAttempted to register plugin (\n8Attempted to run a DartExecutor that is already running.",
+      "nearbyUrls": [
+        "https://developer.android.com/guide/topics/permissions/overview"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes6.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "|CREATE TABLE IF NOT EXISTS `RoomTheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `roomId` INTEGER NOT NULL, `roomTheme` TEXT)\nCREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes6.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "CREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT, `background` TEXT, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes6.dex",
+      "line": "INSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`scene`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "keywords": [
+        "bat"
+      ],
+      "context": "INPUT_TYPE_FIELD_NUMBER\nINSERT INTO FriendsTableTemp (id, name, head, vip, vip_level, idx, uid, sex, add_from, time, role, sign) SELECT userid, username, headphoto, uservip, supervip, standbyone, standbytwo, standbythree, standbyfour, ctime, role, sign FROM FriendsTable\nUINSERT OR IGNORE INTO `HideContentTable` (`userId`,`contentId`,`type`) VALUES (?,?,?)\nINSERT OR IGNORE INTO `PayOrderTable` (`user_id`,`order_id`,`orderType`,`sku`,`amount`,`usdAmount`,`unit`,`type`,`purchase_token`,`huaWeiAccountFlag`,`isConsume`,`purchaseState`,`isAcknowledged`,`isSubscription`,`subscriptionState`,`subscriptionId`,`subscriptionOrderId`,`createTime`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`scene`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ChatMessageTable` (`uid`,`mid`,`targetId`,`contentType`,`message`,`time`,`sendState`,`isWarn`,`isAcceptMsg`,`unknownMessage`,`jsonData`,`voiceUrl`,`voiceDuration`,`voiceFileName`,`isVoiceRead`,`emoticonType`,`emoticonValue`,`emoticonIsRead`,`giftId`,`giftNumber`,`giftUrl`,`isGiftBlind`,`isGiftBlindBox`,`isGiftBackpack`,`isGiftCustomMade`,`isPreset`,`isGifText`,`gifId`,`gifUrl`,`roomHeader`,`roomName`,`roomId`,`roomIdx`,`roomIp`,`momentId`,`momentImage`,`momentText`,`momentMsg`,`momentType`,`topicId`,`topicImage`,`topicName`,`topicUserCount`,`topicMomentCount`,`topicMsg`,`shareUserId`,`shareUserIdx`,`shareUserHead`,`shareUserName`,`shareUserMessage`,`activityImage`,`activityText1`,`activityText2`,`activityMsg`,`activityUrl`,`invitationCode`,`recallOrRecruite`,`themeBgName`,`themeBgImgUrl`,`themeVideoUrl`,`themeDayLimit`,`themeExpireTime`,`themeGiveId`,`themeState`,`eventId`,`eventName`,`eventImageUrl`,`eventTagId`,`eventStartTime`,`eventEndTime`,`eventRoomId`,`eventRoomName`,`eventRoomIp`,`eventDeleted`,`imageUrl`,`imageFilePath`,`imageWidth`,`imageHeight`,`giftWallGiftId`,`giftWallNum`,`giftWallGiftIcon`,`giftWallExpire`,`giftWallPrice`,`giftWallIlluminateState`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ConversationTable` (`uid`,`targetId`,`mid`,`sendState`,`title`,`message`,`type`,`momentType`,`unReadCount`,`draft`,`time`,`topTime`,`isVoiceAndUnread`,`isAcceptMsg`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ErrorCodeTable` (`code`,`MessgeEn`,`MessgeME`,`MessgeTr`,`MessgeIn`,`MessgePT`,`MessgeES`,`MessgeHi`,`MessgeUr`) VALUES (?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `FriendRequestMessageTable` (`uid`,`targetUserId`,`mid`,`state`,`message`,`time`,`isRead`) VALUES (?,?,?,?,?,?,?)",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/LICENSES.txt",
+      "line": "   part or all of the Bison parser skeleton and distribute that work",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   GNU General Public License for more details.\n   You should have received a copy of the GNU General Public License\n   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/LICENSES.txt",
+      "line": "   parser generator using the skeleton or a modified version thereof",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/classes7.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/ProgressBar;\nLandroid/widget/RelativeLayout;\n0Landroid/widget/SeekBar$OnSeekBarChangeListener;\nLandroid/widget/SeekBar;\nLandroid/widget/Switch;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\nLandroid/widget/Toast;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "aerobatic.aero",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// aero : see https://www.information.aero/index.php?id=66\naero\naccident-investigation.aero\naccident-prevention.aero\naerobatic.aero\naeroclub.aero\naerodrome.aero\nagents.aero\naircraft.aero",
+      "nearbyUrls": [
+        "https://www.information.aero/index.php?id=66"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--fiqz9s (\"Zhongguo/China\", Chinese, Traditional) : CN\n// CNNIC\n// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ\n// xn--wgbh1c (\"Egypt/Masr\", Arabic) : EG\n// http://www.dotmasr.eg/\n// xn--e1a4c (\"eu\", Cyrillic) : EU\n// xn--node (\"ge\", Georgian Mkhedruli) : GE",
+      "nearbyUrls": [
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://www.dotmasr.eg/"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "// Submitted by Hanno B\nck <hanno@schokokeks.org>\nschokokeks.net\n// Scry Security : http://www.scrysec.com\n// Submitted by Shante Adam <shante@skyhat.io>\nscrysec.com\n// Securepoint GmbH : https://www.securepoint.de\n// Submitted by Erik Anders <erik.anders@securepoint.de>\nfirewall-gateway.com",
+      "nearbyUrls": [
+        "http://www.scrysec.com",
+        "https://www.securepoint.de"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "applinzi.com\nsinaapp.com\nvipsinaapp.com\n// Skyhat : http://www.skyhat.io\n// Submitted by Shante Adam <shante@skyhat.io>\nbounty-full.com\nalpha.bounty-full.com\nbeta.bounty-full.com\n// staticland : https://static.land",
+      "nearbyUrls": [
+        "http://www.skyhat.io",
+        "https://static.land"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-1/META-INF/commons-codec-1.10/META-INF/NOTICE.txt",
+      "line": "contains test data from http://aspell.net/test/orig/batch0.tab.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "Copyright 2002-2014 The Apache Software Foundation\nThis product includes software developed at\nThe Apache Software Foundation (http://www.apache.org/).\nsrc/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java\ncontains test data from http://aspell.net/test/orig/batch0.tab.\nCopyright (C) 2002 Kevin Atkinson (kevina@gnu.org)\n===============================================================================\nThe content of package org.apache.commons.codec.language.bm has been translated\nfrom the original php source code available at http://stevemorse.org/phoneticinfo.htm",
+      "nearbyUrls": [
+        "http://www.apache.org/",
+        "http://aspell.net/test/orig/batch0.tab",
+        "http://stevemorse.org/phoneticinfo.htm"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "_spine_skeleton_set_skin_by_namePtr@1142030055",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "set:contentLength\nav. J.-C.\nhttps://pro-game.yallalive.cn\ndecodeMethodCall\n_spine_skeleton_set_skin_by_namePtr@1142030055\nMaterialLocalizationPs\n10^2\n_clearMountedBit@501309486\nArial",
+      "nearbyUrls": [
+        "https://pro-game.yallalive.cn"
+      ]
+    },
+    {
+      "version": "3.0.4",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "init:_spine_skeleton_drawable_get_animation_state_dataPtr@11420300552",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "Canvas::saveLayer\n2n trimestre2\n\" is not supported by the platform. Refer to https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android.\nInvalid HTTP header field value: \ninit:_spine_skeleton_drawable_get_animation_state_dataPtr@11420300552\nstretch\n_now@283319124\n_maybeNotifyListeners@375411118\nPiektdiena",
+      "nearbyUrls": [
+        "https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes8.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/RadioButton;\nLandroid/widget/RelativeLayout;\nLandroid/widget/ScrollView;\nLandroid/widget/Space;\nLandroid/widget/Switch;\nLandroid/widget/TableRow;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes5.dex",
+      "line": "batch {",
+      "keywords": [
+        "bat"
+      ],
+      "context": "For more information please visit https://google.github.io/accompanist/systemuicontroller\naccompanist/web is deprecated and the API is no longer maintained. \nWe recommend forking the implementation and customising it to your needs. \nFor more information please visit https://google.github.io/accompanist/web\nbatch {\nevent_filter {\nfor session \nproperty_filter {\nCloudbridge Configured: ",
+      "nearbyUrls": [
+        "https://google.github.io/accompanist/systemuicontroller",
+        "https://google.github.io/accompanist/web"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes9.dex",
+      "line": "bAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "https://developer.android.com/guide/topics/permissions/overview\n\\Attempted to notify ActivityAware plugins of onActivityResult, but no Activity was attached.\nWAttempted to notify ActivityAware plugins of onNewIntent, but no Activity was attached.\nfAttempted to notify ActivityAware plugins of onRequestPermissionsResult, but no Activity was attached.\nbAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.\n_Attempted to notify ActivityAware plugins of onSaveInstanceState, but no Activity was attached.\n[Attempted to notify ActivityAware plugins of onUserLeaveHint, but no Activity was attached.\nAttempted to register plugin (\n8Attempted to run a DartExecutor that is already running.",
+      "nearbyUrls": [
+        "https://developer.android.com/guide/topics/permissions/overview"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes6.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "|CREATE TABLE IF NOT EXISTS `RoomTheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `roomId` INTEGER NOT NULL, `roomTheme` TEXT)\nCREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes6.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "CREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT, `background` TEXT, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes6.dex",
+      "line": "INSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`scene`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "keywords": [
+        "bat"
+      ],
+      "context": "INPUT_TYPE_FIELD_NUMBER\nINSERT INTO FriendsTableTemp (id, name, head, vip, vip_level, idx, uid, sex, add_from, time, role, sign) SELECT userid, username, headphoto, uservip, supervip, standbyone, standbytwo, standbythree, standbyfour, ctime, role, sign FROM FriendsTable\nUINSERT OR IGNORE INTO `HideContentTable` (`userId`,`contentId`,`type`) VALUES (?,?,?)\nINSERT OR IGNORE INTO `PayOrderTable` (`user_id`,`order_id`,`orderType`,`sku`,`amount`,`usdAmount`,`unit`,`type`,`purchase_token`,`huaWeiAccountFlag`,`isConsume`,`purchaseState`,`isAcknowledged`,`isSubscription`,`subscriptionState`,`subscriptionId`,`subscriptionOrderId`,`createTime`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`scene`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ChatMessageTable` (`uid`,`mid`,`targetId`,`contentType`,`message`,`time`,`sendState`,`isWarn`,`isAcceptMsg`,`unknownMessage`,`jsonData`,`voiceUrl`,`voiceDuration`,`voiceFileName`,`isVoiceRead`,`emoticonType`,`emoticonValue`,`emoticonIsRead`,`giftId`,`giftNumber`,`giftUrl`,`isGiftBlind`,`isGiftBlindBox`,`isGiftBackpack`,`isGiftCustomMade`,`isPreset`,`isGifText`,`gifId`,`gifUrl`,`roomHeader`,`roomName`,`roomId`,`roomIdx`,`roomIp`,`momentId`,`momentImage`,`momentText`,`momentMsg`,`momentType`,`topicId`,`topicImage`,`topicName`,`topicUserCount`,`topicMomentCount`,`topicMsg`,`shareUserId`,`shareUserIdx`,`shareUserHead`,`shareUserName`,`shareUserMessage`,`activityImage`,`activityText1`,`activityText2`,`activityMsg`,`activityUrl`,`invitationCode`,`recallOrRecruite`,`themeBgName`,`themeBgImgUrl`,`themeVideoUrl`,`themeDayLimit`,`themeExpireTime`,`themeGiveId`,`themeState`,`eventId`,`eventName`,`eventImageUrl`,`eventTagId`,`eventStartTime`,`eventEndTime`,`eventRoomId`,`eventRoomName`,`eventRoomIp`,`eventDeleted`,`imageUrl`,`imageFilePath`,`imageWidth`,`imageHeight`,`giftWallGiftId`,`giftWallNum`,`giftWallGiftIcon`,`giftWallExpire`,`giftWallPrice`,`giftWallIlluminateState`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ConversationTable` (`uid`,`targetId`,`mid`,`sendState`,`title`,`message`,`type`,`momentType`,`unReadCount`,`draft`,`time`,`topTime`,`isVoiceAndUnread`,`isAcceptMsg`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ErrorCodeTable` (`code`,`MessgeEn`,`MessgeME`,`MessgeTr`,`MessgeIn`,`MessgePT`,`MessgeES`,`MessgeHi`,`MessgeUr`) VALUES (?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `FriendRequestMessageTable` (`uid`,`targetUserId`,`mid`,`state`,`message`,`time`,`isRead`) VALUES (?,?,?,?,?,?,?)",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/LICENSES.txt",
+      "line": "   part or all of the Bison parser skeleton and distribute that work",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   GNU General Public License for more details.\n   You should have received a copy of the GNU General Public License\n   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/LICENSES.txt",
+      "line": "   parser generator using the skeleton or a modified version thereof",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/classes7.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/ProgressBar;\nLandroid/widget/RelativeLayout;\n0Landroid/widget/SeekBar$OnSeekBarChangeListener;\nLandroid/widget/SeekBar;\nLandroid/widget/Switch;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\nLandroid/widget/Toast;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "aerobatic.aero",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// aero : see https://www.information.aero/index.php?id=66\naero\naccident-investigation.aero\naccident-prevention.aero\naerobatic.aero\naeroclub.aero\naerodrome.aero\nagents.aero\naircraft.aero",
+      "nearbyUrls": [
+        "https://www.information.aero/index.php?id=66"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--fiqz9s (\"Zhongguo/China\", Chinese, Traditional) : CN\n// CNNIC\n// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ\n// xn--wgbh1c (\"Egypt/Masr\", Arabic) : EG\n// http://www.dotmasr.eg/\n// xn--e1a4c (\"eu\", Cyrillic) : EU\n// xn--node (\"ge\", Georgian Mkhedruli) : GE",
+      "nearbyUrls": [
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://www.dotmasr.eg/"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "// Submitted by Hanno B\nck <hanno@schokokeks.org>\nschokokeks.net\n// Scry Security : http://www.scrysec.com\n// Submitted by Shante Adam <shante@skyhat.io>\nscrysec.com\n// Securepoint GmbH : https://www.securepoint.de\n// Submitted by Erik Anders <erik.anders@securepoint.de>\nfirewall-gateway.com",
+      "nearbyUrls": [
+        "http://www.scrysec.com",
+        "https://www.securepoint.de"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "applinzi.com\nsinaapp.com\nvipsinaapp.com\n// Skyhat : http://www.skyhat.io\n// Submitted by Shante Adam <shante@skyhat.io>\nbounty-full.com\nalpha.bounty-full.com\nbeta.bounty-full.com\n// staticland : https://static.land",
+      "nearbyUrls": [
+        "http://www.skyhat.io",
+        "https://static.land"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-1/META-INF/commons-codec-1.10/META-INF/NOTICE.txt",
+      "line": "contains test data from http://aspell.net/test/orig/batch0.tab.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "Copyright 2002-2014 The Apache Software Foundation\nThis product includes software developed at\nThe Apache Software Foundation (http://www.apache.org/).\nsrc/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java\ncontains test data from http://aspell.net/test/orig/batch0.tab.\nCopyright (C) 2002 Kevin Atkinson (kevina@gnu.org)\n===============================================================================\nThe content of package org.apache.commons.codec.language.bm has been translated\nfrom the original php source code available at http://stevemorse.org/phoneticinfo.htm",
+      "nearbyUrls": [
+        "http://www.apache.org/",
+        "http://aspell.net/test/orig/batch0.tab",
+        "http://stevemorse.org/phoneticinfo.htm"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "_spine_skeleton_set_skin_by_namePtr@1142030055",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "set:contentLength\nav. J.-C.\nhttps://pro-game.yallalive.cn\ndecodeMethodCall\n_spine_skeleton_set_skin_by_namePtr@1142030055\nMaterialLocalizationPs\n10^2\n_clearMountedBit@501309486\nArial",
+      "nearbyUrls": [
+        "https://pro-game.yallalive.cn"
+      ]
+    },
+    {
+      "version": "3.0.5",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "init:_spine_skeleton_drawable_get_animation_state_dataPtr@11420300552",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "Canvas::saveLayer\n2n trimestre2\n\" is not supported by the platform. Refer to https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android.\nInvalid HTTP header field value: \ninit:_spine_skeleton_drawable_get_animation_state_dataPtr@11420300552\nstretch\n_now@283319124\n_maybeNotifyListeners@375411118\nPiektdiena",
+      "nearbyUrls": [
+        "https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/classes5.dex",
+      "line": "batch {",
+      "keywords": [
+        "bat"
+      ],
+      "context": "For more information please visit https://google.github.io/accompanist/systemuicontroller\naccompanist/web is deprecated and the API is no longer maintained. \nWe recommend forking the implementation and customising it to your needs. \nFor more information please visit https://google.github.io/accompanist/web\nbatch {\nevent_filter {\nfor session \nproperty_filter {\nCloudbridge Configured: ",
+      "nearbyUrls": [
+        "https://google.github.io/accompanist/systemuicontroller",
+        "https://google.github.io/accompanist/web"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/classes9.dex",
+      "line": "bAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "https://developer.android.com/guide/topics/permissions/overview\n\\Attempted to notify ActivityAware plugins of onActivityResult, but no Activity was attached.\nWAttempted to notify ActivityAware plugins of onNewIntent, but no Activity was attached.\nfAttempted to notify ActivityAware plugins of onRequestPermissionsResult, but no Activity was attached.\nbAttempted to notify ActivityAware plugins of onRestoreInstanceState, but no Activity was attached.\n_Attempted to notify ActivityAware plugins of onSaveInstanceState, but no Activity was attached.\n[Attempted to notify ActivityAware plugins of onUserLeaveHint, but no Activity was attached.\nAttempted to register plugin (\n8Attempted to run a DartExecutor that is already running.",
+      "nearbyUrls": [
+        "https://developer.android.com/guide/topics/permissions/overview"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/classes6.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "|CREATE TABLE IF NOT EXISTS `RoomTheme` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `roomId` INTEGER NOT NULL, `roomTheme` TEXT)\nCREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/classes6.dex",
+      "line": "CREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))",
+      "keywords": [
+        "bat"
+      ],
+      "context": "CREATE TABLE IF NOT EXISTS `SearchHistoryTable` (`uid` INTEGER NOT NULL, `tag` TEXT NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, PRIMARY KEY(`uid`, `tag`, `type`))\nCREATE TABLE IF NOT EXISTS `SimpleMessageTable` (`uid` INTEGER NOT NULL, `type` INTEGER NOT NULL, `time` INTEGER NOT NULL, `content` TEXT, `activityNum` INTEGER, `fansNum` INTEGER, `visitorNum` INTEGER, PRIMARY KEY(`uid`, `type`))\nCREATE TABLE IF NOT EXISTS `SquareEventRoomTable` (`mid` TEXT NOT NULL, `uid` INTEGER NOT NULL, `targetId` INTEGER NOT NULL, `roomId` INTEGER NOT NULL, `eventCreateTime` INTEGER NOT NULL, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `scene` INTEGER NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `num` INTEGER, `point` INTEGER, `dayNum` INTEGER, `jsonData` TEXT, `title` TEXT, `icon` TEXT, `jumpUrl` TEXT, `rewardItem` TEXT, `vipLevel` INTEGER, `awardType` INTEGER, `treasureBoxNumber` INTEGER, `treasureBoxImageUrl` TEXT, `kaVipType` INTEGER, `kaVipLevel` INTEGER, `currExpePercent` INTEGER, `rewardCoin` INTEGER, `messageType` INTEGER, `MemberBadgeFrozenInfo_roomId` INTEGER, `MemberBadgeFrozenInfo_roomName` TEXT, `MemberBadgeTopRankReward_shopId` INTEGER, `MemberBadgeTopRankReward_shopUrl` TEXT, `GiftBackpackExpired_dyid` INTEGER, `GiftBackpackExpired_headurl` TEXT, `GiftBackpackExpired_sex` INTEGER, `GiftBackpackExpired_ispraise` INTEGER, `GiftBackpackExpired_level` INTEGER, `GiftBackpackExpired_coin` INTEGER, `GiftBackpackExpired_upcrystal` INTEGER, `GiftBackpackExpired_language` INTEGER, `GiftBackpackExpired_nickname` TEXT, `GiftBackpackExpired_dyurl` TEXT, `GiftBlindTaskReward_awardtype` INTEGER, `GiftBlindTaskReward_awardcount` INTEGER, `GiftBlindTaskReward_awardId` INTEGER, `GiftBlindTaskReward_awardimage` TEXT, `GiftBlindRankingReward_toprank` INTEGER, `GiftBlindRankingReward_toptype` INTEGER, `GiftBlindRankingReward_awardtype` INTEGER, `GiftBlindRankingReward_awardcount` INTEGER, `GiftBlindRankingReward_awardId` INTEGER, `GiftBlindRankingReward_awardimage` TEXT, `Vip6DistributeSupremeGift_propCount` INTEGER, `Vip6DistributeSupremeGift_propId` INTEGER, `Vip6DistributeSupremeGift_propImage` TEXT, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `nVIPLv` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, `WealthLevelUpInfo_wealthLevel` INTEGER, `WealthLevelUpInfo_badgeLevel` INTEGER, `WealthLevelUpInfo_badgeImage` TEXT, `custom_theme_cause` INTEGER, `give_theme_userId` INTEGER, `give_theme_dayNum` INTEGER, `eventName` TEXT, `eventMinute` INTEGER, `eventStartTime` INTEGER, `eventReason` TEXT, `reasonType` INTEGER, `eventRoomId` INTEGER, `eventId` INTEGER, `BarrageGameInfo_title` TEXT, `BarrageGameInfo_content` TEXT, `BarrageGameInfo_img` TEXT, `BarrageGameInfo_region` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessageTable` (`mid` TEXT NOT NULL, `type` INTEGER NOT NULL, `message` TEXT NOT NULL, `time` INTEGER NOT NULL, `uid` INTEGER NOT NULL, `isRead` INTEGER NOT NULL, `vipLevel` INTEGER, `joinTopicId` INTEGER, `topicType` INTEGER, `topicId` INTEGER, `topicName` TEXT, `topicFailType` INTEGER, `userUpLevel` INTEGER, `userUpCoin` INTEGER, `userUpCrystal` INTEGER, `roomUpLevel` INTEGER, `roomWageCoin` INTEGER, `aristocracyBuyType` INTEGER, `aristocracyLevel` INTEGER, `uniqueIdExpirationTime` INTEGER, `consumerRebateCoin` INTEGER, `unlockAvatarFrameUrl` TEXT, `subscribeRewardCoin` INTEGER, `medalLevel` INTEGER, `medalId` INTEGER, PRIMARY KEY(`uid`, `mid`))\nCREATE TABLE IF NOT EXISTS `SystemMessage` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type_code` INTEGER NOT NULL, `midx` TEXT, `data` TEXT, `content` TEXT, `localtime` INTEGER NOT NULL, `datetime` TEXT, `uid` TEXT, `isRead` INTEGER NOT NULL, `topic_id` INTEGER NOT NULL, `topic_state` INTEGER NOT NULL)\nCREATE TABLE IF NOT EXISTS `TopicRecentTable` (`topic_id` INTEGER NOT NULL, `topic_name` TEXT, `create_time` INTEGER NOT NULL, `uid` TEXT NOT NULL, PRIMARY KEY(`topic_id`, `uid`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT NOT NULL, `background` TEXT NOT NULL, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT NOT NULL, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))\nCREATE TABLE IF NOT EXISTS `UserInfoTable` (`userId` INTEGER NOT NULL, `userIdx` TEXT NOT NULL, `idLevel` INTEGER NOT NULL, `userName` TEXT NOT NULL, `userAvatar` TEXT NOT NULL, `userFrame` TEXT, `background` TEXT, `userLevel` INTEGER NOT NULL, `gender` INTEGER NOT NULL, `bio` TEXT, `birthday` TEXT NOT NULL, `age` INTEGER NOT NULL, `countryId` INTEGER NOT NULL, `region` INTEGER NOT NULL, `medal` TEXT, `visitorNum` INTEGER NOT NULL, `followedNum` INTEGER NOT NULL, `fansNum` INTEGER NOT NULL, `joinRoomNum` INTEGER NOT NULL, `role` INTEGER NOT NULL, `regTime` INTEGER NOT NULL, `tags` TEXT NOT NULL, `vip` INTEGER NOT NULL, `vipLevel` INTEGER NOT NULL, PRIMARY KEY(`userId`))",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/classes6.dex",
+      "line": "INSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`scene`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "keywords": [
+        "bat"
+      ],
+      "context": "INPUT_TYPE_FIELD_NUMBER\nINSERT INTO FriendsTableTemp (id, name, head, vip, vip_level, idx, uid, sex, add_from, time, role, sign) SELECT userid, username, headphoto, uservip, supervip, standbyone, standbytwo, standbythree, standbyfour, ctime, role, sign FROM FriendsTable\nUINSERT OR IGNORE INTO `HideContentTable` (`userId`,`contentId`,`type`) VALUES (?,?,?)\nINSERT OR IGNORE INTO `PayOrderTable` (`user_id`,`order_id`,`orderType`,`sku`,`amount`,`usdAmount`,`unit`,`type`,`purchase_token`,`huaWeiAccountFlag`,`isConsume`,`purchaseState`,`isAcknowledged`,`isSubscription`,`subscriptionState`,`subscriptionId`,`subscriptionOrderId`,`createTime`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR IGNORE INTO `SystemMessageTable` (`mid`,`type`,`message`,`scene`,`time`,`uid`,`isRead`,`num`,`point`,`dayNum`,`jsonData`,`title`,`icon`,`jumpUrl`,`rewardItem`,`vipLevel`,`awardType`,`treasureBoxNumber`,`treasureBoxImageUrl`,`kaVipType`,`kaVipLevel`,`currExpePercent`,`rewardCoin`,`messageType`,`MemberBadgeFrozenInfo_roomId`,`MemberBadgeFrozenInfo_roomName`,`MemberBadgeTopRankReward_shopId`,`MemberBadgeTopRankReward_shopUrl`,`GiftBackpackExpired_dyid`,`GiftBackpackExpired_headurl`,`GiftBackpackExpired_sex`,`GiftBackpackExpired_ispraise`,`GiftBackpackExpired_level`,`GiftBackpackExpired_coin`,`GiftBackpackExpired_upcrystal`,`GiftBackpackExpired_language`,`GiftBackpackExpired_nickname`,`GiftBackpackExpired_dyurl`,`GiftBlindTaskReward_awardtype`,`GiftBlindTaskReward_awardcount`,`GiftBlindTaskReward_awardId`,`GiftBlindTaskReward_awardimage`,`GiftBlindRankingReward_toprank`,`GiftBlindRankingReward_toptype`,`GiftBlindRankingReward_awardtype`,`GiftBlindRankingReward_awardcount`,`GiftBlindRankingReward_awardId`,`GiftBlindRankingReward_awardimage`,`Vip6DistributeSupremeGift_propCount`,`Vip6DistributeSupremeGift_propId`,`Vip6DistributeSupremeGift_propImage`,`joinTopicId`,`topicType`,`topicId`,`topicName`,`topicFailType`,`userUpLevel`,`userUpCoin`,`userUpCrystal`,`roomUpLevel`,`roomWageCoin`,`aristocracyBuyType`,`aristocracyLevel`,`nVIPLv`,`uniqueIdExpirationTime`,`consumerRebateCoin`,`unlockAvatarFrameUrl`,`subscribeRewardCoin`,`medalLevel`,`medalId`,`WealthLevelUpInfo_wealthLevel`,`WealthLevelUpInfo_badgeLevel`,`WealthLevelUpInfo_badgeImage`,`custom_theme_cause`,`give_theme_userId`,`give_theme_dayNum`,`eventName`,`eventMinute`,`eventStartTime`,`eventReason`,`reasonType`,`eventRoomId`,`eventId`,`BarrageGameInfo_title`,`BarrageGameInfo_content`,`BarrageGameInfo_img`,`BarrageGameInfo_region`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ChatMessageTable` (`uid`,`mid`,`targetId`,`contentType`,`message`,`time`,`sendState`,`isWarn`,`isAcceptMsg`,`unknownMessage`,`jsonData`,`voiceUrl`,`voiceDuration`,`voiceFileName`,`isVoiceRead`,`emoticonType`,`emoticonValue`,`emoticonIsRead`,`giftId`,`giftNumber`,`giftUrl`,`isGiftBlind`,`isGiftBlindBox`,`isGiftBackpack`,`isGiftCustomMade`,`isPreset`,`isGifText`,`gifId`,`gifUrl`,`roomHeader`,`roomName`,`roomId`,`roomIdx`,`roomIp`,`momentId`,`momentImage`,`momentText`,`momentMsg`,`momentType`,`topicId`,`topicImage`,`topicName`,`topicUserCount`,`topicMomentCount`,`topicMsg`,`shareUserId`,`shareUserIdx`,`shareUserHead`,`shareUserName`,`shareUserMessage`,`activityImage`,`activityText1`,`activityText2`,`activityMsg`,`activityUrl`,`invitationCode`,`recallOrRecruite`,`themeBgName`,`themeBgImgUrl`,`themeVideoUrl`,`themeDayLimit`,`themeExpireTime`,`themeGiveId`,`themeState`,`eventId`,`eventName`,`eventImageUrl`,`eventTagId`,`eventStartTime`,`eventEndTime`,`eventRoomId`,`eventRoomName`,`eventRoomIp`,`eventDeleted`,`imageUrl`,`imageFilePath`,`imageWidth`,`imageHeight`,`giftWallGiftId`,`giftWallNum`,`giftWallGiftIcon`,`giftWallExpire`,`giftWallPrice`,`giftWallIlluminateState`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ConversationTable` (`uid`,`targetId`,`mid`,`sendState`,`title`,`message`,`type`,`momentType`,`unReadCount`,`draft`,`time`,`topTime`,`isVoiceAndUnread`,`isAcceptMsg`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `ErrorCodeTable` (`code`,`MessgeEn`,`MessgeME`,`MessgeTr`,`MessgeIn`,`MessgePT`,`MessgeES`,`MessgeHi`,`MessgeUr`) VALUES (?,?,?,?,?,?,?,?,?)\nINSERT OR REPLACE INTO `FriendRequestMessageTable` (`uid`,`targetUserId`,`mid`,`state`,`message`,`time`,`isRead`) VALUES (?,?,?,?,?,?,?)",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/LICENSES.txt",
+      "line": "   part or all of the Bison parser skeleton and distribute that work",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   GNU General Public License for more details.\n   You should have received a copy of the GNU General Public License\n   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/LICENSES.txt",
+      "line": "   parser generator using the skeleton or a modified version thereof",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public",
+      "nearbyUrls": [
+        "http://www.gnu.org/licenses/"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/classes7.dex",
+      "line": "Landroid/widget/Switch;",
+      "keywords": [
+        "witch"
+      ],
+      "context": "Landroid/widget/ProgressBar;\nLandroid/widget/RelativeLayout;\n0Landroid/widget/SeekBar$OnSeekBarChangeListener;\nLandroid/widget/SeekBar;\nLandroid/widget/Switch;\n0Landroid/widget/TextView$OnEditorActionListener;\nLandroid/widget/TextView;\nLandroid/widget/Toast;\n%Landroidx/activity/ComponentActivity;",
+      "nearbyUrls": []
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "aerobatic.aero",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// aero : see https://www.information.aero/index.php?id=66\naero\naccident-investigation.aero\naccident-prevention.aero\naerobatic.aero\naeroclub.aero\naerodrome.aero\nagents.aero\naircraft.aero",
+      "nearbyUrls": [
+        "https://www.information.aero/index.php?id=66"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ",
+      "keywords": [
+        "bat"
+      ],
+      "context": "// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--fiqz9s (\"Zhongguo/China\", Chinese, Traditional) : CN\n// CNNIC\n// http://cnnic.cn/html/Dir/2005/10/11/3218.htm\n// xn--lgbbat1ad8j (\"Algeria/Al Jazair\", Arabic) : DZ\n// xn--wgbh1c (\"Egypt/Masr\", Arabic) : EG\n// http://www.dotmasr.eg/\n// xn--e1a4c (\"eu\", Cyrillic) : EU\n// xn--node (\"ge\", Georgian Mkhedruli) : GE",
+      "nearbyUrls": [
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://cnnic.cn/html/Dir/2005/10/11/3218.htm",
+        "http://www.dotmasr.eg/"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "// Submitted by Hanno B\nck <hanno@schokokeks.org>\nschokokeks.net\n// Scry Security : http://www.scrysec.com\n// Submitted by Shante Adam <shante@skyhat.io>\nscrysec.com\n// Securepoint GmbH : https://www.securepoint.de\n// Submitted by Erik Anders <erik.anders@securepoint.de>\nfirewall-gateway.com",
+      "nearbyUrls": [
+        "http://www.scrysec.com",
+        "https://www.securepoint.de"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/mozilla/public-suffix-list.txt",
+      "line": "// Submitted by Shante Adam <shante@skyhat.io>",
+      "keywords": [
+        "hante"
+      ],
+      "context": "applinzi.com\nsinaapp.com\nvipsinaapp.com\n// Skyhat : http://www.skyhat.io\n// Submitted by Shante Adam <shante@skyhat.io>\nbounty-full.com\nalpha.bounty-full.com\nbeta.bounty-full.com\n// staticland : https://static.land",
+      "nearbyUrls": [
+        "http://www.skyhat.io",
+        "https://static.land"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-1/META-INF/commons-codec-1.10/META-INF/NOTICE.txt",
+      "line": "contains test data from http://aspell.net/test/orig/batch0.tab.",
+      "keywords": [
+        "bat"
+      ],
+      "context": "Copyright 2002-2014 The Apache Software Foundation\nThis product includes software developed at\nThe Apache Software Foundation (http://www.apache.org/).\nsrc/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java\ncontains test data from http://aspell.net/test/orig/batch0.tab.\nCopyright (C) 2002 Kevin Atkinson (kevina@gnu.org)\n===============================================================================\nThe content of package org.apache.commons.codec.language.bm has been translated\nfrom the original php source code available at http://stevemorse.org/phoneticinfo.htm",
+      "nearbyUrls": [
+        "http://www.apache.org/",
+        "http://aspell.net/test/orig/batch0.tab",
+        "http://stevemorse.org/phoneticinfo.htm"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "_spine_skeleton_set_skin_by_namePtr@1142030055",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "set:contentLength\nav. J.-C.\nhttps://pro-game.yallalive.cn\ndecodeMethodCall\n_spine_skeleton_set_skin_by_namePtr@1142030055\nMaterialLocalizationPs\n10^2\n_clearMountedBit@501309486\nArial",
+      "nearbyUrls": [
+        "https://pro-game.yallalive.cn"
+      ]
+    },
+    {
+      "version": "3.0.6",
+      "file": "split-2/lib/armeabi-v7a/libapp.so",
+      "line": "init:_spine_skeleton_drawable_get_animation_state_dataPtr@11420300552",
+      "keywords": [
+        "skeleton"
+      ],
+      "context": "Canvas::saveLayer\n2n trimestre2\n\" is not supported by the platform. Refer to https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android.\nInvalid HTTP header field value: \ninit:_spine_skeleton_drawable_get_animation_state_dataPtr@11420300552\nstretch\n_now@283319124\n_maybeNotifyListeners@375411118\nPiektdiena",
+      "nearbyUrls": [
+        "https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android"
+      ]
+    }
+  ],
+  "activityUrls": [
+    {
+      "version": "2.28.0",
+      "url": "http://aspell.net/test/orig/batch0.tab"
+    },
+    {
+      "version": "2.29.0",
+      "url": "http://aspell.net/test/orig/batch0.tab"
+    },
+    {
+      "version": "3.0.4",
+      "url": "http://aspell.net/test/orig/batch0.tab"
+    },
+    {
+      "version": "3.0.4",
+      "url": "https://activitytest2.yallalive.cn/activity/2024dist/templateActivity/?activityId"
+    },
+    {
+      "version": "3.0.4",
+      "url": "https://activitytest2.yallalive.cn/activity/2025dist/H5ToCdemo/"
+    },
+    {
+      "version": "3.0.5",
+      "url": "http://aspell.net/test/orig/batch0.tab"
+    },
+    {
+      "version": "3.0.5",
+      "url": "https://activitytest2.yallalive.cn/activity/2024dist/templateActivity/?activityId"
+    },
+    {
+      "version": "3.0.5",
+      "url": "https://activitytest2.yallalive.cn/activity/2025dist/H5ToCdemo/"
+    },
+    {
+      "version": "3.0.6",
+      "url": "http://aspell.net/test/orig/batch0.tab"
+    },
+    {
+      "version": "3.0.6",
+      "url": "https://activitytest2.yallalive.cn/activity/2024dist/templateActivity/?activityId"
+    },
+    {
+      "version": "3.0.6",
+      "url": "https://activitytest2.yallalive.cn/activity/2025dist/H5ToCdemo/"
+    }
+  ]
+}
