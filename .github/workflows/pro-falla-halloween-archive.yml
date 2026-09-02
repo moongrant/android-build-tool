@@ -1,0 +1,73 @@
+name: Pro Falla Halloween original SPA localization
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch12-20260828]
+    paths:
+      - '.github/workflows/pro-falla-halloween-archive.yml'
+      - 'tools/pro-falla-halloween/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-20260902
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Generate and patch Halloween archiver
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-halloween/make_archiver.py tools/pro-falla-halloween/patch_archive.py
+          python tools/pro-falla-halloween/make_archiver.py
+          python -m py_compile tools/pro-falla-halloween/_builder_generated.py
+          python tools/pro-falla-halloween/_builder_generated.py
+          python tools/pro-falla-halloween/patch_archive.py
+          node --check tools/pro-falla-halloween/archive_halloween.mjs
+      - name: Capture and replay original Falla SPAs
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-halloween-original-spa
+          ONLINE_WAIT_MS: '7800'
+          OFFLINE_WAIT_MS: '6200'
+          PAGE_CONCURRENCY: '3'
+        run: |
+          set -Eeuo pipefail
+          node tools/pro-falla-halloween/archive_halloween.mjs
+      - name: Build contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-halloween-original-spa
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch4/contact_sheets_original.py
+          python tools/pro-falla-batch4/contact_sheets_original.py
+      - name: Print QA
+        if: always()
+        run: |
+          cat artifacts/pro-falla-halloween-original-spa/QA-FINAL.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-halloween-original-spa || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-halloween-original-spa
+          path: artifacts/pro-falla-halloween-original-spa
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
