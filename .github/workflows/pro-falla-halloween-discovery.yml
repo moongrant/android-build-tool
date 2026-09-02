@@ -1,0 +1,190 @@
+name: Pro Falla Halloween targeted discovery
+
+on:
+  pull_request:
+    branches: [research/pro-falla-batch12-20260828]
+    paths:
+      - '.github/workflows/pro-falla-halloween-discovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-20260902
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Scan Halloween-related public Falla activities
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-halloween-discovery
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$OUT_DIR"
+          python - <<'PY'
+          import asyncio, aiohttp, json, os, re, datetime
+          from pathlib import Path
+          from playwright.async_api import async_playwright
+
+          OUT=Path(os.environ['OUT_DIR'])
+          API_HOSTS=['https://api.apifalla.com/api/web/activities_config/act','https://apihk.falla.live/api/web/activities_config/act']
+          SITE_URLS=['https://campaigns-collected.jekae.chatgpt.site/data/activities.js','https://campaigns-collected.jekae.chatgpt.site/data/falla-hierarchy.json']
+          CONF_URLS=['https://web.fallaweb.com/lang_conf/h5_{tid}.json','https://web.falla.live/lang_conf/pre/h5_{tid}.json']
+          UA='Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 Chrome/139 Mobile Safari/537.36 ProFallaHalloween/1.0'
+          PROJECT_RE=re.compile(r'(?:act-[A-Za-z0-9][A-Za-z0-9-]{2,}|21-10-halloween)',re.I)
+          HALLOWEEN_RE=re.compile(r'halloween|hallowmas|all hallows|pumpkin|jack.?o.?lantern|candy|trick.?or.?treat|ghost|witch|spooky|haunted|monster|costume|masquerade|masked party|cadılar bayramı|万圣节|南瓜|糖果',re.I)
+
+          def parse_obj(v):
+            if isinstance(v,dict): return v
+            if isinstance(v,str):
+              try:
+                o=json.loads(v); return o if isinstance(o,dict) else {}
+              except: return {}
+            return {}
+          def flatten(v,path=''):
+            out=[]
+            if isinstance(v,dict):
+              for k,x in v.items(): out += flatten(x,f'{path}.{k}' if path else str(k))
+            elif isinstance(v,list):
+              for i,x in enumerate(v): out += flatten(x,f'{path}[{i}]')
+            elif v is not None: out.append((path,str(v)))
+            return out
+          def halloween_window(ts):
+            if not ts:return False
+            d=datetime.datetime.fromtimestamp(int(ts),datetime.timezone.utc)
+            return (d.month==10 and d.day>=15) or (d.month==11 and d.day<=10)
+          def title_from(conf,project):
+            for lang in ['en','zh','tr','es','ar','id','ms','pt','hi']:
+              d=conf.get(lang) if isinstance(conf,dict) else None
+              if isinstance(d,dict):
+                for k in ['title','activityTitle','eventTitle','activityName','eventName']:
+                  if d.get(k): return str(d[k])
+            return project
+
+          async def main():
+            conn=aiohttp.TCPConnector(limit=80,ssl=False)
+            headers={'User-Agent':UA,'Accept':'application/json,text/plain,*/*','Content-Type':'application/json;charset=UTF-8','Origin':'https://web.fallaweb.com','Referer':'https://web.fallaweb.com/'}
+            async with aiohttp.ClientSession(connector=conn,headers=headers) as s:
+              site_text=''
+              for url in SITE_URLS:
+                try:
+                  async with s.get(url,timeout=40) as r:
+                    data=await r.read(); (OUT/url.rsplit('/',1)[-1]).write_bytes(data); site_text += data.decode('utf-8','replace')
+                except Exception as e: print('site fetch error',url,repr(e))
+              site_projects=set(m.group(0).lower() for m in PROJECT_RE.finditer(site_text))
+              sem=asyncio.Semaphore(80)
+              async def fetch_activity(aid):
+                for api in API_HOSTS:
+                  async with sem:
+                    try:
+                      async with s.post(api,json={'activitiesId':aid},timeout=22) as r:
+                        if r.status!=200: continue
+                        o=await r.json(content_type=None)
+                    except: continue
+                  res=o.get('res') if isinstance(o,dict) and o.get('code')==0 else None
+                  if not isinstance(res,dict) or not res.get('id'): continue
+                  ext=parse_obj(res.get('extConfig')); web=ext.get('web') if isinstance(ext.get('web'),dict) else {}; pc=web.get('pageConfig') if isinstance(web.get('pageConfig'),dict) else {}
+                  txt=json.dumps(ext,ensure_ascii=False); m=PROJECT_RE.search(str(web.get('activityUrl') or '')) or PROJECT_RE.search(txt)
+                  project=m.group(0) if m else ''
+                  if not project:return None
+                  return {'activityId':int(res['id']),'project':project,'translateId':pc.get('translateId'),'activityUrl':web.get('activityUrl') or '', 'startTime':res.get('startTime'),'endTime':res.get('endTime'),'regions':res.get('regionList') or [],'giftCount':len(res.get('giftInfoList') or []),'serverConfig':res.get('serverConfig') or '', 'extConfig':ext}
+                return None
+              rows=[x for x in await asyncio.gather(*(fetch_activity(i) for i in range(1,3001))) if x]
+              print('valid configs',len(rows))
+              tids=sorted({int(x['translateId']) for x in rows if str(x.get('translateId') or '').isdigit()})
+              confs={}
+              sem2=asyncio.Semaphore(60)
+              async def fetch_conf(tid):
+                for tpl in CONF_URLS:
+                  async with sem2:
+                    try:
+                      async with s.get(tpl.format(tid=tid),timeout=25) as r:
+                        if r.status!=200:continue
+                        o=await r.json(content_type=None)
+                    except:continue
+                  if isinstance(o,dict): confs[tid]=o; return
+                confs[tid]={}
+              await asyncio.gather(*(fetch_conf(t) for t in tids))
+
+            candidates=[]
+            for x in rows:
+              tid=int(x['translateId']) if str(x.get('translateId') or '').isdigit() else None
+              conf=confs.get(tid,{})
+              corpus=' '.join([x['project'],x.get('activityUrl',''),json.dumps(x.get('extConfig',{}),ensure_ascii=False),json.dumps(conf,ensure_ascii=False)])
+              keyword=bool(HALLOWEEN_RE.search(corpus)); window=halloween_window(x.get('startTime'))
+              # retain all keyword hits plus the exact seasonal window for manual review
+              if not keyword and not window: continue
+              title=title_from(conf,x['project'])
+              title_halloween=bool(HALLOWEEN_RE.search(title))
+              direct=keyword or title_halloween or any(k in x['project'].lower() for k in ['hallow','pumpkin','candy','ghost','witch'])
+              candidates.append({**x,'title':title,'keywordHit':keyword,'titleHalloween':title_halloween,'halloweenWindow':window,'knownOnSite':x['project'].lower() in site_projects,'conf':conf})
+
+            # Known legacy activity not represented in the modern activity-config API.
+            candidates.append({'activityId':None,'project':'21-10-halloween','translateId':None,'activityUrl':'https://web.falla.live/#/activity/21-10-halloween','startTime':None,'endTime':None,'regions':['legacy'],'giftCount':None,'title':'Halloween Candy Bag 2021','keywordHit':True,'titleHalloween':True,'halloweenWindow':True,'knownOnSite':'21-10-halloween' in site_text.lower(),'conf':{}})
+            candidates.sort(key=lambda x:(not x['titleHalloween'],not x['keywordHit'],-(x.get('startTime') or 0)))
+            slim=[]
+            for c in candidates:
+              c=dict(c); c.pop('conf',None); c.pop('extConfig',None); slim.append(c)
+            (OUT/'candidates.json').write_text(json.dumps(slim,ensure_ascii=False,indent=2),encoding='utf-8')
+            (OUT/'candidate-full.json').write_text(json.dumps(candidates,ensure_ascii=False,indent=2),encoding='utf-8')
+
+            # Capture direct Halloween candidates and a few close seasonal candidates for visual verification.
+            direct=[c for c in candidates if c.get('titleHalloween') or any(k in str(c.get('project','')).lower() for k in ['hallow','pumpkin','candy','ghost','witch']) or c.get('project')=='21-10-halloween']
+            direct += [c for c in candidates if c.get('halloweenWindow') and c.get('activityId') in [1362,1391]]
+            unique=[]; seen=set()
+            for c in direct:
+              key=(c.get('activityId'),c.get('project'))
+              if key in seen:continue
+              seen.add(key);unique.append(c)
+            async with async_playwright() as pw:
+              browser=await pw.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+              for c in unique:
+                context=await browser.new_context(viewport={'width':390,'height':844},device_scale_factor=1,is_mobile=True,has_touch=True,locale='en-US',ignore_https_errors=True,service_workers='block',user_agent=UA)
+                page=await context.new_page(); url=c.get('activityUrl') or ''
+                if not url: url='https://web.falla.live/#/activity/21-10-halloween'
+                if c.get('activityId') and 'activityId=' not in url:
+                  sep='&' if '?' in url else '?'; url=f"{url}{sep}activityId={c['activityId']}" + (f"&translateId={c['translateId']}" if c.get('translateId') else '')
+                err=None
+                try:
+                  await page.goto(url,wait_until='domcontentloaded',timeout=80000); await page.wait_for_timeout(7000)
+                  await page.evaluate("""async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));let y=0;for(let i=0;i<120;i++){const h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);scrollTo(0,y);await w(120);if(y+innerHeight>=h-8)break;y+=500}scrollTo(0,0);await w(400)}""")
+                except Exception as e: err=repr(e)
+                slug=f"{c.get('activityId') or 'legacy'}-{re.sub(r'[^a-z0-9-]+','-',str(c.get('project','')).lower())}".strip('-')
+                d=OUT/'captures'/slug; d.mkdir(parents=True,exist_ok=True)
+                await page.screenshot(path=str(d/'full.png'),full_page=True,animations='disabled')
+                metrics=await page.evaluate("""()=>({title:document.title,href:location.href,text:(document.body?.innerText||'').slice(0,30000),htmlLength:document.documentElement?.outerHTML?.length||0,scrollHeight:Math.max(document.body?.scrollHeight||0,document.documentElement?.scrollHeight||0),imageCount:document.images.length,loadedImages:[...document.images].filter(i=>i.complete&&i.naturalWidth>0).length,brokenImages:[...document.images].filter(i=>i.complete&&(i.currentSrc||i.src)&&i.naturalWidth===0).map(i=>i.currentSrc||i.src)})""")
+                (d/'dom.html').write_text(await page.content(),encoding='utf-8'); (d/'result.json').write_text(json.dumps({'candidate':{k:v for k,v in c.items() if k not in ['conf','extConfig']},'url':url,'error':err,'metrics':metrics},ensure_ascii=False,indent=2),encoding='utf-8')
+                await context.close()
+              await browser.close()
+
+            report=['# Falla Halloween Targeted Discovery','',f'- Live-site projects: {len(site_projects)}',f'- Valid activity configs: {len(rows)}',f'- Seasonal/keyword candidates: {len(candidates)}',f'- Direct captured candidates: {len(unique)}','', '## Direct Halloween candidates','']
+            for c in unique:
+              report += [f"- **{c.get('title')}** — `{c.get('project')}` — activity `{c.get('activityId')}` / translate `{c.get('translateId')}` — knownOnSite={c.get('knownOnSite')}"]
+            (OUT/'REPORT.md').write_text('\n'.join(report),encoding='utf-8')
+            print(json.dumps({'direct':[{'title':c.get('title'),'project':c.get('project'),'activityId':c.get('activityId'),'translateId':c.get('translateId'),'knownOnSite':c.get('knownOnSite')} for c in unique]},ensure_ascii=False,indent=2))
+          asyncio.run(main())
+          PY
+      - name: Print report
+        if: always()
+        run: cat artifacts/pro-falla-halloween-discovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-halloween-discovery
+          path: artifacts/pro-falla-halloween-discovery
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
