@@ -29,10 +29,8 @@ jobs:
         run: |
           set -Eeuo pipefail
           npm install playwright@1.54.2 --no-save
-          npx playwright install --with-deps chromium
+          npx playwright install chromium
           python -m pip install --disable-pip-version-check pillow
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-cjk
       - name: Generate and patch Halloween archiver
         run: |
           set -Eeuo pipefail
@@ -85,7 +83,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: pro-falla-halloween-original-spa-repaired
+          name: pro-falla-halloween-original-spa-final
           path: artifacts/pro-falla-halloween-original-spa
           if-no-files-found: error
           retention-days: 14
