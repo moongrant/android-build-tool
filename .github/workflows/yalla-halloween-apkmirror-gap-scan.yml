@@ -1,0 +1,167 @@
+name: Yalla Halloween APKMirror gap scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-apkmirror-gap-scan.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-apkmirror-gap-results
+      OUT_DIR: artifacts/yalla-halloween-apkmirror-gap
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download exact October-adjacent APKs from APKMirror
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR" /tmp/yalla-apkmirror
+          cat > /tmp/download_and_scan.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, re, subprocess, zipfile
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-apkmirror');TMP.mkdir(parents=True,exist_ok=True)
+          releases={
+            '2.18.1':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-18-1-release/yalla-group-voice-chat-rooms-2-18-1-android-apk-download/',
+            '2.23.0':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-23-0-release/yalla-group-voice-chat-rooms-2-23-0-android-apk-download/',
+            '2.23.2':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-23-2-release/yalla-group-voice-chat-rooms-2-23-2-android-apk-download/',
+          }
+          session=requests.Session();session.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','Accept-Language':'en-US,en;q=.9','Accept':'text/html,application/xhtml+xml,application/xml;q=.9,*/*;q=.8'})
+          exact_terms=['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','اليقطين','balkabağı','balkabagi','abóbora','abobora','calabaza','ghost','شبح','hayalet','fantasma','witch','ساحرة','cadı','cadi','bruxa','bruja','candy','حلوى','şeker','seker','doces','dulces','trick or treat','خدعة أم حلوى','haunted','مسكون','perili','assombrado','embrujado','spooky','مخيف','skeleton','هيكل عظمي','zombie','vampire']
+          strong={'halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','اليقطين','balkabağı','balkabagi','abóbora','abobora','calabaza','trick or treat','خدعة أم حلوى'}
+          activity_signals=['activity2.','file.yalla.live/activity/','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl','templateactivity']
+          url_re=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+
+          def save_html(version,name,response):
+            p=OUT/version/f'{name}.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(response.content);return p
+          def candidates(html,base):
+            soup=BeautifulSoup(html,'html.parser');links=[]
+            for a in soup.find_all('a',href=True):
+              href=urljoin(base,a['href'])
+              if any(x in href for x in ['/download/?','download.php','downloadr','apkmirror.com/wp-content/uploads/']) or href.lower().endswith(('.apk','.apkm','.xapk')):links.append(href)
+            for u in re.findall(r'https?://[^\"\'<>\s]+',html):
+              if any(x in u for x in ['downloadr','download.php','/download/?']) or u.lower().endswith(('.apk','.apkm','.xapk')):links.append(u.replace('&amp;','&'))
+            # Preserve order, prefer forcebaseapk links then binary-looking hosts.
+            seen=[]
+            for x in links:
+              if x not in seen:seen.append(x)
+            return sorted(seen,key=lambda x:(0 if 'forcebaseapk' in x else 1 if 'downloadr' in x else 2,len(x)))
+          def fetch(url,referer=None):
+            headers={'Referer':referer} if referer else {}
+            r=session.get(url,headers=headers,timeout=(20,180),allow_redirects=True)
+            return r
+          def obtain(version,page):
+            trace=[]
+            first=fetch(page);trace.append({'url':page,'status':first.status_code,'finalUrl':first.url,'bytes':len(first.content),'contentType':first.headers.get('content-type')});save_html(version,'01-page',first)
+            queue=[(u,first.url) for u in candidates(first.text,first.url)[:20]];seen=set()
+            while queue and len(seen)<40:
+              url,referer=queue.pop(0)
+              if url in seen:continue
+              seen.add(url)
+              try:r=fetch(url,referer)
+              except Exception as e:trace.append({'url':url,'error':repr(e)});continue
+              ctype=r.headers.get('content-type','');trace.append({'url':url,'status':r.status_code,'finalUrl':r.url,'bytes':len(r.content),'contentType':ctype})
+              if r.status_code==200 and len(r.content)>1_000_000 and (r.content[:2]==b'PK' or any(x in ctype.lower() for x in ['android','octet-stream','zip'])):
+                apk=OUT/version/f'yalla-{version}.apk';apk.write_bytes(r.content);return apk,trace
+              if 'html' in ctype.lower() or r.content.lstrip().startswith(b'<'):
+                save_html(version,f'{len(seen)+1:02d}-step',r)
+                for nxt in candidates(r.text,r.url):
+                  if nxt not in seen:queue.append((nxt,r.url))
+            return None,trace
+
+          def scan(version,apk):
+            version_out=OUT/version;decoded=TMP/version;decoded.mkdir(parents=True,exist_ok=True)
+            with zipfile.ZipFile(apk) as z:z.extractall(decoded)
+            files=0;matches=[];paths=[];urls=set()
+            for path in decoded.rglob('*'):
+              if not path.is_file() or path.stat().st_size>260_000_000:continue
+              files+=1;rel=path.relative_to(decoded).as_posix();rlow=rel.casefold()
+              if any(t.casefold() in rlow for t in exact_terms):paths.append(rel)
+              try:
+                proc=subprocess.run(['strings','-a','-n','4',str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=90)
+                text=proc.stdout.decode('utf-8','ignore')
+              except Exception:continue
+              lines=text.splitlines()
+              for i,line in enumerate(lines):
+                low=line.casefold();hits=[t for t in exact_terms if t.casefold() in low]
+                if hits:
+                  context='\n'.join(lines[max(0,i-5):min(len(lines),i+6)])[:12000]
+                  adjacent=any(s in context.casefold() for s in activity_signals)
+                  matches.append({'file':rel,'line':line[:3000],'terms':hits,'strong':bool(strong.intersection({x.casefold() for x in hits})),'activityAdjacent':adjacent,'context':context})
+                for u in url_re.findall(line):
+                  u=u.rstrip(',.;:)]}')
+                  if any(s in u.casefold() for s in activity_signals) or any(t.casefold() in u.casefold() for t in exact_terms):urls.add(u)
+            exact_event=[m for m in matches if m['strong'] or m['activityAdjacent']]
+            return {'filesScanned':files,'rawMatches':matches,'eventMatches':exact_event,'matchingPaths':sorted(set(paths)),'activityUrls':sorted(urls)}
+
+          results=[]
+          for version,page in releases.items():
+            vout=OUT/version;vout.mkdir(parents=True,exist_ok=True)
+            try:apk,trace=obtain(version,page)
+            except Exception as e:apk=None;trace=[{'error':repr(e)}]
+            (vout/'download-trace.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2))
+            if not apk:
+              result={'version':version,'downloaded':False,'page':page,'trace':trace};(vout/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));results.append(result);continue
+            result={'version':version,'downloaded':True,'page':page,'apkBytes':apk.stat().st_size,'apkSha256':hashlib.sha256(apk.read_bytes()).hexdigest(),**scan(version,apk)}
+            # Do not commit the 80-150MB APK to result branch; preserve only in Actions artifact.
+            (vout/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));results.append(result)
+          consolidated={'results':results,'downloaded':sum(x.get('downloaded',False) for x in results),'eventMatchCount':sum(len(x.get('eventMatches',[])) for x in results),'activityUrls':sorted({u for x in results for u in x.get('activityUrls',[])})}
+          (OUT/'consolidated.json').write_text(json.dumps(consolidated,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween APKMirror Gap Scan','',f"- Requested versions: {len(results)}",f"- Downloaded: {consolidated['downloaded']}",f"- Strong/activity-adjacent Halloween matches: {consolidated['eventMatchCount']}",f"- Activity URLs: {len(consolidated['activityUrls'])}",'','| Version | Downloaded | APK bytes | Files scanned | Raw matches | Event matches | Activity URLs |','|---|---|---:|---:|---:|---:|---:|']
+          for x in results:lines.append(f"| {x['version']} | {x.get('downloaded')} | {x.get('apkBytes',0)} | {x.get('filesScanned',0)} | {len(x.get('rawMatches',[]))} | {len(x.get('eventMatches',[]))} | {len(x.get('activityUrls',[]))} |")
+          for x in results:
+            lines += ['',f"## {x['version']}",'']
+            for m in x.get('eventMatches',[])[:100]:lines += [f"### `{m['file']}` · {', '.join(m['terms'])}",'```',m['context'][:5000],'```','']
+          lines += ['## Activity URLs','']+[f'- `{u}`' for u in consolidated['activityUrls']]
+          (OUT/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps({'downloaded':consolidated['downloaded'],'eventMatches':consolidated['eventMatchCount'],'activityUrls':len(consolidated['activityUrls'])},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/download_and_scan.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact gap report
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-apkmirror-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md consolidated.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for d in "$OUT_DIR"/*; do
+            [[ -d "$d" ]] || continue
+            mkdir -p "$stage/$(basename "$d")"
+            for f in result.json download-trace.json; do cp "$d/$f" "$stage/$(basename "$d")/" 2>/dev/null || true; done
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween APKMirror gap scan ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete APKMirror gap artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-apkmirror-gap-scan
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
