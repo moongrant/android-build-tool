@@ -1,0 +1,7 @@
+/tmp/run.py:48: SyntaxWarning: invalid escape sequence '\s'
+  inv=await page.evaluate("""()=>({url:location.href,title:document.title,body:(document.body?.innerText||'').replace(/\s+/g,' ').trim().slice(0,30000),links:[...document.querySelectorAll('a[href]')].map((a,i)=>({i,text:(a.innerText||a.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(),href:a.href,html:a.outerHTML.slice(0,3000)})),buttons:[...document.querySelectorAll('button,input[type=button],input[type=submit],[role=button]')].map((b,i)=>({i,text:(b.innerText||b.value||b.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(),html:b.outerHTML.slice(0,3000)})),forms:[...document.forms].map((f,i)=>({i,action:f.action,method:f.method,html:f.outerHTML.slice(0,6000)})),scripts:[...document.scripts].map(s=>s.src||s.textContent||'').filter(Boolean).map(x=>x.slice(0,30000))})""")
+{
+  "downloaded": 0,
+  "meaningful": 0,
+  "urls": 0
+}
