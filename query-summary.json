@@ -1,0 +1,82 @@
+[
+  {
+    "label": "facebook-alt",
+    "pattern": "www.facebook.com/YallaLiveApp/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=www.facebook.com/YallaLiveApp/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "instagram-current",
+    "pattern": "www.instagram.com/yallavoicechatrooms/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=www.instagram.com/yallavoicechatrooms/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "facebook-current-mobile",
+    "pattern": "m.facebook.com/YallaVoiceChatRooms/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=m.facebook.com/YallaVoiceChatRooms/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "youtube-channel",
+    "pattern": "www.youtube.com/*YallaVoiceChatRooms*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=www.youtube.com/*YallaVoiceChatRooms*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "instagram-alt",
+    "pattern": "www.instagram.com/yallaliveapp/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=www.instagram.com/yallaliveapp/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "twitter-legacy",
+    "pattern": "twitter.com/yalladotlive/status/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=twitter.com/yalladotlive/status/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 17726,
+    "rowCount": 124
+  },
+  {
+    "label": "facebook-legacy-mobile",
+    "pattern": "m.facebook.com/yalla2016/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=m.facebook.com/yalla2016/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "facebook-legacy",
+    "pattern": "www.facebook.com/yalla2016/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=www.facebook.com/yalla2016/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 189,
+    "rowCount": 1
+  },
+  {
+    "label": "x-current",
+    "pattern": "x.com/YallaDotLive/status/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=x.com/YallaDotLive/status/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 3,
+    "rowCount": 0
+  },
+  {
+    "label": "facebook-current",
+    "pattern": "www.facebook.com/YallaVoiceChatRooms/*",
+    "endpoint": "https://web.archive.org/cdx/search/cdx?url=www.facebook.com/YallaVoiceChatRooms/*&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&filter=statuscode:200&collapse=digest&from=2018&to=2025&limit=10000",
+    "http": 200,
+    "bytes": 1051,
+    "rowCount": 7
+  }
+]
