@@ -1,0 +1,22 @@
+package com.google.android.gms.internal.measurement;
+
+import java.io.Serializable;
+
+/* JADX INFO: loaded from: classes3.dex */
+public enum zzob {
+    INT(0),
+    LONG(0L),
+    FLOAT(Float.valueOf(0.0f)),
+    DOUBLE(Double.valueOf(0.0d)),
+    BOOLEAN(Boolean.FALSE),
+    STRING(""),
+    BYTE_STRING(zzka.zzb),
+    ENUM(null),
+    MESSAGE(null);
+
+    private final Object zzk;
+
+    zzob(Serializable serializable) {
+        this.zzk = serializable;
+    }
+}

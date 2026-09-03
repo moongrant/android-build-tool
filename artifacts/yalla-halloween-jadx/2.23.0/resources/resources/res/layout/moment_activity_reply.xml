@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/base_header_layout"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <com.yalla.yalla.ui.view.pullrefresh.XRefreshLayout
+                android:id="@+id/xRefreshLayout"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:scrollbars="none"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.yalla.yalla.ui.view.pullrefresh.XRefreshLayout>
+            <com.code.android.uikit.svga.SVGAView
+                android:layout_gravity="top|center_horizontal"
+                android:id="@+id/sVGAView"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_marginTop="120dp"
+                android:minWidth="70dp"
+                app:autoPlay="true"
+                app:loopCount="0"
+                app:source="svga/anim_loading_horse_gray.svga"/>
+        </FrameLayout>
+    </LinearLayout>
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/bottomComposeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:contentInsetStart="0dp"
+        app:layout_scrollFlags="enterAlways|scroll"
+        app:titleTextColor="@color/white">
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/message_friends_btn"
+                android:background="@drawable/ripple_borderless"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@mipmap/icon_friends_addfriends"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"/>
+            <com.app.base.view.indicator.YlTableLayout
+                android:id="@+id/tv_message_new_tab"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="72dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/message_friends_btn"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <com.app.base.view.ViewPagerFixed
+        android:id="@+id/vp_messageViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

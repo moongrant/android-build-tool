@@ -1,0 +1,93 @@
+package p405o0Oo0OOO;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.internal.FlowLayout;
+import o00O00o0.OooO00o;
+import o00O00o0.OooO0O0;
+import p562o0oOo000.o0OO00O;
+import p562o0oOo000.oo0o0Oo;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class z1 implements OooO00o {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NonNull
+    public final LinearLayout f45726OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NonNull
+    public final FlowLayout f45727OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NonNull
+    public final RecyclerView f45728OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    @NonNull
+    public final TextView f45729OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    @NonNull
+    public final TextView f45730OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    @NonNull
+    public final TextView f45731OooO0o0;
+
+    public z1(@NonNull LinearLayout linearLayout, @NonNull FlowLayout flowLayout, @NonNull RecyclerView recyclerView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3) {
+        this.f45726OooO00o = linearLayout;
+        this.f45727OooO0O0 = flowLayout;
+        this.f45728OooO0OO = recyclerView;
+        this.f45729OooO0Oo = textView;
+        this.f45731OooO0o0 = textView2;
+        this.f45730OooO0o = textView3;
+    }
+
+    @NonNull
+    public static z1 inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @Override // o00O00o0.OooO00o
+    @NonNull
+    public final View getRoot() {
+        return this.f45726OooO00o;
+    }
+
+    @NonNull
+    public static z1 inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View viewInflate = layoutInflater.inflate(oo0o0Oo.user_activity_userinfo_edit_tag, viewGroup, false);
+        if (z) {
+            viewGroup.addView(viewInflate);
+        }
+        int i = o0OO00O.flTagSelected;
+        FlowLayout flowLayout = (FlowLayout) OooO0O0.OooO00o(i, viewInflate);
+        if (flowLayout != null) {
+            i = o0OO00O.recycler_view;
+            RecyclerView recyclerView = (RecyclerView) OooO0O0.OooO00o(i, viewInflate);
+            if (recyclerView != null) {
+                i = o0OO00O.tvAllTag;
+                TextView textView = (TextView) OooO0O0.OooO00o(i, viewInflate);
+                if (textView != null) {
+                    i = o0OO00O.tvHintTag;
+                    TextView textView2 = (TextView) OooO0O0.OooO00o(i, viewInflate);
+                    if (textView2 != null) {
+                        i = o0OO00O.tvSelected;
+                        TextView textView3 = (TextView) OooO0O0.OooO00o(i, viewInflate);
+                        if (textView3 != null) {
+                            return new z1((LinearLayout) viewInflate, flowLayout, recyclerView, textView, textView2, textView3);
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i)));
+    }
+}

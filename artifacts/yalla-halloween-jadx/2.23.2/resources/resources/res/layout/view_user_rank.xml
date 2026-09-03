@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@+id/rootView"
+    android:background="@drawable/room_shape_user_info_rank_moon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/ivType"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_margin="1dp"
+        android:src="@drawable/room_user_info_rank_moon"/>
+    <TextView
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:id="@+id/tvRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:layout_marginEnd="2dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

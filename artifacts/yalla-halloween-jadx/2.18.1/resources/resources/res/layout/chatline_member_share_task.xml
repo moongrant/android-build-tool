@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        style="@style/ChatItemSystem">
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:id="@+id/ivHeader"
+            android:layout_width="27dp"
+            android:layout_height="27dp"/>
+        <com.app.base.view.FixTextView
+            android:textSize="13dp"
+            android:textColor="@color/color_00d8c9"
+            android:gravity="start"
+            android:id="@+id/tvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            android:includeFontPadding="false"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"/>
+        <View
+            android:background="@color/color_white_25"
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+        <ImageView
+            android:id="@+id/ivShare"
+            android:background="@drawable/shape_bg_room_chat_share"
+            android:padding="5.5dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/icv_share"/>
+    </LinearLayout>
+</FrameLayout>

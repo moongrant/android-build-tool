@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bg_dialog_room_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="393dp">
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/color_white"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_mora_total"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:text="@string/mora"
+        android:layout_marginStart="22dp"/>
+    <View
+        android:layout_gravity="bottom"
+        android:background="@color/color_3B395D"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <com.app.base.view.pullrefresh.XRefreshLayout
+        android:id="@+id/xrl_room_mora_game"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.app.base.view.recyclerview.FixedRecyclerView
+            android:id="@+id/rv_room_mora_game"
+            android:descendantFocusability="blocksDescendants"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+    </com.app.base.view.pullrefresh.XRefreshLayout>
+</LinearLayout>

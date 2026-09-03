@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/item_room_explore_country_layout_item_bg"
+    android:duplicateParentState="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:gravity="start|center_vertical"
+        android:id="@+id/item_room_explore_country_layout"
+        android:background="@drawable/bg_round_bg_transparent_stroke_gray_r4"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_margin="3dp"
+        android:foreground="@drawable/ripple_border_round_4"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:id="@+id/item_room_explore_country_layout_picture_iv"
+            android:layout_width="21dp"
+            android:layout_height="14dp"/>
+        <TextView
+            android:textColor="@color/color_87000000"
+            android:id="@+id/item_room_explore_country_layout_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="China"
+            android:maxLines="1"
+            android:layout_marginStart="5dp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="6sp"
+            app:autoSizeStepGranularity="1sp"
+            app:autoSizeTextType="uniform"/>
+    </LinearLayout>
+</LinearLayout>

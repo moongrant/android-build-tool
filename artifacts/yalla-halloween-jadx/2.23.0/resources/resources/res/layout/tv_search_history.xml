@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tag_item_relative"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingBottom="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="4dp">
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/color_333333_65"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:id="@+id/tag_item"
+        android:background="@drawable/bg_fff5f5f7_r360"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:singleLine="true"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="12dp"/>
+</RelativeLayout>

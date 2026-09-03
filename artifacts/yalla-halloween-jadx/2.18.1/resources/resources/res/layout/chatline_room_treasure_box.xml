@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <LinearLayout style="@style/ChatItemSystem">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <ImageView
+                android:id="@+id/ivTreasureBox"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_room_treasure_box_side_1"
+                android:layout_marginStart="4dp"/>
+            <TextView
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Chest_Rewards_Winners"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTreasureBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="3dp"/>
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/ivTreasureBoxMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_treasure_box_more"/>
+    </LinearLayout>
+</FrameLayout>

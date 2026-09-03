@@ -1,0 +1,8 @@
+package com.google.android.exoplayer2.offline;
+
+import java.io.IOException;
+
+/* JADX INFO: loaded from: classes3.dex */
+@Deprecated
+public final class DownloadException extends IOException {
+}

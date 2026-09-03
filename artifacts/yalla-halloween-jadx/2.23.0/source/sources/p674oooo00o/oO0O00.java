@@ -1,0 +1,5 @@
+package p674oooo00o;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final /* synthetic */ class oO0O00 {
+}

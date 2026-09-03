@@ -1,0 +1,159 @@
+package androidx.fragment.app;
+
+import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStore;
+import androidx.lifecycle.viewmodel.CreationExtras;
+import java.util.HashMap;
+import java.util.Iterator;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class o00000O0 extends ViewModel {
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public static final OooO00o f5947OooO0oO = new OooO00o();
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final boolean f5951OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final HashMap<String, Fragment> f5948OooO00o = new HashMap<>();
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    public final HashMap<String, o00000O0> f5949OooO0O0 = new HashMap<>();
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    public final HashMap<String, ViewModelStore> f5950OooO0OO = new HashMap<>();
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public boolean f5953OooO0o0 = false;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    public boolean f5952OooO0o = false;
+
+    public class OooO00o implements ViewModelProvider.Factory {
+        @Override // androidx.lifecycle.ViewModelProvider.Factory
+        public final /* synthetic */ ViewModel create(Class cls, CreationExtras creationExtras) {
+            return androidx.lifecycle.OooOo.OooO0O0(this, cls, creationExtras);
+        }
+
+        @Override // androidx.lifecycle.ViewModelProvider.Factory
+        @NonNull
+        public final <T extends ViewModel> T create(@NonNull Class<T> cls) {
+            return new o00000O0(true);
+        }
+    }
+
+    public o00000O0(boolean z) {
+        this.f5951OooO0Oo = z;
+    }
+
+    public final void OooO0O0(@NonNull Fragment fragment) {
+        if (this.f5952OooO0o) {
+            if (FragmentManager.Oooo0O0(2)) {
+                Log.v("FragmentManager", "Ignoring addRetainedFragment as the state is already saved");
+                return;
+            }
+            return;
+        }
+        HashMap<String, Fragment> map = this.f5948OooO00o;
+        if (map.containsKey(fragment.mWho)) {
+            return;
+        }
+        map.put(fragment.mWho, fragment);
+        if (FragmentManager.Oooo0O0(2)) {
+            Log.v("FragmentManager", "Updating retained Fragments: Added " + fragment);
+        }
+    }
+
+    public final void OooO0OO(@NonNull Fragment fragment) {
+        if (FragmentManager.Oooo0O0(3)) {
+            Log.d("FragmentManager", "Clearing non-config state for " + fragment);
+        }
+        OooO0Oo(fragment.mWho);
+    }
+
+    public final void OooO0Oo(@NonNull String str) {
+        HashMap<String, o00000O0> map = this.f5949OooO0O0;
+        o00000O0 o00000o1 = map.get(str);
+        if (o00000o1 != null) {
+            o00000o1.onCleared();
+            map.remove(str);
+        }
+        HashMap<String, ViewModelStore> map2 = this.f5950OooO0OO;
+        ViewModelStore viewModelStore = map2.get(str);
+        if (viewModelStore != null) {
+            viewModelStore.clear();
+            map2.remove(str);
+        }
+    }
+
+    public final void OooO0o0(@NonNull Fragment fragment) {
+        if (this.f5952OooO0o) {
+            if (FragmentManager.Oooo0O0(2)) {
+                Log.v("FragmentManager", "Ignoring removeRetainedFragment as the state is already saved");
+            }
+        } else {
+            if ((this.f5948OooO00o.remove(fragment.mWho) != null) && FragmentManager.Oooo0O0(2)) {
+                Log.v("FragmentManager", "Updating retained Fragments: Removed " + fragment);
+            }
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || o00000O0.class != obj.getClass()) {
+            return false;
+        }
+        o00000O0 o00000o1 = (o00000O0) obj;
+        return this.f5948OooO00o.equals(o00000o1.f5948OooO00o) && this.f5949OooO0O0.equals(o00000o1.f5949OooO0O0) && this.f5950OooO0OO.equals(o00000o1.f5950OooO0OO);
+    }
+
+    public final int hashCode() {
+        return this.f5950OooO0OO.hashCode() + ((this.f5949OooO0O0.hashCode() + (this.f5948OooO00o.hashCode() * 31)) * 31);
+    }
+
+    @Override // androidx.lifecycle.ViewModel
+    public final void onCleared() {
+        if (FragmentManager.Oooo0O0(3)) {
+            Log.d("FragmentManager", "onCleared called for " + this);
+        }
+        this.f5953OooO0o0 = true;
+    }
+
+    @NonNull
+    public final String toString() {
+        StringBuilder sb = new StringBuilder("FragmentManagerViewModel{");
+        sb.append(Integer.toHexString(System.identityHashCode(this)));
+        sb.append("} Fragments (");
+        Iterator<Fragment> it = this.f5948OooO00o.values().iterator();
+        while (it.hasNext()) {
+            sb.append(it.next());
+            if (it.hasNext()) {
+                sb.append(", ");
+            }
+        }
+        sb.append(") Child Non Config (");
+        Iterator<String> it2 = this.f5949OooO0O0.keySet().iterator();
+        while (it2.hasNext()) {
+            sb.append(it2.next());
+            if (it2.hasNext()) {
+                sb.append(", ");
+            }
+        }
+        sb.append(") ViewModelStores (");
+        Iterator<String> it3 = this.f5950OooO0OO.keySet().iterator();
+        while (it3.hasNext()) {
+            sb.append(it3.next());
+            if (it3.hasNext()) {
+                sb.append(", ");
+            }
+        }
+        sb.append(')');
+        return sb.toString();
+    }
+}

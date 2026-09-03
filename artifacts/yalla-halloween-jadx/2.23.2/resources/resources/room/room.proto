@@ -1,0 +1,676 @@
+syntax = "proto3";
+
+package roomuser;
+
+// java 语法特别选项
+option java_package = "com.app.base.protobuf.room";
+option java_outer_classname = "Room";
+
+message CustomGiftRequest {
+  int64 target = 1;           // 目标用户id(送单个人的时候)
+  bool allMicFlag = 2;        // 是否是给麦上所有人送
+  bool allRoomFlag = 3;       // 是否是给房间所有人送
+  int32 number = 4;           // 送礼数量
+  int64 giftId = 5;           // 礼物id
+}
+
+message EventInfoNotify {
+  int64 Id = 1;//活动编号
+  int32 Region = 2;//语区
+  string EventName = 3;//活动名称
+  int64 UserId = 4;//创建用户编号
+  int32 KeyWord = 5;//活动标签id
+  string KeyWordText = 6;//活动标签名称
+  string KeyWordIcon = 7;//活动标签图标
+  string Pic = 8;//活动配图
+  int64 StartTime = 9;//活动开始时间
+  int64 EndTime = 10;//活动结束时间
+  int32 FState = 11;//活动状态0 ，未开始 ；1，进行中；2：已结束；3，已删除
+}
+
+//房主房间游客清理接口 10070
+message kickTouristRequest {
+  int32 kickOp = 1; //kickOp： 0 所有游客提出房间 1 所有游客踢出房间并关闭
+}
+
+//游客清理房主返回proto参数
+message kickTouristRequestReply {
+  Base code = 1;
+  int32 kickOp = 2; // 0 所有游客提出房间 1 所有游客踢出房间并关闭
+  int32 online = 3; // 房间在线总人数
+}
+
+//游客清理游客会返回head: 100701
+message kickTouristReply {
+
+}
+
+//游客清理非游客非房主会返回head: 100702 proto参数
+message kickTouristCleanReply {
+  int32 online = 1; // 房间在线总人数
+}
+
+// 吉祥物GIF表情请求参数
+message GifMoticonRequest {
+  string gifurl = 1;
+  int64 gifid = 2;
+}
+
+// 吉祥物GIF表情响应参数
+message GifMoticonReply {
+  int32 code = 1; // code 码
+  string gifurl = 2; // gif url地址
+  int64 gifid = 3; // gif  id
+  UserModel sender = 4; // 发送者用户模型
+  int64 expire = 5; // code码是禁言的时候 禁言到期时间
+  string reason = 6; // code码是禁言的时候 禁言理由
+  string uuid = 7; // 消息Id
+}
+
+// 发送变声卡请求参数
+message MagicVoiceIn {
+  int64 target = 1; // 目标用户id
+  int32 cardid = 2; // 变声卡id
+}
+
+// 发送变声卡响应参数
+message MagicVoiceOut {
+  int32 code = 1; // 错误码
+  UserModel from = 2; // 发送人用户模型
+  UserModel target = 3; // 接收人用户模型
+  int64 balance = 4; // 剩余金额
+  int32 cardid = 5; // 变声卡id
+  string propURL = 6; // 变声卡url 2.11.12 新增
+  int32 protectedTimeLeft = 7; // 保护罩剩余时间,单位秒,当code返回被保护罩保护时,该值有效. 2.11.13 新增
+}
+
+// 变声卡过期通知
+message MagicVoiceExpireNotify {
+  int64 userId = 1; //   用户id
+}
+
+// 房间沙发列表
+message UserListReply {
+  Base code = 1;
+  repeated UserModel users = 2;
+  int32 online = 3;
+}
+
+// 房间在线列表
+message UserStaticListReply {
+  Base code = 1; // 错误码
+  repeated UserModel users = 2; // 用户列表
+  int32 kind = 3; // 操作区分
+  int32 onlinenum = 4; // 在线总数量
+  int32 tournum = 5; // 底部游客总数量
+}
+
+// 房间在线列表
+message SumAmountOut {
+  Base code = 1; // 错误码
+  int64 amount = 2; // 用户列表
+}
+
+//获取房间公告内容
+message NoticeContentChangeRequest {
+  string noticemsg = 1; //房主修改新的公告，发给服务器
+}
+//房间麦类型切换更改请求(换成5或10麦)
+message MicNumChangeRequest {
+  int32 mictype = 1; //麦类型切换 0： 5麦房 1： 10麦房
+}
+
+//房间麦类型切换更改返回
+message MicNumChangeReply {
+  int32 code = 1; //错误码 0 成功 1 未知错误,1009 非房主无权限,1024 参数错误, 1045 房间等级未达到麦更改等级
+  int32 mictype = 2; //麦类型切换成 0： 5麦房 1： 10麦房
+}
+
+//邀请指定游客成为房间成员
+message InviteBarMemberRequest {
+  int64 userid = 1; //获取此成员用户id
+}
+
+//房主收到服务发送邀请后返回code码 0 成功 1 失败 1003 此用户已经离开房间 1009 无权限
+message InviteBarMemberRequestReply {
+  int32 code = 1; // 提示码
+}
+
+//目标人将收到以下响，返回体proto解析
+message InviteBarMemberToRequestReply {
+  int32 code = 1; // 提示码
+  UserModel fromuser = 2; // 邀请成为房间成员房主用户模型
+}
+
+//获取房间公告内容返回
+message NoticeContentChangeReply {
+  int32 code = 1;
+  string noticemsg = 2; //修改后的公告，即发给房间成员的公告
+}
+
+//发起猜拳接口
+message MoraStartUpRequest {
+  int32 moratype = 1; //猜拳手势 0：石头 1：剪刀 2：布
+  int32 moragiftid = 2; //猜拳礼物id
+  int32 moranum = 3; //猜拳礼物数量
+  int64 toUserId = 4; // 发起者指定的挑战用户uid. 0 则全部在房用户 2.11.13新增
+}
+
+//发起猜拳返回proto参数
+message MoraStartUpRequestReply {
+  int32 code = 1; // 0 成功 1 未知错误
+  UserModel fromuser = 2; //猜拳游戏发起者用户模型
+  int64 muuid = 3; //猜拳游戏记录唯一id
+  int32 moragiftid = 4; //猜拳礼物id
+  int32 moranum = 5; //猜拳礼物数量
+  int64 balance = 6; //猜拳押金支付后余额
+  int64 toUserId   = 7; // 发起者指定的挑战用户uid. 0 则全部在房用户 2.11.13新增
+  string toNickname = 8; // 发起者指定的挑战用户昵称 2.11.13新增
+  string toHeadphoto =9; // 发起者指定的挑战用户头像 2.11.13新增
+  string muuidnew    =10;                // 猜拳记录唯一id string
+  string giftimage   =11;                // 礼物图片
+  int32 giftprice = 12;                  // 礼物价格
+}
+
+//参与猜拳请求proto参数
+message MoraStartPkRequest {
+  int64 muuid = 1; //猜拳记录唯一id
+  int64 suid = 2; //发起者用户id
+  int32 moratype = 3; //参与者出拳类型 0：石头 1：剪刀 2：布
+  int32 moragiftid = 4; //猜拳礼物id
+  int32 moranum = 5; //猜拳礼物数量
+  int64 toUserId  = 6; // 发起者指定的挑战用户uid. 0 则全部在房用户 2.11.13新增
+}
+
+//参与猜拳返回proto参数
+message MoraStartPkRequestReply {
+  int32 code = 1; //  提示码
+  int64 muuid = 2; //  猜拳记录唯一id
+  int32 moraresult = 3; //  猜拳结果
+  int32 moragiftid = 4; //   猜拳礼物id
+  int32 moranum = 5; //   猜拳礼物数量
+  UserModel fromuser = 6; //   猜拳游戏发起者用户模型
+  int32 morastype = 7; //   发起者出拳类型
+  UserModel joinuser = 8; //   猜拳游戏参与者用户模型
+  int32 morajtype = 9; //   参与者出拳类型
+  int64 balance = 10; // 余额
+  int64 toUserId  = 11; // 发起者指定的挑战用户uid. 0 则全部在房用户 2.11.13新增
+  string muuidnew   =12;                // 猜拳记录唯一id string
+  string giftimage  =13;                // 礼物图片
+}
+
+//猜拳游戏列表弹窗请求proto参数 10065
+message RoshamboListRequest {
+  int64 morauuid = 1;
+  int32 listkind = 2;
+}
+
+//猜拳游戏列表弹窗返回proto参数
+message RoshamboListReply {
+  int32 code = 1; // 提示码
+  repeated RoshamboModel moras = 2; // 用户列表
+  int32 numcount = 3; // 总数量
+  int32 listkind = 4; // 刷新/加载更多
+}
+
+//猜拳列表弹窗成员模型
+message RoshamboModel {
+  int64 userId = 1; // 用户ID
+  string name = 2; // 用户昵称
+  string headphoto = 3; // 用户头像
+  int64 morauuid = 4; // 猜拳记录id
+  int32 moragiftid = 5; // 猜拳礼物id
+  int32 moranum = 6; // 猜拳礼物数量
+  int64 toUserId = 7; // 发起者指定的挑战用户uid. 0 则全部在房用户 2.11.13新增
+  string toNickname =8; // 发起者指定的挑战用户昵称 2.11.13新增
+  string toHeadphoto =9; // 发起者指定的挑战用户头像 2.11.13新增
+  string giftImage =10;    // 礼物图片地址
+  int32 giftprice =11;    // 礼物金额
+}
+// 房主解除禁止进房请求参数
+message BlockCancelRequest {
+  int64 touserid = 1; //用户的Id
+}
+
+// 房主解除禁止进房响应参数
+message BlockCancelReply {
+  int32 code = 1; // code 码
+  int64 touserid = 2; // 被解除拉黑成员Id
+}
+
+message Base {
+  int32 code = 1;
+}
+
+// 获取用户信息请求参数
+message UserInfoRequest {
+  int64 userid = 1; // 用户ID
+}
+
+message UserInfoReply {
+  int32 code = 1; // 提示码
+  UserModel user = 2; // 用户模型
+}
+
+// 幸运数字
+message ChangeLuckNumSetRequest {
+  int32 lucknummode = 1; //幸运数字模式 1 2 3
+  int32 lucknumcost = 2; //幸运数字费用 0 2 5
+
+  // 客户端根据服务端返回的isNewSet判断是否需要给客户展示系统消息
+  oneof has_luckNum {
+    int64 luckNum = 3; //幸运数字
+  }
+  oneof has_isAdminManage {
+    bool isAdminManage = 4; //是否允许管理员设置幸运数字
+  }
+}
+
+//幸运数字的设置者（用来展示设置幸运数字之后的系统消息）
+message LuckNumOperator {
+  int64 userId = 1; // 用户id
+  int32 role = 2;   // 1:房主 2:管理员
+}
+
+//更改幸运数字集回复
+message ChangeLuckNumSetReply {
+  Base code = 1;
+  int32 lucknummode = 2;//幸运数字位数
+  int32 lucknumcost = 3;//幸运数字费用
+  int64 luckNum = 4;   //幸运数字
+  bool  isAdminManage = 5; //是否允许管理员设置幸运数字
+  bool  isNewSet = 6;      //幸运数字是否是新设置的，如果是新设置的，客户端会展示系统消息；否则不展示
+  LuckNumOperator operator = 7; //用来展示设置幸运数字之后的系统消息
+}
+
+//更改幸运数字设置其他回复
+message ChangeLuckNumSetOtherReply {
+  int32 lucknummode = 1;//幸运数字位数
+  int32 lucknumcost = 2;//幸运数字费用
+  int64 luckNum = 3;   //幸运数字
+  bool  isAdminManage = 4; //是否允许管理员设置幸运数字
+  bool  isNewSet = 6;      //幸运数字是否是新设置的，如果是新设置的，客户端会展示系统消息；否则不展示
+  LuckNumOperator operator = 7; //用来展示设置幸运数字之后的系统消息
+}
+
+message UserModel {
+  int64 userId = 1; // 用户ID
+  string name = 2; // 用户昵称
+  int32 sex = 3; // 用户性别
+  int32 level = 4; // 用户等级
+  string Headphoto = 5; // 用户头像
+  int32 role = 6; // 用户角色
+  int32 position = 7; // 用户在房间身份
+  int32 silenced = 8; // 用户禁言状态
+  int64 prettyid = 9; // 用户靓号
+  int32 vehicle = 10; // 用户坐骑
+  int32 vip = 11; // 用户vip状态
+  int32 vipLevel = 12; // 用户vip等级
+  int64 priority = 13; // 用户权值
+  int32 hasMic = 14; // 用户持麦状态
+  string medal = 15; // 用户徽章
+  int32 rankday = 16; // 日榜排名
+  int32 rankweek = 17; // 周榜排名
+  int32 Isprettyid = 18; // 用户靓号状态
+  int32 headweared = 19; // 用户头饰
+  string headframeurl = 20; // 用户头像框
+  string touristmode = 21; // 用户头像框
+  int32 isprettypara = 23;//用户靓号标识 0 无靓号 1 有靓号 3 有靓号且价值高于或等于50w动态显示
+// --------------2.11.9---------------------------------------
+  int32 Region = 22;   // 用户大区
+  int32 Sources = 24;
+  int32 MOrder  = 27;
+  UserBanView BanInfo = 28;
+  UserHeadweareView HeadweareInfo = 29;
+  int32 RandomSaySkilled = 30;
+  string UserHeadFrameheadframeUrl = 31;
+  int32 isTourist = 32;    // 是否游客  1 是 0 否
+  int64 Coin = 33;
+  int32 LoginNum = 34;
+  int32 PwdVer = 35;
+  int32 SealState = 36;
+  int32 IsBlack = 37;
+  int32 CountryId = 38;
+  int32 vehicleid = 39; // (2.11.9 新增座驾id用于与之前版本做区分)座驾id
+  string carsvga = 40; // 新增座驾座驾动态图片
+  string carimg = 41; // 座驾静态图片
+  int32 IsAutoGrabBonus = 42;  //是否自动抢红包 1 否 0 默认自动抢
+  int32 Version = 43;
+  string headweareURL = 44;   // 头饰url 2.11.12新增
+  int32 Os = 45;     // 实际客户端用不到 1、ios 2、android
+  int32 NVipLv = 46; // 2.11.14用户vip等级
+  int32 IsVIP = 47; // 2.11.14用户vip状态
+  int32 FrozenState = 48;      //  用户被冻结状态
+  string HeadweareURLNew = 49; // 新的头饰url 支持 png/svga 2.11.16开始使用
+  int32 kaVipLv=50; //kavip 当前等级
+  int32 kaVipState=51; //kavip 状态 0:非vip 1:正常vip 2:冻结
+  int32 showKAVIP=52; //是否展示kavip 1:展示 0:隐藏
+  int32 showPremiumFirst=53;//是否优先展示贵族效果 1:优先
+  int32 LastOs=54; // 1、ios 2、android
+  BubbleInfo bubbleInfo=55; // 气泡信息
+  string badgeUrl = 56;  // 徽章地址
+  string badgeLevelUrl = 57;  // 等级徽章地址
+  int32 memberLevel = 58;  // 成员等级
+  int32 badgeState = 59; // 徽章状态
+  bool isTopRank = 60; // 是否是周榜或者总榜第一
+  int64 dayContributeNum = 61; // 日贡献值
+  int64 weekContributeNum = 62; // 周贡献值
+  WealthInfo wealthInfo = 63; //财富
+  string profileCardInfo = 64;  // 用户资料卡信息
+  string inRoomEffectsInfo = 65;  // 进房特效信息
+  int32 prettyIdFlag  = 66;   // 2.23.0后版本用户靓号标示  0： 无靓号  1： 有靓号  3：有靓号且价值50w需动态展示 4：个人定制靓号
+}
+
+message BubbleInfo {
+  int32 currBubbleId = 1;      // 气泡id
+  string bubbleColour = 2;      // 气泡颜色
+  string bubbleUrl = 3;         //
+  string bubbleReplyColour = 4; // 当前使用的气泡回复颜色
+  string isDefaultBubble = 5; // 是否是默认气泡
+}
+
+// 个人后台禁言信息
+message UserBanView {
+  int32 NoSay        = 1; // 是否被后台禁言 1 被禁言  0 未被禁
+  int64 NoSayEndTime = 2;
+  string NoSayReason  = 3;
+  string NoSayModel   = 4;
+}
+
+// 用户头饰信息
+message UserHeadweareView {
+  int32 HeadweareId = 1;   // 头饰id
+  int64 ExpireUinix = 2; // 技能卡过期时间戳
+  string HeadweareURL = 3;   // 头饰url 2.11.12新增
+  string HeadweareURLNew = 4;       // 新的头饰url 支持 png/svga 2.11.16开始使用
+}
+
+// ---------------------------------- 2.11.10 红包调整 ----------------------------------
+// 红包消息模型
+message EnvelopInfo {
+  int64 bonusid = 1;         // 唯一红包标识Id，抢红包时需传此字段
+  int64 userid = 2;         // 发红包人的用户uid
+  int32 bonustype = 3;       // 1、金币红包  2 礼物红包
+  string giftimg = 4;        // 发礼物红包时的的礼物小图标，若为礼物红包时有此字段
+  string bonusinfo = 5;      // 发红包时输入的祝福语
+  int32 bonuscount = 6;      // 所发红包的金币总额或者礼物总量
+  string username = 7;          // 用户昵称
+  string userheadphoto = 8;      // 用户头像
+}
+//------------------ 抢红包 10072 ------------------
+// 抢红包请求
+message GetBonusRequest {
+  int64 bonusid = 1;      // 唯一红包标识Id
+  int32 bonustype = 2;    // 1 金币红包  2 礼物红包
+}
+// 抢红包响应
+message GetBonusReply {
+  int32 code = 1;         // 0 成功 1 失败 1024入参错误
+  int32 state = 2;        // 1.抢到红包 2.红包已抢完 3.用户达到每日限额
+  int64 bonusid = 3;      // 唯一红包标识Id
+  int32 bonustype = 4;    // 1.金币红包  2.礼物红包
+  int32 bonuscount = 5;   // 所发红包的金币总额或者礼物总量
+  string giftimg = 6;     // 礼物URL
+  int32 lastestbalance = 7; // 抢到红包用户最新金币余额
+}
+
+//如果红包被抢完响应该房间内所有人 100732
+message NewSendBonusSubMessage {// 广播给在房的所有人，减少一个待领取红包（该红包被抢完或者已过期）
+  int64 bonusid = 1;         // 唯一红包标识Id
+}
+//------------------ 发红包 10073 ------------------
+// 发红包接口
+message NewSendBonusRequest {
+  int32 bonustype = 1;  // 1 金币红包、 2 礼物红包
+  int32 bonusnum = 2;   // 所发红包的总份数
+  int32 bonuscount = 3; // 所发红包的金币总额或者礼物总量
+  int32 giftid = 4;     // 发礼物红包时的礼物Id，若为金币红包则传0
+  string bonusinfo = 5; // 发红包时输入的祝福语
+}
+// 新的发红包回复
+message NewSendBonusReply {
+  int32 code = 1;         // 提示码
+  int64 leftcoin = 2;     // 用户最新余额
+  int64 bonusid = 3;      // 唯一红包标识Id
+  int32 bonustype = 4;    // 1.金币红包  2.礼物红包
+}
+// 新增新红包时响应该房间内所有人 100731
+message NewSendBonusAddMessage {  // 广播给在房的所有人，新增一个待领取红包
+  EnvelopInfo envelop = 1; //红包消息模型
+}
+
+//------------------ 用户设置是否打开自动开启红包弹窗 10074 ------------------
+// 设置自动或者取消弹出抢红包弹窗
+message SetAutoGrabBonusRequest {
+  int32 autotype = 1;  // 0 设置自动弹出红包窗  1 取消自动弹出红包窗
+}
+// 设置自动或者取消弹出抢红包弹窗 响应
+message SetAutoGrabBonusReply {
+  int32 code = 1;        // 提示码
+  int32 autotype = 2;    //用户修改后的红包弹窗设置 0 设置自动弹出红包窗  1 取消自动弹出红包窗
+}
+
+//------------------ 用户进房时拉取自己未领取的红包列表 （需客户端进房后主动拉取此接口数据） 10075 ------------------
+//用户进房时拉取自己未领取的红包列表
+message GetEnvelopListRequest {
+  int32 autotype = 1;   // 固定传1，传其他错误会直接返回错误入参
+}
+// 用户进房时拉取自己未领取的红包列表响应
+message GetEnvelopListReply {
+  int32 code = 1;        // 提示码
+  repeated EnvelopInfo envelops = 2;        // 自己未领取的红包列表
+  int32 pendingenvelopnum = 3;        // 待领取红包总数
+}
+
+//------------------ 抢到红包聊天框消息 10076 ------------------
+// 抢到红包聊天框消息  head=10076
+message GetBonusMessage {
+  int64 bonusid = 1;      // 唯一红包标识Id
+  int32 bonustype = 2;    // 1.金币红包  2.礼物红包
+  int32 bonuscount = 3;   // 所发红包的金币总额或者礼物总量
+  string giftimg = 4;     // 礼物URL
+  int64 fromid = 5;       // 发送人的ID
+  string fromname = 6;    // 发红包用户昵称
+  UserModel user = 7;     // 收红包用户模型
+}
+
+//------------------ 发红包时响应该房间内的所有人 10077 ------------------
+//发红包时响应该房间内的所有人，用于展示聊天框处的红包信息 10077
+message SendBonusMessage {
+  int64 bonusid = 1;      // 唯一红包标识Id
+  int32 bonustype = 2;    // 1.金币红包  2.礼物红包
+  int32 bonuscount = 3;   // 所发红包的金币总额或者礼物总量
+  string giftimg = 4;     // 礼物URL
+  UserModel user = 5;     // 发红包用户模型
+}
+
+//------------------ 单个红包详情接口 10078 ------------------
+// 单个红包详情请求
+message BonusDetailRequest {
+  int64 bonusid = 1;    // 唯一红包标识Id
+  int32 bonustype = 2;    // 1.金币红包  2.礼物红包
+}
+
+// 单个红包详情返回
+message BonusDetailReply {
+  int32 code = 1;
+  int32 state = 2;                       // 1.成功 2.没有权限查看
+  int64 bonusid = 3;                     // 唯一红包标识Id
+  int32 bonustype = 4;                   // 1.金币红包  2.礼物红包
+  int32 bonuscount = 5;                  // 所发红包的金币总额或者礼物总量
+  string giftimg = 6;                    // 礼物URL,如果是金币红包则此值为空
+  string fromusername = 7;               // 发红包红包用户昵称
+  string fromuseravatar = 8;               // 发红包红包用户头像
+  repeated BonusDetail bonusdetails = 9; // 红包领取情况列表
+  int32 bonustotalnum = 10;               // 所发红包总份数
+  int32 bonusgrabnum = 11;               // 所发红包已抢份数
+  bool  gotbonus = 12;                // 当前用户是否抢到红包,true说明抢到
+  int32 gotbonusnum = 13;                // 当前用户抢到的红包礼物/金币数量
+  string bonusinfo = 14;                   // 发红包时输入的祝福语
+}
+
+// 抢到单个红包详情
+message BonusDetail {
+  string username = 1;    // 抢到红包用户昵称
+  string avatarurl = 2;    // 抢到红包用户头像
+  string gettime = 3;    // 抢到红包时间
+  int64 bonusid = 4;      // 唯一红包标识Id
+  int32 bonustype = 5;    // 1.金币红包  2.礼物红包
+  string giftimg = 6;     // 礼物URL,如果是金币红包则此值为空
+  int32 bonusnum = 7;     // 抢到的红包礼物/金币数量
+  int32 bestluck = 8;     // 是否是最佳手气
+  int64 gettimestamp = 9; // 抢到红包时间-时间戳 13位
+}
+
+// 送盲盒礼物 1001000
+message BlindBoxGiftRequest {
+  int64 target = 1;     // 目标用户id(送单个人的时候)
+  bool bMic = 2;        // 是否是给麦上所有人送(具体收礼人,服务端会处理)
+  int32 perNum = 3;     // 麦上所有的时候，填1.
+  int64 giftId = 4;     // 礼物Id
+}
+
+message StartTurnTableMsg {
+  int64 RoomId = 1; // 房间Id
+  int32 GameStatus = 2;        // 转盘游戏状态 -1 游戏已关闭（总开关）  0 等待中   1 进行中（转动中）   2 游戏已结束
+  int32 ShowBox = 3;         //  1 显示中止游戏结束退费窗口  0 不显示
+}
+
+//head= 1000002. 房主给管理员设置/取消设置 锁麦/解锁麦权限
+message AllowMicRightIn {
+  int64 RoomId = 1;          // 房间Id
+    int32 AllowMicStatus=2;    // 当前管理员麦位控制权限。 0 没有权限  1 有权限
+}
+
+//head= 1000003. 房主给管理员设置/取消设置 锁麦/解锁麦权限，通知所有在房用户
+message AllowMicRightOut {
+    int32 Code = 1;
+    int64 RoomId = 2;          // 房间Id
+    int32 AllowMicStatus=3;    // 当前管理员麦位控制权限。 0 没有权限  1 有权限
+}
+
+// 统一错误功能提示 1000005 2.11.13新增的错误都走这里处理
+message ErrorEvent {
+	int32 errcode =  1;       // 具体错误码   （版本升级errcode=3000 通用错误errcode=3001 ... ）
+	int32 pckcode =  2;       // 具体业务码
+    string content = 3;       // 提示内容json ，服务端传  。  格式：{"msg":"金币不足","region":1}
+}
+
+// 发起投票(1100000)
+message InitiateVoteRequest {
+    string title = 1;       // 投票标题(最少1个字符，最多60字符)
+    int64 giftId = 2;       // 投票礼物
+    enum DurationType // 持续时间
+    {
+        NoDef = 0;      //未定义  (if DurationType==0 then DurationType=默认值)，防止后面需求改动，尽量指定值
+        FiveMin = 1;    //5min 默认值
+        TenMin = 2;    //10min
+        ThirtyMin = 3;  //30min
+        SixtyMin = 4;   //60min
+        Infinite = 100; //永久
+    }
+    DurationType durationType = 3;
+    repeated int64 userIds = 4;  // 参与人(最少2个最多10个)
+}
+// 发起投票返回结果(1100000)
+message InitiateVoteReply {
+    int32 code = 1;			// 新增返回错误码4000：已经存在进行中的投票了
+    int64 voteId = 2;       // 投票器ID
+    int64 createUserId = 3; // 发起人
+    UserModel createUserView = 4;// 发起人个人信息
+}
+// 手动提前结束投票(1100001)
+message EndVoteRequest {
+    int64 voteId = 1;  // 投票器ID
+}
+// 结束成功后，将广播最终结果给客户端如下(1100001)
+message VoteResultNotify {
+    int64 voteId = 1;  // 投票器ID
+    int64 roomId = 2;  //
+    message userTotalCount {
+        int64 userId = 1;
+        int32 totalCount = 2; //得票数
+      string nickName = 3;
+    }
+  repeated userTotalCount result = 3;
+  UserModel createUserView = 4;// 发起人个人信息
+  string giftImage = 5;
+}
+//投票排行变动通知 (1100002)，客户端收到后，主动调用接口查询榜单
+message NumOfVotesUpdateNotifyIn {
+  int64 roomId = 1;
+}
+
+
+//猜拳过期通知
+message MoraExpiredNotify {
+    int64 roomId = 1;
+    int64 muuid = 2;
+}
+
+//新增接口 1000700 搜索房间在线用户供创建投票器时搜索
+message InRoomUserSearchRequest {
+  string pattern = 1; // 输入
+}
+
+//新增接口 1000700 搜索房间在线用户结果
+message InRoomUserSearchReply {
+  int32 code = 1; // 错误码
+  repeated UserModel users = 2; // 用户列表
+}
+
+//Event数量变动通知
+message EventChange {
+  int32 Count = 1; // 房间活动数量（进行中+未开始）
+  int64 RoomId = 2; //房间id
+  int32 IsStart = 3; //房间是否有活动开始 1:有 0:无
+}
+
+//背包礼物-发送:新增接口 1001003
+message BackPackGiftRequest {
+  int64 target = 1; // 目标用户id(送单个人的时候)
+  bool bMic = 2;    // 是否是给麦上所有人送(具体收礼人,服务端会处理)
+  int32 perNum = 3; // 麦上所有的时候，填1.
+  int64 giftId = 4; // 礼物Id
+}
+
+//背包礼物-结果
+message BackPackGiftReply {
+  int32 code = 1;   // 新增两个返回码，背包礼物：4153礼物已过期、 4154背包被冻结
+  int64 roomId = 2; // 房间Id
+  int64 giftId = 3; // 礼物Id
+  int64 userId = 4; // 用户id
+  int32 RemainingNum = 5; // 当前礼物的剩余数量
+  int64 MinExpirationTime = 6; // 最小过期时间戳
+}
+
+// 盲盒玩法房间内通知实体
+message MessageBlindBoxNotify{
+  int32 RedirectType = 1; // 跳转类型(0-不需要跳转;1-跳转背包(客户端根据用户视角来))
+  int64 SendUserId = 2;   // 送礼用户ID
+  string SendUserNick = 3;// 送礼用户昵称
+  int64 GetUserId = 4;    // 收礼用户Id
+  string GetUserNick = 5; // 收礼用户昵称
+  int32 RewardValue = 6;  // 奖励多少积分或者幸运值,或者是送出XXX个初级|高级惊喜礼物
+  int32 RewardType = 7;   // 0-无;1-信誉值;2-积分;3-送出XX个礼盒
+  int32 RewardId = 8;     // 奖品Id
+  int32 Coin = 9;         // 价值
+  repeated MessageBlindBoxPropName PropNameText = 10;   // 礼物名称翻译
+  repeated MessageBlindBoxPropName RewardPropNameText = 11; // 礼物名称翻译
+}
+
+// 盲盒玩法房间内通知实体
+message MessageBlindBoxPropName{
+  int32 Region = 1;
+  string Text = 2;
+}
+
+message WealthInfo {
+  bool  wealthShow = 1;        //是否展示财富 true代表展示
+  int32 wealthLevel = 2;       //财富等级
+  int64 wealthValue = 3;       //财富值
+  int32 wealthBadgeLevel = 4;  //财富徽章等级
+  string wealthBadgeUrl = 5;   //财富徽章样式
+  string profileCardImg = 6; //个人资料卡
+  string badgeRoundedImg = 7; //勋章背景
+}

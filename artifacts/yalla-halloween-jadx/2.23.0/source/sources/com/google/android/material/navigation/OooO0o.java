@@ -1,0 +1,63 @@
+package com.google.android.material.navigation;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.view.ViewTreeObserver;
+import com.google.android.material.internal.NavigationMenuPresenter;
+import com.google.android.material.internal.NavigationMenuView;
+import com.google.android.material.internal.o000OOo;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class OooO0o implements ViewTreeObserver.OnGlobalLayoutListener {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final /* synthetic */ NavigationView f17455OooO0Oo;
+
+    public OooO0o(NavigationView navigationView) {
+        this.f17455OooO0Oo = navigationView;
+    }
+
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        Activity activity;
+        NavigationView navigationView = this.f17455OooO0Oo;
+        navigationView.getLocationOnScreen(navigationView.f17439OooOOO);
+        int[] iArr = navigationView.f17439OooOOO;
+        boolean z = true;
+        boolean z2 = iArr[1] == 0;
+        NavigationMenuPresenter navigationMenuPresenter = navigationView.f17438OooOO0o;
+        if (navigationMenuPresenter.f17181OooOoO != z2) {
+            navigationMenuPresenter.f17181OooOoO = z2;
+            int i = (navigationMenuPresenter.f17163OooO0o0.getChildCount() == 0 && navigationMenuPresenter.f17181OooOoO) ? navigationMenuPresenter.f17185OooOoo0 : 0;
+            NavigationMenuView navigationMenuView = navigationMenuPresenter.f17161OooO0Oo;
+            navigationMenuView.setPadding(0, i, 0, navigationMenuView.getPaddingBottom());
+        }
+        navigationView.setDrawTopInsetForeground(z2 && navigationView.f17444OooOOo0);
+        int i2 = iArr[0];
+        navigationView.setDrawLeftInsetForeground(i2 == 0 || navigationView.getWidth() + i2 == 0);
+        Context context = navigationView.getContext();
+        while (true) {
+            if (!(context instanceof ContextWrapper)) {
+                activity = null;
+                break;
+            } else {
+                if (context instanceof Activity) {
+                    activity = (Activity) context;
+                    break;
+                }
+                context = ((ContextWrapper) context).getBaseContext();
+            }
+        }
+        if (activity != null) {
+            Rect rectOooO00o = o000OOo.OooO00o(activity);
+            navigationView.setDrawBottomInsetForeground((rectOooO00o.height() - navigationView.getHeight() == iArr[1]) && (Color.alpha(activity.getWindow().getNavigationBarColor()) != 0) && navigationView.f17443OooOOo);
+            if (rectOooO00o.width() != iArr[0] && rectOooO00o.width() - navigationView.getWidth() != iArr[0]) {
+                z = false;
+            }
+            navigationView.setDrawRightInsetForeground(z);
+        }
+    }
+}

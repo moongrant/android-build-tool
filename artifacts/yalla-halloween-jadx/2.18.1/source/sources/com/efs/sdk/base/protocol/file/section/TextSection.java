@@ -1,0 +1,26 @@
+package com.efs.sdk.base.protocol.file.section;
+
+import com.facebook.appevents.internal.ViewHierarchyConstants;
+import p058o0000OoO.OooO;
+
+/* JADX INFO: loaded from: classes.dex */
+public class TextSection extends AbsSection {
+    private String body;
+
+    public TextSection(String str) {
+        super(ViewHierarchyConstants.TEXT_KEY);
+        this.name = str;
+    }
+
+    @Override // com.efs.sdk.base.protocol.file.section.AbsSection
+    public String changeToStr() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getDeclarationLine());
+        sb.append("\n");
+        return OooO.OooO00o(sb, this.body, "\n");
+    }
+
+    public void setBody(String str) {
+        this.body = str;
+    }
+}

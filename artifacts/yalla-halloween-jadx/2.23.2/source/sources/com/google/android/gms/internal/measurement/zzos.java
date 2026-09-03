@@ -1,0 +1,26 @@
+package com.google.android.gms.internal.measurement;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class zzos implements zzim {
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public static final zzos f15302OooO0o0 = new zzos();
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final zzim f15303OooO0Oo = zzir.zza(zzir.zzb(new zzou()));
+
+    public static boolean zzc() {
+        f15302OooO0o0.zza().zza();
+        return true;
+    }
+
+    public static boolean zzd() {
+        return f15302OooO0o0.zza().zzb();
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzim
+    /* JADX INFO: renamed from: zzb, reason: merged with bridge method [inline-methods] */
+    public final zzot zza() {
+        return (zzot) this.f15303OooO0Oo.zza();
+    }
+}

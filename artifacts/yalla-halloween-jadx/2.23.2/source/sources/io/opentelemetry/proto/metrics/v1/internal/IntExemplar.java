@@ -1,0 +1,15 @@
+package io.opentelemetry.proto.metrics.v1.internal;
+
+import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import io.opentelemetry.exporter.otlp.internal.ProtoFieldInfo;
+
+/* JADX INFO: loaded from: classes5.dex */
+public final class IntExemplar {
+    static {
+        ProtoFieldInfo.OooO00o(1, 10, "filteredLabels");
+        ProtoFieldInfo.OooO00o(2, 17, "timeUnixNano");
+        ProtoFieldInfo.OooO00o(3, 25, AppMeasurementSdk.ConditionalUserProperty.VALUE);
+        ProtoFieldInfo.OooO00o(4, 34, "spanId");
+        ProtoFieldInfo.OooO00o(5, 42, "traceId");
+    }
+}

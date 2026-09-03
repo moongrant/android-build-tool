@@ -1,0 +1,65 @@
+package com.yalla.yalla.ui.fragment.moment;
+
+import androidx.compose.foundation.lazy.LazyListState;
+import io.agora.rtc.Constants;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes4.dex */
+@DebugMetadata(c = "com.yalla.yalla.ui.fragment.moment.MomentListFeaturedFragment$initView$3$1$2$1", f = "MomentListFeaturedFragment.kt", i = {}, l = {Constants.ERR_MODULE_NOT_FOUND}, m = "invokeSuspend", n = {}, s = {})
+public final class o0000O0O extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public int f28312OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public final /* synthetic */ MomentListFeaturedFragment f28313OooO0o0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o0000O0O(MomentListFeaturedFragment momentListFeaturedFragment, Continuation<? super o0000O0O> continuation) {
+        super(2, continuation);
+        this.f28313OooO0o0 = momentListFeaturedFragment;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @NotNull
+    public final Continuation<Unit> create(@Nullable Object obj, @NotNull Continuation<?> continuation) {
+        return new o0000O0O(this.f28313OooO0o0, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
+        return ((o0000O0O) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    @Nullable
+    public final Object invokeSuspend(@NotNull Object obj) {
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.f28312OooO0Oo;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            LazyListState lazyListState = this.f28313OooO0o0.mLazyListState;
+            if (lazyListState != null) {
+                this.f28312OooO0Oo = 1;
+                if (LazyListState.scrollToItem$default(lazyListState, 0, 0, this, 2, null) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
+        }
+        return Unit.INSTANCE;
+    }
+}

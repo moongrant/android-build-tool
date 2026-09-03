@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <LinearLayout style="@style/ChatItemSystem">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_room_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.yalla.yalla.ui.view.FixTextView
+                android:textSize="12dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tv_announcement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Announcement"/>
+            <ImageView
+                android:id="@+id/room_notification"
+                android:visibility="gone"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/icon_room_notification"/>
+        </LinearLayout>
+        <com.yalla.yalla.ui.view.FixTextView
+            android:textSize="12dp"
+            android:textColor="@color/color_00d8c9"
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+</FrameLayout>

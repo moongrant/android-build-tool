@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <include layout="@layout/chatline_msg_user"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/ChatItemContent">
+        <com.app.base.view.FixTextView
+            android:textSize="13sp"
+            android:textColor="@color/color_e2e2e2"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"/>
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:layout_gravity="center_vertical"
+            android:id="@+id/niv_magic_voice"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="7dp"/>
+    </LinearLayout>
+</FrameLayout>

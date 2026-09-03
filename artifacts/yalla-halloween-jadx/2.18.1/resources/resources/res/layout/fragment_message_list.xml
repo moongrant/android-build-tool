@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/chat_server_conn_status"
+        android:background="@color/color_FFE8E8"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="36dp">
+        <com.yalla.yalla.common.ui.view.SVGAView
+            android:id="@+id/svga_loading"
+            android:visibility="visible"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            app:autoPlay="true"
+            app:source="svga/anim_loading_net.svga"/>
+        <TextView
+            android:textSize="14dp"
+            android:textColor="@color/rec_color_FE6C6C"
+            android:gravity="center"
+            android:id="@+id/message_title_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="160dp"
+            android:minWidth="90dp"
+            android:text="@string/title_connecting"
+            android:singleLine="true"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+    <com.app.base.view.pullrefresh.XRefreshLayout
+        android:id="@+id/xrl_message"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.app.base.view.recyclerview.FixedRecyclerView
+            android:id="@+id/rec_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+    </com.app.base.view.pullrefresh.XRefreshLayout>
+</LinearLayout>

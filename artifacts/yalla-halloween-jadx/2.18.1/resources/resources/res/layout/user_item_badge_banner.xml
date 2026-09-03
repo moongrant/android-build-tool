@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:id="@+id/llBanner"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/rankUserHead"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="10dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:id="@+id/rankUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginStart="6dp"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:id="@+id/medalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_badge_get_gold_medal"
+        android:singleLine="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

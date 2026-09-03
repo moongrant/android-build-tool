@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/text_bg_country"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:foreground="@drawable/ripple_border_round_6"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+        <ImageView
+            android:id="@+id/iv_hot"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/icon_home_explore_country_fire"
+            android:layout_marginEnd="4dp"/>
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/color_alpha_87"
+            android:gravity="center"
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            app:autoSizeMaxTextSize="13sp"
+            app:autoSizeMinTextSize="6sp"
+            app:autoSizeStepGranularity="1sp"/>
+    </LinearLayout>
+</RelativeLayout>

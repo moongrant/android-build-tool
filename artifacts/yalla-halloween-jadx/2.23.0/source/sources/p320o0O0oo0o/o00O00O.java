@@ -1,0 +1,25 @@
+package p320o0O0oo0o;
+
+import com.google.protobuf.Descriptors;
+import com.google.protobuf.GeneratedMessageV3;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class o00O00O {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public static final Descriptors.Descriptor f42775OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    public static final GeneratedMessageV3.FieldAccessorTable f42776OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    public static final Descriptors.FileDescriptor f42777OooO0OO;
+
+    static {
+        Descriptors.FileDescriptor fileDescriptorInternalBuildGeneratedFileFrom = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016google/api/label.proto\u0012\ngoogle.api\"\u009c\u0001\n\u000fLabelDescriptor\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\t\u00129\n\nvalue_type\u0018\u0002 \u0001(\u000e2%.google.api.LabelDescriptor.ValueType\u0012\u0013\n\u000bdescription\u0018\u0003 \u0001(\t\",\n\tValueType\u0012\n\n\u0006STRING\u0010\u0000\u0012\b\n\u0004BOOL\u0010\u0001\u0012\t\n\u0005INT64\u0010\u0002B_\n\u000ecom.google.apiB\nLabelProtoP\u0001Z5google.golang.org/genproto/googleapis/api/label;labelø\u0001\u0001¢\u0002\u0004GAPIb\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+        f42777OooO0OO = fileDescriptorInternalBuildGeneratedFileFrom;
+        Descriptors.Descriptor descriptor = fileDescriptorInternalBuildGeneratedFileFrom.getMessageTypes().get(0);
+        f42775OooO00o = descriptor;
+        f42776OooO0O0 = new GeneratedMessageV3.FieldAccessorTable(descriptor, new String[]{"Key", "ValueType", "Description"});
+    }
+}

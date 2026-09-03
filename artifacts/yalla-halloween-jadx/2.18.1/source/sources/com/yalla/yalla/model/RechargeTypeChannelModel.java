@@ -1,0 +1,54 @@
+package com.yalla.yalla.model;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import java.util.ArrayList;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes2.dex */
+@StabilityInferred(parameters = 0)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR \u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR \u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\nX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\r\"\u0004\b\u0013\u0010\u000f¨\u0006\u0014"}, d2 = {"Lcom/yalla/yalla/model/RechargeTypeChannelModel;", "", "()V", "countryAddr", "", "getCountryAddr", "()Ljava/lang/String;", "setCountryAddr", "(Ljava/lang/String;)V", "data", "", "Lcom/yalla/yalla/model/RechargeType;", "getData", "()Ljava/util/List;", "setData", "(Ljava/util/List;)V", "data1", "Lcom/yalla/yalla/model/RechargeBanType;", "getData1", "setData1", "app_YallaRelease"}, k = 1, mv = {1, 7, 1}, xi = 48)
+public final class RechargeTypeChannelModel {
+    public static final int $stable = 8;
+
+    @NotNull
+    private String countryAddr = "";
+
+    @NotNull
+    private List<RechargeType> data = new ArrayList();
+
+    @NotNull
+    private List<RechargeBanType> data1 = new ArrayList();
+
+    @NotNull
+    public final String getCountryAddr() {
+        return this.countryAddr;
+    }
+
+    @NotNull
+    public final List<RechargeType> getData() {
+        return this.data;
+    }
+
+    @NotNull
+    public final List<RechargeBanType> getData1() {
+        return this.data1;
+    }
+
+    public final void setCountryAddr(@NotNull String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.countryAddr = str;
+    }
+
+    public final void setData(@NotNull List<RechargeType> list) {
+        Intrinsics.checkNotNullParameter(list, "<set-?>");
+        this.data = list;
+    }
+
+    public final void setData1(@NotNull List<RechargeBanType> list) {
+        Intrinsics.checkNotNullParameter(list, "<set-?>");
+        this.data1 = list;
+    }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/bg"
+    android:background="@color/white_"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.yalla.yalla.ui.view.PostView
+        android:id="@+id/post_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <View
+        android:background="@color/APP_THEME_BACKGROUND_COLOR"
+        android:visibility="gone"
+        android:layout_height="4dp"
+        style="@style/line_horizontal"/>
+    <View
+        android:id="@+id/line_parent_bottom"
+        android:visibility="gone"
+        android:layout_height="1px"
+        style="@style/line_horizontal"/>
+</LinearLayout>

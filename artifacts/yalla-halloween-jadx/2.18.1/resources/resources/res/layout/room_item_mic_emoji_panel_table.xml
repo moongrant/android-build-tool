@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="65dp"
+    android:layout_height="40dp">
+    <View
+        android:id="@+id/vSelect"
+        android:background="@color/color_1fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="0.5dp"/>
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/ivItemEmojiTable"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:scaleType="centerCrop"/>
+    <View
+        android:layout_gravity="end"
+        android:id="@+id/vSplitLine"
+        android:background="@color/color_whit_10"
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"/>
+</FrameLayout>

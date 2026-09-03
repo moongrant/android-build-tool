@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="bottom"
+    android:paddingTop="110dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/room_shape_top_radius16_color_224"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+        <com.app.base.view.CrossRecyclerView
+            android:id="@+id/rvEmojiPanelContent"
+            android:layout_width="match_parent"
+            android:layout_height="236dp"/>
+        <View
+            android:id="@+id/vSplitLine"
+            android:background="@color/color_whit_10"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEmojiPanelTable"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</FrameLayout>

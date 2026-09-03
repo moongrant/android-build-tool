@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.app.selectPicture.view.HackyViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:textSize="20sp"
+        android:textColor="@color/white_"
+        android:gravity="center_vertical"
+        android:id="@+id/title"
+        android:background="@drawable/icon_title_bg_tr50"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingStart="24dp"/>
+    <TextView
+        android:layout_gravity="end|bottom"
+        android:id="@+id/download"
+        android:background="@drawable/icon_download"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="16dp"/>
+</FrameLayout>

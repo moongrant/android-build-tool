@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/color_f5f5f5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/activity_test_image"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"/>
+    <GridView
+        android:id="@+id/activity_test_gridView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.app.base.view.imageMore.ImageMoreView
+        android:id="@+id/activity_test_imageMoreView"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.app.base.view.imageMore.ImageMoreItemView
+        android:id="@+id/activity_test_imageMoreItemView"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

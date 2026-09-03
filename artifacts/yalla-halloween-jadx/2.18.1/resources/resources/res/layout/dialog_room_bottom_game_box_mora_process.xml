@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@color/color_54000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/start_mora_game_animation"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        app:antiAlias="true"/>
+    <Button
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:id="@+id/mora_game_svga_commit"
+        android:background="@drawable/btn_bg_gradient_r20"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginBottom="17dp"
+        android:text="@string/OK"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        style="?android:attr/borderlessButtonStyle"/>
+</LinearLayout>

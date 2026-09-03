@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/new_frag_item_tips_root"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="96dp">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/svga_new_frag_item_border"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="-4.5dp"
+        android:scaleType="fitXY"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        app:autoPlay="true"
+        app:source="svga/anim_new_frag_item_border.svga"/>
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:layout_gravity="end|bottom"
+        android:id="@+id/svga_new_frag_item_hand"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="65dp"
+        app:autoPlay="true"
+        app:source="svga/anim_new_frag_item_hand.svga"/>
+</FrameLayout>

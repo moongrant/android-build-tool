@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="end|bottom"
+    android:id="@+id/ly_anmi_panda"
+    android:visibility="invisible"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginEnd="-100dp">
+    <ImageView
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/iv_skill_bg"
+        android:layout_width="63dp"
+        android:layout_height="24dp"
+        android:src="@drawable/bg_roomchat_skill_speaking"
+        android:scaleType="fitXY"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:layout_gravity="start|bottom"
+        android:id="@+id/senduserhead_panda"
+        android:layout_width="37dp"
+        android:layout_height="37dp"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:layout_gravity="end|bottom"
+        android:id="@+id/targetuserhead_panda"
+        android:layout_width="37dp"
+        android:layout_height="37dp"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:layout_gravity="bottom"
+        android:id="@+id/iv_anmi_panda"
+        android:layout_width="100dp"
+        android:layout_height="91dp"/>
+</FrameLayout>

@@ -1,0 +1,135 @@
+package p254o00ooO0o;
+
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.RemoteException;
+import android.os.StrictMode;
+import android.util.Log;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.internal.zzae;
+import com.google.android.gms.common.internal.zzaf;
+import com.google.android.gms.common.util.AndroidUtilsLight;
+import com.google.android.gms.common.util.Hex;
+import com.google.android.gms.common.zzo;
+import com.google.android.gms.common.zzq;
+import com.google.android.gms.common.zzs;
+import com.google.android.gms.dynamic.ObjectWrapper;
+import com.google.android.gms.dynamite.DynamiteModule;
+import com.google.errorprone.annotations.CheckReturnValue;
+import java.security.MessageDigest;
+import java.util.concurrent.Callable;
+import p254o00ooO0o.o00;
+import p254o00ooO0o.o000O0O0;
+import p254o00ooO0o.o00O000;
+
+/* JADX INFO: loaded from: classes3.dex */
+@CheckReturnValue
+public final class o00O000 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public static final o000O0O0 f40249OooO00o = new o000O0O0(o00.OooOo00("0\u0082\u0005È0\u0082\u0003° \u0003\u0002\u0001\u0002\u0002\u0014\u0010\u008ae\bsù/\u008eQí"));
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    public static final o000O f40250OooO0O0 = new o000O(o00.OooOo00("0\u0082\u0006\u00040\u0082\u0003ì \u0003\u0002\u0001\u0002\u0002\u0014\u0003£²\u00ad×árÊkì"));
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    public static final o000OO00 f40251OooO0OO = new o000OO00(o00.OooOo00("0\u0082\u0004C0\u0082\u0003+ \u0003\u0002\u0001\u0002\u0002\t\u0000Âà\u0087FdJ0\u008d0"));
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public static final o000OOo0 f40252OooO0Oo = new o000OOo0(o00.OooOo00("0\u0082\u0004¨0\u0082\u0003\u0090 \u0003\u0002\u0001\u0002\u0002\t\u0000Õ\u0085¸l}ÓNõ0"));
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    public static final Object f40253OooO0o = new Object();
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public static volatile zzaf f40254OooO0o0;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public static Context f40255OooO0oO;
+
+    public static synchronized void OooO00o(Context context) {
+        if (f40255OooO0oO != null) {
+            Log.w("GoogleCertificates", "GoogleCertificates has been initialized already");
+        } else if (context != null) {
+            f40255OooO0oO = context.getApplicationContext();
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r7v3, types: [com.google.android.gms.common.zze] */
+    public static o00O00 OooO0O0(final String str, final o00 o00Var, final boolean z, boolean z2) {
+        try {
+            OooO0Oo();
+            Preconditions.checkNotNull(f40255OooO0oO);
+            try {
+                return f40254OooO0o0.zzh(new zzs(str, o00Var, z, z2), ObjectWrapper.wrap(f40255OooO0oO.getPackageManager())) ? o00O00.f40244OooO0o0 : new o00O000o(new Callable() { // from class: com.google.android.gms.common.zze
+                    @Override // java.util.concurrent.Callable
+                    public final Object call() {
+                        boolean z3 = z;
+                        String str2 = str;
+                        o00 o00Var2 = o00Var;
+                        o000O0O0 o000o0o1 = o00O000.f40249OooO00o;
+                        String str3 = true != (!z3 && o00O000.OooO0O0(str2, o00Var2, true, false).f40245OooO00o) ? "not allowed" : "debug cert rejected";
+                        MessageDigest messageDigestZza = AndroidUtilsLight.zza("SHA-256");
+                        Preconditions.checkNotNull(messageDigestZza);
+                        return String.format("%s: pkg=%s, sha256=%s, atk=%s, ver=%s", str3, str2, Hex.bytesToStringLowercase(messageDigestZza.digest(o00Var2.OooOo0())), Boolean.valueOf(z3), "12451000.false");
+                    }
+                });
+            } catch (RemoteException e) {
+                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
+                return o00O00.OooO0OO("module call", e);
+            }
+        } catch (DynamiteModule.LoadingException e2) {
+            Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e2);
+            return o00O00.OooO0OO("module init: ".concat(String.valueOf(e2.getMessage())), e2);
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r8v0, types: [android.os.IBinder, com.google.android.gms.dynamic.IObjectWrapper] */
+    public static o00O00 OooO0OO(String str, boolean z, boolean z2) {
+        o00O00 o00o00OooO0OO;
+        StrictMode.ThreadPolicy threadPolicyAllowThreadDiskReads = StrictMode.allowThreadDiskReads();
+        try {
+            Preconditions.checkNotNull(f40255OooO0oO);
+            try {
+                OooO0Oo();
+                zzo zzoVar = new zzo(str, z, false, ObjectWrapper.wrap(f40255OooO0oO), false);
+                try {
+                    zzq zzqVarZze = z2 ? f40254OooO0o0.zze(zzoVar) : f40254OooO0o0.zzf(zzoVar);
+                    if (zzqVarZze.zzb()) {
+                        o00o00OooO0OO = new o00O00(true, zzqVarZze.zzc(), null, null);
+                    } else {
+                        String strZza = zzqVarZze.zza();
+                        PackageManager.NameNotFoundException nameNotFoundException = zzqVarZze.zzd() == 4 ? new PackageManager.NameNotFoundException() : null;
+                        if (strZza == null) {
+                            strZza = "error checking package certificate";
+                        }
+                        int iZzc = zzqVarZze.zzc();
+                        zzqVarZze.zzd();
+                        o00o00OooO0OO = new o00O00(false, iZzc, strZza, nameNotFoundException);
+                    }
+                } catch (RemoteException e) {
+                    Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
+                    o00o00OooO0OO = o00O00.OooO0OO("module call", e);
+                }
+            } catch (DynamiteModule.LoadingException e2) {
+                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e2);
+                o00o00OooO0OO = o00O00.OooO0OO("module init: ".concat(String.valueOf(e2.getMessage())), e2);
+            }
+            return o00o00OooO0OO;
+        } finally {
+            StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+        }
+    }
+
+    public static void OooO0Oo() throws DynamiteModule.LoadingException {
+        if (f40254OooO0o0 != null) {
+            return;
+        }
+        Preconditions.checkNotNull(f40255OooO0oO);
+        synchronized (f40253OooO0o) {
+            if (f40254OooO0o0 == null) {
+                f40254OooO0o0 = zzae.zzb(DynamiteModule.load(f40255OooO0oO, DynamiteModule.PREFER_HIGHEST_OR_LOCAL_VERSION_NO_FORCE_STAGING, "com.google.android.gms.googlecertificates").instantiate("com.google.android.gms.common.GoogleCertificatesImpl"));
+            }
+        }
+    }
+}

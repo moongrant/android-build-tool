@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/color_161616"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_music"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@color/color_white_12"
+        android:dividerHeight="1px"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/color_white_12"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <include
+            android:id="@+id/ll_select_all"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            layout="@layout/music_select_all"/>
+        <Button
+            android:textSize="16dp"
+            android:textStyle="normal"
+            android:textColor="@color/color_white"
+            android:id="@+id/bt_music_delete"
+            android:background="@drawable/selector_btn_bg_bt_music"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:minWidth="105dp"
+            android:text="@string/delete"
+            android:textAllCaps="false"
+            style="?android:attr/borderlessButtonStyle"/>
+    </LinearLayout>
+</LinearLayout>

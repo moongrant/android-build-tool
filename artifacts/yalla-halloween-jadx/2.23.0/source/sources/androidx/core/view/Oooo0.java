@@ -1,0 +1,26 @@
+package androidx.core.view;
+
+import android.content.Context;
+import android.view.GestureDetector;
+import androidx.annotation.NonNull;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class Oooo0 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final OooO00o f5331OooO00o;
+
+    public static class OooO00o {
+
+        /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+        public final GestureDetector f5332OooO00o;
+
+        public OooO00o(Context context, androidx.recyclerview.widget.o0OoOo0.OooO oooO) {
+            this.f5332OooO00o = new GestureDetector(context, oooO, null);
+        }
+    }
+
+    public Oooo0(@NonNull Context context, @NonNull androidx.recyclerview.widget.o0OoOo0.OooO oooO) {
+        this.f5331OooO00o = new OooO00o(context, oooO);
+    }
+}

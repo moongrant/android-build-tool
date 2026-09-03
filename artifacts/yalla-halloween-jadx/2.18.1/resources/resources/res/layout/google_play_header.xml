@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/coins_page"
+        android:background="@drawable/google_play_coins_bg"
+        android:layout_width="100dp"
+        android:layout_height="28dp"
+        android:text="@string/Golds"/>
+    <TextView
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/crystal_page"
+        android:background="@drawable/google_play_diamonds_bg"
+        android:layout_width="101dp"
+        android:layout_height="28dp"
+        android:text="@string/crystal"/>
+</LinearLayout>

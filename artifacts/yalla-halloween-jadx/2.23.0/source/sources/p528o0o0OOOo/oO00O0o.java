@@ -1,0 +1,66 @@
+package p528o0o0OOOo;
+
+import com.jeremyliao.liveeventbus.LiveEventBus;
+import com.yalla.yalla.model.moment.MomentCommentDetailModel;
+import com.yalla.yalla.model.moment.MomentDetailModel;
+import com.yalla.yalla.model.moment.MomentDetailModelKt;
+import com.yalla.yalla.ui.vm.moment.MomentCommentsVM;
+import com.yalla.yalla.ui.vm.moment.MomentReplyVM;
+import com.yalla.yalla.ui.vm.moment.MomentVideoVM;
+import java.util.List;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import p143o00Oo000.OooO0O0;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class oO00O0o extends Lambda implements Function1<Object, Unit> {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final /* synthetic */ MomentVideoVM f53834OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    public final /* synthetic */ MomentCommentDetailModel f53835OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public final /* synthetic */ MomentCommentsVM f53836OooO0o0;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public final /* synthetic */ MomentReplyVM f53837OooO0oO;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oO00O0o(MomentVideoVM momentVideoVM, MomentCommentsVM momentCommentsVM, MomentCommentDetailModel momentCommentDetailModel, MomentReplyVM momentReplyVM) {
+        super(1);
+        this.f53834OooO0Oo = momentVideoVM;
+        this.f53836OooO0o0 = momentCommentsVM;
+        this.f53835OooO0o = momentCommentDetailModel;
+        this.f53837OooO0oO = momentReplyVM;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final Unit invoke(Object it) {
+        List<MomentCommentDetailModel> list;
+        Intrinsics.checkNotNullParameter(it, "it");
+        MomentVideoVM momentVideoVM = this.f53834OooO0Oo;
+        MomentDetailModel currentMomentDetail = momentVideoVM.getCurrentMomentDetail();
+        if (currentMomentDetail != null) {
+            MomentDetailModelKt.commentNumDelete(currentMomentDetail);
+        }
+        LiveEventBus.get("POST_DETAIL_DATA_REFRESH").post(momentVideoVM.getCurrentMomentDetail());
+        if (momentVideoVM.getCurrentComment() != null) {
+            this.f53837OooO0oO.closeCommentReply();
+            momentVideoVM.closeCommentReply();
+        }
+        MomentCommentsVM momentCommentsVM = this.f53836OooO0o0;
+        OooO0O0<MomentCommentDetailModel> commentsPagerState = momentCommentsVM.getCommentsPagerState();
+        if (commentsPagerState != null && (list = commentsPagerState.f37663OooO0Oo) != null) {
+            list.remove(this.f53835OooO0o);
+        }
+        OooO0O0<MomentCommentDetailModel> commentsPagerState2 = momentCommentsVM.getCommentsPagerState();
+        if (commentsPagerState2 != null) {
+            commentsPagerState2.OooO0O0();
+        }
+        return Unit.INSTANCE;
+    }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/account_ic_login_error"/>
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/color_949595"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/login_error_tips"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"/>
+    <com.yalla.support.statebutton.StateButton
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/btRetry"
+        android:background="@color/color_00d8c9"
+        android:layout_width="215dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/try_again"
+        app:radius="20dp"/>
+</LinearLayout>

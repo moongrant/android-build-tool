@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:layout_gravity="center"
+        android:id="@+id/img_propimage"
+        android:background="@drawable/ripple_borderless"
+        android:padding="12dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+    <TextView
+        android:textSize="13dp"
+        android:textColor="@color/color_alpha_54"
+        android:id="@+id/txt_propNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"/>
+</LinearLayout>

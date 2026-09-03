@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS CommentMessage(Id INTEGER PRIMARY KEY AUTOINCREMENT, fromUser TEXT, fromUid INTEGER, isRead INTEGER, localtime INTEGER, moment TEXT, momentId INTEGER, cid INTEGER, msg TEXT, type_code INTEGER, uid TEXT);

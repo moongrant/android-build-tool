@@ -1,0 +1,5 @@
+package p102o000oo;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class OooOo extends Oooo000 {
+}

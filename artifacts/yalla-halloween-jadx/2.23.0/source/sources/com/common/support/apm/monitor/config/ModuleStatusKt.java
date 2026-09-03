@@ -1,0 +1,16 @@
+package com.common.support.apm.monitor.config;
+
+import kotlin.Metadata;
+
+/* JADX INFO: loaded from: classes2.dex */
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\b\n\u0002\b\b\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"MODULE_STATUS_AVAILABLE", "", "MODULE_STATUS_CLIENT_NETWORK_ERROR", "MODULE_STATUS_CLIENT_OTHER_ERROR", "MODULE_STATUS_CLIENT_UNKNOWN_ERROR", "MODULE_STATUS_SERVER_BIZ_ERROR", "MODULE_STATUS_SERVER_NETWORK_403_ERROR", "MODULE_STATUS_SERVER_NETWORK_ERROR", "MODULE_STATUS_UNAVAILABLE", "sailfish_release"}, k = 2, mv = {1, 5, 1}, xi = 48)
+public final class ModuleStatusKt {
+    public static final int MODULE_STATUS_AVAILABLE = 0;
+    public static final int MODULE_STATUS_CLIENT_NETWORK_ERROR = 1;
+    public static final int MODULE_STATUS_CLIENT_OTHER_ERROR = 2;
+    public static final int MODULE_STATUS_CLIENT_UNKNOWN_ERROR = 3;
+    public static final int MODULE_STATUS_SERVER_BIZ_ERROR = 6;
+    public static final int MODULE_STATUS_SERVER_NETWORK_403_ERROR = 4;
+    public static final int MODULE_STATUS_SERVER_NETWORK_ERROR = 5;
+    public static final int MODULE_STATUS_UNAVAILABLE = -1;
+}

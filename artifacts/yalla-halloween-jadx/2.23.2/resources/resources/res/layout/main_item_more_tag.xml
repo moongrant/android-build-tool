@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp">
+    <FrameLayout
+        android:gravity="center"
+        android:id="@+id/flMoreTag"
+        android:background="@drawable/main_selector_dialog_more_tag"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="108dp"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/color_5f5f5f"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/tvTageName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+</FrameLayout>

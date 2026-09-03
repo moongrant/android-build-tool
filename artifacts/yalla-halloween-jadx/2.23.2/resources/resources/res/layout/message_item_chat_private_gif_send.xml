@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/include_chat_private_message_time"/>
+    <include layout="@layout/include_chat_private_message_header_send"/>
+    <com.code.android.uikit.svga.SVGAView
+        android:id="@+id/svga_message_status"
+        android:visibility="visible"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/niv_chat_gif"
+        app:layout_constraintEnd_toStartOf="@+id/niv_chat_gif"
+        app:layout_constraintTop_toTopOf="@+id/niv_chat_gif"/>
+    <com.yalla.netimage.NetImageView
+        android:id="@+id/niv_chat_gif"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:scaleType="fitCenter"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/niv_chat_message_header"
+        app:layout_constraintTop_toBottomOf="@+id/niv_chat_message_header"
+        app:layout_constraintTop_toTopOf="@+id/niv_chat_message_header"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

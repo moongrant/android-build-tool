@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="horizontal"
+        android:id="@+id/llTitle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/color_white_60"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:id="@+id/tvReceived"
+            android:background="@drawable/selector_packet_history_title_received"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:text="@string/red_myreceived"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvSend"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/color_333333"
+            android:gravity="center"
+            android:id="@+id/tvSend"
+            android:background="@drawable/selector_packet_history_title_send"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:text="@string/red_sendout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvReceived"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.booking.rtlviewpager.RtlViewPager
+        android:id="@+id/vpPacketHistory"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+</LinearLayout>

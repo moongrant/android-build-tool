@@ -1,0 +1,10 @@
+package com.google.android.exoplayer2.source;
+
+import com.google.android.exoplayer2.ParserException;
+
+/* JADX INFO: loaded from: classes2.dex */
+public class UnrecognizedInputFormatException extends ParserException {
+    public UnrecognizedInputFormatException(String str) {
+        super(str);
+    }
+}

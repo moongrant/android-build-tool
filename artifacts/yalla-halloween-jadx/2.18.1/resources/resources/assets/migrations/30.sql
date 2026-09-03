@@ -1,0 +1,2 @@
+ALTER TABLE ChatMessage ADD COLUMN midx;
+ALTER TABLE MessageRecord ADD COLUMN midx;

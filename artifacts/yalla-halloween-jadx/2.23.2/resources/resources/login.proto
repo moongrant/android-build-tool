@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package login;
+
+// java 语法特别选项
+option java_package = "com.app.base.protobuf";
+option java_outer_classname = "HallLogin";
+
+import "empty.proto"; 
+
+service Login {
+  rpc Login(LoginRequest) returns (LoginReply) {}
+}
+
+message LoginRequest {
+  int64 userId = 1;
+  string sign = 2;
+}
+
+message LoginReply {
+  string address = 1;
+  string token = 2;
+}

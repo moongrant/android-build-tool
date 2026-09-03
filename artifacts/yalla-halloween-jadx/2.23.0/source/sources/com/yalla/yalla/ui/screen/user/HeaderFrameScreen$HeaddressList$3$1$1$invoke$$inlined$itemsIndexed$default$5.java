@@ -1,0 +1,17 @@
+package com.yalla.yalla.ui.screen.user;
+
+import kotlin.Metadata;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
+import kotlin.jvm.internal.SourceDebugExtension;
+
+/* JADX INFO: loaded from: classes4.dex */
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n¢\u0006\u0002\b\u0005¨\u0006\u0006"}, d2 = {"<anonymous>", "", "T", "index", "", "invoke", "androidx/compose/foundation/lazy/grid/LazyGridDslKt$itemsIndexed$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nLazyGridDsl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LazyGridDsl.kt\nandroidx/compose/foundation/lazy/grid/LazyGridDslKt$itemsIndexed$2\n*L\n1#1,557:1\n*E\n"})
+public final class HeaderFrameScreen$HeaddressList$3$1$1$invoke$$inlined$itemsIndexed$default$5 extends Lambda implements Function1<Integer, Object> {
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Integer num) {
+        num.intValue();
+        throw null;
+    }
+}

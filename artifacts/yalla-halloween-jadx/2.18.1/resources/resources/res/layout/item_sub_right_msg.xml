@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="end|center_vertical"
+    android:layout_gravity="end"
+    android:id="@+id/right_msg_text_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="40dp">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/svga_message_status"
+        android:visibility="gone"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="6dp"
+        app:source="svga/anim_loading_status.svga"/>
+    <ImageView
+        android:id="@+id/send_fail_msg"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_message_fail"
+        android:layout_marginEnd="6dp"/>
+    <com.app.base.view.FixTextView
+        android:textSize="14dp"
+        android:textColor="#333333"
+        android:gravity="center_vertical"
+        android:layout_gravity="end"
+        android:id="@+id/right_msg_textview"
+        android:background="@drawable/bg_chitchat_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:text=""
+        android:includeFontPadding="false"
+        style="@style/private_chat_item_bg_right"/>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.base.view.pullrefresh.XRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xrlMomentFollowing"
+    android:background="@color/white"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.app.base.view.recyclerview.FixedRecyclerView
+        android:id="@+id/rvMomentFollowing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"/>
+</com.app.base.view.pullrefresh.XRefreshLayout>

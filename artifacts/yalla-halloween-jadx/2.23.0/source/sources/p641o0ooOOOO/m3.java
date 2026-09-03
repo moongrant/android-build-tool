@@ -1,0 +1,83 @@
+package p641o0ooOOOO;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import p081o000OoOO.OooO;
+import p081o000OoOO.OooOO0;
+import p584o0oOooO0.oO00O0oO;
+import p584o0oOooO0.oO00OO0O;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class m3 implements OooO {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NonNull
+    public final LinearLayout f58400OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NonNull
+    public final ImageView f58401OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NonNull
+    public final TextView f58402OooO0OO;
+
+    public m3(@NonNull LinearLayout linearLayout, @NonNull ImageView imageView, @NonNull TextView textView) {
+        this.f58400OooO00o = linearLayout;
+        this.f58401OooO0O0 = imageView;
+        this.f58402OooO0OO = textView;
+    }
+
+    @NonNull
+    public static m3 inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @Override // p081o000OoOO.OooO
+    @NonNull
+    public final View getRoot() {
+        return this.f58400OooO00o;
+    }
+
+    @NonNull
+    public static m3 inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View viewInflate = layoutInflater.inflate(oO00OO0O.main_activity_about, viewGroup, false);
+        if (z) {
+            viewGroup.addView(viewInflate);
+        }
+        int i = oO00O0oO.includeCheckVersion;
+        View viewOooO00o = OooOO0.OooO00o(i, viewInflate);
+        if (viewOooO00o != null) {
+            r2.OooO00o(viewOooO00o);
+            i = oO00O0oO.includePrivacyPolicy;
+            View viewOooO00o2 = OooOO0.OooO00o(i, viewInflate);
+            if (viewOooO00o2 != null) {
+                r2.OooO00o(viewOooO00o2);
+                i = oO00O0oO.includeTermsOfService;
+                View viewOooO00o3 = OooOO0.OooO00o(i, viewInflate);
+                if (viewOooO00o3 != null) {
+                    r2.OooO00o(viewOooO00o3);
+                    i = oO00O0oO.ivLogo;
+                    ImageView imageView = (ImageView) OooOO0.OooO00o(i, viewInflate);
+                    if (imageView != null) {
+                        i = oO00O0oO.layout;
+                        if (((LinearLayout) OooOO0.OooO00o(i, viewInflate)) != null) {
+                            i = oO00O0oO.versionName;
+                            TextView textView = (TextView) OooOO0.OooO00o(i, viewInflate);
+                            if (textView != null) {
+                                return new m3((LinearLayout) viewInflate, imageView, textView);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i)));
+    }
+}

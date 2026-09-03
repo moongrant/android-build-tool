@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/include_chat_private_message_time"/>
+    <include layout="@layout/include_chat_private_message_header_receive"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/niv_chat_gif"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toEndOf="@+id/niv_chat_message_header"
+        app:layout_constraintTop_toTopOf="@+id/niv_chat_message_header"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

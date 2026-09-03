@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="24dp"
+    android:layout_height="match_parent">
+    <com.yalla.netimage.NetImageView
+        android:id="@+id/ivHeader"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="6dp"/>
+    <TextView
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/tvIndex"
+        android:background="@drawable/room_shape_bg_card_hats_user_index"
+        android:layout_width="20dp"
+        android:layout_height="12dp"
+        android:layout_marginBottom="3dp"
+        android:includeFontPadding="false"/>
+</FrameLayout>

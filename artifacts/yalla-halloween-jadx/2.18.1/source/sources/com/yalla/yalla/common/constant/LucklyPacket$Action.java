@@ -1,0 +1,31 @@
+package com.yalla.yalla.common.constant;
+
+import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import kotlin.Metadata;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes2.dex */
+@Metadata(bv = {}, d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0010\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\b\b\u0086\u0001\u0018\u0000 \b2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0006R\u0017\u0010\u0004\u001a\u00020\u00038\u0006¢\u0006\f\n\u0004\b\u0004\u0010\u0005\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\tj\u0002\b\n¨\u0006\u000b"}, d2 = {"com/yalla/yalla/common/constant/LucklyPacket$Action", "", "Lcom/yalla/yalla/common/constant/LucklyPacket$Action;", "", AppMeasurementSdk.ConditionalUserProperty.VALUE, "I", "OooO00o", "()I", "Companion", "Receive", "Send", "app_YallaRelease"}, k = 1, mv = {1, 7, 1})
+public enum LucklyPacket$Action {
+    Receive(1),
+    Send(2);
+
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    @NotNull
+    public static final Companion INSTANCE = new Companion();
+    private final int value;
+
+    /* JADX INFO: renamed from: com.yalla.yalla.common.constant.LucklyPacket$Action$OooO00o, reason: from kotlin metadata */
+    public static final class Companion {
+    }
+
+    LucklyPacket$Action(int i) {
+        this.value = i;
+    }
+
+    /* JADX INFO: renamed from: OooO00o, reason: from getter */
+    public final int getValue() {
+        return this.value;
+    }
+}

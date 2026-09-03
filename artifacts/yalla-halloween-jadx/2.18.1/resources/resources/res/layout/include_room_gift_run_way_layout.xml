@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/activity_mixed_room_gift_run_way_layout"
+    android:clickable="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/include_room_gift_run_way_layout_gift_run_way_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_room_gift_run_way_layout"/>
+    <include
+        android:id="@+id/include_room_gift_run_way_layout_gift_run_way_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_room_gift_run_way_layout"/>
+</LinearLayout>

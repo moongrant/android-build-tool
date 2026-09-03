@@ -1,0 +1,98 @@
+package p206o00o0oO;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import com.code.android.yldialog.timechoose.DateScrollView;
+import o00O00o0.OooO00o;
+import o00O00o0.OooO0O0;
+import p205o00o0o0o.o000O0;
+import p205o00o0o0o.o000O00O;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class o0oOOo implements OooO00o {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NonNull
+    public final ConstraintLayout f39403OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NonNull
+    public final TextView f39404OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NonNull
+    public final TextView f39405OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    @NonNull
+    public final DateScrollView f39406OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    @NonNull
+    public final DateScrollView f39407OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    @NonNull
+    public final DateScrollView f39408OooO0o0;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    @NonNull
+    public final View f39409OooO0oO;
+
+    public o0oOOo(@NonNull ConstraintLayout constraintLayout, @NonNull TextView textView, @NonNull TextView textView2, @NonNull DateScrollView dateScrollView, @NonNull DateScrollView dateScrollView2, @NonNull DateScrollView dateScrollView3, @NonNull View view) {
+        this.f39403OooO00o = constraintLayout;
+        this.f39404OooO0O0 = textView;
+        this.f39405OooO0OO = textView2;
+        this.f39406OooO0Oo = dateScrollView;
+        this.f39408OooO0o0 = dateScrollView2;
+        this.f39407OooO0o = dateScrollView3;
+        this.f39409OooO0oO = view;
+    }
+
+    @NonNull
+    public static o0oOOo inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @Override // o00O00o0.OooO00o
+    @NonNull
+    public final View getRoot() {
+        return this.f39403OooO00o;
+    }
+
+    @NonNull
+    public static o0oOOo inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View viewOooO00o;
+        View viewInflate = layoutInflater.inflate(o000O0.choose_interval_time_dialog, viewGroup, false);
+        if (z) {
+            viewGroup.addView(viewInflate);
+        }
+        int i = o000O00O.btnCancel;
+        TextView textView = (TextView) OooO0O0.OooO00o(i, viewInflate);
+        if (textView != null) {
+            i = o000O00O.btnConfirm;
+            TextView textView2 = (TextView) OooO0O0.OooO00o(i, viewInflate);
+            if (textView2 != null) {
+                i = o000O00O.dateDays;
+                DateScrollView dateScrollView = (DateScrollView) OooO0O0.OooO00o(i, viewInflate);
+                if (dateScrollView != null) {
+                    i = o000O00O.dateHours;
+                    DateScrollView dateScrollView2 = (DateScrollView) OooO0O0.OooO00o(i, viewInflate);
+                    if (dateScrollView2 != null) {
+                        i = o000O00O.dateMin;
+                        DateScrollView dateScrollView3 = (DateScrollView) OooO0O0.OooO00o(i, viewInflate);
+                        if (dateScrollView3 != null && (viewOooO00o = OooO0O0.OooO00o((i = o000O00O.viewLine), viewInflate)) != null) {
+                            return new o0oOOo((ConstraintLayout) viewInflate, textView, textView2, dateScrollView, dateScrollView2, dateScrollView3, viewOooO00o);
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i)));
+    }
+}

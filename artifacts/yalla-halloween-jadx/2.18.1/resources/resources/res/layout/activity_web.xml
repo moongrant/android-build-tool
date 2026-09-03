@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.yalla.yalla.common.ui.view.BaseWebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            android:id="@+id/emptyView"
+            layout="@layout/nodata_layout"/>
+        <ProgressBar
+            android:id="@+id/pb_web"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:max="100"
+            android:progress="1"
+            android:secondaryProgress="100"
+            android:progressDrawable="@drawable/progressbar_web"
+            android:hapticFeedbackEnabled="false"
+            style="?android:attr/progressBarStyleHorizontal"/>
+        <ImageView
+            android:layout_gravity="end"
+            android:id="@+id/iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <ImageView
+            android:layout_gravity="end"
+            android:id="@+id/ivClose"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_ad_web_close"
+            android:scaleType="centerInside"/>
+    </FrameLayout>
+</LinearLayout>

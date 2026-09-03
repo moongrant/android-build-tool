@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <LinearLayout style="@style/ChatItemSystem">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:text="@string/PK_start"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layoutDirection="ltr"
+            android:paddingEnd="16dp">
+            <TextView
+                android:textSize="13sp"
+                android:textColor="@color/color_white_80"
+                android:id="@+id/tvRoomNameA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="110dp"
+                android:singleLine="true"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_room_pk_vs"/>
+            <TextView
+                android:textSize="13sp"
+                android:textColor="@color/color_white_80"
+                android:id="@+id/tvRoomNameB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="110dp"
+                android:singleLine="true"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

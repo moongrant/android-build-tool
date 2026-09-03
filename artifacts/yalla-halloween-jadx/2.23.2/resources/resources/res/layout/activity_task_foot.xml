@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:id="@+id/ll_crystal_mall_entry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="15sp"
+        android:textColor="@color/crystal_mall_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/crystal_mall"
+        android:drawablePadding="3dp"
+        android:textAllCaps="false"
+        android:drawableStart="@drawable/icon_crystal_mall"
+        android:drawableEnd="@drawable/icon_crystal_mall_enter"
+        android:layout_marginStart="6dp"/>
+</LinearLayout>

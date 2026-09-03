@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS RoomTheme(roomId LONG PRIMARY KEY , roomTheme TEXT);

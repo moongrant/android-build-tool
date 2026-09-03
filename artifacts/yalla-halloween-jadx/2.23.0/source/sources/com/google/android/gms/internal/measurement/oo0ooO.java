@@ -1,0 +1,26 @@
+package com.google.android.gms.internal.measurement;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class oo0ooO extends o0OO0o {
+    @Override // com.google.android.gms.internal.measurement.o0OO0o
+    public final void OooO00o() {
+        if (!this.f15574OooO0oO) {
+            for (int i = 0; i < OooO0O0(); i++) {
+                Map.Entry entry = (Map.Entry) this.f15573OooO0o0.get(i);
+                if (((zzkr) entry.getKey()).zzc()) {
+                    entry.setValue(Collections.unmodifiableList((List) entry.getValue()));
+                }
+            }
+            for (Map.Entry entry2 : this.f15572OooO0o.isEmpty() ? o0OO0.f15559OooO0O0 : this.f15572OooO0o.entrySet()) {
+                if (((zzkr) entry2.getKey()).zzc()) {
+                    entry2.setValue(Collections.unmodifiableList((List) entry2.getValue()));
+                }
+            }
+        }
+        super.OooO00o();
+    }
+}

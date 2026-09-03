@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/layout_count_down_timer_layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:enabled="false"
+        android:id="@+id/layout_count_down_timer_btn_code"
+        android:background="@drawable/selector_btn_bg_register_sendcode"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:hint="@string/button_send"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:layout_marginEnd="16dp"
+        style="@style/text_style_z12"/>
+</LinearLayout>

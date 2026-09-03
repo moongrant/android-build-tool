@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/color_f5f5f5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/activity_test_dialog_imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_logo"
+        android:scaleType="centerCrop"/>
+    <ListView
+        android:id="@+id/activity_test_dialog_listView"
+        android:background="@color/color_0BA2CE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/transparent"
+        android:dividerHeight="0px"/>
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/shape_bg_dialog_gift_send_bottom_black"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/tv_title"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:text="@string/Game_Center"
+        android:paddingHorizontal="16dp"/>
+    <com.app.base.view.recyclerview.FixedRecyclerView
+        android:id="@+id/rvGameBox"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minHeight="125dp"
+        android:paddingHorizontal="9dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

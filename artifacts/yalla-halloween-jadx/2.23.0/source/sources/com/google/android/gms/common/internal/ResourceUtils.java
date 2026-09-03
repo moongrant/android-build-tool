@@ -1,0 +1,12 @@
+package com.google.android.gms.common.internal;
+
+import android.net.Uri;
+import com.google.android.gms.common.annotation.KeepForSdk;
+
+/* JADX INFO: loaded from: classes3.dex */
+@KeepForSdk
+public final class ResourceUtils {
+    static {
+        new Uri.Builder().scheme("android.resource").authority("com.google.android.gms").appendPath("drawable").build();
+    }
+}

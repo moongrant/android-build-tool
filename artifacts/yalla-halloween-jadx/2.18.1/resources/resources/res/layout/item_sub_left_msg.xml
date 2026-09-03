@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.base.view.FixTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="14dp"
+    android:textColor="@color/color_333333"
+    android:ellipsize="end"
+    android:gravity="center_vertical"
+    android:id="@+id/left_msg_textview"
+    android:background="@drawable/bg_chitchat_receive"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="40dp"
+    android:text=""
+    android:includeFontPadding="false"
+    style="@style/private_chat_item_bg_left"/>

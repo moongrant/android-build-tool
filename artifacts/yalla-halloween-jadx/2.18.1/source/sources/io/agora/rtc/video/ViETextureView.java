@@ -1,0 +1,438 @@
+package io.agora.rtc.video;
+
+import OooO00o.OooO00o;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.SurfaceTexture;
+import android.opengl.GLES20;
+import android.os.Build;
+import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
+import io.agora.rtc.gl.VideoFrame;
+import io.agora.rtc.internal.Logging;
+import java.util.concurrent.locks.ReentrantLock;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.opengles.GL10;
+
+/* JADX INFO: loaded from: classes3.dex */
+public class ViETextureView extends GLTextureView implements GLTextureView.Renderer, GLRendererController {
+    private static final boolean DEBUG = false;
+    private static String TAG = "ViETextureView";
+    private int mLastRotation;
+    private ReentrantLock nativeFunctionLock;
+    private boolean nativeFunctionsRegisted;
+    private int nativeGLPragram;
+    private boolean nativeGLResourceUpdated;
+    private int[] nativeGLTextureId;
+    private long nativeObject;
+    private int nativeOesGLProgram;
+    private boolean openGLCreated;
+    private boolean surfaceCreated;
+    private TextureRendererHelper textureRendererHelper;
+    private int viewHeight;
+    private int viewWidth;
+
+    public ViETextureView(Context context) {
+        super(context);
+        this.surfaceCreated = false;
+        this.openGLCreated = false;
+        this.nativeFunctionsRegisted = false;
+        this.nativeFunctionLock = new ReentrantLock();
+        this.nativeObject = 0L;
+        this.viewWidth = 0;
+        this.viewHeight = 0;
+        this.nativeGLPragram = 0;
+        this.nativeGLTextureId = new int[]{0, 0, 0};
+        this.nativeOesGLProgram = 0;
+        this.nativeGLResourceUpdated = false;
+        this.mLastRotation = -1;
+        this.textureRendererHelper = new TextureRendererHelper();
+        init(false, 0, 0);
+    }
+
+    private native int CreateOpenGLNative(long j, int i, int i2);
+
+    private native void DrawNative(long j);
+
+    private native void DrawNativeTexture(long j, int i, int i2, int i3, int i4, int i5, long j2, long j3, boolean z);
+
+    public static boolean IsSupported(Context context) {
+        return ((ActivityManager) context.getSystemService("activity")).getDeviceConfigurationInfo().reqGlEsVersion >= 131072;
+    }
+
+    private native void OnCfgChangedNative(long j, int i);
+
+    public static boolean UseOpenGL2(Object obj) {
+        return ViETextureView.class.isInstance(obj);
+    }
+
+    private static void checkEglError(String str, EGL10 egl10) {
+        while (true) {
+            int iEglGetError = egl10.eglGetError();
+            if (iEglGetError == 12288) {
+                return;
+            }
+            try {
+                Logging.e(TAG, String.format("%s: EGL error: 0x%x", str, Integer.valueOf(iEglGetError)));
+            } catch (Exception unused) {
+                Logging.e("AGORA_SDK", "egl error!!, video may not displayed!!");
+            }
+        }
+    }
+
+    private int checkOrientation() {
+        Display defaultDisplay;
+        if (getContext() == null || getContext().getSystemService("window") == null || (defaultDisplay = ((WindowManager) getContext().getSystemService("window")).getDefaultDisplay()) == null) {
+            return this.mLastRotation;
+        }
+        try {
+            return defaultDisplay.getRotation();
+        } catch (RuntimeException unused) {
+            Logging.e(TAG, "checkOrientation display getRotation throwout exception");
+            return this.mLastRotation;
+        }
+    }
+
+    private void init(boolean z, int i, int i2) {
+        setEGLContextClientVersion(2);
+        setEGLConfigChooser(z ? new ConfigChooser(8, 8, 8, 8, i, i2) : new ConfigChooser(5, 6, 5, 0, i, i2));
+        setRenderer(this);
+        setRenderMode(0);
+    }
+
+    private void updateOrientation() {
+        int iCheckOrientation = checkOrientation();
+        if (iCheckOrientation != this.mLastRotation) {
+            this.nativeFunctionLock.lock();
+            if (this.nativeFunctionsRegisted) {
+                OnCfgChangedNative(this.nativeObject, iCheckOrientation);
+            }
+            this.mLastRotation = iCheckOrientation;
+            this.nativeFunctionLock.unlock();
+        }
+    }
+
+    public void DeRegisterNativeObject() {
+        this.nativeFunctionLock.lock();
+        this.nativeFunctionsRegisted = false;
+        this.openGLCreated = false;
+        this.nativeObject = 0L;
+        this.nativeFunctionLock.unlock();
+        releaseOpenGLResource();
+    }
+
+    @Override // io.agora.rtc.video.GLRendererController
+    public int GetAPILevel() {
+        return Build.VERSION.SDK_INT;
+    }
+
+    @Override // io.agora.rtc.video.GLRendererController
+    public void ReDraw() {
+        if (this.surfaceCreated) {
+            requestRender();
+        }
+    }
+
+    public void RegisterNativeObject(long j) {
+        this.nativeFunctionLock.lock();
+        this.nativeObject = j;
+        this.nativeFunctionsRegisted = true;
+        this.nativeFunctionLock.unlock();
+    }
+
+    public void UpdateOpenGLResource(int[] iArr) {
+        this.nativeGLPragram = iArr[0];
+        int i = 0;
+        while (i < 3) {
+            int i2 = i + 1;
+            this.nativeGLTextureId[i] = iArr[i2];
+            i = i2;
+        }
+        this.nativeOesGLProgram = iArr[4];
+        this.nativeGLResourceUpdated = true;
+        String str = TAG;
+        StringBuilder sbOooO0o0 = OooO00o.OooO0o0("UpdateOpenGLResource, program = ");
+        sbOooO0o0.append(iArr[0]);
+        sbOooO0o0.append(" texture[0~2] = ");
+        sbOooO0o0.append(iArr[1]);
+        sbOooO0o0.append(" ,");
+        sbOooO0o0.append(iArr[2]);
+        sbOooO0o0.append(" ,");
+        sbOooO0o0.append(iArr[3]);
+        Logging.i(str, sbOooO0o0.toString());
+    }
+
+    public void deliverVideoTextureFrame(VideoFrame.TextureBuffer textureBuffer, int i, long j, long j2, boolean z) {
+        this.textureRendererHelper.setTextureSourceIncoming(true);
+        synchronized (this) {
+            this.textureRendererHelper.onTextureFrameArrived(textureBuffer, i, j, j2, z);
+        }
+    }
+
+    public void doDrawFrame(boolean z) {
+        if (z) {
+            try {
+                this.textureRendererHelper.onDrawFrame(this);
+            } catch (Exception e) {
+                String str = TAG;
+                StringBuilder sbOooO0o0 = OooO00o.OooO0o0("onDrawFrame Exception: ");
+                sbOooO0o0.append(e.toString());
+                Logging.e(str, sbOooO0o0.toString());
+            }
+            if (this.textureRendererHelper.useJavaRender()) {
+                return;
+            }
+        }
+        updateOrientation();
+        this.nativeFunctionLock.lock();
+        if (!this.nativeFunctionsRegisted || !this.surfaceCreated) {
+            this.nativeFunctionLock.unlock();
+            return;
+        }
+        if (!this.openGLCreated) {
+            if (CreateOpenGLNative(this.nativeObject, this.viewWidth, this.viewHeight) != 0) {
+                this.nativeFunctionLock.unlock();
+                return;
+            }
+            this.openGLCreated = true;
+        }
+        if (z) {
+            TextureRendererHelper.TextureFrame textureFrame = this.textureRendererHelper.getTextureFrame();
+            if (textureFrame != null) {
+                DrawNativeTexture(this.nativeObject, textureFrame.textureType, textureFrame.texId, textureFrame.frameWidth, textureFrame.frameHeight, textureFrame.rotation, textureFrame.renderMs, textureFrame.firstRecvTimestamp, textureFrame.isDummy);
+            }
+        } else {
+            DrawNative(this.nativeObject);
+        }
+        this.nativeFunctionLock.unlock();
+    }
+
+    @Override // android.view.View
+    public void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        updateOrientation();
+    }
+
+    @Override // io.agora.rtc.video.GLTextureView.Renderer
+    public void onDrawFrame(GL10 gl10) {
+        if (!this.textureRendererHelper.isTextureSourceIncoming()) {
+            doDrawFrame(false);
+        } else {
+            synchronized (this) {
+                doDrawFrame(true);
+            }
+        }
+    }
+
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        if (this.textureRendererHelper.isTextureSourceIncoming()) {
+            this.textureRendererHelper.onFrameAvailable(this);
+        }
+    }
+
+    @Override // io.agora.rtc.video.GLTextureView.Renderer
+    public void onSurfaceChanged(GL10 gl10, int i, int i2) {
+        this.surfaceCreated = true;
+        this.viewWidth = i;
+        this.viewHeight = i2;
+        synchronized (this) {
+            this.textureRendererHelper.onSurfaceChanged(this, i, i2);
+            if (this.textureRendererHelper.useJavaRender()) {
+                return;
+            }
+            Log.i("AGORA_SDK", "Surface changed to width " + i + " height " + i2);
+            this.nativeFunctionLock.lock();
+            try {
+                try {
+                    if (this.nativeFunctionsRegisted && CreateOpenGLNative(this.nativeObject, i, i2) == 0) {
+                        this.openGLCreated = true;
+                    }
+                } catch (Exception unused) {
+                    Logging.w("AGORA_SDK", "Exception occurs when create RtcEngine");
+                }
+            } finally {
+                this.nativeFunctionLock.unlock();
+            }
+        }
+    }
+
+    @Override // io.agora.rtc.video.GLTextureView.Renderer
+    public void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
+    }
+
+    @Override // io.agora.rtc.video.GLTextureView.Renderer
+    public void onSurfaceDestroyed(GL10 gl10) {
+    }
+
+    public void reDrawJavaI420(VideoFrame.I420Buffer i420Buffer, int i, long j) {
+        this.textureRendererHelper.setTextureSourceIncoming(false);
+        AgoraVideoDebugger.onI420Buffer(i420Buffer, i, j);
+        ReDraw();
+    }
+
+    public void reDrawNativeI420() {
+        this.textureRendererHelper.setTextureSourceIncoming(false);
+        ReDraw();
+    }
+
+    public void releaseOpenGLResource() {
+        if (this.nativeGLResourceUpdated) {
+            queueEvent(new Runnable() { // from class: io.agora.rtc.video.ViETextureView.2
+                @Override // java.lang.Runnable
+                public void run() {
+                    String str = ViETextureView.TAG;
+                    StringBuilder sbOooO0o0 = OooO00o.OooO0o0("releaseOpenGLResource, value = ");
+                    sbOooO0o0.append(ViETextureView.this.nativeGLPragram);
+                    sbOooO0o0.append(" ,");
+                    sbOooO0o0.append(ViETextureView.this.nativeGLTextureId[0]);
+                    sbOooO0o0.append(" ,");
+                    sbOooO0o0.append(ViETextureView.this.nativeGLTextureId[1]);
+                    sbOooO0o0.append(" ,");
+                    sbOooO0o0.append(ViETextureView.this.nativeGLTextureId[2]);
+                    sbOooO0o0.append(", ");
+                    sbOooO0o0.append(ViETextureView.this.nativeOesGLProgram);
+                    Logging.i(str, sbOooO0o0.toString());
+                    if (ViETextureView.this.nativeGLPragram > 0) {
+                        GLES20.glDeleteProgram(ViETextureView.this.nativeGLPragram);
+                    }
+                    if (ViETextureView.this.nativeGLTextureId[0] > 0) {
+                        GLES20.glDeleteTextures(3, ViETextureView.this.nativeGLTextureId, 0);
+                    }
+                    if (ViETextureView.this.nativeOesGLProgram > 0) {
+                        GLES20.glDeleteProgram(ViETextureView.this.nativeOesGLProgram);
+                    }
+                    int iGlGetError = GLES20.glGetError();
+                    if (iGlGetError != 0) {
+                        Logging.e(ViETextureView.TAG, "glDelete error: " + iGlGetError);
+                    }
+                }
+            });
+            this.nativeGLResourceUpdated = false;
+        }
+    }
+
+    @Override // io.agora.rtc.video.GLTextureView
+    public void surfaceDestroyed(SurfaceTexture surfaceTexture) {
+        queueEvent(new Runnable() { // from class: io.agora.rtc.video.ViETextureView.1
+            @Override // java.lang.Runnable
+            public void run() {
+                synchronized (ViETextureView.this) {
+                    ViETextureView.this.surfaceCreated = false;
+                    ViETextureView.this.textureRendererHelper.releaseSurfaceTexture();
+                }
+            }
+        });
+        super.surfaceDestroyed(surfaceTexture);
+    }
+
+    public void textureRenderThreadWillExit() {
+        synchronized (this) {
+            Logging.i(TAG, "texture render thread will exit");
+            this.textureRendererHelper.releaseProducerResourceIfNotYet();
+        }
+    }
+
+    public static class ConfigChooser implements GLTextureView.EGLConfigChooser {
+        private static int EGL_OPENGL_ES2_BIT = 4;
+        private static int[] s_configAttribs2 = {12324, 4, 12323, 4, 12322, 4, 12352, 4, 12344};
+        public int mAlphaSize;
+        public int mBlueSize;
+        public int mDepthSize;
+        public int mGreenSize;
+        public int mRedSize;
+        public int mStencilSize;
+        private int[] mValue = new int[1];
+
+        public ConfigChooser(int i, int i2, int i3, int i4, int i5, int i6) {
+            this.mRedSize = i;
+            this.mGreenSize = i2;
+            this.mBlueSize = i3;
+            this.mAlphaSize = i4;
+            this.mDepthSize = i5;
+            this.mStencilSize = i6;
+        }
+
+        private int findConfigAttrib(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i, int i2) {
+            return egl10.eglGetConfigAttrib(eGLDisplay, eGLConfig, i, this.mValue) ? this.mValue[0] : i2;
+        }
+
+        private void printConfig(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
+            int[] iArr = {12320, 12321, 12322, 12323, 12324, 12325, 12326, 12327, 12328, 12329, 12330, 12331, 12332, 12333, 12334, 12335, 12336, 12337, 12338, 12339, 12340, 12343, 12342, 12341, 12345, 12346, 12347, 12348, 12349, 12350, 12351, 12352, 12354};
+            String[] strArr = {"EGL_BUFFER_SIZE", "EGL_ALPHA_SIZE", "EGL_BLUE_SIZE", "EGL_GREEN_SIZE", "EGL_RED_SIZE", "EGL_DEPTH_SIZE", "EGL_STENCIL_SIZE", "EGL_CONFIG_CAVEAT", "EGL_CONFIG_ID", "EGL_LEVEL", "EGL_MAX_PBUFFER_HEIGHT", "EGL_MAX_PBUFFER_PIXELS", "EGL_MAX_PBUFFER_WIDTH", "EGL_NATIVE_RENDERABLE", "EGL_NATIVE_VISUAL_ID", "EGL_NATIVE_VISUAL_TYPE", "EGL_PRESERVED_RESOURCES", "EGL_SAMPLES", "EGL_SAMPLE_BUFFERS", "EGL_SURFACE_TYPE", "EGL_TRANSPARENT_TYPE", "EGL_TRANSPARENT_RED_VALUE", "EGL_TRANSPARENT_GREEN_VALUE", "EGL_TRANSPARENT_BLUE_VALUE", "EGL_BIND_TO_TEXTURE_RGB", "EGL_BIND_TO_TEXTURE_RGBA", "EGL_MIN_SWAP_INTERVAL", "EGL_MAX_SWAP_INTERVAL", "EGL_LUMINANCE_SIZE", "EGL_ALPHA_MASK_SIZE", "EGL_COLOR_BUFFER_TYPE", "EGL_RENDERABLE_TYPE", "EGL_CONFORMANT"};
+            int[] iArr2 = new int[1];
+            for (int i = 0; i < 33; i++) {
+                int i2 = iArr[i];
+                String str = strArr[i];
+                if (egl10.eglGetConfigAttrib(eGLDisplay, eGLConfig, i2, iArr2)) {
+                    Logging.w(ViETextureView.TAG, String.format("  %s: %d\n", str, Integer.valueOf(iArr2[0])));
+                } else {
+                    while (egl10.eglGetError() != 12288) {
+                    }
+                }
+            }
+        }
+
+        private void printConfigs(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig[] eGLConfigArr) {
+            int length = eGLConfigArr.length;
+            Logging.w(ViETextureView.TAG, String.format("%d configurations", Integer.valueOf(length)));
+            for (int i = 0; i < length; i++) {
+                Logging.w(ViETextureView.TAG, String.format("Configuration %d:\n", Integer.valueOf(i)));
+                printConfig(egl10, eGLDisplay, eGLConfigArr[i]);
+            }
+        }
+
+        @Override // io.agora.rtc.video.GLTextureView.EGLConfigChooser
+        public EGLConfig chooseConfig(EGL10 egl10, EGLDisplay eGLDisplay) {
+            int[] iArr = new int[1];
+            egl10.eglChooseConfig(eGLDisplay, s_configAttribs2, null, 0, iArr);
+            int i = iArr[0];
+            if (i <= 0) {
+                Logging.w(ViETextureView.TAG, "no configurations found");
+                return null;
+            }
+            EGLConfig[] eGLConfigArr = new EGLConfig[i];
+            egl10.eglChooseConfig(eGLDisplay, s_configAttribs2, eGLConfigArr, i, iArr);
+            return chooseConfig(egl10, eGLDisplay, eGLConfigArr);
+        }
+
+        public EGLConfig chooseConfig(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig[] eGLConfigArr) {
+            for (EGLConfig eGLConfig : eGLConfigArr) {
+                int iFindConfigAttrib = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12325, 0);
+                int iFindConfigAttrib2 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12326, 0);
+                if (iFindConfigAttrib >= this.mDepthSize && iFindConfigAttrib2 >= this.mStencilSize) {
+                    int iFindConfigAttrib3 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12324, 0);
+                    int iFindConfigAttrib4 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12323, 0);
+                    int iFindConfigAttrib5 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12322, 0);
+                    int iFindConfigAttrib6 = findConfigAttrib(egl10, eGLDisplay, eGLConfig, 12321, 0);
+                    if (iFindConfigAttrib3 == this.mRedSize && iFindConfigAttrib4 == this.mGreenSize && iFindConfigAttrib5 == this.mBlueSize && iFindConfigAttrib6 == this.mAlphaSize) {
+                        return eGLConfig;
+                    }
+                }
+            }
+            return null;
+        }
+    }
+
+    public ViETextureView(Context context, boolean z, int i, int i2) {
+        super(context);
+        this.surfaceCreated = false;
+        this.openGLCreated = false;
+        this.nativeFunctionsRegisted = false;
+        this.nativeFunctionLock = new ReentrantLock();
+        this.nativeObject = 0L;
+        this.viewWidth = 0;
+        this.viewHeight = 0;
+        this.nativeGLPragram = 0;
+        this.nativeGLTextureId = new int[]{0, 0, 0};
+        this.nativeOesGLProgram = 0;
+        this.nativeGLResourceUpdated = false;
+        this.mLastRotation = -1;
+        this.textureRendererHelper = new TextureRendererHelper();
+        init(z, i, i2);
+    }
+}

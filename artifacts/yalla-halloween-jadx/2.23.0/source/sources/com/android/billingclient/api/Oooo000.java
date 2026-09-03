@@ -1,0 +1,8 @@
+package com.android.billingclient.api;
+
+import androidx.annotation.NonNull;
+
+/* JADX INFO: loaded from: classes2.dex */
+public interface Oooo000 {
+    void OooO00o(@NonNull OooOo00 oooOo00, @NonNull String str);
+}

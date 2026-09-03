@@ -1,0 +1,34 @@
+package o0OOOOO;
+
+import android.app.Activity;
+import com.twitter.sdk.android.core.o00O0O;
+import java.util.concurrent.atomic.AtomicReference;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class OooO0O0 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final AtomicReference<OooO00o> f42807OooO00o = new AtomicReference<>(null);
+
+    public final boolean OooO00o(Activity activity, OooO00o oooO00o) {
+        AtomicReference<OooO00o> atomicReference = this.f42807OooO00o;
+        boolean z = true;
+        if (atomicReference.get() != null) {
+            o00O0O.OooO0OO().OooO0OO("Authorize already in progress");
+            return false;
+        }
+        if (!oooO00o.OooO00o(activity)) {
+            return false;
+        }
+        while (!atomicReference.compareAndSet(null, oooO00o)) {
+            if (atomicReference.get() != null) {
+                z = false;
+                break;
+            }
+        }
+        if (!z) {
+            o00O0O.OooO0OO().OooO0OO("Failed to update authHandler, authorize already in progress.");
+        }
+        return z;
+    }
+}

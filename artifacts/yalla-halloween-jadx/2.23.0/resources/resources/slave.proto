@@ -1,0 +1,702 @@
+syntax = "proto3";
+
+package slave;
+
+import "empty.proto";
+
+// java 语法特别选项
+option java_package = "com.app.base.protobuf";
+option java_outer_classname = "MessageIM";
+
+service Slave {
+  // 被动通知接口
+  rpc Notify(NotifyRequest) returns (stream NotifyReply) {}
+  // 主动接收消息
+  rpc Receive(ReceiveRequest) returns (ReceiveReply) {}
+  // 确认消息收到
+  rpc Confirm(ConfirmRequest) returns (Empty) {}
+  // 发送文字消息
+  rpc Say(SayRequest) returns (SayReply) {}
+  // 赠送礼物
+  rpc SendGift(SendGiftRequest) returns (SendGiftReply) {}
+  // 发送语音消息
+  rpc SendVoice(SendVoiceRequest) returns (SendVoiceReply) {}
+  // 发送Gif表情
+  rpc GifEmoticon(GifEmoticonIn) returns(Empty) {}
+  // 添加好友
+  rpc FriendAdd(FriendAddRequest) returns (FriendAddReply) {}
+  // 删除好友
+  rpc FriendDelete(FriendDeleteRequest) returns (Empty) {}
+  // 处理加好友请求
+  rpc FriendApply(FriendApplyRequest) returns (Empty) {}
+  // 查询用户信息
+  rpc UserInfo(UserInfoRequest) returns (UserInfoReply) {}
+  // 检查好友关系
+  rpc FriendCheck(FriendCheckRequest) returns (FriendCheckReply) {}
+  // 好友拉黑
+  rpc FriendBlock(FriendBlockRequest) returns (Empty) {}
+  // 好友取消拉黑
+  rpc FriendUnblock(FriendUnblockRequest) returns (Empty) {}
+  // 发送特殊表情信息
+  rpc SendEmoticon (SendEmoticonRequest) returns (SendEmoticonReply) {}
+  // 用户封禁状态查询
+  rpc BanStatus (BanStatusIn) returns (BanStatusOut) {}
+  // 分享房间
+  rpc ShareRoom (ShareRoomIn) returns (Empty) {}
+}
+
+
+//==================================以下为客户端接口模型============================//
+
+// 通用错误提示700
+message ImError700 {
+  int32 type = 1; // 通知类型 1:弹窗 2:Toast
+  string msg = 2; // 通知概述
+}
+
+// 吉祥物GIF表情请求参数
+message GifEmoticonIn {
+  int64 fromId = 1;     // 发送人
+  int64 toId = 2;     // 接收人
+  string gifurl = 3;    // 表情地址
+  int32 gifid = 4;     // 表情id
+}
+
+// 文字消息请求参数
+message SayRequest {
+  int64 toId = 1;           // 目标用户ID
+  string message = 2;       // 消息内容
+  string mid = 16;           // 消息ID
+}
+
+// 文字消息返回参数
+message SayReply {
+  int64 time = 1;   // UTC时间戳
+}
+
+// 通知接口请求参数
+message NotifyRequest {
+  int32 version = 1;        // 客户端版本号
+  int32 platform = 2;         // 客户端平台
+  string device = 3;         // 设备号
+  int64 userId = 4;
+  string sign = 5;
+}
+
+// 通知接口响应参数
+message NotifyReply {
+  int32 type = 1;           // 通知类型         100 心跳 200 新消息  300 2.7.1 新增 token
+  string message = 2;       // 通知概述
+}
+
+message ReceiveRequest {
+  int64 maxMsgTime = 1;     // 最大消息时间
+}
+
+// 主动获取消息接口
+message ReceiveReply {
+  repeated Message messages = 1;    // 消息列表
+  bool more = 2;                    // 是否存在更多消息
+}
+
+// 通用消息信息模型
+message Message {
+  string mid = 1;           // 消息ID
+  int32 head = 2;           // 消息类型
+  bytes body = 3;          // 消息主体
+  int64 fromId = 4;         // 来源用户ID
+  int64 time = 5;           // 消息发送时间
+  int32 version = 6;      // 消息版本，对应body的格式为json还是protobuf
+  int32 subType = 7;     // 消息归类类型,1 表示是私聊消息'
+}
+
+// 广播消息模型
+message Message1051 {
+  int32 viplevel = 1;       //等级
+  int32 NVipLv = 2;       //新等级
+}
+
+// 广播消息模型
+message Message2102 {
+  int32 code = 1;           // 类型
+  int32 area = 2;           // 大区
+  string msg = 3;           // 广播内容
+  int32 lang = 4;           // 语言
+  int32 appId = 5;          // 平台类型：1 Yalla, 2 Lite, 0 全平台
+}
+
+// 文字消息信息模型
+message Message2103 {
+  string content = 1;               // 消息内容
+  int32 warn = 2;   // 是否包含需要提醒的敏感词信息  1 包含 0 不包含
+}
+
+// 礼物消息信息模型
+message Message2105 {
+  int32 giftId = 1;                 // 礼物ID
+  int32 number = 2;                 // 礼物数量
+  string giftURL = 3;               // 礼物地址
+}
+
+// 语音消息信息模型
+message Message2109 {
+  int32 duration = 1;             // 语音时长
+  string url = 2;                 // 语音文件地址
+}
+
+// Gif表情消息
+message Message2119 {
+  string gifurl = 1;    // 表情地址
+  int32  gifid = 2;     // 表情id
+}
+
+// 更新用户余额消息模型
+message Message2110 {
+  int64 balance = 1;               // 用户金币余额
+}
+
+// 添加好友消息模型
+message Message2111 {
+  int64 fromId = 1;             // 来源用户ID
+  string msg = 2;               // 验证消息
+  string nickName = 3;          // 来源昵称
+  string headPhoto = 4;         // 来源头像
+  int32 vip = 5;                // 是否vip 没使用
+  int32 vipLevel = 6;           // vip级别 没使用
+  int32 userLevel = 7;          // 用户等级
+}
+
+// 加好友反馈消息模型
+message Message2112 {
+  int64 fromId = 1;           // 来源用户ID
+  int32 result = 2;         // 处理意见 1 同意 0 不同意
+}
+
+// 被好友删除消息模型
+message Message2113 {
+  int64 fromId = 1;           // 来源用户ID（被该用户删除）
+}
+
+// 朋友圈操作消息模型(点赞，评论，回复，被@)
+message Message2114 {
+  string content = 1;           // 通知内容
+}
+
+// 特殊表情消息模型
+message Message2115 {
+  int32 type = 1;             // 特殊表情的类型 0 骰子类型 1 石头剪刀布表情类型
+  int32 number = 2;           // 表情对应的数值 骰子数值对应1-6， 石头剪刀布数值对应1-3
+}
+
+// Task任务完成通知
+message Message2116 {
+  int32 taskId = 1;           // 任务ID
+  int32 attr = 2;            // 任务类型  (默认0是每日的任务,1是成就任务)
+}
+
+// 动态加精通知
+message Message2117 {
+  int64 commentId = 1;      // 动态ID
+  int64 time = 2;           // 被加精时间戳（开罗时区）
+  string commentImg = 3;    // 动态图片，如果有
+  int64 commentId64 = 4;    // 动态ID 64bit
+}
+
+// 猜拳过期通知
+message Message2118{
+  string msg = 1;           //消息内容
+}
+
+// 圈子：圈主建群_用户加群成功后通知所有的粉丝消息_momentsNotifications
+message Message2131 {
+  int64 CircleId = 1;  // 圈子ID
+  int32 Type = 2;//类型(1-建群结果通知,2-加群结果通知)
+  string GroupOpenId = 3;  //群openId
+  string CircleHead = 4;  // 圈子图片
+  string CircleName = 5;  // 圈子名称
+  int64 UserId = 6;  // 用户id
+  string NickName = 7;  // 用户昵称
+  string HeadUrl = 8;  // 用户头像
+}
+
+// 圈子：建群_加群结果消息通知_主要用于用户创建群成功后回到圈子主页来查询群基本信息接口_更新圈子主页进入群的入口按钮
+message Message2132 {
+  int64 UserId = 1;  // 用户id
+  int64 CircleId = 2;  // 圈子ID
+  int32 Type = 3;//类型(1-建群结果通知,2-加群结果通知)
+}
+
+//圈子的审核成功、失败、解散系统消息会通过私聊的 1500 消息下发
+message Message1500 {
+  int32 type = 1;         // 1 成功  2 失败 3 解散
+  int32 circleId = 2;     // 圈子Id
+  string msg = 3;         // 通知文字
+  int64 circleUserId = 4; // 圈主Id
+  string circleName = 5;  // 圈子名称
+  int32 failType = 6;     // 圈子审核不通过原因
+  // 圈子不通过原因：
+  // 10：being unclear（主题不明确）
+  // 20：containing multiple subjects（主题过多）
+  // 30：being similar to existing topics（同类型主题过多）
+  // 40：containing advertisements（涉及广告）
+  // 50：containing objectionable content（涉及底线内容）
+}
+
+// 动态被删除通知
+message Message1501 {
+  int64 commentId = 1;     // 动态ID
+  int64 time = 2;          // 删除动态时间戳（开罗时间）
+  string commentImg = 3;   // 动态图片
+  int32 deleteType = 4;    // 删除动态原因
+  // 动态删除原因：
+  // 10：Porn & Violence（色情暴力）
+  // 20：Terror & Bloodines（恐怖血腥）
+  // 30：Cheat & Illegal action（欺诈违法）
+  // 50：Advertisement（广告）
+  // 55：Copy Others'Post（复制他人铁子）
+  // 57：Abuse/insult others（侮辱他人）
+  // 60：Others（其他）
+}
+
+// 评论加精通知
+message Message1503 {
+  int64 discoveryId = 1;   // 动态ID
+  int64 commentId = 2;     // 评论ID
+  int64 time = 3;          // 加精动态时间戳（开罗时间）
+  string commentImg = 4;   // 动态图片
+  string Content = 5;      // 动态内容
+}
+
+// 分享房间 消息回调
+message Message2120 {
+  int32 roomId = 1;   // 房间ID
+  int32 roomIdx = 2;  // 房间靓号
+  string roomIp = 3;  // 房间地址
+  string name = 4;    // 房间名称
+  string image = 5;   // 房间图片
+  string msg = 6;    // 分享评语
+  int64 i64RoomId = 7;   // 64位房间ID
+  int64 i64RoomIdx = 8;  // 64位房间靓号
+}
+
+// 分享动态 消息回调
+message Message2121 {
+  string image = 2;     // 动态图片
+  string text = 3;      // 动态文本
+  string msg = 4;        // 分享评语
+  int32 type = 5;       // 动态类型 0:纯文字动态，1:带图片的动态，3:投票。  2.14.0新加字段
+  int64 momentId64 = 6;   // 动态ID 64位置
+}
+
+// 分享圈子 消息回调
+message Message2122 {
+  int32 circleId = 2;       // 圈子ID
+  string image = 3;         // 圈子图片
+  string name = 4;          // 圈子文本
+  int32 userCount = 5;      // 圈子用户数量
+  int32 momentCount = 6;    // 圈子动态数量
+  string msg = 7;           // 分享评语
+}
+
+// 猜拳红点
+message Message2123 {
+  int32 moraTypeId = 1;       // 猜拳类型 0：猜拳结果 1：无人参与
+  int64 moraRecordId = 2;       //猜拳唯一Id
+}
+
+//Message2124 分享用户 接收方
+message Message2124 {
+  int64 userId = 1;
+  string photo = 2;          //头像
+  string nickName = 3;      //昵称
+  int64 prettyID = 4;       //ID
+  string msg = 5;           //评语
+}
+
+//Message2125 动态的评论或回复被人打赏通知
+message Message2125 {
+  //打赏
+  int64 momentId = 1;           // 动态ID
+  string momentSnapshot = 2;    // 动态首图
+  int64 commentId = 3;          // 评论ID
+  string commentContent = 4;    // 评论内容
+  int32 rewardType = 5;         // 打赏类型 1:打赏评论 2.打赏评论的回复
+  int64 time = 6;               // 被打赏时的时间戳
+  //打赏者信息
+  string nickName = 7;    // 打赏者的昵称
+  string headUrl = 8;     // 打赏者的头像
+  int64 fromUid = 9;      // 打赏者userId
+}
+
+//Message2126 动态举报结果，通知
+message Message2126 {
+  int64 momentId = 1;           // 动态或圈子ID
+  string momentSnapshot = 2;    // 动态首图
+  int32 rewardType = 3;         // 类型 1:举报动态 2.举报动态的评论 3举报圈子
+  string content = 4;           // 举报结果
+  string title = 5;             // 举报title
+  int64 commentId = 7;          // 评论id 2.16.0新增
+  string commentContent = 8;    // 评论内容 2.16.0新增
+}
+
+//朋友圈评论点赞通知
+message Message1000 {
+  int64  praiseUserId = 1; //点赞用户ID
+  string praiseHeadUrl = 2; //点赞用户头像
+  string praiseNickname = 3; //点赞用户昵称
+  string dyImage = 4; //动态图片
+  int64 dyId = 5;  //动态ID
+  string ccontent = 6;  //评论内容
+}
+
+//动态送礼消息
+message Message1001 {
+  int64  sendPropUserId = 1; //送礼用户ID
+  string sendHeadUrl = 2; //送礼用户头像
+  string  sendNickname = 3; //送礼用户昵称
+  string dyImage = 4;  //动态图片
+  int64 dyId = 5;  //动态ID
+  string propImage = 6; //赠送的礼物图片
+  int32 propNum = 7; //赠送的礼物数量
+}
+
+//加入圈子通知消息
+message Message1002 {
+  int32   circleId = 4;  //圈子ID
+  string  sendMsg = 5;          //提示文本
+}
+
+// 确认消息接口
+message ConfirmRequest {
+  repeated string messages = 1;     // 待确认消息ID列表
+}
+
+// 发送礼物请求参数
+message SendGiftRequest {
+  int64 toId = 1;       // 目标用户ID
+  int32 giftId = 2;     // 礼物ID
+  int32 number = 3;     // 赠送数量
+  string giftURL = 4;     // 赠送数量
+
+  string nickname = 16; // 好友请求发出者昵称
+  string headphoto = 17; // 好友请求发出者头像
+  int32 role = 18;     // 好友请求发出者角色
+}
+
+//发送礼物返回参数
+message SendGiftReply {
+  int64 balance = 1;    // 送礼人金币余额
+  int32 luckyFlag = 2;  //送礼人是否中幸运礼物  0 没有中 1 中
+  int32 luckyNum = 3;   //送礼人中幸运礼物数量
+  int64 luckyMoney = 4; //送礼人中幸运礼物的金额
+  int64 time = 5;   // UTC时间戳
+  int32 type = 6;       // 礼物类型。0 金币 1 水晶
+}
+
+// 发送盲盒礼物请求参数
+message BlindBoxGiftRequest {
+  int32 num = 1;        // 数量
+  int64 giftId = 2;     // 盲盒礼物id
+  int64 targetId = 3;   // 送给谁
+}
+
+//返回参数
+message GiftIdUrl {
+  int64 giftId = 1;
+  string giftUrl = 2;
+}
+
+// 盲盒礼物回复
+message BlindBoxGiftReply {
+  int64 balance = 1;            // 送礼人金币余额
+  repeated GiftIdUrl gifts = 2; // 返回参数
+  int64 time = 3;               // UTC时间戳，毫秒
+}
+
+// 发送语音请求参数
+message SendVoiceRequest {
+  int64 toId = 1;       // 目标用户ID
+  int32 duration = 2;   // 语音时长
+  string url = 3;       // 语音文件地址
+  string mid = 16;      // 消息ID
+}
+
+// 发送语音消息返回参数
+message SendVoiceReply {
+  int64 time = 1;   // UTC时间戳
+}
+
+// 加好友模型
+message FriendAddRequest {
+  int64 toId = 1;       // 目标用户ID
+  string msg = 2;       // 附加消息
+  string source = 3;    //来源
+}
+
+// 加好友响应模型
+message FriendAddReply {
+  int32 result = 1;     // 操作结果 1 等待对方验证 2 对方无需验证 3 已经是好友，重复添加
+}
+// 删除好友请求参数
+message FriendDeleteRequest {
+  int64 toId = 1;       // 目标用户ID
+}
+
+// 处理加好友请求参数
+message FriendApplyRequest {
+  int64 fromId = 1;     // 来源用户ID
+  int32 result = 2;     // 处理结果
+
+
+  string nickname = 16; // 好友请求发出者昵称
+  string headphoto = 17; // 好友请求发出者头像
+}
+
+// 获取用户信息请求参数
+message UserInfoRequest {
+  int64 id = 1;         // 用户ID
+}
+
+// 获取用户信息返回参数
+message UserInfoReply {
+  int64 id = 1;         // 用户ID
+  int32 level = 2;      // 用户等级
+  string nickName = 3;  // 用户昵称
+  string photo = 4;     // 用户头像
+  int32 vip = 5;        // VIP状态
+  int32 vipLevel = 6;   // VIP等级
+  int32 sex = 7;        // 性别
+  int64 prettyId = 8;   // 靓号
+  int32 role = 9;       // 用户角色
+}
+
+// 检查好友关系请求
+message FriendCheckRequest {
+  int64 target = 2;         // 目标用户ID
+}
+
+// 检查好友关系响应
+message FriendCheckReply {
+  bool isFriend = 1;        // 是否好友
+  bool isVerify = 2;        // 加对方好友是否需要验证
+  bool isBlock = 3;         // 是否把对方拉黑
+}
+
+// 好友拉黑请求
+message FriendBlockRequest {
+  int64 target = 2;         // 目标用户ID
+}
+
+// 好友取消拉黑请求
+message FriendUnblockRequest {
+  int64 target = 2;         // 目标用户ID
+}
+
+// 发送特殊表情请求参数
+message SendEmoticonRequest {
+  int64 toId = 1;       // 目标用户ID
+  int32 type = 2;   // 特殊表情的类型 0 骰子类型 1 石头剪刀布表情类型
+
+  string nickname = 16; // 好友请求发出者昵称
+  string headphoto = 17; // 好友请求发出者头像
+}
+
+// 发送特殊表情返回参数
+message SendEmoticonReply {
+  int32 type = 1;             // 特殊表情的类型 0 骰子类型 1 石头剪刀布表情类型
+  int32 number = 2;           // 表情对应的数值 骰子数值对应1-6， 石头剪刀布数值对应1-3
+  int64 balance = 3;      // 发送特殊表情后金币余额
+}
+
+// 用户封禁状态查询输入参数
+message BanStatusIn {
+  int64 userId = 1;     // 被封用户ID
+  int32 region = 2;     // 地区语言
+}
+
+// 用户封禁状态查询输出参数
+message BanStatusOut {
+  int32 status = 1;   // 封禁状态 0 正常， 1 被封
+  string reason = 2;  // 封禁原因
+  int64 expire = 3;   // 封禁截止时间戳（开罗时区）
+  int64 prettyId = 4; // 被封用户的prettyId
+}
+
+//检查用户是否存在风险请求参数如下
+message UserRiskIn {
+  int64 target = 1;         // 目标用户ID
+}
+
+//检查用户是否存在风险响应参数如下
+message UserRiskOut {
+  int32 level = 1;         // 风险级别  1 有风险，0 无风险
+
+  int64 userId = 16;       // 用户ID
+}
+
+// 分享房间
+message ShareRoomIn {
+  int64 fromId = 1;   // 发送人ID
+  repeated int64 targets = 2;   // 目标用户ID，数组，目前最多七个人
+  int32 roomId = 3;   // 房间ID
+  string msg = 4;     // 分享时的评语，最多300字符
+  int64 i64RoomId = 5;     // 分享时的评语，最多300字符
+}
+//分享动态
+message ShareMomentIn {
+  repeated int64 targets = 1;   // 目标用户ID，数组，目前最多七个人
+  string image = 3;     // 动态图片
+  string text = 4;      // 动态文本
+  string msg = 5;       // 分享评语
+  int32 type = 6;   // 动态类型 0:纯文字动态，1:带图片的动态，3:投票。  2.14.0新加字段
+  int64 momentId64 = 7;   // 动态ID 64位
+}
+
+// 分享圈子
+message ShareCircleIn {
+  repeated int64 targets = 1;   // 目标用户ID，数组，目前最多七个人
+  int32 circleId = 2;   // 圈子ID
+  string image = 3;     // 圈子图片
+  string name = 4;      // 圈子文本
+  int32 userCount = 5;    // 圈子用户数量
+  int32 momentCount = 6;  // 圈子动态数量
+  string msg = 7;          // 分享评语
+}
+
+// 分享用户
+message ShareUserProfileIn {
+  repeated int64 targets = 1;   // 接受者. 最多七个人
+  int64 userId = 2;           //该用户的用户ID
+  string photo = 3;          //头像
+  string nickName = 4;      //昵称
+  int64 prettyID = 5;       //PrettyID
+  string msg = 6;           //评语
+}
+
+//分享活动
+message ShareActivity2127 {
+  repeated int64 targets = 1;  // 目标用户ID，数组，目前最多七个人
+  string image = 2;       // 活动图片
+  string txt1 = 3;        // 文案1
+  string txt2 = 4;       // 文案2
+  string url = 5;         //活动链接
+  string msg = 6;         //评语
+  int64 activity = 7;         // 活动标志
+}
+
+//接收分享活动消息
+message ReceiveActivity2127 {
+  string image = 1;       // 活动图片
+  string txt1 = 2;        // 文案1
+  string txt2 = 3;       // 文案2
+  string url = 4;         //活动链接
+  string msg = 5;         //评语
+}
+
+// GiveRoomBackgroundIn 赠送房间主题背景
+message GiveRoomBackgroundIn {
+  int64 target = 1; // 目标用户ID
+  int32 shopId = 2; //
+  string msg = 3;  // 留言
+  string mid = 4;  // 消息id
+}
+
+// GiveRoomBackgroundOut 赠送房间主题背景
+message GiveRoomBackgroundOut {
+  string msg = 1;  // 提示toast
+  int32 dayLimit = 2; // 天数 (7天失效)
+  int64 expireTm = 3; // 过期时间,时间戳
+  int64 giveId = 4; // 增送ID
+  int64 balance = 5; // 金币余额
+}
+
+// 赠送房间背景
+message Message2128 {
+  string backgroundImgUrl = 1; // 背景缩略图
+  string backgroundName = 2; //背景名称
+  int32 dayLimit = 3;// 天数：请在7天内领取.7
+  int64 expireTm = 4;// 时间戳：提示,若未领取，将在dd/MM/yyyy 00:00（GMT+2）失效
+  string msg = 5;// 附言
+  int64 giveId = 6;// 赠送ID(唯一标记这次赠送行为)
+  string DynamicUrl = 7;// 主题动态地址
+}
+
+// 领取房间背景回执
+message Message1504 {
+  int64 giveId = 1;// 赠送ID(唯一标记这次赠送行为)
+  string mid = 2; //对应的消息ID
+}
+
+//ShareEvent 分享用户活动
+message ShareEventIn {
+  repeated int64 targets = 1;  // 目标用户ID，数组
+  int64 eventId = 2;  // 活动id
+  string eventName = 3;  // 活动名称
+  string pic = 4;  // 图片地址
+  int32 keyWord = 5;  // 活动标签
+  int64 startTime = 6;  // 开始时间
+  int64 roomId = 7;  // 房间id
+  string roomName = 8;  // 房间昵称
+  string roomIp = 9;  // 房间ip
+  int64 endTime = 10;  // 结束时间
+}
+
+//Message2129 分享用户活动
+message Message2129 {
+  int64 eventId = 1;  // 活动id
+  string eventName = 2;  // 活动名称
+  string pic = 3;  // 图片地址
+  int32 keyWord = 4;  // 活动标签
+  int64 startTime = 5;  // 开始时间
+  int64 roomId = 6;  // 房间id
+  string roomName = 7;  // 房间昵称
+  string roomIp = 8;  // 房间ip
+  int64 endTime = 9;  // 结束时间
+}
+
+//Message2130 分享投票（弃用：并入2121分享动态内）
+message Message2130 {
+  int64 voteId = 1;  // 投票id
+  string title = 2;  // 投票标题
+  string pic = 3;  // 投票图片地址
+}
+
+//Message2140 发送盲盒礼物，对方收到礼物消息
+message Message2140 {
+  repeated GiftIdUrl gifts = 1;
+}
+
+// Message2141 房间内成员召集通知
+message Message2141{
+  int64 RoomId = 1;    // 房间ID
+  string RoomName = 2;     // 房间名称
+  string RoomImage = 3;    // 房间图片
+  int64 EndTime = 4;  //召集结束时间
+}
+
+//送定制礼物
+message CustomGiftRequest {
+  int32 number = 1;    // 数量
+  int64 giftId = 2;    // 礼物id
+  int64 targetId = 3;  // 送给谁
+}
+
+//送定制礼物-回参
+message CustomGiftReply {
+  int64 balance = 1;    // 送礼人金币余额
+  int64 time = 3; // UTC时间戳，毫秒
+}
+
+// 送背包礼物
+message BackpackGiftRequest {
+  int32 num = 1;        // 数量
+  int64 giftId = 2;     // 礼物id
+  int64 targetId = 3;  // 送给谁
+}
+
+// 送背包礼物-回参 状态码：657//礼物已过期 ，658//背包被冻结
+message BackpackGiftReply {
+  int32 RemainingNum = 1;//当前礼物的剩余数量
+  int64 MinExpirationTime = 2;//最小过期时间戳
+  int64 giftId = 3;     // 礼物id
+}

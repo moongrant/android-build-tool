@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/tr_00"
+    android:paddingTop="170dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.yalla.yalla.ui.view.RadiusCardView
+        android:id="@+id/cardView"
+        android:background="@color/tr_00"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintVertical_weight="1"
+        app:rcv_topLeftRadiu="30dp"
+        app:rcv_topRightRadiu="30dp">
+        <com.yalla.yalla.ui.view.webView.BaseWebView
+            android:id="@+id/webView"
+            android:background="@color/tr_00"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.code.android.uikit.svga.SVGAView
+            android:layout_gravity="center"
+            android:id="@+id/svgaLoading"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:autoPlay="true"
+            app:source="svga/anim_loading.svga"/>
+        <include
+            android:id="@+id/vError"
+            android:background="@color/tr_00"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView"
+            layout="@layout/nodata_layout"/>
+    </com.yalla.yalla.ui.view.RadiusCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

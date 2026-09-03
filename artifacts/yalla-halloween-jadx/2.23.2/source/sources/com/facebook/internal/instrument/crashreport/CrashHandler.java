@@ -1,0 +1,156 @@
+package com.facebook.internal.instrument.crashreport;
+
+import android.util.Log;
+import androidx.annotation.RestrictTo;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.internal.Utility;
+import com.facebook.internal.instrument.ExceptionAnalyzer;
+import com.facebook.internal.instrument.InstrumentData;
+import com.facebook.internal.instrument.InstrumentUtility;
+import com.facebook.internal.instrument.crashreport.CrashHandler;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.IntIterator;
+import kotlin.jvm.JvmStatic;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import p552o0oOOo.o000OOo;
+
+/* JADX INFO: loaded from: classes3.dex */
+@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0002\b\u0007\u0018\u0000 \n2\u00020\u0001:\u0001\nB\u0011\b\u0002\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lcom/facebook/internal/instrument/crashreport/CrashHandler;", "Ljava/lang/Thread$UncaughtExceptionHandler;", "previousHandler", "(Ljava/lang/Thread$UncaughtExceptionHandler;)V", "uncaughtException", "", "t", "Ljava/lang/Thread;", "e", "", "Companion", "facebook-core_release"}, k = 1, mv = {1, 5, 1}, xi = 48)
+@RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+public final class CrashHandler implements Thread.UncaughtExceptionHandler {
+    private static final int MAX_CRASH_REPORT_NUM = 5;
+
+    @Nullable
+    private static CrashHandler instance;
+
+    @Nullable
+    private final Thread.UncaughtExceptionHandler previousHandler;
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    @NotNull
+    public static final Companion INSTANCE = new Companion(null);
+
+    @Nullable
+    private static final String TAG = CrashHandler.class.getCanonicalName();
+
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\t\u001a\u00020\nH\u0007J\b\u0010\u000b\u001a\u00020\nH\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/facebook/internal/instrument/crashreport/CrashHandler$Companion;", "", "()V", "MAX_CRASH_REPORT_NUM", "", "TAG", "", "instance", "Lcom/facebook/internal/instrument/crashreport/CrashHandler;", "enable", "", "sendExceptionReports", "facebook-core_release"}, k = 1, mv = {1, 5, 1}, xi = 48)
+    public static final class Companion {
+        private Companion() {
+        }
+
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private final void sendExceptionReports() {
+            if (Utility.isDataProcessingRestricted()) {
+                return;
+            }
+            File[] fileArrListExceptionReportFiles = InstrumentUtility.listExceptionReportFiles();
+            ArrayList arrayList = new ArrayList(fileArrListExceptionReportFiles.length);
+            for (File file : fileArrListExceptionReportFiles) {
+                arrayList.add(InstrumentData.Builder.load(file));
+            }
+            ArrayList arrayList2 = new ArrayList();
+            for (Object obj : arrayList) {
+                if (((InstrumentData) obj).isValid()) {
+                    arrayList2.add(obj);
+                }
+            }
+            final List listSortedWith = CollectionsKt.sortedWith(arrayList2, new o000OOo());
+            JSONArray jSONArray = new JSONArray();
+            Iterator<Integer> it = RangesKt.until(0, Math.min(listSortedWith.size(), 5)).iterator();
+            while (it.hasNext()) {
+                jSONArray.put(listSortedWith.get(((IntIterator) it).nextInt()));
+            }
+            InstrumentUtility.sendReports("crash_reports", jSONArray, new GraphRequest.Callback() { // from class: o0oOOo.o000000
+                @Override // com.facebook.GraphRequest.Callback
+                public final void onCompleted(GraphResponse graphResponse) {
+                    CrashHandler.Companion.m4159sendExceptionReports$lambda5(listSortedWith, graphResponse);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: renamed from: sendExceptionReports$lambda-2, reason: not valid java name */
+        public static final int m4158sendExceptionReports$lambda2(InstrumentData instrumentData, InstrumentData o2) {
+            Intrinsics.checkNotNullExpressionValue(o2, "o2");
+            return instrumentData.compareTo(o2);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: renamed from: sendExceptionReports$lambda-5, reason: not valid java name */
+        public static final void m4159sendExceptionReports$lambda5(List validReports, GraphResponse response) {
+            Intrinsics.checkNotNullParameter(validReports, "$validReports");
+            Intrinsics.checkNotNullParameter(response, "response");
+            try {
+                if (response.getError() == null) {
+                    JSONObject jsonObject = response.getJsonObject();
+                    if (Intrinsics.areEqual(jsonObject == null ? null : Boolean.valueOf(jsonObject.getBoolean(GraphResponse.SUCCESS_KEY)), Boolean.TRUE)) {
+                        Iterator it = validReports.iterator();
+                        while (it.hasNext()) {
+                            ((InstrumentData) it.next()).clear();
+                        }
+                    }
+                }
+            } catch (JSONException unused) {
+            }
+        }
+
+        @JvmStatic
+        public final synchronized void enable() {
+            if (FacebookSdk.getAutoLogAppEventsEnabled()) {
+                sendExceptionReports();
+            }
+            if (CrashHandler.instance != null) {
+                Log.w(CrashHandler.TAG, "Already enabled!");
+            } else {
+                CrashHandler.instance = new CrashHandler(Thread.getDefaultUncaughtExceptionHandler(), null);
+                Thread.setDefaultUncaughtExceptionHandler(CrashHandler.instance);
+            }
+        }
+    }
+
+    public /* synthetic */ CrashHandler(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, DefaultConstructorMarker defaultConstructorMarker) {
+        this(uncaughtExceptionHandler);
+    }
+
+    @JvmStatic
+    public static final synchronized void enable() {
+        INSTANCE.enable();
+    }
+
+    @Override // java.lang.Thread.UncaughtExceptionHandler
+    public void uncaughtException(@NotNull Thread t, @NotNull Throwable e) {
+        Intrinsics.checkNotNullParameter(t, "t");
+        Intrinsics.checkNotNullParameter(e, "e");
+        if (InstrumentUtility.isSDKRelatedException(e)) {
+            ExceptionAnalyzer.execute(e);
+            InstrumentData.Builder builder = InstrumentData.Builder.INSTANCE;
+            InstrumentData.Builder.build(e, InstrumentData.Type.CrashReport).save();
+        }
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.previousHandler;
+        if (uncaughtExceptionHandler == null) {
+            return;
+        }
+        uncaughtExceptionHandler.uncaughtException(t, e);
+    }
+
+    private CrashHandler(Thread.UncaughtExceptionHandler uncaughtExceptionHandler) {
+        this.previousHandler = uncaughtExceptionHandler;
+    }
+}

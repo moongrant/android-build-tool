@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/llSideTreasureBox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/ivRoomSideTreasureBox"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_room_treasure_box_side_1"
+        android:contentDescription="@null"/>
+    <ProgressBar
+        android:id="@+id/pbRoomSideTreasureBox"
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:layout_marginTop="2dp"
+        android:progressDrawable="@drawable/progressbar_treasure_box"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Pb";
+
+package messages;
+
+//圈子中帖子,被置顶/取消置顶/被移除通知(1003:置顶,  1004:取消置顶,  1005:移出圈子[圈主移出],  1006:移出圈子[管理员移出])
+message MessageDyToppedAndRemove{
+  //圈子ID
+  int64 objectId = 1;
+  //动态首图
+  string dyImg = 2;
+  //处理者头像
+  string hostImg=3;
+  //圈子名称
+  string circleName=4;
+  //处理者ID
+  int64 hostId=5;
+}

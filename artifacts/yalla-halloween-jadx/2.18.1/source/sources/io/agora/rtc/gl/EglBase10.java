@@ -1,0 +1,320 @@
+package io.agora.rtc.gl;
+
+import OooO00o.OooO00o;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.SurfaceTexture;
+import android.view.Surface;
+import android.view.SurfaceHolder;
+import io.agora.rtc.internal.Logging;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import p042Ooooo0o.o000O0Oo;
+
+/* JADX INFO: loaded from: classes3.dex */
+public class EglBase10 extends EglBase {
+    private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
+    private static final String TAG = "EglBase10";
+    private final EGL10 egl;
+    private EGLConfig eglConfig;
+    private EGLContext eglContext;
+    private EGLDisplay eglDisplay;
+    private EGLSurface eglSurface = EGL10.EGL_NO_SURFACE;
+
+    public static class Context implements EglBase.Context {
+        private final EGLContext eglContext;
+
+        public Context(EGLContext eGLContext) {
+            this.eglContext = eGLContext;
+        }
+
+        @Override // io.agora.rtc.gl.EglBase.Context
+        public int getEglType() {
+            return 0;
+        }
+
+        @Override // io.agora.rtc.gl.EglBase.Context
+        public long getNativeEglContext() {
+            return 0L;
+        }
+
+        @Override // io.agora.rtc.gl.EglBase.Context
+        public Object getRealEglContext() {
+            return this.eglContext;
+        }
+    }
+
+    public EglBase10(Context context, int[] iArr) {
+        Logging.i(TAG, "create, this: " + this + ", shared: " + context);
+        this.egl = (EGL10) EGLContext.getEGL();
+        EGLDisplay eglDisplay = getEglDisplay();
+        this.eglDisplay = eglDisplay;
+        EGLConfig eglConfig = getEglConfig(eglDisplay, iArr);
+        this.eglConfig = eglConfig;
+        this.eglContext = createEglContext(context, this.eglDisplay, eglConfig);
+    }
+
+    private void checkIsNotReleased() {
+        if (this.eglDisplay == EGL10.EGL_NO_DISPLAY || this.eglContext == EGL10.EGL_NO_CONTEXT || this.eglConfig == null) {
+            throw new RuntimeException("This object has been released");
+        }
+    }
+
+    private EGLContext createEglContext(Context context, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
+        EGLContext eGLContextEglCreateContext;
+        if (context != null && context.eglContext == EGL10.EGL_NO_CONTEXT) {
+            throw new RuntimeException("Invalid sharedContext");
+        }
+        int[] iArr = {EGL_CONTEXT_CLIENT_VERSION, 2, 12344};
+        EGLContext eGLContext = context == null ? EGL10.EGL_NO_CONTEXT : context.eglContext;
+        synchronized (EglBase.lock) {
+            eGLContextEglCreateContext = this.egl.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, iArr);
+            if (this.egl.eglGetError() != 12288) {
+                eGLContextEglCreateContext = this.egl.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{EGL_CONTEXT_CLIENT_VERSION, 3, 12344});
+            }
+        }
+        if (eGLContextEglCreateContext != EGL10.EGL_NO_CONTEXT) {
+            return eGLContextEglCreateContext;
+        }
+        StringBuilder sbOooO0o0 = OooO00o.OooO0o0("Failed to create EGL context: 0x");
+        sbOooO0o0.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(sbOooO0o0.toString());
+    }
+
+    private void createSurfaceInternal(Object obj) {
+        if (!(obj instanceof SurfaceHolder) && !(obj instanceof SurfaceTexture)) {
+            throw new IllegalStateException("Input must be either a SurfaceHolder or SurfaceTexture");
+        }
+        checkIsNotReleased();
+        if (hasSurface()) {
+            throw new RuntimeException("Already has an EGLSurface");
+        }
+        this.eglSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
+        if (hasSurface()) {
+            return;
+        }
+        StringBuilder sbOooO0o0 = OooO00o.OooO0o0("Failed to create window surface: 0x");
+        sbOooO0o0.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(sbOooO0o0.toString());
+    }
+
+    private EGLConfig getEglConfig(EGLDisplay eGLDisplay, int[] iArr) {
+        EGLConfig[] eGLConfigArr = new EGLConfig[1];
+        int[] iArr2 = new int[1];
+        if (!this.egl.eglChooseConfig(eGLDisplay, iArr, eGLConfigArr, 1, iArr2)) {
+            StringBuilder sbOooO0o0 = OooO00o.OooO0o0("eglChooseConfig failed: 0x");
+            sbOooO0o0.append(Integer.toHexString(this.egl.eglGetError()));
+            throw new RuntimeException(sbOooO0o0.toString());
+        }
+        if (iArr2[0] <= 0) {
+            throw new RuntimeException("Unable to find any matching EGL config");
+        }
+        EGLConfig eGLConfig = eGLConfigArr[0];
+        if (eGLConfig != null) {
+            return eGLConfig;
+        }
+        throw new RuntimeException("eglChooseConfig returned null");
+    }
+
+    private EGLDisplay getEglDisplay() {
+        EGLDisplay eGLDisplayEglGetDisplay = this.egl.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+        if (eGLDisplayEglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+            StringBuilder sbOooO0o0 = OooO00o.OooO0o0("Unable to get EGL10 display: 0x");
+            sbOooO0o0.append(Integer.toHexString(this.egl.eglGetError()));
+            throw new RuntimeException(sbOooO0o0.toString());
+        }
+        if (this.egl.eglInitialize(eGLDisplayEglGetDisplay, new int[2])) {
+            return eGLDisplayEglGetDisplay;
+        }
+        StringBuilder sbOooO0o1 = OooO00o.OooO0o0("Unable to initialize EGL10: 0x");
+        sbOooO0o1.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(sbOooO0o1.toString());
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void createDummyPbufferSurface() {
+        createPbufferSurface(1, 1);
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void createPbufferSurface(int i, int i2) {
+        checkIsNotReleased();
+        if (hasSurface()) {
+            throw new RuntimeException("Already has an EGLSurface");
+        }
+        this.eglSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i, 12374, i2, 12344});
+        if (hasSurface()) {
+            return;
+        }
+        StringBuilder sbOooO0O0 = o000O0Oo.OooO0O0("Failed to create pixel buffer surface with size ", i, "x", i2, ": 0x");
+        sbOooO0O0.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(sbOooO0O0.toString());
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void createSurface(Surface surface) {
+        createSurfaceInternal(new SurfaceHolder(surface) { // from class: io.agora.rtc.gl.EglBase10.1FakeSurfaceHolder
+            private final Surface surface;
+
+            {
+                this.surface = surface;
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void addCallback(SurfaceHolder.Callback callback) {
+            }
+
+            @Override // android.view.SurfaceHolder
+            public Surface getSurface() {
+                return this.surface;
+            }
+
+            @Override // android.view.SurfaceHolder
+            public Rect getSurfaceFrame() {
+                return null;
+            }
+
+            @Override // android.view.SurfaceHolder
+            public boolean isCreating() {
+                return false;
+            }
+
+            @Override // android.view.SurfaceHolder
+            public Canvas lockCanvas() {
+                return null;
+            }
+
+            @Override // android.view.SurfaceHolder
+            public Canvas lockCanvas(Rect rect) {
+                return null;
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void removeCallback(SurfaceHolder.Callback callback) {
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void setFixedSize(int i, int i2) {
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void setFormat(int i) {
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void setKeepScreenOn(boolean z) {
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void setSizeFromLayout() {
+            }
+
+            @Override // android.view.SurfaceHolder
+            @Deprecated
+            public void setType(int i) {
+            }
+
+            @Override // android.view.SurfaceHolder
+            public void unlockCanvasAndPost(Canvas canvas) {
+            }
+        });
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void detachCurrent() {
+        synchronized (EglBase.lock) {
+            EGL10 egl10 = this.egl;
+            EGLDisplay eGLDisplay = this.eglDisplay;
+            EGLSurface eGLSurface = EGL10.EGL_NO_SURFACE;
+            if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL10.EGL_NO_CONTEXT)) {
+                throw new RuntimeException("eglDetachCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
+            }
+        }
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public EglBase.Context getEglBaseContext() {
+        return new Context(this.eglContext);
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public boolean hasSurface() {
+        EGLSurface eGLSurface = this.eglSurface;
+        return (eGLSurface == null || eGLSurface.equals(EGL10.EGL_NO_SURFACE)) ? false : true;
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void makeCurrent() {
+        checkIsNotReleased();
+        if (!hasSurface()) {
+            throw new RuntimeException("No EGLSurface - can't make current");
+        }
+        synchronized (EglBase.lock) {
+            EGL10 egl10 = this.egl;
+            EGLDisplay eGLDisplay = this.eglDisplay;
+            EGLSurface eGLSurface = this.eglSurface;
+            if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.eglContext)) {
+                throw new RuntimeException("eglMakeCurrent failed: 0x" + Integer.toHexString(this.egl.eglGetError()));
+            }
+        }
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void release() {
+        Logging.i(TAG, "release, this: " + this);
+        checkIsNotReleased();
+        releaseSurface();
+        detachCurrent();
+        this.egl.eglDestroyContext(this.eglDisplay, this.eglContext);
+        this.egl.eglTerminate(this.eglDisplay);
+        this.eglContext = EGL10.EGL_NO_CONTEXT;
+        this.eglDisplay = EGL10.EGL_NO_DISPLAY;
+        this.eglConfig = null;
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void releaseSurface() {
+        if (hasSurface()) {
+            this.egl.eglDestroySurface(this.eglDisplay, this.eglSurface);
+            this.eglSurface = EGL10.EGL_NO_SURFACE;
+        }
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public int surfaceHeight() {
+        int[] iArr = new int[1];
+        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12374, iArr);
+        return iArr[0];
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public int surfaceWidth() {
+        int[] iArr = new int[1];
+        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12375, iArr);
+        return iArr[0];
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void swapBuffers() {
+        checkIsNotReleased();
+        if (!hasSurface()) {
+            throw new RuntimeException("No EGLSurface - can't swap buffers");
+        }
+        synchronized (EglBase.lock) {
+            this.egl.eglSwapBuffers(this.eglDisplay, this.eglSurface);
+        }
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void createSurface(SurfaceTexture surfaceTexture) {
+        createSurfaceInternal(surfaceTexture);
+    }
+
+    @Override // io.agora.rtc.gl.EglBase
+    public void swapBuffers(long j) {
+        swapBuffers();
+    }
+}

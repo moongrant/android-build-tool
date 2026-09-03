@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/include_chat_private_message_time"/>
+    <include layout="@layout/include_chat_private_message_header_send"/>
+    <com.code.android.uikit.svga.SVGAView
+        android:id="@+id/svga_message_status"
+        android:visibility="visible"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_private_chat_item_bg_voice"
+        app:layout_constraintEnd_toStartOf="@+id/ll_private_chat_item_bg_voice"
+        app:layout_constraintTop_toTopOf="@+id/ll_private_chat_item_bg_voice"/>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/ll_private_chat_item_bg_voice"
+        android:background="@drawable/bg_chitchat_send_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/niv_chat_message_header"
+        app:layout_constraintTop_toTopOf="@+id/niv_chat_message_header"
+        style="@style/private_chat_item_bg_right">
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@color/font_black"
+            android:id="@+id/tv_chat_voice_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1s"/>
+        <com.code.android.uikit.svga.SVGAView
+            android:id="@+id/svga_chat_voice"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_chitchat_send_play3"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

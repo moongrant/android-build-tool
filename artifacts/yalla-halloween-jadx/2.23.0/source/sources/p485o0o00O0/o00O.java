@@ -1,0 +1,40 @@
+package p485o0o00O0;
+
+import com.yalla.yalla.model.moment.MomentCommentDetailModel;
+import com.yalla.yalla.model.moment.MomentDetailModel;
+import com.yalla.yalla.ui.activity.moment.MomentReplyActivity;
+import java.util.HashMap;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import p402o0Oo0OOO.o000O;
+import p534o0o0Oo00.o000oOoO;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class o00O extends Lambda implements Function1<o000oOoO, Unit> {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final /* synthetic */ MomentReplyActivity f47829OooO0Oo;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o00O(MomentReplyActivity momentReplyActivity) {
+        super(1);
+        this.f47829OooO0Oo = momentReplyActivity;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final Unit invoke(o000oOoO o000oooo2) {
+        o000oOoO it = o000oooo2;
+        Intrinsics.checkNotNullParameter(it, "it");
+        MomentReplyActivity momentReplyActivity = this.f47829OooO0Oo;
+        MomentDetailModel currentMomentDetail = momentReplyActivity.OooOoO().getCurrentMomentDetail();
+        Long lValueOf = currentMomentDetail != null ? Long.valueOf(currentMomentDetail.getId()) : null;
+        MomentCommentDetailModel currentComment = momentReplyActivity.OooOoO().getCurrentComment();
+        Long lValueOf2 = currentComment != null ? Long.valueOf(currentComment.getId()) : null;
+        Long currentReplyId = momentReplyActivity.OooOoO().getCurrentReplyId();
+        HashMap<String, o000oOoO> map = o000O.f44463OooO00o;
+        o000O.OooO0O0(lValueOf, lValueOf2, currentReplyId, it);
+        return Unit.INSTANCE;
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/color_f5f5f5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <com.yalla.yalla.ui.view.ScrollableViews
+        android:id="@+id/scrollNumberViewsM"
+        android:background="@color/tr_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+    <com.yalla.yalla.ui.view.ScrollableViews
+        android:id="@+id/scrollNumberViewsH"
+        android:background="@color/tr_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+    <com.yalla.yalla.ui.view.ScrollableViews
+        android:id="@+id/scrollNumberViewsX"
+        android:background="@color/tr_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+    <com.yalla.yalla.ui.view.ScrollableViews
+        android:id="@+id/scrollNumberViewsXX"
+        android:background="@color/tr_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

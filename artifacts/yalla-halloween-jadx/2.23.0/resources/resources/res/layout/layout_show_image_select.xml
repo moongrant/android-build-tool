@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_show_image_select_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.app.selectPicture.view.photoview.PhotoView
+        android:id="@+id/layout_show_image_select_pic_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ucrop_pic"/>
+    <TextView
+        android:textSize="16dp"
+        android:textColor="@color/select_picture_color_FFFFFFFF"
+        android:gravity="center"
+        android:id="@+id/layout_show_image_select_tv_select"
+        android:background="@drawable/ucrop_select_gray"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="12dp"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

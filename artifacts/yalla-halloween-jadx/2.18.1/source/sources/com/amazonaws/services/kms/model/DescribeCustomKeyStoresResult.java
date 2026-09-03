@@ -1,0 +1,46 @@
+package com.amazonaws.services.kms.model;
+
+import OooO00o.OooO00o;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+/* JADX INFO: loaded from: classes.dex */
+public class DescribeCustomKeyStoresResult implements Serializable {
+
+    /* JADX INFO: renamed from: Oooo0o, reason: collision with root package name */
+    public List<CustomKeyStoresListEntry> f10599Oooo0o = new ArrayList();
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof DescribeCustomKeyStoresResult)) {
+            return false;
+        }
+        List<CustomKeyStoresListEntry> list = ((DescribeCustomKeyStoresResult) obj).f10599Oooo0o;
+        boolean z = list == null;
+        List<CustomKeyStoresListEntry> list2 = this.f10599Oooo0o;
+        if (z ^ (list2 == null)) {
+            return false;
+        }
+        return list == null || list.equals(list2);
+    }
+
+    public final int hashCode() {
+        List<CustomKeyStoresListEntry> list = this.f10599Oooo0o;
+        return (((((list == null ? 0 : list.hashCode()) + 31) * 31) + 0) * 31) + 0;
+    }
+
+    public final String toString() {
+        StringBuilder sbOooO0o0 = OooO00o.OooO0o0("{");
+        if (this.f10599Oooo0o != null) {
+            StringBuilder sbOooO0o1 = OooO00o.OooO0o0("CustomKeyStores: ");
+            sbOooO0o1.append(this.f10599Oooo0o);
+            sbOooO0o1.append(",");
+            sbOooO0o0.append(sbOooO0o1.toString());
+        }
+        sbOooO0o0.append("}");
+        return sbOooO0o0.toString();
+    }
+}

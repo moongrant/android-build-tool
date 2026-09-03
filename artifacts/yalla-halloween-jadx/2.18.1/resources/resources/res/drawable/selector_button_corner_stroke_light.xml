@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_enabled="true"
+        android:drawable="@drawable/dialog_bg_round_bg_white_stroke_r19"/>
+    <item
+        android:state_enabled="false"
+        android:drawable="@drawable/dialog_bg_round_bg_white_stroke_r19"/>
+</selector>

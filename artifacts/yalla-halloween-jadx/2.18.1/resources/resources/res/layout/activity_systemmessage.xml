@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <com.app.base.view.pullrefresh.XRefreshLayout
+        android:orientation="vertical"
+        android:id="@+id/pullToRefreshView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/listview"
+            android:paddingTop="8dp"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"/>
+    </com.app.base.view.pullrefresh.XRefreshLayout>
+    <RelativeLayout
+        android:id="@+id/nodata_relative"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_empty_message_system"
+            android:layout_above="@+id/noda_text"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/noda_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blank_no_system_msg"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</LinearLayout>

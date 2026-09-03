@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/vTermsService"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@drawable/ic_terms_service_tips_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48.5dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/color_333333"
+            android:id="@+id/tvTermsServiceTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/terms_service_update_tips"/>
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/color_white"
+            android:gravity="center"
+            android:id="@+id/tvTermsServiceAccept"
+            android:background="@drawable/shape_corner_solid_00d8c9"
+            android:layout_width="230dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/Accept"/>
+    </LinearLayout>
+</FrameLayout>

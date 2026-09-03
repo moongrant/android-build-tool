@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.base.view.HeaderLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@+id/headerLayout"
+    android:background="@color/color_00d8c9"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:minHeight="50dp"
+    app:navigationIcon="@drawable/btn_return"
+    app:popupTheme="@style/popup_theme"
+    app:theme="@style/ToolbarTheme"
+    app:title=""
+    app:titleTextAppearance="@style/ToolbarTitleTextAppearance"/>

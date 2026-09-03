@@ -1,0 +1,36 @@
+package com.google.android.gms.measurement;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import androidx.annotation.MainThread;
+import androidx.annotation.NonNull;
+import androidx.legacy.content.WakefulBroadcastReceiver;
+import com.google.android.gms.measurement.internal.zzfm;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class AppMeasurementReceiver extends WakefulBroadcastReceiver implements zzfm.zza {
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    public zzfm f15867OooO0o;
+
+    @NonNull
+    public BroadcastReceiver.PendingResult doGoAsync() {
+        return goAsync();
+    }
+
+    @Override // com.google.android.gms.measurement.internal.zzfm.zza
+    @MainThread
+    public void doStartService(@NonNull Context context, @NonNull Intent intent) {
+        WakefulBroadcastReceiver.startWakefulService(context, intent);
+    }
+
+    @Override // android.content.BroadcastReceiver
+    @MainThread
+    public void onReceive(@NonNull Context context, @NonNull Intent intent) {
+        if (this.f15867OooO0o == null) {
+            this.f15867OooO0o = new zzfm(this);
+        }
+        this.f15867OooO0o.zza(context, intent);
+    }
+}

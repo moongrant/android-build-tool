@@ -1,0 +1,12 @@
+package com.amazonaws.services.s3.internal;
+
+import com.amazonaws.http.HttpResponse;
+import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
+
+/* JADX INFO: loaded from: classes.dex */
+public class DeleteObjectTaggingHeaderHandler implements HeaderHandler<DeleteObjectTaggingResult> {
+    @Override // com.amazonaws.services.s3.internal.HeaderHandler
+    public final void OooO00o(DeleteObjectTaggingResult deleteObjectTaggingResult, HttpResponse httpResponse) {
+        httpResponse.f10399OooO0Oo.get("x-amz-version-id");
+    }
+}

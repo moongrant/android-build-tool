@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_turntable"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/svgaSideTurntable"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/room_game_turntable_not_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ProgressBar
+        android:id="@+id/pb_status"
+        android:visibility="gone"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/svgaSideTurntable"
+        app:layout_constraintStart_toStartOf="@+id/svgaSideTurntable"
+        app:layout_constraintTop_toTopOf="@+id/svgaSideTurntable"/>
+    <TextView
+        android:textSize="10sp"
+        android:textColor="@color/color_white_70"
+        android:gravity="center"
+        android:id="@+id/tvSideTurntable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/Game"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svgaSideTurntable"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

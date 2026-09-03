@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:paddingTop="15.5dp"
+    android:paddingBottom="15.5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="@drawable/yl_dialog_ripple">
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvText"
+        app:layout_constraintEnd_toStartOf="@+id/tvText"
+        app:layout_constraintTop_toTopOf="@+id/tvText"/>
+    <TextView
+        android:textSize="16dp"
+        android:textColor="@color/color_333333"
+        android:gravity="center"
+        android:id="@+id/tvText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <View
+        android:id="@+id/vRed"
+        android:background="@drawable/yl_dialog_red_point"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintStart_toEndOf="@+id/tvText"
+        app:layout_constraintTop_toTopOf="@+id/tvText"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

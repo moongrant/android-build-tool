@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.yalla.yalla.ui.view.pullrefresh.XRefreshLayout
+        android:orientation="vertical"
+        android:id="@+id/crystal_pullToRefreshView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/crystal_detail_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+    </com.yalla.yalla.ui.view.pullrefresh.XRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/include_title_layout_title"
+        layout="@layout/include_title_select"/>
+    <com.common.support.imagepicker.mediaedit.widget.MediaEditLayout
+        android:id="@+id/layout_media_edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.yalla.album.SimpleCropLayout
+            android:id="@+id/layout_media_crop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.common.support.imagepicker.mediaedit.widget.MediaEditLayout>
+</LinearLayout>

@@ -1,0 +1,1 @@
+ALTER TABLE FriendsTable ADD COLUMN sign STRING DEFAULT "";

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:orientation="vertical"
+        android:id="@+id/abl_related"
+        android:background="@color/color_f5f5f5"
+        android:visibility="visible"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stateListAnimator="@drawable/appbar_elevation"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/ctl_room"
+            android:clipChildren="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="enterAlwaysCollapsed|exitUntilCollapsed|scroll"
+            app:scrimAnimationDuration="150">
+            <androidx.compose.ui.platform.ComposeView
+                android:id="@+id/myRoomCV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/cvIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.app.base.view.ViewPagerFixed
+        android:id="@+id/vpRoomRelated"
+        android:background="@color/APP_THEME_BACKGROUND_COLOR"
+        android:layout="@layout/layout_frag_main_related_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    <ViewStub
+        android:id="@+id/vs_main_related_tips_bubble"
+        android:layout="@layout/layout_frag_main_related_tips_bubble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

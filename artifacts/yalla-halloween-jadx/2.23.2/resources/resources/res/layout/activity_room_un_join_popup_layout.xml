@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/transparent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/icon_room_popup"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="16dp"
+            android:textColor="@color/color_87000000"
+            android:gravity="center"
+            android:id="@+id/un_join"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="50dp"
+            android:text="@string/Unjoin"/>
+        <View
+            android:background="#d8d8d8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <TextView
+            android:textSize="16dp"
+            android:textColor="@color/color_87000000"
+            android:gravity="center"
+            android:id="@+id/un_join_follow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="50dp"
+            android:text="@string/un_join_and_follow"/>
+    </LinearLayout>
+</FrameLayout>

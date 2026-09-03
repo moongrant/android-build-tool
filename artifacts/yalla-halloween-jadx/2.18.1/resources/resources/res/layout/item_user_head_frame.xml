@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:gravity="center"
+        android:id="@+id/item_user_head_frame_layout"
+        android:background="@drawable/bg_round_bg_transparent_stroke_green_r12"
+        android:layout_width="82dp"
+        android:layout_height="82dp">
+        <com.yalla.yalla.common.ui.view.SVGAView
+            android:id="@+id/item_user_head_frame_image_svga"
+            android:layout_width="77dp"
+            android:layout_height="77dp"
+            android:layout_centerHorizontal="true"
+            app:antiAlias="true"
+            app:autoPlay="true"
+            app:clearsAfterStop="false"
+            app:fillMode="Forward"
+            app:loopCount="0"/>
+        <TextView
+            android:textSize="12dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:id="@+id/item_user_head_frame_txt"
+            android:background="@drawable/bg_round_bg_green_r8_h16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/header_frame_in_use"
+            android:maxLines="1"
+            android:layout_alignBottom="@+id/item_user_head_frame_image_svga"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+    </RelativeLayout>
+</LinearLayout>

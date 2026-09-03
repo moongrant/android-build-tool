@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <FrameLayout style="@style/ChatItemRoot">
+        <include layout="@layout/chatline_msg_user"/>
+        <LinearLayout style="@style/ChatItemContent">
+            <com.yalla.yalla.util.netimage.NetImageView
+                android:id="@+id/fd_img"
+                android:background="@color/color_EDEDED"
+                android:layout_width="70dp"
+                android:layout_height="70dp"/>
+        </LinearLayout>
+    </FrameLayout>
+    <ImageView style="@style/ChatItemReplyTag"/>
+</FrameLayout>

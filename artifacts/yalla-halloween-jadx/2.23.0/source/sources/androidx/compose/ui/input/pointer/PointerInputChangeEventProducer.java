@@ -1,0 +1,93 @@
+package androidx.compose.ui.input.pointer;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SourceDebugExtension;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes.dex */
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u000fB\u0005¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0007\u001a\u00020\bJ\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eR\u001d\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004ø\u0001\u0000¢\u0006\u0002\n\u0000\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006\u0010"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;", "", "()V", "previousPointerInputData", "", "Landroidx/compose/ui/input/pointer/PointerId;", "Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;", "clear", "", "produce", "Landroidx/compose/ui/input/pointer/InternalPointerEvent;", "pointerInputEvent", "Landroidx/compose/ui/input/pointer/PointerInputEvent;", "positionCalculator", "Landroidx/compose/ui/input/pointer/PositionCalculator;", "PointerInputData", "ui_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nPointerInputEventProcessor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PointerInputEventProcessor.kt\nandroidx/compose/ui/input/pointer/PointerInputChangeEventProducer\n+ 2 ListUtils.kt\nandroidx/compose/ui/util/ListUtilsKt\n*L\n1#1,235:1\n33#2,6:236\n*S KotlinDebug\n*F\n+ 1 PointerInputEventProcessor.kt\nandroidx/compose/ui/input/pointer/PointerInputChangeEventProducer\n*L\n145#1:236,6\n*E\n"})
+final class PointerInputChangeEventProducer {
+
+    @NotNull
+    private final Map<PointerId, PointerInputData> previousPointerInputData = new LinkedHashMap();
+
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0002\u0018\u00002\u00020\u0001B(\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\tø\u0001\u0000¢\u0006\u0002\u0010\nR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001c\u0010\u0004\u001a\u00020\u0005ø\u0001\u0000ø\u0001\u0001ø\u0001\u0002¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\r\u0010\u000eR\u001c\u0010\b\u001a\u00020\tø\u0001\u0000ø\u0001\u0001ø\u0001\u0002¢\u0006\n\n\u0002\u0010\u0012\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000e\u0082\u0002\u000f\n\u0002\b\u0019\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0014"}, d2 = {"Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;", "", "uptime", "", "positionOnScreen", "Landroidx/compose/ui/geometry/Offset;", "down", "", "type", "Landroidx/compose/ui/input/pointer/PointerType;", "(JJZILkotlin/jvm/internal/DefaultConstructorMarker;)V", "getDown", "()Z", "getPositionOnScreen-F1C5BW0", "()J", "J", "getType-T8wyACA", "()I", "I", "getUptime", "ui_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    public static final class PointerInputData {
+        private final boolean down;
+        private final long positionOnScreen;
+        private final int type;
+        private final long uptime;
+
+        public /* synthetic */ PointerInputData(long j, long j2, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(j, j2, z, i);
+        }
+
+        public final boolean getDown() {
+            return this.down;
+        }
+
+        /* JADX INFO: renamed from: getPositionOnScreen-F1C5BW0, reason: not valid java name and from getter */
+        public final long getPositionOnScreen() {
+            return this.positionOnScreen;
+        }
+
+        /* JADX INFO: renamed from: getType-T8wyACA, reason: not valid java name and from getter */
+        public final int getType() {
+            return this.type;
+        }
+
+        public final long getUptime() {
+            return this.uptime;
+        }
+
+        private PointerInputData(long j, long j2, boolean z, int i) {
+            this.uptime = j;
+            this.positionOnScreen = j2;
+            this.down = z;
+            this.type = i;
+        }
+    }
+
+    public final void clear() {
+        this.previousPointerInputData.clear();
+    }
+
+    @NotNull
+    public final InternalPointerEvent produce(@NotNull PointerInputEvent pointerInputEvent, @NotNull PositionCalculator positionCalculator) {
+        long uptime;
+        boolean down;
+        long jMo2757screenToLocalMKHz9U;
+        Intrinsics.checkNotNullParameter(pointerInputEvent, "pointerInputEvent");
+        Intrinsics.checkNotNullParameter(positionCalculator, "positionCalculator");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(pointerInputEvent.getPointers().size());
+        List<PointerInputEventData> pointers = pointerInputEvent.getPointers();
+        int size = pointers.size();
+        for (int i = 0; i < size; i++) {
+            PointerInputEventData pointerInputEventData = pointers.get(i);
+            PointerInputData pointerInputData = this.previousPointerInputData.get(PointerId.m2669boximpl(pointerInputEventData.m2702getIdJ3iCeTQ()));
+            if (pointerInputData == null) {
+                uptime = pointerInputEventData.getUptime();
+                jMo2757screenToLocalMKHz9U = pointerInputEventData.m2703getPositionF1C5BW0();
+                down = false;
+            } else {
+                long uptime2 = pointerInputData.getUptime();
+                uptime = uptime2;
+                down = pointerInputData.getDown();
+                jMo2757screenToLocalMKHz9U = positionCalculator.mo2757screenToLocalMKHz9U(pointerInputData.getPositionOnScreen());
+            }
+            linkedHashMap.put(PointerId.m2669boximpl(pointerInputEventData.m2702getIdJ3iCeTQ()), new PointerInputChange(pointerInputEventData.m2702getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m2703getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, jMo2757screenToLocalMKHz9U, down, false, pointerInputEventData.m2706getTypeT8wyACA(), (List) pointerInputEventData.getHistorical(), pointerInputEventData.m2705getScrollDeltaF1C5BW0(), (DefaultConstructorMarker) null));
+            if (pointerInputEventData.getDown()) {
+                this.previousPointerInputData.put(PointerId.m2669boximpl(pointerInputEventData.m2702getIdJ3iCeTQ()), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m2704getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.m2706getTypeT8wyACA(), null));
+            } else {
+                this.previousPointerInputData.remove(PointerId.m2669boximpl(pointerInputEventData.m2702getIdJ3iCeTQ()));
+            }
+        }
+        return new InternalPointerEvent(linkedHashMap, pointerInputEvent);
+    }
+}

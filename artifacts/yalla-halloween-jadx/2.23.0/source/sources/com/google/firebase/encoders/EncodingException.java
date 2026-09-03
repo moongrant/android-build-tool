@@ -1,0 +1,10 @@
+package com.google.firebase.encoders;
+
+import androidx.annotation.NonNull;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class EncodingException extends RuntimeException {
+    public EncodingException(@NonNull String str, @NonNull ClassCastException classCastException) {
+        super(str, classCastException);
+    }
+}

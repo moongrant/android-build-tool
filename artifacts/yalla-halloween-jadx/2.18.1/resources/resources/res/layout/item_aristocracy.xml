@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="12dp"
+    android:paddingEnd="12dp">
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/item_aristocracy_iv_icon"
+        android:background="@drawable/ripple_borderless"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"/>
+    <TextView
+        android:textSize="14dp"
+        android:textColor="@color/color_alpha_87_A1"
+        android:gravity="center"
+        android:id="@+id/item_aristocracy_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:includeFontPadding="false"/>
+    <TextView
+        android:textSize="12dp"
+        android:textColor="@color/color_alpha_38_A3"
+        android:gravity="center"
+        android:id="@+id/item_aristocracy_tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="11dp"
+        android:includeFontPadding="false"/>
+</LinearLayout>

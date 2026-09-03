@@ -1,0 +1,41 @@
+package retrofit2;
+
+import java.lang.annotation.Annotation;
+
+/* JADX INFO: loaded from: classes4.dex */
+final class SkipCallbackExecutorImpl implements SkipCallbackExecutor {
+    private static final SkipCallbackExecutor INSTANCE = new SkipCallbackExecutorImpl();
+
+    public static Annotation[] ensurePresent(Annotation[] annotationArr) {
+        if (o000000.OooO(annotationArr, SkipCallbackExecutor.class)) {
+            return annotationArr;
+        }
+        Annotation[] annotationArr2 = new Annotation[annotationArr.length + 1];
+        annotationArr2[0] = INSTANCE;
+        System.arraycopy(annotationArr, 0, annotationArr2, 1, annotationArr.length);
+        return annotationArr2;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public Class<? extends Annotation> annotationType() {
+        return SkipCallbackExecutor.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public boolean equals(Object obj) {
+        return obj instanceof SkipCallbackExecutor;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public int hashCode() {
+        return 0;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public String toString() {
+        StringBuilder sbOooO0o0 = OooO00o.OooO00o.OooO0o0("@");
+        sbOooO0o0.append(SkipCallbackExecutor.class.getName());
+        sbOooO0o0.append("()");
+        return sbOooO0o0.toString();
+    }
+}

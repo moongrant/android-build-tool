@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/layoutUser"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp">
+    <FrameLayout
+        android:id="@+id/layoutHead"
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+        <com.yalla.netimage.NetImageView
+            android:layout_gravity="bottom|center_horizontal"
+            android:id="@+id/ivHead"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginBottom="2dp"/>
+        <com.code.android.uikit.svga.SVGAView
+            android:id="@+id/svgaHats"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"/>
+        <com.yalla.yalla.ui.view.UserRankView
+            android:layout_gravity="bottom|center_horizontal"
+            android:id="@+id/userRankView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+    <com.yalla.yalla.ui.view.UserTagView
+        android:id="@+id/userTagView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"/>
+</LinearLayout>

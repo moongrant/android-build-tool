@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/APP_THEME_BACKGROUND_COLOR"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/base_header_layout"/>
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/color_333333"
+            android:gravity="center_vertical"
+            android:id="@+id/title_content"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/moment_notification_type_all"
+            android:drawablePadding="4dp"
+            android:drawableEnd="@drawable/ucrop_triangle_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.yalla.yalla.ui.view.StateLayout
+            android:id="@+id/ylState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"/>
+        </com.yalla.yalla.ui.view.StateLayout>
+        <com.yalla.yalla.ui.view.moment.MomentsMessagesEditView
+            android:layout_gravity="bottom"
+            android:id="@+id/momentMessageEditView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.yalla.yalla.ui.view.moment.MomentsMessagesTypeView
+            android:id="@+id/typeLayoutView"
+            android:background="@color/transparent30"
+            android:visibility="gone"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+</LinearLayout>

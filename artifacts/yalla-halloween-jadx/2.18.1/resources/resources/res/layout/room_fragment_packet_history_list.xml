@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.app.base.view.pullrefresh.XRefreshLayout
+        android:id="@+id/vRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+    </com.app.base.view.pullrefresh.XRefreshLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textSize="12sp"
+        android:textColor="@color/color_999999"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/tvTotally"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"/>
+</LinearLayout>

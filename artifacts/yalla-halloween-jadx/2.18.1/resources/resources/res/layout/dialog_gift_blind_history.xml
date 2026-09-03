@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yalla.yalla.ui.view.RadiusCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="468dp"
+    app:rcv_topLeftRadiu="30dp"
+    app:rcv_topRightRadiu="30dp">
+    <com.yalla.yalla.common.ui.view.BaseWebView
+        android:id="@+id/webView"
+        android:background="@drawable/shape_bg_dialog_gift_send_bottom_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:layout_gravity="center"
+        android:id="@+id/svgaLoading"
+        android:visibility="gone"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:autoPlay="true"
+        app:source="svga/anim_loading.svga"/>
+    <include
+        android:id="@+id/vError"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/nodata_layout"/>
+</com.yalla.yalla.ui.view.RadiusCardView>

@@ -1,0 +1,26 @@
+package com.amazonaws.services.cognitoidentity.model.transform;
+
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.http.JsonErrorResponseHandler;
+import com.amazonaws.services.cognitoidentity.model.ResourceNotFoundException;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+
+/* JADX INFO: loaded from: classes2.dex */
+public class ResourceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller {
+    public ResourceNotFoundExceptionUnmarshaller() {
+        super(ResourceNotFoundException.class);
+    }
+
+    @Override // com.amazonaws.transform.JsonErrorUnmarshaller
+    public final boolean OooO0O0(JsonErrorResponseHandler.JsonErrorResponse jsonErrorResponse) throws Exception {
+        return jsonErrorResponse.f12191OooO0O0.equals("ResourceNotFoundException");
+    }
+
+    @Override // com.amazonaws.transform.JsonErrorUnmarshaller, com.amazonaws.transform.Unmarshaller
+    /* JADX INFO: renamed from: OooO0OO */
+    public final AmazonServiceException OooO00o(JsonErrorResponseHandler.JsonErrorResponse jsonErrorResponse) throws Exception {
+        ResourceNotFoundException resourceNotFoundException = (ResourceNotFoundException) super.OooO00o(jsonErrorResponse);
+        resourceNotFoundException.f12040OooO0o0 = "ResourceNotFoundException";
+        return resourceNotFoundException;
+    }
+}

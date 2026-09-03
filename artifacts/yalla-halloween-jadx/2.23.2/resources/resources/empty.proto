@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package slave;
+
+// java 语法特别选项
+option java_package = "com.app.base.protobuf";
+option java_outer_classname = "MessageEmpty";
+
+
+message Empty {
+}

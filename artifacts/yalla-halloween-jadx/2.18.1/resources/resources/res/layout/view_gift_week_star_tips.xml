@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:id="@+id/weeklyGifts"
+        android:background="@drawable/dialog_gift_send_weekly_gifts_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginBottom="5.5dp"
+        android:text="@string/weekly_gifts"
+        android:paddingStart="22.5dp"
+        android:paddingEnd="14.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:id="@+id/weeklyGiftsStar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/dialog_gift_send_weekly_gifts_star"
+        android:layout_toStartOf="@+id/weeklyGifts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/weeklyGifts"
+        app:layout_constraintStart_toStartOf="@+id/weeklyGifts"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

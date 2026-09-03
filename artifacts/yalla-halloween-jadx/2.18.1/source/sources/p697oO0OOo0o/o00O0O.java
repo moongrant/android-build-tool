@@ -1,0 +1,171 @@
+package p697oO0OOo0o;
+
+import kotlin.collections.OooO0OO;
+import p101o000oOoo.oO00O0o0;
+import p399o0Oo00oo.o00000OO;
+
+/* JADX INFO: loaded from: classes3.dex */
+public abstract class o00O0O {
+    public static void OooO00o(int[] iArr, int[] iArr2, int[] iArr3) {
+        oO00O0o0.OooOOoo(iArr, iArr2, iArr3);
+        long j = ((long) iArr2[6]) & 4294967295L;
+        long j2 = ((long) iArr2[7]) & 4294967295L;
+        long j3 = ((long) iArr2[8]) & 4294967295L;
+        long j4 = ((long) iArr2[9]) & 4294967295L;
+        long j5 = ((long) iArr2[10]) & 4294967295L;
+        long j6 = ((long) iArr2[11]) & 4294967295L;
+        long j7 = ((long) iArr[6]) & 4294967295L;
+        long j8 = (j7 * j) + 0;
+        iArr3[12] = (int) j8;
+        long j9 = (j7 * j2) + (j8 >>> 32);
+        iArr3[13] = (int) j9;
+        long j10 = (j7 * j3) + (j9 >>> 32);
+        iArr3[14] = (int) j10;
+        long j11 = (j7 * j4) + (j10 >>> 32);
+        iArr3[15] = (int) j11;
+        long j12 = (j7 * j5) + (j11 >>> 32);
+        iArr3[16] = (int) j12;
+        long j13 = (j7 * j6) + (j12 >>> 32);
+        iArr3[17] = (int) j13;
+        iArr3[18] = (int) (j13 >>> 32);
+        int i = 1;
+        int i2 = 1;
+        int i3 = 12;
+        while (i2 < 6) {
+            i3 += i;
+            long j14 = ((long) iArr[6 + i2]) & 4294967295L;
+            int i4 = i3 + 0;
+            long j15 = (j14 * j) + (((long) iArr3[i4]) & 4294967295L) + 0;
+            iArr3[i4] = (int) j15;
+            int i5 = i3 + 1;
+            long j16 = j2;
+            long j17 = (j14 * j2) + (((long) iArr3[i5]) & 4294967295L) + (j15 >>> 32);
+            iArr3[i5] = (int) j17;
+            int i6 = i3 + 2;
+            long j18 = (j14 * j3) + (((long) iArr3[i6]) & 4294967295L) + (j17 >>> 32);
+            iArr3[i6] = (int) j18;
+            int i7 = i3 + 3;
+            long j19 = (j14 * j4) + (((long) iArr3[i7]) & 4294967295L) + (j18 >>> 32);
+            iArr3[i7] = (int) j19;
+            int i8 = i3 + 4;
+            long j20 = (j14 * j5) + (((long) iArr3[i8]) & 4294967295L) + (j19 >>> 32);
+            iArr3[i8] = (int) j20;
+            int i9 = i3 + 5;
+            long j21 = (j14 * j6) + (((long) iArr3[i9]) & 4294967295L) + (j20 >>> 32);
+            iArr3[i9] = (int) j21;
+            iArr3[i3 + 6] = (int) (j21 >>> 32);
+            i2++;
+            j3 = j3;
+            j2 = j16;
+            i = 1;
+        }
+        int iOooO0Oo = oO00O0o0.OooO0Oo(iArr3, iArr3);
+        int iOooO0OO = oO00O0o0.OooO0OO(iArr3, 18, iArr3, 12, oO00O0o0.OooO0OO(iArr3, 0, iArr3, 6, 0) + iOooO0Oo) + iOooO0Oo;
+        int[] iArr4 = new int[6];
+        int[] iArr5 = new int[6];
+        boolean z = oO00O0o0.OooO0oo(iArr, iArr, iArr4) != oO00O0o0.OooO0oo(iArr2, iArr2, iArr5);
+        int[] iArr6 = new int[12];
+        oO00O0o0.OooOOoo(iArr4, iArr5, iArr6);
+        o00000OO.OooO0o(24, iOooO0OO + (z ? o00000OO.OooO0o0(12, iArr6, iArr3, 6) : o00000OO.OooOoO0(12, iArr6, iArr3, 6)), iArr3, 18);
+    }
+
+    public static void OooO0O0(int[] iArr, int[] iArr2) {
+        oO00O0o0.OooOo0O(iArr, iArr2);
+        long j = 4294967295L;
+        long j2 = ((long) iArr[6]) & 4294967295L;
+        int i = 12;
+        int i2 = 5;
+        int i3 = 12;
+        int i4 = 0;
+        while (true) {
+            int i5 = i2 - 1;
+            long j3 = j & ((long) iArr[i2 + 6]);
+            long j4 = j3 * j3;
+            int i6 = i3 - 1;
+            iArr2[i + i6] = (i4 << 31) | ((int) (j4 >>> 33));
+            i3 = i6 - 1;
+            iArr2[i + i3] = (int) (j4 >>> 1);
+            i4 = (int) j4;
+            if (i5 <= 0) {
+                long j5 = j2 * j2;
+                iArr2[12] = (int) j5;
+                long j6 = ((long) iArr[7]) & 4294967295L;
+                long j7 = 4294967295L & ((long) iArr2[14]);
+                long j8 = (j6 * j2) + ((((long) (i4 << 31)) & 4294967295L) | (j5 >>> 33));
+                int i7 = (int) j8;
+                iArr2[13] = (((int) (j5 >>> 32)) & 1) | (i7 << 1);
+                int i8 = i7 >>> 31;
+                long j9 = ((long) iArr[8]) & 4294967295L;
+                long j10 = ((long) iArr2[15]) & 4294967295L;
+                long j11 = ((long) iArr2[16]) & 4294967295L;
+                long j12 = (j9 * j2) + j7 + (j8 >>> 32);
+                int i9 = (int) j12;
+                iArr2[14] = i8 | (i9 << 1);
+                long jOooO0O0 = OooO0OO.OooO0O0(j9, j6, j12 >>> 32, j10);
+                long j13 = j11 + (jOooO0O0 >>> 32);
+                long j14 = ((long) iArr[9]) & 4294967295L;
+                long j15 = (((long) iArr2[17]) & 4294967295L) + (j13 >>> 32);
+                long j16 = (((long) iArr2[18]) & 4294967295L) + (j15 >>> 32);
+                long j17 = j15 & 4294967295L;
+                long j18 = (j14 * j2) + (jOooO0O0 & 4294967295L);
+                int i10 = (int) j18;
+                iArr2[15] = (i9 >>> 31) | (i10 << 1);
+                int i11 = i10 >>> 31;
+                long jOooO0O1 = OooO0OO.OooO0O0(j14, j6, j18 >>> 32, j13 & 4294967295L);
+                long jOooO0O2 = OooO0OO.OooO0O0(j14, j9, jOooO0O1 >>> 32, j17);
+                long j19 = j16 + (jOooO0O2 >>> 32);
+                long j20 = ((long) iArr[10]) & 4294967295L;
+                long j21 = (((long) iArr2[19]) & 4294967295L) + (j19 >>> 32);
+                long j22 = j19 & 4294967295L;
+                long j23 = (((long) iArr2[20]) & 4294967295L) + (j21 >>> 32);
+                long j24 = j21 & 4294967295L;
+                long j25 = (j20 * j2) + (jOooO0O1 & 4294967295L);
+                int i12 = (int) j25;
+                iArr2[16] = i11 | (i12 << 1);
+                int i13 = i12 >>> 31;
+                long jOooO0O3 = OooO0OO.OooO0O0(j20, j6, j25 >>> 32, jOooO0O2 & 4294967295L);
+                long jOooO0O4 = OooO0OO.OooO0O0(j20, j9, jOooO0O3 >>> 32, j22);
+                long jOooO0O5 = OooO0OO.OooO0O0(j20, j14, jOooO0O4 >>> 32, j24);
+                long j26 = jOooO0O4 & 4294967295L;
+                long j27 = j23 + (jOooO0O5 >>> 32);
+                long j28 = ((long) iArr[11]) & 4294967295L;
+                long j29 = (((long) iArr2[21]) & 4294967295L) + (j27 >>> 32);
+                long j30 = j27 & 4294967295L;
+                long j31 = (((long) iArr2[22]) & 4294967295L) + (j29 >>> 32);
+                long j32 = (j2 * j28) + (jOooO0O3 & 4294967295L);
+                int i14 = (int) j32;
+                iArr2[17] = i13 | (i14 << 1);
+                long jOooO0O6 = OooO0OO.OooO0O0(j28, j6, j32 >>> 32, j26);
+                long jOooO0O7 = OooO0OO.OooO0O0(j28, j9, jOooO0O6 >>> 32, jOooO0O5 & 4294967295L);
+                long jOooO0O8 = OooO0OO.OooO0O0(j28, j14, jOooO0O7 >>> 32, j30);
+                long jOooO0O9 = OooO0OO.OooO0O0(j28, j20, jOooO0O8 >>> 32, j29 & 4294967295L);
+                long j33 = j31 + (jOooO0O9 >>> 32);
+                int i15 = (int) jOooO0O6;
+                iArr2[18] = (i14 >>> 31) | (i15 << 1);
+                int i16 = i15 >>> 31;
+                int i17 = (int) jOooO0O7;
+                iArr2[19] = i16 | (i17 << 1);
+                int i18 = (int) jOooO0O8;
+                iArr2[20] = (i17 >>> 31) | (i18 << 1);
+                int i19 = i18 >>> 31;
+                int i20 = (int) jOooO0O9;
+                iArr2[21] = i19 | (i20 << 1);
+                int i21 = i20 >>> 31;
+                int i22 = (int) j33;
+                iArr2[22] = i21 | (i22 << 1);
+                iArr2[23] = (i22 >>> 31) | ((iArr2[23] + ((int) (j33 >>> 32))) << 1);
+                int iOooO0Oo = oO00O0o0.OooO0Oo(iArr2, iArr2);
+                int iOooO0OO = oO00O0o0.OooO0OO(iArr2, 18, iArr2, 12, oO00O0o0.OooO0OO(iArr2, 0, iArr2, 6, 0) + iOooO0Oo) + iOooO0Oo;
+                int[] iArr3 = new int[6];
+                oO00O0o0.OooO0oo(iArr, iArr, iArr3);
+                int[] iArr4 = new int[12];
+                oO00O0o0.OooOo0O(iArr3, iArr4);
+                o00000OO.OooO0o(24, o00000OO.OooOoO0(12, iArr4, iArr2, 6) + iOooO0OO, iArr2, 18);
+                return;
+            }
+            j = 4294967295L;
+            i = 12;
+            i2 = i5;
+        }
+    }
+}

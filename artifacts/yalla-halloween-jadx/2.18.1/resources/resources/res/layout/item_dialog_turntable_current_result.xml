@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="32dp">
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:layout_gravity="center"
+        android:id="@+id/sdv_header"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/color_B2D8D8D8"
+        android:gravity="start|center_vertical"
+        android:layout_gravity="center"
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:text=""
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="15dp"/>
+</LinearLayout>

@@ -1,0 +1,17 @@
+package p253o00ooOO;
+
+import com.google.android.gms.common.config.GservicesValue;
+import com.google.android.gms.common.internal.Preconditions;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class o0O0O00 extends GservicesValue {
+    public o0O0O00(String str, String str2) {
+        super(str, str2);
+    }
+
+    @Override // com.google.android.gms.common.config.GservicesValue
+    public final /* bridge */ /* synthetic */ Object OooO00o() {
+        Preconditions.checkNotNull(null);
+        throw null;
+    }
+}

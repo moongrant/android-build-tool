@@ -1,0 +1,97 @@
+package p641o0ooOOOO;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.compose.ui.platform.ComposeView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import p081o000OoOO.OooO;
+import p081o000OoOO.OooOO0;
+import p584o0oOooO0.oO00O0oO;
+import p584o0oOooO0.oO00OO0O;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class n6 implements OooO {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NonNull
+    public final FrameLayout f58453OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NonNull
+    public final AppBarLayout f58454OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NonNull
+    public final ComposeView f58455OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    @NonNull
+    public final ComposeView f58456OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    @NonNull
+    public final CollapsingToolbarLayout f58457OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    @NonNull
+    public final ComposeView f58458OooO0o0;
+
+    public n6(@NonNull FrameLayout frameLayout, @NonNull AppBarLayout appBarLayout, @NonNull ComposeView composeView, @NonNull ComposeView composeView2, @NonNull ComposeView composeView3, @NonNull CollapsingToolbarLayout collapsingToolbarLayout) {
+        this.f58453OooO00o = frameLayout;
+        this.f58454OooO0O0 = appBarLayout;
+        this.f58455OooO0OO = composeView;
+        this.f58456OooO0Oo = composeView2;
+        this.f58458OooO0o0 = composeView3;
+        this.f58457OooO0o = collapsingToolbarLayout;
+    }
+
+    @NonNull
+    public static n6 inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @Override // p081o000OoOO.OooO
+    @NonNull
+    public final View getRoot() {
+        return this.f58453OooO00o;
+    }
+
+    @NonNull
+    public static n6 inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View viewInflate = layoutInflater.inflate(oO00OO0O.moment_fragment_following, viewGroup, false);
+        if (z) {
+            viewGroup.addView(viewInflate);
+        }
+        int i = oO00O0oO.appBarLayout;
+        AppBarLayout appBarLayout = (AppBarLayout) OooOO0.OooO00o(i, viewInflate);
+        if (appBarLayout != null) {
+            i = oO00O0oO.clTopics;
+            if (((CoordinatorLayout) OooOO0.OooO00o(i, viewInflate)) != null) {
+                i = oO00O0oO.composeViewContent;
+                ComposeView composeView = (ComposeView) OooOO0.OooO00o(i, viewInflate);
+                if (composeView != null) {
+                    i = oO00O0oO.composeViewToolBar;
+                    ComposeView composeView2 = (ComposeView) OooOO0.OooO00o(i, viewInflate);
+                    if (composeView2 != null) {
+                        i = oO00O0oO.composeViewTopBg;
+                        ComposeView composeView3 = (ComposeView) OooOO0.OooO00o(i, viewInflate);
+                        if (composeView3 != null) {
+                            i = oO00O0oO.ctl;
+                            CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) OooOO0.OooO00o(i, viewInflate);
+                            if (collapsingToolbarLayout != null) {
+                                return new n6((FrameLayout) viewInflate, appBarLayout, composeView, composeView2, composeView3, collapsingToolbarLayout);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i)));
+    }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@+id/delete_account_layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="216dp">
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:background="@drawable/account_delete_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+    </FrameLayout>
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="115dp"
+        android:src="@drawable/ic_empty_delete_account"/>
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/color_999999"
+        android:id="@+id/delete_account_layout_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/activity_delete_account"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+</LinearLayout>

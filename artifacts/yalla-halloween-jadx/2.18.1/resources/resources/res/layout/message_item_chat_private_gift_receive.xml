@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/include_chat_private_message_time"/>
+    <include layout="@layout/include_chat_private_message_header_receive"/>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:id="@+id/left_gift_layout"
+        android:background="@drawable/bg_chitchat_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@+id/niv_chat_message_header"
+        app:layout_constraintTop_toTopOf="@+id/niv_chat_message_header"
+        style="@style/private_chat_item_bg_left">
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:id="@+id/niv_chat_gift"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:paddingBottom="2dp"
+            android:visibility="visible"
+            android:layout_width="12dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_chatline_gift_x"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="6dp"/>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="ltr">
+            <ImageView
+                android:id="@+id/iv_chat_gift_hundred"
+                android:visibility="gone"
+                android:layout_width="12dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_gift_num7"
+                android:scaleType="fitCenter"/>
+            <ImageView
+                android:id="@+id/iv_chat_gift_ten"
+                android:visibility="gone"
+                android:layout_width="12dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_gift_num7"
+                android:scaleType="fitCenter"/>
+            <ImageView
+                android:id="@+id/iv_chat_gift_one"
+                android:layout_width="12dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_gift_num1"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

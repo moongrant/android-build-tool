@@ -1,0 +1,15 @@
+package io.opentelemetry.api.baggage;
+
+import com.google.auto.value.AutoValue;
+import javax.annotation.concurrent.Immutable;
+
+/* JADX INFO: loaded from: classes5.dex */
+@AutoValue
+@Immutable
+abstract class ImmutableEntryMetadata implements BaggageEntryMetadata {
+    static {
+        new AutoValue_ImmutableEntryMetadata();
+    }
+
+    public abstract String OooO00o();
+}

@@ -1,0 +1,7 @@
+package p087o000o00;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final /* synthetic */ class o0000OO0 {
+    public static /* synthetic */ void OooO00o() {
+    }
+}

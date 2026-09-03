@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/color_00d8c9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <include
+        android:id="@+id/headDetail"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        layout="@layout/room_activity_lucky_packet_detail_head"/>
+    <com.app.base.view.pullrefresh.XRefreshLayout
+        android:id="@+id/xRefreshLayout"
+        android:background="@drawable/room_shape_white_bg_top_r10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.app.base.view.pullrefresh.XRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+package com.google.android.gms.internal.measurement;
+
+import java.util.HashMap;
+import java.util.concurrent.Callable;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class zzj {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final HashMap f15263OooO00o = new HashMap();
+
+    public final void zza(String str, Callable callable) {
+        this.f15263OooO00o.put(str, callable);
+    }
+}

@@ -1,0 +1,38 @@
+package p533o0o0Oo0;
+
+import androidx.compose.runtime.Composer;
+import androidx.compose.runtime.RecomposeScopeImplKt;
+import com.yalla.yalla.ui.vm.LiveRoomVM;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Lambda;
+import p571o0oOoOO.o0O0OOO0;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class o000OOo0 extends Lambda implements Function2<Composer, Integer, Unit> {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final /* synthetic */ LiveRoomVM f54726OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    public final /* synthetic */ int f54727OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public final /* synthetic */ o0O0OOO0 f54728OooO0o0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o000OOo0(LiveRoomVM liveRoomVM, o0O0OOO0 o0o0ooo0, int i) {
+        super(2);
+        this.f54726OooO0Oo = liveRoomVM;
+        this.f54728OooO0o0 = o0o0ooo0;
+        this.f54727OooO0o = i;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Unit invoke(Composer composer, Integer num) {
+        num.intValue();
+        int iUpdateChangedFlags = RecomposeScopeImplKt.updateChangedFlags(this.f54727OooO0o | 1);
+        o00.OooO0Oo(this.f54726OooO0Oo, this.f54728OooO0o0, composer, iUpdateChangedFlags);
+        return Unit.INSTANCE;
+    }
+}

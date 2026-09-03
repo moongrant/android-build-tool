@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/color_54000000"
+        android:id="@+id/tvTips"
+        android:background="@color/color_fff5f5f5"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="34dp"
+        android:text="@string/Moment_Edit_Record_Tips"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
+</LinearLayout>

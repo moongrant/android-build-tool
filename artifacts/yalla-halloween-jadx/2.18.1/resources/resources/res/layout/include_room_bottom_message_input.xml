@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.app.base.mixedroom.room_bottom.RoomAtView
+        android:id="@+id/roomAtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.app.base.mixedroom.room_bottom.RoomReplyView
+        android:id="@+id/roomReplyView"
+        android:background="@color/tr_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/compose_room_bottom_message_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.yalla.support.keyboardpanel.panel.PanelLayout
+        android:id="@+id/pl_face"
+        android:background="@color/color_f9f9f9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <com.app.base.view.FacePanelView
+            android:id="@+id/facePanelView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.yalla.support.keyboardpanel.panel.PanelLayout>
+</LinearLayout>

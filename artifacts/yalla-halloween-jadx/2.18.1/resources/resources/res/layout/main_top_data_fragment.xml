@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.base.view.pullrefresh.XRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlEnableRefresh="false">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:orientation="vertical"
+        android:fitsSystemWindows="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:orientation="vertical"
+            android:id="@+id/abl_related"
+            android:background="@color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stateListAnimator="@drawable/appbar_elevation"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/ctl_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="enterAlwaysCollapsed|exitUntilCollapsed|scroll">
+                <include
+                    android:id="@+id/ilTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-10dp"
+                    layout="@layout/main_activity_top_head"/>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_top_data"
+            android:background="@drawable/main_top_item_bg_whit_16r"
+            android:paddingTop="16dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</com.app.base.view.pullrefresh.XRefreshLayout>

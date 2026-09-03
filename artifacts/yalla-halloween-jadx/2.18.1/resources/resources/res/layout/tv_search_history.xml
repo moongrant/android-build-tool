@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tag_item_relative"
+    android:paddingBottom="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp">
+    <TextView
+        android:textSize="13dp"
+        android:textColor="@color/color_alpha_54"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:id="@+id/tag_item"
+        android:background="@drawable/selector_btn_tag_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:text="Helloworld"
+        android:singleLine="true"
+        android:includeFontPadding="false"/>
+</RelativeLayout>

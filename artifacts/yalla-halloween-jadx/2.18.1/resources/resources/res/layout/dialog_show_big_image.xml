@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:id="@+id/ll_big_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:id="@+id/iv_theme_big_image"
+            android:layout_width="match_parent"
+            android:layout_height="530dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="34dp"/>
+        <ImageView
+            android:id="@+id/iv_close_big_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_close_theme_image"/>
+    </LinearLayout>
+</LinearLayout>

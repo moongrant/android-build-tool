@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:id="@+id/rootView"
+    android:background="@drawable/room_shape_dialog_identity_member"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="15dp">
+    <com.yalla.yalla.ui.view.UserIdentityView
+        android:id="@+id/ivIdentity"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:layout_marginStart="6dp"/>
+    <TextView
+        android:textSize="10sp"
+        android:id="@+id/tvIdentity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="6dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

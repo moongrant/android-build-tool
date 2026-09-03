@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/white"
+        android:gravity="end|center_vertical"
+        android:id="@+id/text"
+        android:background="@drawable/ic_gift_new_tips_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginBottom="5.5dp"
+        android:text="@string/Gifts_Update"
+        android:drawableEnd="@drawable/ic_topic_detail_arrow_right_white"
+        android:paddingStart="44dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.code.android.uikit.svga.SVGAView
+        android:id="@+id/giftImage"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="-15dp"
+        android:layout_toStartOf="@+id/text"
+        app:autoPlay="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

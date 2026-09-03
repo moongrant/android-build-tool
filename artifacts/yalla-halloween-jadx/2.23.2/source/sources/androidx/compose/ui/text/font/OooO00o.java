@@ -1,0 +1,8 @@
+package androidx.compose.ui.text.font;
+
+/* JADX INFO: loaded from: classes.dex */
+public final /* synthetic */ class OooO00o {
+    public static int OooO00o(Font font) {
+        return FontLoadingStrategy.INSTANCE.m3408getBlockingPKNRLFQ();
+    }
+}

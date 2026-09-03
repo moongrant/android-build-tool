@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/ChatItemRoot">
+    <include layout="@layout/chatline_msg_user"/>
+    <LinearLayout
+        android:orientation="vertical"
+        style="@style/ChatItemContent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivTag"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:src="@drawable/ic_lucky_message_tag"/>
+            <TextView
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:gravity="start|center_vertical"
+                android:id="@+id/tv_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:text="@string/luck_number"
+                android:includeFontPadding="false"
+                android:paddingStart="7dp"
+                android:paddingEnd="6dp"/>
+            <com.yalla.yalla.ui.view.NumberViews
+                android:id="@+id/luckyNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"/>
+        </LinearLayout>
+        <View
+            android:id="@+id/viewLine"
+            android:background="@color/color_white_10"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            style="@style/line_horizontal"/>
+        <TextView
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:gravity="start|center_vertical"
+            android:id="@+id/tv_yeah"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/room_lucky_number_get_lucky"
+            android:includeFontPadding="false"/>
+    </LinearLayout>
+</FrameLayout>

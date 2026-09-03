@@ -1,0 +1,71 @@
+package p641o0ooOOOO;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+import com.yalla.yalla.ui.view.StateLayout;
+import com.yalla.yalla.ui.view.refresh.RefreshLayout;
+import p081o000OoOO.OooO;
+import p081o000OoOO.OooOO0;
+import p584o0oOooO0.oO00O0oO;
+import p584o0oOooO0.oO00OO0O;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class o4 implements OooO {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NonNull
+    public final RefreshLayout f58512OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NonNull
+    public final RefreshLayout f58513OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    @NonNull
+    public final RecyclerView f58514OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    @NonNull
+    public final StateLayout f58515OooO0Oo;
+
+    public o4(@NonNull RecyclerView recyclerView, @NonNull StateLayout stateLayout, @NonNull RefreshLayout refreshLayout, @NonNull RefreshLayout refreshLayout2) {
+        this.f58512OooO00o = refreshLayout;
+        this.f58513OooO0O0 = refreshLayout2;
+        this.f58514OooO0OO = recyclerView;
+        this.f58515OooO0Oo = stateLayout;
+    }
+
+    @NonNull
+    public static o4 inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @Override // p081o000OoOO.OooO
+    @NonNull
+    public final View getRoot() {
+        return this.f58512OooO00o;
+    }
+
+    @NonNull
+    public static o4 inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View viewInflate = layoutInflater.inflate(oO00OO0O.main_fragment_search_room, viewGroup, false);
+        if (z) {
+            viewGroup.addView(viewInflate);
+        }
+        RefreshLayout refreshLayout = (RefreshLayout) viewInflate;
+        int i = oO00O0oO.rv;
+        RecyclerView recyclerView = (RecyclerView) OooOO0.OooO00o(i, viewInflate);
+        if (recyclerView != null) {
+            i = oO00O0oO.stateLayout;
+            StateLayout stateLayout = (StateLayout) OooOO0.OooO00o(i, viewInflate);
+            if (stateLayout != null) {
+                return new o4(recyclerView, stateLayout, refreshLayout, refreshLayout);
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i)));
+    }
+}

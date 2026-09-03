@@ -1,0 +1,89 @@
+syntax = "proto3";
+import  "room/room.proto";
+package roomuser;
+// java 语法特别选项
+option java_package = "com.app.base.protobuf.room";
+option java_outer_classname = "RoomMike";
+
+message MicApplyRequest {
+  int64 roomId = 1;
+  int64 userId = 2;
+  int32 op = 3;       // 1. 申请 2. 取消申请
+}
+message MicApplyReply {
+  int32 code = 1;
+  repeated UserModel users = 2;        // 用户列表
+  bool applyListEmpty = 3;         // 申请队列为空
+  int32 op = 4;       // 1. 申请 2. 取消申请
+  int64 roomId = 5;
+  int64 userId = 6;
+}
+
+// 上麦申请列表
+message MicApplyListRequest {
+  int64 roomId = 1;
+  int64 userId = 2;
+}
+
+message MicApplyListReply {
+  int32 code = 1;
+  repeated UserModel users = 2;        // 用户列表
+  bool listEmpty = 3;         // 申请队列为空
+}
+
+message MicApplyListInOutNotify {
+  int64 roomId = 1;
+  UserModel user = 2;
+  int32 inOrOut = 3;  // 1.in 2.out
+}
+
+message MicInviteFromApplyRequest {
+  int64 target = 1;       // 邀请谁上麦
+  int64 roomId = 2;
+  int64 userId = 3;
+  bool fromApplyMicList = 4;
+}
+
+message MicInviteFromApplyReply {
+  int32 code = 1;
+  int32 roomId = 2;
+  int32 targetRole = 3;
+  UserModel inviter = 4;
+  bool fromApplyMicList = 5;
+}
+
+message MicUpFromMicApplyInviteRequest {
+  int64 roomId = 1;
+  int64 userId = 2;
+  int64 inviter = 3;
+  int32 yesOrNo = 4;      // 1. 接受  2. 拒绝
+  bool fromApplyMicList = 5;
+}
+
+message MicUpFromMicApplyInviteReply {
+  int32 code = 1;
+  int32 micOrder = 2;
+  string url = 3;
+  int64 userId = 4;
+}
+message MicApplySwitchOpenRequest {
+  int64 roomId = 1;
+  int64 userId = 2;
+  int64 op = 3;          // 1. 打开 2.关闭
+}
+message MicApplySwitchOpenReply {
+  int32 code = 1;
+  int64 roomId = 2;
+  int32 status = 3;  // 1. 打开 2.关闭
+  UserModel who = 4;
+}
+message AllowAdminOpenMicApplyRequest {
+  int64 roomId = 1;
+  int64 userId = 2;
+  int64 op = 3;          // 1. 打开 2.关闭
+}
+message AllowAdminOpenMicApplyReply {
+  int32 code = 1;
+  int64 roomId = 2;
+  int32 status = 3; // 当前状态 1. 打开 2.关闭
+}

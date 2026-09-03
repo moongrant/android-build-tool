@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <include layout="@layout/chatline_msg_user"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        style="@style/ChatItemContent">
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_envelopes"/>
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp">
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/color_e2e2e2"
+                android:ellipsize="end"
+                android:id="@+id/tv_red_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="117dp"
+                android:text="Love you yyyy yyyyyyyyyyyyyyyewqewqeqyyy"
+                android:singleLine="true"/>
+            <TextView
+                android:textSize="15dp"
+                android:textColor="@color/color_FAE976"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/red_click_text"
+                android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,53 @@
+package p649o0ooOOoo;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.weieyu.yalla.R;
+import p104o000oo0O.o00O0O;
+import p104o000oo0O.o00Oo0;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class gc implements o00O0O {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NonNull
+    public final FrameLayout f49450OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    @NonNull
+    public final TextView f49451OooO0O0;
+
+    public gc(@NonNull FrameLayout frameLayout, @NonNull TextView textView) {
+        this.f49450OooO00o = frameLayout;
+        this.f49451OooO0O0 = textView;
+    }
+
+    @NonNull
+    public static gc inflate(@NonNull LayoutInflater layoutInflater) {
+        return inflate(layoutInflater, null, false);
+    }
+
+    @Override // p104o000oo0O.o00O0O
+    @NonNull
+    public final View OooO0O0() {
+        return this.f49450OooO00o;
+    }
+
+    @NonNull
+    public static gc inflate(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z) {
+        View viewInflate = layoutInflater.inflate(R.layout.message_header_share_to_friends, viewGroup, false);
+        if (z) {
+            viewGroup.addView(viewInflate);
+        }
+        TextView textView = (TextView) o00Oo0.OooO00o(viewInflate, R.id.tvTitle);
+        if (textView != null) {
+            return new gc((FrameLayout) viewInflate, textView);
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(R.id.tvTitle)));
+    }
+}

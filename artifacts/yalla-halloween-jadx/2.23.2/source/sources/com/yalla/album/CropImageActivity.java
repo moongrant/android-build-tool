@@ -1,0 +1,132 @@
+package com.yalla.album;
+
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import com.common.support.imagepicker.crop.YLCrop;
+import com.common.support.imagepicker.crop.config.Crop;
+import com.common.support.imagepicker.crop.config.CropConfig;
+import com.common.support.imagepicker.mediaedit.YLMediaEdit;
+import com.common.support.imagepicker.mediaedit.config.MediaEdit;
+import com.common.support.imagepicker.mediaedit.entities.MediaEditConfig;
+import com.common.support.imagepicker.mediaedit.entities.MediaEditSource;
+import com.common.support.imagepicker.mediaedit.widget.MediaEditLayout;
+import com.common.support.imagepicker.preview.YLPreview;
+import com.common.support.imagepicker.preview.component.image.engine.impl.GlideEngine;
+import com.common.support.imagepicker.preview.config.Preview;
+import com.facebook.appevents.internal.ViewHierarchyConstants;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import o0OO0O0.OooO00o;
+import o0OO0O0.OooO0OO;
+import o0OO0O0.OooO0o;
+import org.jetbrains.annotations.Nullable;
+import p022Oooo00O.o0O0o000;
+import p141o00OOoo.OooOOO;
+import p361o0OOOooo.o000O0O0;
+import p361o0OOOooo.o000OO0O;
+
+/* JADX INFO: loaded from: classes2.dex */
+@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Lcom/yalla/album/CropImageActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "LibSelectPicture_release"}, k = 1, mv = {1, 9, 0})
+public final class CropImageActivity extends AppCompatActivity {
+
+    /* JADX INFO: renamed from: OooOOO0, reason: collision with root package name */
+    public static final /* synthetic */ int f22056OooOOO0 = 0;
+
+    /* JADX INFO: renamed from: OooO, reason: collision with root package name */
+    public MediaEditLayout f22057OooO;
+
+    /* JADX INFO: renamed from: OooO0o, reason: collision with root package name */
+    @Nullable
+    public MediaEditConfig f22058OooO0o;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    @Nullable
+    public Uri f22059OooO0o0;
+
+    /* JADX INFO: renamed from: OooO0oO, reason: collision with root package name */
+    public Preview f22060OooO0oO;
+
+    /* JADX INFO: renamed from: OooO0oo, reason: collision with root package name */
+    public MediaEdit f22061OooO0oo;
+
+    /* JADX INFO: renamed from: OooOO0, reason: collision with root package name */
+    public Crop f22062OooOO0;
+
+    /* JADX INFO: renamed from: OooOO0O, reason: collision with root package name */
+    public float f22063OooOO0O = 1.0f;
+
+    /* JADX INFO: renamed from: OooOO0o, reason: collision with root package name */
+    public float f22064OooOO0o = 1.0f;
+
+    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    public final void onCreate(@Nullable Bundle bundle) {
+        MediaEdit mediaEdit;
+        MediaEditLayout mediaEditLayout;
+        Crop crop;
+        super.onCreate(bundle);
+        YLCrop.Companion companion = YLCrop.INSTANCE;
+        int i = OooO00o.select_picture_color_FF00d8c9;
+        Object obj = ContextCompat.f5281OooO00o;
+        this.f22062OooOO0 = companion.create(this, new CropConfig(false, false, ContextCompat.OooO0o.OooO00o(this, i), 0));
+        setContentView(OooO0o.crop_image_activity);
+        OooOOO oooOOO = new OooOOO(this);
+        oooOOO.f37517OooOO0.setVisibility(0);
+        oooOOO.f37524OooOOo0 = new o0O0o000(this);
+        View viewFindViewById = findViewById(OooO0OO.layout_media_edit);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "findViewById(...)");
+        this.f22057OooO = (MediaEditLayout) viewFindViewById;
+        Uri uri = (Uri) getIntent().getParcelableExtra("sourceData");
+        this.f22059OooO0o0 = uri;
+        if (uri == null) {
+            finish();
+        } else {
+            this.f22058OooO0o = new MediaEditConfig("yalla", false, false, false, 14, null);
+            this.f22063OooOO0O = getIntent().getFloatExtra(ViewHierarchyConstants.DIMENSION_WIDTH_KEY, 1.0f);
+            this.f22064OooOO0o = getIntent().getFloatExtra(ViewHierarchyConstants.DIMENSION_HEIGHT_KEY, 1.0f);
+            getIntent().getIntExtra("origin_width", 0);
+            getIntent().getIntExtra("origin_height", 0);
+        }
+        Uri uri2 = this.f22059OooO0o0;
+        if (uri2 != null) {
+            Preview imageEngine = YLPreview.Companion.create$default(YLPreview.INSTANCE, this, String.valueOf(uri2), 0, 0, null, 28, null).setImageEngine(GlideEngine.INSTANCE);
+            this.f22060OooO0oO = imageEngine;
+            YLMediaEdit.Companion companion2 = YLMediaEdit.INSTANCE;
+            if (imageEngine == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("mPreview");
+                imageEngine = null;
+            }
+            this.f22061OooO0oo = companion2.create(this, imageEngine, this.f22058OooO0o);
+        }
+        MediaEdit mediaEdit2 = this.f22061OooO0oo;
+        if (mediaEdit2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("mEdit");
+            mediaEdit = null;
+        } else {
+            mediaEdit = mediaEdit2;
+        }
+        MediaEditLayout mediaEditLayout2 = this.f22057OooO;
+        if (mediaEditLayout2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("layoutMediaEdit");
+            mediaEditLayout = null;
+        } else {
+            mediaEditLayout = mediaEditLayout2;
+        }
+        Preview preview = this.f22060OooO0oO;
+        if (preview == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("mPreview");
+            preview = null;
+        }
+        MediaEditSource mediaEditSource = new MediaEditSource(preview.getSingleDataSource());
+        Crop crop2 = this.f22062OooOO0;
+        if (crop2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("crop");
+            crop = null;
+        } else {
+            crop = crop2;
+        }
+        mediaEdit.setDataSource(mediaEditLayout, mediaEditSource, crop, new o000OO0O(this), new o000O0O0(this));
+    }
+}

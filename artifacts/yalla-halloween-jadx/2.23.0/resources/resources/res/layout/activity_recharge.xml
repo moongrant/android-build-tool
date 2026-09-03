@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/roomLayout"
+    android:background="@color/tr_00"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:id="@+id/topView"
+        android:background="@color/tr_00"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.yalla.yalla.ui.view.indicator.YlTableLayout
+        android:id="@+id/tabLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager"
+        app:layout_constraintTop_toBottomOf="@+id/topView"/>
+    <com.yalla.yalla.ui.view.ViewPagerFixed
+        android:id="@+id/viewPager"
+        android:background="@drawable/bg_ffffff_top_round_r20"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"/>
+    <include
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPager"
+        layout="@layout/temp_test"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <LinearLayout style="@style/ChatItemSystemFillWith">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.yalla.yalla.util.netimage.NetImageView
+                android:id="@+id/nivHeader"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="1dp"/>
+            <com.app.base.view.FixTextView
+                android:textSize="13dp"
+                android:textColor="@color/color_00d8c9"
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Announcement"
+                android:includeFontPadding="false"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="end"
+            android:orientation="horizontal"
+            android:id="@+id/llWelcome"
+            android:background="@drawable/shape_bg_room_become_member_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+            <ImageView
+                android:id="@+id/ivWelcome"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_room_become_member_welcome"/>
+            <com.app.base.view.FixTextView
+                android:textSize="12dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/room_new_member_welcome"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,7 @@
+package com.amazonaws.services.securitytoken.model;
+
+import com.amazonaws.AmazonServiceException;
+
+/* JADX INFO: loaded from: classes.dex */
+public class InvalidAuthorizationMessageException extends AmazonServiceException {
+}

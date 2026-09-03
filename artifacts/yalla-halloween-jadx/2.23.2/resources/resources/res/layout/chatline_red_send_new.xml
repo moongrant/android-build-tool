@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/chatline_msg_user"/>
+    <FrameLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginEnd="5dp"
+            style="@style/ChatItemContent">
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/color_e2e2e2"
+                android:ellipsize="end"
+                android:id="@+id/tv_red_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/I_sent_a_lucky_bag"
+                android:layout_marginEnd="8dp"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_gravity="end|center_vertical"
+            android:id="@+id/iv_mora_lucky"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/icon_envelopes"/>
+    </FrameLayout>
+</FrameLayout>

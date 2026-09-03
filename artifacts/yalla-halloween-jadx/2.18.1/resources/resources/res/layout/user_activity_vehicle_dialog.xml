@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/image"
+        android:layout_width="330dp"
+        android:layout_height="160dp"
+        app:antiAlias="true"
+        app:autoPlay="true"
+        app:clearsAfterStop="false"
+        app:fillMode="Forward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/svgaLoading"
+        android:visibility="visible"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:autoPlay="true"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
+        app:layout_constraintEnd_toEndOf="@+id/image"
+        app:layout_constraintStart_toStartOf="@+id/image"
+        app:layout_constraintTop_toTopOf="@+id/image"
+        app:source="svga/anim_loading.svga"/>
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="140dp"
+        android:src="@drawable/icon_close_theme_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

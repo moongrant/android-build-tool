@@ -1,0 +1,19 @@
+package com.amazonaws.services.s3.model;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+/* JADX INFO: loaded from: classes2.dex */
+public class BucketCrossOriginConfiguration implements Serializable {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final List<CORSRule> f12459OooO0Oo;
+
+    public BucketCrossOriginConfiguration(ArrayList arrayList) {
+        this.f12459OooO0Oo = arrayList;
+    }
+
+    public BucketCrossOriginConfiguration() {
+    }
+}

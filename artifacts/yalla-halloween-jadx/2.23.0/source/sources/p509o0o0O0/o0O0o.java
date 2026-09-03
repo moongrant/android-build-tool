@@ -1,0 +1,14 @@
+package p509o0o0O0;
+
+import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.lifecycle.MutableLiveData;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: loaded from: classes4.dex */
+@StabilityInferred(parameters = 0)
+public final class o0O0o {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    @NotNull
+    public static final MutableLiveData<Boolean> f51161OooO00o = new MutableLiveData<>(Boolean.TRUE);
+}

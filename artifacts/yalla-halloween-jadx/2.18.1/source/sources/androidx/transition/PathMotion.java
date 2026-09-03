@@ -1,0 +1,18 @@
+package androidx.transition;
+
+import android.content.Context;
+import android.graphics.Path;
+import android.util.AttributeSet;
+import androidx.annotation.NonNull;
+
+/* JADX INFO: loaded from: classes.dex */
+public abstract class PathMotion {
+    public PathMotion() {
+    }
+
+    @NonNull
+    public abstract Path OooO00o(float f, float f2, float f3, float f4);
+
+    public PathMotion(@NonNull Context context, @NonNull AttributeSet attributeSet) {
+    }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg_round_bg_fcf5f5f5_r4"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.app.base.framework.view.recyclerView.NoScrollRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="47dp"/>
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/color_999999"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:id="@+id/ballots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/moment_poll_time"
+        android:singleLine="true"/>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/include_title_select"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_show_images_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:gravity="center"
+            android:id="@+id/activity_show_images_num"
+            android:background="@color/select_picture_color_FFF0F5F4"
+            android:paddingRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="selected(3/9)"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</LinearLayout>

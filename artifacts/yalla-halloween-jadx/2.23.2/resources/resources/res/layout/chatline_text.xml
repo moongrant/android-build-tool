@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <FrameLayout style="@style/ChatItemRoot">
+        <include layout="@layout/chatline_msg_user"/>
+        <LinearLayout style="@style/ChatItemContent">
+            <include layout="@layout/chatline_msg_reply"/>
+            <com.yalla.yalla.ui.view.FixTextView
+                android:textSize="13sp"
+                android:textColor="@color/color_e2e2e2"
+                android:layout_gravity="center"
+                android:id="@+id/tvContentMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="180dp"
+                android:includeFontPadding="false"/>
+        </LinearLayout>
+    </FrameLayout>
+    <ImageView style="@style/ChatItemReplyTag"/>
+</FrameLayout>

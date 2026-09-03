@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_enabled="false"
+        android:drawable="@drawable/room_shape_theme_customize_select_can_not_pay"/>
+    <item
+        android:state_enabled="true"
+        android:drawable="@drawable/room_shape_theme_customize_select_can_pay"/>
+</selector>

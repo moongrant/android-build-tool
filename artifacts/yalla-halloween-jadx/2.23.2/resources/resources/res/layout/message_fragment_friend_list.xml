@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/ivBottomBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"/>
+    <com.yalla.yalla.ui.view.RadiusCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="0dp"
+        app:rcv_topLeftRadiu="16dp"
+        app:rcv_topRightRadiu="16dp">
+        <com.yalla.yalla.ui.view.refresh.RefreshLayout
+            android:id="@+id/refreshLayout"
+            android:background="@color/white"
+            android:descendantFocusability="beforeDescendants"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.yalla.yalla.ui.view.StateLayout
+                android:id="@+id/stateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"/>
+            </com.yalla.yalla.ui.view.StateLayout>
+        </com.yalla.yalla.ui.view.refresh.RefreshLayout>
+    </com.yalla.yalla.ui.view.RadiusCardView>
+</FrameLayout>

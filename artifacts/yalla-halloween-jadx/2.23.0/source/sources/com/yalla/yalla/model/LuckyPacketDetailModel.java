@@ -1,0 +1,251 @@
+package com.yalla.yalla.model;
+
+import OooO0OO.OooO0O0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import androidx.compose.compiler.plugins.kotlin.OooO0OO;
+import androidx.compose.runtime.internal.StabilityInferred;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.android.parcel.Parcelize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import p028Oooo0oO.o00O0000;
+
+/* JADX INFO: loaded from: classes4.dex */
+@StabilityInferred(parameters = 0)
+@Parcelize
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b&\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0087\b\u0018\u00002\u00020\u0001BM\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\b\u0010\t\u001a\u0004\u0018\u00010\b\u0012\u0006\u0010\n\u001a\u00020\u0006\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\b\u0012\b\u0010\f\u001a\u0004\u0018\u00010\b¢\u0006\u0002\u0010\rJ\t\u0010$\u001a\u00020\u0003HÆ\u0003J\t\u0010%\u001a\u00020\u0003HÆ\u0003J\t\u0010&\u001a\u00020\u0006HÆ\u0003J\u000b\u0010'\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010(\u001a\u0004\u0018\u00010\bHÆ\u0003J\t\u0010)\u001a\u00020\u0006HÆ\u0003J\u000b\u0010*\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010+\u001a\u0004\u0018\u00010\bHÆ\u0003Ja\u0010,\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b2\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\b2\b\b\u0002\u0010\n\u001a\u00020\u00062\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\bHÆ\u0001J\t\u0010-\u001a\u00020\u0006HÖ\u0001J\u0013\u0010.\u001a\u00020/2\b\u00100\u001a\u0004\u0018\u000101HÖ\u0003J\t\u00102\u001a\u00020\u0006HÖ\u0001J\t\u00103\u001a\u00020\bHÖ\u0001J\u0019\u00104\u001a\u0002052\u0006\u00106\u001a\u0002072\u0006\u00108\u001a\u00020\u0006HÖ\u0001R\u001a\u0010\n\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001c\u0010\t\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u0005\u001a\u00020\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001a\u0010\u000f\"\u0004\b\u001b\u0010\u0011R\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u0017\"\u0004\b\u001d\u0010\u0019R\u001c\u0010\f\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u0017\"\u0004\b\u001f\u0010\u0019R\u001a\u0010\u0004\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010\u0013\"\u0004\b!\u0010\u0015R\u001c\u0010\u000b\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010\u0017\"\u0004\b#\u0010\u0019¨\u00069"}, d2 = {"Lcom/yalla/yalla/model/LuckyPacketDetailModel;", "Landroid/os/Parcelable;", "bonusid", "", "userid", "bonustype", "", "giftimg", "", "bonusinfo", "bonuscount", "username", "userheadphoto", "(JJILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V", "getBonuscount", "()I", "setBonuscount", "(I)V", "getBonusid", "()J", "setBonusid", "(J)V", "getBonusinfo", "()Ljava/lang/String;", "setBonusinfo", "(Ljava/lang/String;)V", "getBonustype", "setBonustype", "getGiftimg", "setGiftimg", "getUserheadphoto", "setUserheadphoto", "getUserid", "setUserid", "getUsername", "setUsername", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "copy", "describeContents", "equals", "", "other", "", "hashCode", "toString", "writeToParcel", "", "parcel", "Landroid/os/Parcel;", "flags", "Common_YallaRelease"}, k = 1, mv = {1, 8, 0}, xi = 48)
+public final /* data */ class LuckyPacketDetailModel implements Parcelable {
+    public static final int $stable = 8;
+
+    @NotNull
+    public static final Parcelable.Creator<LuckyPacketDetailModel> CREATOR = new Creator();
+    private int bonuscount;
+    private long bonusid;
+
+    @Nullable
+    private String bonusinfo;
+    private int bonustype;
+
+    @Nullable
+    private String giftimg;
+
+    @Nullable
+    private String userheadphoto;
+    private long userid;
+
+    @Nullable
+    private String username;
+
+    @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+    public static final class Creator implements Parcelable.Creator<LuckyPacketDetailModel> {
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // android.os.Parcelable.Creator
+        @NotNull
+        public final LuckyPacketDetailModel createFromParcel(@NotNull Parcel parcel) {
+            Intrinsics.checkNotNullParameter(parcel, "parcel");
+            return new LuckyPacketDetailModel(parcel.readLong(), parcel.readLong(), parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readString(), parcel.readString());
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // android.os.Parcelable.Creator
+        @NotNull
+        public final LuckyPacketDetailModel[] newArray(int i) {
+            return new LuckyPacketDetailModel[i];
+        }
+    }
+
+    public LuckyPacketDetailModel(long j, long j2, int i, @Nullable String str, @Nullable String str2, int i2, @Nullable String str3, @Nullable String str4) {
+        this.bonusid = j;
+        this.userid = j2;
+        this.bonustype = i;
+        this.giftimg = str;
+        this.bonusinfo = str2;
+        this.bonuscount = i2;
+        this.username = str3;
+        this.userheadphoto = str4;
+    }
+
+    /* JADX INFO: renamed from: component1, reason: from getter */
+    public final long getBonusid() {
+        return this.bonusid;
+    }
+
+    /* JADX INFO: renamed from: component2, reason: from getter */
+    public final long getUserid() {
+        return this.userid;
+    }
+
+    /* JADX INFO: renamed from: component3, reason: from getter */
+    public final int getBonustype() {
+        return this.bonustype;
+    }
+
+    @Nullable
+    /* JADX INFO: renamed from: component4, reason: from getter */
+    public final String getGiftimg() {
+        return this.giftimg;
+    }
+
+    @Nullable
+    /* JADX INFO: renamed from: component5, reason: from getter */
+    public final String getBonusinfo() {
+        return this.bonusinfo;
+    }
+
+    /* JADX INFO: renamed from: component6, reason: from getter */
+    public final int getBonuscount() {
+        return this.bonuscount;
+    }
+
+    @Nullable
+    /* JADX INFO: renamed from: component7, reason: from getter */
+    public final String getUsername() {
+        return this.username;
+    }
+
+    @Nullable
+    /* JADX INFO: renamed from: component8, reason: from getter */
+    public final String getUserheadphoto() {
+        return this.userheadphoto;
+    }
+
+    @NotNull
+    public final LuckyPacketDetailModel copy(long bonusid, long userid, int bonustype, @Nullable String giftimg, @Nullable String bonusinfo, int bonuscount, @Nullable String username, @Nullable String userheadphoto) {
+        return new LuckyPacketDetailModel(bonusid, userid, bonustype, giftimg, bonusinfo, bonuscount, username, userheadphoto);
+    }
+
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    public boolean equals(@Nullable Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof LuckyPacketDetailModel)) {
+            return false;
+        }
+        LuckyPacketDetailModel luckyPacketDetailModel = (LuckyPacketDetailModel) other;
+        return this.bonusid == luckyPacketDetailModel.bonusid && this.userid == luckyPacketDetailModel.userid && this.bonustype == luckyPacketDetailModel.bonustype && Intrinsics.areEqual(this.giftimg, luckyPacketDetailModel.giftimg) && Intrinsics.areEqual(this.bonusinfo, luckyPacketDetailModel.bonusinfo) && this.bonuscount == luckyPacketDetailModel.bonuscount && Intrinsics.areEqual(this.username, luckyPacketDetailModel.username) && Intrinsics.areEqual(this.userheadphoto, luckyPacketDetailModel.userheadphoto);
+    }
+
+    public final int getBonuscount() {
+        return this.bonuscount;
+    }
+
+    public final long getBonusid() {
+        return this.bonusid;
+    }
+
+    @Nullable
+    public final String getBonusinfo() {
+        return this.bonusinfo;
+    }
+
+    public final int getBonustype() {
+        return this.bonustype;
+    }
+
+    @Nullable
+    public final String getGiftimg() {
+        return this.giftimg;
+    }
+
+    @Nullable
+    public final String getUserheadphoto() {
+        return this.userheadphoto;
+    }
+
+    public final long getUserid() {
+        return this.userid;
+    }
+
+    @Nullable
+    public final String getUsername() {
+        return this.username;
+    }
+
+    public int hashCode() {
+        long j = this.bonusid;
+        long j2 = this.userid;
+        int i = ((((((int) (j ^ (j >>> 32))) * 31) + ((int) ((j2 >>> 32) ^ j2))) * 31) + this.bonustype) * 31;
+        String str = this.giftimg;
+        int iHashCode = (i + (str == null ? 0 : str.hashCode())) * 31;
+        String str2 = this.bonusinfo;
+        int iHashCode2 = (((iHashCode + (str2 == null ? 0 : str2.hashCode())) * 31) + this.bonuscount) * 31;
+        String str3 = this.username;
+        int iHashCode3 = (iHashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        String str4 = this.userheadphoto;
+        return iHashCode3 + (str4 != null ? str4.hashCode() : 0);
+    }
+
+    public final void setBonuscount(int i) {
+        this.bonuscount = i;
+    }
+
+    public final void setBonusid(long j) {
+        this.bonusid = j;
+    }
+
+    public final void setBonusinfo(@Nullable String str) {
+        this.bonusinfo = str;
+    }
+
+    public final void setBonustype(int i) {
+        this.bonustype = i;
+    }
+
+    public final void setGiftimg(@Nullable String str) {
+        this.giftimg = str;
+    }
+
+    public final void setUserheadphoto(@Nullable String str) {
+        this.userheadphoto = str;
+    }
+
+    public final void setUserid(long j) {
+        this.userid = j;
+    }
+
+    public final void setUsername(@Nullable String str) {
+        this.username = str;
+    }
+
+    @NotNull
+    public String toString() {
+        long j = this.bonusid;
+        long j2 = this.userid;
+        int i = this.bonustype;
+        String str = this.giftimg;
+        String str2 = this.bonusinfo;
+        int i2 = this.bonuscount;
+        String str3 = this.username;
+        String str4 = this.userheadphoto;
+        StringBuilder sbOooO00o = o00O0000.OooO00o("LuckyPacketDetailModel(bonusid=", j, ", userid=");
+        sbOooO00o.append(j2);
+        sbOooO00o.append(", bonustype=");
+        sbOooO00o.append(i);
+        OooO0O0.OooO00o(sbOooO00o, ", giftimg=", str, ", bonusinfo=", str2);
+        sbOooO00o.append(", bonuscount=");
+        sbOooO00o.append(i2);
+        sbOooO00o.append(", username=");
+        sbOooO00o.append(str3);
+        return OooO0OO.OooO0OO(sbOooO00o, ", userheadphoto=", str4, ")");
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(@NotNull Parcel parcel, int flags) {
+        Intrinsics.checkNotNullParameter(parcel, "out");
+        parcel.writeLong(this.bonusid);
+        parcel.writeLong(this.userid);
+        parcel.writeInt(this.bonustype);
+        parcel.writeString(this.giftimg);
+        parcel.writeString(this.bonusinfo);
+        parcel.writeInt(this.bonuscount);
+        parcel.writeString(this.username);
+        parcel.writeString(this.userheadphoto);
+    }
+}

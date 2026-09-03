@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@+id/llArrears"
+    android:background="@color/color_E6161616"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="35dp">
+    <ImageView
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:src="@mipmap/main_arrears_warring"
+        android:layout_marginStart="8dp"/>
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/color_FFC00"
+        android:id="@+id/tvArrears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxWidth="299dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
+    <android.widget.Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/main_arrears_detail"
+        android:layout_marginEnd="8dp"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

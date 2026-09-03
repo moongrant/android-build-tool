@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="32dp"
+    android:layout_height="57dp">
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/niv_top_1"
+        android:layout_width="29.5dp"
+        android:layout_height="29.5dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="2.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/iv_top_crown"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="10.5dp"
+        android:src="@drawable/icon_explore_top_crown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

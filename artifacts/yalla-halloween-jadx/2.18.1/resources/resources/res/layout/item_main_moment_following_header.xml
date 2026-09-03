@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="80dp"
+    android:layout_height="match_parent">
+    <View
+        android:id="@+id/vHaveNew"
+        android:background="@drawable/ic_new_post_user"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nivHeader"
+        app:layout_constraintEnd_toEndOf="@+id/nivHeader"
+        app:layout_constraintStart_toStartOf="@+id/nivHeader"
+        app:layout_constraintTop_toTopOf="@+id/nivHeader"/>
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:id="@+id/nivHeader"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.yalla.yalla.common.ui.view.UserPremiumView
+        android:id="@+id/vipView"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nivHeader"
+        app:layout_constraintEnd_toEndOf="@+id/nivHeader"/>
+    <TextView
+        android:textSize="11dp"
+        android:textColor="@color/color_333333"
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nivHeader"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

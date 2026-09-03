@@ -1,0 +1,97 @@
+package androidx.compose.ui.text.platform;
+
+import androidx.compose.ui.text.AnnotatedString;
+import androidx.compose.ui.text.EmojiSupportMatch;
+import androidx.compose.ui.text.ParagraphIntrinsics;
+import androidx.compose.ui.text.Placeholder;
+import androidx.compose.ui.text.PlatformParagraphStyle;
+import androidx.compose.ui.text.PlatformTextStyle;
+import androidx.compose.ui.text.SpanStyle;
+import androidx.compose.ui.text.TextStyle;
+import androidx.compose.ui.text.font.FontFamily;
+import androidx.compose.ui.text.intl.AndroidLocale;
+import androidx.compose.ui.text.intl.LocaleList;
+import androidx.compose.ui.text.intl.PlatformLocale;
+import androidx.compose.ui.text.style.TextDirection;
+import androidx.compose.ui.unit.Density;
+import com.facebook.appevents.internal.ViewHierarchyConstants;
+import com.facebook.internal.AnalyticsEvents;
+import java.util.List;
+import java.util.Locale;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import o0000O0O.oo000o;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes.dex */
+@Metadata(d1 = {"\u0000P\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aP\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u00022\u0012\u0010\n\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\r0\f0\u000b2\u0012\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000f0\f0\u000b2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001a+\u0010\u0014\u001a\u00020\u00152\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00172\n\b\u0002\u0010\u0018\u001a\u0004\u0018\u00010\u0019H\u0000ø\u0001\u0000ø\u0001\u0001¢\u0006\u0002\b\u001a\"\u0018\u0010\u0000\u001a\u00020\u0001*\u00020\u00028BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0003\u0010\u0004\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b\u0019¨\u0006\u001b"}, d2 = {"hasEmojiCompat", "", "Landroidx/compose/ui/text/TextStyle;", "getHasEmojiCompat", "(Landroidx/compose/ui/text/TextStyle;)Z", "ActualParagraphIntrinsics", "Landroidx/compose/ui/text/ParagraphIntrinsics;", ViewHierarchyConstants.TEXT_KEY, "", AnalyticsEvents.PARAMETER_LIKE_VIEW_STYLE, "spanStyles", "", "Landroidx/compose/ui/text/AnnotatedString$Range;", "Landroidx/compose/ui/text/SpanStyle;", "placeholders", "Landroidx/compose/ui/text/Placeholder;", "density", "Landroidx/compose/ui/unit/Density;", "fontFamilyResolver", "Landroidx/compose/ui/text/font/FontFamily$Resolver;", "resolveTextDirectionHeuristics", "", "textDirection", "Landroidx/compose/ui/text/style/TextDirection;", "localeList", "Landroidx/compose/ui/text/intl/LocaleList;", "resolveTextDirectionHeuristics-9GRLPo0", "ui-text_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+public final class AndroidParagraphIntrinsics_androidKt {
+    @NotNull
+    public static final ParagraphIntrinsics ActualParagraphIntrinsics(@NotNull String text, @NotNull TextStyle style, @NotNull List<AnnotatedString.Range<SpanStyle>> spanStyles, @NotNull List<AnnotatedString.Range<Placeholder>> placeholders, @NotNull Density density, @NotNull FontFamily.Resolver fontFamilyResolver) {
+        Intrinsics.checkNotNullParameter(text, "text");
+        Intrinsics.checkNotNullParameter(style, "style");
+        Intrinsics.checkNotNullParameter(spanStyles, "spanStyles");
+        Intrinsics.checkNotNullParameter(placeholders, "placeholders");
+        Intrinsics.checkNotNullParameter(density, "density");
+        Intrinsics.checkNotNullParameter(fontFamilyResolver, "fontFamilyResolver");
+        return new AndroidParagraphIntrinsics(text, style, spanStyles, placeholders, fontFamilyResolver, density);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean getHasEmojiCompat(TextStyle textStyle) {
+        PlatformParagraphStyle paragraphStyle;
+        PlatformTextStyle platformStyle = textStyle.getPlatformStyle();
+        EmojiSupportMatch emojiSupportMatchM3199boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m3199boximpl(paragraphStyle.getEmojiSupportMatch());
+        return !(emojiSupportMatchM3199boximpl == null ? false : EmojiSupportMatch.m3202equalsimpl0(emojiSupportMatchM3199boximpl.getValue(), EmojiSupportMatch.INSTANCE.m3207getNone_3YsG6Y()));
+    }
+
+    /* JADX WARN: Code duplicated, block: B:22:0x0063  */
+    /* JADX INFO: renamed from: resolveTextDirectionHeuristics-9GRLPo0, reason: not valid java name */
+    public static final int m3546resolveTextDirectionHeuristics9GRLPo0(@Nullable TextDirection textDirection, @Nullable LocaleList localeList) {
+        Locale javaLocale;
+        int value = textDirection != null ? textDirection.getValue() : TextDirection.INSTANCE.m3694getContents_7Xco();
+        TextDirection.Companion companion = TextDirection.INSTANCE;
+        if (TextDirection.m3690equalsimpl0(value, companion.m3695getContentOrLtrs_7Xco())) {
+            return 2;
+        }
+        if (!TextDirection.m3690equalsimpl0(value, companion.m3696getContentOrRtls_7Xco())) {
+            if (TextDirection.m3690equalsimpl0(value, companion.m3697getLtrs_7Xco())) {
+                return 0;
+            }
+            if (TextDirection.m3690equalsimpl0(value, companion.m3698getRtls_7Xco())) {
+                return 1;
+            }
+            if (!TextDirection.m3690equalsimpl0(value, companion.m3694getContents_7Xco())) {
+                throw new IllegalStateException("Invalid TextDirection.".toString());
+            }
+            if (localeList != null) {
+                PlatformLocale platformLocale = localeList.get(0).getPlatformLocale();
+                Intrinsics.checkNotNull(platformLocale, "null cannot be cast to non-null type androidx.compose.ui.text.intl.AndroidLocale");
+                javaLocale = ((AndroidLocale) platformLocale).getJavaLocale();
+                if (javaLocale == null) {
+                    javaLocale = Locale.getDefault();
+                }
+            } else {
+                javaLocale = Locale.getDefault();
+            }
+            int i = oo000o.f33601OooO00o;
+            int iOooO00o = oo000o.OooO00o.OooO00o(javaLocale);
+            if (iOooO00o == 0 || iOooO00o != 1) {
+                return 2;
+            }
+        }
+        return 3;
+    }
+
+    /* JADX INFO: renamed from: resolveTextDirectionHeuristics-9GRLPo0$default, reason: not valid java name */
+    public static /* synthetic */ int m3547resolveTextDirectionHeuristics9GRLPo0$default(TextDirection textDirection, LocaleList localeList, int i, Object obj) {
+        if ((i & 1) != 0) {
+            textDirection = null;
+        }
+        if ((i & 2) != 0) {
+            localeList = null;
+        }
+        return m3546resolveTextDirectionHeuristics9GRLPo0(textDirection, localeList);
+    }
+}

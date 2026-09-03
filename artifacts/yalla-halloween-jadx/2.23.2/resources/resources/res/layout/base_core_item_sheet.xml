@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp">
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/base_core_black_1F2329"
+        android:gravity="start|center_vertical"
+        android:id="@+id/tvItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAllCaps="true"
+        android:textAlignment="viewStart"/>
+</FrameLayout>

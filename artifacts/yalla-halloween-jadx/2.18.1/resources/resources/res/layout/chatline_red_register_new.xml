@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/ChatItemRoot">
+    <include layout="@layout/chatline_msg_user"/>
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/ChatItemContent">
+        <TextView
+            android:textSize="12sp"
+            android:textColor="@color/color_e2e2e2"
+            android:ellipsize="end"
+            android:id="@+id/tv_red_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="154dp"
+            android:text="@string/Lucky_Bag_I_received_a_lucky_bag_from_XXX"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <com.yalla.yalla.util.netimage.NetImageView
+            android:id="@+id/iv_red_pic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/coin3"
+            android:layout_below="@+id/tv_red_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_red_content"/>
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/color_FAE976"
+            android:gravity="center"
+            android:id="@+id/tv_red_number"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_below="@+id/tv_red_content"
+            android:paddingStart="6dp"
+            android:layout_toEndOf="@+id/iv_red_pic"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_red_pic"
+            app:layout_constraintStart_toEndOf="@+id/iv_red_pic"
+            app:layout_constraintTop_toTopOf="@+id/iv_red_pic"
+            style="@style/EditText_Alignment"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_room_chat_register_lucky_bag"
+            android:layout_alignParentEnd="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

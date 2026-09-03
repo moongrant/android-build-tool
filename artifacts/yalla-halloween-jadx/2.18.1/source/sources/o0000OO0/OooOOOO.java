@@ -1,0 +1,10 @@
+package o0000OO0;
+
+import p100o000oOoO.o0o0Oo;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class OooOOOO implements o0o0Oo {
+    @Override // p100o000oOoO.o0o0Oo
+    public final void dispose() {
+    }
+}

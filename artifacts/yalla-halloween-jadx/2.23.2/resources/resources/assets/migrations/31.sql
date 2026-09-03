@@ -1,0 +1,1 @@
+ALTER TABLE SystemMessage ADD COLUMN midx;

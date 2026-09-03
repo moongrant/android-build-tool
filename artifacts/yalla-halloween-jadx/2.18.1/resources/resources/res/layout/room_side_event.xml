@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/llSideEvent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.yalla.yalla.util.netimage.NetImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ivRoomSideCamel"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/room_ic_room_side_event"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="10sp"
+        android:textColor="@color/color_white_70"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tvEvent"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/Events"
+        android:singleLine="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivRoomSideCamel"/>
+    <com.yalla.yalla.common.ui.view.RoomDotView
+        android:textSize="11sp"
+        android:textColor="@color/color_white"
+        android:id="@+id/dvEvent"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:text="@string/single_N"
+        android:layout_marginStart="28dp"
+        app:layout_constraintStart_toStartOf="@+id/ivRoomSideCamel"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

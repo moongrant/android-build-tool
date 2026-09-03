@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <com.yalla.yalla.common.ui.view.StateLayout
+        android:id="@+id/ylState"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_share_to_friends"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.yalla.yalla.common.ui.view.StateLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+package androidx.activity;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class o00O0O {
+    public static final int report_drawn = 2131363964;
+    public static final int view_tree_on_back_pressed_dispatcher_owner = 2131365222;
+}

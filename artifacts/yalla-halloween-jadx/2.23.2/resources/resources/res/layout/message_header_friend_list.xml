@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.yalla.yalla.ui.view.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:editSearchMarginBottom="10dp"
+            app:editSearchMarginStart="16dp"
+            app:editSearchMarginTop="10dp"/>
+        <View
+            android:id="@+id/vLine"
+            android:background="@color/color_f5f5f5"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/color_5f5f5f"
+            android:gravity="start|center_vertical"
+            android:id="@+id/tvFriendNum"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:text="@string/friends_total_label"
+            android:textDirection="anyRtl"
+            android:textAlignment="textStart"
+            android:layoutDirection="ltr"
+            android:paddingStart="16dp"/>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_selected="true"
+        android:drawable="@drawable/shape_bg_packet_history_select"/>
+    <item
+        android:state_selected="false"
+        android:drawable="@drawable/shape_bg_packet_history_send_unselect"/>
+    <item android:drawable="@drawable/shape_bg_packet_history_send_unselect"/>
+</selector>

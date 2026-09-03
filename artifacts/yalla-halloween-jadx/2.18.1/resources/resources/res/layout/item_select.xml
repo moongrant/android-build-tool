@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/transparent85"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/item_select_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+        <ImageView
+            android:id="@+id/item_select_iv"
+            android:visibility="visible"
+            android:src="@drawable/icon_select_white"
+            style="@style/text_style_z15"/>
+        <TextView
+            android:textColor="@color/color_FFFFFFF_70"
+            android:gravity="start|center_vertical"
+            android:id="@+id/item_select_tv"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SheZhi"
+            android:layout_marginStart="8dp"
+            style="@style/text_style_z15"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/base_header_layout"/>
+    <com.yalla.yalla.ui.view.indicator.YlTableLayout
+        android:id="@+id/skill_card_magicIndicator"
+        android:background="@color/color_00d8c9"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"/>
+    <com.yalla.yalla.ui.view.ViewPagerFixed
+        android:id="@+id/vp_skill_card_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <include layout="@layout/view_comm_line"/>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/red_golds"
+            android:layout_marginStart="16dp"/>
+        <TextView
+            android:textSize="18sp"
+            android:textColor="#ffc339"
+            android:gravity="start"
+            android:id="@+id/tv_skillcardstore_golds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginStart="4dp"/>
+        <android.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/color_FFC339"
+            android:gravity="center"
+            android:id="@+id/ly_recharge"
+            android:layout_width="82dp"
+            android:layout_height="30dp"
+            android:text="@string/Recharge_"
+            android:layout_marginEnd="16dp"/>
+    </LinearLayout>
+</LinearLayout>

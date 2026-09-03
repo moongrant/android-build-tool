@@ -1,0 +1,1157 @@
+package androidx.compose.material;
+
+import androidx.compose.animation.core.Animatable;
+import androidx.compose.animation.core.AnimatableKt;
+import androidx.compose.animation.core.AnimationSpec;
+import androidx.compose.animation.core.AnimationVector1D;
+import androidx.compose.foundation.gestures.DragScope;
+import androidx.compose.foundation.gestures.DraggableKt;
+import androidx.compose.foundation.gestures.DraggableState;
+import androidx.compose.runtime.MutableFloatState;
+import androidx.compose.runtime.MutableState;
+import androidx.compose.runtime.PrimitiveSnapshotStateKt;
+import androidx.compose.runtime.SnapshotStateKt;
+import androidx.compose.runtime.SnapshotStateKt__SnapshotStateKt;
+import androidx.compose.runtime.Stable;
+import androidx.compose.runtime.State;
+import androidx.compose.runtime.saveable.Saver;
+import androidx.compose.runtime.saveable.SaverKt;
+import androidx.compose.runtime.saveable.SaverScope;
+import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CancellationException;
+import kotlin.Metadata;
+import kotlin.Pair;
+import kotlin.ResultKt;
+import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.ranges.RangesKt;
+import kotlinx.coroutines.flow.Flow;
+import kotlinx.coroutines.flow.FlowCollector;
+import kotlinx.coroutines.flow.FlowKt;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: loaded from: classes.dex */
+@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u0002\n\u0002\b\u0017\b\u0017\u0018\u0000 v*\u0004\b\u0000\u0010\u00012\u00020\u0002:\u0001vBB\u0012\u0006\u0010\u0003\u001a\u00028\u0000\u0012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012#\b\u0002\u0010\u0007\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\b¢\u0006\u0002\u0010\rJ'\u0010_\u001a\u00020`2\u0006\u0010a\u001a\u00020\u00062\f\u0010b\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005H\u0082@ø\u0001\u0000¢\u0006\u0002\u0010cJ)\u0010d\u001a\u00020`2\u0006\u0010P\u001a\u00028\u00002\u000e\b\u0002\u0010e\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005H\u0087@ø\u0001\u0000¢\u0006\u0002\u0010fJ!\u0010g\u001a\u00020`2\u0012\u0010h\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00028\u00000\u0011H\u0000¢\u0006\u0002\biJ\u000e\u0010j\u001a\u00020\u00062\u0006\u0010k\u001a\u00020\u0006J\u0019\u0010l\u001a\u00020`2\u0006\u0010m\u001a\u00020\u0006H\u0086@ø\u0001\u0000¢\u0006\u0002\u0010nJ;\u0010o\u001a\u00020`2\u0012\u0010p\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00028\u00000\u00112\u0012\u0010h\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00028\u00000\u0011H\u0080@ø\u0001\u0000¢\u0006\u0004\bq\u0010rJ\u0019\u0010s\u001a\u00020`2\u0006\u0010a\u001a\u00020\u0006H\u0082@ø\u0001\u0000¢\u0006\u0002\u0010nJ\u0019\u0010t\u001a\u00020`2\u0006\u0010P\u001a\u00028\u0000H\u0087@ø\u0001\u0000¢\u0006\u0002\u0010uR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000RC\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00028\u00000\u00112\u0012\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00028\u00000\u00118@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u0017\u0010\u0018\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0016\u0010\u001b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R/\u0010\u0007\u001a\u001d\u0012\u0013\u0012\u00118\u0000¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0004\u0012\u00020\f0\bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR+\u0010\u001f\u001a\u00028\u00002\u0006\u0010\u0010\u001a\u00028\u00008F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b$\u0010\u0018\u001a\u0004\b \u0010!\"\u0004\b\"\u0010#R\u001a\u0010%\u001a\u00020\u00068FX\u0087\u0004¢\u0006\f\u0012\u0004\b&\u0010'\u001a\u0004\b(\u0010)R\u0014\u0010*\u001a\u00020+X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b,\u0010-R+\u0010.\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\f8F@BX\u0086\u008e\u0002¢\u0006\u0012\n\u0004\b2\u0010\u0018\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R \u00103\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00028\u00000\u001104X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00105\u001a\u00020\u0006X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u0010)\"\u0004\b7\u00108R\u001a\u00109\u001a\u00020\u0006X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b:\u0010)\"\u0004\b;\u00108R\u0017\u0010<\u001a\b\u0012\u0004\u0012\u00020\u00060=8F¢\u0006\u0006\u001a\u0004\b>\u0010?R\u000e\u0010@\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00060=8F¢\u0006\u0006\u001a\u0004\bB\u0010?R\u000e\u0010C\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010D\u001a\b\u0012\u0004\u0012\u00028\u00000E8FX\u0087\u0004¢\u0006\f\u0012\u0004\bF\u0010'\u001a\u0004\bG\u0010HR/\u0010J\u001a\u0004\u0018\u00010I2\b\u0010\u0010\u001a\u0004\u0018\u00010I8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\bO\u0010\u0018\u001a\u0004\bK\u0010L\"\u0004\bM\u0010NR\u001a\u0010P\u001a\u00028\u00008FX\u0087\u0004¢\u0006\f\u0012\u0004\bQ\u0010'\u001a\u0004\bR\u0010!RO\u0010T\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060S2\u0018\u0010\u0010\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060S8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\bY\u0010\u0018\u001a\u0004\bU\u0010V\"\u0004\bW\u0010XR+\u0010Z\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u00068@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b]\u0010^\u001a\u0004\b[\u0010)\"\u0004\b\\\u00108\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006w"}, d2 = {"Landroidx/compose/material/SwipeableState;", "T", "", "initialValue", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "", "confirmStateChange", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "newValue", "", "(Ljava/lang/Object;Landroidx/compose/animation/core/AnimationSpec;Lkotlin/jvm/functions/Function1;)V", "absoluteOffset", "Landroidx/compose/runtime/MutableFloatState;", "<set-?>", "", "anchors", "getAnchors$material_release", "()Ljava/util/Map;", "setAnchors$material_release", "(Ljava/util/Map;)V", "anchors$delegate", "Landroidx/compose/runtime/MutableState;", "getAnimationSpec$material_release", "()Landroidx/compose/animation/core/AnimationSpec;", "animationTarget", "Landroidx/compose/runtime/MutableState;", "getConfirmStateChange$material_release", "()Lkotlin/jvm/functions/Function1;", "currentValue", "getCurrentValue", "()Ljava/lang/Object;", "setCurrentValue", "(Ljava/lang/Object;)V", "currentValue$delegate", "direction", "getDirection$annotations", "()V", "getDirection", "()F", "draggableState", "Landroidx/compose/foundation/gestures/DraggableState;", "getDraggableState$material_release", "()Landroidx/compose/foundation/gestures/DraggableState;", "isAnimationRunning", "()Z", "setAnimationRunning", "(Z)V", "isAnimationRunning$delegate", "latestNonEmptyAnchorsFlow", "Lkotlinx/coroutines/flow/Flow;", "maxBound", "getMaxBound$material_release", "setMaxBound$material_release", "(F)V", "minBound", "getMinBound$material_release", "setMinBound$material_release", "offset", "Landroidx/compose/runtime/State;", "getOffset", "()Landroidx/compose/runtime/State;", "offsetState", "overflow", "getOverflow", "overflowState", "progress", "Landroidx/compose/material/SwipeProgress;", "getProgress$annotations", "getProgress", "()Landroidx/compose/material/SwipeProgress;", "Landroidx/compose/material/ResistanceConfig;", "resistance", "getResistance$material_release", "()Landroidx/compose/material/ResistanceConfig;", "setResistance$material_release", "(Landroidx/compose/material/ResistanceConfig;)V", "resistance$delegate", "targetValue", "getTargetValue$annotations", "getTargetValue", "Lkotlin/Function2;", "thresholds", "getThresholds$material_release", "()Lkotlin/jvm/functions/Function2;", "setThresholds$material_release", "(Lkotlin/jvm/functions/Function2;)V", "thresholds$delegate", "velocityThreshold", "getVelocityThreshold$material_release", "setVelocityThreshold$material_release", "velocityThreshold$delegate", "Landroidx/compose/runtime/MutableFloatState;", "animateInternalToOffset", "", "target", "spec", "(FLandroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "animateTo", "anim", "(Ljava/lang/Object;Landroidx/compose/animation/core/AnimationSpec;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ensureInit", "newAnchors", "ensureInit$material_release", "performDrag", "delta", "performFling", "velocity", "(FLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "processNewAnchors", "oldAnchors", "processNewAnchors$material_release", "(Ljava/util/Map;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "snapInternalToOffset", "snapTo", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "material_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Stable
+@ExperimentalMaterialApi
+@SourceDebugExtension({"SMAP\nSwipeable.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Swipeable.kt\nandroidx/compose/material/SwipeableState\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 4 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 5 SnapshotState.kt\nandroidx/compose/runtime/SnapshotStateKt__SnapshotStateKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 SnapshotFloatState.kt\nandroidx/compose/runtime/PrimitiveSnapshotStateKt__SnapshotFloatStateKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,890:1\n20#2:891\n22#2:895\n50#3:892\n55#3:894\n106#4:893\n81#5:896\n107#5,2:897\n81#5:899\n107#5,2:900\n81#5:902\n107#5,2:903\n81#5:933\n107#5,2:934\n81#5:939\n107#5,2:940\n2333#6,14:905\n2333#6,14:919\n75#7:936\n108#7,2:937\n1#8:942\n*S KotlinDebug\n*F\n+ 1 Swipeable.kt\nandroidx/compose/material/SwipeableState\n*L\n128#1:891\n128#1:895\n128#1:892\n128#1:894\n128#1:893\n91#1:896\n91#1:897,2\n97#1:899\n97#1:900,2\n124#1:902\n124#1:903,2\n195#1:933\n195#1:934,2\n199#1:939\n199#1:940,2\n174#1:905,14\n180#1:919,14\n197#1:936\n197#1:937,2\n*E\n"})
+public class SwipeableState<T> {
+    public static final int $stable = 0;
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    @NotNull
+    public static final Companion INSTANCE = new Companion(null);
+
+    @NotNull
+    private final MutableFloatState absoluteOffset;
+
+    /* JADX INFO: renamed from: anchors$delegate, reason: from kotlin metadata */
+    @NotNull
+    private final MutableState anchors;
+
+    @NotNull
+    private final AnimationSpec<Float> animationSpec;
+
+    @NotNull
+    private final MutableState<Float> animationTarget;
+
+    @NotNull
+    private final Function1<T, Boolean> confirmStateChange;
+
+    /* JADX INFO: renamed from: currentValue$delegate, reason: from kotlin metadata */
+    @NotNull
+    private final MutableState currentValue;
+
+    @NotNull
+    private final DraggableState draggableState;
+
+    /* JADX INFO: renamed from: isAnimationRunning$delegate, reason: from kotlin metadata */
+    @NotNull
+    private final MutableState isAnimationRunning;
+
+    @NotNull
+    private final Flow<Map<Float, T>> latestNonEmptyAnchorsFlow;
+    private float maxBound;
+    private float minBound;
+
+    @NotNull
+    private final MutableFloatState offsetState;
+
+    @NotNull
+    private final MutableFloatState overflowState;
+
+    /* JADX INFO: renamed from: resistance$delegate, reason: from kotlin metadata */
+    @NotNull
+    private final MutableState resistance;
+
+    /* JADX INFO: renamed from: thresholds$delegate, reason: from kotlin metadata */
+    @NotNull
+    private final MutableState thresholds;
+
+    /* JADX INFO: renamed from: velocityThreshold$delegate, reason: from kotlin metadata */
+    @NotNull
+    private final MutableFloatState velocityThreshold;
+
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002JD\u0010\u0003\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\u0005\u0012\u0004\u0012\u0002H\u00060\u0004\"\b\b\u0001\u0010\u0006*\u00020\u00012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b2\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u0002H\u0006\u0012\u0004\u0012\u00020\f0\u000b¨\u0006\r"}, d2 = {"Landroidx/compose/material/SwipeableState$Companion;", "", "()V", "Saver", "Landroidx/compose/runtime/saveable/Saver;", "Landroidx/compose/material/SwipeableState;", "T", "animationSpec", "Landroidx/compose/animation/core/AnimationSpec;", "", "confirmStateChange", "Lkotlin/Function1;", "", "material_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    public static final class Companion {
+        private Companion() {
+        }
+
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        @NotNull
+        public final <T> Saver<SwipeableState<T>, T> Saver(@NotNull final AnimationSpec<Float> animationSpec, @NotNull final Function1<? super T, Boolean> confirmStateChange) {
+            Intrinsics.checkNotNullParameter(animationSpec, "animationSpec");
+            Intrinsics.checkNotNullParameter(confirmStateChange, "confirmStateChange");
+            return SaverKt.Saver(new Function2<SaverScope, SwipeableState<T>, T>() { // from class: androidx.compose.material.SwipeableState$Companion$Saver$1
+                @Override // kotlin.jvm.functions.Function2
+                @Nullable
+                public final T invoke(@NotNull SaverScope Saver, @NotNull SwipeableState<T> it) {
+                    Intrinsics.checkNotNullParameter(Saver, "$this$Saver");
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return it.getCurrentValue();
+                }
+            }, new Function1<T, SwipeableState<T>>() { // from class: androidx.compose.material.SwipeableState$Companion$Saver$2
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                /* JADX WARN: Multi-variable type inference failed */
+                {
+                    super(1);
+                }
+
+                @Override // kotlin.jvm.functions.Function1
+                @Nullable
+                public final SwipeableState<T> invoke(@NotNull T it) {
+                    Intrinsics.checkNotNullParameter(it, "it");
+                    return new SwipeableState<>(it, animationSpec, confirmStateChange);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: renamed from: androidx.compose.material.SwipeableState$animateInternalToOffset$2, reason: invalid class name */
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u0010\u0003\u001a\u00020\u0002\"\u0004\b\u0000\u0010\u0000*\u00020\u0001H\u008a@"}, d2 = {"T", "Landroidx/compose/foundation/gestures/DragScope;", "", "<anonymous>"}, k = 3, mv = {1, 8, 0})
+    @DebugMetadata(c = "androidx.compose.material.SwipeableState$animateInternalToOffset$2", f = "Swipeable.kt", i = {}, l = {223}, m = "invokeSuspend", n = {}, s = {})
+    public static final class AnonymousClass2 extends SuspendLambda implements Function2<DragScope, Continuation<? super Unit>, Object> {
+        final /* synthetic */ AnimationSpec<Float> $spec;
+        final /* synthetic */ float $target;
+        private /* synthetic */ Object L$0;
+        int label;
+        final /* synthetic */ SwipeableState<T> this$0;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public AnonymousClass2(SwipeableState<T> swipeableState, float f, AnimationSpec<Float> animationSpec, Continuation<? super AnonymousClass2> continuation) {
+            super(2, continuation);
+            this.this$0 = swipeableState;
+            this.$target = f;
+            this.$spec = animationSpec;
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        @NotNull
+        public final Continuation<Unit> create(@Nullable Object obj, @NotNull Continuation<?> continuation) {
+            AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.this$0, this.$target, this.$spec, continuation);
+            anonymousClass2.L$0 = obj;
+            return anonymousClass2;
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        @Nullable
+        public final Object invoke(@NotNull DragScope dragScope, @Nullable Continuation<? super Unit> continuation) {
+            return ((AnonymousClass2) create(dragScope, continuation)).invokeSuspend(Unit.INSTANCE);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            int i = this.label;
+            try {
+                if (i == 0) {
+                    ResultKt.throwOnFailure(obj);
+                    final DragScope dragScope = (DragScope) this.L$0;
+                    final Ref.FloatRef floatRef = new Ref.FloatRef();
+                    floatRef.element = ((SwipeableState) this.this$0).absoluteOffset.getFloatValue();
+                    ((SwipeableState) this.this$0).animationTarget.setValue(Boxing.boxFloat(this.$target));
+                    this.this$0.setAnimationRunning(true);
+                    Animatable animatableAnimatable$default = AnimatableKt.Animatable$default(floatRef.element, 0.0f, 2, null);
+                    Float fBoxFloat = Boxing.boxFloat(this.$target);
+                    AnimationSpec<Float> animationSpec = this.$spec;
+                    Function1<Animatable<Float, AnimationVector1D>, Unit> function1 = new Function1<Animatable<Float, AnimationVector1D>, Unit>() { // from class: androidx.compose.material.SwipeableState.animateInternalToOffset.2.1
+                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                        {
+                            super(1);
+                        }
+
+                        @Override // kotlin.jvm.functions.Function1
+                        public /* bridge */ /* synthetic */ Unit invoke(Animatable<Float, AnimationVector1D> animatable) {
+                            invoke2(animatable);
+                            return Unit.INSTANCE;
+                        }
+
+                        /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+                        public final void invoke2(@NotNull Animatable<Float, AnimationVector1D> animateTo) {
+                            Intrinsics.checkNotNullParameter(animateTo, "$this$animateTo");
+                            dragScope.dragBy(animateTo.getValue().floatValue() - floatRef.element);
+                            floatRef.element = animateTo.getValue().floatValue();
+                        }
+                    };
+                    this.label = 1;
+                    if (Animatable.animateTo$default(animatableAnimatable$default, fBoxFloat, animationSpec, null, function1, this, 4, null) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ResultKt.throwOnFailure(obj);
+                }
+                ((SwipeableState) this.this$0).animationTarget.setValue(null);
+                this.this$0.setAnimationRunning(false);
+                return Unit.INSTANCE;
+            } catch (Throwable th) {
+                ((SwipeableState) this.this$0).animationTarget.setValue(null);
+                this.this$0.setAnimationRunning(false);
+                throw th;
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: androidx.compose.material.SwipeableState$animateTo$2, reason: invalid class name and case insensitive filesystem */
+    @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010$\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0005\u001a\u00020\u0004\"\u0004\b\u0000\u0010\u00002\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00028\u00000\u0001H\u008a@"}, d2 = {"T", "", "", "anchors", "", "<anonymous>"}, k = 3, mv = {1, 8, 0})
+    @SourceDebugExtension({"SMAP\nSwipeable.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Swipeable.kt\nandroidx/compose/material/SwipeableState$animateTo$2\n+ 2 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,890:1\n467#2,7:891\n*S KotlinDebug\n*F\n+ 1 Swipeable.kt\nandroidx/compose/material/SwipeableState$animateTo$2\n*L\n340#1:891,7\n*E\n"})
+    public static final class C07592 implements FlowCollector<Map<Float, ? extends T>> {
+        final /* synthetic */ AnimationSpec<Float> $anim;
+        final /* synthetic */ T $targetValue;
+        final /* synthetic */ SwipeableState<T> this$0;
+
+        public C07592(T t, SwipeableState<T> swipeableState, AnimationSpec<Float> animationSpec) {
+            this.$targetValue = t;
+            this.this$0 = swipeableState;
+            this.$anim = animationSpec;
+        }
+
+        @Override // kotlinx.coroutines.flow.FlowCollector
+        public /* bridge */ /* synthetic */ Object emit(Object obj, Continuation continuation) {
+            return emit((Map) obj, (Continuation<? super Unit>) continuation);
+        }
+
+        /* JADX WARN: Code duplicated, block: B:28:0x007d  */
+        /* JADX WARN: Code duplicated, block: B:30:0x0096  */
+        /* JADX WARN: Code duplicated, block: B:31:0x0098  */
+        /* JADX WARN: Code duplicated, block: B:36:0x00b3  */
+        /* JADX WARN: Code duplicated, block: B:46:0x00ec  */
+        /* JADX WARN: Code duplicated, block: B:48:0x0105  */
+        /* JADX WARN: Code duplicated, block: B:49:0x0107  */
+        /* JADX WARN: Code duplicated, block: B:54:0x0122  */
+        /* JADX WARN: Code duplicated, block: B:60:0x009b A[SYNTHETIC] */
+        /* JADX WARN: Code duplicated, block: B:63:0x0077 A[SYNTHETIC] */
+        /* JADX WARN: Code duplicated, block: B:65:0x010a A[SYNTHETIC] */
+        /* JADX WARN: Code duplicated, block: B:68:0x00e6 A[SYNTHETIC] */
+        /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+        @Nullable
+        public final Object emit(@NotNull Map<Float, ? extends T> map, @NotNull Continuation<? super Unit> continuation) throws Throwable {
+            SwipeableState$animateTo$2$emit$1 swipeableState$animateTo$2$emit$1;
+            C07592 c07592;
+            float floatValue;
+            LinkedHashMap linkedHashMap;
+            Object objFirstOrNull;
+            boolean z;
+            float floatValue2;
+            LinkedHashMap linkedHashMap2;
+            Object objFirstOrNull2;
+            boolean z2;
+            if (continuation instanceof SwipeableState$animateTo$2$emit$1) {
+                swipeableState$animateTo$2$emit$1 = (SwipeableState$animateTo$2$emit$1) continuation;
+                int i = swipeableState$animateTo$2$emit$1.label;
+                if ((i & Integer.MIN_VALUE) != 0) {
+                    swipeableState$animateTo$2$emit$1.label = i - Integer.MIN_VALUE;
+                } else {
+                    swipeableState$animateTo$2$emit$1 = new SwipeableState$animateTo$2$emit$1(this, continuation);
+                }
+            } else {
+                swipeableState$animateTo$2$emit$1 = new SwipeableState$animateTo$2$emit$1(this, continuation);
+            }
+            Object obj = swipeableState$animateTo$2$emit$1.result;
+            Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            int i2 = swipeableState$animateTo$2$emit$1.label;
+            if (i2 != 0) {
+                if (i2 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                map = (Map) swipeableState$animateTo$2$emit$1.L$1;
+                c07592 = (C07592) swipeableState$animateTo$2$emit$1.L$0;
+                try {
+                    ResultKt.throwOnFailure(obj);
+                    floatValue2 = ((SwipeableState) c07592.this$0).absoluteOffset.getFloatValue();
+                    linkedHashMap2 = new LinkedHashMap();
+                    for (Map.Entry<Float, ? extends T> entry : map.entrySet()) {
+                        if (Math.abs(entry.getKey().floatValue() - floatValue2) < 0.5f) {
+                            z2 = true;
+                        } else {
+                            z2 = false;
+                        }
+                        if (z2) {
+                            linkedHashMap2.put(entry.getKey(), entry.getValue());
+                        }
+                    }
+                    objFirstOrNull2 = CollectionsKt.firstOrNull(linkedHashMap2.values());
+                    if (objFirstOrNull2 == null) {
+                        objFirstOrNull2 = c07592.this$0.getCurrentValue();
+                    }
+                    c07592.this$0.setCurrentValue(objFirstOrNull2);
+                    return Unit.INSTANCE;
+                } catch (Throwable th) {
+                    th = th;
+                    floatValue = ((SwipeableState) c07592.this$0).absoluteOffset.getFloatValue();
+                    linkedHashMap = new LinkedHashMap();
+                    for (Map.Entry<Float, ? extends T> entry2 : map.entrySet()) {
+                        if (Math.abs(entry2.getKey().floatValue() - floatValue) < 0.5f) {
+                            z = true;
+                        } else {
+                            z = false;
+                        }
+                        if (z) {
+                            linkedHashMap.put(entry2.getKey(), entry2.getValue());
+                        }
+                    }
+                    objFirstOrNull = CollectionsKt.firstOrNull(linkedHashMap.values());
+                    if (objFirstOrNull == null) {
+                        objFirstOrNull = c07592.this$0.getCurrentValue();
+                    }
+                    c07592.this$0.setCurrentValue(objFirstOrNull);
+                    throw th;
+                }
+            }
+            ResultKt.throwOnFailure(obj);
+            try {
+                Float offset = SwipeableKt.getOffset(map, this.$targetValue);
+                if (offset == null) {
+                    throw new IllegalArgumentException("The target value must have an associated anchor.".toString());
+                }
+                SwipeableState<T> swipeableState = this.this$0;
+                float fFloatValue = offset.floatValue();
+                AnimationSpec<Float> animationSpec = this.$anim;
+                swipeableState$animateTo$2$emit$1.L$0 = this;
+                swipeableState$animateTo$2$emit$1.L$1 = map;
+                swipeableState$animateTo$2$emit$1.label = 1;
+                if (swipeableState.animateInternalToOffset(fFloatValue, animationSpec, swipeableState$animateTo$2$emit$1) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                c07592 = this;
+                floatValue2 = ((SwipeableState) c07592.this$0).absoluteOffset.getFloatValue();
+                linkedHashMap2 = new LinkedHashMap();
+                while (r9.hasNext()) {
+                    if (Math.abs(entry.getKey().floatValue() - floatValue2) < 0.5f) {
+                        z2 = true;
+                    } else {
+                        z2 = false;
+                    }
+                    if (z2) {
+                        linkedHashMap2.put(entry.getKey(), entry.getValue());
+                    }
+                }
+                objFirstOrNull2 = CollectionsKt.firstOrNull(linkedHashMap2.values());
+                if (objFirstOrNull2 == null) {
+                    objFirstOrNull2 = c07592.this$0.getCurrentValue();
+                }
+                c07592.this$0.setCurrentValue(objFirstOrNull2);
+                return Unit.INSTANCE;
+            } catch (Throwable th2) {
+                th = th2;
+                c07592 = this;
+                floatValue = ((SwipeableState) c07592.this$0).absoluteOffset.getFloatValue();
+                linkedHashMap = new LinkedHashMap();
+                while (r9.hasNext()) {
+                    if (Math.abs(entry2.getKey().floatValue() - floatValue) < 0.5f) {
+                        z = true;
+                    } else {
+                        z = false;
+                    }
+                    if (z) {
+                        linkedHashMap.put(entry2.getKey(), entry2.getValue());
+                    }
+                }
+                objFirstOrNull = CollectionsKt.firstOrNull(linkedHashMap.values());
+                if (objFirstOrNull == null) {
+                    objFirstOrNull = c07592.this$0.getCurrentValue();
+                }
+                c07592.this$0.setCurrentValue(objFirstOrNull);
+                throw th;
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: androidx.compose.material.SwipeableState$snapInternalToOffset$2, reason: invalid class name and case insensitive filesystem */
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u0010\u0003\u001a\u00020\u0002\"\u0004\b\u0000\u0010\u0000*\u00020\u0001H\u008a@"}, d2 = {"T", "Landroidx/compose/foundation/gestures/DragScope;", "", "<anonymous>"}, k = 3, mv = {1, 8, 0})
+    @DebugMetadata(c = "androidx.compose.material.SwipeableState$snapInternalToOffset$2", f = "Swipeable.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    public static final class C07612 extends SuspendLambda implements Function2<DragScope, Continuation<? super Unit>, Object> {
+        final /* synthetic */ float $target;
+        private /* synthetic */ Object L$0;
+        int label;
+        final /* synthetic */ SwipeableState<T> this$0;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public C07612(float f, SwipeableState<T> swipeableState, Continuation<? super C07612> continuation) {
+            super(2, continuation);
+            this.$target = f;
+            this.this$0 = swipeableState;
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        @NotNull
+        public final Continuation<Unit> create(@Nullable Object obj, @NotNull Continuation<?> continuation) {
+            C07612 c07612 = new C07612(this.$target, this.this$0, continuation);
+            c07612.L$0 = obj;
+            return c07612;
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        @Nullable
+        public final Object invoke(@NotNull DragScope dragScope, @Nullable Continuation<? super Unit> continuation) {
+            return ((C07612) create(dragScope, continuation)).invokeSuspend(Unit.INSTANCE);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            if (this.label != 0) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
+            ((DragScope) this.L$0).dragBy(this.$target - ((SwipeableState) this.this$0).absoluteOffset.getFloatValue());
+            return Unit.INSTANCE;
+        }
+    }
+
+    /* JADX INFO: renamed from: androidx.compose.material.SwipeableState$snapTo$2, reason: invalid class name and case insensitive filesystem */
+    @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010$\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0005\u001a\u00020\u0004\"\u0004\b\u0000\u0010\u00002\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00028\u00000\u0001H\u008a@"}, d2 = {"T", "", "", "anchors", "", "<anonymous>"}, k = 3, mv = {1, 8, 0})
+    public static final class C07622 implements FlowCollector<Map<Float, ? extends T>> {
+        final /* synthetic */ T $targetValue;
+        final /* synthetic */ SwipeableState<T> this$0;
+
+        public C07622(T t, SwipeableState<T> swipeableState) {
+            this.$targetValue = t;
+            this.this$0 = swipeableState;
+        }
+
+        @Override // kotlinx.coroutines.flow.FlowCollector
+        public /* bridge */ /* synthetic */ Object emit(Object obj, Continuation continuation) {
+            return emit((Map) obj, (Continuation<? super Unit>) continuation);
+        }
+
+        /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+        @Nullable
+        public final Object emit(@NotNull Map<Float, ? extends T> map, @NotNull Continuation<? super Unit> continuation) {
+            SwipeableState$snapTo$2$emit$1 swipeableState$snapTo$2$emit$1;
+            C07622 c07622;
+            if (continuation instanceof SwipeableState$snapTo$2$emit$1) {
+                swipeableState$snapTo$2$emit$1 = (SwipeableState$snapTo$2$emit$1) continuation;
+                int i = swipeableState$snapTo$2$emit$1.label;
+                if ((i & Integer.MIN_VALUE) != 0) {
+                    swipeableState$snapTo$2$emit$1.label = i - Integer.MIN_VALUE;
+                } else {
+                    swipeableState$snapTo$2$emit$1 = new SwipeableState$snapTo$2$emit$1(this, continuation);
+                }
+            } else {
+                swipeableState$snapTo$2$emit$1 = new SwipeableState$snapTo$2$emit$1(this, continuation);
+            }
+            Object obj = swipeableState$snapTo$2$emit$1.result;
+            Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            int i2 = swipeableState$snapTo$2$emit$1.label;
+            if (i2 == 0) {
+                ResultKt.throwOnFailure(obj);
+                Float offset = SwipeableKt.getOffset(map, this.$targetValue);
+                if (offset == null) {
+                    throw new IllegalArgumentException("The target value must have an associated anchor.".toString());
+                }
+                SwipeableState<T> swipeableState = this.this$0;
+                float fFloatValue = offset.floatValue();
+                swipeableState$snapTo$2$emit$1.L$0 = this;
+                swipeableState$snapTo$2$emit$1.label = 1;
+                if (swipeableState.snapInternalToOffset(fFloatValue, swipeableState$snapTo$2$emit$1) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                c07622 = this;
+            } else {
+                if (i2 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                c07622 = (C07622) swipeableState$snapTo$2$emit$1.L$0;
+                ResultKt.throwOnFailure(obj);
+            }
+            c07622.this$0.setCurrentValue(c07622.$targetValue);
+            return Unit.INSTANCE;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public SwipeableState(T t, @NotNull AnimationSpec<Float> animationSpec, @NotNull Function1<? super T, Boolean> confirmStateChange) {
+        Intrinsics.checkNotNullParameter(animationSpec, "animationSpec");
+        Intrinsics.checkNotNullParameter(confirmStateChange, "confirmStateChange");
+        this.animationSpec = animationSpec;
+        this.confirmStateChange = confirmStateChange;
+        this.currentValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(t, null, 2, null);
+        this.isAnimationRunning = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Boolean.FALSE, null, 2, null);
+        this.offsetState = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
+        this.overflowState = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
+        this.absoluteOffset = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
+        this.animationTarget = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
+        this.anchors = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MapsKt.emptyMap(), null, 2, null);
+        final Flow flowSnapshotFlow = SnapshotStateKt.snapshotFlow(new Function0<Map<Float, ? extends T>>(this) { // from class: androidx.compose.material.SwipeableState$latestNonEmptyAnchorsFlow$1
+            final /* synthetic */ SwipeableState<T> this$0;
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+                this.this$0 = this;
+            }
+
+            @Override // kotlin.jvm.functions.Function0
+            @NotNull
+            public final Map<Float, T> invoke() {
+                return this.this$0.getAnchors$material_release();
+            }
+        });
+        this.latestNonEmptyAnchorsFlow = FlowKt.take(new Flow<Map<Float, ? extends T>>() { // from class: androidx.compose.material.SwipeableState$special$$inlined$filter$1
+
+            /* JADX INFO: renamed from: androidx.compose.material.SwipeableState$special$$inlined$filter$1$2, reason: invalid class name */
+            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"<anonymous>", "", "T", "R", AppMeasurementSdk.ConditionalUserProperty.VALUE, "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$filter$$inlined$unsafeTransform$1$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
+            @SourceDebugExtension({"SMAP\nEmitters.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1\n+ 2 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 3 Swipeable.kt\nandroidx/compose/material/SwipeableState\n*L\n1#1,222:1\n21#2:223\n22#2:225\n128#3:224\n*E\n"})
+            public static final class AnonymousClass2<T> implements FlowCollector {
+                final /* synthetic */ FlowCollector $this_unsafeFlow;
+
+                /* JADX INFO: renamed from: androidx.compose.material.SwipeableState$special$$inlined$filter$1$2$1, reason: invalid class name */
+                @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.compose.material.SwipeableState$special$$inlined$filter$1$2", f = "Swipeable.kt", i = {}, l = {223}, m = "emit", n = {}, s = {})
+                @SourceDebugExtension({"SMAP\nEmitters.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1$emit$1\n*L\n1#1,222:1\n*E\n"})
+                public static final class AnonymousClass1 extends ContinuationImpl {
+                    Object L$0;
+                    Object L$1;
+                    int label;
+                    /* synthetic */ Object result;
+
+                    public AnonymousClass1(Continuation continuation) {
+                        super(continuation);
+                    }
+
+                    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+                    @Nullable
+                    public final Object invokeSuspend(@NotNull Object obj) {
+                        this.result = obj;
+                        this.label |= Integer.MIN_VALUE;
+                        return AnonymousClass2.this.emit(null, this);
+                    }
+                }
+
+                public AnonymousClass2(FlowCollector flowCollector) {
+                    this.$this_unsafeFlow = flowCollector;
+                }
+
+                /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+                @Override // kotlinx.coroutines.flow.FlowCollector
+                @Nullable
+                public final Object emit(Object obj, @NotNull Continuation continuation) {
+                    AnonymousClass1 anonymousClass1;
+                    if (continuation instanceof AnonymousClass1) {
+                        anonymousClass1 = (AnonymousClass1) continuation;
+                        int i = anonymousClass1.label;
+                        if ((i & Integer.MIN_VALUE) != 0) {
+                            anonymousClass1.label = i - Integer.MIN_VALUE;
+                        } else {
+                            anonymousClass1 = new AnonymousClass1(continuation);
+                        }
+                    } else {
+                        anonymousClass1 = new AnonymousClass1(continuation);
+                    }
+                    Object obj2 = anonymousClass1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    int i2 = anonymousClass1.label;
+                    if (i2 == 0) {
+                        ResultKt.throwOnFailure(obj2);
+                        FlowCollector flowCollector = this.$this_unsafeFlow;
+                        if (!((Map) obj).isEmpty()) {
+                            anonymousClass1.label = 1;
+                            if (flowCollector.emit(obj, anonymousClass1) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                        }
+                    } else {
+                        if (i2 != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        ResultKt.throwOnFailure(obj2);
+                    }
+                    return Unit.INSTANCE;
+                }
+            }
+
+            @Override // kotlinx.coroutines.flow.Flow
+            @Nullable
+            public Object collect(@NotNull FlowCollector flowCollector, @NotNull Continuation continuation) {
+                Object objCollect = flowSnapshotFlow.collect(new AnonymousClass2(flowCollector), continuation);
+                return objCollect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objCollect : Unit.INSTANCE;
+            }
+        }, 1);
+        this.minBound = Float.NEGATIVE_INFINITY;
+        this.maxBound = Float.POSITIVE_INFINITY;
+        this.thresholds = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new Function2<Float, Float, Float>() { // from class: androidx.compose.material.SwipeableState$thresholds$2
+            @NotNull
+            public final Float invoke(float f, float f2) {
+                return Float.valueOf(0.0f);
+            }
+
+            @Override // kotlin.jvm.functions.Function2
+            public /* bridge */ /* synthetic */ Float invoke(Float f, Float f2) {
+                return invoke(f.floatValue(), f2.floatValue());
+            }
+        }, null, 2, null);
+        this.velocityThreshold = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
+        this.resistance = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
+        this.draggableState = DraggableKt.DraggableState(new Function1<Float, Unit>(this) { // from class: androidx.compose.material.SwipeableState$draggableState$1
+            final /* synthetic */ SwipeableState<T> this$0;
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+                this.this$0 = this;
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Float f) {
+                invoke(f.floatValue());
+                return Unit.INSTANCE;
+            }
+
+            public final void invoke(float f) {
+                float floatValue = ((SwipeableState) this.this$0).absoluteOffset.getFloatValue() + f;
+                float fCoerceIn = RangesKt.coerceIn(floatValue, this.this$0.getMinBound(), this.this$0.getMaxBound());
+                float f2 = floatValue - fCoerceIn;
+                ResistanceConfig resistance$material_release = this.this$0.getResistance$material_release();
+                ((SwipeableState) this.this$0).offsetState.setFloatValue(fCoerceIn + (resistance$material_release != null ? resistance$material_release.computeResistance(f2) : 0.0f));
+                ((SwipeableState) this.this$0).overflowState.setFloatValue(f2);
+                ((SwipeableState) this.this$0).absoluteOffset.setFloatValue(floatValue);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Object animateInternalToOffset(float f, AnimationSpec<Float> animationSpec, Continuation<? super Unit> continuation) {
+        Object objOooO00o = androidx.compose.foundation.gestures.OooO00o.OooO00o(this.draggableState, null, new AnonymousClass2(this, f, animationSpec, null), continuation, 1, null);
+        return objOooO00o == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objOooO00o : Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ Object animateTo$default(SwipeableState swipeableState, Object obj, AnimationSpec animationSpec, Continuation continuation, int i, Object obj2) {
+        if (obj2 != null) {
+            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: animateTo");
+        }
+        if ((i & 2) != 0) {
+            animationSpec = swipeableState.animationSpec;
+        }
+        return swipeableState.animateTo(obj, animationSpec, continuation);
+    }
+
+    @ExperimentalMaterialApi
+    public static /* synthetic */ void getDirection$annotations() {
+    }
+
+    @ExperimentalMaterialApi
+    public static /* synthetic */ void getProgress$annotations() {
+    }
+
+    @ExperimentalMaterialApi
+    public static /* synthetic */ void getTargetValue$annotations() {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void setAnimationRunning(boolean z) {
+        this.isAnimationRunning.setValue(Boolean.valueOf(z));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void setCurrentValue(T t) {
+        this.currentValue.setValue(t);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Object snapInternalToOffset(float f, Continuation<? super Unit> continuation) {
+        Object objOooO00o = androidx.compose.foundation.gestures.OooO00o.OooO00o(this.draggableState, null, new C07612(f, this, null), continuation, 1, null);
+        return objOooO00o == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objOooO00o : Unit.INSTANCE;
+    }
+
+    @ExperimentalMaterialApi
+    @Nullable
+    public final Object animateTo(T t, @NotNull AnimationSpec<Float> animationSpec, @NotNull Continuation<? super Unit> continuation) {
+        Object objCollect = this.latestNonEmptyAnchorsFlow.collect(new C07592(t, this, animationSpec), continuation);
+        return objCollect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objCollect : Unit.INSTANCE;
+    }
+
+    public final void ensureInit$material_release(@NotNull Map<Float, ? extends T> newAnchors) {
+        Intrinsics.checkNotNullParameter(newAnchors, "newAnchors");
+        if (getAnchors$material_release().isEmpty()) {
+            Float offset = SwipeableKt.getOffset(newAnchors, getCurrentValue());
+            if (offset == null) {
+                throw new IllegalArgumentException("The initial value must have an associated anchor.".toString());
+            }
+            this.offsetState.setFloatValue(offset.floatValue());
+            this.absoluteOffset.setFloatValue(offset.floatValue());
+        }
+    }
+
+    @NotNull
+    public final Map<Float, T> getAnchors$material_release() {
+        return (Map) this.anchors.getValue();
+    }
+
+    @NotNull
+    public final AnimationSpec<Float> getAnimationSpec$material_release() {
+        return this.animationSpec;
+    }
+
+    @NotNull
+    public final Function1<T, Boolean> getConfirmStateChange$material_release() {
+        return this.confirmStateChange;
+    }
+
+    public final T getCurrentValue() {
+        return this.currentValue.getValue();
+    }
+
+    public final float getDirection() {
+        Float offset = SwipeableKt.getOffset(getAnchors$material_release(), getCurrentValue());
+        if (offset == null) {
+            return 0.0f;
+        }
+        return Math.signum(getOffset().getValue().floatValue() - offset.floatValue());
+    }
+
+    @NotNull
+    /* JADX INFO: renamed from: getDraggableState$material_release, reason: from getter */
+    public final DraggableState getDraggableState() {
+        return this.draggableState;
+    }
+
+    /* JADX INFO: renamed from: getMaxBound$material_release, reason: from getter */
+    public final float getMaxBound() {
+        return this.maxBound;
+    }
+
+    /* JADX INFO: renamed from: getMinBound$material_release, reason: from getter */
+    public final float getMinBound() {
+        return this.minBound;
+    }
+
+    @NotNull
+    public final State<Float> getOffset() {
+        return this.offsetState;
+    }
+
+    @NotNull
+    public final State<Float> getOverflow() {
+        return this.overflowState;
+    }
+
+    @NotNull
+    public final SwipeProgress<T> getProgress() {
+        Object currentValue;
+        Object value;
+        float fFloatValue;
+        List listFindBounds = SwipeableKt.findBounds(getOffset().getValue().floatValue(), getAnchors$material_release().keySet());
+        int size = listFindBounds.size();
+        if (size == 0) {
+            T currentValue2 = getCurrentValue();
+            currentValue = getCurrentValue();
+            value = currentValue2;
+            fFloatValue = 1.0f;
+        } else if (size != 1) {
+            Pair pair = getDirection() > 0.0f ? TuplesKt.to(listFindBounds.get(0), listFindBounds.get(1)) : TuplesKt.to(listFindBounds.get(1), listFindBounds.get(0));
+            float fFloatValue2 = ((Number) pair.component1()).floatValue();
+            float fFloatValue3 = ((Number) pair.component2()).floatValue();
+            value = MapsKt.getValue(getAnchors$material_release(), Float.valueOf(fFloatValue2));
+            currentValue = MapsKt.getValue(getAnchors$material_release(), Float.valueOf(fFloatValue3));
+            fFloatValue = (getOffset().getValue().floatValue() - fFloatValue2) / (fFloatValue3 - fFloatValue2);
+        } else {
+            Object value2 = MapsKt.getValue(getAnchors$material_release(), listFindBounds.get(0));
+            currentValue = MapsKt.getValue(getAnchors$material_release(), listFindBounds.get(0));
+            fFloatValue = 1.0f;
+            value = value2;
+        }
+        return new SwipeProgress<>(value, currentValue, fFloatValue);
+    }
+
+    @Nullable
+    public final ResistanceConfig getResistance$material_release() {
+        return (ResistanceConfig) this.resistance.getValue();
+    }
+
+    public final T getTargetValue() {
+        float fComputeTarget;
+        Float value = this.animationTarget.getValue();
+        if (value != null) {
+            fComputeTarget = value.floatValue();
+        } else {
+            float fFloatValue = getOffset().getValue().floatValue();
+            Float offset = SwipeableKt.getOffset(getAnchors$material_release(), getCurrentValue());
+            fComputeTarget = SwipeableKt.computeTarget(fFloatValue, offset != null ? offset.floatValue() : getOffset().getValue().floatValue(), getAnchors$material_release().keySet(), getThresholds$material_release(), 0.0f, Float.POSITIVE_INFINITY);
+        }
+        T t = getAnchors$material_release().get(Float.valueOf(fComputeTarget));
+        return t == null ? getCurrentValue() : t;
+    }
+
+    @NotNull
+    public final Function2<Float, Float, Float> getThresholds$material_release() {
+        return (Function2) this.thresholds.getValue();
+    }
+
+    public final float getVelocityThreshold$material_release() {
+        return this.velocityThreshold.getFloatValue();
+    }
+
+    public final boolean isAnimationRunning() {
+        return ((Boolean) this.isAnimationRunning.getValue()).booleanValue();
+    }
+
+    public final float performDrag(float delta) {
+        float fCoerceIn = RangesKt.coerceIn(this.absoluteOffset.getFloatValue() + delta, this.minBound, this.maxBound) - this.absoluteOffset.getFloatValue();
+        if (Math.abs(fCoerceIn) > 0.0f) {
+            this.draggableState.dispatchRawDelta(fCoerceIn);
+        }
+        return fCoerceIn;
+    }
+
+    @Nullable
+    public final Object performFling(final float f, @NotNull Continuation<? super Unit> continuation) {
+        Object objCollect = this.latestNonEmptyAnchorsFlow.collect(new FlowCollector<Map<Float, ? extends T>>(this) { // from class: androidx.compose.material.SwipeableState.performFling.2
+            final /* synthetic */ SwipeableState<T> this$0;
+
+            {
+                this.this$0 = this;
+            }
+
+            @Override // kotlinx.coroutines.flow.FlowCollector
+            public /* bridge */ /* synthetic */ Object emit(Object obj, Continuation continuation2) {
+                return emit((Map) obj, (Continuation<? super Unit>) continuation2);
+            }
+
+            @Nullable
+            public final Object emit(@NotNull Map<Float, ? extends T> map, @NotNull Continuation<? super Unit> continuation2) {
+                Float offset = SwipeableKt.getOffset(map, this.this$0.getCurrentValue());
+                Intrinsics.checkNotNull(offset);
+                float fFloatValue = offset.floatValue();
+                T t = map.get(Boxing.boxFloat(SwipeableKt.computeTarget(this.this$0.getOffset().getValue().floatValue(), fFloatValue, map.keySet(), this.this$0.getThresholds$material_release(), f, this.this$0.getVelocityThreshold$material_release())));
+                if (t != null && this.this$0.getConfirmStateChange$material_release().invoke(t).booleanValue()) {
+                    Object objAnimateTo$default = SwipeableState.animateTo$default(this.this$0, t, null, continuation2, 2, null);
+                    return objAnimateTo$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objAnimateTo$default : Unit.INSTANCE;
+                }
+                SwipeableState<T> swipeableState = this.this$0;
+                Object objAnimateInternalToOffset = swipeableState.animateInternalToOffset(fFloatValue, swipeableState.getAnimationSpec$material_release(), continuation2);
+                return objAnimateInternalToOffset == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objAnimateInternalToOffset : Unit.INSTANCE;
+            }
+        }, continuation);
+        return objCollect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objCollect : Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    /* JADX WARN: Code duplicated, block: B:86:0x021a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:87:0x021b  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r10v21, types: [float] */
+    /* JADX WARN: Type inference failed for: r10v76, types: [float] */
+    /* JADX WARN: Type inference failed for: r10v78, types: [float] */
+    /* JADX WARN: Type inference failed for: r10v89 */
+    /* JADX WARN: Type inference failed for: r10v90 */
+    /* JADX WARN: Type inference failed for: r10v91 */
+    /* JADX WARN: Type inference failed for: r10v92 */
+    /* JADX WARN: Type inference failed for: r2v0, types: [int] */
+    @Nullable
+    public final Object processNewAnchors$material_release(@NotNull Map<Float, ? extends T> map, @NotNull Map<Float, ? extends T> map2, @NotNull Continuation<? super Unit> continuation) throws Throwable {
+        SwipeableState$processNewAnchors$1 swipeableState$processNewAnchors$1;
+        SwipeableState swipeableState;
+        SwipeableState swipeableState2;
+        SwipeableState swipeableState3;
+        SwipeableState swipeableState4;
+        float f;
+        float f2;
+        if (continuation instanceof SwipeableState$processNewAnchors$1) {
+            swipeableState$processNewAnchors$1 = (SwipeableState$processNewAnchors$1) continuation;
+            int i = swipeableState$processNewAnchors$1.label;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                swipeableState$processNewAnchors$1.label = i - Integer.MIN_VALUE;
+            } else {
+                swipeableState$processNewAnchors$1 = new SwipeableState$processNewAnchors$1(this, continuation);
+            }
+        } else {
+            swipeableState$processNewAnchors$1 = new SwipeableState$processNewAnchors$1(this, continuation);
+        }
+        Object obj = swipeableState$processNewAnchors$1.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ?? r2 = swipeableState$processNewAnchors$1.label;
+        try {
+            if (r2 == 0) {
+                ResultKt.throwOnFailure(obj);
+                if (map.isEmpty()) {
+                    Float fMinOrNull = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                    Intrinsics.checkNotNull(fMinOrNull);
+                    this.minBound = fMinOrNull.floatValue();
+                    Float fMaxOrNull = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                    Intrinsics.checkNotNull(fMaxOrNull);
+                    this.maxBound = fMaxOrNull.floatValue();
+                    Float offset = SwipeableKt.getOffset(map2, getCurrentValue());
+                    if (offset == null) {
+                        throw new IllegalArgumentException("The initial value must have an associated anchor.".toString());
+                    }
+                    float fFloatValue = offset.floatValue();
+                    swipeableState$processNewAnchors$1.label = 1;
+                    if (snapInternalToOffset(fFloatValue, swipeableState$processNewAnchors$1) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    return Unit.INSTANCE;
+                }
+                if (!Intrinsics.areEqual(map2, map)) {
+                    this.minBound = Float.NEGATIVE_INFINITY;
+                    this.maxBound = Float.POSITIVE_INFINITY;
+                    Float value = this.animationTarget.getValue();
+                    Object next = null;
+                    if (value != null) {
+                        Float offset2 = SwipeableKt.getOffset(map2, map.get(value));
+                        if (offset2 != null) {
+                            map = (Map<Float, ? extends T>) offset2.floatValue();
+                        } else {
+                            Iterator<T> it = map2.keySet().iterator();
+                            if (it.hasNext()) {
+                                next = it.next();
+                                if (it.hasNext()) {
+                                    float fAbs = Math.abs(((Number) next).floatValue() - value.floatValue());
+                                    do {
+                                        Object next2 = it.next();
+                                        float fAbs2 = Math.abs(((Number) next2).floatValue() - value.floatValue());
+                                        if (Float.compare(fAbs, fAbs2) > 0) {
+                                            next = next2;
+                                            fAbs = fAbs2;
+                                        }
+                                    } while (it.hasNext());
+                                }
+                            }
+                            Intrinsics.checkNotNull(next);
+                            map = (Map<Float, ? extends T>) ((Number) next).floatValue();
+                        }
+                    } else {
+                        T currentValue = map.get(getOffset().getValue());
+                        if (Intrinsics.areEqual(currentValue, getCurrentValue())) {
+                            currentValue = getCurrentValue();
+                        }
+                        Float offset3 = SwipeableKt.getOffset(map2, currentValue);
+                        if (offset3 != null) {
+                            map = offset3.floatValue();
+                        } else {
+                            Iterator<T> it2 = map2.keySet().iterator();
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                if (it2.hasNext()) {
+                                    float fAbs3 = Math.abs(((Number) next).floatValue() - getOffset().getValue().floatValue());
+                                    do {
+                                        Object next3 = it2.next();
+                                        float fAbs4 = Math.abs(((Number) next3).floatValue() - getOffset().getValue().floatValue());
+                                        if (Float.compare(fAbs3, fAbs4) > 0) {
+                                            next = next3;
+                                            fAbs3 = fAbs4;
+                                        }
+                                    } while (it2.hasNext());
+                                }
+                            }
+                            Intrinsics.checkNotNull(next);
+                            map = ((Number) next).floatValue();
+                        }
+                    }
+                    try {
+                        AnimationSpec<Float> animationSpec = this.animationSpec;
+                        swipeableState$processNewAnchors$1.L$0 = this;
+                        swipeableState$processNewAnchors$1.L$1 = map2;
+                        swipeableState$processNewAnchors$1.F$0 = (float) map;
+                        swipeableState$processNewAnchors$1.label = 2;
+                        if (animateInternalToOffset((float) map, animationSpec, swipeableState$processNewAnchors$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        swipeableState3 = this;
+                        f = map;
+                        swipeableState3.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f)));
+                        Float fMinOrNull2 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull2);
+                        swipeableState3.minBound = fMinOrNull2.floatValue();
+                        Float fMaxOrNull2 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull2);
+                        swipeableState3.maxBound = fMaxOrNull2.floatValue();
+                    } catch (CancellationException unused) {
+                        swipeableState2 = this;
+                        swipeableState$processNewAnchors$1.L$0 = swipeableState2;
+                        swipeableState$processNewAnchors$1.L$1 = map2;
+                        swipeableState$processNewAnchors$1.F$0 = map;
+                        swipeableState$processNewAnchors$1.label = 3;
+                        if (swipeableState2.snapInternalToOffset(map, swipeableState$processNewAnchors$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        swipeableState4 = swipeableState2;
+                        f2 = map;
+                        swipeableState4.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f2)));
+                        Float fMinOrNull3 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull3);
+                        swipeableState4.minBound = fMinOrNull3.floatValue();
+                        Float fMaxOrNull3 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull3);
+                        swipeableState4.maxBound = fMaxOrNull3.floatValue();
+                    } catch (Throwable th) {
+                        th = th;
+                        swipeableState = this;
+                        swipeableState.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(map)));
+                        Float fMinOrNull4 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull4);
+                        swipeableState.minBound = fMinOrNull4.floatValue();
+                        Float fMaxOrNull4 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull4);
+                        swipeableState.maxBound = fMaxOrNull4.floatValue();
+                        throw th;
+                    }
+                }
+            } else {
+                if (r2 == 1) {
+                    ResultKt.throwOnFailure(obj);
+                    return Unit.INSTANCE;
+                }
+                if (r2 == 2) {
+                    map = (Map<Float, ? extends T>) swipeableState$processNewAnchors$1.F$0;
+                    map2 = (Map) swipeableState$processNewAnchors$1.L$1;
+                    swipeableState2 = (SwipeableState) swipeableState$processNewAnchors$1.L$0;
+                    try {
+                        ResultKt.throwOnFailure(obj);
+                        swipeableState3 = swipeableState2;
+                        f = map;
+                        swipeableState3.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f)));
+                        Float fMinOrNull5 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull5);
+                        swipeableState3.minBound = fMinOrNull5.floatValue();
+                        Float fMaxOrNull5 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull5);
+                        swipeableState3.maxBound = fMaxOrNull5.floatValue();
+                    } catch (CancellationException unused2) {
+                        swipeableState$processNewAnchors$1.L$0 = swipeableState2;
+                        swipeableState$processNewAnchors$1.L$1 = map2;
+                        swipeableState$processNewAnchors$1.F$0 = map;
+                        swipeableState$processNewAnchors$1.label = 3;
+                        if (swipeableState2.snapInternalToOffset(map, swipeableState$processNewAnchors$1) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        swipeableState4 = swipeableState2;
+                        f2 = map;
+                        swipeableState4.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f2)));
+                        Float fMinOrNull6 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull6);
+                        swipeableState4.minBound = fMinOrNull6.floatValue();
+                        Float fMaxOrNull6 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull6);
+                        swipeableState4.maxBound = fMaxOrNull6.floatValue();
+                    }
+                } else {
+                    if (r2 != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    map = (Map<Float, ? extends T>) swipeableState$processNewAnchors$1.F$0;
+                    map2 = (Map) swipeableState$processNewAnchors$1.L$1;
+                    swipeableState = (SwipeableState) swipeableState$processNewAnchors$1.L$0;
+                    try {
+                        ResultKt.throwOnFailure(obj);
+                        swipeableState4 = swipeableState;
+                        f2 = map;
+                        swipeableState4.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(f2)));
+                        Float fMinOrNull7 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull7);
+                        swipeableState4.minBound = fMinOrNull7.floatValue();
+                        Float fMaxOrNull7 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull7);
+                        swipeableState4.maxBound = fMaxOrNull7.floatValue();
+                    } catch (Throwable th2) {
+                        th = th2;
+                        swipeableState.setCurrentValue(MapsKt.getValue(map2, Boxing.boxFloat(map)));
+                        Float fMinOrNull8 = CollectionsKt.minOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMinOrNull8);
+                        swipeableState.minBound = fMinOrNull8.floatValue();
+                        Float fMaxOrNull8 = CollectionsKt.maxOrNull((Iterable<? extends Float>) map2.keySet());
+                        Intrinsics.checkNotNull(fMaxOrNull8);
+                        swipeableState.maxBound = fMaxOrNull8.floatValue();
+                        throw th;
+                    }
+                }
+            }
+            return Unit.INSTANCE;
+        } catch (Throwable th3) {
+            th = th3;
+            swipeableState = r2;
+        }
+    }
+
+    public final void setAnchors$material_release(@NotNull Map<Float, ? extends T> map) {
+        Intrinsics.checkNotNullParameter(map, "<set-?>");
+        this.anchors.setValue(map);
+    }
+
+    public final void setMaxBound$material_release(float f) {
+        this.maxBound = f;
+    }
+
+    public final void setMinBound$material_release(float f) {
+        this.minBound = f;
+    }
+
+    public final void setResistance$material_release(@Nullable ResistanceConfig resistanceConfig) {
+        this.resistance.setValue(resistanceConfig);
+    }
+
+    public final void setThresholds$material_release(@NotNull Function2<? super Float, ? super Float, Float> function2) {
+        Intrinsics.checkNotNullParameter(function2, "<set-?>");
+        this.thresholds.setValue(function2);
+    }
+
+    public final void setVelocityThreshold$material_release(float f) {
+        this.velocityThreshold.setFloatValue(f);
+    }
+
+    @ExperimentalMaterialApi
+    @Nullable
+    public final Object snapTo(T t, @NotNull Continuation<? super Unit> continuation) {
+        Object objCollect = this.latestNonEmptyAnchorsFlow.collect(new C07622(t, this), continuation);
+        return objCollect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objCollect : Unit.INSTANCE;
+    }
+
+    public /* synthetic */ SwipeableState(Object obj, AnimationSpec animationSpec, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(obj, (i & 2) != 0 ? SwipeableDefaults.INSTANCE.getAnimationSpec() : animationSpec, (i & 4) != 0 ? new Function1<T, Boolean>() { // from class: androidx.compose.material.SwipeableState.1
+            /* JADX WARN: Can't rename method to resolve collision */
+            @Override // kotlin.jvm.functions.Function1
+            @NotNull
+            public final Boolean invoke(T t) {
+                return Boolean.TRUE;
+            }
+        } : function1);
+    }
+}

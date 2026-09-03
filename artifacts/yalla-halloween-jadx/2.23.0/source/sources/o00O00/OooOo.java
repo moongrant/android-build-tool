@@ -1,0 +1,30 @@
+package o00O00;
+
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.CancellableContinuation;
+import kotlinx.coroutines.CancellableContinuationImpl;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class OooOo<T> implements com.airbnb.lottie.o0OoOo0 {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final /* synthetic */ CancellableContinuation<T> f36095OooO00o;
+
+    public OooOo(CancellableContinuationImpl cancellableContinuationImpl) {
+        this.f36095OooO00o = cancellableContinuationImpl;
+    }
+
+    @Override // com.airbnb.lottie.o0OoOo0
+    public final void OooO00o(Object obj) {
+        Throwable e = (Throwable) obj;
+        CancellableContinuation<T> cancellableContinuation = this.f36095OooO00o;
+        if (cancellableContinuation.isCompleted()) {
+            return;
+        }
+        Intrinsics.checkNotNullExpressionValue(e, "e");
+        Result.Companion companion = Result.INSTANCE;
+        cancellableContinuation.resumeWith(Result.m4213constructorimpl(ResultKt.createFailure(e)));
+    }
+}

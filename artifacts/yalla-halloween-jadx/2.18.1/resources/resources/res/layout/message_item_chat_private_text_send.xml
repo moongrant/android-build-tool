@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chatItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/include_chat_private_message_time"/>
+    <include layout="@layout/include_chat_private_message_header_send"/>
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/svga_message_status"
+        android:visibility="visible"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_chat_private_text"
+        app:layout_constraintEnd_toStartOf="@+id/tv_chat_private_text"
+        app:layout_constraintTop_toTopOf="@+id/tv_chat_private_text"/>
+    <com.app.base.view.FixTextView
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:gravity="center_vertical"
+        android:layout_gravity="end"
+        android:id="@+id/tv_chat_private_text"
+        android:background="@drawable/bg_chitchat_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:includeFontPadding="false"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/niv_chat_message_header"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/niv_chat_message_header"
+        style="@style/private_chat_item_bg_right"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

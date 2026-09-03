@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.base.view.pullrefresh.XRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/xrlPost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlEnableRefresh="false">
+    <com.app.base.view.recyclerview.FixedRecyclerView
+        android:id="@+id/rvPost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"/>
+</com.app.base.view.pullrefresh.XRefreshLayout>

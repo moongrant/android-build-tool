@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+    <com.yalla.yalla.common.ui.view.SVGAView
+        android:id="@+id/svga_refersh_header"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_margin="16dp"/>
+</LinearLayout>

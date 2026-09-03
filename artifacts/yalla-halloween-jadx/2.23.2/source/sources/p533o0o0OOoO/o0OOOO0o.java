@@ -1,0 +1,38 @@
+package p533o0o0OOoO;
+
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Lambda;
+import p386o0OOooO.o0OOO0o;
+import p415o0Oo0oO0.o00Ooo;
+
+/* JADX INFO: loaded from: classes4.dex */
+public final class o0OOOO0o extends Lambda implements Function1<Boolean, Unit> {
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public final /* synthetic */ boolean f53524OooO0Oo;
+
+    /* JADX INFO: renamed from: OooO0o0, reason: collision with root package name */
+    public final /* synthetic */ boolean f53525OooO0o0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o0OOOO0o(boolean z, boolean z2) {
+        super(1);
+        this.f53524OooO0Oo = z;
+        this.f53525OooO0o0 = z2;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final Unit invoke(Boolean bool) {
+        int i;
+        bool.booleanValue();
+        if (this.f53524OooO0Oo) {
+            i = this.f53525OooO0o0 ? 2 : 1;
+        } else {
+            i = 0;
+        }
+        o00Ooo.OooO0O0().OooOO0O(i);
+        o0OOO0o.f43502OooO0Oo.setValue(Integer.valueOf(i));
+        return Unit.INSTANCE;
+    }
+}

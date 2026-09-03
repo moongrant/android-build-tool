@@ -1,0 +1,37 @@
+syntax = "proto3";
+package roomuser;
+// java 语法特别选项
+option java_package = "com.app.base.protobuf.room";
+option java_outer_classname = "RoomTreasureBox";
+
+//房间宝箱进度通知
+message TreasureBoxNotify{
+  int64 roomId = 1;
+  int32 roomboxIsOpen = 2;
+  int32 roomboxTimeId = 3;
+  int32 roomboxPercent = 4;
+  int32 roomboxLevel = 5;
+}
+
+message TreasureBoxDrawUserModel{
+  int64 userId = 1;
+  string nickName = 2;
+  string headUrl = 3;
+}
+
+message TreasureBoxDrawAwardUserModel{
+  int64 userId = 1;
+  string nickName = 2;
+  string headUrl = 3;
+  string awardImage = 4;
+  int32 awardType = 5;
+  int32 Nums = 6;
+  string DynamicUrl = 7;
+}
+//房间宝箱开奖通知
+message TreasureBoxDrawNotify{
+  int32 roomboxTimeId = 1;//
+  int32 roomboxLevel = 2;
+  TreasureBoxDrawUserModel roomboxTop = 3;
+  repeated TreasureBoxDrawAwardUserModel awardUsers = 4;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.app.base.view.SearchView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search"
+    android:background="@color/white"
+    android:visibility="invisible"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:editSearchMarginBottom="12dp"
+    app:editSearchMarginStart="12dp"
+    app:editSearchMarginTop="10dp"/>

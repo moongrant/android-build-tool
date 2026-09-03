@@ -1,0 +1,34 @@
+package com.google.gson;
+
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class OooO0OO extends o0ooOOo<Number> {
+    final /* synthetic */ OooOOO0 this$0;
+
+    public OooO0OO(OooOOO0 oooOOO0) {
+        this.this$0 = oooOOO0;
+    }
+
+    @Override // com.google.gson.o0ooOOo
+    public Number read(JsonReader jsonReader) throws IOException {
+        if (jsonReader.peek() != JsonToken.NULL) {
+            return Double.valueOf(jsonReader.nextDouble());
+        }
+        jsonReader.nextNull();
+        return null;
+    }
+
+    @Override // com.google.gson.o0ooOOo
+    public void write(JsonWriter jsonWriter, Number number) throws IOException {
+        if (number == null) {
+            jsonWriter.nullValue();
+        } else {
+            OooOOO0.OooO00o(number.doubleValue());
+            jsonWriter.value(number);
+        }
+    }
+}

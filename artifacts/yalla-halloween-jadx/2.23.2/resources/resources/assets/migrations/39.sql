@@ -1,0 +1,1 @@
+ALTER TABLE RoomHistory ADD COLUMN medal STRING DEFAULT "";

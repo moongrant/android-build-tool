@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ChatItemRoot">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_bg_room_follow_tip"
+        android:layout_width="match_parent"
+        style="@style/ChatItemSystem">
+        <com.app.base.view.FixTextView
+            android:textSize="13dp"
+            android:textColor="@color/white"
+            android:gravity="start"
+            android:id="@+id/tvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/followed_join_member_tip"
+            android:includeFontPadding="false"
+            android:layout_weight="1"/>
+        <View
+            android:background="@color/color_white_25"
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@mipmap/ic_room_member_join"/>
+    </LinearLayout>
+</FrameLayout>

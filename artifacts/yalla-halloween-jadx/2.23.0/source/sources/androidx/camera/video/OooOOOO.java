@@ -1,0 +1,1021 @@
+package androidx.camera.video;
+
+import android.annotation.SuppressLint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.media.MediaCodec;
+import android.util.Range;
+import android.util.Size;
+import androidx.annotation.MainThread;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.annotation.RestrictTo;
+import androidx.annotation.VisibleForTesting;
+import androidx.arch.core.util.Function;
+import androidx.camera.core.DynamicRange;
+import androidx.camera.core.Oooo0;
+import androidx.camera.core.SurfaceRequest;
+import androidx.camera.core.impl.CameraInternal;
+import androidx.camera.core.impl.Config;
+import androidx.camera.core.impl.DeferrableSurface;
+import androidx.camera.core.impl.EncoderProfilesProxy;
+import androidx.camera.core.impl.ImageOutputConfig;
+import androidx.camera.core.impl.SessionConfig;
+import androidx.camera.core.impl.Timebase;
+import androidx.camera.core.impl.UseCaseConfigFactory;
+import androidx.camera.core.impl.o000000O;
+import androidx.camera.core.impl.o00000O0;
+import androidx.camera.core.impl.o000O0Oo;
+import androidx.camera.core.impl.o000OO0O;
+import androidx.camera.core.impl.o000oOoO;
+import androidx.camera.core.impl.o00O0;
+import androidx.camera.core.impl.o00O00;
+import androidx.camera.core.impl.o00O00O;
+import androidx.camera.core.impl.o00O00o0;
+import androidx.camera.core.impl.o00OO0O0;
+import androidx.camera.core.impl.o00OOO0O;
+import androidx.camera.core.impl.o0Oo0oo;
+import androidx.camera.core.impl.o0o0Oo;
+import androidx.camera.core.processing.SurfaceProcessorNode;
+import androidx.camera.video.OooOOOO;
+import androidx.camera.video.VideoOutput;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
+import o000OO.OooOOO0;
+import p003OooO0o0.oo0o0Oo;
+import p028Oooo0oO.o00O0O0;
+import p031OoooO0.o0OO00O;
+import p033OoooO0O.o00oO0o;
+import p037OoooOo0.o000O000;
+import p037OoooOo0.o00O0000;
+import p039OoooOoo.o000O0O0;
+import p039OoooOoo.o000OOo0;
+import p039OoooOoo.o00O000o;
+import p039OoooOoo.o0oOOo;
+import p039OoooOoo.oOO00O;
+import p039OoooOoo.oo00oO;
+import p041Ooooo0o.o00000OO;
+import p044OooooOo.o0O;
+import p044OooooOo.o0O0O0O;
+import p044OooooOo.o0O0O0Oo;
+import p044OooooOo.o0O0O0o0;
+import p044OooooOo.o0O0OO0;
+import p044OooooOo.o0O0o000;
+import p044OooooOo.o0O0o00O;
+import p046Oooooo0.o0O0000O;
+import p048Ooooooo.oo0ooO;
+import p637o0ooOO0.o00O000;
+
+/* JADX INFO: loaded from: classes.dex */
+@RequiresApi(21)
+public final class OooOOOO<T extends VideoOutput> extends Oooo0 {
+
+    /* JADX INFO: renamed from: OooOoOO, reason: collision with root package name */
+    public static final OooO0OO f4001OooOoOO = new OooO0OO();
+
+    /* JADX INFO: renamed from: OooOoo, reason: collision with root package name */
+    public static final boolean f4002OooOoo;
+
+    /* JADX INFO: renamed from: OooOoo0, reason: collision with root package name */
+    @VisibleForTesting
+    public static final boolean f4003OooOoo0;
+
+    /* JADX INFO: renamed from: OooOOO, reason: collision with root package name */
+    public DeferrableSurface f4004OooOOO;
+
+    /* JADX INFO: renamed from: OooOOOO, reason: collision with root package name */
+    @Nullable
+    public o00O0000 f4005OooOOOO;
+
+    /* JADX INFO: renamed from: OooOOOo, reason: collision with root package name */
+    public OooOOO f4006OooOOOo;
+
+    /* JADX INFO: renamed from: OooOOo, reason: collision with root package name */
+    public o00O000.OooO0o f4007OooOOo;
+
+    /* JADX INFO: renamed from: OooOOo0, reason: collision with root package name */
+    @NonNull
+    public SessionConfig.OooO0O0 f4008OooOOo0;
+
+    /* JADX INFO: renamed from: OooOOoo, reason: collision with root package name */
+    public SurfaceRequest f4009OooOOoo;
+
+    /* JADX INFO: renamed from: OooOo, reason: collision with root package name */
+    public int f4010OooOo;
+
+    /* JADX INFO: renamed from: OooOo0, reason: collision with root package name */
+    @Nullable
+    public SurfaceProcessorNode f4011OooOo0;
+
+    /* JADX INFO: renamed from: OooOo00, reason: collision with root package name */
+    public VideoOutput.SourceState f4012OooOo00;
+
+    /* JADX INFO: renamed from: OooOo0O, reason: collision with root package name */
+    @Nullable
+    public p045Oooooo.o00O0000 f4013OooOo0O;
+
+    /* JADX INFO: renamed from: OooOo0o, reason: collision with root package name */
+    @Nullable
+    public Rect f4014OooOo0o;
+
+    /* JADX INFO: renamed from: OooOoO, reason: collision with root package name */
+    public final OooO00o f4015OooOoO;
+
+    /* JADX INFO: renamed from: OooOoO0, reason: collision with root package name */
+    public boolean f4016OooOoO0;
+
+    public class OooO00o implements o00O00o0.OooO00o<OooOOO> {
+        public OooO00o() {
+        }
+
+        @Override // androidx.camera.core.impl.o00O00o0.OooO00o
+        public final void OooO00o(@Nullable OooOOO oooOOO) {
+            OooOOO oooOOO2 = oooOOO;
+            if (oooOOO2 == null) {
+                throw new IllegalArgumentException("StreamInfo can't be null");
+            }
+            OooOOOO oooOOOO = OooOOOO.this;
+            if (oooOOOO.f4012OooOo00 == VideoOutput.SourceState.INACTIVE) {
+                return;
+            }
+            o00O0O0.OooO00o("VideoCapture", "Stream info update: old: " + oooOOOO.f4006OooOOOo + " new: " + oooOOO2);
+            OooOOO oooOOO3 = oooOOOO.f4006OooOOOo;
+            oooOOOO.f4006OooOOOo = oooOOO2;
+            o00OO0O0 o00oo0o1 = oooOOOO.f3492OooO0oO;
+            o00oo0o1.getClass();
+            int iOooO00o = oooOOO3.OooO00o();
+            int iOooO00o2 = oooOOO2.OooO00o();
+            Set<Integer> set = OooOOO.f3994OooO0O0;
+            if (!((set.contains(Integer.valueOf(iOooO00o)) || set.contains(Integer.valueOf(iOooO00o2)) || iOooO00o == iOooO00o2) ? false : true)) {
+                if (!(oooOOOO.f4016OooOoO0 && oooOOO3.OooO0O0() != null && oooOOO2.OooO0O0() == null)) {
+                    if ((oooOOO3.OooO00o() != -1 && oooOOO2.OooO00o() == -1) || (oooOOO3.OooO00o() == -1 && oooOOO2.OooO00o() != -1)) {
+                        oooOOOO.Oooo00O(oooOOOO.f4008OooOOo0, oooOOO2, o00oo0o1);
+                        oooOOOO.OooOooO(oooOOOO.f4008OooOOo0.OooO0o0());
+                        oooOOOO.OooOOo0();
+                        return;
+                    } else {
+                        if (oooOOO3.OooO0OO() != oooOOO2.OooO0OO()) {
+                            oooOOOO.Oooo00O(oooOOOO.f4008OooOOo0, oooOOO2, o00oo0o1);
+                            oooOOOO.OooOooO(oooOOOO.f4008OooOOo0.OooO0o0());
+                            Iterator it = oooOOOO.f3486OooO00o.iterator();
+                            while (it.hasNext()) {
+                                ((Oooo0.OooO0o) it.next()).OooO0o0(oooOOOO);
+                            }
+                            return;
+                        }
+                        return;
+                    }
+                }
+            }
+            String strOooO0o0 = oooOOOO.OooO0o0();
+            p040Ooooo00.OooO0o<T> oooO0o = (p040Ooooo00.OooO0o) oooOOOO.f3490OooO0o;
+            o00OO0O0 o00oo0o2 = oooOOOO.f3492OooO0oO;
+            o00oo0o2.getClass();
+            oooOOOO.Oooo0OO(strOooO0o0, oooO0o, o00oo0o2);
+        }
+
+        @Override // androidx.camera.core.impl.o00O00o0.OooO00o
+        public final void onError(@NonNull Throwable th) {
+            o00O0O0.OooO("VideoCapture", "Receive onError from StreamState observer", th);
+        }
+    }
+
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public static final class OooO0OO {
+
+        /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+        public static final p040Ooooo00.OooO0o<?> f4019OooO00o;
+
+        /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+        public static final Range<Integer> f4020OooO0O0;
+
+        /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+        public static final DynamicRange f4021OooO0OO;
+
+        static {
+            oo00oO oo00oo = new oo00oO();
+            o0oOOo o0oooo = new o0oOOo();
+            f4020OooO0O0 = new Range<>(30, 30);
+            DynamicRange dynamicRange = DynamicRange.f3400OooO0Oo;
+            f4021OooO0OO = dynamicRange;
+            OooO0O0 oooO0O0 = new OooO0O0(oo00oo);
+            androidx.camera.core.impl.OooO0o oooO0o = o0o0Oo.f3775OooOoO0;
+            o00O00O o00o00o2 = oooO0O0.f4018OooO00o;
+            o00o00o2.Oooo0oO(oooO0o, 5);
+            o00o00o2.Oooo0oO(p040Ooooo00.OooO0o.f1759Oooo00O, o0oooo);
+            o00o00o2.Oooo0oO(o000O0Oo.f3703OooOO0, dynamicRange);
+            o00o00o2.Oooo0oO(o0o0Oo.f3779OooOooO, UseCaseConfigFactory.CaptureType.VIDEO_CAPTURE);
+            f4019OooO00o = new p040Ooooo00.OooO0o<>(o00O0.Oooo0O0(o00o00o2));
+        }
+    }
+
+    static {
+        boolean z;
+        boolean z2 = true;
+        boolean z3 = o0O0O0O.OooO00o(o0O0o00O.class) != null;
+        boolean z4 = o0O0O0O.OooO00o(o0O0o000.class) != null;
+        boolean z5 = o0O0O0O.OooO00o(o0O0O0o0.class) != null;
+        Iterator it = o0O0O0O.f1820OooO00o.OooO0OO(o0O.class).iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                z = false;
+                break;
+            } else if (((o0O) it.next()).OooO0OO()) {
+                z = true;
+                break;
+            }
+        }
+        boolean z6 = o0O0O0O.OooO00o(o0O0O0Oo.class) != null;
+        f4002OooOoo = z3 || z4 || z5;
+        if (!z4 && !z5 && !z && !z6) {
+            z2 = false;
+        }
+        f4003OooOoo0 = z2;
+    }
+
+    public OooOOOO(@NonNull p040Ooooo00.OooO0o<T> oooO0o) {
+        super(oooO0o);
+        this.f4006OooOOOo = OooOOO.f3993OooO00o;
+        this.f4008OooOOo0 = new SessionConfig.OooO0O0();
+        this.f4007OooOOo = null;
+        this.f4012OooOo00 = VideoOutput.SourceState.INACTIVE;
+        this.f4016OooOoO0 = false;
+        this.f4015OooOoO = new OooO00o();
+    }
+
+    public static void OooOooo(@NonNull HashSet hashSet, int i, int i2, @NonNull Size size, @NonNull p045Oooooo.o00O0000 o00o0001) {
+        if (i > size.getWidth() || i2 > size.getHeight()) {
+            return;
+        }
+        try {
+            hashSet.add(new Size(i, ((Integer) o00o0001.OooO0o(i).clamp(Integer.valueOf(i2))).intValue()));
+        } catch (IllegalArgumentException e) {
+            o00O0O0.OooO("VideoCapture", "No supportedHeights for width: " + i, e);
+        }
+        try {
+            hashSet.add(new Size(((Integer) o00o0001.OooO00o(i2).clamp(Integer.valueOf(i))).intValue(), i2));
+        } catch (IllegalArgumentException e2) {
+            o00O0O0.OooO("VideoCapture", "No supportedWidths for height: " + i2, e2);
+        }
+    }
+
+    public static int Oooo000(boolean z, int i, int i2, @NonNull Range<Integer> range) {
+        int i3 = i % i2;
+        if (i3 != 0) {
+            i = z ? i - i3 : i + (i2 - i3);
+        }
+        return ((Integer) range.clamp(Integer.valueOf(i))).intValue();
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @Nullable
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final o0o0Oo<?> OooO0o(boolean z, @NonNull UseCaseConfigFactory useCaseConfigFactory) {
+        f4001OooOoOO.getClass();
+        p040Ooooo00.OooO0o<?> oooO0o = OooO0OO.f4019OooO00o;
+        oooO0o.getClass();
+        Config configOooO00o = useCaseConfigFactory.OooO00o(o00OOO0O.OooO0OO(oooO0o), 1);
+        if (z) {
+            configOooO00o = o00000O0.OooO00o(configOooO00o, oooO0o);
+        }
+        if (configOooO00o == null) {
+            return null;
+        }
+        return new p040Ooooo00.OooO0o(o00O0.Oooo0O0(((OooO0O0) OooOO0O(configOooO00o)).f4018OooO00o));
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @NonNull
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final Set<Integer> OooOO0() {
+        HashSet hashSet = new HashSet();
+        hashSet.add(2);
+        return hashSet;
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @NonNull
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final o0o0Oo.OooO00o<?, ?, ?> OooOO0O(@NonNull Config config) {
+        return new OooO0O0(o00O00O.Oooo0o0(config));
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @NonNull
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final androidx.camera.core.impl.OooOo OooOo(@NonNull Config config) {
+        this.f4008OooOOo0.f3626OooO0O0.OooO0OO(config);
+        OooOooO(this.f4008OooOOo0.OooO0o0());
+        androidx.camera.core.impl.OooOo.OooO00o oooO00oOooO0o0 = this.f3492OooO0oO.OooO0o0();
+        oooO00oOooO0o0.f3594OooO0Oo = config;
+        return oooO00oOooO0o0.OooO00o();
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @NonNull
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final o0o0Oo<?> OooOo0(@NonNull o0Oo0oo o0oo0oo2, @NonNull o0o0Oo.OooO00o<?, ?, ?> oooO00o) {
+        MediaSpec mediaSpec;
+        ArrayList arrayList;
+        com.google.common.util.concurrent.OooO00o<MediaSpec> oooO00oOooO0O0 = Oooo0O0().OooO0O0().OooO0O0();
+        if (oooO00oOooO0O0.isDone()) {
+            try {
+                mediaSpec = oooO00oOooO0O0.get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new IllegalStateException(e);
+            }
+        } else {
+            mediaSpec = null;
+        }
+        MediaSpec mediaSpec2 = mediaSpec;
+        o000OO.OooOOO0.OooO0O0(mediaSpec2 != null, "Unable to update target resolution by null MediaSpec.");
+        DynamicRange dynamicRangeOooOo0 = this.f3490OooO0o.OooOo0o() ? this.f3490OooO0o.OooOo0() : OooO0OO.f4021OooO0OO;
+        p039OoooOoo.o00OOO0O o00ooo0oOooO0o0 = Oooo0O0().OooO0o0(o0oo0oo2);
+        ArrayList arrayListOooO0OO = o00ooo0oOooO0o0.OooO0OO(dynamicRangeOooOo0);
+        if (arrayListOooO0OO.isEmpty()) {
+            o00O0O0.OooO0oo("VideoCapture", "Can't find any supported quality on the device.");
+        } else {
+            OooOo oooOoOooO0Oo = mediaSpec2.OooO0Oo();
+            oOO00O ooo00oOooO0o0 = oooOoOooO0Oo.OooO0o0();
+            ooo00oOooO0o0.getClass();
+            if (arrayListOooO0OO.isEmpty()) {
+                o00O0O0.OooO0oo("QualitySelector", "No supported quality on the device.");
+                arrayList = new ArrayList();
+            } else {
+                o00O0O0.OooO00o("QualitySelector", "supportedQualities = " + arrayListOooO0OO);
+                LinkedHashSet linkedHashSet = new LinkedHashSet();
+                for (o00O000o o00o000o2 : ooo00oOooO0o0.f1752OooO00o) {
+                    if (o00o000o2 == o00O000o.f1676OooO0o) {
+                        linkedHashSet.addAll(arrayListOooO0OO);
+                        break;
+                    }
+                    if (o00o000o2 == o00O000o.f1677OooO0o0) {
+                        ArrayList arrayList2 = new ArrayList(arrayListOooO0OO);
+                        Collections.reverse(arrayList2);
+                        linkedHashSet.addAll(arrayList2);
+                        break;
+                    }
+                    if (arrayListOooO0OO.contains(o00o000o2)) {
+                        linkedHashSet.add(o00o000o2);
+                    } else {
+                        o00O0O0.OooO0oo("QualitySelector", "quality is not supported and will be ignored: " + o00o000o2);
+                    }
+                }
+                if (!arrayListOooO0OO.isEmpty() && !linkedHashSet.containsAll(arrayListOooO0OO)) {
+                    StringBuilder sb = new StringBuilder("Select quality by fallbackStrategy = ");
+                    o000OOo0 o000ooo1 = ooo00oOooO0o0.f1753OooO0O0;
+                    sb.append(o000ooo1);
+                    o00O0O0.OooO00o("QualitySelector", sb.toString());
+                    if (o000ooo1 != o000OOo0.f1665OooO00o) {
+                        o000OO.OooOOO0.OooO0o("Currently only support type RuleStrategy", o000ooo1 instanceof o000OOo0.OooO00o);
+                        o000OOo0.OooO00o oooO00o2 = (o000OOo0.OooO00o) o000ooo1;
+                        ArrayList arrayList3 = new ArrayList(o00O000o.f1671OooO);
+                        o00O000o o00o000oOooO00o = oooO00o2.OooO00o() == o00O000o.f1676OooO0o ? (o00O000o) arrayList3.get(0) : oooO00o2.OooO00o() == o00O000o.f1677OooO0o0 ? (o00O000o) p018OooOoo0.OooOOO.OooO0O0(arrayList3, 1) : oooO00o2.OooO00o();
+                        int iIndexOf = arrayList3.indexOf(o00o000oOooO00o);
+                        o000OO.OooOOO0.OooO0o(null, iIndexOf != -1);
+                        ArrayList arrayList4 = new ArrayList();
+                        for (int i = iIndexOf - 1; i >= 0; i--) {
+                            o00O000o o00o000o3 = (o00O000o) arrayList3.get(i);
+                            if (arrayListOooO0OO.contains(o00o000o3)) {
+                                arrayList4.add(o00o000o3);
+                            }
+                        }
+                        ArrayList arrayList5 = new ArrayList();
+                        while (true) {
+                            iIndexOf++;
+                            if (iIndexOf >= arrayList3.size()) {
+                                break;
+                            }
+                            o00O000o o00o000o4 = (o00O000o) arrayList3.get(iIndexOf);
+                            if (arrayListOooO0OO.contains(o00o000o4)) {
+                                arrayList5.add(o00o000o4);
+                            }
+                        }
+                        o00O0O0.OooO00o("QualitySelector", "sizeSortedQualities = " + arrayList3 + ", fallback quality = " + o00o000oOooO00o + ", largerQualities = " + arrayList4 + ", smallerQualities = " + arrayList5);
+                        int iOooO0O0 = oooO00o2.OooO0O0();
+                        if (iOooO0O0 != 0) {
+                            if (iOooO0O0 == 1) {
+                                linkedHashSet.addAll(arrayList4);
+                                linkedHashSet.addAll(arrayList5);
+                            } else if (iOooO0O0 == 2) {
+                                linkedHashSet.addAll(arrayList4);
+                            } else if (iOooO0O0 == 3) {
+                                linkedHashSet.addAll(arrayList5);
+                                linkedHashSet.addAll(arrayList4);
+                            } else {
+                                if (iOooO0O0 != 4) {
+                                    throw new AssertionError("Unhandled fallback strategy: " + o000ooo1);
+                                }
+                                linkedHashSet.addAll(arrayList5);
+                            }
+                        }
+                    }
+                }
+                arrayList = new ArrayList(linkedHashSet);
+            }
+            o00O0O0.OooO00o("VideoCapture", "Found selectedQualities " + arrayList + " by " + ooo00oOooO0o0);
+            if (arrayList.isEmpty()) {
+                throw new IllegalArgumentException("Unable to find supported quality by QualitySelector");
+            }
+            int iOooO0O1 = oooOoOooO0Oo.OooO0O0();
+            HashMap map = new HashMap();
+            for (o00O000o o00o000o5 : o00ooo0oOooO0o0.OooO0OO(dynamicRangeOooOo0)) {
+                o00000OO o00000ooOooO0O0 = o00ooo0oOooO0o0.OooO0O0(o00o000o5, dynamicRangeOooOo0);
+                Objects.requireNonNull(o00000ooOooO0O0);
+                EncoderProfilesProxy.VideoProfileProxy videoProfileProxyOooO0o = o00000ooOooO0O0.OooO0o();
+                map.put(o00o000o5, new Size(videoProfileProxyOooO0o.OooOO0O(), videoProfileProxyOooO0o.OooO0oo()));
+            }
+            p039OoooOoo.o00O00O o00o00o2 = new p039OoooOoo.o00O00O(o0oo0oo2.OooO0oo(OooO0oO()), map);
+            ArrayList arrayList6 = new ArrayList();
+            Iterator it = arrayList.iterator();
+            while (it.hasNext()) {
+                List list = (List) o00o00o2.f1682OooO00o.get(new o000O0O0((o00O000o) it.next(), iOooO0O1));
+                arrayList6.addAll(list != null ? new ArrayList(list) : new ArrayList(0));
+            }
+            o00O0O0.OooO00o("VideoCapture", "Set custom ordered resolutions = " + arrayList6);
+            ((o00O00O) oooO00o.OooO00o()).Oooo0oO(ImageOutputConfig.f3550OooOo00, arrayList6);
+        }
+        return oooO00o.OooO0O0();
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final void OooOo0O() {
+        o000OO.OooOOO0.OooO0o0(this.f3492OooO0oO, "The suggested stream specification should be already updated and shouldn't be null.");
+        o000OO.OooOOO0.OooO0o("The surface request should be null when VideoCapture is attached.", this.f4009OooOOoo == null);
+        o00OO0O0 o00oo0o1 = this.f3492OooO0oO;
+        o00oo0o1.getClass();
+        o00O00o0<OooOOO> o00o00o0OooO0OO = Oooo0O0().OooO0OO();
+        OooOOO oooOOO = OooOOO.f3993OooO00o;
+        com.google.common.util.concurrent.OooO00o<OooOOO> oooO00oOooO0O0 = o00o00o0OooO0OO.OooO0O0();
+        if (oooO00oOooO0O0.isDone()) {
+            try {
+                oooOOO = oooO00oOooO0O0.get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+        this.f4006OooOOOo = oooOOO;
+        SessionConfig.OooO0O0 oooO0O0Oooo0 = Oooo0(OooO0o0(), (p040Ooooo00.OooO0o) this.f3490OooO0o, o00oo0o1);
+        this.f4008OooOOo0 = oooO0O0Oooo0;
+        Oooo00O(oooO0O0Oooo0, this.f4006OooOOOo, o00oo0o1);
+        OooOooO(this.f4008OooOOo0.OooO0o0());
+        OooOOOo();
+        Oooo0O0().OooO0OO().OooO00o(this.f4015OooOoO, o00oO0o.OooO0OO());
+        VideoOutput.SourceState sourceState = VideoOutput.SourceState.ACTIVE_NON_STREAMING;
+        if (sourceState != this.f4012OooOo00) {
+            this.f4012OooOo00 = sourceState;
+            Oooo0O0().OooO0Oo(sourceState);
+        }
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final void OooOo0o() {
+        o000OO.OooOOO0.OooO0o("VideoCapture can only be detached on the main thread.", p031OoooO0.o0Oo0oo.OooO0O0());
+        VideoOutput.SourceState sourceState = VideoOutput.SourceState.INACTIVE;
+        if (sourceState != this.f4012OooOo00) {
+            this.f4012OooOo00 = sourceState;
+            Oooo0O0().OooO0Oo(sourceState);
+        }
+        Oooo0O0().OooO0OO().OooO0OO(this.f4015OooOoO);
+        o00O000.OooO0o oooO0o = this.f4007OooOOo;
+        if (oooO0o != null && oooO0o.cancel(false)) {
+            o00O0O0.OooO00o("VideoCapture", "VideoCapture is detached from the camera. Surface update cancelled.");
+        }
+        Oooo00o();
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @NonNull
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final o00OO0O0 OooOoO0(@NonNull o00OO0O0 o00oo0o1) {
+        o00O0O0.OooO00o("VideoCapture", "onSuggestedStreamSpecUpdated: " + o00oo0o1);
+        p040Ooooo00.OooO0o oooO0o = (p040Ooooo00.OooO0o) this.f3490OooO0o;
+        oooO0o.getClass();
+        ArrayList arrayListOooO0O0 = o000OO0O.OooO0O0(oooO0o);
+        if (arrayListOooO0O0 != null && !arrayListOooO0O0.contains(o00oo0o1.OooO0Oo())) {
+            o00O0O0.OooO0oo("VideoCapture", "suggested resolution " + o00oo0o1.OooO0Oo() + " is not in custom ordered resolutions " + arrayListOooO0O0);
+        }
+        return o00oo0o1;
+    }
+
+    @Override // androidx.camera.core.Oooo0
+    @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+    public final void OooOoo0(@NonNull Rect rect) {
+        this.f3485OooO = rect;
+        Oooo0o0();
+    }
+
+    /* JADX WARN: Code duplicated, block: B:115:0x0375  */
+    /* JADX WARN: Code duplicated, block: B:117:0x0387  */
+    /* JADX WARN: Code duplicated, block: B:150:0x04ef  */
+    /* JADX WARN: Code duplicated, block: B:20:0x00c1  */
+    @NonNull
+    @SuppressLint({"WrongConstant"})
+    @MainThread
+    public final SessionConfig.OooO0O0 Oooo0(@NonNull final String str, @NonNull final p040Ooooo00.OooO0o<T> oooO0o, @NonNull final o00OO0O0 o00oo0o1) {
+        MediaSpec mediaSpec;
+        char c;
+        int i;
+        boolean z;
+        boolean z2;
+        Rect rect;
+        Size size;
+        SurfaceProcessorNode surfaceProcessorNode;
+        CameraInternal cameraInternalOooO0OO;
+        boolean z3;
+        String str2;
+        String str3;
+        boolean z4;
+        p031OoooO0.o0Oo0oo.OooO00o();
+        CameraInternal cameraInternalOooO0OO2 = OooO0OO();
+        cameraInternalOooO0OO2.getClass();
+        Size sizeOooO0Oo = o00oo0o1.OooO0Oo();
+        oo0o0Oo oo0o0oo = new oo0o0Oo(this, 1);
+        Range<Integer> rangeOooO0O0 = o00oo0o1.OooO0O0();
+        if (Objects.equals(rangeOooO0O0, o00OO0O0.f3743OooO00o)) {
+            rangeOooO0O0 = OooO0OO.f4020OooO0O0;
+        }
+        Range<Integer> range = rangeOooO0O0;
+        com.google.common.util.concurrent.OooO00o<MediaSpec> oooO00oOooO0O0 = Oooo0O0().OooO0O0().OooO0O0();
+        if (oooO00oOooO0O0.isDone()) {
+            try {
+                mediaSpec = oooO00oOooO0O0.get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new IllegalStateException(e);
+            }
+        } else {
+            mediaSpec = null;
+        }
+        MediaSpec mediaSpec2 = mediaSpec;
+        Objects.requireNonNull(mediaSpec2);
+        p039OoooOoo.o00OOO0O o00ooo0oOooO0o0 = Oooo0O0().OooO0o0(cameraInternalOooO0OO2.OooO00o());
+        DynamicRange dynamicRangeOooO00o = o00oo0o1.OooO00o();
+        oooO0o.getClass();
+        Function function = (Function) ((o00O0) oooO0o.getConfig()).OooO0O0(p040Ooooo00.OooO0o.f1759Oooo00O);
+        Objects.requireNonNull(function);
+        p045Oooooo.o00O0000 oo0ooo = this.f4013OooOo0O;
+        char c2 = 2;
+        if (oo0ooo != null) {
+            c = 3;
+            i = 0;
+        } else {
+            o00000OO o00000ooOooO00o = o00ooo0oOooO0o0.OooO00o(sizeOooO0Oo, dynamicRangeOooO00o);
+            c = 3;
+            p045Oooooo.o00O0000 o00o0001 = (p045Oooooo.o00O0000) function.apply(o0O0000O.OooO0O0(o0O0000O.OooO0OO(mediaSpec2, dynamicRangeOooO00o, o00000ooOooO00o), Timebase.UPTIME, mediaSpec2.OooO0Oo(), sizeOooO0Oo, dynamicRangeOooO00o, range));
+            if (o00o0001 == null) {
+                o00O0O0.OooO0oo("VideoCapture", "Can't find videoEncoderInfo");
+                oo0ooo = null;
+                i = 0;
+                c2 = 2;
+            } else {
+                Size size2 = o00000ooOooO00o != null ? new Size(o00000ooOooO00o.OooO0o().OooOO0O(), o00000ooOooO00o.OooO0o().OooO0oo()) : null;
+                if (o00o0001 instanceof oo0ooO) {
+                    i = 0;
+                    c2 = 2;
+                    z = false;
+                } else {
+                    if (o0O0O0O.OooO00o(o0O0OO0.class) != null) {
+                        i = 0;
+                        c2 = 2;
+                    } else if (size2 == null || o00o0001.OooO0OO(size2.getWidth(), size2.getHeight())) {
+                        i = 0;
+                        c2 = 2;
+                        z = false;
+                    } else {
+                        i = 0;
+                        c2 = 2;
+                        o00O0O0.OooO0oo("VideoEncoderInfoWrapper", String.format("Detected that the device does not support a size %s that should be valid in widths/heights = %s/%s", size2, o00o0001.OooO0oO(), o00o0001.OooO0oo()));
+                    }
+                    z = true;
+                }
+                oo0ooo = z ? new oo0ooO(size2, o00o0001) : o00o0001;
+                this.f4013OooOo0O = oo0ooo;
+            }
+        }
+        int iOooO = OooO(cameraInternalOooO0OO2, OooOOO(cameraInternalOooO0OO2));
+        if (Oooo0o()) {
+            int iOooO0O0 = iOooO - this.f4006OooOOOo.OooO0O0().OooO0O0();
+            RectF rectF = o0OO00O.f1413OooO00o;
+            iOooO = ((iOooO0O0 % 360) + 360) % 360;
+        }
+        this.f4010OooOo = iOooO;
+        final Rect rect2 = this.f3485OooO;
+        if (rect2 == null) {
+            rect2 = new Rect(i, i, sizeOooO0Oo.getWidth(), sizeOooO0Oo.getHeight());
+        }
+        if (oo0ooo != null && !oo0ooo.OooO0OO(rect2.width(), rect2.height())) {
+            Object[] objArr = new Object[5];
+            objArr[i] = o0OO00O.OooO0o0(rect2);
+            objArr[1] = Integer.valueOf(oo0ooo.OooO0Oo());
+            objArr[c2] = Integer.valueOf(oo0ooo.OooO0O0());
+            objArr[c] = oo0ooo.OooO0oO();
+            objArr[4] = oo0ooo.OooO0oo();
+            o00O0O0.OooO00o("VideoCapture", String.format("Adjust cropRect %s by width/height alignment %d/%d and supported widths %s / supported heights %s", objArr));
+            int iOooO0Oo = oo0ooo.OooO0Oo();
+            int iOooO0O1 = oo0ooo.OooO0O0();
+            Range<Integer> rangeOooO0oO = oo0ooo.OooO0oO();
+            Range<Integer> rangeOooO0oo = oo0ooo.OooO0oo();
+            int iOooo000 = Oooo000(true, rect2.width(), iOooO0Oo, rangeOooO0oO);
+            int iOooo001 = Oooo000(false, rect2.width(), iOooO0Oo, rangeOooO0oO);
+            int iOooo002 = Oooo000(true, rect2.height(), iOooO0O1, rangeOooO0oo);
+            int iOooo003 = Oooo000(false, rect2.height(), iOooO0O1, rangeOooO0oo);
+            HashSet hashSet = new HashSet();
+            OooOooo(hashSet, iOooo000, iOooo002, sizeOooO0Oo, oo0ooo);
+            OooOooo(hashSet, iOooo000, iOooo003, sizeOooO0Oo, oo0ooo);
+            OooOooo(hashSet, iOooo001, iOooo002, sizeOooO0Oo, oo0ooo);
+            OooOooo(hashSet, iOooo001, iOooo003, sizeOooO0Oo, oo0ooo);
+            if (hashSet.isEmpty()) {
+                o00O0O0.OooO0oo("VideoCapture", "Can't find valid cropped size");
+            } else {
+                ArrayList arrayList = new ArrayList(hashSet);
+                o00O0O0.OooO00o("VideoCapture", "candidatesList = " + arrayList);
+                Collections.sort(arrayList, new Comparator() { // from class: OoooOoo.o00Oo00
+                    @Override // java.util.Comparator
+                    public final int compare(Object obj, Object obj2) {
+                        Size size3 = (Size) obj;
+                        Size size4 = (Size) obj2;
+                        int width = size3.getWidth();
+                        Rect rect3 = rect2;
+                        return (Math.abs(size3.getHeight() - rect3.height()) + Math.abs(width - rect3.width())) - (Math.abs(size4.getHeight() - rect3.height()) + Math.abs(size4.getWidth() - rect3.width()));
+                    }
+                });
+                o00O0O0.OooO00o("VideoCapture", "sorted candidatesList = " + arrayList);
+                Size size3 = (Size) arrayList.get(0);
+                int width = size3.getWidth();
+                int height = size3.getHeight();
+                if (width == rect2.width() && height == rect2.height()) {
+                    o00O0O0.OooO00o("VideoCapture", "No need to adjust cropRect because crop size is valid.");
+                } else {
+                    if (width % 2 != 0 || height % 2 != 0 || width > sizeOooO0Oo.getWidth() || height > sizeOooO0Oo.getHeight()) {
+                        str3 = null;
+                        z4 = false;
+                    } else {
+                        str3 = null;
+                        z4 = true;
+                    }
+                    o000OO.OooOOO0.OooO0o(str3, z4);
+                    Rect rect3 = new Rect(rect2);
+                    if (width != rect2.width()) {
+                        int iMax = Math.max(0, rect2.centerX() - (width / 2));
+                        rect3.left = iMax;
+                        int i2 = iMax + width;
+                        rect3.right = i2;
+                        if (i2 > sizeOooO0Oo.getWidth()) {
+                            int width2 = sizeOooO0Oo.getWidth();
+                            rect3.right = width2;
+                            rect3.left = width2 - width;
+                        }
+                    }
+                    if (height != rect2.height()) {
+                        int iMax2 = Math.max(0, rect2.centerY() - (height / 2));
+                        rect3.top = iMax2;
+                        int i3 = iMax2 + height;
+                        rect3.bottom = i3;
+                        if (i3 > sizeOooO0Oo.getHeight()) {
+                            int height2 = sizeOooO0Oo.getHeight();
+                            rect3.bottom = height2;
+                            rect3.top = height2 - height;
+                        }
+                    }
+                    o00O0O0.OooO00o("VideoCapture", String.format("Adjust cropRect from %s to %s", o0OO00O.OooO0o0(rect2), o0OO00O.OooO0o0(rect3)));
+                    rect2 = rect3;
+                }
+            }
+        }
+        int i4 = this.f4010OooOo;
+        if (Oooo0o()) {
+            SurfaceRequest.OooO0OO oooO0OOOooO0O0 = this.f4006OooOOOo.OooO0O0();
+            oooO0OOOooO0O0.getClass();
+            Rect rectOooO00o = oooO0OOOooO0O0.OooO00o();
+            RectF rectF2 = o0OO00O.f1413OooO00o;
+            Size sizeOooO0o = o0OO00O.OooO0o(i4, new Size(rectOooO00o.width(), rectOooO00o.height()));
+            z2 = false;
+            rect = new Rect(0, 0, sizeOooO0o.getWidth() + 0, sizeOooO0o.getHeight() + 0);
+        } else {
+            z2 = false;
+            rect = rect2;
+        }
+        this.f4014OooOo0o = rect;
+        if (!Oooo0o() || rect.equals(rect2)) {
+            size = sizeOooO0Oo;
+        } else {
+            float fHeight = rect.height() / rect2.height();
+            size = new Size((int) Math.ceil(sizeOooO0Oo.getWidth() * fHeight), (int) Math.ceil(sizeOooO0Oo.getHeight() * fHeight));
+        }
+        if (Oooo0o()) {
+            this.f4016OooOoO0 = true;
+        }
+        Rect rect4 = this.f4014OooOo0o;
+        if (this.f3496OooOO0o != null) {
+            o00O0O0.OooO00o("VideoCapture", "Surface processing is enabled.");
+            cameraInternalOooO0OO = OooO0OO();
+            Objects.requireNonNull(cameraInternalOooO0OO);
+            if (this.f3496OooOO0o == null) {
+                throw null;
+            }
+            surfaceProcessorNode = new SurfaceProcessorNode(cameraInternalOooO0OO, new o000O000(dynamicRangeOooO00o));
+        } else {
+            if ((cameraInternalOooO0OO2.OooOOOO() && f4003OooOoo0) ? true : z2) {
+                o00O0O0.OooO00o("VideoCapture", "Surface processing is enabled.");
+                cameraInternalOooO0OO = OooO0OO();
+                Objects.requireNonNull(cameraInternalOooO0OO);
+                if (this.f3496OooOO0o == null) {
+                    throw null;
+                }
+                surfaceProcessorNode = new SurfaceProcessorNode(cameraInternalOooO0OO, new o000O000(dynamicRangeOooO00o));
+            } else {
+                if ((sizeOooO0Oo.getWidth() == rect4.width() && sizeOooO0Oo.getHeight() == rect4.height()) ? z2 : true) {
+                    o00O0O0.OooO00o("VideoCapture", "Surface processing is enabled.");
+                    cameraInternalOooO0OO = OooO0OO();
+                    Objects.requireNonNull(cameraInternalOooO0OO);
+                    if (this.f3496OooOO0o == null) {
+                        throw null;
+                    }
+                    surfaceProcessorNode = new SurfaceProcessorNode(cameraInternalOooO0OO, new o000O000(dynamicRangeOooO00o));
+                } else {
+                    if (((cameraInternalOooO0OO2.OooOOOO() && OooOOO(cameraInternalOooO0OO2)) ? true : z2) || Oooo0o()) {
+                        o00O0O0.OooO00o("VideoCapture", "Surface processing is enabled.");
+                        cameraInternalOooO0OO = OooO0OO();
+                        Objects.requireNonNull(cameraInternalOooO0OO);
+                        if (this.f3496OooOO0o == null) {
+                            throw null;
+                        }
+                        surfaceProcessorNode = new SurfaceProcessorNode(cameraInternalOooO0OO, new o000O000(dynamicRangeOooO00o));
+                    } else {
+                        surfaceProcessorNode = null;
+                    }
+                }
+            }
+        }
+        this.f4011OooOo0 = surfaceProcessorNode;
+        Timebase timebaseOooOO0o = (surfaceProcessorNode == null && cameraInternalOooO0OO2.OooOOOO()) ? Timebase.UPTIME : cameraInternalOooO0OO2.OooO().OooOO0o();
+        androidx.camera.core.impl.OooOo.OooO00o oooO00oOooO0o0 = o00oo0o1.OooO0o0();
+        if (size == null) {
+            oooO00oOooO0o0.getClass();
+            throw new NullPointerException("Null resolution");
+        }
+        oooO00oOooO0o0.f3591OooO00o = size;
+        oooO00oOooO0o0.OooO0O0(range);
+        androidx.camera.core.impl.OooOo oooOoOooO00o = oooO00oOooO0o0.OooO00o();
+        if (this.f4005OooOOOO == null) {
+            str2 = null;
+            z3 = true;
+        } else {
+            z3 = z2;
+            str2 = null;
+        }
+        o000OO.OooOOO0.OooO0o(str2, z3);
+        o00O0000 o00o0002 = new o00O0000(2, 34, oooOoOooO00o, this.f3494OooOO0, cameraInternalOooO0OO2.OooOOOO(), this.f4014OooOo0o, this.f4010OooOo, ((ImageOutputConfig) this.f3490OooO0o).Oooo0(), (cameraInternalOooO0OO2.OooOOOO() && OooOOO(cameraInternalOooO0OO2)) ? true : z2);
+        this.f4005OooOOOO = o00o0002;
+        o00o0002.OooO00o(oo0o0oo);
+        if (this.f4011OooOo0 != null) {
+            o00O0000 o00o0003 = this.f4005OooOOOO;
+            int i5 = o00o0003.f1595OooO0o;
+            int i6 = o00o0003.f1591OooO00o;
+            int i7 = o00o0003.f1590OooO;
+            RectF rectF3 = o0OO00O.f1413OooO00o;
+            Rect rect5 = o00o0003.f1594OooO0Oo;
+            androidx.camera.core.processing.OooO0O0 oooO0O0 = new androidx.camera.core.processing.OooO0O0(UUID.randomUUID(), i5, i6, rect5, o0OO00O.OooO0o(i7, new Size(rect5.width(), rect5.height())), o00o0003.f1590OooO, o00o0003.f1596OooO0o0);
+            o00O0000 o00o0004 = this.f4011OooOo0.OooO0OO(new androidx.camera.core.processing.OooO00o(this.f4005OooOOOO, Collections.singletonList(oooO0O0))).get(oooO0O0);
+            Objects.requireNonNull(o00o0004);
+            o00o0004.OooO00o(new p004OooO0oO.Oooo0(this, o00o0004, cameraInternalOooO0OO2, oooO0o, timebaseOooOO0o, 1));
+            this.f4009OooOOoo = o00o0004.OooO0OO(cameraInternalOooO0OO2);
+            o00O0000 o00o0005 = this.f4005OooOOOO;
+            o00o0005.getClass();
+            p031OoooO0.o0Oo0oo.OooO00o();
+            o00o0005.OooO0O0();
+            o000OO.OooOOO0.OooO0o("Consumer can only be linked once.", !o00o0005.f1600OooOO0O);
+            o00o0005.f1600OooOO0O = true;
+            final o00O0000.OooO00o oooO00o = o00o0005.f1603OooOOO0;
+            this.f4004OooOOO = oooO00o;
+            oooO00o.OooO0Oo().OooO(new Runnable() { // from class: OoooOoo.o00OOOO0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    OooOOOO oooOOOO = this.f1710OooO0Oo;
+                    if (oooO00o == oooOOOO.f4004OooOOO) {
+                        oooOOOO.Oooo00o();
+                    }
+                }
+            }, o00oO0o.OooO0OO());
+        } else {
+            SurfaceRequest surfaceRequestOooO0OO = this.f4005OooOOOO.OooO0OO(cameraInternalOooO0OO2);
+            this.f4009OooOOoo = surfaceRequestOooO0OO;
+            this.f4004OooOOO = surfaceRequestOooO0OO.f3513OooOO0O;
+        }
+        ((VideoOutput) ((o00O0) oooO0o.getConfig()).OooO0O0(p040Ooooo00.OooO0o.f1758Oooo000)).OooO00o(this.f4009OooOOoo, timebaseOooOO0o);
+        Oooo0o0();
+        this.f4004OooOOO.f3539OooO0oo = MediaCodec.class;
+        SessionConfig.OooO0O0 oooO0O0OooO0o = SessionConfig.OooO0O0.OooO0o(oooO0o, o00oo0o1.OooO0Oo());
+        Range<Integer> rangeOooO0O1 = o00oo0o1.OooO0O0();
+        o000000O.OooO00o oooO00o2 = oooO0O0OooO0o.f3626OooO0O0;
+        oooO00o2.f3658OooO0Oo = rangeOooO0O1;
+        oooO0O0OooO0o.OooO00o(new SessionConfig.OooO0OO() { // from class: OoooOoo.o00OOOOo
+            @Override // androidx.camera.core.impl.SessionConfig.OooO0OO
+            public final void onError() {
+                this.f1712OooO00o.Oooo0OO(str, oooO0o, o00oo0o1);
+            }
+        });
+        if (f4002OooOoo) {
+            oooO00o2.f3657OooO0OO = 1;
+        }
+        if (o00oo0o1.OooO0OO() != null) {
+            oooO00o2.OooO0OO(o00oo0o1.OooO0OO());
+        }
+        return oooO0O0OooO0o;
+    }
+
+    @MainThread
+    public final void Oooo00O(@NonNull final SessionConfig.OooO0O0 oooO0O0, @NonNull OooOOO oooOOO, @NonNull o00OO0O0 o00oo0o1) {
+        boolean z = oooOOO.OooO00o() == -1;
+        boolean z2 = oooOOO.OooO0OO() == OooOOO.OooO00o.ACTIVE;
+        if (z && z2) {
+            throw new IllegalStateException("Unexpected stream state, stream is error but active");
+        }
+        oooO0O0.f3625OooO00o.clear();
+        oooO0O0.f3626OooO0O0.f3655OooO00o.clear();
+        DynamicRange dynamicRangeOooO00o = o00oo0o1.OooO00o();
+        if (!z) {
+            if (z2) {
+                oooO0O0.OooO0Oo(this.f4004OooOOO, dynamicRangeOooO00o);
+            } else {
+                oooO0O0.OooO0O0(this.f4004OooOOO, dynamicRangeOooO00o);
+            }
+        }
+        o00O000.OooO0o oooO0o = this.f4007OooOOo;
+        if (oooO0o != null && oooO0o.cancel(false)) {
+            o00O0O0.OooO00o("VideoCapture", "A newer surface update is requested. Previous surface update cancelled.");
+        }
+        o00O000.OooO0o oooO0oOooO00o = o00O000.OooO00o(new o00O000.OooO0OO() { // from class: OoooOoo.o0o0Oo
+            @Override // o0ooOO0.o00O000.OooO0OO
+            public final Object OooO0o0(o00O000.OooO00o oooO00o) {
+                this.f1747OooO0Oo.getClass();
+                Integer numValueOf = Integer.valueOf(oooO00o.hashCode());
+                final SessionConfig.OooO0O0 oooO0O1 = oooO0O0;
+                oooO0O1.f3626OooO0O0.f3661OooO0oO.f3728OooO00o.put("androidx.camera.video.VideoCapture.streamUpdate", numValueOf);
+                final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+                final o0O00o0 o0o00o1 = new o0O00o0(atomicBoolean, oooO00o, oooO0O1);
+                oooO00o.OooO00o(new Runnable() { // from class: OoooOoo.o0oOO
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        OooOOO0.OooO0o("Surface update cancellation should only occur on main thread.", p031OoooO0.o0Oo0oo.OooO0O0());
+                        atomicBoolean.set(true);
+                        SessionConfig.OooO0O0 oooO0O2 = oooO0O1;
+                        ArrayList arrayList = oooO0O2.f3626OooO0O0.f3660OooO0o0;
+                        o000oOoO o000oooo2 = o0o00o1;
+                        arrayList.remove(o000oooo2);
+                        oooO0O2.f3629OooO0o.remove(o000oooo2);
+                    }
+                }, o00oO0o.OooO00o());
+                oooO0O1.f3626OooO0O0.OooO0O0(o0o00o1);
+                return String.format("%s[0x%x]", "androidx.camera.video.VideoCapture.streamUpdate", Integer.valueOf(oooO00o.hashCode()));
+            }
+        });
+        this.f4007OooOOo = oooO0oOooO00o;
+        oooO0oOooO00o.OooO(new OoooO.OooOo00.OooO0O0(oooO0oOooO00o, new OooOo00(this, oooO0oOooO00o, z2)), o00oO0o.OooO0OO());
+    }
+
+    @MainThread
+    public final void Oooo00o() {
+        p031OoooO0.o0Oo0oo.OooO00o();
+        DeferrableSurface deferrableSurface = this.f4004OooOOO;
+        if (deferrableSurface != null) {
+            deferrableSurface.OooO00o();
+            this.f4004OooOOO = null;
+        }
+        SurfaceProcessorNode surfaceProcessorNode = this.f4011OooOo0;
+        if (surfaceProcessorNode != null) {
+            surfaceProcessorNode.OooO0O0();
+            this.f4011OooOo0 = null;
+        }
+        o00O0000 o00o0001 = this.f4005OooOOOO;
+        if (o00o0001 != null) {
+            p031OoooO0.o0Oo0oo.OooO00o();
+            o00o0001.f1603OooOOO0.OooO00o();
+            p037OoooOo0.o00O000 o00o001 = o00o0001.f1599OooOO0;
+            if (o00o001 != null) {
+                o00o001.OooO00o();
+                o00o0001.f1599OooOO0 = null;
+            }
+            o00o0001.f1604OooOOOO = true;
+            this.f4005OooOOOO = null;
+        }
+        this.f4013OooOo0O = null;
+        this.f4014OooOo0o = null;
+        this.f4009OooOOoo = null;
+        this.f4006OooOOOo = OooOOO.f3993OooO00o;
+        this.f4010OooOo = 0;
+        this.f4016OooOoO0 = false;
+    }
+
+    @NonNull
+    public final T Oooo0O0() {
+        return (T) ((o00O0) ((p040Ooooo00.OooO0o) this.f3490OooO0o).getConfig()).OooO0O0(p040Ooooo00.OooO0o.f1758Oooo000);
+    }
+
+    @MainThread
+    public final void Oooo0OO(@NonNull String str, @NonNull p040Ooooo00.OooO0o<T> oooO0o, @NonNull o00OO0O0 o00oo0o1) {
+        Oooo00o();
+        if (OooOO0o(str)) {
+            SessionConfig.OooO0O0 oooO0O0Oooo0 = Oooo0(str, oooO0o, o00oo0o1);
+            this.f4008OooOOo0 = oooO0O0Oooo0;
+            Oooo00O(oooO0O0Oooo0, this.f4006OooOOOo, o00oo0o1);
+            OooOooO(this.f4008OooOOo0.OooO0o0());
+            OooOOo0();
+        }
+    }
+
+    public final boolean Oooo0o() {
+        return this.f4006OooOOOo.OooO0O0() != null;
+    }
+
+    public final void Oooo0o0() {
+        CameraInternal cameraInternalOooO0OO = OooO0OO();
+        o00O0000 o00o0001 = this.f4005OooOOOO;
+        if (cameraInternalOooO0OO == null || o00o0001 == null) {
+            return;
+        }
+        int iOooO = OooO(cameraInternalOooO0OO, OooOOO(cameraInternalOooO0OO));
+        if (Oooo0o()) {
+            int iOooO0O0 = iOooO - this.f4006OooOOOo.OooO0O0().OooO0O0();
+            RectF rectF = o0OO00O.f1413OooO00o;
+            iOooO = ((iOooO0O0 % 360) + 360) % 360;
+        }
+        this.f4010OooOo = iOooO;
+        o00o0001.OooO0o(iOooO, ((ImageOutputConfig) this.f3490OooO0o).Oooo0());
+    }
+
+    @NonNull
+    public final String toString() {
+        return "VideoCapture:".concat(OooO0oo());
+    }
+
+    @RequiresApi(21)
+    public static final class OooO0O0<T extends VideoOutput> implements o0o0Oo.OooO00o<OooOOOO<T>, p040Ooooo00.OooO0o<T>, OooO0O0<T>> {
+
+        /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+        public final o00O00O f4018OooO00o;
+
+        public OooO0O0(@NonNull o00O00O o00o00o2) {
+            Object objOooO0O0;
+            this.f4018OooO00o = o00o00o2;
+            if (!o00o00o2.OooO0o0(p040Ooooo00.OooO0o.f1758Oooo000)) {
+                throw new IllegalArgumentException("VideoOutput is required");
+            }
+            Object objOooO0O1 = null;
+            try {
+                objOooO0O0 = o00o00o2.OooO0O0(p034OoooOO0.o0Oo0oo.f1460OooO0OO);
+            } catch (IllegalArgumentException unused) {
+                objOooO0O0 = null;
+            }
+            Class cls = (Class) objOooO0O0;
+            if (cls != null && !cls.equals(OooOOOO.class)) {
+                throw new IllegalArgumentException("Invalid target class configuration for " + this + ": " + cls);
+            }
+            androidx.camera.core.impl.OooO0o oooO0o = p034OoooOO0.o0Oo0oo.f1460OooO0OO;
+            o00O00O o00o00o3 = this.f4018OooO00o;
+            o00o00o3.Oooo0oO(oooO0o, OooOOOO.class);
+            try {
+                objOooO0O1 = o00o00o3.OooO0O0(p034OoooOO0.o0Oo0oo.f1459OooO0O0);
+            } catch (IllegalArgumentException unused2) {
+            }
+            if (objOooO0O1 == null) {
+                o00o00o3.Oooo0oO(p034OoooOO0.o0Oo0oo.f1459OooO0O0, OooOOOO.class.getCanonicalName() + "-" + UUID.randomUUID());
+            }
+        }
+
+        @Override // p028Oooo0oO.o00O000o
+        @NonNull
+        @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+        public final o00O00 OooO00o() {
+            return this.f4018OooO00o;
+        }
+
+        @Override // androidx.camera.core.impl.o0o0Oo.OooO00o
+        @NonNull
+        @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
+        public final o0o0Oo OooO0O0() {
+            return new p040Ooooo00.OooO0o(o00O0.Oooo0O0(this.f4018OooO00o));
+        }
+
+        /* JADX WARN: Illegal instructions before constructor call */
+        public OooO0O0(@NonNull T t) {
+            o00O00O o00o00oOooo0OO = o00O00O.Oooo0OO();
+            o00o00oOooo0OO.Oooo0oO(p040Ooooo00.OooO0o.f1758Oooo000, t);
+            this(o00o00oOooo0OO);
+        }
+    }
+}

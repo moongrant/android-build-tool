@@ -1,0 +1,6 @@
+package com.zego.ve;
+
+/* JADX INFO: loaded from: classes4.dex */
+interface IAudioKitCallback {
+    void onResult(int i);
+}
