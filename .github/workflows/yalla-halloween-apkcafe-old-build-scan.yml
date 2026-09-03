@@ -1,0 +1,172 @@
+name: Yalla Halloween APKCafe old-build scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-apkcafe-old-build-scan.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-apkcafe-results
+      OUT_DIR: artifacts/yalla-halloween-apkcafe
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download exact 2020-2022 Halloween-window builds from APKCafe and scan
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR" /tmp/yalla-apkcafe
+          cat > /tmp/apkcafe_scan.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, re, shutil, subprocess, urllib.parse, zipfile
+          from pathlib import Path
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-apkcafe')
+          BUILDS={
+            '2.11.9': {'date':'2020-09-30','url':'https://apkcafe.es/download?file_id=1541930%2Fyalla-free-voice-chat-rooms'},
+            '2.11.10':{'date':'2020-11-29','url':'https://apkcafe.es/download?file_id=1592318%2Fyalla-free-voice-chat-rooms'},
+            '2.12.0': {'date':'2021-11-03','url':'https://apkcafe.es/download?file_id=1965493%2Fyalla-free-voice-chat-rooms'},
+            '2.17.1': {'date':'2022-10-06','url':'https://apkcafe.es/download?file_id=2316871%2Fyalla-free-voice-chat-rooms'},
+          }
+          SESSION=requests.Session();SESSION.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','Accept-Language':'en-US,en;q=.9','Accept':'text/html,application/xhtml+xml,application/xml;q=.9,*/*;q=.8','Referer':'https://yalla-free-voice-chat-rooms.apkcafe.es/'})
+          TERMS=['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى','ghost','ghosts','شبح','أشباح','hayalet','fantasma','fantôme','fantome','witch','witches','ساحرة','ساحر','cadı','cadi','bruxa','bruja','sorcière','sorciere','candy','candies','حلوى','şeker','seker','doces','dulces','bonbon','haunted','مسكون','perili','assombrado','embrujado','hanté','hante','spooky','مخيف','seram','skeleton','هيكل عظمي','zombie','vampire']
+          STRONG={x.casefold() for x in ['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى']}
+          H5=['activity2.','file.yalla.live/activity/','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl','templateactivity','webview']
+          URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          LATIN={x for x in TERMS if re.fullmatch(r'[A-Za-z][A-Za-z -]*',x)}
+
+          def dump(path,obj): path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf-8')
+          def term_hits(text):
+            low=text.casefold();hits=[]
+            for term in TERMS:
+              t=term.casefold()
+              if term in LATIN:
+                if re.search(r'(?<![A-Za-z])'+re.escape(t)+r'(?![A-Za-z])',low):hits.append(term)
+              elif t in low:hits.append(term)
+            return hits
+          def candidate_links(html,base):
+            soup=BeautifulSoup(html,'html.parser');links=[]
+            for a in soup.find_all('a',href=True):
+              href=urllib.parse.urljoin(base,a['href'])
+              if href.lower().endswith(('.apk','.xapk','.apkm','.zip')) or any(s in href.lower() for s in ['download','file','cdn','get.php']):links.append(href)
+            for raw in re.findall(r'https?://[^\"\'<>\s]+',html):
+              raw=raw.replace('&amp;','&')
+              if raw.lower().endswith(('.apk','.xapk','.apkm','.zip')) or any(s in raw.lower() for s in ['download','file','cdn','get.php']):links.append(raw)
+            out=[]
+            for link in links:
+              if link not in out:out.append(link)
+            return sorted(out,key=lambda x:(0 if x.lower().endswith('.apk') else 1 if 'cdn' in x.lower() else 2,len(x)))
+          def obtain(version,meta):
+            out=OUT/version;out.mkdir(parents=True,exist_ok=True);queue=[(meta['url'],'https://yalla-free-voice-chat-rooms.apkcafe.es/')];seen=set();trace=[];step=0
+            while queue and step<45:
+              url,referer=queue.pop(0);step+=1
+              if url in seen:continue
+              seen.add(url)
+              try:
+                r=SESSION.get(url,headers={'Referer':referer},timeout=(20,240),allow_redirects=True,stream=False)
+              except Exception as e:trace.append({'url':url,'error':repr(e)});continue
+              ctype=r.headers.get('content-type','');row={'url':url,'status':r.status_code,'finalUrl':r.url,'bytes':len(r.content),'contentType':ctype,'contentDisposition':r.headers.get('content-disposition')};trace.append(row)
+              if r.status_code==200 and len(r.content)>10_000_000 and r.content[:2]==b'PK':
+                apk=TMP/f'yalla-{version}.apk';apk.write_bytes(r.content);dump(out/'download-trace.json',trace);return apk,trace
+              if 'html' in ctype.lower() or r.content.lstrip().startswith(b'<'):
+                (out/f'step-{step:02d}.html').write_bytes(r.content)
+                for nxt in candidate_links(r.text,r.url):
+                  if nxt not in seen:queue.append((nxt,r.url))
+            dump(out/'download-trace.json',trace);return None,trace
+          def strings_all(path):
+            blocks=[]
+            for command in (['strings','-a','-n','4'],['strings','-a','-el','-n','4'],['strings','-a','-eb','-n','4']):
+              try:
+                p=subprocess.run(command+[str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=120)
+                blocks.append(p.stdout.decode('utf-8','ignore'))
+              except Exception:pass
+            return '\n'.join(blocks)
+          def scan(version,apk):
+            decoded=TMP/f'decoded-{version}';shutil.rmtree(decoded,ignore_errors=True);decoded.mkdir(parents=True)
+            with zipfile.ZipFile(apk) as z:z.extractall(decoded)
+            files=0;raw=[];meaningful=[];path_matches=[];urls=set();h5_contexts=[]
+            for path in decoded.rglob('*'):
+              if not path.is_file() or path.stat().st_size>280_000_000:continue
+              files+=1;rel=path.relative_to(decoded).as_posix();ph=term_hits(rel)
+              if ph:path_matches.append({'file':rel,'terms':ph})
+              text=strings_all(path)
+              if not text:continue
+              lines=text.splitlines()
+              for i,line in enumerate(lines):
+                hits=term_hits(line)
+                if hits:
+                  context='\n'.join(lines[max(0,i-7):min(len(lines),i+8)])[:18000];adjacent=any(sig in context.casefold() for sig in H5)
+                  item={'file':rel,'line':line[:4000],'terms':hits,'strong':bool({x.casefold() for x in hits}&STRONG),'activityAdjacent':adjacent,'context':context};raw.append(item)
+                  if item['strong'] or adjacent or len(hits)>=2:meaningful.append(item)
+                if any(sig in line.casefold() for sig in H5):h5_contexts.append({'file':rel,'line':line[:4000],'context':'\n'.join(lines[max(0,i-4):min(len(lines),i+5)])[:12000]})
+                for u in URL_RE.findall(line):
+                  u=u.rstrip(',.;:)]}')
+                  if any(sig in u.casefold() for sig in H5) or term_hits(u):urls.add(u)
+            shutil.rmtree(decoded,ignore_errors=True)
+            return {'filesScanned':files,'pathMatches':path_matches,'rawMatches':raw,'meaningfulMatches':meaningful,'h5Contexts':h5_contexts[:2500],'activityUrls':sorted(urls)}
+
+          results=[]
+          for version,meta in BUILDS.items():
+            out=OUT/version;out.mkdir(parents=True,exist_ok=True)
+            apk,trace=obtain(version,meta)
+            if not apk:
+              result={'version':version,'date':meta['date'],'downloaded':False,'trace':trace};dump(out/'result.json',result);results.append(result);continue
+            size=apk.stat().st_size;sha=hashlib.sha256(apk.read_bytes()).hexdigest();result={'version':version,'date':meta['date'],'downloaded':True,'apkBytes':size,'apkSha256':sha,**scan(version,apk)};dump(out/'result.json',result);results.append(result);apk.unlink(missing_ok=True)
+          all_urls=sorted({u for x in results for u in x.get('activityUrls',[])})
+          payload={'generatedAt':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),'requested':len(results),'downloaded':sum(bool(x.get('downloaded')) for x in results),'meaningfulMatchCount':sum(len(x.get('meaningfulMatches',[])) for x in results),'activityUrls':all_urls,'results':results};dump(OUT/'consolidated.json',payload)
+          lines=['# Yalla Halloween APKCafe Old-Build Scan','',f"- Requested: {payload['requested']}",f"- Downloaded and scanned: {payload['downloaded']}",f"- Exact/meaningful Halloween matches: {payload['meaningfulMatchCount']}",f"- H5/activity URLs: {len(all_urls)}",'', '| Version | Date | Downloaded | APK bytes | Files | Raw exact | Meaningful | H5 URLs |','|---|---|---|---:|---:|---:|---:|---:|']
+          for x in results:lines.append(f"| {x['version']} | {x['date']} | {x.get('downloaded')} | {x.get('apkBytes',0)} | {x.get('filesScanned',0)} | {len(x.get('rawMatches',[]))} | {len(x.get('meaningfulMatches',[]))} | {len(x.get('activityUrls',[]))} |")
+          for x in results:
+            lines+=['',f"## {x['version']} · {x['date']}",'']
+            for m in x.get('meaningfulMatches',[])[:150]:lines += [f"### `{m['file']}` · {', '.join(m['terms'])}",'```',m['context'][:6000],'```','']
+            if x.get('activityUrls'):lines += ['### Activity URLs','']+[f'- `{u}`' for u in x['activityUrls']]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'requested':payload['requested'],'downloaded':payload['downloaded'],'meaningfulMatches':payload['meaningfulMatchCount'],'activityUrls':len(all_urls)},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/apkcafe_scan.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-apkcafe-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md consolidated.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for d in "$OUT_DIR"/*; do
+            [[ -d "$d" ]] || continue
+            mkdir -p "$stage/$(basename "$d")"
+            for f in result.json download-trace.json; do cp "$d/$f" "$stage/$(basename "$d")/" 2>/dev/null || true; done
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween APKCafe scan ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload scan artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-apkcafe-old-build-scan
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
