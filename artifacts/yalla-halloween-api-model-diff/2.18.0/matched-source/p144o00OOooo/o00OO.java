@@ -1,0 +1,42 @@
+package p144o00OOooo;
+
+import android.view.View;
+import com.app.base.fragment.room.RoomInfoProfileFragment;
+import com.weieyu.yalla.R;
+import com.yalla.yalla.ui.activity.user.PremiumActivity;
+import java.util.Objects;
+import kotlin.jvm.internal.Intrinsics;
+import p256o00ooO0o.oo0oOO0;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final /* synthetic */ class o00OO implements View.OnClickListener {
+
+    /* JADX INFO: renamed from: Oooo, reason: collision with root package name */
+    public final /* synthetic */ int f32030Oooo;
+
+    /* JADX INFO: renamed from: OoooO00, reason: collision with root package name */
+    public final /* synthetic */ Object f32031OoooO00;
+
+    public /* synthetic */ o00OO(Object obj, int i) {
+        this.f32030Oooo = i;
+        this.f32031OoooO00 = obj;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.f32030Oooo) {
+            case 0:
+                RoomInfoProfileFragment.m83initView$lambda4((RoomInfoProfileFragment) this.f32031OoooO00, view);
+                break;
+            default:
+                PremiumActivity this$0 = (PremiumActivity) this.f32031OoooO00;
+                PremiumActivity.OooO00o oooO00o = PremiumActivity.f23379o0Oo0oo;
+                Intrinsics.checkNotNullParameter(this$0, "this$0");
+                Objects.requireNonNull(this$0);
+                oo0oOO0 oo0ooo0 = new oo0oOO0(this$0);
+                oo0ooo0.OooOo0(R.string.vip3vip4_to_vip2vip1);
+                oo0ooo0.OooOOO0();
+                break;
+        }
+    }
+}

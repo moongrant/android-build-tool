@@ -1,0 +1,308 @@
+package com.facebook;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.ComponentCallbacks2;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Typeface;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Button;
+import androidx.fragment.app.Fragment;
+import com.facebook.appevents.InternalAppEventsLogger;
+import com.facebook.appevents.internal.ViewHierarchyConstants;
+import com.facebook.common.R;
+import com.facebook.internal.FragmentWrapper;
+import com.facebook.internal.instrument.crashshield.AutoHandleExceptions;
+import com.umeng.analytics.pro.ak;
+import com.umeng.analytics.pro.d;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import p178o00Ooooo.oO0;
+
+/* JADX INFO: loaded from: classes.dex */
+@Metadata(bv = {}, d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\b'\u0018\u00002\u00020\u0001B;\b\u0004\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\b\u0010\u0005\u001a\u0004\u0018\u00010\u0004\u0012\u0006\u0010\u0007\u001a\u00020\u0006\u0012\u0006\u0010\b\u001a\u00020\u0006\u0012\u0006\u0010&\u001a\u00020\u001c\u0012\u0006\u0010*\u001a\u00020\u001c¢\u0006\u0004\bL\u0010MJ*\u0010\n\u001a\u00020\t2\u0006\u0010\u0003\u001a\u00020\u00022\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0002J*\u0010\u000b\u001a\u00020\t2\u0006\u0010\u0003\u001a\u00020\u00022\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0003J*\u0010\f\u001a\u00020\t2\u0006\u0010\u0003\u001a\u00020\u00022\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0002J*\u0010\r\u001a\u00020\t2\u0006\u0010\u0003\u001a\u00020\u00022\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0002J\b\u0010\u000e\u001a\u00020\tH\u0002J\u000e\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\u000fJ\u000e\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\u0012J\u0012\u0010\u0015\u001a\u00020\t2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0013H\u0016J\b\u0010\u0016\u001a\u00020\tH\u0014J\u0010\u0010\u0019\u001a\u00020\t2\u0006\u0010\u0018\u001a\u00020\u0017H\u0014J\b\u0010\u001a\u001a\u00020\u0006H\u0016J\b\u0010\u001b\u001a\u00020\u0006H\u0016J\u0012\u0010\u001e\u001a\u00020\u00062\b\u0010\u001d\u001a\u0004\u0018\u00010\u001cH\u0014J*\u0010\u001f\u001a\u00020\t2\u0006\u0010\u0003\u001a\u00020\u00022\b\u0010\u0005\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0014J\u0012\u0010\"\u001a\u00020\t2\b\u0010!\u001a\u0004\u0018\u00010 H\u0014J\u0012\u0010#\u001a\u00020\t2\b\u0010\u0014\u001a\u0004\u0018\u00010\u0013H\u0014J\u0012\u0010$\u001a\u00020\t2\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0014J\u0012\u0010%\u001a\u00020\t2\b\u0010\u0003\u001a\u0004\u0018\u00010\u0002H\u0014R\u001a\u0010&\u001a\u00020\u001c8\u0004X\u0084\u0004¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b(\u0010)R\u001a\u0010*\u001a\u00020\u001c8\u0004X\u0084\u0004¢\u0006\f\n\u0004\b*\u0010'\u001a\u0004\b+\u0010)R\u0018\u0010,\u001a\u0004\u0018\u00010\u00138\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b,\u0010-R\u0018\u0010.\u001a\u0004\u0018\u00010\u00138\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b.\u0010-R\u0016\u00100\u001a\u00020/8\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b0\u00101R\u0016\u00102\u001a\u00020\u00068\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b2\u00103R\u0016\u00104\u001a\u00020\u00068\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b4\u00103R\u0018\u00106\u001a\u0004\u0018\u0001058\u0002@\u0002X\u0082\u000e¢\u0006\u0006\n\u0004\b6\u00107R\u001a\u00108\u001a\u00020\u00068\u0014X\u0094D¢\u0006\f\n\u0004\b8\u00103\u001a\u0004\b9\u0010:R\u0014\u0010<\u001a\u00020\u00068$X¤\u0004¢\u0006\u0006\u001a\u0004\b;\u0010:R\u0013\u0010?\u001a\u0004\u0018\u00010\u000f8F¢\u0006\u0006\u001a\u0004\b=\u0010>R\u0013\u0010\u0010\u001a\u0004\u0018\u00010\u00128F¢\u0006\u0006\u001a\u0004\b@\u0010AR\u0013\u0010E\u001a\u0004\u0018\u00010B8F¢\u0006\u0006\u001a\u0004\bC\u0010DR\u0014\u0010G\u001a\u00020\u00068VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bF\u0010:R\u0014\u0010K\u001a\u00020H8TX\u0094\u0004¢\u0006\u0006\u001a\u0004\bI\u0010J¨\u0006N"}, d2 = {"Lcom/facebook/FacebookButtonBase;", "Landroid/widget/Button;", "Landroid/content/Context;", d.R, "Landroid/util/AttributeSet;", "attrs", "", "defStyleAttr", "defStyleRes", "", "parseBackgroundAttributes", "parseCompoundDrawableAttributes", "parseContentAttributes", "parseTextAttributes", "setupOnClickListener", "Landroid/app/Fragment;", "fragment", "setFragment", "Landroidx/fragment/app/Fragment;", "Landroid/view/View$OnClickListener;", "l", "setOnClickListener", "onAttachedToWindow", "Landroid/graphics/Canvas;", "canvas", "onDraw", "getCompoundPaddingLeft", "getCompoundPaddingRight", "", ViewHierarchyConstants.TEXT_KEY, "measureTextWidth", "configureButton", "Landroid/view/View;", ak.aE, "callExternalOnClickListener", "setInternalOnClickListener", "logButtonCreated", "logButtonTapped", "analyticsButtonCreatedEventName", "Ljava/lang/String;", "getAnalyticsButtonCreatedEventName", "()Ljava/lang/String;", "analyticsButtonTappedEventName", "getAnalyticsButtonTappedEventName", "externalOnClickListener", "Landroid/view/View$OnClickListener;", "internalOnClickListener", "", "overrideCompoundPadding", "Z", "overrideCompoundPaddingLeft", "I", "overrideCompoundPaddingRight", "Lcom/facebook/internal/FragmentWrapper;", "parentFragment", "Lcom/facebook/internal/FragmentWrapper;", "defaultStyleResource", "getDefaultStyleResource", "()I", "getDefaultRequestCode", "defaultRequestCode", "getNativeFragment", "()Landroid/app/Fragment;", "nativeFragment", "getFragment", "()Landroidx/fragment/app/Fragment;", "Landroidx/activity/result/OooO0OO;", "getAndroidxActivityResultRegistryOwner", "()Landroidx/activity/result/OooO0OO;", "androidxActivityResultRegistryOwner", "getRequestCode", "requestCode", "Landroid/app/Activity;", "getActivity", "()Landroid/app/Activity;", "activity", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;IILjava/lang/String;Ljava/lang/String;)V", "facebook-common_release"}, k = 1, mv = {1, 5, 1})
+@SuppressLint({"ResourceType"})
+@AutoHandleExceptions
+public abstract class FacebookButtonBase extends Button {
+
+    @NotNull
+    private final String analyticsButtonCreatedEventName;
+
+    @NotNull
+    private final String analyticsButtonTappedEventName;
+    private final int defaultStyleResource;
+
+    @Nullable
+    private View.OnClickListener externalOnClickListener;
+
+    @Nullable
+    private View.OnClickListener internalOnClickListener;
+    private boolean overrideCompoundPadding;
+    private int overrideCompoundPaddingLeft;
+    private int overrideCompoundPaddingRight;
+
+    @Nullable
+    private FragmentWrapper parentFragment;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public FacebookButtonBase(@NotNull Context context, @Nullable AttributeSet attributeSet, int i, int i2, @NotNull String analyticsButtonCreatedEventName, @NotNull String analyticsButtonTappedEventName) {
+        super(context, attributeSet, 0);
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(analyticsButtonCreatedEventName, "analyticsButtonCreatedEventName");
+        Intrinsics.checkNotNullParameter(analyticsButtonTappedEventName, "analyticsButtonTappedEventName");
+        i2 = i2 == 0 ? getDefaultStyleResource() : i2;
+        configureButton(context, attributeSet, i, i2 == 0 ? R.style.com_facebook_button : i2);
+        this.analyticsButtonCreatedEventName = analyticsButtonCreatedEventName;
+        this.analyticsButtonTappedEventName = analyticsButtonTappedEventName;
+        setClickable(true);
+        setFocusable(true);
+    }
+
+    private final void parseBackgroundAttributes(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        if (isInEditMode()) {
+            return;
+        }
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(attrs, new int[]{android.R.attr.background}, defStyleAttr, defStyleRes);
+        try {
+            if (typedArrayObtainStyledAttributes.hasValue(0)) {
+                int resourceId = typedArrayObtainStyledAttributes.getResourceId(0, 0);
+                if (resourceId != 0) {
+                    setBackgroundResource(resourceId);
+                } else {
+                    setBackgroundColor(typedArrayObtainStyledAttributes.getColor(0, 0));
+                }
+            } else {
+                setBackgroundColor(o000O000.OooO00o.OooO0O0(context, R.color.com_facebook_blue));
+            }
+        } finally {
+            typedArrayObtainStyledAttributes.recycle();
+        }
+    }
+
+    @SuppressLint({"ResourceType"})
+    private final void parseCompoundDrawableAttributes(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(attrs, new int[]{android.R.attr.drawableLeft, android.R.attr.drawableTop, android.R.attr.drawableRight, android.R.attr.drawableBottom, android.R.attr.drawablePadding}, defStyleAttr, defStyleRes);
+        try {
+            setCompoundDrawablesWithIntrinsicBounds(typedArrayObtainStyledAttributes.getResourceId(0, 0), typedArrayObtainStyledAttributes.getResourceId(1, 0), typedArrayObtainStyledAttributes.getResourceId(2, 0), typedArrayObtainStyledAttributes.getResourceId(3, 0));
+            int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(4, 0);
+            typedArrayObtainStyledAttributes.recycle();
+            setCompoundDrawablePadding(dimensionPixelSize);
+        } catch (Throwable th) {
+            typedArrayObtainStyledAttributes.recycle();
+            throw th;
+        }
+    }
+
+    private final void parseContentAttributes(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(attrs, new int[]{android.R.attr.paddingLeft, android.R.attr.paddingTop, android.R.attr.paddingRight, android.R.attr.paddingBottom}, defStyleAttr, defStyleRes);
+        try {
+            setPadding(typedArrayObtainStyledAttributes.getDimensionPixelSize(0, 0), typedArrayObtainStyledAttributes.getDimensionPixelSize(1, 0), typedArrayObtainStyledAttributes.getDimensionPixelSize(2, 0), typedArrayObtainStyledAttributes.getDimensionPixelSize(3, 0));
+        } finally {
+            typedArrayObtainStyledAttributes.recycle();
+        }
+    }
+
+    private final void parseTextAttributes(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(attrs, new int[]{android.R.attr.textColor}, defStyleAttr, defStyleRes);
+        try {
+            setTextColor(typedArrayObtainStyledAttributes.getColorStateList(0));
+            typedArrayObtainStyledAttributes.recycle();
+            TypedArray typedArrayObtainStyledAttributes2 = context.getTheme().obtainStyledAttributes(attrs, new int[]{android.R.attr.gravity}, defStyleAttr, defStyleRes);
+            try {
+                int i = typedArrayObtainStyledAttributes2.getInt(0, 17);
+                typedArrayObtainStyledAttributes2.recycle();
+                setGravity(i);
+                TypedArray typedArrayObtainStyledAttributes3 = context.getTheme().obtainStyledAttributes(attrs, new int[]{android.R.attr.textSize, android.R.attr.textStyle, android.R.attr.text}, defStyleAttr, defStyleRes);
+                try {
+                    setTextSize(0, typedArrayObtainStyledAttributes3.getDimensionPixelSize(0, 0));
+                    setTypeface(Typeface.create(getTypeface(), 1));
+                    String string = typedArrayObtainStyledAttributes3.getString(2);
+                    typedArrayObtainStyledAttributes3.recycle();
+                    setText(string);
+                } catch (Throwable th) {
+                    typedArrayObtainStyledAttributes3.recycle();
+                    throw th;
+                }
+            } catch (Throwable th2) {
+                typedArrayObtainStyledAttributes2.recycle();
+                throw th2;
+            }
+        } catch (Throwable th3) {
+            typedArrayObtainStyledAttributes.recycle();
+            throw th3;
+        }
+    }
+
+    private final void setupOnClickListener() {
+        super.setOnClickListener(new oO0(this, 1));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: renamed from: setupOnClickListener$lambda-0, reason: not valid java name */
+    public static final void m90setupOnClickListener$lambda0(FacebookButtonBase this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.logButtonTapped(this$0.getContext());
+        View.OnClickListener onClickListener = this$0.internalOnClickListener;
+        if (onClickListener != null) {
+            onClickListener.onClick(view);
+            return;
+        }
+        View.OnClickListener onClickListener2 = this$0.externalOnClickListener;
+        if (onClickListener2 == null) {
+            return;
+        }
+        onClickListener2.onClick(view);
+    }
+
+    public void callExternalOnClickListener(@Nullable View v) {
+        View.OnClickListener onClickListener = this.externalOnClickListener;
+        if (onClickListener == null) {
+            return;
+        }
+        onClickListener.onClick(v);
+    }
+
+    public void configureButton(@NotNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        parseBackgroundAttributes(context, attrs, defStyleAttr, defStyleRes);
+        parseCompoundDrawableAttributes(context, attrs, defStyleAttr, defStyleRes);
+        parseContentAttributes(context, attrs, defStyleAttr, defStyleRes);
+        parseTextAttributes(context, attrs, defStyleAttr, defStyleRes);
+        setupOnClickListener();
+    }
+
+    @NotNull
+    public Activity getActivity() {
+        boolean z;
+        Context context = getContext();
+        while (true) {
+            z = context instanceof Activity;
+            if (z || !(context instanceof ContextWrapper)) {
+                break;
+            }
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (z) {
+            return (Activity) context;
+        }
+        throw new FacebookException("Unable to get Activity.");
+    }
+
+    @NotNull
+    public final String getAnalyticsButtonCreatedEventName() {
+        return this.analyticsButtonCreatedEventName;
+    }
+
+    @NotNull
+    public final String getAnalyticsButtonTappedEventName() {
+        return this.analyticsButtonTappedEventName;
+    }
+
+    @Nullable
+    public final androidx.activity.result.OooO0OO getAndroidxActivityResultRegistryOwner() {
+        ComponentCallbacks2 activity = getActivity();
+        if (activity instanceof androidx.activity.result.OooO0OO) {
+            return (androidx.activity.result.OooO0OO) activity;
+        }
+        return null;
+    }
+
+    @Override // android.widget.TextView
+    public int getCompoundPaddingLeft() {
+        return this.overrideCompoundPadding ? this.overrideCompoundPaddingLeft : super.getCompoundPaddingLeft();
+    }
+
+    @Override // android.widget.TextView
+    public int getCompoundPaddingRight() {
+        return this.overrideCompoundPadding ? this.overrideCompoundPaddingRight : super.getCompoundPaddingRight();
+    }
+
+    public abstract int getDefaultRequestCode();
+
+    public int getDefaultStyleResource() {
+        return this.defaultStyleResource;
+    }
+
+    @Nullable
+    public final Fragment getFragment() {
+        FragmentWrapper fragmentWrapper = this.parentFragment;
+        if (fragmentWrapper == null) {
+            return null;
+        }
+        return fragmentWrapper.getSupportFragment();
+    }
+
+    @Nullable
+    public final android.app.Fragment getNativeFragment() {
+        FragmentWrapper fragmentWrapper = this.parentFragment;
+        if (fragmentWrapper == null) {
+            return null;
+        }
+        return fragmentWrapper.getNativeFragment();
+    }
+
+    public int getRequestCode() {
+        return getDefaultRequestCode();
+    }
+
+    public void logButtonCreated(@Nullable Context context) {
+        InternalAppEventsLogger.INSTANCE.createInstance(context, null).logEventImplicitly(this.analyticsButtonCreatedEventName);
+    }
+
+    public void logButtonTapped(@Nullable Context context) {
+        InternalAppEventsLogger.INSTANCE.createInstance(context, null).logEventImplicitly(this.analyticsButtonTappedEventName);
+    }
+
+    public int measureTextWidth(@Nullable String text) {
+        return (int) Math.ceil(getPaint().measureText(text));
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (isInEditMode()) {
+            return;
+        }
+        logButtonCreated(getContext());
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(@NotNull Canvas canvas) {
+        Intrinsics.checkNotNullParameter(canvas, "canvas");
+        if ((getGravity() & 1) != 0) {
+            int compoundPaddingLeft = getCompoundPaddingLeft();
+            int compoundPaddingRight = getCompoundPaddingRight();
+            int iMin = Math.min((((getWidth() - (getCompoundDrawablePadding() + compoundPaddingLeft)) - compoundPaddingRight) - measureTextWidth(getText().toString())) / 2, (compoundPaddingLeft - getPaddingLeft()) / 2);
+            this.overrideCompoundPaddingLeft = compoundPaddingLeft - iMin;
+            this.overrideCompoundPaddingRight = compoundPaddingRight + iMin;
+            this.overrideCompoundPadding = true;
+        }
+        super.onDraw(canvas);
+        this.overrideCompoundPadding = false;
+    }
+
+    public final void setFragment(@NotNull android.app.Fragment fragment) {
+        Intrinsics.checkNotNullParameter(fragment, "fragment");
+        this.parentFragment = new FragmentWrapper(fragment);
+    }
+
+    public void setInternalOnClickListener(@Nullable View.OnClickListener l) {
+        this.internalOnClickListener = l;
+    }
+
+    @Override // android.view.View
+    public void setOnClickListener(@Nullable View.OnClickListener l) {
+        this.externalOnClickListener = l;
+    }
+
+    public final void setFragment(@NotNull Fragment fragment) {
+        Intrinsics.checkNotNullParameter(fragment, "fragment");
+        this.parentFragment = new FragmentWrapper(fragment);
+    }
+}

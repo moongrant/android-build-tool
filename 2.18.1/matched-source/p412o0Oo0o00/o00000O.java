@@ -1,0 +1,252 @@
+package p412o0Oo0o00;
+
+import android.support.v4.media.OooO00o;
+import com.qiniu.android.http.request.Request;
+import com.squareup.okhttp.internal.http.RequestException;
+import com.squareup.okhttp.internal.http.RouteException;
+import com.yalla.yalla.common.model.ShopVehicleListModel;
+import java.io.IOException;
+import java.io.InterruptedIOException;
+import java.net.CookieHandler;
+import java.net.ProtocolException;
+import java.net.Proxy;
+import java.net.ProxySelector;
+import java.security.GeneralSecurityException;
+import java.security.cert.CertificateException;
+import java.util.Objects;
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLPeerUnverifiedException;
+import javax.net.ssl.SSLSocketFactory;
+import p168o00Ooo0.OooOo;
+import p413o0Oo0o0O.o0OO00O;
+import p416o0Oo0oO0.o00000;
+import p416o0Oo0oO0.o000000O;
+import p416o0Oo0oO0.o00O0O;
+import p416o0Oo0oO0.o0O0O00;
+import p416o0Oo0oO0.o0Oo0oo;
+import p419o0Oo0oo0.o0000Ooo;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class o00000O {
+
+    /* JADX INFO: renamed from: OooO00o, reason: collision with root package name */
+    public final o000 f39234OooO00o;
+
+    /* JADX INFO: renamed from: OooO0O0, reason: collision with root package name */
+    public boolean f39235OooO0O0;
+
+    /* JADX INFO: renamed from: OooO0OO, reason: collision with root package name */
+    public o000O000 f39236OooO0OO;
+
+    /* JADX INFO: renamed from: OooO0Oo, reason: collision with root package name */
+    public o0Oo0oo f39237OooO0Oo;
+
+    public o00000O(o000 o000Var, o000O000 o000o001) {
+        SSLSocketFactory sSLSocketFactory;
+        Objects.requireNonNull(o000Var);
+        o000 o000Var2 = new o000(o000Var);
+        if (o000Var2.f39181OoooO == null) {
+            o000Var2.f39181OoooO = ProxySelector.getDefault();
+        }
+        if (o000Var2.f39185OoooOO0 == null) {
+            o000Var2.f39185OoooOO0 = CookieHandler.getDefault();
+        }
+        if (o000Var2.f39187OoooOOo == null) {
+            o000Var2.f39187OoooOOo = SocketFactory.getDefault();
+        }
+        if (o000Var2.f39188OoooOo0 == null) {
+            synchronized (o000Var) {
+                if (o000.f39174o00O0O == null) {
+                    try {
+                        SSLContext sSLContext = SSLContext.getInstance("TLS");
+                        sSLContext.init(null, null, null);
+                        o000.f39174o00O0O = sSLContext.getSocketFactory();
+                    } catch (GeneralSecurityException unused) {
+                        throw new AssertionError();
+                    }
+                }
+                sSLSocketFactory = o000.f39174o00O0O;
+            }
+            o000Var2.f39188OoooOo0 = sSLSocketFactory;
+        }
+        if (o000Var2.f39189OoooOoO == null) {
+            o000Var2.f39189OoooOoO = o0000Ooo.f39769OooO00o;
+        }
+        if (o000Var2.f39190OoooOoo == null) {
+            o000Var2.f39190OoooOoo = o00000OO.f39255OooO0O0;
+        }
+        if (o000Var2.f39191Ooooo00 == null) {
+            o000Var2.f39191Ooooo00 = o00O0O.f39580OooO00o;
+        }
+        if (o000Var2.f39192Ooooo0o == null) {
+            o000Var2.f39192Ooooo0o = o0000O00.f39276OooO0o;
+        }
+        if (o000Var2.f39177Oooo == null) {
+            o000Var2.f39177Oooo = o000.f39175o0OoOo0;
+        }
+        if (o000Var2.f39183OoooO00 == null) {
+            o000Var2.f39183OoooO00 = o000.f39176ooOO;
+        }
+        if (o000Var2.f39193OooooO0 == null) {
+            o000Var2.f39193OooooO0 = o0OO00O.f39371OooO00o;
+        }
+        this.f39234OooO00o = o000Var2;
+        this.f39236OooO0OO = o000o001;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:125:0x01e7  */
+    /* JADX WARN: Code duplicated, block: B:35:0x009b  */
+    /* JADX WARN: Code duplicated, block: B:51:0x00e7  */
+    /* JADX WARN: Code duplicated, block: B:54:0x00ff  */
+    /* JADX WARN: Type inference failed for: r0v1, types: [java.util.ArrayList, java.util.List<o0Oo0o00.o0000OO0>] */
+    /* JADX WARN: Type inference failed for: r0v17, types: [java.util.ArrayList, java.util.List<o0Oo0o00.o0000OO0>] */
+    public final o000O0o OooO00o() throws Throwable {
+        boolean z;
+        String strOooO0OO;
+        o0000O o0000oOooO0OO;
+        o000O000.OooO00o oooO00o;
+        o000O000 o000o001 = this.f39236OooO0OO;
+        if (this.f39234OooO00o.f39182OoooO0.size() > 0) {
+            return ((o0000OO0) this.f39234OooO00o.f39182OoooO0.get(0)).OooO00o();
+        }
+        Objects.requireNonNull(o000o001);
+        this.f39237OooO0Oo = new o0Oo0oo(this.f39234OooO00o, o000o001, false, false, false, null, null, null, null);
+        int i = 0;
+        while (true) {
+            o0Oo0oo o0oo0oo2 = null;
+            o000o000OooO00o = null;
+            o000o000OooO00o = null;
+            o000o000OooO00o = null;
+            o000o000OooO00o = null;
+            o000o000OooO00o = null;
+            o000O000 o000o000OooO00o = null;
+            o0oo0oo = null;
+            o0oo0oo = null;
+            o0Oo0oo o0oo0oo3 = null;
+            o0oo0oo2 = null;
+            o0oo0oo2 = null;
+            try {
+                this.f39237OooO0Oo.OooOO0O();
+                this.f39237OooO0Oo.OooO0oO();
+                o0Oo0oo o0oo0oo4 = this.f39237OooO0Oo;
+                o000O0o o000o0o2 = o0oo0oo4.f39610OooOOO;
+                if (o000o0o2 == null) {
+                    throw new IllegalStateException();
+                }
+                o000O00 o000o01 = o0oo0oo4.f39604OooO0o0;
+                Proxy proxy = o000o01 != null ? o000o01.f39300OooO0O0 : o0oo0oo4.f39599OooO00o.f39180Oooo0oo;
+                int i2 = o000o0o2.f39315OooO0OO;
+                if (i2 == 307 || i2 == 308) {
+                    if (o0oo0oo4.f39608OooOO0O.f39303OooO0O0.equals(Request.HttpMethodGet) || o0oo0oo4.f39608OooOO0O.f39303OooO0O0.equals(Request.HttpMethodHEAD)) {
+                        if (o0oo0oo4.f39599OooO00o.f39195OooooOo && (strOooO0OO = o0oo0oo4.f39610OooOOO.OooO0OO("Location")) != null) {
+                            o0000O o0000o2 = o0oo0oo4.f39608OooOO0O.f39302OooO00o;
+                            Objects.requireNonNull(o0000o2);
+                            o0000oOooO0OO = new o0000O.OooO00o().OooO0OO(o0000o2, strOooO0OO);
+                            if (o0000oOooO0OO != null && (o0000oOooO0OO.f39259OooO00o.equals(o0oo0oo4.f39608OooOO0O.f39302OooO00o.f39259OooO00o) || o0oo0oo4.f39599OooO00o.f39194OooooOO)) {
+                                oooO00o = new o000O000.OooO00o(o0oo0oo4.f39608OooOO0O);
+                                if (OooOo.OooO0o0(o0oo0oo4.f39608OooOO0O.f39303OooO0O0)) {
+                                    oooO00o.OooO0OO(Request.HttpMethodGet);
+                                    oooO00o.OooO0Oo("Transfer-Encoding");
+                                    oooO00o.OooO0Oo("Content-Length");
+                                    oooO00o.OooO0Oo("Content-Type");
+                                }
+                                if (!o0oo0oo4.OooOO0(o0000oOooO0OO)) {
+                                    oooO00o.OooO0Oo("Authorization");
+                                }
+                                oooO00o.f39308OooO00o = o0000oOooO0OO;
+                                o000o000OooO00o = oooO00o.OooO00o();
+                            }
+                        }
+                    }
+                } else if (i2 == 401) {
+                    o000o000OooO00o = o0O0O00.OooO0OO(o0oo0oo4.f39599OooO00o.f39191Ooooo00, o0oo0oo4.f39610OooOOO, proxy);
+                } else if (i2 != 407) {
+                    switch (i2) {
+                        case ShopVehicleListModel.VehicleTagType_Vip300 /* 300 */:
+                        case 301:
+                        case 302:
+                        case 303:
+                            if (o0oo0oo4.f39599OooO00o.f39195OooooOo) {
+                                o0000O o0000o3 = o0oo0oo4.f39608OooOO0O.f39302OooO00o;
+                                Objects.requireNonNull(o0000o3);
+                                o0000oOooO0OO = new o0000O.OooO00o().OooO0OO(o0000o3, strOooO0OO);
+                                if (o0000oOooO0OO != null) {
+                                    oooO00o = new o000O000.OooO00o(o0oo0oo4.f39608OooOO0O);
+                                    if (OooOo.OooO0o0(o0oo0oo4.f39608OooOO0O.f39303OooO0O0)) {
+                                        oooO00o.OooO0OO(Request.HttpMethodGet);
+                                        oooO00o.OooO0Oo("Transfer-Encoding");
+                                        oooO00o.OooO0Oo("Content-Length");
+                                        oooO00o.OooO0Oo("Content-Type");
+                                    }
+                                    if (!o0oo0oo4.OooOO0(o0000oOooO0OO)) {
+                                        oooO00o.OooO0Oo("Authorization");
+                                    }
+                                    oooO00o.f39308OooO00o = o0000oOooO0OO;
+                                    o000o000OooO00o = oooO00o.OooO00o();
+                                }
+                            }
+                            break;
+                    }
+                } else {
+                    if (proxy.type() != Proxy.Type.HTTP) {
+                        throw new ProtocolException("Received HTTP_PROXY_AUTH (407) code while not using proxy");
+                    }
+                    o000o000OooO00o = o0O0O00.OooO0OO(o0oo0oo4.f39599OooO00o.f39191Ooooo00, o0oo0oo4.f39610OooOOO, proxy);
+                }
+                o000O000 o000o002 = o000o000OooO00o;
+                if (o000o002 == null) {
+                    this.f39237OooO0Oo.OooO();
+                    return o000o0o2;
+                }
+                i++;
+                if (i > 20) {
+                    throw new ProtocolException(OooO00o.OooO00o("Too many follow-up requests: ", i));
+                }
+                if (!this.f39237OooO0Oo.OooOO0(o000o002.f39302OooO00o)) {
+                    this.f39237OooO0Oo.OooO();
+                }
+                this.f39237OooO0Oo = new o0Oo0oo(this.f39234OooO00o, o000o002, false, false, false, this.f39237OooO0Oo.OooO00o(), null, null, o000o0o2);
+            } catch (RequestException e) {
+                throw e.OooO00o();
+            } catch (RouteException e2) {
+                o0Oo0oo o0oo0oo5 = this.f39237OooO0Oo;
+                o00000 o00000Var = o0oo0oo5.f39602OooO0Oo;
+                if (o00000Var != null && o0oo0oo5.f39600OooO0O0 != null) {
+                    o0oo0oo5.OooO0OO(o00000Var, e2.f19683Oooo0o);
+                }
+                o00000 o00000Var2 = o0oo0oo5.f39602OooO0Oo;
+                if ((o00000Var2 != null || o0oo0oo5.f39600OooO0O0 != null) && (o00000Var2 == null || o00000Var2.OooO00o())) {
+                    if (o0oo0oo5.f39599OooO00o.f39197Oooooo0) {
+                        IOException iOException = e2.f19683Oooo0o;
+                        z = ((iOException instanceof ProtocolException) || (iOException instanceof InterruptedIOException) || ((iOException instanceof SSLHandshakeException) && (iOException.getCause() instanceof CertificateException)) || (iOException instanceof SSLPeerUnverifiedException)) ? false : true;
+                    }
+                    if (z) {
+                        o0oo0oo3 = new o0Oo0oo(o0oo0oo5.f39599OooO00o, o0oo0oo5.f39608OooOO0O, o0oo0oo5.f39607OooOO0, o0oo0oo5.f39613OooOOOo, o0oo0oo5.f39615OooOOo0, o0oo0oo5.OooO00o(), o0oo0oo5.f39602OooO0Oo, (o000000O) o0oo0oo5.f39612OooOOOO, o0oo0oo5.f39603OooO0o);
+                    }
+                }
+                if (o0oo0oo3 == null) {
+                    throw e2.f19683Oooo0o;
+                }
+                this.f39237OooO0Oo = o0oo0oo3;
+            } catch (IOException e3) {
+                o0Oo0oo o0oo0oo6 = this.f39237OooO0Oo;
+                o00000 o00000Var3 = o0oo0oo6.f39602OooO0Oo;
+                if (o00000Var3 != null && o0oo0oo6.f39600OooO0O0 != null) {
+                    o0oo0oo6.OooO0OO(o00000Var3, e3);
+                }
+                o00000 o00000Var4 = o0oo0oo6.f39602OooO0Oo;
+                if ((o00000Var4 != null || o0oo0oo6.f39600OooO0O0 != null) && (o00000Var4 == null || o00000Var4.OooO00o())) {
+                    if ((!o0oo0oo6.f39599OooO00o.f39197Oooooo0 || (e3 instanceof ProtocolException) || (e3 instanceof InterruptedIOException)) ? false : true) {
+                        o0oo0oo2 = new o0Oo0oo(o0oo0oo6.f39599OooO00o, o0oo0oo6.f39608OooOO0O, o0oo0oo6.f39607OooOO0, o0oo0oo6.f39613OooOOOo, o0oo0oo6.f39615OooOOo0, o0oo0oo6.OooO00o(), o0oo0oo6.f39602OooO0Oo, null, o0oo0oo6.f39603OooO0o);
+                    }
+                }
+                if (o0oo0oo2 == null) {
+                    throw e3;
+                }
+                this.f39237OooO0Oo = o0oo0oo2;
+            }
+        }
+    }
+}

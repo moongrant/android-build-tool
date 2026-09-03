@@ -1,0 +1,4416 @@
+{
+  "versions": [
+    "2.17.0",
+    "2.18.0",
+    "2.18.1",
+    "2.23.0",
+    "2.23.1",
+    "2.23.2"
+  ],
+  "summaries": [
+    {
+      "version": "2.17.0",
+      "downloaded": false
+    },
+    {
+      "version": "2.18.0",
+      "downloaded": true,
+      "matchedFiles": 1158,
+      "apiPaths": 322,
+      "fieldFiles": 181,
+      "halloweenTermFiles": 1013,
+      "urls": 23
+    },
+    {
+      "version": "2.18.1",
+      "downloaded": true,
+      "matchedFiles": 1157,
+      "apiPaths": 322,
+      "fieldFiles": 181,
+      "halloweenTermFiles": 1012,
+      "urls": 23
+    },
+    {
+      "version": "2.23.0",
+      "downloaded": true,
+      "matchedFiles": 1379,
+      "apiPaths": 376,
+      "fieldFiles": 213,
+      "halloweenTermFiles": 1196,
+      "urls": 37
+    },
+    {
+      "version": "2.23.1",
+      "downloaded": true,
+      "matchedFiles": 1461,
+      "apiPaths": 378,
+      "fieldFiles": 219,
+      "halloweenTermFiles": 1278,
+      "urls": 37
+    },
+    {
+      "version": "2.23.2",
+      "downloaded": true,
+      "matchedFiles": 1451,
+      "apiPaths": 379,
+      "fieldFiles": 217,
+      "halloweenTermFiles": 1268,
+      "urls": 37
+    }
+  ],
+  "apiMatrix": [
+    {
+      "path": "/Webservers/Account/UserUnBindingThirdAccount",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Account/YallaChatAuthVerify",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Account/YallaChatLogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Api/GetConfig",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Api/GetInitConfig",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Api/Info",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/ApkUpgrade",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/CheckNetwork",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Apk/EnterRoomLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/MomentBehaviorLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/RoomExposureLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/SubmitUserNPS",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/UploadNetworkLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Apk/UserSearchLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Apk/UserVoiceLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/AppUI/GetConfig",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/AppUI/GetCountry",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/AdvertiBlockIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarBlockUserList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarExecSearch",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarFollow",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarFollowList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarHomeNew",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarHomePage",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarHotLiveList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarInfoEidt",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarJoinList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarLables",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarLevelProgress",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarMemberlist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarOneKeyFollow",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarUpgradeBar",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BarUpgradeBarBefore",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BatchRemBarMembers",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BatchRoomMemberList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/BuyEmoji",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/CheckConveneMemberStatus",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/CheckFollowAndJoin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/CheckInRoom",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/ConveneBarMember",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/ConveneBarMemberlist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/CountryHotSort",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/EmojiConfig",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GameConfig",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GameLogList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GamePropConfigList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetBannerList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetCallingMemberList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetConveneMemberState",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetCountryOfPwdRoomLimited",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetPropConfigList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetRedPaper",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GetUserBackpackPropInventory",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/GiftRedPaperRankList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/InitConfig",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/KickOutRoomList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Bar/PersonalBar",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/QuickCreateRoom",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RecommendedAttention",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RedPaperPropList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RedPaperRankList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RoomInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RoomShareList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RoomShareLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/RoomThemeEdit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/SearchBarRecommend",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/SetEventManage",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/SingleBarSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/SingleBarlist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/TaskBar",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Bar/UnJoinBar",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CheckCircleInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleAdmin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleAdminIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleBlackIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleBlackList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleCreate",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleCreateBefore",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleDiscoveryDelete",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleDiscoveryTopIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleInfoEdit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleJoinIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleJoinList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleMemberlist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleNewList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CirclePersonRecommendList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CirclePersonal",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleRecommendList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleRecommendTypeList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Circle/CircleSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleSearchRmdList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleSingle",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleTypeConfigList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Circle/CircleUserVerify",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/CommentSendProp",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/CommentSltPcid",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/Del",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/GetInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/List",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/Praise",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/SonList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Comment/Write",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/CircleDiscovery",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/EditMoment",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/EditMomentBefore",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/GetEditHistory",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/RecommendSquare",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/SquareBarMember",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/SquareHot",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/SquarePersonal",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Discovery/SquareSingle",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/AddShareLog",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/Create",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/CreateBefore",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/Delete",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetHistoryList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetJoinRoomList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetListByRoom",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetMyList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetTagList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/GetTop5",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/Report",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Event/SetConfig",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Event/Subscribe",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/KaPoint/GetRecord",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/KaPoint/GetShopPage",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/KaPoint/GetShopTop",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Medal/MedalRankTop",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Medal/UserMedalEdit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Medal/UserMedalGetList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Medal/UserMedalList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/ActivityList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/BarBlockUserSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/BarInListME",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/BarKickOutUserSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Messages/CheckIsFriend",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/CircleBlockUserSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/FriendMylist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/SearchRecommend",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/SetFriendMemoName",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/UserCompanionsInRoomList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/UserCompanionsList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/UserFollow",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/UserSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/UserVisitorlist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Messages/VisitorLogClick",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/AdvertiBlockIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/BarGetServerIP",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/CheckUserBlack",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/Del",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/DiscoveryTopIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/DyRecommendUsers",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/DySendPropDetail",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/GetBannerList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/GetCircleInfoByDyId",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/GetVoteConfig",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/GetVoteInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/MomentsDurationAdd",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/PerPhoto",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/Praise",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/PraiseList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/PublishV1",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/ReportPublish",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/SendProp",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/SquareFriendIsNew",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Moment/Vote",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/RankingList/RankingTopAll",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/RankingList/UserSupportersRank",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/HuaWeiSubscribePremium",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/HuaweiNotifyUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/HuaweiPayOrder",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/PayssionPayOrder",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/PayssionState",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeCoinAndroidV1",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeCoinOrder",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeConfigList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeConfigListAll",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeErrort",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeShopAndroid",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/RechargeShopOrder",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/TapPayOrder",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/TapPayState",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Recharge/TransactionDetails",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Report/Add",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Report/GetReason",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Resource/GetUploadToken",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Resource/PicQiniu",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/Resource/PicSet",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Resource/PicUpdateSet",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Room/GetExecRecord",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Room/GetLuckNumberRecord",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/RoomTeam/GetMemberInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/RoomTeam/GetRoomTeamWeekRankData",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/RoomTeam/GetTaskInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/RoomTeam/GetUserRankData",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/GetInRoomEffectsList",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/GetProfileCardList",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/PersonalVehicleList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/SetTopBid",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/SetTopList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/SetTopPurchase",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopPurchase",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopPurchaseTheme",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopRoomThemeList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopRoomThemeListByType",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopRoomThemeListTop",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopSkillCardList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopUnitPrice",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopUse",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopUserbuy",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopVehicle",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Shop/ShopVehicleList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Task/CheckInAddupWeek",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Task/SignIn",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Task/SignInWhether",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Task/TaskGetCoin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/Task/TaskList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/ActivateAccount",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/AndroidTokenAdd",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/CancelAccount",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/CancelAccountCheck",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/CancelConfirmation",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/ChangeKAVIPShowState",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/ChangeKAVIPStealthVisit?",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/ChangePremiumFirstState",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/CheckPhoneRegister",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/CloseMark",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/CloseReportLogs",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/DeleteUserTrustDevice",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/FbLogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/FeedbackAdd",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetAvatarList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetCancelReason",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetFirstRechargeInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetLogOutFBPopConfig",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetPhoneCodeSendType",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetUserBlack",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/GetUserReturnInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/HeInformation",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/HeadFrameList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/InstagramLogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/KAVIPExperienceDetails",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/KAVIPPrivilege",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/LoginOut",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/PhoneChange",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/PhoneSaleLogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/PlatformIntoLogIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/PostAddTrustDevice",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/PropUserHonor",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/RegisEventIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/ReportSafetyData",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/SendPhoneCode",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/SetUserKAVIPLvPopUpFlag",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/SwitchUserDevice",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/TagList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/TwitterLogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UrlConfigList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserBindingAccount",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserBindingCheck",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserDevcieRegister",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserInBar",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserInformation",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserInformationEdit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserKAVIPInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserNotificationSlt",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserNotificationUp",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserPasswordEdit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserPrivacySlt",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserPrivacyupt",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserServiceInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserServiceUp",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserSmRegister",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserSmRetrievePwd",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserTrustDeviceList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserUnBindingAccount",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserUnblockAppeal",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserVehicleEdit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/UserWearHeadframe",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/Userlogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/VerCode",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/VerifyThirdAccount",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/VipPrivilege",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/User/WeChatLogin",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/apk/AdvertiUserLogIns",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/bar/GetUserTask",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/bar/RedPaperGetCheck",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/bar/RedPaperGetlist",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/bar/SingleBarSearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/bar/barsearch",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/cdkey/Exchange",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/cdkey/List",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/BindChatCreateGroup",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/BindChatFriendChat",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/BindChatJoinGroup",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/CreateGroup",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/FriendChat",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/JoinGroup",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/chat/circleGroupInfo",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/events/point",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/geet/getCdkInfo",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/giftBlindBox/giftBlindBoxRecordList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/Webservers/rankinglist/RankingList",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/task/bindthirdtip",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": false,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/user/UserWealthLvInfo",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/video/gethot",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/video/getinroom",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/Webservers/vote/GetVoteActivityHistory",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/ApmApi",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/BillingClient",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/OooOOO0",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/Oooo000",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/PermissionCallback",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/ProductDetails",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/Purchase",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/SkuDetails",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/ZXID",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/ZXIDListener",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/annotations",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/annotations.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/auth.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/backend.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/billing.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/NetPlatform$Platform",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/NewApiClient$CommonRequest$call$2",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/call/NewApiClient$CommonRequest$callByOldModel$2",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/call/ResponseBodyParseUtils",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/ResponseBodyParseUtils$parseByApiResult$1$1",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/ResponseBodyParseUtils$parseByApiResult$type$1",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/ResponseBodyParseUtils$parseByJustModel$type$1",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/YLApi$CommonRequest",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/YLApi$CommonRequest$call$2",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/YLApi$CommonRequest$callString$2",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/core/HttpCoreRequest",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/core/IHttpService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/request/GetRequest",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/call/request/ParamsWrapper",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/client.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/common/Attributes",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": false,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/config_change.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/configchange",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/consumer.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/context.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/control.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/crashsdk/logcollect",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/crashsdk/validate",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/distribution",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/distribution.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/documentation.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/endpoint.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/error_reason",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/error_reason.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/field_behavior.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/http.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/httpbody",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/httpbody.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/label",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/label.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/launch_stage.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/log.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/logging.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/metric",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/metric.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/metrics/LongCounter",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/metrics/MeterBuilder",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/monitored_resource.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/monitoredres",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/monitoring.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/ApiClient",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/LogApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/MainApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/RoomApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/SearchApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/TaskService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/WalletService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/YallaChatApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/YallaChatBindApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/old/service/YallaTeamApiService",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/postZdata",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/quota.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/resource.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/routing.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/service.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/service/EventApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/GiftBlindBoxService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/LogApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/MainApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/MomentApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/RoomApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/SearchApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/TaskService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/TopicApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/UserInfoService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/UserMomentService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/VipService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/VoteApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/WalletService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/YallaChatApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/YallaChatBindApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/service/YallaTeamApiService",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/serviceconfig",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/source_info.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/system_parameter.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/trace/Span",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/trace/SpanBuilder",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/trace/StatusCode",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/trace/Tracer",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/trace/TracerBuilder",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/updateZdata",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/usage.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/v1/android/validate_subscription",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/v1/client_report",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/v1/mix/upload",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/v1/raw/upload",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "path": "/api/visibility",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "path": "/api/visibility.proto",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    }
+  ],
+  "fieldMatrix": [
+    {
+      "field": "activityId",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "activityImage",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "activityMsg",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "activityText1",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "activityText2",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "activityUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "campaignId",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "eventEndTime",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "eventId",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "eventImageUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "eventName",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "eventRoomId",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "eventStartTime",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "h5EntranceUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "jumpUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "redirectUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "roomTheme",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "roomThemeUrl",
+      "2.17.0": false,
+      "2.18.0": false,
+      "2.18.1": false,
+      "2.23.0": false,
+      "2.23.1": false,
+      "2.23.2": false
+    },
+    {
+      "field": "shareUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeBgImgUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeBgName",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeDayLimit",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeExpireTime",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeGiveId",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeName",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    },
+    {
+      "field": "themeVideoUrl",
+      "2.17.0": false,
+      "2.18.0": true,
+      "2.18.1": true,
+      "2.23.0": true,
+      "2.23.1": true,
+      "2.23.2": true
+    }
+  ],
+  "urlMatrix": [
+    {
+      "url": "https://api.open.yalla.chat",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://apiv2.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://chatmsg.yalla.live:443",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://clog.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://dev-sailfish.yallalive.cn",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://event.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://fat-sailfish.yallalive.cn",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://file.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://file.yalla.live/ErrorCode/errorcode.json",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://file.yalla.live/Medal/New_v1_L/Medal_",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://file.yalla.live/Medal/New_v1_S/Medal_",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://file.yalla.live/test/speedtest.rar",
+      "versions": [
+        "2.18.0",
+        "2.18.1"
+      ]
+    },
+    {
+      "url": "https://files.yalla.chat/download/apk",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://logcenter.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1"
+      ]
+    },
+    {
+      "url": "https://moment.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://payv2.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id%3Dcom.yallatech.yallachat#Intent",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://roomapi.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://sailfish.yalla.live",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://search.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://shop.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://www.yalla.chat",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://www.yalla.live/",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live",
+      "versions": [
+        "2.18.0",
+        "2.18.1",
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/19145269/MoMent/1uBT7jPk1D/",
+      "versions": [
+        "2.18.0",
+        "2.18.1"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/19145269/MoMent/1uBT7jPk1D/0.jpeg",
+      "versions": [
+        "2.18.0",
+        "2.18.1"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/CustomProp/Skin/0_1.svga",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0422111950545.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0506171924794.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0520113320895.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0520113731041.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0609145213312.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627105500997.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627105602865.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627105708965.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627105807152.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627105859972.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627110832921.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627111256118.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/dynamiceeffectprop/2022/0627111315333.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    },
+    {
+      "url": "https://yallatestfile.yalla.live/testVideo/yyevaTestVideo.mp4",
+      "versions": [
+        "2.23.0",
+        "2.23.1",
+        "2.23.2"
+      ]
+    }
+  ]
+}

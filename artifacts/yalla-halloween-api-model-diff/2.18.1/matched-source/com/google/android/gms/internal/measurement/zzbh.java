@@ -1,0 +1,165 @@
+package com.google.android.gms.internal.measurement;
+
+import java.util.Iterator;
+import java.util.List;
+import p031OoooO.o000000O;
+import p334o0OO00o.OooOOOO;
+import p334o0OO00o.OooOo;
+import p334o0OO00o.OooOo00;
+import p334o0OO00o.Oooo000;
+
+/* JADX INFO: loaded from: classes2.dex */
+public final class zzbh extends zzaw {
+    public zzbh() {
+        this.f15899OooO00o.add(zzbl.FOR_IN);
+        this.f15899OooO00o.add(zzbl.FOR_IN_CONST);
+        this.f15899OooO00o.add(zzbl.FOR_IN_LET);
+        this.f15899OooO00o.add(zzbl.FOR_LET);
+        this.f15899OooO00o.add(zzbl.FOR_OF);
+        this.f15899OooO00o.add(zzbl.FOR_OF_CONST);
+        this.f15899OooO00o.add(zzbl.FOR_OF_LET);
+        this.f15899OooO00o.add(zzbl.WHILE);
+    }
+
+    public static zzap OooO0O0(OooOo oooOo, Iterator it, zzap zzapVar) {
+        if (it != null) {
+            while (it.hasNext()) {
+                zzap zzapVarZzc = oooOo.OooO00o((zzap) it.next()).zzc((zzae) zzapVar);
+                if (zzapVarZzc instanceof zzag) {
+                    zzag zzagVar = (zzag) zzapVarZzc;
+                    if ("break".equals(zzagVar.zzc())) {
+                        return zzap.zzf;
+                    }
+                    if ("return".equals(zzagVar.zzc())) {
+                        return zzagVar;
+                    }
+                }
+            }
+        }
+        return zzap.zzf;
+    }
+
+    public static zzap OooO0OO(OooOo oooOo, zzap zzapVar, zzap zzapVar2) {
+        return OooO0O0(oooOo, zzapVar.zzl(), zzapVar2);
+    }
+
+    public static zzap OooO0Oo(OooOo oooOo, zzap zzapVar, zzap zzapVar2) {
+        if (zzapVar instanceof Iterable) {
+            return OooO0O0(oooOo, ((Iterable) zzapVar).iterator(), zzapVar2);
+        }
+        throw new IllegalArgumentException("Non-iterable type in for...of loop.");
+    }
+
+    @Override // com.google.android.gms.internal.measurement.zzaw
+    public final zzap zza(String str, zzg zzgVar, List list) {
+        zzbl zzblVar = zzbl.ADD;
+        int iOrdinal = zzh.zze(str).ordinal();
+        if (iOrdinal == 65) {
+            zzap zzapVar = (zzap) o000000O.OooO00o(zzbl.WHILE, 4, list, 0);
+            zzap zzapVar2 = (zzap) list.get(1);
+            zzap zzapVar3 = (zzap) list.get(2);
+            zzap zzapVarZzb = zzgVar.zzb((zzap) list.get(3));
+            if (zzgVar.zzb(zzapVar3).zzg().booleanValue()) {
+                zzap zzapVarZzc = zzgVar.zzc((zzae) zzapVarZzb);
+                if (zzapVarZzc instanceof zzag) {
+                    zzag zzagVar = (zzag) zzapVarZzc;
+                    if ("break".equals(zzagVar.zzc())) {
+                        return zzap.zzf;
+                    }
+                    if ("return".equals(zzagVar.zzc())) {
+                        return zzagVar;
+                    }
+                }
+            }
+            while (zzgVar.zzb(zzapVar).zzg().booleanValue()) {
+                zzap zzapVarZzc2 = zzgVar.zzc((zzae) zzapVarZzb);
+                if (zzapVarZzc2 instanceof zzag) {
+                    zzag zzagVar2 = (zzag) zzapVarZzc2;
+                    if ("break".equals(zzagVar2.zzc())) {
+                        return zzap.zzf;
+                    }
+                    if ("return".equals(zzagVar2.zzc())) {
+                        return zzagVar2;
+                    }
+                }
+                zzgVar.zzb(zzapVar2);
+            }
+            return zzap.zzf;
+        }
+        switch (iOrdinal) {
+            case 26:
+                if (!(o000000O.OooO00o(zzbl.FOR_IN, 3, list, 0) instanceof zzat)) {
+                    throw new IllegalArgumentException("Variable name in FOR_IN must be a string");
+                }
+                String strZzi = ((zzap) list.get(0)).zzi();
+                return OooO0OO(new Oooo000(zzgVar, strZzi), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+            case 27:
+                if (!(o000000O.OooO00o(zzbl.FOR_IN_CONST, 3, list, 0) instanceof zzat)) {
+                    throw new IllegalArgumentException("Variable name in FOR_IN_CONST must be a string");
+                }
+                String strZzi2 = ((zzap) list.get(0)).zzi();
+                return OooO0OO(new OooOOOO(zzgVar, strZzi2), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+            case 28:
+                if (!(o000000O.OooO00o(zzbl.FOR_IN_LET, 3, list, 0) instanceof zzat)) {
+                    throw new IllegalArgumentException("Variable name in FOR_IN_LET must be a string");
+                }
+                String strZzi3 = ((zzap) list.get(0)).zzi();
+                return OooO0OO(new OooOo00(zzgVar, strZzi3), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+            case 29:
+                zzap zzapVarZzb2 = zzgVar.zzb((zzap) o000000O.OooO00o(zzbl.FOR_LET, 4, list, 0));
+                if (!(zzapVarZzb2 instanceof zzae)) {
+                    throw new IllegalArgumentException("Initializer variables in FOR_LET must be an ArrayList");
+                }
+                zzae zzaeVar = (zzae) zzapVarZzb2;
+                zzap zzapVar4 = (zzap) list.get(1);
+                zzap zzapVar5 = (zzap) list.get(2);
+                zzap zzapVarZzb3 = zzgVar.zzb((zzap) list.get(3));
+                zzg zzgVarZza = zzgVar.zza();
+                for (int i = 0; i < zzaeVar.zzc(); i++) {
+                    String strZzi4 = zzaeVar.zze(i).zzi();
+                    zzgVarZza.zzg(strZzi4, zzgVar.zzd(strZzi4));
+                }
+                while (zzgVar.zzb(zzapVar4).zzg().booleanValue()) {
+                    zzap zzapVarZzc3 = zzgVar.zzc((zzae) zzapVarZzb3);
+                    if (zzapVarZzc3 instanceof zzag) {
+                        zzag zzagVar3 = (zzag) zzapVarZzc3;
+                        if ("break".equals(zzagVar3.zzc())) {
+                            return zzap.zzf;
+                        }
+                        if ("return".equals(zzagVar3.zzc())) {
+                            return zzagVar3;
+                        }
+                    }
+                    zzg zzgVarZza2 = zzgVar.zza();
+                    for (int i2 = 0; i2 < zzaeVar.zzc(); i2++) {
+                        String strZzi5 = zzaeVar.zze(i2).zzi();
+                        zzgVarZza2.zzg(strZzi5, zzgVarZza.zzd(strZzi5));
+                    }
+                    zzgVarZza2.zzb(zzapVar5);
+                    zzgVarZza = zzgVarZza2;
+                }
+                return zzap.zzf;
+            case 30:
+                if (!(o000000O.OooO00o(zzbl.FOR_OF, 3, list, 0) instanceof zzat)) {
+                    throw new IllegalArgumentException("Variable name in FOR_OF must be a string");
+                }
+                String strZzi6 = ((zzap) list.get(0)).zzi();
+                return OooO0Oo(new Oooo000(zzgVar, strZzi6), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+            case 31:
+                if (!(o000000O.OooO00o(zzbl.FOR_OF_CONST, 3, list, 0) instanceof zzat)) {
+                    throw new IllegalArgumentException("Variable name in FOR_OF_CONST must be a string");
+                }
+                String strZzi7 = ((zzap) list.get(0)).zzi();
+                return OooO0Oo(new OooOOOO(zzgVar, strZzi7), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+            case 32:
+                if (!(o000000O.OooO00o(zzbl.FOR_OF_LET, 3, list, 0) instanceof zzat)) {
+                    throw new IllegalArgumentException("Variable name in FOR_OF_LET must be a string");
+                }
+                String strZzi8 = ((zzap) list.get(0)).zzi();
+                return OooO0Oo(new OooOo00(zzgVar, strZzi8), zzgVar.zzb((zzap) list.get(1)), zzgVar.zzb((zzap) list.get(2)));
+            default:
+                OooO00o(str);
+                throw null;
+        }
+    }
+}
