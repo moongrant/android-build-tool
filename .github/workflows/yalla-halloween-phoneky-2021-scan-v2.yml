@@ -1,0 +1,164 @@
+name: Yalla Halloween Phoneky 2021 exact scan v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-phoneky-2021-scan-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-phoneky-2021-v2-results
+      OUT_DIR: artifacts/yalla-halloween-phoneky-2021-v2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install browser and scanner dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install playwright==1.55.0 requests beautifulsoup4 lxml
+          python -m playwright install --with-deps chromium
+          mkdir -p "$OUT_DIR" /tmp/yalla-phoneky-v2
+
+      - name: Resolve live Phoneky download and scan Yalla 2.11.16
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/phoneky_v2.py <<'PY'
+          from __future__ import annotations
+          import asyncio, hashlib, json, os, re, shutil, subprocess, urllib.parse, zipfile
+          from pathlib import Path
+          from playwright.async_api import async_playwright
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-phoneky-v2');OUT.mkdir(parents=True,exist_ok=True);TMP.mkdir(parents=True,exist_ok=True)
+          PAGE='https://in.phoneky.com/android/?id=d1d139768'
+          APK=TMP/'yalla-2.11.16.apk'
+          TERMS=['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى','ghost','ghosts','شبح','أشباح','hayalet','fantasma','fantôme','fantome','witch','witches','ساحرة','ساحر','cadı','cadi','bruxa','bruja','sorcière','sorciere','candy','candies','حلوى','şeker','seker','doces','dulces','bonbon','haunted','مسكون','perili','assombrado','embrujado','hanté','hante','spooky','مخيف','seram','skeleton','هيكل عظمي','zombie','vampire']
+          STRONG={x.casefold() for x in ['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى']}
+          H5=['activity2.','file.yalla.live/activity/','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl','templateactivity','webview']
+          LATIN={x for x in TERMS if re.fullmatch(r'[A-Za-z][A-Za-z -]*',x)};URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          def dump(name,obj): (OUT/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf-8')
+          def hits(text):
+            low=text.casefold();out=[]
+            for term in TERMS:
+              t=term.casefold()
+              if term in LATIN:
+                if re.search(r'(?<![A-Za-z])'+re.escape(t)+r'(?![A-Za-z])',low):out.append(term)
+              elif t in low:out.append(term)
+            return out
+          async def resolve():
+            trace=[];saved=None
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+              context=await browser.new_context(accept_downloads=True,viewport={'width':390,'height':844},is_mobile=True,has_touch=True,locale='en-US',user_agent='Mozilla/5.0 (Linux; Android 12; Pixel 5) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36')
+              page=await context.new_page()
+              page.on('request',lambda req: trace.append({'kind':'request','method':req.method,'url':req.url,'resourceType':req.resource_type}) if re.search(r'phoneky|download|\.apk(?:\?|$)',req.url,re.I) else None)
+              async def response(res):
+                headers=await res.all_headers()
+                if re.search(r'phoneky|download|\.apk(?:\?|$)',res.url,re.I) or re.search(r'android|octet-stream|zip',headers.get('content-type',''),re.I):trace.append({'kind':'response','status':res.status,'url':res.url,'headers':headers})
+              page.on('response',lambda res: asyncio.create_task(response(res)))
+              try:await page.goto(PAGE,wait_until='domcontentloaded',timeout=90000);await page.wait_for_timeout(7000)
+              except Exception as e:trace.append({'kind':'navigation-error','error':repr(e)})
+              (OUT/'page.html').write_text(await page.content(),encoding='utf-8');await page.screenshot(path=str(OUT/'page.png'),full_page=True)
+              inv=await page.evaluate("""()=>({url:location.href,title:document.title,body:(document.body?.innerText||'').replace(/\s+/g,' ').trim().slice(0,30000),links:[...document.querySelectorAll('a[href]')].map((a,i)=>({i,text:(a.innerText||a.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(),href:a.href,html:a.outerHTML.slice(0,2000)})),buttons:[...document.querySelectorAll('button,input[type=button],input[type=submit],[role=button]')].map((b,i)=>({i,text:(b.innerText||b.value||b.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(),html:b.outerHTML.slice(0,2000)})),forms:[...document.forms].map((f,i)=>({i,action:f.action,method:f.method,html:f.outerHTML.slice(0,5000)})),scripts:[...document.scripts].map(s=>s.src||s.textContent||'').filter(Boolean).map(x=>x.slice(0,20000))})""")
+              dump('inventory.json',inv)
+              candidates=await page.locator('a,button,input[type=button],input[type=submit],[role=button]').evaluate_all("""nodes=>nodes.map((n,i)=>({i,text:(n.innerText||n.value||n.getAttribute('aria-label')||n.title||'').replace(/\s+/g,' ').trim(),href:n.href||'',html:n.outerHTML.slice(0,3000)})).filter(x=>/download|डाउनलोड|скачать|telecharger|baixar|descargar|indir/i.test(x.text+' '+x.href+' '+x.html))""")
+              dump('download-candidates.json',candidates)
+              for cand in candidates:
+                if saved:break
+                try:
+                  loc=page.locator('a,button,input[type=button],input[type=submit],[role=button]').nth(cand['i'])
+                  async with page.expect_download(timeout=18000) as info:
+                    await loc.click(force=True,timeout=10000)
+                  dl=await info.value;await dl.save_as(str(APK));saved={'source':'download-event','url':dl.url,'suggestedFilename':dl.suggested_filename,'bytes':APK.stat().st_size};break
+                except Exception as e:trace.append({'kind':'click-error','candidate':cand,'error':repr(e)})
+                try:await page.goto(PAGE,wait_until='domcontentloaded',timeout=60000);await page.wait_for_timeout(2500)
+                except Exception:pass
+              if not saved:
+                urls=[]
+                for item in inv['links']:urls.append(item['href'])
+                for script in inv['scripts']:urls.extend(re.findall(r'https?://[^\s"\'<>]+',script))
+                urls.extend(x.get('url') for x in trace if x.get('url'))
+                ded=[]
+                for u in urls:
+                  if u and re.search(r'phoneky|download|\.apk(?:\?|$)|file',u,re.I) and u not in ded:ded.append(u)
+                dump('url-candidates.json',ded)
+                for u in ded:
+                  try:
+                    res=await context.request.get(u,headers={'Referer':PAGE},timeout=90000);body=await res.body();trace.append({'kind':'candidate-fetch','url':u,'status':res.status,'headers':res.headers,'bytes':len(body),'first':body[:30].hex()})
+                    if res.ok and len(body)>10_000_000 and body[:2]==b'PK':APK.write_bytes(body);saved={'source':'candidate-fetch','url':u,'bytes':len(body)};break
+                  except Exception as e:trace.append({'kind':'candidate-fetch-error','url':u,'error':repr(e)})
+              await browser.close()
+            dump('trace.json',{'saved':saved,'trace':trace});return saved
+          def strings_all(path):
+            blocks=[]
+            for cmd in (['strings','-a','-n','4'],['strings','-a','-el','-n','4'],['strings','-a','-eb','-n','4']):
+              try:p=subprocess.run(cmd+[str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=120);blocks.append(p.stdout.decode('utf-8','ignore'))
+              except Exception:pass
+            return '\n'.join(blocks)
+          def scan():
+            result={'version':'2.11.16','published':'2021-08-18','downloaded':APK.exists() and zipfile.is_zipfile(APK),'apkBytes':APK.stat().st_size if APK.exists() else 0,'apkSha256':hashlib.sha256(APK.read_bytes()).hexdigest() if APK.exists() else None,'filesScanned':0,'rawMatches':[],'meaningfulMatches':[],'pathMatches':[],'h5Contexts':[],'activityUrls':[]}
+            if not result['downloaded']:return result
+            decoded=TMP/'decoded';shutil.rmtree(decoded,ignore_errors=True);decoded.mkdir(parents=True);zipfile.ZipFile(APK).extractall(decoded);urls=set()
+            for path in decoded.rglob('*'):
+              if not path.is_file() or path.stat().st_size>280_000_000:continue
+              result['filesScanned']+=1;rel=path.relative_to(decoded).as_posix();ph=hits(rel)
+              if ph:result['pathMatches'].append({'file':rel,'terms':ph})
+              text=strings_all(path)
+              if not text:continue
+              lines=text.splitlines()
+              for i,line in enumerate(lines):
+                hh=hits(line)
+                if hh:
+                  ctx='\n'.join(lines[max(0,i-7):min(len(lines),i+8)])[:18000];adj=any(sig in ctx.casefold() for sig in H5);item={'file':rel,'line':line[:4000],'terms':hh,'strong':bool({x.casefold() for x in hh}&STRONG),'activityAdjacent':adj,'context':ctx};result['rawMatches'].append(item)
+                  if item['strong'] or adj or len(hh)>=2:result['meaningfulMatches'].append(item)
+                if any(sig in line.casefold() for sig in H5):result['h5Contexts'].append({'file':rel,'line':line[:4000],'context':'\n'.join(lines[max(0,i-4):min(len(lines),i+5)])[:12000]})
+                for u in URL_RE.findall(line):
+                  u=u.rstrip(',.;:)]}')
+                  if any(sig in u.casefold() for sig in H5) or hits(u):urls.add(u)
+            result['activityUrls']=sorted(urls);shutil.rmtree(decoded,ignore_errors=True);return result
+          saved=asyncio.run(resolve());result=scan();dump('result.json',result)
+          lines=['# Yalla Halloween Phoneky 2021 Exact Scan v2','',f"- Version: {result['version']}",f"- Published: {result['published']}",f"- Downloaded: {result['downloaded']}",f"- APK bytes: {result['apkBytes']}",f"- Files scanned: {result['filesScanned']}",f"- Raw exact-word matches: {len(result['rawMatches'])}",f"- Meaningful/strong matches: {len(result['meaningfulMatches'])}",f"- H5/activity URLs: {len(result['activityUrls'])}",'']
+          for m in result['meaningfulMatches'][:180]:lines += [f"## `{m['file']}` · {', '.join(m['terms'])}",'```',m['context'][:6000],'```','']
+          lines += ['## H5/activity URLs','']+[f'- `{u}`' for u in result['activityUrls']]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'saved':saved,'downloaded':result['downloaded'],'files':result['filesScanned'],'meaningful':len(result['meaningfulMatches']),'urls':len(result['activityUrls'])},ensure_ascii=False,indent=2))
+          if not result['downloaded']:raise SystemExit(3)
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/phoneky_v2.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact result
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-phoneky-v2-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md result.json inventory.json download-candidates.json url-candidates.json trace.json page.png page.html run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween Phoneky 2021 scan v2 ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete scan artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-phoneky-2021-scan-v2
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
