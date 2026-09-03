@@ -1,0 +1,527 @@
+name: Yalla Halloween Ludo APK20 exact gift and H5 trace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-ludo-apk20-trace.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  OUT_DIR: artifacts/yalla-halloween-ludo-apk20
+  RESULT_BRANCH: pro-yalla-halloween-ludo-apk20-results
+
+jobs:
+  trace:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install browser and binary-analysis dependencies
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep jq unzip p7zip-full
+          python -m pip install requests beautifulsoup4 lxml playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          mkdir -p "$OUT_DIR" /tmp/yalla-ludo-apk20
+
+      - name: Resolve APK20 binaries and scan Halloween gifts, APIs, CDN, and H5 links
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/ludo_apk20_trace.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import hashlib
+          import json
+          import os
+          import re
+          import shutil
+          import subprocess
+          import time
+          import zipfile
+          from collections import Counter, defaultdict
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT = Path(os.environ['OUT_DIR'])
+          TMP = Path('/tmp/yalla-ludo-apk20')
+          OUT.mkdir(parents=True, exist_ok=True)
+          TMP.mkdir(parents=True, exist_ok=True)
+
+          VERSIONS = [
+              {'version': '1.4.0.1', 'versionCode': '1040014', 'date': '2024-08-01'},
+              {'version': '1.4.1.0', 'versionCode': '1040110', 'date': '2024-09-10'},
+              {'version': '1.4.2.0', 'versionCode': '1040205', 'date': '2024-11-26'},
+          ]
+          PACKAGE = 'com.yalla.yallagames'
+          EXACT_TERMS = [
+              'happy halloween', 'halloween', 'هالوين', 'عيد هالووين',
+              'magic hat', 'القبعة السحرية', 'قبعة سحرية',
+              'candy', 'candies', 'الحلوى', 'حلوى',
+              'pumpkin', 'pumpkins', 'اليقطين', 'قرع',
+              'trick or treat', 'trick-or-treat', 'خدعة أم حلوى',
+          ]
+          THEME_TERMS = [
+              'ghost', 'ghosts', 'witch', 'witches', 'haunted', 'spooky',
+              'skeleton', 'zombie', 'vampire', 'graveyard', 'bat', 'bats',
+              'شبح', 'أشباح', 'ساحرة', 'ساحر', 'مسكون', 'مخيف', 'هيكل عظمي',
+          ]
+          H5_TERMS = [
+              'activity2.', '/activity/', 'activityid', 'campaignid', 'eventid',
+              'jumpurl', 'shareurl', 'redirecturl', 'activityurl', 'h5entranceurl',
+              'templateactivity', 'webview', 'onelink', 'deeplink', 'scheme://',
+          ]
+          GIFT_TERMS = [
+              'giftid', 'gift_id', 'giftlist', 'gifturl', 'giftname', 'gift_name',
+              'roomgift', 'giftmall', 'giftstore', 'backpackgift', 'sendgift',
+          ]
+          URL_RE = re.compile(r'https?://[^\s\"\'<>\\)]+', re.I)
+          NUMBER_RE = re.compile(r'(?<!\d)(\d{3,12})(?!\d)')
+          LATIN_TERMS = {term for term in EXACT_TERMS + THEME_TERMS if re.fullmatch(r'[A-Za-z][A-Za-z -]*', term)}
+
+          SESSION = requests.Session()
+          SESSION.headers.update({
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36',
+              'Accept': '*/*',
+              'Accept-Language': 'en-US,en;q=.9,ar;q=.7',
+          })
+
+          def dump(path: Path, value) -> None:
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding='utf-8')
+
+          def sha256_file(path: Path) -> str:
+              h = hashlib.sha256()
+              with path.open('rb') as stream:
+                  for chunk in iter(lambda: stream.read(1024 * 1024), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          def word_hits(text: str, terms: list[str]) -> list[str]:
+              low = text.casefold()
+              hits = []
+              for term in terms:
+                  folded = term.casefold()
+                  if term in LATIN_TERMS:
+                      if re.search(r'(?<![A-Za-z])' + re.escape(folded) + r'(?![A-Za-z])', low):
+                          hits.append(term)
+                  elif folded in low:
+                      hits.append(term)
+              return hits
+
+          def is_valid_package(path: Path) -> bool:
+              return path.exists() and path.stat().st_size > 40_000_000 and zipfile.is_zipfile(path)
+
+          async def resolve_with_browser(version: dict, target: Path, trace: list[dict]) -> dict | None:
+              page_url = f"https://www.apk20.com/apk/{PACKAGE}/{version['versionCode']}"
+              download_url = f"https://www.apk20.com/apk/{PACKAGE}/download/{version['versionCode']}"
+              async with async_playwright() as playwright:
+                  browser = await playwright.chromium.launch(headless=True, args=['--no-sandbox', '--disable-dev-shm-usage'])
+                  context = await browser.new_context(
+                      accept_downloads=True,
+                      viewport={'width': 1280, 'height': 900},
+                      locale='en-US',
+                      user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36',
+                  )
+                  page = await context.new_page()
+                  candidate_urls: list[str] = []
+
+                  page.on('request', lambda request: candidate_urls.append(request.url) if re.search(r'apk20|download|\.apk(?:\?|$)|file', request.url, re.I) else None)
+
+                  async def on_response(response):
+                      headers = await response.all_headers()
+                      content_type = headers.get('content-type', '')
+                      disposition = headers.get('content-disposition', '')
+                      if re.search(r'apk20|download|\.apk(?:\?|$)|file', response.url, re.I) or re.search(r'android|octet-stream|zip', content_type + disposition, re.I):
+                          trace.append({'kind': 'browser-response', 'url': response.url, 'status': response.status, 'headers': headers})
+                          candidate_urls.append(response.url)
+
+                  page.on('response', lambda response: asyncio.create_task(on_response(response)))
+
+                  try:
+                      await page.goto(page_url, wait_until='domcontentloaded', timeout=90_000)
+                      await page.wait_for_timeout(4_000)
+                      (OUT / version['version'] / 'apk20-page.html').parent.mkdir(parents=True, exist_ok=True)
+                      (OUT / version['version'] / 'apk20-page.html').write_text(await page.content(), encoding='utf-8')
+                      await page.screenshot(path=str(OUT / version['version'] / 'apk20-page.png'), full_page=True)
+                  except Exception as exc:
+                      trace.append({'kind': 'page-error', 'url': page_url, 'error': repr(exc)})
+
+                  inventory = await page.evaluate("""() => ({
+                    url: location.href,
+                    title: document.title,
+                    body: (document.body?.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 50000),
+                    links: [...document.querySelectorAll('a[href]')].map((a, i) => ({i, text:(a.innerText||a.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(), href:a.href, html:a.outerHTML.slice(0,3000)})),
+                    buttons: [...document.querySelectorAll('button,input[type=button],input[type=submit],[role=button]')].map((b, i) => ({i, text:(b.innerText||b.value||b.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(), html:b.outerHTML.slice(0,3000)})),
+                    scripts: [...document.scripts].map(s => s.src || s.textContent || '').filter(Boolean).map(x => x.slice(0,50000)),
+                    forms: [...document.forms].map((f,i)=>({i,action:f.action,method:f.method,html:f.outerHTML.slice(0,6000)})),
+                  })""")
+                  dump(OUT / version['version'] / 'apk20-inventory.json', inventory)
+                  candidate_urls.extend(item['href'] for item in inventory['links'])
+                  candidate_urls.append(download_url)
+                  for script in inventory['scripts']:
+                      candidate_urls.extend(URL_RE.findall(script))
+
+                  clickables = page.locator('a,button,input[type=button],input[type=submit],[role=button]')
+                  count = await clickables.count()
+                  for index in range(min(count, 100)):
+                      if is_valid_package(target):
+                          break
+                      locator = clickables.nth(index)
+                      try:
+                          text = ((await locator.inner_text(timeout=2_000)) or (await locator.get_attribute('value')) or '').strip()
+                          href = await locator.get_attribute('href') or ''
+                          html = await locator.evaluate('(node) => node.outerHTML.slice(0,3000)')
+                      except Exception:
+                          continue
+                      if not re.search(r'download|apk|下载|تنزيل|baixar|descargar|indir', text + ' ' + href + ' ' + html, re.I):
+                          continue
+                      try:
+                          async with page.expect_download(timeout=20_000) as info:
+                              await locator.click(force=True, timeout=10_000)
+                          download = await info.value
+                          await download.save_as(str(target))
+                          trace.append({'kind': 'download-event', 'url': download.url, 'suggested': download.suggested_filename, 'bytes': target.stat().st_size})
+                          if is_valid_package(target):
+                              await browser.close()
+                              return {'source': 'browser-download', 'url': download.url, 'bytes': target.stat().st_size}
+                          target.unlink(missing_ok=True)
+                      except Exception as exc:
+                          trace.append({'kind': 'click-error', 'text': text[:500], 'href': href, 'error': repr(exc)})
+                      try:
+                          await page.goto(page_url, wait_until='domcontentloaded', timeout=60_000)
+                          await page.wait_for_timeout(2_000)
+                      except Exception:
+                          pass
+
+                  unique_urls = []
+                  for url in candidate_urls:
+                      if not url or not isinstance(url, str):
+                          continue
+                      if url.startswith('//'):
+                          url = 'https:' + url
+                      if url.startswith('/'):
+                          url = urljoin(page_url, url)
+                      if url not in unique_urls and re.search(r'apk20|download|\.apk(?:\?|$)|file', url, re.I):
+                          unique_urls.append(url)
+                  dump(OUT / version['version'] / 'candidate-urls.json', unique_urls)
+
+                  for url in unique_urls[:160]:
+                      try:
+                          response = await context.request.get(url, headers={'Referer': page_url}, timeout=180_000)
+                          body = await response.body()
+                          trace.append({'kind': 'browser-fetch', 'url': url, 'status': response.status, 'headers': response.headers, 'bytes': len(body), 'first': body[:30].hex()})
+                          if response.ok and len(body) > 40_000_000 and body[:2] == b'PK':
+                              target.write_bytes(body)
+                              if is_valid_package(target):
+                                  await browser.close()
+                                  return {'source': 'browser-fetch', 'url': url, 'bytes': target.stat().st_size}
+                              target.unlink(missing_ok=True)
+                      except Exception as exc:
+                          trace.append({'kind': 'browser-fetch-error', 'url': url, 'error': repr(exc)})
+
+                  await browser.close()
+              return None
+
+          def resolve_with_requests(version: dict, target: Path, trace: list[dict]) -> dict | None:
+              page_url = f"https://www.apk20.com/apk/{PACKAGE}/{version['versionCode']}"
+              urls = [
+                  f"https://www.apk20.com/apk/{PACKAGE}/download/{version['versionCode']}",
+                  page_url,
+              ]
+              try:
+                  page = SESSION.get(page_url, timeout=(20, 90), allow_redirects=True)
+                  trace.append({'kind': 'requests-page', 'url': page_url, 'status': page.status_code, 'bytes': len(page.content), 'finalUrl': page.url, 'contentType': page.headers.get('content-type')})
+                  if page.status_code == 200:
+                      (OUT / version['version'] / 'apk20-requests-page.html').parent.mkdir(parents=True, exist_ok=True)
+                      (OUT / version['version'] / 'apk20-requests-page.html').write_bytes(page.content)
+                      soup = BeautifulSoup(page.text, 'html.parser')
+                      for element in soup.select('[href],[src],[action]'):
+                          for attr in ['href', 'src', 'action']:
+                              value = element.get(attr)
+                              if value:
+                                  urls.append(urljoin(page.url, value))
+                      urls.extend(URL_RE.findall(page.text))
+              except Exception as exc:
+                  trace.append({'kind': 'requests-page-error', 'url': page_url, 'error': repr(exc)})
+
+              unique = []
+              for url in urls:
+                  if url and url not in unique and re.search(r'apk20|download|\.apk(?:\?|$)|file', url, re.I):
+                      unique.append(url)
+              for url in unique[:120]:
+                  try:
+                      response = SESSION.get(url, headers={'Referer': page_url}, timeout=(20, 420), stream=True, allow_redirects=True)
+                      first = b''
+                      size = 0
+                      h = hashlib.sha256()
+                      with target.open('wb') as stream:
+                          for chunk in response.iter_content(1024 * 1024):
+                              if not chunk:
+                                  continue
+                              if size == 0:
+                                  first = chunk[:30]
+                                  if chunk[:2] != b'PK':
+                                      break
+                              stream.write(chunk)
+                              h.update(chunk)
+                              size += len(chunk)
+                      trace.append({'kind': 'requests-fetch', 'url': url, 'status': response.status_code, 'finalUrl': response.url, 'headers': dict(response.headers), 'bytes': size, 'first': first.hex()})
+                      if response.status_code == 200 and is_valid_package(target):
+                          return {'source': 'requests', 'url': response.url, 'bytes': size, 'sha256': h.hexdigest()}
+                      target.unlink(missing_ok=True)
+                  except Exception as exc:
+                      target.unlink(missing_ok=True)
+                      trace.append({'kind': 'requests-fetch-error', 'url': url, 'error': repr(exc)})
+              return None
+
+          def recursively_extract(package: Path, root: Path) -> list[Path]:
+              shutil.rmtree(root, ignore_errors=True)
+              root.mkdir(parents=True, exist_ok=True)
+              packages = [package]
+              extracted_archives: set[str] = set()
+              index = 0
+              while packages and index < 80:
+                  archive = packages.pop(0)
+                  key = str(archive.resolve())
+                  if key in extracted_archives or not zipfile.is_zipfile(archive):
+                      continue
+                  extracted_archives.add(key)
+                  target = root / f'archive-{index:03d}-{re.sub(r"[^A-Za-z0-9._-]+", "_", archive.name)}'
+                  target.mkdir(parents=True, exist_ok=True)
+                  try:
+                      with zipfile.ZipFile(archive) as zf:
+                          zf.extractall(target)
+                  except Exception:
+                      index += 1
+                      continue
+                  for nested in target.rglob('*'):
+                      if nested.is_file() and nested.suffix.lower() in {'.apk', '.apkm', '.xapk', '.zip'} and zipfile.is_zipfile(nested):
+                          packages.append(nested)
+                  index += 1
+              return [path for path in root.rglob('*') if path.is_file()]
+
+          def strings_all(path: Path) -> str:
+              blocks: list[str] = []
+              for command in (
+                  ['strings', '-a', '-n', '4'],
+                  ['strings', '-a', '-el', '-n', '4'],
+                  ['strings', '-a', '-eb', '-n', '4'],
+              ):
+                  try:
+                      proc = subprocess.run(command + [str(path)], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=180)
+                      blocks.append(proc.stdout.decode('utf-8', 'ignore'))
+                  except Exception:
+                      pass
+              return '\n'.join(blocks)
+
+          def scan_version(version: dict, package: Path) -> dict:
+              root = TMP / f"decoded-{version['version']}"
+              files = recursively_extract(package, root)
+              exact_matches = []
+              theme_matches = []
+              activity_contexts = []
+              gift_contexts = []
+              interesting_urls: set[str] = set()
+              path_matches = []
+              asset_index = []
+              host_counter: Counter[str] = Counter()
+              nearby_numbers: Counter[str] = Counter()
+
+              for path in files:
+                  rel = path.relative_to(root).as_posix()
+                  size = path.stat().st_size
+                  if size > 350_000_000:
+                      continue
+                  path_hits = word_hits(rel, EXACT_TERMS + THEME_TERMS)
+                  if path_hits:
+                      path_matches.append({'file': rel, 'hits': path_hits})
+                  if size <= 40_000_000:
+                      try:
+                          asset_index.append({'file': rel, 'bytes': size, 'sha256': sha256_file(path)})
+                      except Exception:
+                          pass
+                  text = strings_all(path)
+                  if not text:
+                      continue
+                  lines = text.splitlines()
+                  for index, line in enumerate(lines):
+                      exact_hits = word_hits(line, EXACT_TERMS)
+                      theme_hits = word_hits(line, THEME_TERMS)
+                      low = line.casefold()
+                      if exact_hits or theme_hits:
+                          context = '\n'.join(lines[max(0, index - 10):min(len(lines), index + 11)])[:26000]
+                          item = {
+                              'file': rel,
+                              'line': line[:6000],
+                              'exactHits': exact_hits,
+                              'themeHits': theme_hits,
+                              'activityAdjacent': any(term in context.casefold() for term in H5_TERMS),
+                              'giftAdjacent': any(term in context.casefold() for term in GIFT_TERMS),
+                              'nearbyNumbers': NUMBER_RE.findall(context)[:80],
+                              'context': context,
+                          }
+                          if exact_hits:
+                              exact_matches.append(item)
+                          else:
+                              theme_matches.append(item)
+                          nearby_numbers.update(item['nearbyNumbers'])
+                      if any(term in low for term in H5_TERMS):
+                          context = '\n'.join(lines[max(0, index - 5):min(len(lines), index + 6)])[:16000]
+                          if word_hits(context, EXACT_TERMS + THEME_TERMS):
+                              activity_contexts.append({'file': rel, 'line': line[:5000], 'hits': word_hits(context, EXACT_TERMS + THEME_TERMS), 'context': context})
+                      if any(term in low for term in GIFT_TERMS):
+                          context = '\n'.join(lines[max(0, index - 5):min(len(lines), index + 6)])[:16000]
+                          if word_hits(context, EXACT_TERMS + THEME_TERMS):
+                              gift_contexts.append({'file': rel, 'line': line[:5000], 'hits': word_hits(context, EXACT_TERMS + THEME_TERMS), 'context': context})
+                      for url in URL_RE.findall(line):
+                          url = url.rstrip(',.;:)]}')
+                          try:
+                              host_counter[urlparse(url).hostname or ''] += 1
+                          except Exception:
+                              pass
+                          if any(term in url.casefold() for term in H5_TERMS + GIFT_TERMS) or word_hits(url, EXACT_TERMS + THEME_TERMS):
+                              interesting_urls.add(url)
+
+              result = {
+                  **version,
+                  'packageBytes': package.stat().st_size,
+                  'packageSha256': sha256_file(package),
+                  'filesScanned': len(files),
+                  'exactMatches': exact_matches,
+                  'themeMatches': theme_matches,
+                  'activityAdjacentMatches': activity_contexts,
+                  'giftAdjacentMatches': gift_contexts,
+                  'pathMatches': path_matches,
+                  'interestingUrls': sorted(interesting_urls),
+                  'topHosts': host_counter.most_common(150),
+                  'nearbyNumberCandidates': nearby_numbers.most_common(200),
+                  'assetIndex': asset_index,
+              }
+              shutil.rmtree(root, ignore_errors=True)
+              return result
+
+          downloads = []
+          scans = []
+          for version in VERSIONS:
+              version_out = OUT / version['version']
+              version_out.mkdir(parents=True, exist_ok=True)
+              target = TMP / f"{PACKAGE}.{version['versionCode']}.apk"
+              target.unlink(missing_ok=True)
+              trace: list[dict] = []
+              resolved = resolve_with_requests(version, target, trace)
+              if not resolved:
+                  resolved = asyncio.run(resolve_with_browser(version, target, trace))
+              dump(version_out / 'download-trace.json', trace)
+              row = {**version, 'resolved': resolved, 'downloaded': is_valid_package(target)}
+              if row['downloaded']:
+                  row.update(packageBytes=target.stat().st_size, packageSha256=sha256_file(target))
+                  scan = scan_version(version, target)
+                  dump(version_out / 'scan.json', scan)
+                  scans.append(scan)
+              downloads.append(row)
+              dump(version_out / 'download.json', row)
+              target.unlink(missing_ok=True)
+
+          def compact_asset_map(scan: dict) -> dict[str, dict]:
+              return {item['file']: item for item in scan.get('assetIndex', [])}
+
+          by_version = {scan['version']: scan for scan in scans}
+          comparisons = []
+          for before, after in [('1.4.0.1', '1.4.1.0'), ('1.4.1.0', '1.4.2.0')]:
+              if before not in by_version or after not in by_version:
+                  continue
+              left = compact_asset_map(by_version[before])
+              right = compact_asset_map(by_version[after])
+              added = [right[path] for path in sorted(right.keys() - left.keys())]
+              removed = [left[path] for path in sorted(left.keys() - right.keys())]
+              changed = [{'file': path, 'before': left[path], 'after': right[path]} for path in sorted(left.keys() & right.keys()) if left[path]['sha256'] != right[path]['sha256']]
+              halloween_added = [item for item in added if word_hits(item['file'], EXACT_TERMS + THEME_TERMS)]
+              comparisons.append({'before': before, 'after': after, 'addedCount': len(added), 'removedCount': len(removed), 'changedCount': len(changed), 'halloweenNamedAdded': halloween_added, 'added': added[:12000], 'removed': removed[:12000], 'changed': changed[:12000]})
+
+          status = {
+              'YALLA_LUDO_APK_2024_HALLOWEEN_WINDOW_DOWNLOADED': any(item['version'] == '1.4.1.0' and item['downloaded'] for item in downloads),
+              'YALLA_LUDO_EXACT_HALLOWEEN_STRING_OR_ASSET_CONFIRMED': any(scan.get('exactMatches') or [x for x in scan.get('pathMatches', []) if word_hits(x['file'], EXACT_TERMS)] for scan in scans),
+              'YALLA_LUDO_HALLOWEEN_GIFT_ID_CANDIDATE_FOUND': any(scan.get('giftAdjacentMatches') for scan in scans),
+              'YALLA_LUDO_HALLOWEEN_H5_OR_ACTIVITY_URL_FOUND': any(scan.get('activityAdjacentMatches') or scan.get('interestingUrls') for scan in scans),
+          }
+          result = {
+              'generatedAt': datetime.now(timezone.utc).isoformat(),
+              'package': PACKAGE,
+              'downloads': downloads,
+              'scans': scans,
+              'comparisons': comparisons,
+              'status': status,
+          }
+          dump(OUT / 'result.json', result)
+
+          lines = ['# Yalla Ludo 2024 Halloween APK20 Trace', '', '## Status', '']
+          lines += [f"- `{key}`: **{value}**" for key, value in status.items()]
+          lines += ['', '## Coverage', '', '| Version | Date | Downloaded | Package bytes | Files | Exact hits | Gift-adjacent | Activity/H5-adjacent | URLs |', '|---|---|---|---:|---:|---:|---:|---:|---:|']
+          for item in downloads:
+              scan = by_version.get(item['version'], {})
+              lines.append(f"| {item['version']} | {item['date']} | {item['downloaded']} | {item.get('packageBytes', 0)} | {scan.get('filesScanned', 0)} | {len(scan.get('exactMatches', []))} | {len(scan.get('giftAdjacentMatches', []))} | {len(scan.get('activityAdjacentMatches', []))} | {len(scan.get('interestingUrls', []))} |")
+          for scan in scans:
+              lines += ['', f"## {scan['version']} exact Halloween / gift evidence", '']
+              for item in scan.get('exactMatches', [])[:300]:
+                  lines += [f"### `{item['file']}` · {', '.join(item.get('exactHits', []))}", f"Activity-adjacent: `{item.get('activityAdjacent')}` · Gift-adjacent: `{item.get('giftAdjacent')}` · Numbers: `{', '.join(item.get('nearbyNumbers', [])[:20])}`", '```', item.get('context', '')[:8000], '```', '']
+              lines += ['### Interesting URLs', ''] + [f'- `{url}`' for url in scan.get('interestingUrls', [])]
+          lines += ['', '## Version asset diffs', '']
+          for comparison in comparisons:
+              lines += [f"### {comparison['before']} → {comparison['after']}", '', f"- Added: {comparison['addedCount']}", f"- Removed: {comparison['removedCount']}", f"- Changed: {comparison['changedCount']}", f"- Halloween-named added: {len(comparison['halloweenNamedAdded'])}", '']
+              for item in comparison['halloweenNamedAdded']:
+                  lines.append(f"- `{item['file']}`")
+          (OUT / 'REPORT.md').write_text('\n'.join(lines), encoding='utf-8')
+          print(json.dumps({'status': status, 'downloads': downloads, 'scanSummary': [{'version': scan['version'], 'files': scan['filesScanned'], 'exact': len(scan['exactMatches']), 'giftAdjacent': len(scan['giftAdjacentMatches']), 'activityAdjacent': len(scan['activityAdjacentMatches']), 'urls': len(scan['interestingUrls'])} for scan in scans]}, ensure_ascii=False, indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/ludo_apk20_trace.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-ludo-apk20-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md result.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for directory in "$OUT_DIR"/1.*; do
+            [[ -d "$directory" ]] || continue
+            mkdir -p "$stage/$(basename "$directory")"
+            for f in download.json download-trace.json scan.json apk20-inventory.json candidate-urls.json apk20-page.png; do
+              cp "$directory/$f" "$stage/$(basename "$directory")/" 2>/dev/null || true
+            done
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Ludo Halloween APK20 trace ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload full analysis artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-ludo-apk20-trace
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
