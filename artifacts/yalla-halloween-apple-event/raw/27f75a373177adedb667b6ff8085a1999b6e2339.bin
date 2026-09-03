@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en-gb" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    
+<meta name="web-experience-app/config/environment" content="%7B%22appVersion%22%3A1%2C%22modulePrefix%22%3A%22web-experience-app%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22history-hash-router-scroll%22%2C%22historySupportMiddleware%22%3Atrue%2C%22contentSecurityPolicyMeta%22%3Atrue%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%5B%22%27none%27%22%5D%2C%22img-src%22%3A%5B%22%27self%27%22%2C%22http%3A//*.mzstatic.com%22%2C%22*.mzstatic.com%22%2C%22*.apple.com%22%2C%22*.googleusercontent.com%22%2C%22data%3A%22%5D%2C%22style-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-inline%27%22%2C%22*.apple.com%22%5D%2C%22font-src%22%3A%5B%22%27self%27%22%2C%22http%3A//*.apple.com%22%2C%22https%3A//*.apple.com%22%5D%2C%22media-src%22%3A%5B%22%27self%27%22%2C%22blob%3A%22%2C%22http%3A//*%22%2C%22https%3A//*%22%5D%2C%22connect-src%22%3A%5B%22%27self%27%22%2C%22*.apple.com%22%2C%22https%3A//*.mzstatic.com%22%2C%22*.mzstatic.com%22%5D%2C%22script-src%22%3A%5B%22%27self%27%22%2C%22%27unsafe-inline%27%22%2C%22%27unsafe-eval%27%22%2C%22*.apple.com%22%5D%2C%22frame-src%22%3A%5B%22%27self%27%22%2C%22*.apple.com%22%2C%22itmss%3A%22%2C%22itms-appss%3A%22%2C%22itms-bookss%3A%22%2C%22itms-itunesus%3A%22%2C%22itms-messagess%3A%22%2C%22itms-podcasts%3A%22%2C%22itms-watchs%3A%22%2C%22macappstores%3A%22%2C%22musics%3A%22%2C%22apple-musics%3A%22%2C%22podcasts%3A%22%2C%22videos%3A%22%5D%7D%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22PROGRESS_BAR_DELAY%22%3A3000%2C%22name%22%3A%22web-experience-app%22%2C%22version%22%3A%221926.1.0+1733496b%22%7D%2C%22MEDIA_API%22%3A%7B%22teamId%22%3A%22AMPWebPlay%22%2C%22keyId%22%3A%22WebPlayKid%22%2C%22privateKeyPath%22%3A%22ssl/webplayer.p8%22%2C%22token%22%3A%22eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IldlYlBsYXlLaWQifQ.eyJpc3MiOiJBTVBXZWJQbGF5IiwiaWF0IjoxNTYxNjU1NDcyLCJleHAiOjE1NzcyMDc0NzJ9.yYQ2N1WgDY0i_mK9rc6YsTcus-oEgcHLpu3U87NzJvrg9gD_T6I7aszzgnXQmX1R0UQVKtB4-ncyUaghPC0zQQ%22%7D%2C%22routerScroll%22%3A%7B%22targetElement%22%3A%22%23ember-app%22%7D%2C%22i18n%22%3A%7B%22defaultLocale%22%3A%22en-gb%22%2C%22useDevLoc%22%3Afalse%2C%22pathToLocales%22%3A%22dist/locales%22%7D%2C%22moment%22%3A%7B%22includeLocales%22%3Atrue%2C%22includeTimezone%22%3A%22subset%22%7D%2C%22browserify%22%3A%7B%22transform%22%3A%5B%5B%22babelify%22%2C%7B%22presets%22%3A%5B%22env%22%5D%2C%22global%22%3Atrue%2C%22only%22%3A%7B%7D%7D%5D%5D%7D%2C%22API%22%3A%7B%22AppHost%22%3A%22https%3A//api.apps.apple.com%22%2C%22MZStore%22%3A%22https%3A//itunes.apple.com%22%2C%22UTSHost%22%3A%22https%3A//tv.apple.com/api/uts/preview%22%2C%22PodcastHost%22%3A%22https%3A//amp-api.podcasts.apple.com%22%2C%22StorePlatform%22%3A%22https%3A//uclient-api.itunes.apple.com/WebObjects/MZStorePlatform.woa/wa%22%2C%22BookHost%22%3A%22https%3A//api.books.apple.com%22%2C%22globalElementsPath%22%3A%22/global-elements%22%2C%22videoLocalizationPath%22%3A%22/global/ac_media_player/scripts/ac_media_languages/%22%2C%22applePodcastsDomain%22%3A%22podcasts.apple.com%22%2C%22appleBooksDomain%22%3A%22books.apple.com%22%2C%22appleMusicDomain%22%3A%22music.apple.com%22%2C%22appleTvDomain%22%3A%22tv.apple.com%22%7D%2C%22fastboot%22%3A%7B%22hostWhitelist%22%3A%5B%7B%7D%5D%7D%2C%22ember-a11y-testing%22%3A%7B%22componentOptions%22%3A%7B%22turnAuditOff%22%3Atrue%2C%22axeOptions%22%3A%7B%22rules%22%3A%7B%22color-contrast%22%3A%7B%22enabled%22%3Afalse%7D%7D%7D%7D%7D%2C%22ember-short-number%22%3A%7B%22locales%22%3A%5B%22ar-sa%22%2C%22ca-es%22%2C%22cs-cz%22%2C%22da-dk%22%2C%22de-ch%22%2C%22de-de%22%2C%22el-gr%22%2C%22en-au%22%2C%22en-ca%22%2C%22en-gb%22%2C%22en-us%22%2C%22es-419%22%2C%22es-es%22%2C%22es-mx%22%2C%22es-xl%22%2C%22et-ee%22%2C%22fi-fi%22%2C%22fr-ca%22%2C%22fr-fr%22%2C%22hi-in%22%2C%22hr-hr%22%2C%22hu-hu%22%2C%22id-id%22%2C%22is-is%22%2C%22it-it%22%2C%22iw-il%22%2C%22ja-jp%22%2C%22ko-kr%22%2C%22lt-lt%22%2C%22lv-lv%22%2C%22ms-my%22%2C%22nl-nl%22%2C%22no-no%22%2C%22no-nb%22%2C%22nb-no%22%2C%22pl-pl%22%2C%22pt-br%22%2C%22pt-pt%22%2C%22ro-ro%22%2C%22ru-ru%22%2C%22sk-sk%22%2C%22sv-se%22%2C%22th-th%22%2C%22tr-tr%22%2C%22uk-ua%22%2C%22vi-vi%22%2C%22vi-vn%22%2C%22zh-cn%22%2C%22zh-hk%22%2C%22zh-tw%22%2C%22ca%22%2C%22cs%22%2C%22da%22%2C%22de%22%2C%22el%22%2C%22en%22%2C%22es%22%2C%22fi%22%2C%22fr%22%2C%22hi%22%2C%22hr%22%2C%22hu%22%2C%22id%22%2C%22is%22%2C%22it%22%2C%22ja%22%2C%22ko%22%2C%22lt%22%2C%22lv%22%2C%22ms%22%2C%22nb%22%2C%22nl%22%2C%22no%22%2C%22pl%22%2C%22pt%22%2C%22ro%22%2C%22ru%22%2C%22sk%22%2C%22sv%22%2C%22th%22%2C%22tr%22%2C%22uk%22%2C%22vi%22%2C%22zh%22%5D%7D%2C%22METRICS%22%3A%7B%22isEnabled%22%3Atrue%2C%22autoTrackingEnabled%22%3Atrue%2C%22topic%22%3A%22xp_amp_web_exp%22%2C%22appName%22%3A%22web-experience-app%22%2C%22metricsUrl%22%3A%22https%3A//xp.apple.com/report%22%2C%22compoundSeparator%22%3A%22_%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' http://*.mzstatic.com *.mzstatic.com *.apple.com *.googleusercontent.com data:; style-src 'self' 'unsafe-inline' *.apple.com; font-src 'self' http://*.apple.com https://*.apple.com; media-src 'self' blob: http://* https://*; connect-src 'self' *.apple.com https://*.mzstatic.com *.mzstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.apple.com; frame-src 'self' *.apple.com itmss: itms-appss: itms-bookss: itms-itunesus: itms-messagess: itms-podcasts: itms-watchs: macappstores: musics: apple-musics: podcasts: videos:; ">
+<!-- EMBER_CLI_FASTBOOT_TITLE -->  <meta name="ember-cli-head-start" content><title>‎Yalla-Group Voice Chat Rooms on the App Store</title>
+<link rel="canonical" href="https://apps.apple.com/ae/app/yalla-group-voice-chat-rooms/id1091902866">
+  <meta name="description" content="‎Read reviews, compare customer ratings, see screenshots and learn more about Yalla-Group Voice Chat Rooms. Download Yalla-Group Voice Chat Rooms and enjoy it on your iPhone, iPad and iPod touch." id="ember32167065" class="ember-view">
+
+  <meta name="keywords" content="Yalla-Group Voice Chat Rooms, Yalla Technology FZ-LLC, Entertainment, Social Networking, ios apps, app, appstore, app store, iphone, ipad, ipod touch, itouch, itunes" id="ember32167067" class="ember-view">
+
+  <meta property="og:title" content="‎Yalla-Group Voice Chat Rooms" id="ember32167069" class="ember-view">
+
+  <meta property="og:description" content="‎تطبيق يلا هو مجموعة التحدث الصوتية الحية  و الترفيه الإجتماعي رقم واحد.
+الدردشة الصوتية والإستمتاع بالألعاب مع الآخرين القريبين منك أو من جميع أنحاء العالم 
+
+
+أصبح من السهل التعرف على أصدقاء جدد :
+إختر مجموعة غرف صوتية من الالاف الغرف النشطة يوميا ، إنتقي الغرف من خلال الدول أو الموضوعات . تم بالفعل…" id="ember32167071" class="ember-view">
+
+  <meta property="og:site_name" content="App Store" id="ember32167073" class="ember-view">
+
+  <meta property="og:url" content="https://apps.apple.com/ae/app/yalla-group-voice-chat-rooms/id1091902866" id="ember32167075" class="ember-view">
+
+  <meta property="og:image" content="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/1200x630wa.png" id="ember32167077" class="ember-view">
+
+  <meta property="og:image:alt" content="Yalla-Group Voice Chat Rooms on the App Store" id="ember32167079" class="ember-view">
+
+  <meta property="og:image:secure_url" content="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/1200x630wa.png" id="ember32167081" class="ember-view">
+
+  <meta property="og:image:type" content="image/png" id="ember32167083" class="ember-view">
+
+  <meta property="og:image:width" content="1200" id="ember32167085" class="ember-view">
+
+  <meta property="og:image:height" content="630" id="ember32167087" class="ember-view">
+
+  <meta property="og:type" content="website" id="ember32167089" class="ember-view">
+
+  <meta property="og:locale" content="en_GB" id="ember32167091" class="ember-view">
+
+  <meta property="fb:app_id" content="116556461780510" id="ember32167093" class="ember-view">
+
+  <meta name="twitter:title" content="‎Yalla-Group Voice Chat Rooms" id="ember32167095" class="ember-view">
+
+  <meta name="twitter:description" content="‎تطبيق يلا هو مجموعة التحدث الصوتية الحية  و الترفيه الإجتماعي رقم واحد.
+الدردشة الصوتية والإستمتاع بالألعاب مع الآخرين القريبين منك أو من جميع أنحاء العالم 
+
+
+أصبح من السهل التعرف على أصدقاء جدد :
+إختر مجموعة غرف صوتية من الالاف الغرف النشطة يوميا ، إنتقي الغرف من خلال الدول أو الموضوعات . تم بالفعل…" id="ember32167097" class="ember-view">
+
+  <meta name="twitter:site" content="@AppStore" id="ember32167099" class="ember-view">
+
+  <meta name="twitter:domain" content="AppStore" id="ember32167101" class="ember-view">
+
+  <meta name="twitter:image" content="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/600x600wa.png" id="ember32167103" class="ember-view">
+
+  <meta name="twitter:image:alt" content="Yalla-Group Voice Chat Rooms on the App Store" id="ember32167105" class="ember-view">
+
+  <meta name="twitter:card" content="summary_large_image" id="ember32167107" class="ember-view">
+
+  <meta name="apple-itunes-app" content="app-id=375380948, app-argument=https://apps.apple.com/ae/app/yalla-group-voice-chat-rooms/id1091902866" id="ember32167109" class="ember-view">
+
+  <script name="schema:software-application" id="ember32167111" class="ember-view" type="application/ld+json">{"@context":"http://schema.org","@type":"SoftwareApplication","name":"Yalla-Group Voice Chat Rooms","description":"تطبيق يلا هو مجموعة التحدث الصوتية الحية  و الترفيه الإجتماعي رقم واحد.\nالدردشة الصوتية والإستمتاع بالألعاب مع الآخرين القريبين منك أو من جميع أنحاء العالم \n\n\nأصبح من السهل التعرف على أصدقاء جدد :\nإختر مجموعة غرف صوتية من الالاف الغرف النشطة يوميا ، إنتقي الغرف من خلال الدول أو الموضوعات . تم بالفعل تغطية أكثر من خمسين دولة ، بينماتوجد العديد والعديد  من الموضوعات المتاحة للإختيار .\n\nإحتفل مع أصدقائك بدون مسافات : \nجروب للتحدث الصوتي مع الأصدقاء بغض النظر عن مكان تواجدهم ، قم ببث الموسيقى المفضلة لديك داخل الغرفة ، غني كاريوكي معا ، لعب العديد من الألعاب مباشرة في مجموعة الدردشة ..دعنا نبدأ الإحتفال .\n\nالخصائص : \nكاملا بالمجان - إستمتع بالدردشة الصوتية الحية عبر 3G, 4G, LTE , أو شبكات الواي فاي .\nغرف دردشة عامة - تصفح الالاف من غرف الدردشة النشطة القريبة منك أو من جميع أنحاء العالم والتي تغطي الالاف من الموضوعات .\n\nالمحادثات الخاصة - إستمتع  بالخصوصية في الصوت والنص .\nالمحادثات مع أصدقائك من أي مكان بالعالم .\n\nألعاب الدردشة -- إستمتعوا بالألعاب معا مباشرة في مجموعة الدردشة الصوتية الخاصة بك !\nالهدايا الإفتراضية - يمكنك إرسال الهدايا المتحركة المذهلة لتعبر عن حبك .\n\nمشاركة و متابعة -----قم بمشاركة غرفك المفضلة عبر الفيس بوك ، تويتر ، إنستجرام ، سناب شات وأكثر ، قم بدعوة الأصدقاء ومتابعين جدد .\n\nقم بمتابعتنا لتحصل على أحدث الأخبار ، التحديثات والمناسبات : Facebook : \nfacebook.com/yalladotlive\nTwitter: twitter.com/ yalladotlive\nWebsite:WWW.yalla.live\n\nأعزائي مستخدمي تطبيق يلا ، نحن نرحب بأستفساراتكم وإقتراحاتكم : \nsupport@yalla.live \n\nYalla is the No.1 Live Group Voice Talking and Entertaining Community. Voice Chat and play games with people from nearby or all over the world.\n\nMeet new friends is never easier:\nChoose group voice rooms from THOUSANDS live rooms daily, filter rooms by Countries or Topics. 50+ Countries has already been covered, while tons of topics are available to choose.\n\nParty with friends with no distances:\nGroup voice talking with friends no matter where they are, broadcasting your favorite musics inside the room, singing karaokes together, playing a range of games directly in group chat. Let's get the party started.\n\nFEATURES:\n\nTOTALLY FREE — Enjoy free live voice chat over 3G, 4G, LTE or Wi-Fi.\n\nPUBLIC CHAT ROOMS  — Browse THOUSANDS live chat rooms from NEARBY or AROUND THE WORLD that cover thousands of topics. \n\nPRIVATE CONVERSATIONS — Start private one-on-one text and voice conversations with your friends from anywhere in the world.\n\nCHAT GAMES -- Play games together directly in your chat group!\n\nVIRTUAL GIFTS — Stunning animated gifts can be sent out to express your love.\n\nSHARE and FOLLOW -- Share your favorite ROOMS on Facebook, Twitter, Instagram, Snapchat and more, inviting friends and new followers.\n\nFollow us to get the latest news, updates and events:\nFacebook: facebook.com/yalladotlive\nTwitter: twitter.com/yalladotlive\nWebsite: www.yalla.live\n\nDear YALLA users, your feedback and suggestions are welcomed to : support@yalla.live","screenshot":["https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/300x0w.jpg","https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/300x0w.jpg","https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/300x0w.jpg","https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/300x0w.jpg","https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/300x0w.jpg","https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/300x0w.jpg","https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/300x0w.jpg"],"image":"https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/1200x630wa.png","applicationCategory":"Entertainment","datePublished":"2016-04-19","operatingSystem":"Requires iOS 9.0 or later. Compatible with iPhone, iPad and iPod touch.","author":{"@type":"Person","name":"Yalla Technology FZ-LLC","url":"https://apps.apple.com/ae/developer/yalla-technology-fz-llc/id1444567250"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"reviewCount":406},"offers":{"@type":"Offer","category":"free","price":0,"priceCurrency":"AED"}}
+</script>
+  <meta name="apple:content_id" content="1091902866" id="ember32167113" class="ember-view">
+
+
+<meta name="ember-cli-head-end" content>
+
+    <meta name="version" content="1926.1.0">
+
+    <link integrity="" rel="stylesheet" href="/assets/web-experience-app-5ce9c0b3ea65fc1226d664ce4a4faa81.css" data-rtl="/assets/web-experience-rtl-app-4d02b519f68cecc10847b70e02a7a314.css">
+
+    
+  </head>
+  <body class="no-js">
+    <div id="ember-app">
+      <script type="x/boundary" id="fastboot-body-start"></script><div class="ember-view" id="ember32167061"><!---->
+
+<!---->
+
+<!---->
+
+<main class="selfclear is-app-theme">
+  <style id="ember32167114" class="ember-view"><!----></style>
+
+  <!---->
+
+  <div id="ember32167115" class="focusing-outlet ember-view"><div id="ember32167117" class="focusing-outlet ember-view">
+  <input id="localnav-menustate" class="localnav-menustate" type="checkbox">
+<nav id="localnav" class="we-localnav localnav we-localnav--app-store" role="navigation" data-sticky>
+  <div class="localnav-wrapper">
+    <div class="localnav-background we-localnav__background"></div>
+    <div class="localnav-content">
+      <div class="localnav-title we-localnav__title">
+        <a href="https://www.apple.com/ae/ios/app-store/" data-we-link-to-exclude><span class="we-localnav__title__product" data-test-we-localnav-store-title>App Store</span></a> <span class="we-localnav__title__qualifier" data-test-we-localnav-preview-title>Preview</span>
+      </div>
+      <div class="localnav-menu we-localnav__menu we-localnav__menu--app">
+        <div class="localnav-actions we-localnav__actions">
+            <div class="localnav-action localnav-action-button we-localnav__action">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<label id="localnav-curtain" for="localnav-menustate"></label>
+
+
+
+<div id="ember32167120" class="animation-wrapper is-visible ember-view">
+    <div id="ember32167121" style="display: none;" class="ember-view"><div class="l-content-width we-banner" role="alert">
+    <p class="we-banner__copy">This app is only available on the App Store for iOS devices.</p>
+</div>
+</div>
+
+  <div id="ember32167122" class="ember-view"><section id="ember32167123" class="l-content-width section section--hero product-hero ember-view"><div class="l-row">
+  <div class="product-hero__media l-column small-5 medium-4 large-3 small-valign-top">
+      <picture id="ember32167124" class="we-artwork ember-view product-hero__artwork we-artwork--fullwidth we-artwork--ios-app-icon">
+        <source class="we-artwork__source" srcset="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/230x0w.jpg 1x,https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/460x0w.jpg 2x,https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/217x0w.jpg 1x,https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/434x0w.jpg 2x,https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/651x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/246x0w.jpg 1x,https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/492x0w.jpg 2x,https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/738x0w.jpg 3x">
+        <img class="we-artwork__image ember32167124" src="https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/246x0w.jpg" style="background-color: #00d8c8;" alt height="246" width="246">
+
+  <style>
+    .ember32167124, #ember32167124::before {
+          width: 246px;
+          height: 246px;
+        }
+        .ember32167124::before {
+          padding-top: 100%;
+        }
+@media (min-width: 736px) {
+          .ember32167124, #ember32167124::before {
+          width: 217px;
+          height: 217px;
+        }
+        .ember32167124::before {
+          padding-top: 100%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167124, #ember32167124::before {
+          width: 230px;
+          height: 230px;
+        }
+        .ember32167124::before {
+          padding-top: 100%;
+        }
+        }
+  </style>
+</picture>
+  </div>
+
+  <div class="l-column small-7 medium-8 large-9 small-valign-top">
+    <header class="product-header app-header product-header--padded-start" role="banner">
+      <h1 class="product-header__title app-header__title">
+        Yalla-Group Voice Chat Rooms
+          <span class="badge badge--product-title">17+</span>
+      </h1>
+        <h2 class="product-header__subtitle app-header__subtitle">Group Voice Chat Rooms</h2>
+      <h2 class="product-header__identity app-header__identity">
+        <a class="link" dir="auto" href="https://apps.apple.com/ae/developer/yalla-technology-fz-llc/id1444567250">Yalla Technology FZ-LLC</a>
+      </h2>
+      <ul class="product-header__list app-header__list">
+<!---->          <li class="product-header__list__item app-header__list__item--user-rating">
+            <ul class="inline-list inline-list--mobile-compact">
+              <li class="inline-list__item">
+                <figure aria-label="4.5 out of 5" id="ember32167128" class="we-star-rating ember-view"><span class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-4_5"></span>
+</span>
+  <figcaption class="we-rating-count star-rating__count">4.5, 406 Ratings</figcaption>
+</figure>
+              </li>
+            </ul>
+          </li>
+      </ul>
+      <ul class="product-header__list app-header__list">
+<!---->        <li class="product-header__list__item">
+          <ul class="inline-list inline-list--mobile-compact">
+            <li class="inline-list__item inline-list__item--bulleted app-header__list__item--price">Free</li>
+              <li class="inline-list__item inline-list__item--bulleted app-header__list__item--in-app-purchase">Offers In-App Purchases</li>
+          </ul>
+        </li>
+<!----><!---->      </ul>
+<!----><!----><!----><!---->    </header>
+  </div>
+</div>
+</section>
+<!---->
+    <section class="l-content-width section section--bordered">
+      <h2 class="section__headline">iPhone Screenshots</h2>
+    <div id="ember32167130" class="we-screenshot-viewer ember-view"><div class="we-screenshot-viewer__screenshots">
+  <ul class="l-row l-row--peek">
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167132" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/230x0w.jpg 1x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/460x0w.jpg 2x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/157x0w.jpg 1x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/314x0w.jpg 2x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/300x0w.jpg 1x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/600x0w.jpg 2x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167132" src="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/300x0w.jpg" style="background-color: #0bb2f8;" alt height="649" width="300">
+
+  <style>
+    .ember32167132, #ember32167132::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167132::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167132, #ember32167132::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167132::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167132, #ember32167132::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167132::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167137" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/230x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/460x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/157x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/314x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/300x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/600x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167137" src="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/300x0w.jpg" style="background-color: #dbe2ff;" alt height="649" width="300">
+
+  <style>
+    .ember32167137, #ember32167137::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167137::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167137, #ember32167137::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167137::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167137, #ember32167137::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167137::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167142" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/230x0w.jpg 1x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/460x0w.jpg 2x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/157x0w.jpg 1x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/314x0w.jpg 2x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/300x0w.jpg 1x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/600x0w.jpg 2x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167142" src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/300x0w.jpg" style="background-color: #e6fff8;" alt height="649" width="300">
+
+  <style>
+    .ember32167142, #ember32167142::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167142::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167142, #ember32167142::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167142::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167142, #ember32167142::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167142::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167147" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/230x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/460x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/157x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/314x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/300x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/600x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167147" src="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/300x0w.jpg" style="background-color: #bfebff;" alt height="649" width="300">
+
+  <style>
+    .ember32167147, #ember32167147::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167147::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167147, #ember32167147::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167147::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167147, #ember32167147::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167147::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167152" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/230x0w.jpg 1x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/460x0w.jpg 2x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/157x0w.jpg 1x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/314x0w.jpg 2x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/300x0w.jpg 1x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/600x0w.jpg 2x,https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167152" src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/300x0w.jpg" style="background-color: #e2ddff;" alt height="649" width="300">
+
+  <style>
+    .ember32167152, #ember32167152::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167152::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167152, #ember32167152::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167152::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167152, #ember32167152::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167152::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167157" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/230x0w.jpg 1x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/460x0w.jpg 2x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/157x0w.jpg 1x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/314x0w.jpg 2x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/300x0w.jpg 1x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/600x0w.jpg 2x,https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167157" src="https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/300x0w.jpg" style="background-color: #e4fef7;" alt height="649" width="300">
+
+  <style>
+    .ember32167157, #ember32167157::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167157::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167157, #ember32167157::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167157::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167157, #ember32167157::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167157::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+        <li class="l-column small-2 medium-3 large-3">
+          <picture id="ember32167162" class="we-artwork ember-view we-artwork--fullwidth we-artwork--screenshot-platform-iphone we-artwork--screenshot-version-iphone-6-5 we-artwork--screenshot-orientation-portrait">
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/230x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/460x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/690x0w.jpg 3x" media="(min-width: 1069px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/157x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/314x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/471x0w.jpg 3x" media="(min-width: 736px)">
+<!---->
+
+        <source class="we-artwork__source" srcset="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/300x0w.jpg 1x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/600x0w.jpg 2x,https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/900x0w.jpg 3x">
+        <img class="we-artwork__image ember32167162" src="https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/300x0w.jpg" style="background-color: #c2e1fe;" alt height="649" width="300">
+
+  <style>
+    .ember32167162, #ember32167162::before {
+          width: 300px;
+          height: 649px;
+        }
+        .ember32167162::before {
+          padding-top: 216.33333333333334%;
+        }
+@media (min-width: 736px) {
+          .ember32167162, #ember32167162::before {
+          width: 157px;
+          height: 339px;
+        }
+        .ember32167162::before {
+          padding-top: 215.92356687898092%;
+        }
+        }
+@media (min-width: 1069px) {
+          .ember32167162, #ember32167162::before {
+          width: 230px;
+          height: 497px;
+        }
+        .ember32167162::before {
+          padding-top: 216.08695652173915%;
+        }
+        }
+  </style>
+</picture>
+        </li>
+  </ul>
+<!----></div>
+</div>
+  </section>
+
+
+  <section class="l-content-width section section--bordered">
+    <div class="section__description">
+      <h2 class="section__headline visuallyhidden">Description</h2>
+      <div class="l-row">
+        <div id="ember32167166" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view l-column small-12 medium-9 large-8">      
+
+      <p dir=true data-test-bidi>تطبيق يلا هو مجموعة التحدث الصوتية الحية  و الترفيه الإجتماعي رقم واحد.<br />الدردشة الصوتية والإستمتاع بالألعاب مع الآخرين القريبين منك أو من جميع أنحاء العالم <br /><br /><br />أصبح من السهل التعرف على أصدقاء جدد :<br />إختر مجموعة غرف صوتية من الالاف الغرف النشطة يوميا ، إنتقي الغرف من خلال الدول أو الموضوعات . تم بالفعل تغطية أكثر من خمسين دولة ، بينماتوجد العديد والعديد  من الموضوعات المتاحة للإختيار .<br /><br />إحتفل مع أصدقائك بدون مسافات : <br />جروب للتحدث الصوتي مع الأصدقاء بغض النظر عن مكان تواجدهم ، قم ببث الموسيقى المفضلة لديك داخل الغرفة ، غني كاريوكي معا ، لعب العديد من الألعاب مباشرة في مجموعة الدردشة ..دعنا نبدأ الإحتفال .<br /><br />الخصائص : <br />كاملا بالمجان - إستمتع بالدردشة الصوتية الحية عبر 3G, 4G, LTE , أو شبكات الواي فاي .<br />غرف دردشة عامة - تصفح الالاف من غرف الدردشة النشطة القريبة منك أو من جميع أنحاء العالم والتي تغطي الالاف من الموضوعات .<br /><br />المحادثات الخاصة - إستمتع  بالخصوصية في الصوت والنص .<br />المحادثات مع أصدقائك من أي مكان بالعالم .<br /><br />ألعاب الدردشة -- إستمتعوا بالألعاب معا مباشرة في مجموعة الدردشة الصوتية الخاصة بك !<br />الهدايا الإفتراضية - يمكنك إرسال الهدايا المتحركة المذهلة لتعبر عن حبك .<br /><br />مشاركة و متابعة -----قم بمشاركة غرفك المفضلة عبر الفيس بوك ، تويتر ، إنستجرام ، سناب شات وأكثر ، قم بدعوة الأصدقاء ومتابعين جدد .<br /><br />قم بمتابعتنا لتحصل على أحدث الأخبار ، التحديثات والمناسبات : Facebook : <br />facebook.com/yalladotlive<br />Twitter: twitter.com/ yalladotlive<br />Website:WWW.yalla.live<br /><br />أعزائي مستخدمي تطبيق يلا ، نحن نرحب بأستفساراتكم وإقتراحاتكم : <br />support@yalla.live <br /><br />Yalla is the No.1 Live Group Voice Talking and Entertaining Community. Voice Chat and play games with people from nearby or all over the world.<br /><br />Meet new friends is never easier:<br />Choose group voice rooms from THOUSANDS live rooms daily, filter rooms by Countries or Topics. 50+ Countries has already been covered, while tons of topics are available to choose.<br /><br />Party with friends with no distances:<br />Group voice talking with friends no matter where they are, broadcasting your favorite musics inside the room, singing karaokes together, playing a range of games directly in group chat. Let&#39;s get the party started.<br /><br />FEATURES:<br /><br />TOTALLY FREE — Enjoy free live voice chat over 3G, 4G, LTE or Wi-Fi.<br /><br />PUBLIC CHAT ROOMS  — Browse THOUSANDS live chat rooms from NEARBY or AROUND THE WORLD that cover thousands of topics. <br /><br />PRIVATE CONVERSATIONS — Start private one-on-one text and voice conversations with your friends from anywhere in the world.<br /><br />CHAT GAMES -- Play games together directly in your chat group!<br /><br />VIRTUAL GIFTS — Stunning animated gifts can be sent out to express your love.<br /><br />SHARE and FOLLOW -- Share your favorite ROOMS on Facebook, Twitter, Instagram, Snapchat and more, inviting friends and new followers.<br /><br />Follow us to get the latest news, updates and events:<br />Facebook: facebook.com/yalladotlive<br />Twitter: twitter.com/yalladotlive<br />Website: www.yalla.live<br /><br />Dear YALLA users, your feedback and suggestions are welcomed to : support@yalla.live</p>
+
+  
+
+
+<!----></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="l-content-width section section--bordered whats-new">
+    <div class="section__nav section__nav--small">
+      <h2 class="whats-new__headline">What’s New</h2>
+        <div data-test-we-modal="page-overlay" id="ember32167169" class="ember-view version-history">  <button class="we-modal__show link" id="modal-trigger-ember32167169">Version History</button>
+
+<!----></div>
+    </div>
+    <div class="l-row whats-new__content">
+        <div class="l-column small-12 medium-3 large-4 small-valign-top whats-new__latest">
+          <div class="l-row">
+            <time data-test-we-datetime datetime="2019-06-07T02:44:27.000Z" aria-label="6 June 2019" class="" >6 Jun 2019</time>
+            <p class="l-column small-6 medium-12 whats-new__latest__version">Version 2.8.0</p>
+          </div>
+        </div>
+      <div class="l-column small-12 medium-9 large-8 small-valign-top">
+        <div id="ember32167171" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view">      
+
+      <p dir=true data-test-bidi>1. “Me” section and user profile are redesigned.<br />2.You can learn about your level on the“Level”page.<br />3.You can now choose tags on your profile.<br />4.You can see rooms you entered recently. <br />5.Lucky gifts are upgraded.<br />6.Two languages are added: Portuguese and Spanish.<br />7.Several performance improvements<br /><br />1. تم إعادة تصميم قسم &quot;أنا&quot; وملف المعلومات الشخصية.<br />2. يمكنك معرفة المزيد عن مستواك من خلال صفحة &quot; المستوى&quot;.<br />3. يمكنك اختيار إشاراتك في ملف المعلومات الشخصية.<br />4. تم إضافة سجل للغرف التي دخلتها مؤخراً.<br />5. تم ترقية هدايا الحظ.<br />6. تم إضافة لغتين وهما: البرتغالية والإسبانية.<br />7. إجراء العديد من التحسينات في الأداء.</p>
+
+  
+
+
+<!----></div>
+      </div>
+    </div>
+  </section>
+
+    <section class="l-content-width section section--bordered">
+      <div class="section__nav">
+        <h2 class="section__headline">Ratings and Reviews</h2>
+      </div>
+        <div id="ember32167174" class="we-customer-ratings lockup ember-view"><div class="l-row">
+  <div class="we-customer-ratings__stats l-column small-4 medium-6 large-4">
+    <div class="we-customer-ratings__averages"><span class="we-customer-ratings__averages__display">4.5</span> out of 5</div>
+      <div class="we-customer-ratings__count small-hide medium-show">406 Ratings</div>
+  </div>
+  <div class=" l-column small-8 medium-6 large-4">
+    <figure class="we-star-bar-graph">
+        <div class="we-star-bar-graph__row">
+          <span class="we-star-bar-graph__stars we-star-bar-graph__stars--5"></span>
+          <div class="we-star-bar-graph__bar">
+            <div class="we-star-bar-graph__bar__foreground-bar" style="width: 81%;"></div>
+          </div>
+        </div>
+        <div class="we-star-bar-graph__row">
+          <span class="we-star-bar-graph__stars we-star-bar-graph__stars--4"></span>
+          <div class="we-star-bar-graph__bar">
+            <div class="we-star-bar-graph__bar__foreground-bar" style="width: 4%;"></div>
+          </div>
+        </div>
+        <div class="we-star-bar-graph__row">
+          <span class="we-star-bar-graph__stars we-star-bar-graph__stars--3"></span>
+          <div class="we-star-bar-graph__bar">
+            <div class="we-star-bar-graph__bar__foreground-bar" style="width: 3%;"></div>
+          </div>
+        </div>
+        <div class="we-star-bar-graph__row">
+          <span class="we-star-bar-graph__stars we-star-bar-graph__stars--2"></span>
+          <div class="we-star-bar-graph__bar">
+            <div class="we-star-bar-graph__bar__foreground-bar" style="width: 4%;"></div>
+          </div>
+        </div>
+        <div class="we-star-bar-graph__row">
+          <span class="we-star-bar-graph__stars "></span>
+          <div class="we-star-bar-graph__bar">
+            <div class="we-star-bar-graph__bar__foreground-bar" style="width: 9%;"></div>
+          </div>
+        </div>
+    </figure>
+      <p class="we-customer-ratings__count medium-hide">406 Ratings</p>
+  </div>
+</div>
+</div>
+      <div class="l-row l-row--peek">
+              
+              <div id="ember32167182" class="ember-view small-valign-top l-column--equal-height l-column small-4 medium-6 large-4"><div data-test-we-modal="page-overlay" id="ember32167183" class="ember-view"><!---->
+<!----></div>
+
+
+                <div aria-labelledby="we-customer-review-66846" id="ember32167184" class="we-customer-review lockup ember-view"><figure aria-label="5 out of 5" id="ember32167185" class="we-star-rating ember-view we-customer-review__rating we-star-rating--large"><span class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+</span>
+<!----></figure>
+
+<div class="we-customer-review__header we-customer-review__header--user">
+  <span dir="ltr" id="ember32167186" class="we-truncate we-truncate--single-line ember-view we-customer-review__user">  Lillymae Jeune
+</span>
+
+  <span class="we-customer-review__separator">, </span>
+
+  <time data-test-customer-review-date datetime="2019-06-06T15:00:21.000Z" aria-label="6 June 2019" class="we-customer-review__date" >06/06/2019</time>
+</div>
+
+<h3 dir="ltr" id="we-customer-review-66846" class="we-truncate we-truncate--single-line ember-view we-customer-review__title">  Deleting messages !
+</h3>
+
+  <blockquote id="ember32167187" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view we-customer-review__body">      
+
+      <p dir=false data-test-bidi>so basically the way it works is that the app is kind of like a house. when you open the app its like when you ring the bell or knock on the front door. it lets all your friends know that you’re in the house. so then you can wait for your friends to invite you to their rooms or wave at your friends to ask them to come into a room with you. after you have your friends gathered, you can lock the room so other people don’t come in. so yeah, it’s really fun bc you don’t need to call your friends individually, you can just talk to whoever is available. we have also had “lock wars” where two people fight to keep the room locked or unlocked, and we’ve invaded our friend’s rooms. &gt;😃 but other than that you can just chill with your friends and talk as if you were in a normal call.</p>
+
+  
+
+
+<!----></blockquote>
+
+<!----></div>
+              
+</div>
+          
+    
+              <div id="ember32167191" class="ember-view small-valign-top l-column--equal-height l-column small-4 medium-6 large-4"><div data-test-we-modal="page-overlay" id="ember32167192" class="ember-view"><!---->
+<!----></div>
+
+
+                <div aria-labelledby="we-customer-review-66847" id="ember32167193" class="we-customer-review lockup ember-view"><figure aria-label="5 out of 5" id="ember32167194" class="we-star-rating ember-view we-customer-review__rating we-star-rating--large"><span class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+</span>
+<!----></figure>
+
+<div class="we-customer-review__header we-customer-review__header--user">
+  <span dir="ltr" id="ember32167195" class="we-truncate we-truncate--single-line ember-view we-customer-review__user">  Malekhi Scrane
+</span>
+
+  <span class="we-customer-review__separator">, </span>
+
+  <time data-test-customer-review-date datetime="2019-06-07T07:00:24.000Z" aria-label="7 June 2019" class="we-customer-review__date" >07/06/2019</time>
+</div>
+
+<h3 dir="ltr" id="we-customer-review-66847" class="we-truncate we-truncate--single-line ember-view we-customer-review__title">  Jayce Savage
+</h3>
+
+  <blockquote id="ember32167196" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view we-customer-review__body">      
+
+      <p dir=false data-test-bidi>OK so I love the idea of texting or calling with multiple friends but the thing that is not necessary is that it is way too difficult to use I’ve tried a lot of different ways and it took me almost 100 times to find out how it works and I barely still not know how it works so can you please fix it? —BTW I just read through the texts and I just want to edit this as somebody who is talking about their grandfather dying and that house party save them I love that story but your response was that so heartwarming I love the first part where you said it was heartwarming but then after you said how do we get it to five stars I find this very rude very rude please do not do that!?? P.S. I gave this app 4 stars but because of your response in such a rude way I gave it 2 stars instead! ??</p>
+
+  
+
+
+<!----></blockquote>
+
+<!----></div>
+              
+</div>
+          
+    
+              <div id="ember32167200" class="ember-view small-valign-top l-column--equal-height l-column small-4 medium-6 large-4"><div data-test-we-modal="page-overlay" id="ember32167201" class="ember-view"><!---->
+<!----></div>
+
+
+                <div aria-labelledby="we-customer-review-66848" id="ember32167202" class="we-customer-review lockup ember-view"><figure aria-label="5 out of 5" id="ember32167203" class="we-star-rating ember-view we-customer-review__rating we-star-rating--large"><span class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+</span>
+<!----></figure>
+
+<div class="we-customer-review__header we-customer-review__header--user">
+  <span dir="ltr" id="ember32167204" class="we-truncate we-truncate--single-line ember-view we-customer-review__user">  Cordin Meikle
+</span>
+
+  <span class="we-customer-review__separator">, </span>
+
+  <time data-test-customer-review-date datetime="2019-06-07T09:25:34.000Z" aria-label="7 June 2019" class="we-customer-review__date" >07/06/2019</time>
+</div>
+
+<h3 dir="ltr" id="we-customer-review-66848" class="we-truncate we-truncate--single-line ember-view we-customer-review__title">  Refreshing change!
+</h3>
+
+  <blockquote id="ember32167205" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view we-customer-review__body">      
+
+      <p dir=false data-test-bidi>The app was amazing when first download and updated multiple times, but it keeps kicking me and the people I talk to out of the entire app, it freezes, it lags a lot and it’s not the internet provider, because that has been checked by all the parties, if the phone it’s connected to chromecast, the app goes mute, if I leave the app to go to another app it doesn’t say “Paused”, it usually goes black or says “Low Connection. It kills the battery on the phone very rapidly, when using ghost mode on anyone like setting shows you, it still show others that you’re on, and I realized it when ai tested it with friends. The app needs to be updated, because it’s an amazing app to use with multiple people at the same time, and the ringtones are very catchy.</p>
+
+  
+
+
+<!----></blockquote>
+
+<!----></div>
+              
+</div>
+          
+
+      </div>
+        <div class="l-row l-row--margin-top medium-hide">
+              
+<!---->          
+    
+<!---->          
+    
+<!---->          
+    
+<!---->          
+    
+<!---->          
+
+        </div>
+    </section>
+
+<!---->
+<!---->
+<section class="l-content-width section section--bordered">
+  <div class="l-row">
+    <div class="l-column small-12">
+      <h2 class="section__headline">Information</h2>
+      <dl class="information-list information-list--app medium-columns">
+          <div class="information-list__item l-row">
+            <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Provider</dt>
+            <dd class="information-list__item__definition l-column medium-9 large-6">
+              Yalla Technology FZ-LLC
+            </dd>
+          </div>
+        <div class="information-list__item l-row">
+          <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Size</dt>
+          <dd class="information-list__item__definition l-column medium-9 large-6" aria-label="112.4 megabytes">112.4 MB</dd>
+        </div>
+          <div class="information-list__item l-row">
+            <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Category</dt>
+            <dd class="information-list__item__definition l-column medium-9 large-6">
+                <a href="https://itunes.apple.com/ae/genre/id6016" class="link">Entertainment</a>
+            </dd>
+          </div>
+        <div class="information-list__item l-row">
+          <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Compatibility</dt>
+          <dd id="ember32167211" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view information-list__item__definition l-column medium-9 large-6">      
+
+      <p dir=false data-test-bidi>Requires iOS 9.0 or later. Compatible with iPhone, iPad and iPod touch.</p>
+
+  
+
+
+<!----></dd>
+        </div>
+<!---->        <div class="information-list__item l-row">
+          <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Languages</dt>
+          <dd id="ember32167214" class="information-list__item__definition l-column medium-9 large-6 we-truncate we-truncate--multi-line we-truncate--interactive ember-view">      
+
+      <p dir=false data-test-bidi>English, Arabic, Indonesian, Portuguese, Spanish, Turkish</p>
+
+  
+
+
+<!----></dd>
+        </div>
+        <div class="information-list__item l-row">
+          <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Age Rating</dt>
+          <dd class="information-list__item__definition l-column medium-9 large-6">You must be at least 17 years old to download this application.</dd>
+        </div>
+            <div class="information-list__item l-row">
+              <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2" aria-hidden="true"></dt>
+              <dd class="information-list__item__definition l-column medium-9 large-6">Infrequent/Mild Profanity or Crude Humour</dd>
+            </div>
+            <div class="information-list__item l-row">
+              <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2" aria-hidden="true"></dt>
+              <dd class="information-list__item__definition l-column medium-9 large-6">Infrequent/Mild Horror/Fear Themes</dd>
+            </div>
+            <div class="information-list__item l-row">
+              <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2" aria-hidden="true"></dt>
+              <dd class="information-list__item__definition l-column medium-9 large-6">Infrequent/Mild Mature/Suggestive Themes</dd>
+            </div>
+            <div class="information-list__item l-row">
+              <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2" aria-hidden="true"></dt>
+              <dd class="information-list__item__definition l-column medium-9 large-6">Unrestricted Web Access</dd>
+            </div>
+            <div class="information-list__item l-row">
+              <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2" aria-hidden="true"></dt>
+              <dd class="information-list__item__definition l-column medium-9 large-6">Infrequent/Mild Sexual Content and Nudity</dd>
+            </div>
+<!---->        <div class="information-list__item l-row">
+          <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Copyright</dt>
+          <dd class="information-list__item__definition l-column medium-9 large-6">© 2019 Yalla Technology FZ-LLC.</dd>
+        </div>
+        <div class="information-list__item l-row">
+          <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">Price</dt>
+          <dd class="information-list__item__definition l-column medium-9 large-6">Free</dd>
+        </div>
+          <div class="information-list__item l-row">
+            <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">In-App Purchases</dt>
+            <dd class="information-list__item__definition l-column medium-9 large-6">
+              <ol role="table" class="list-with-numbers">
+<div id="ember32167217" class="ember-view">                    <li class="list-with-numbers__item">
+                    <span class="list-with-numbers__item__title"><span class="truncate-single-line truncate-single-line--block">100 Golds</span></span>
+                    <span class="list-with-numbers__item__price small-hide medium-show-tablecell">AED 3.69</span>
+                  </li>
+
+                    <li class="list-with-numbers__item">
+                    <span class="list-with-numbers__item__title"><span class="truncate-single-line truncate-single-line--block">1000 Golds</span></span>
+                    <span class="list-with-numbers__item__price small-hide medium-show-tablecell">AED 32.99</span>
+                  </li>
+
+                    <li class="list-with-numbers__item">
+                    <span class="list-with-numbers__item__title"><span class="truncate-single-line truncate-single-line--block">5000 Golds</span></span>
+                    <span class="list-with-numbers__item__price small-hide medium-show-tablecell">AED 159.99</span>
+                  </li>
+
+  <button class="we-truncate__button we-truncate__button--top-offset link" aria-expanded="false">
+    more
+  </button>
+</div>              </ol>
+            </dd>
+          </div>
+
+      </dl>
+    </div>
+    <div class="l-column small-hide medium-show medium-9 medium-offset-3 large-10 large-offset-2">
+      <ul class="inline-list inline-list--app-extensions">
+<!---->          <li class="inline-list__item inline-list__item--margin-inline-end-large">
+            <a class="link icon icon-after icon-external" href="http://www.yalla.live">App Support</a>
+          </li>
+<!---->          <li class="inline-list__item inline-list__item--margin-inline-end-large">
+            <a class="link icon icon-after icon-external" href="http://www.yalla.live/tos.html">Privacy Policy</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--link-list l-content-width medium-hide">
+  <ul class="link-list link-list--a">
+<!---->      <li class="link-list__item link-list__item--a">
+        <a class="link icon icon-after icon-external" href="http://www.yalla.live">App Support</a>
+      </li>
+<!---->      <li class="link-list__item link-list__item--a">
+        <a class="link icon icon-after icon-external" href="http://www.yalla.live/tos.html">Privacy Policy</a>
+      </li>
+  </ul>
+</section>
+
+  <section class="l-content-width section section--bordered">
+    <div class="section__nav">
+      <h2 class="section__headline">Supports</h2>
+    </div>
+    <ul class="supports-list l-row">
+        <li class="supports-list__item l-column l-column--grid small-12 medium-6 large-4">
+          <img src="/assets/images/supports/supports-FamilySharing@2x-f58f31bc78fe9fe7be3565abccbecb34.png" class="supports-list__item__artwork" alt>
+          <div class="supports-list__item__copy">
+            <h3 dir="ltr" id="ember32167222" class="we-truncate we-truncate--single-line ember-view supports-list__item__copy__heading">  Family Sharing
+</h3>
+            <h4 id="ember32167223" class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view supports-list__item__copy__description">      
+
+      <p dir=false data-test-bidi>Up to six family members will be able to use this app with Family Sharing enabled.</p>
+
+  
+
+
+<!----></h4>
+          </div>
+        </li>
+    </ul>
+  </section>
+
+<!---->
+<!----></div>
+
+
+<!----></div>
+</div></div>
+
+  <!---->
+
+  <!---->
+
+  <!---->
+
+</main>
+</div><script type="fastboot/shoebox" id="shoebox-language-code">"en-gb"</script><script type="fastboot/shoebox" id="shoebox-ember-data-store">{"data":{"type":"product/app","id":"1091902866","attributes":{"userRating":{"value":4.5,"ratingCount":406,"ratingCountList":[35,15,11,16,329],"ariaLabelForRatings":"4.5 stars"},"deviceFamilies":["iphone","ipod"],"metricsBase":{"pageType":"Software","pageId":"1091902866","pageDetails":"Yalla Technology FZ-LLC_Yalla-Group Voice Chat Rooms","page":"Software_1091902866","serverInstance":"3003201","storeFrontHeader":"","language":"2","platformId":"8","platformName":"ItunesPreview","storeFront":"143481","environmentDataCenter":"MR22"},"contentRating":{"name":"17+","value":600,"rank":4,"advisories":["Infrequent/Mild Profanity or Crude Humour","Infrequent/Mild Horror/Fear Themes","Infrequent/Mild Mature/Suggestive Themes","Unrestricted Web Access","Infrequent/Mild Sexual Content and Nudity"]},"copyright":"© 2019 Yalla Technology FZ-LLC.","description":"تطبيق يلا هو مجموعة التحدث الصوتية الحية  و الترفيه الإجتماعي رقم واحد.\nالدردشة الصوتية والإستمتاع بالألعاب مع الآخرين القريبين منك أو من جميع أنحاء العالم \n\n\nأصبح من السهل التعرف على أصدقاء جدد :\nإختر مجموعة غرف صوتية من الالاف الغرف النشطة يوميا ، إنتقي الغرف من خلال الدول أو الموضوعات . تم بالفعل تغطية أكثر من خمسين دولة ، بينماتوجد العديد والعديد  من الموضوعات المتاحة للإختيار .\n\nإحتفل مع أصدقائك بدون مسافات : \nجروب للتحدث الصوتي مع الأصدقاء بغض النظر عن مكان تواجدهم ، قم ببث الموسيقى المفضلة لديك داخل الغرفة ، غني كاريوكي معا ، لعب العديد من الألعاب مباشرة في مجموعة الدردشة ..دعنا نبدأ الإحتفال .\n\nالخصائص : \nكاملا بالمجان - إستمتع بالدردشة الصوتية الحية عبر 3G, 4G, LTE , أو شبكات الواي فاي .\nغرف دردشة عامة - تصفح الالاف من غرف الدردشة النشطة القريبة منك أو من جميع أنحاء العالم والتي تغطي الالاف من الموضوعات .\n\nالمحادثات الخاصة - إستمتع  بالخصوصية في الصوت والنص .\nالمحادثات مع أصدقائك من أي مكان بالعالم .\n\nألعاب الدردشة -- إستمتعوا بالألعاب معا مباشرة في مجموعة الدردشة الصوتية الخاصة بك !\nالهدايا الإفتراضية - يمكنك إرسال الهدايا المتحركة المذهلة لتعبر عن حبك .\n\nمشاركة و متابعة -----قم بمشاركة غرفك المفضلة عبر الفيس بوك ، تويتر ، إنستجرام ، سناب شات وأكثر ، قم بدعوة الأصدقاء ومتابعين جدد .\n\nقم بمتابعتنا لتحصل على أحدث الأخبار ، التحديثات والمناسبات : Facebook : \nfacebook.com/yalladotlive\nTwitter: twitter.com/ yalladotlive\nWebsite:WWW.yalla.live\n\nأعزائي مستخدمي تطبيق يلا ، نحن نرحب بأستفساراتكم وإقتراحاتكم : \nsupport@yalla.live \n\nYalla is the No.1 Live Group Voice Talking and Entertaining Community. Voice Chat and play games with people from nearby or all over the world.\n\nMeet new friends is never easier:\nChoose group voice rooms from THOUSANDS live rooms daily, filter rooms by Countries or Topics. 50+ Countries has already been covered, while tons of topics are available to choose.\n\nParty with friends with no distances:\nGroup voice talking with friends no matter where they are, broadcasting your favorite musics inside the room, singing karaokes together, playing a range of games directly in group chat. Let's get the party started.\n\nFEATURES:\n\nTOTALLY FREE — Enjoy free live voice chat over 3G, 4G, LTE or Wi-Fi.\n\nPUBLIC CHAT ROOMS  — Browse THOUSANDS live chat rooms from NEARBY or AROUND THE WORLD that cover thousands of topics. \n\nPRIVATE CONVERSATIONS — Start private one-on-one text and voice conversations with your friends from anywhere in the world.\n\nCHAT GAMES -- Play games together directly in your chat group!\n\nVIRTUAL GIFTS — Stunning animated gifts can be sent out to express your love.\n\nSHARE and FOLLOW -- Share your favorite ROOMS on Facebook, Twitter, Instagram, Snapchat and more, inviting friends and new followers.\n\nFollow us to get the latest news, updates and events:\nFacebook: facebook.com/yalladotlive\nTwitter: twitter.com/yalladotlive\nWebsite: www.yalla.live\n\nDear YALLA users, your feedback and suggestions are welcomed to : support@yalla.live","familyShareEnabledDate":"0001-04-23T00:00:00Z","hasInAppPurchases":true,"kind":"iosSoftware","name":"Yalla-Group Voice Chat Rooms","ratingText":"You must be at least 17 years old to download this application.","advisories":["Infrequent/Mild Profanity or Crude Humour","Infrequent/Mild Horror/Fear Themes","Infrequent/Mild Mature/Suggestive Themes","Unrestricted Web Access","Infrequent/Mild Sexual Content and Nudity"],"releaseDate":"2016-04-19","softwareInfo":{"supportUrl":"http://www.yalla.live","privacyPolicyUrl":"http://www.yalla.live/tos.html","eulaUrl":null,"languagesDisplayString":"English, Arabic, Indonesian, Portuguese, Spanish, Turkish","privacyPolicyTextUrl":"https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPrivacyPolicy?cc=ae\u0026id=1091902866","requirementsString":"Requires iOS 9.0 or later. Compatible with iPhone, iPad and iPod touch.","hasInAppPurchases":true,"seller":"Yalla Technology FZ-LLC","websiteUrl":null},"url":"https://apps.apple.com/ae/app/yalla-group-voice-chat-rooms/id1091902866","versionHistory":[{"releaseNotes":"1. “Me” section and user profile are redesigned.\n2.You can learn about your level on the“Level”page.\n3.You can now choose tags on your profile.\n4.You can see rooms you entered recently. \n5.Lucky gifts are upgraded.\n6.Two languages are added: Portuguese and Spanish.\n7.Several performance improvements\n\n1. تم إعادة تصميم قسم \"أنا\" وملف المعلومات الشخصية.\n2. يمكنك معرفة المزيد عن مستواك من خلال صفحة \" المستوى\".\n3. يمكنك اختيار إشاراتك في ملف المعلومات الشخصية.\n4. تم إضافة سجل للغرف التي دخلتها مؤخراً.\n5. تم ترقية هدايا الحظ.\n6. تم إضافة لغتين وهما: البرتغالية والإسبانية.\n7. إجراء العديد من التحسينات في الأداء.","versionString":"2.8.0","releaseDate":"2019-06-07T02:44:27Z"},{"releaseNotes":"Bugs are fixed and user experience is improved.\n\nيتم إصلاح الأخطاء وتحسين تجربة المستخدم","versionString":"2.7.6","releaseDate":"2019-04-07T00:03:29Z"},{"releaseNotes":"Bugs are fixed and user experience is improved.\n\nيتم إصلاح الأخطاء وتحسين تجربة المستخدم","versionString":"2.7.5","releaseDate":"2019-04-05T04:44:03Z"},{"releaseNotes":"1. “Lucky Gifts”are launched\n2. You can post GIFs in Moments\n3. You’ll get notifications when friends repost your posts.\n4. Making posts is easier and faster\n5. Log in \u0026 sign up via phone is easier\n6. Other feature improvements\n\n1. هدايا الحظ متوفرة الآن\n2. يمكنك نشر صور الـ GIF في اللحظات الآن\n3. ستحصل على إشعارات عند إعادة نشر اللحظات الخاصة بك من قبل أصدقائك\n4. نشر اللحظات أصبح أسهل وأسرع\n5. تسجيل الدخول والتسجيل عبر الهاتف أصبح أسهل\n6. تم تحسين ميزات أخرى","versionString":"2.7.4","releaseDate":"2019-03-19T06:35:40Z"},{"releaseNotes":"Bugs are fixed and user experience is improved.\n\nيتم إصلاح الأخطاء وتحسين تجربة المستخدم","versionString":"2.7.3","releaseDate":"2019-02-01T01:54:45Z"},{"releaseNotes":"1. Room game \"Lucky Number\" is back online.\n2. Special effects for sending gifts to everyone in the room are cooler.\n3. Replying to comments on your posts or replies to your comments is very easy now.\n4. Yalla posters in \"Moments\" are now online.\n5. Bugs are fixed and user experience is improved.\n\n1. لعبة الغرفة \"رقم الحظ\" عادت من جديد على الإنترنت الآن.\n2. تم تحسين المؤثرات الخاصة لإرسال هدايا لجميع أعضاء الغرفة.\n3. أصبح من السهل جداً الرد على التعليقات الخاصة بمنشورك أو الرد على الردود في التعليقات.\n4. فريق لحظات يلا متواجدين على الإنترنت الآن.\n5. تم إصلاح الثغرات وتم تحسين تجربة المستخدم.","versionString":"2.7.2","releaseDate":"2019-01-26T10:37:00Z"},{"releaseNotes":"Bugs are fixed and user experience is improved\n\nيتم إصلاح الأخطاء وتحسين تجربة المستخدم","versionString":"2.7.1","releaseDate":"2018-12-23T05:44:09Z"},{"releaseNotes":"1. Magic cards are upgraded\n2. You can now view messages in any room \n3. You can turn off your mic temporarily \n4. You can send gifts to everyone in the room at a time\n5. You can add topics when making posts\n6. You can report problems to Yalla Team on the Message page \n7. User interface and user experiences are improved\n\n1. تم تحديث البطاقات السحرية.\u2028\n2. يمكنك عرض الرسائل في أي غرفة.\u2028\n3. يمكنك قفل المايك مؤقتاً.\u2028\n4. يمكنك إرسال هدايا لجميع أعضاء الغرفة في وقت واحد.\u2028\n5. يمكنك إضافة مواضيع عند نشر اللحظات.\u2028\n6. يمكنك الإبلاغ عن المشاكل مباشرة لفريق يلا على صفحة الرسائل.\u2028\n7. تم تحسين واجهة المستخدم وتجارب المستخدم.","versionString":"2.7.0","releaseDate":"2018-12-18T07:54:19Z"},{"releaseNotes":"Bugs are fixed and user experience is improved\n\nيتم إصلاح الأخطاء وتحسين تجربة المستخدم","versionString":"2.6.3","releaseDate":"2018-10-24T02:35:35Z"},{"releaseNotes":"1. You can enter the room your friend is in on the friend list page\n2. Number of followers, number of following, and gifts received in the past six months are displayed in the profile\n3. Pin on Top cards are now for sale by auction\n4. Search history is added on the search page\n5. The design of aristocracy badges and achievement badges are improved\n6. Room sharing feature is improved\n7. Support is added for iOS 12\n8. Some other details are improved\n\n1. يمكنك الدخول إلى الغرفة التي يوجد فيها صديقك على صفحة قائمة الأصدقاء\u2028\n2. يتم عرض عدد المتابعين وعدد المتابعة لهم، وعدد الهدايا المستلمة في الأشهر الستة الماضية في الملف الشخصي\u2028\n3. بطاقات التثبيت في الأعلى معروضة للبيع عن طريق المزاد\u2028\n4. تم إضافة سجل البحث في صفحة البحث\u2028\n5. تم تحسين تصميم شارات الأرستقراطية وشارات الإنجازات\n6. تم تحسين طريقة مشاركة الغرفة\n7. تم إضافة الدعم لنظام التشغيل iOS 12  \u2028\n8. تم تحسين التفاصيل الأخرى","versionString":"2.6.2","releaseDate":"2018-10-10T03:05:36Z"},{"releaseNotes":"1.Music able to be uploaded from iTunes to the room playlist\n2.UI improvement of badges, room entrance effects and name cards for Aristocracy\n3.More eye-catching and a great number of Unique IDs available in store\n4.Other improvements made for better user experience\n\n1.دعم تحميل الموسيقى من اي تيونز إلى قائمة أغاني الغرفة. \n2.تحسين واجهة المستخدم لشارة الأرستقراطية وتأثيرات دخول الغرفة للأرستقراطية وبطاقة اسم الأرستقراطي.\n3.يتوفر الكثير من الأي دي المميز في المتجر ، وأيضاً تم تحسين شعار الأي دي\u2028\n4.تحسين تجارب الاستخدام الأخرى","versionString":"2.6.1","releaseDate":"2018-08-22T02:25:48Z"},{"releaseNotes":"1.Music able to be uploaded from iTunes to the room playlist\n2.UI improvement of badges, room entrance effects and name cards for Aristocracy\n3.More eye-catching and a great number of Unique IDs available in store\n4.Other improvements made for better user experience\n\n1.دعم تحميل الموسيقى من اي تيونز إلى قائمة أغاني الغرفة. \n2.تحسين واجهة المستخدم لشارة الأرستقراطية وتأثيرات دخول الغرفة للأرستقراطية وبطاقة اسم الأرستقراطي.\n3.يتوفر الكثير من الأي دي المميز في المتجر ، وأيضاً تم تحسين شعار الأي دي\u2028\n4.تحسين تجارب الاستخدام الأخرى","versionString":"2.6.0","releaseDate":"2018-08-15T22:45:35Z"},{"releaseNotes":"1.New Indonesian and English regions, free to change any region you like\n2.Easy to unbind your third-party account\n3.Check member online status on【Room Member】list\n4.New room types on 【Explore】page\n5.Other optimization\n1. المنطقة الاندونيسية والانجليزية، يمكنك تغيير أي منطقة تريد مجاناْ\n2. من السهل فك ربط حساب الطرف الثالث الخاص بك\n3. يمكنك التحقق من حالة تواجد الأعضاء على الأنترنت في قائمة أعضاء الغرفة\n4. أنواع الغرف الجديدة في صفحة \"الإستكشاف\"\n5. التحسينات الأخرى","versionString":"2.5.4","releaseDate":"2018-07-18T02:32:02Z"},{"releaseNotes":"1.New Indonesian and English regions, free to change any region you like\n2.Easy to unbind your third-party account\n3.Check member online status on【Room Member】list\n4.New room types on 【Explore】page\n5.Other optimization\n1. المنطقة الاندونيسية والانجليزية، يمكنك تغيير أي منطقة تريد مجاناْ\n2. من السهل فك ربط حساب الطرف الثالث الخاص بك\n3. يمكنك التحقق من حالة تواجد الأعضاء على الأنترنت في قائمة أعضاء الغرفة\n4. أنواع الغرف الجديدة في صفحة \"الإستكشاف\"\n5. التحسينات الأخرى","versionString":"2.5.3","releaseDate":"2018-07-15T02:30:35Z"},{"releaseNotes":"1.New Indonesian and English regions, free to change any region you like\n2.Easy to unbind your third-party account\n3.Check member online status on【Room Member】list\n4.New room types on 【Explore】page\n5.Other optimization\n\n1. المنطقة الاندونيسية والانجليزية، يمكنك تغيير أي منطقة تريد مجاناْ\n2. من السهل فك ربط حساب الطرف الثالث الخاص بك\n3. يمكنك التحقق من حالة تواجد الأعضاء على الأنترنت في قائمة أعضاء الغرفة\n4. أنواع الغرف الجديدة في صفحة \"الإستكشاف\"\n5. التحسينات الأخرى","versionString":"2.5.2","releaseDate":"2018-07-12T01:40:28Z"},{"releaseNotes":"Optimized functions and fixed bugs\n\nتحسين الوظائف وإصلاح الأخطاء","versionString":"2.5.1","releaseDate":"2018-06-01T15:47:34Z"},{"releaseNotes":"1. New function! Post on “Moments”\n2. New daily attendance，to get a random prize\n3. Activity can be shared\n4. Changed “Me” and “Top” positions\n5. Adjusted the permission of taking mic and member fee in room\n6. Optimized functions and fixed bugs\n\n1. الوظيفة الجديدة! يمكنك النشر في “اللحظات”\n2. الحضور اليومي الجديد للحصول على مكافأة عشوائية\n3. النشاطات متاحة للمشاركة\n4. الموقع الجديد ل”أنا” و”المرتبة”\n5. تعديل الإذن لأخذ الميكروفون ورسوم العضوية للغرفة\n6. تحسين الوظائف وإصلاح الأخطاء","versionString":"2.5.0","releaseDate":"2018-05-28T07:56:00Z"},{"releaseNotes":"Update：\n1. Personalized room themes\n2. Unique ID store online\n3. Aristocracy system online\n4. 3 newly-added login method\n5. Product experience optimized\n\nالتحديث:\n1. موضوعات الغرفة الشخصية\n2.متجرالاي ديهات المميزة \n3. نظام الأرستقراطية \n4. اضافة 3 طريق جديدة لتسجيل الدخول\n5. تحسين تجربة المستخدم","versionString":"2.4.3","releaseDate":"2018-02-06T18:29:15Z"},{"releaseNotes":"Update：\n1. Add the online user list in the room\n2. Adjust the broadcast style in the room\n3. Display the medal, make you more honorable\n4. Fix some bugs and improve user experience\n\nتحديث:\n1. إضافة قائمة المستخدمين المتواجدين في الغرفة\n2. ضبط نمط بث شريط الاعلانات في الغرفة\n3. عرض الشارة، تجعلك أكثرتميز\n4. إصلاح بعض الخلل وتحسين تجربة المستخدم","versionString":"2.4.2","releaseDate":"2017-12-08T22:48:34Z"},{"releaseNotes":"التحديث:\n1. التكيف مع IOS 11\n2. إصلاح بعض الخلل\n\nUpdate:\n1. Adapt to iOS11\n2. Fix some bugs","versionString":"2.4.1","releaseDate":"2017-11-08T01:44:34Z"},{"releaseNotes":"التحديثات:\n١-تصميم واجهة المستخدم الجديدة في الغرفة لتجربة فريدة\n٢-إدارة مريحة ( دعوة ، ازالة ، طرد ، الخ) لمالك الغرفة \n٣- إصلاح بعض الخلل \n\nUpdates:\n1. New UI Design in the room for Glorious Experience;\n2. Convenient Management(Invite, Remove, Kick out, etc) for Room Owner;\n3. Fix Some Bugs.","versionString":"2.4.0","releaseDate":"2017-11-02T02:09:00Z"},{"releaseNotes":"التحديثات :\n١-إضافة خاصية الغرف المقترحة .\n٢-يمكن للمستخدم النقر على شريط الإعلان لدخول غرفة الإرسال .\n٣-تحسين تجربة تسجيل رقم الهاتف .\n\nUpdates:\n1. Add recommended rooms;\n2. User can click on broadcasting message to enter the luxury gift sending room;\n3. Improve mobile number registration experience.","versionString":"2.3.7","releaseDate":"2017-09-19T00:21:46Z"},{"releaseNotes":"التحديثات :\n١-إضافة خاصية الغرف المقترحة .\n٢-يمكن للمستخدم النقر على شريط الإعلان لدخول غرفة الإرسال .\n٣-تحسين تجربة تسجيل رقم الهاتف .\n\nUpdates:\n1. Add recommended rooms;\n2. User can click on broadcasting message to enter the luxury gift sending room;\n3. Improve mobile number registration experience.","versionString":"2.3.6","releaseDate":"2017-08-30T13:02:22Z"},{"releaseNotes":"هذا التحديث:\n١-اضافة وضع Instant-chat  انقر للدردشة على الفور \n٢-تبسيط عملية انشاء الغرف \n٣-إصلاح بعض الخلل لتحسين تجربة المستخدم    \n\nUpdate：\n1. Added Instant-chat mode\n2. simplified creating room processes\n3. Fixed some bugs to improve the user experience","versionString":"2.3.5","releaseDate":"2017-08-03T18:17:13Z"},{"releaseNotes":"تحديث : \n١- تحسين الأداء والإستقرار.\n٢- تحسين عملية الشحن - بدون الحاجة لتبادل الألماس\n\nUpdate:\n1) Improve performance and stability.\n2) Improve recharging process (No need diamonds exchanging).","versionString":"2.3.4","releaseDate":"2017-07-06T03:37:08Z"}],"size":112419840,"subtitle":"Group Voice Chat Rooms","minimumOSVersion":"9.0","sellerLabel":"Provider","iphoneScreenshotsVersion":"iphone_6_5"},"relationships":{"offers":{"data":[{"type":"offer","id":"st647618"}]},"developer":{"data":{"type":"lockup/developer","id":"1444567250"}},"artwork":{"data":{"type":"image","id":"st647619"}},"iphoneScreenshots":{"data":[{"type":"image","id":"st10015092"},{"type":"image","id":"st10015093"},{"type":"image","id":"st10015094"},{"type":"image","id":"st10015095"},{"type":"image","id":"st10015096"},{"type":"image","id":"st10015097"},{"type":"image","id":"st10015098"}]},"subscriptions":{"data":[]},"inAppPurchases":{"data":[]},"topInApps":{"data":[{"type":"product/app/in-app","id":"st32166955"},{"type":"product/app/in-app","id":"st32166956"},{"type":"product/app/in-app","id":"st32166957"},{"type":"product/app/in-app","id":"st32166958"},{"type":"product/app/in-app","id":"st32166959"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28756"}]},"reviews":{"data":[{"type":"review","id":"st32166960"},{"type":"review","id":"st32166961"},{"type":"review","id":"st32166962"},{"type":"review","id":"st32166963"},{"type":"review","id":"st32166964"}]}}},"included":[{"type":"offer","id":"st647618","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":112419840}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1091902866\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831057893","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st9600","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":82134016}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=363590051\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831874457","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st1867372","attributes":{"actionText":{"short":"Buy","medium":"Buy","long":"Buy App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":189785088}],"buyParams":"productType=C\u0026price=36990\u0026salableAdamId=425073498\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831783492","price":36.99,"priceFormatted":"AED 36.99","type":"buy"},"relationships":{}},{"type":"offer","id":"st688597","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":159353856}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=505658864\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831805095","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st9621","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":159564800}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=545519333\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831825647","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st825333","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":48571392}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=862390640\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831453385","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st825335","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":36405248}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=879915134\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831320457","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st1867374","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":128864256}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=962284784\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831626070","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st691543","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":184108032}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1003820457\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831556380","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st9640","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":122498048}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1009442510\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831505909","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st1198638","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":180167680}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1032333168\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831465261","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st43665","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":255828992}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1072380719\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=825748618","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st9648","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":232386560}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1093108529\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831336571","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st31865998","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":50994176}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1111710488\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831951377","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st1867404","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":19017728}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1168138314\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831436302","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st8175831","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":196923392}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1255739677\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831624501","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st9660","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":149311488}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1293646758\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831124957","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st45443","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":537637888}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1296796112\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831822625","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st106022","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":67847168}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1300364926\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=829609756","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st688640","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":72708096}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1384325538\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831650149","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st15112","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":148615168}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1410367673\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831808578","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"offer","id":"st351598","attributes":{"actionText":{"short":"Get","medium":"Get","long":"Get App","downloaded":"Installed","downloading":"Installing"},"assets":[{"flavor":"iosSoftware","size":81428480}],"buyParams":"productType=C\u0026price=0\u0026salableAdamId=1457952897\u0026pricingParameters=STDQ\u0026pg=default\u0026appExtVrsId=831267246","price":0,"priceFormatted":"AED 0.00","type":"get"},"relationships":{}},{"type":"lockup/developer","id":"1444567250","attributes":{"name":"Yalla Technology FZ-LLC","url":"https://apps.apple.com/ae/developer/yalla-technology-fz-llc/id1444567250"},"relationships":{}},{"type":"image","id":"st647619","attributes":{"bgColor":"00d8c8","height":1024,"supportsLayeredImage":false,"textColor1":"161616","textColor2":"161616","textColor3":"123d3a","textColor4":"123d3a","url":"https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d3/80/01/d38001f1-b662-6ec4-99ef-f1ed8be168d6/AppIcon-Yalla-0-1x_U007emarketing-0-0-85-220-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015092","attributes":{"bgColor":"0bb2f8","height":2688,"supportsLayeredImage":false,"textColor1":"0b0707","textColor2":"1e1e1d","textColor3":"0b2937","textColor4":"1a3b49","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/38/59/d1/3859d1eb-a306-42dc-824e-814672a7c1eb/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015093","attributes":{"bgColor":"dbe2ff","height":2688,"supportsLayeredImage":false,"textColor1":"140a06","textColor2":"261f44","textColor3":"3c3538","textColor4":"4a466a","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/76/25/96/762596a9-cffd-25c8-7a40-5924c83601f1/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015094","attributes":{"bgColor":"e6fff8","height":2688,"supportsLayeredImage":false,"textColor1":"1e140d","textColor2":"331f0f","textColor3":"46433c","textColor4":"574c3e","url":"https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/fd/12/fc/fd12fc5d-aa6c-7804-2ac5-7f307805ffc2/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015095","attributes":{"bgColor":"bfebff","height":2688,"supportsLayeredImage":false,"textColor1":"0f121f","textColor2":"1d1c2b","textColor3":"323d4c","textColor4":"3d4555","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/a2/10/d0/a210d0df-31b7-db9e-0783-dd27c966a7d2/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015096","attributes":{"bgColor":"e2ddff","height":2688,"supportsLayeredImage":false,"textColor1":"040307","textColor2":"191618","textColor3":"312e38","textColor4":"413e46","url":"https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/ce/28/c6/ce28c6d9-aa3f-c458-a3be-b689c52d97cd/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015097","attributes":{"bgColor":"e4fef7","height":2688,"supportsLayeredImage":false,"textColor1":"1f1f1e","textColor2":"432e2f","textColor3":"464b49","textColor4":"635857","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/31/62/b4/3162b48a-e920-d893-2040-62cf3ed69f8a/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st10015098","attributes":{"bgColor":"c2e1fe","height":2688,"supportsLayeredImage":false,"textColor1":"171717","textColor2":"0c2945","textColor3":"393f45","textColor4":"304e6a","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/50/16/93/501693ce-e03d-0d94-2724-d278c19ddceb/pr_source.png/{w}x{h}bb.{f}","width":1242,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st9601","attributes":{"bgColor":"000000","height":1024,"supportsLayeredImage":false,"textColor1":"fc0916","textColor2":"fa0a16","textColor3":"ca0711","textColor4":"c80812","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/2b/02/7f/2b027f88-6bae-4468-7594-b014e2a3e50a/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st9614","attributes":{"bgColor":"242424","height":1024,"supportsLayeredImage":false,"textColor1":"fdf3d8","textColor2":"fdcfbe","textColor3":"d1c9b4","textColor4":"d1ad9f","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/aa/ab/42/aaab42f8-b652-1f6a-f0df-b500aeb541f3/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-4.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st688598","attributes":{"bgColor":"3a1e0c","height":1024,"supportsLayeredImage":false,"textColor1":"ffc594","textColor2":"f2a77a","textColor3":"d7a378","textColor4":"cd8b64","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/d4/a6/cc/d4a6cc8a-d69b-9989-10a0-85210c732a12/AppIcon-0-1x_U007emarketing-0-85-220-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st9622","attributes":{"bgColor":"ffffff","height":1024,"supportsLayeredImage":false,"textColor1":"060c13","textColor2":"1d2228","textColor3":"383c42","textColor4":"4a4e53","url":"https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/4a/90/1d/4a901deb-cdf3-bfa4-943c-6b9d2089f127/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st825334","attributes":{"bgColor":"9428cc","height":1024,"supportsLayeredImage":false,"textColor1":"ffffff","textColor2":"efd4fd","textColor3":"e9d4f4","textColor4":"ddb1f3","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/28/47/e5/2847e5bf-fde0-a105-8df0-38e0e840abc6/AppIcon-0-1x_U007emarketing-0-0-85-220-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st825336","attributes":{"bgColor":"84c400","height":1024,"supportsLayeredImage":false,"textColor1":"161615","textColor2":"161616","textColor3":"2c3910","textColor4":"2c3912","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/ea/3c/e3/ea3ce376-1646-a265-7f1d-cdb95c2a48fc/AppIcon-0-1x_U007emarketing-0-0-85-220-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st1867375","attributes":{"bgColor":"121212","height":1024,"supportsLayeredImage":false,"textColor1":"eeefee","textColor2":"c8c8c8","textColor3":"c2c3c2","textColor4":"a3a3a3","url":"https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/9f/2a/e1/9f2ae195-57c6-3844-2436-6770d379aabb/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st691544","attributes":{"bgColor":"000000","height":1024,"supportsLayeredImage":false,"textColor1":"f7fff7","textColor2":"c3cce8","textColor3":"c5cbc5","textColor4":"9ca3ba","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/80/da/e1/80dae166-ea81-506d-4cb5-a0ff236b0879/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st9641","attributes":{"bgColor":"ffffff","height":1024,"supportsLayeredImage":false,"textColor1":"000000","textColor2":"1d2e6c","textColor3":"333333","textColor4":"4a5889","url":"https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/09/1d/7d/091d7d02-10ef-e065-aea3-fbbe8f82b65f/AppIcon-0-1x_U007emarketing-0-0-85-220-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st1198639","attributes":{"bgColor":"cfdbcb","height":1024,"supportsLayeredImage":false,"textColor1":"382015","textColor2":"471818","textColor3":"564539","textColor4":"623f3c","url":"https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/2d/35/40/2d3540c8-a7d3-cd5f-1b2b-bd33ceda2fa1/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st43666","attributes":{"bgColor":"d89fe0","height":1024,"supportsLayeredImage":false,"textColor1":"0a0a0f","textColor2":"091324","textColor3":"332839","textColor4":"322f49","url":"https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/40/6f/a1/406fa1ff-660d-a6a0-2847-b02f177569c5/pr_source.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st9649","attributes":{"bgColor":"ffffff","height":1024,"supportsLayeredImage":false,"textColor1":"131417","textColor2":"262729","textColor3":"424345","textColor4":"515254","url":"https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d4/48/06/d4480648-8520-828e-8889-70ec1218b220/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-9.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st31865999","attributes":{"bgColor":"138cff","height":1024,"supportsLayeredImage":false,"textColor1":"161616","textColor2":"161616","textColor3":"162e45","textColor4":"162e45","url":"https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/31/f2/94/31f294ef-d26f-20e8-8150-b1abe4414eed/AppIcon-0-1x_U007emarketing-0-0-85-220-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st1867405","attributes":{"bgColor":"551f63","height":1024,"supportsLayeredImage":false,"textColor1":"f1ecff","textColor2":"dfd3fc","textColor3":"d1c2df","textColor4":"c4afdd","url":"https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/e1/ed/42/e1ed42e5-ea66-b21d-bab7-c422d108dea6/AppIcon-0-1x_U007emarketing-0-85-220-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st8175832","attributes":{"bgColor":"ffffff","height":1024,"supportsLayeredImage":false,"textColor1":"160206","textColor2":"160206","textColor3":"453538","textColor4":"453538","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/e5/0b/1f/e50b1f6b-6858-8437-2e1f-739de3c03db2/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-5.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st9661","attributes":{"bgColor":"ffffff","height":1024,"supportsLayeredImage":false,"textColor1":"0f0c14","textColor2":"550b42","textColor3":"3f3c43","textColor4":"773c68","url":"https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/0b/69/b1/0b69b1fb-6e3e-2a42-7a1d-da5a78306eb0/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st45445","attributes":{"bgColor":"cbd2c9","height":1024,"supportsLayeredImage":false,"textColor1":"110c0a","textColor2":"31201a","textColor3":"363430","textColor4":"50433d","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b6/95/b4/b695b4f7-e2ca-e426-837e-bf1aebcf484d/AppIcon-0-1x_U007emarketing-0-85-220-9.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st106023","attributes":{"bgColor":"ffffff","height":1024,"supportsLayeredImage":false,"textColor1":"351a09","textColor2":"3e210d","textColor3":"5d473a","textColor4":"654e3d","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/9b/3c/ff/9b3cfff8-e89f-5191-8ab7-f94b0ba7d453/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st688641","attributes":{"bgColor":"fecf00","height":1024,"supportsLayeredImage":false,"textColor1":"0f0a09","textColor2":"002351","textColor3":"3f3207","textColor4":"324541","url":"https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/8b/bd/fe/8bbdfe00-d8d8-c4ea-e3d4-911023d7f6a6/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st15113","attributes":{"bgColor":"bb0042","height":1024,"supportsLayeredImage":false,"textColor1":"ffffff","textColor2":"ffea00","textColor3":"f1cbd9","textColor4":"f1bb0d","url":"https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/5b/7c/24/5b7c2429-6770-cabf-c7bc-233a4995c1dd/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"image","id":"st351599","attributes":{"bgColor":"002f65","height":1024,"supportsLayeredImage":false,"textColor1":"21d4fe","textColor2":"1bc0f1","textColor3":"1ab3df","textColor4":"16a3d5","url":"https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/2b/96/d9/2b96d93d-f2b3-0c41-34ce-298f7ded8d33/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-5.png/{w}x{h}bb.{f}","width":1024,"hasAlpha":false},"relationships":{}},{"type":"product/app/in-app","id":"st32166955","attributes":{"buyParams":"productType=A\u0026price=3690\u0026salableAdamId=1100991711\u0026pricingParameters=STDQ\u0026pg=default","name":"100 Golds","offerType":{"offerType":"buy","accompaniesNoun":true},"price":"AED 3.69"},"relationships":{}},{"type":"product/app/in-app","id":"st32166956","attributes":{"buyParams":"productType=A\u0026price=32990\u0026salableAdamId=1100998137\u0026pricingParameters=STDQ\u0026pg=default","name":"1000 Golds","offerType":{"offerType":"buy","accompaniesNoun":true},"price":"AED 32.99"},"relationships":{}},{"type":"product/app/in-app","id":"st32166957","attributes":{"buyParams":"productType=A\u0026price=159990\u0026salableAdamId=1101002449\u0026pricingParameters=STDQ\u0026pg=default","name":"5000 Golds","offerType":{"offerType":"buy","accompaniesNoun":true},"price":"AED 159.99"},"relationships":{}},{"type":"product/app/in-app","id":"st32166958","attributes":{"buyParams":"productType=A\u0026price=369990\u0026salableAdamId=1101003999\u0026pricingParameters=STDQ\u0026pg=default","name":"12000 Golds","offerType":{"offerType":"buy","accompaniesNoun":true},"price":"AED 369.99"},"relationships":{}},{"type":"product/app/in-app","id":"st32166959","attributes":{"buyParams":"productType=A\u0026price=1499990\u0026salableAdamId=1205406797\u0026pricingParameters=STDQ\u0026pg=default","name":"50000 Golds","offerType":{"offerType":"buy","accompaniesNoun":true},"price":"AED 1,499.99"},"relationships":{}},{"type":"genre","id":"st28769","attributes":{"mediaType":"8","name":"Entertainment","url":"https://itunes.apple.com/ae/genre/id6016"},"relationships":{}},{"type":"genre","id":"st28756","attributes":{"mediaType":"8","name":"Social Networking","url":"https://itunes.apple.com/ae/genre/id6005"},"relationships":{}},{"type":"genre","id":"st28778","attributes":{"mediaType":"8","name":"Lifestyle","url":"https://itunes.apple.com/ae/genre/id6012"},"relationships":{}},{"type":"genre","id":"st429375","attributes":{"mediaType":"8","name":"Photo \u0026 Video","url":"https://itunes.apple.com/ae/genre/id6008"},"relationships":{}},{"type":"genre","id":"st28762","attributes":{"mediaType":"8","name":"Education","url":"https://itunes.apple.com/ae/genre/id6017"},"relationships":{}},{"type":"genre","id":"st52998","attributes":{"mediaType":"8","name":"Books","url":"https://itunes.apple.com/ae/genre/id6018"},"relationships":{}},{"type":"genre","id":"st28750","attributes":{"mediaType":"8","name":"Utilities","url":"https://itunes.apple.com/ae/genre/id6002"},"relationships":{}},{"type":"genre","id":"st52990","attributes":{"mediaType":"8","name":"Family","url":"https://itunes.apple.com/ae/genre/id7009"},"relationships":{}},{"type":"genre","id":"st53004","attributes":{"mediaType":"8","name":"Simulation","url":"https://itunes.apple.com/ae/genre/id7015"},"relationships":{}},{"type":"genre","id":"st52985","attributes":{"mediaType":"8","name":"Games","url":"https://itunes.apple.com/ae/genre/id6014"},"relationships":{}},{"type":"review","id":"st32166960","attributes":{"body":"so basically the way it works is that the app is kind of like a house. when you open the app its like when you ring the bell or knock on the front door. it lets all your friends know that you’re in the house. so then you can wait for your friends to invite you to their rooms or wave at your friends to ask them to come into a room with you. after you have your friends gathered, you can lock the room so other people don’t come in. so yeah, it’s really fun bc you don’t need to call your friends individually, you can just talk to whoever is available. we have also had “lock wars” where two people fight to keep the room locked or unlocked, and we’ve invaded our friend’s rooms. \u003e😃 but other than that you can just chill with your friends and talk as if you were in a normal call.","date":"2019-06-06T15:00:21Z","name":"Lillymae Jeune","rating":5,"title":"Deleting messages !","userReviewId":"4273031710","response":{}},"relationships":{}},{"type":"review","id":"st32166961","attributes":{"body":"OK so I love the idea of texting or calling with multiple friends but the thing that is not necessary is that it is way too difficult to use I’ve tried a lot of different ways and it took me almost 100 times to find out how it works and I barely still not know how it works so can you please fix it? —BTW I just read through the texts and I just want to edit this as somebody who is talking about their grandfather dying and that house party save them I love that story but your response was that so heartwarming I love the first part where you said it was heartwarming but then after you said how do we get it to five stars I find this very rude very rude please do not do that!?? P.S. I gave this app 4 stars but because of your response in such a rude way I gave it 2 stars instead! ??","date":"2019-06-07T07:00:24Z","name":"Malekhi Scrane","rating":5,"title":"Jayce Savage","userReviewId":"4276353764","response":{}},"relationships":{}},{"type":"review","id":"st32166962","attributes":{"body":"The app was amazing when first download and updated multiple times, but it keeps kicking me and the people I talk to out of the entire app, it freezes, it lags a lot and it’s not the internet provider, because that has been checked by all the parties, if the phone it’s connected to chromecast, the app goes mute, if I leave the app to go to another app it doesn’t say “Paused”, it usually goes black or says “Low Connection. It kills the battery on the phone very rapidly, when using ghost mode on anyone like setting shows you, it still show others that you’re on, and I realized it when ai tested it with friends. The app needs to be updated, because it’s an amazing app to use with multiple people at the same time, and the ringtones are very catchy.","date":"2019-06-07T09:25:34Z","name":"Cordin Meikle","rating":5,"title":"Refreshing change!","userReviewId":"4276879909","response":{}},"relationships":{}},{"type":"review","id":"st32166963","attributes":{"body":"I really love FaceTiming all of my friends at once, but I cannot do it on my own phone. When I am house partying on my phone other people can not hear me but I can hear them perfectly fine. I enabled everything except for the Facebook, I’ve uninstalled then reinstalled the app, and I restarted my phone. I even made a new account but it still won’t work! I highly recommend everyone to try the app because it is very safe and I am literally the only one having this problem. But if u could somehow fix this problem, then I would love this app forever and it would deserve a five star review. Sorry for the long review but I really want this fixed. In return it will be five stars ??","date":"2019-06-07T12:55:34Z","name":"Gabrialla Grombridge","rating":5,"title":"Lights off?","userReviewId":"4277751062","response":{}},"relationships":{}},{"type":"review","id":"st32166964","attributes":{"body":"Friends did not answer ever and were asking for your location in school which was really sketchy I read it a two star because they want to know where you are and what school you go to which is really creepy  I don’t like that just knowing where you are and what school you go to just does not sound right to me why would you not wanna know where we are and what school you go to like that’s really creepy you should just like delete that people like that better just don’t be so creepy I don’t ask for stuff like that don’t mean it’s weird like. Why do you want to know where we are and when we are at school and are you store because I don’t like that it’s just not put girl in there","date":"2019-06-06T13:42:17Z","name":"Jariely Wickes","rating":5,"title":"Great!","userReviewId":"4272705600","response":{}},"relationships":{}},{"type":"lockup/app","id":"363590051","attributes":{"deviceFamilies":["tvos","iphone","ipad","ipod"],"artistId":"363590054","artistName":"Netflix, Inc.","artistUrl":"https://apps.apple.com/ae/developer/netflix-inc/id363590054","kind":"iosSoftware","name":"Netflix","url":"https://apps.apple.com/ae/app/netflix/id363590051"},"relationships":{"offers":{"data":[{"type":"offer","id":"st9600"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st9601"}}}},{"type":"lockup/app","id":"425073498","attributes":{"deviceFamilies":["ipad"],"artistId":"363433636","artistName":"Savage Interactive Pty Ltd","artistUrl":"https://apps.apple.com/ae/developer/savage-interactive-pty-ltd/id363433636","kind":"iosSoftware","name":"Procreate","url":"https://apps.apple.com/ae/app/procreate/id425073498"},"relationships":{"offers":{"data":[{"type":"offer","id":"st1867372"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st429375"}]},"artwork":{"data":{"type":"image","id":"st9614"}}}},{"type":"lockup/app","id":"505658864","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"455506781","artistName":"Didilabs BV","artistUrl":"https://apps.apple.com/ae/developer/didilabs-bv/id455506781","kind":"iosSoftware","name":"Kaave - Coffee Fortune Reading","url":"https://apps.apple.com/ae/app/kaave-coffee-fortune-reading/id505658864"},"relationships":{"offers":{"data":[{"type":"offer","id":"st688597"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st688598"}}}},{"type":"lockup/app","id":"545519333","attributes":{"deviceFamilies":["tvos","iphone","ipad","ipod"],"artistId":"297606954","artistName":"AMZN Mobile LLC","artistUrl":"https://apps.apple.com/ae/developer/amzn-mobile-llc/id297606954","kind":"iosSoftware","name":"Amazon Prime Video","url":"https://apps.apple.com/ae/app/amazon-prime-video/id545519333"},"relationships":{"offers":{"data":[{"type":"offer","id":"st9621"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st9622"}}}},{"type":"lockup/app","id":"862390640","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"1300599719","artistName":"OSN (OSN)","artistUrl":"https://apps.apple.com/ae/developer/osn-osn/id1300599719","kind":"iosSoftware","name":"WAVO","url":"https://apps.apple.com/ae/app/wavo/id862390640"},"relationships":{"offers":{"data":[{"type":"offer","id":"st825333"}]},"genres":{"data":[{"type":"genre","id":"st28769"}]},"artwork":{"data":{"type":"image","id":"st825334"}}}},{"type":"lockup/app","id":"879915134","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"387763189","artistName":"MBC Group","artistUrl":"https://apps.apple.com/ae/developer/mbc-group/id387763189","kind":"iosSoftware","name":"SHAHID","url":"https://apps.apple.com/ae/app/shahid/id879915134"},"relationships":{"offers":{"data":[{"type":"offer","id":"st825335"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st825336"}}}},{"type":"lockup/app","id":"962284784","attributes":{"deviceFamilies":["tvos","iphone","ipad","ipod"],"artistId":"962284783","artistName":"Playco Entertainment FZ LLC","artistUrl":"https://apps.apple.com/ae/developer/playco-entertainment-fz-llc/id962284783","kind":"iosSoftware","name":"STARZPLAY ستارزبلاي","url":"https://apps.apple.com/ae/app/starzplay-%D8%B3%D8%AA%D8%A7%D8%B1%D8%B2%D8%A8%D9%84%D8%A7%D9%8A/id962284784"},"relationships":{"offers":{"data":[{"type":"offer","id":"st1867374"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st429375"}]},"artwork":{"data":{"type":"image","id":"st1867375"}}}},{"type":"lockup/app","id":"1003820457","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"562980411","artistName":"Wildworks, Inc.","artistUrl":"https://apps.apple.com/ae/developer/wildworks-inc/id562980411","kind":"iosSoftware","name":"Animal Jam - Play Wild!","url":"https://apps.apple.com/ae/app/animal-jam-play-wild/id1003820457"},"relationships":{"offers":{"data":[{"type":"offer","id":"st691543"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28762"}]},"artwork":{"data":{"type":"image","id":"st691544"}}}},{"type":"lockup/app","id":"1009442510","attributes":{"hasMessagesExtension":true,"deviceFamilies":["iphone","ipad","ipod"],"artistId":"618574061","artistName":"Fun Games For Free","artistUrl":"https://apps.apple.com/ae/developer/fun-games-for-free/id618574061","kind":"iosSoftware","name":"Colorfy: Colouring Art Book","url":"https://apps.apple.com/ae/app/colorfy-colouring-art-book/id1009442510"},"relationships":{"offers":{"data":[{"type":"offer","id":"st9640"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st52998"}]},"artwork":{"data":{"type":"image","id":"st9641"}}}},{"type":"lockup/app","id":"1032333168","attributes":{"deviceFamilies":["iphone","ipod"],"artistId":"1105344316","artistName":"TeleCloud, S.A.R.L","artistUrl":"https://apps.apple.com/ae/developer/telecloud-s-a-r-l/id1105344316","kind":"iosSoftware","name":"Basirly - Coffee Tarot reading","url":"https://apps.apple.com/ae/app/basirly-coffee-tarot-reading/id1032333168"},"relationships":{"offers":{"data":[{"type":"offer","id":"st1198638"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st1198639"}}}},{"type":"lockup/app","id":"1072380719","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"390712652","artistName":"Budge Studios","artistUrl":"https://apps.apple.com/ae/developer/budge-studios/id390712652","kind":"iosSoftware","name":"My Little Pony: Harmony Quest","url":"https://apps.apple.com/ae/app/my-little-pony-harmony-quest/id1072380719"},"relationships":{"offers":{"data":[{"type":"offer","id":"st43665"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28762"}]},"artwork":{"data":{"type":"image","id":"st43666"}}}},{"type":"lockup/app","id":"1091902866","attributes":{"deviceFamilies":["iphone","ipod"],"artistId":"1444567250","artistName":"Yalla Technology FZ-LLC","artistUrl":"https://apps.apple.com/ae/developer/yalla-technology-fz-llc/id1444567250","kind":"iosSoftware","name":"Yalla-Group Voice Chat Rooms","url":"https://apps.apple.com/ae/app/yalla-group-voice-chat-rooms/id1091902866"},"relationships":{"offers":{"data":[{"type":"offer","id":"st647618"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28756"}]},"artwork":{"data":{"type":"image","id":"st647619"}}}},{"type":"lockup/app","id":"1093108529","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"749046894","artistName":"Apalon Apps","artistUrl":"https://apps.apple.com/ae/developer/apalon-apps/id749046894","kind":"iosSoftware","name":"Colouring Book for Me","url":"https://apps.apple.com/ae/app/colouring-book-for-me/id1093108529"},"relationships":{"offers":{"data":[{"type":"offer","id":"st9648"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st9649"}}}},{"type":"lockup/app","id":"1111710488","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"1111708684","artistName":"HatsOffApps","artistUrl":"https://apps.apple.com/ae/developer/hatsoffapps/id1111708684","kind":"iosSoftware","name":"Celebrity Voice Changer -Sound","url":"https://apps.apple.com/ae/app/celebrity-voice-changer-sound/id1111710488"},"relationships":{"offers":{"data":[{"type":"offer","id":"st31865998"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28750"}]},"artwork":{"data":{"type":"image","id":"st31865999"}}}},{"type":"lockup/app","id":"1168138314","attributes":{"deviceFamilies":["iphone","ipod"],"artistId":"1168138313","artistName":"Global Creation Holdings Ltd","artistUrl":"https://apps.apple.com/ae/developer/global-creation-holdings-ltd/id1168138313","kind":"iosSoftware","name":"حظي - تبصير و قراءة فنجان","url":"https://apps.apple.com/ae/app/%D8%AD%D8%B8%D9%8A-%D8%AA%D8%A8%D8%B5%D9%8A%D8%B1-%D9%88-%D9%82%D8%B1%D8%A7%D8%A1%D8%A9-%D9%81%D9%86%D8%AC%D8%A7%D9%86/id1168138314"},"relationships":{"offers":{"data":[{"type":"offer","id":"st1867404"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st1867405"}}}},{"type":"lockup/app","id":"1255739677","attributes":{"deviceFamilies":["iphone","ipod"],"artistId":"359067226","artistName":"LINE Corporation","artistUrl":"https://apps.apple.com/ae/developer/line-corporation/id359067226","kind":"iosSoftware","name":"LINE LIVE: Broadcast your life","url":"https://apps.apple.com/ae/app/line-live-broadcast-your-life/id1255739677"},"relationships":{"offers":{"data":[{"type":"offer","id":"st8175831"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st429375"}]},"artwork":{"data":{"type":"image","id":"st8175832"}}}},{"type":"lockup/app","id":"1293646758","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"1460141469","artistName":"AppsX","artistUrl":"https://apps.apple.com/ae/developer/appsx/id1460141469","kind":"iosSoftware","name":"UNICORN: Pixel Art by Numbers","url":"https://apps.apple.com/ae/app/unicorn-pixel-art-by-numbers/id1293646758"},"relationships":{"offers":{"data":[{"type":"offer","id":"st9660"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28778"}]},"artwork":{"data":{"type":"image","id":"st9661"}}}},{"type":"lockup/app","id":"1296796112","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"390712652","artistName":"Budge Studios","artistUrl":"https://apps.apple.com/ae/developer/budge-studios/id390712652","kind":"iosSoftware","name":"Barbie Dreamhouse Adventures","url":"https://apps.apple.com/ae/app/barbie-dreamhouse-adventures/id1296796112"},"relationships":{"offers":{"data":[{"type":"offer","id":"st45443"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st52990"},{"type":"genre","id":"st53004"},{"type":"genre","id":"st52985"}]},"artwork":{"data":{"type":"image","id":"st45445"}}}},{"type":"lockup/app","id":"1300364926","attributes":{"deviceFamilies":["iphone","ipad","ipod"],"artistId":"1439250817","artistName":"Dream - Celebrity Dreamoji - Voice Changer - Emoji Keyboard Inc","artistUrl":"https://apps.apple.com/ae/developer/dream-celebrity-dreamoji-voice-changer-emoji-keyboard-inc/id1439250817","kind":"iosSoftware","name":"SUPERMOJI - the Emoji App","url":"https://apps.apple.com/ae/app/supermoji-the-emoji-app/id1300364926"},"relationships":{"offers":{"data":[{"type":"offer","id":"st106022"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st429375"}]},"artwork":{"data":{"type":"image","id":"st106023"}}}},{"type":"lockup/app","id":"1384325538","attributes":{"deviceFamilies":["iphone","ipod"],"artistId":"1250771919","artistName":"MOVEFAST Company, K.K.","artistUrl":"https://apps.apple.com/ae/developer/movefast-company-k-k/id1250771919","kind":"iosSoftware","name":"Hakuna Live - Meet and Chat","url":"https://apps.apple.com/ae/app/hakuna-live-meet-and-chat/id1384325538"},"relationships":{"offers":{"data":[{"type":"offer","id":"st688640"}]},"genres":{"data":[{"type":"genre","id":"st28769"}]},"artwork":{"data":{"type":"image","id":"st688641"}}}},{"type":"lockup/app","id":"1410367673","attributes":{"hasMessagesExtension":true,"deviceFamilies":["iphone","ipad","ipod"],"artistId":"1346779436","artistName":"Daily Apps","artistUrl":"https://apps.apple.com/ae/developer/daily-apps/id1346779436","kind":"iosSoftware","name":"Sticker Maker \u0026 Stickers Daily","url":"https://apps.apple.com/ae/app/sticker-maker-stickers-daily/id1410367673"},"relationships":{"offers":{"data":[{"type":"offer","id":"st15112"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28750"}]},"artwork":{"data":{"type":"image","id":"st15113"}}}},{"type":"lockup/app","id":"1457952897","attributes":{"deviceFamilies":["iphone","ipod"],"artistId":"1449830298","artistName":"Modernist LTD","artistUrl":"https://apps.apple.com/ae/developer/modernist-ltd/id1449830298","kind":"iosSoftware","name":"Mask Studio","url":"https://apps.apple.com/ae/app/mask-studio/id1457952897"},"relationships":{"offers":{"data":[{"type":"offer","id":"st351598"}]},"genres":{"data":[{"type":"genre","id":"st28769"},{"type":"genre","id":"st28750"}]},"artwork":{"data":{"type":"image","id":"st351599"}}}}]}</script><script type="fastboot/shoebox" id="shoebox-ember-mzstore-meta">{"priceCurrency":"AED","storefrontId":"143481","storefront":"AE"}</script><script type="fastboot/shoebox" id="shoebox-metrics-base">{"pageType":"Software","pageId":"1091902866","pageDetails":"Yalla Technology FZ-LLC_Yalla-Group Voice Chat Rooms","page":"Software_1091902866","serverInstance":"3003201","storeFrontHeader":"","language":"2","platformId":"8","platformName":"ItunesPreview","storeFront":"143481","environmentDataCenter":"MR22","pageUrl":"undefined/ae/app/yalla-group-voice-chat-rooms/id1091902866"}</script><script type="x/boundary" id="fastboot-body-end"></script>
+    </div>
+    <div id="modal-container"></div>
+    <script integrity="" src="/assets/vendor-8d02f0cc4a6fb341e0e4a97a2524b3bc.js"></script>
+    <script integrity="" src="/assets/web-experience-app-67afe6a40fff2a0a6b3f4de1daba4846.js"></script>
+    <script src="https://js-cdn.music.apple.com/-amp/v1/musickit.js"></script>
+
+    <div id="ember-basic-dropdown-wormhole"></div>
+  </body>
+</html>
