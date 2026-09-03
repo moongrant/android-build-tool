@@ -1,0 +1,193 @@
+name: Yalla October 2024 targeted Common Crawl discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-october-2024-commoncrawl-targeted.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      RESULT_BRANCH: pro-yalla-october-2024-commoncrawl-results
+      OUT_DIR: artifacts/yalla-october-2024-commoncrawl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Query corrected Common Crawl URL patterns
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests warcio beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR/raw"
+          cat > /tmp/discover.py <<'PY'
+          from __future__ import annotations
+          import concurrent.futures, io, json, re, time, hashlib
+          from collections import defaultdict, Counter
+          from pathlib import Path
+          from urllib.parse import quote, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from warcio.archiveiterator import ArchiveIterator
+
+          OUT=Path('artifacts/yalla-october-2024-commoncrawl'); RAW=OUT/'raw'; RAW.mkdir(parents=True,exist_ok=True)
+          S=requests.Session(); S.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'*/*'})
+          PATTERNS=[
+            'activity2.yalla.live/activity/2024dist/*',
+            'activity2.qrsshine.com/activity/2024dist/*',
+            'activity2.windgh.com/activity/2024dist/*',
+            'event.yalla.live/activity/2024dist/*',
+            'h5client.peakxyz.com/activity/2024dist/*',
+            'file.yalla.live/activity/*',
+            'file.yalla.live/Activity/*',
+          ]
+          KNOWN={x.lower() for x in ['8thAnniversary','9thAnniversary','yallaSeason','ferrisWheel','fw_newyear','rollerCoaster','activityMap','adha','10thAnniversary','2025NewYear','RoyalVictory','Ramadan','ramadanBless','recallAndRecruit','recallLanding','seaDominator','footballCarnival','carKing']}
+          KEY=['lucky carnival','luckycarnival','lucky_carnival','carnival','circus','prize pool','lucky moment','halloween','pumpkin','ghost','witch','candy','monster party','night of fear','هالوين','ليلة الرعب']
+
+          def get(url,timeout=(20,120),tries=3,headers=None):
+              for i in range(tries):
+                  try:
+                      r=S.get(url,timeout=timeout,headers=headers,allow_redirects=True)
+                      if r.status_code in {429,500,502,503,504} and i+1<tries:time.sleep(1.3*(i+1));continue
+                      return r
+                  except Exception:
+                      if i+1<tries:time.sleep(1.3*(i+1))
+              return None
+
+          coll=get('https://index.commoncrawl.org/collinfo.json',timeout=(20,60))
+          indexes=[]
+          if coll and coll.status_code==200:
+              for item in coll.json():
+                  m=re.search(r'CC-MAIN-(20\d{2})-',str(item.get('id','')))
+                  if m and 2024<=int(m.group(1))<=2026:indexes.append(item)
+          indexes=sorted(indexes,key=lambda x:x['id'],reverse=True)
+          # All 2024-2026 indexes, because crawls can discover old URLs later.
+          (OUT/'indexes.json').write_text(json.dumps([x['id'] for x in indexes],indent=2))
+
+          def query(index,pattern):
+              api=index['cdx-api']
+              # Correct wildcard query: do not combine wildcard with matchType=prefix.
+              params=[('url',pattern),('output','json'),('filter','status:200'),('collapse','urlkey')]
+              endpoint=api+'?'+'&'.join(f'{quote(k,safe="")}={quote(v,safe="*:/.()[]|^$+-_")}' for k,v in params)
+              r=get(endpoint,timeout=(30,180),tries=3); rows=[]
+              if r and r.status_code==200:
+                  for line in r.text.splitlines():
+                      try:item=json.loads(line)
+                      except Exception:continue
+                      if isinstance(item,dict): item['_index']=index['id']; item['_pattern']=pattern; rows.append(item)
+              return {'index':index['id'],'pattern':pattern,'endpoint':endpoint,'http':r.status_code if r else None,'bytes':len(r.content) if r else 0,'rows':rows,'sample':r.text[:1000] if r else ''}
+
+          queries=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as ex:
+              futures=[ex.submit(query,index,pattern) for index in indexes for pattern in PATTERNS]
+              for f in concurrent.futures.as_completed(futures):queries.append(f.result())
+          rows=[]
+          for q in queries:rows.extend(q['rows'])
+          unique={}
+          for row in rows:unique[(row.get('_index'),row.get('url'),row.get('timestamp'))]=row
+          rows=list(unique.values())
+          (OUT/'query-summary.json').write_text(json.dumps([{k:v for k,v in q.items() if k!='rows'}|{'rowCount':len(q['rows'])} for q in queries],ensure_ascii=False,indent=2))
+          (OUT/'records.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+
+          def activity_root(url):
+              try:
+                  p=urlparse(url); parts=[x for x in p.path.split('/') if x]
+                  if len(parts)>=3 and parts[0].lower()=='activity' and re.fullmatch(r'20\d{2}dist',parts[1],re.I):
+                      return {'host':p.hostname,'bucket':parts[1],'project':parts[2],'root':f'{p.scheme or "https"}://{p.netloc}/activity/{parts[1]}/{parts[2]}/'}
+              except Exception:pass
+              return None
+          groups=defaultdict(list); cdn=defaultdict(list)
+          for row in rows:
+              url=str(row.get('url','')); root=activity_root(url)
+              if root:groups[(root['host'],root['bucket'],root['project'],root['root'])].append(row)
+              elif 'file.yalla.live' in url.lower():
+                  p=urlparse(url); parts=[x for x in p.path.split('/') if x]
+                  if len(parts)>=2 and parts[0].lower()=='activity':cdn[parts[1]].append(row)
+          inventory=[]
+          for (host,bucket,project,root),items in groups.items():
+              urls=sorted({str(x.get('url','')) for x in items}); ext=Counter(Path(urlparse(u).path).suffix.lower() for u in urls)
+              timestamps=[str(x.get('timestamp','')) for x in items if x.get('timestamp')]
+              inventory.append({'host':host,'bucket':bucket,'project':project,'root':root,'known':project.lower() in KNOWN,'records':len(items),'files':len(urls),'first':min(timestamps) if timestamps else None,'last':max(timestamps) if timestamps else None,'october2024':sum(t.startswith('202410') for t in timestamps),'js':ext['.js']+ext['.mjs'],'css':ext['.css'],'images':sum(ext[x] for x in ['.png','.jpg','.jpeg','.webp','.gif','.svg']),'json':ext['.json'],'sampleUrls':urls[:150]})
+          inventory.sort(key=lambda x:(-x['october2024'],-x['records'],x['project']))
+          (OUT/'activity-root-inventory.json').write_text(json.dumps(inventory,ensure_ascii=False,indent=2))
+          cdn_inventory=[{'project':p,'known':p.lower() in KNOWN,'records':len(items),'sampleUrls':sorted({str(x.get('url','')) for x in items})[:120]} for p,items in sorted(cdn.items(),key=lambda kv:-len(kv[1]))]
+          (OUT/'cdn-project-inventory.json').write_text(json.dumps(cdn_inventory,ensure_ascii=False,indent=2))
+
+          def warc_body(row,max_bytes=18_000_000):
+              try:
+                  length=int(row.get('length') or 0); offset=int(row.get('offset') or 0); filename=row.get('filename')
+                  if not filename or length<=0 or length>max_bytes:return None
+                  r=get('https://data.commoncrawl.org/'+filename,timeout=(30,150),tries=2,headers={'Range':f'bytes={offset}-{offset+length-1}'})
+                  if not r or r.status_code not in {200,206}:return None
+                  for rec in ArchiveIterator(io.BytesIO(r.content)):
+                      if rec.rec_type=='response':
+                          body=rec.content_stream().read(max_bytes+1)
+                          if len(body)>max_bytes:return None
+                          ctype=rec.http_headers.get_header('Content-Type') if rec.http_headers else ''
+                          return body,ctype or ''
+              except Exception:return None
+              return None
+
+          # Inspect HTML/JS in unknown projects and every October 2024 record.
+          candidates=[]
+          selected=[]
+          for row in rows:
+              url=str(row.get('url','')); project=(activity_root(url) or {}).get('project','')
+              ext=Path(urlparse(url).path).suffix.lower(); ts=str(row.get('timestamp',''))
+              if project and (project.lower() not in KNOWN or ts.startswith('202410')) and (ext in {'','.html','.htm','.js','.json'}):selected.append(row)
+          # Largest/newest first, cap 500.
+          selected=sorted(selected,key=lambda x:(str(x.get('timestamp','')).startswith('202410'),int(x.get('length') or 0)),reverse=True)[:500]
+          for row in selected:
+              fetched=warc_body(row)
+              if not fetched:continue
+              body,ctype=fetched; text=body.decode('utf-8','ignore'); low=text.casefold(); hits=[k for k in KEY if k.casefold() in low]
+              urls=sorted(set(u.rstrip(',.;:)]}') for u in re.findall(r'https?://[^\s"\'<>\\)]+',text,re.I)))
+              item={'url':row.get('url'),'timestamp':row.get('timestamp'),'index':row.get('_index'),'bytes':len(body),'contentType':ctype,'keywordHits':hits,'activityUrls':[u for u in urls if any(x in u.lower() for x in ['activity2.','file.yalla.live/activity/'])]}
+              if hits or item['activityUrls']:
+                  file=RAW/(hashlib.sha1((str(item['timestamp'])+str(item['url'])).encode()).hexdigest()+Path(urlparse(str(item['url'])).path).suffix);file.write_bytes(body);item['file']=file.relative_to(OUT).as_posix()
+                  candidates.append(item)
+          (OUT/'content-candidates.json').write_text(json.dumps(candidates,ensure_ascii=False,indent=2))
+
+          lines=['# Yalla October 2024 Targeted Common Crawl Discovery','',f'- Indexes queried: {len(indexes)}',f'- Query combinations: {len(queries)}',f'- Records: {len(rows)}',f'- Activity roots: {len(inventory)}',f'- CDN project buckets: {len(cdn_inventory)}',f'- Content candidates: {len(candidates)}','', '| # | Root | Known | Records | Oct 2024 | JS/CSS/Images | First → Last |','|---:|---|---|---:|---:|---|---|']
+          for i,x in enumerate(inventory,1):lines.append(f"| {i} | `{x['host']}/{x['bucket']}/{x['project']}` | {x['known']} | {x['records']} | {x['october2024']} | {x['js']}/{x['css']}/{x['images']} | {x['first']} → {x['last']} |")
+          lines += ['','## Content candidates','']
+          for x in candidates:lines += [f"### `{x['timestamp']}` · `{x['url']}`",f"Hits: {', '.join(x['keywordHits'])}",f"Activity URLs: {len(x['activityUrls'])}",'']+[f'- `{u}`' for u in x['activityUrls']]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'indexes':len(indexes),'queries':len(queries),'records':len(rows),'roots':len(inventory),'unknownRoots':[x['project'] for x in inventory if not x['known']],'candidates':len(candidates)},ensure_ascii=False,indent=2))
+          PY
+          python /tmp/discover.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact Common Crawl findings
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-october-cc-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md indexes.json query-summary.json activity-root-inventory.json cdn-project-inventory.json content-candidates.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-discovery-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla October 2024 Common Crawl discovery ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload full Common Crawl artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-october-2024-commoncrawl-targeted
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
