@@ -1,0 +1,60 @@
+name: Pro Falla Halloween-adaptable fast discovery
+
+on:
+  pull_request:
+    branches: [research/pro-falla-halloween-20260902]
+    paths:
+      - '.github/workflows/pro-falla-halloween-adaptable-fast.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-adaptable-20260903
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+      - name: Extract and run bounded scanner
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-halloween-adaptable-fast
+          START_ID: '1'
+          END_ID: '1900'
+          HTTP_CONCURRENCY: '96'
+          CAPTURE_LIMIT: '24'
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          src=Path('.github/workflows/pro-falla-halloween-adaptable-discovery.yml').read_text(encoding='utf-8')
+          start=src.index("          python - <<'PY'\n")+len("          python - <<'PY'\n")
+          end=src.index("\n          PY\n",start)
+          lines=[]
+          for line in src[start:end].splitlines():
+              lines.append(line[10:] if line.startswith('          ') else line)
+          Path('/tmp/halloween_adaptable_scan.py').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+          mkdir -p "$OUT_DIR"
+          python /tmp/halloween_adaptable_scan.py
+      - name: Print report
+        if: always()
+        run: cat artifacts/pro-falla-halloween-adaptable-fast/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-halloween-adaptable-fast
+          path: artifacts/pro-falla-halloween-adaptable-fast
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
