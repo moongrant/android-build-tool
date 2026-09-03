@@ -1,0 +1,155 @@
+name: Yalla Halloween APKMirror key-version scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-apkmirror-key-versions.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-key-apks-results
+      OUT_DIR: artifacts/yalla-halloween-key-apks
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download exact 2021 and 2022 Halloween-window builds and scan
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR" /tmp/yalla-key-apks
+          cat > /tmp/scan.py <<'PY'
+          from __future__ import annotations
+          import hashlib,json,os,re,shutil,subprocess,zipfile
+          from pathlib import Path
+          from urllib.parse import urljoin
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-key-apks');TMP.mkdir(parents=True,exist_ok=True)
+          RELEASES={
+            '2.12.0':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-12-0-release/yalla-group-voice-chat-rooms-2-12-0-android-apk-download/',
+            '2.17.1':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-17-1-release/yalla-group-voice-chat-rooms-2-17-1-android-apk-download/',
+          }
+          TERMS=['halloween','hallowe’en','all hallows','trick or treat','trick-or-treat','jack-o-lantern','jack o lantern','pumpkin','pumpkins','هالوين','الهالوين','عيد الهالوين','خدعة أم حلوى','اليقطين','قرع','cadılar bayramı','cadilar bayrami','balkabağı','balkabagi','dia das bruxas','abóbora','abobora','noche de brujas','calabaza','citrouille','हैलोवीन','کدو']
+          ALIASES=['horror night','night of fear','spooky night','ghost night','monster night','monster party','masquerade party','costume party','haunted house','haunted castle','magic castle','candy party','nightmare carnival','ghost festival','ghost city','ghost castle','witch night','scary night','ليلة الرعب','ليلة الهلع','ليلة الأشباح','ليلة الوحوش','حفلة الوحوش','حفلة تنكرية','بيت الرعب','قصر الأشباح','مدينة الأشباح','مهرجان الأشباح','القلعة المسحورة','حفلة الحلوى','korku gecesi','korku evi','hayalet gecesi','canavar partisi','büyülü kale','buyulu kale','kostüm partisi','kostum partisi','noite do terror','festa à fantasia','festa a fantasia','casa assombrada','noite dos monstros','noche de terror','fiesta de disfraces','casa embrujada','noche de monstruos']
+          MOTIFS=['ghost','ghosts','witch','witches','candy','candies','haunted','spooky','skeleton','zombie','vampire','bat','monster','skull','coffin','graveyard','cemetery','cauldron','cobweb','costume','masquerade','scary','nightmare','شبح','أشباح','ساحرة','ساحر','حلوى','مسكون','مخيف','هيكل عظمي','زومبي','مصاص دماء','خفاش','وحش','وحوش','جمجمة','مقبرة','مرجل','تنكري','hayalet','cadı','cadi','şeker','seker','perili','canavar','iskelet','zombi','vampir','yarasa','kafatası','mezarlık','fantasma','bruxa','bruja','doces','dulces','assombrado','embrujado','esqueleto','vampiro','morcego','calavera']
+          H5=['activity2.','file.yalla','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl','templateactivity','getactivitylistforcenter','activitycenter','roomtheme','themeurl','gifturl']
+          URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          LATIN={x for x in TERMS+ALIASES+MOTIFS if re.fullmatch(r"[A-Za-z0-9 '\-’]+",x)}
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','Accept-Language':'en-US,en;q=.9','Accept':'text/html,application/xhtml+xml,application/xml;q=.9,*/*;q=.8'})
+
+          def hit(text,term):
+              low=text.casefold();t=term.casefold()
+              if term in LATIN:return re.search(r'(?<![a-z])'+re.escape(t)+r'(?![a-z])',low) is not None
+              return t in low
+          def hits(text,terms):return [t for t in terms if hit(text,t)]
+          def fetch(url,ref=None):return S.get(url,headers={'Referer':ref} if ref else {},timeout=(20,180),allow_redirects=True)
+          def links(text,base):
+              soup=BeautifulSoup(text,'html.parser');out=[]
+              for a in soup.find_all('a',href=True):
+                  u=urljoin(base,a['href'])
+                  if any(x in u for x in ['/download/?','download.php','downloadr','apkmirror.com/wp-content/uploads/']) or u.lower().endswith(('.apk','.apkm','.xapk')):out.append(u)
+              for u in re.findall(r'https?://[^\"\'<>\s]+',text):
+                  u=u.replace('&amp;','&')
+                  if any(x in u for x in ['downloadr','download.php','/download/?']) or u.lower().endswith(('.apk','.apkm','.xapk')):out.append(u)
+              ded=[]
+              for u in out:
+                  if u not in ded:ded.append(u)
+              return sorted(ded,key=lambda u:(0 if 'forcebaseapk' in u else 1 if 'downloadr' in u else 2,len(u)))
+          def download(version,page):
+              folder=OUT/version;folder.mkdir(parents=True,exist_ok=True);trace=[]
+              r=fetch(page);trace.append({'url':page,'status':r.status_code,'finalUrl':r.url,'bytes':len(r.content),'contentType':r.headers.get('content-type')});(folder/'01-page.html').write_bytes(r.content)
+              queue=[(u,r.url) for u in links(r.text,r.url)[:25]];seen=set()
+              while queue and len(seen)<50:
+                  u,ref=queue.pop(0)
+                  if u in seen:continue
+                  seen.add(u)
+                  try:x=fetch(u,ref)
+                  except Exception as e:trace.append({'url':u,'error':repr(e)});continue
+                  ct=x.headers.get('content-type','');trace.append({'url':u,'status':x.status_code,'finalUrl':x.url,'bytes':len(x.content),'contentType':ct})
+                  if x.status_code==200 and len(x.content)>30_000_000 and (x.content[:2]==b'PK' or any(t in ct.lower() for t in ['android','octet-stream','zip'])):
+                      apk=folder/f'yalla-{version}.apk';apk.write_bytes(x.content);(folder/'download-trace.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2));return apk
+                  if 'html' in ct.lower() or x.content.lstrip().startswith(b'<'):
+                      (folder/f'{len(seen)+1:02d}-step.html').write_bytes(x.content)
+                      for nxt in links(x.text,x.url):
+                          if nxt not in seen:queue.append((nxt,x.url))
+              (folder/'download-trace.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2));return None
+          def strings_all(path):
+              out=[]
+              for cmd in (['strings','-a','-n','4'],['strings','-a','-el','-n','4'],['strings','-a','-eb','-n','4']):
+                  try:p=subprocess.run(cmd+[str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=120);out.append(p.stdout.decode('utf-8','ignore'))
+                  except Exception:pass
+              return '\n'.join(out)
+          def scan(version,apk):
+              result={'version':version,'downloaded':bool(apk and zipfile.is_zipfile(apk)),'apkBytes':apk.stat().st_size if apk else 0,'apkSha256':hashlib.sha256(apk.read_bytes()).hexdigest() if apk else None,'filesScanned':0,'explicit':[],'aliases':[],'motifClusters':[],'pathMatches':[],'h5Contexts':[],'activityUrls':[]}
+              if not result['downloaded']:return result
+              dec=TMP/version;shutil.rmtree(dec,ignore_errors=True);dec.mkdir(parents=True);zipfile.ZipFile(apk).extractall(dec);urls=set()
+              for path in dec.rglob('*'):
+                  if not path.is_file() or path.stat().st_size>280_000_000:continue
+                  result['filesScanned']+=1;rel=path.relative_to(dec).as_posix();ph=hits(rel,TERMS+ALIASES+MOTIFS)
+                  if ph:result['pathMatches'].append({'file':rel,'terms':ph})
+                  text=strings_all(path)
+                  if not text:continue
+                  lines=text.splitlines()
+                  for i,line in enumerate(lines):
+                      eh=hits(line,TERMS);ah=hits(line,ALIASES);mh=hits(line,MOTIFS);signal=any(s in line.casefold() for s in H5)
+                      if eh or ah or mh or signal:
+                          ctx='\n'.join(lines[max(0,i-10):min(len(lines),i+11)])[:20000];adj=any(s in ctx.casefold() for s in H5);item={'file':rel,'line':line[:4000],'context':ctx,'activityAdjacent':adj}
+                          if eh:result['explicit'].append({**item,'terms':eh})
+                          if ah:result['aliases'].append({**item,'terms':ah,'contextMotifs':hits(ctx,MOTIFS)})
+                          if mh and (adj or len(set(x.casefold() for x in hits(ctx,MOTIFS)))>=3):result['motifClusters'].append({**item,'terms':mh,'contextMotifs':hits(ctx,MOTIFS)})
+                          if signal:result['h5Contexts'].append(item)
+                      for u in URL_RE.findall(line):
+                          u=u.rstrip(',.;:)]}')
+                          if any(s in u.casefold() for s in H5) or hits(u,TERMS+ALIASES+MOTIFS):urls.add(u)
+              result['activityUrls']=sorted(urls);shutil.rmtree(dec,ignore_errors=True);return result
+
+          results=[]
+          for version,page in RELEASES.items():
+              try:apk=download(version,page)
+              except Exception as e:apk=None;(OUT/version/'download-error.txt').write_text(repr(e))
+              result=scan(version,apk);(OUT/version/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));results.append(result)
+          summary={'results':results,'downloaded':sum(x['downloaded'] for x in results),'explicit':sum(len(x['explicit']) for x in results),'aliases':sum(len(x['aliases']) for x in results),'motifClusters':sum(len(x['motifClusters']) for x in results),'activityUrls':sorted({u for x in results for u in x['activityUrls']})};(OUT/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween APKMirror Key-Version Scan','',f"- Requested: {len(results)}",f"- Downloaded: {summary['downloaded']}",f"- Explicit Halloween hits: {summary['explicit']}",f"- Euphemistic title hits: {summary['aliases']}",f"- Motif clusters: {summary['motifClusters']}",f"- Activity URLs: {len(summary['activityUrls'])}",'','| Version | Downloaded | APK bytes | Files | Explicit | Aliases | Motif clusters | URLs |','|---|---|---:|---:|---:|---:|---:|---:|']
+          for x in results:lines.append(f"| {x['version']} | {x['downloaded']} | {x['apkBytes']} | {x['filesScanned']} | {len(x['explicit'])} | {len(x['aliases'])} | {len(x['motifClusters'])} | {len(x['activityUrls'])} |")
+          for x in results:
+              lines+=['',f"## {x['version']}",'']
+              for key in ['explicit','aliases','motifClusters']:
+                  for item in x[key][:120]:lines += [f"### {key} · `{item['file']}` · {', '.join(item.get('terms',[]))}",'```',item['context'][:6000],'```','']
+          lines += ['## Activity URLs','']+[f'- `{u}`' for u in summary['activityUrls']]
+          (OUT/'REPORT.md').write_text('\n'.join(lines));print(json.dumps({'downloaded':summary['downloaded'],'explicit':summary['explicit'],'aliases':summary['aliases'],'motifClusters':summary['motifClusters'],'urls':len(summary['activityUrls'])},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/scan.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact key-version results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-key-apks-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md summary.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for v in 2.12.0 2.17.1; do mkdir -p "$stage/$v"; for f in result.json download-trace.json download-error.txt; do cp "$OUT_DIR/$v/$f" "$stage/$v/" 2>/dev/null || true; done; done
+          git config user.name 'pro-yalla-halloween-bot';git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH";git rm -rf . >/dev/null 2>&1 || true;cp -a "$stage"/. .;git add .;git commit -m "Publish Yalla Halloween key APK scan ${GITHUB_RUN_ID}";git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete key-version artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-apkmirror-key-versions
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
