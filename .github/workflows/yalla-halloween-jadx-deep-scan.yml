@@ -1,0 +1,210 @@
+name: Yalla Halloween JADX deep scan of October builds
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-jadx-deep-scan.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-jadx-results
+      OUT_DIR: artifacts/yalla-halloween-jadx
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install tools and retrieve exact APKMirror artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep jq
+          mkdir -p /tmp/jadx /tmp/gap "$OUT_DIR"
+          curl --fail --location --retry 5 --retry-all-errors \
+            -o /tmp/jadx.zip \
+            https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          gh run download 33710703624 --repo "$GITHUB_REPOSITORY" \
+            -n yalla-halloween-apkmirror-gap-scan -D /tmp/gap
+          find /tmp/gap -type f -name '*.apk' -printf '%s %p\n' | sort -nr | tee "$OUT_DIR/apk-inventory.txt"
+          test "$(find /tmp/gap -type f -name '*.apk' | wc -l)" -ge 3
+
+      - name: Decompile 2022 and 2023 Halloween-window builds
+        run: |
+          set -Eeuo pipefail
+          versions=(2.18.1 2.23.0 2.23.2)
+          for version in "${versions[@]}"; do
+            apk="$(find /tmp/gap -type f -path "*/${version}/*" -name '*.apk' | head -1)"
+            test -f "$apk"
+            out="$OUT_DIR/$version"
+            mkdir -p "$out"
+            sha256sum "$apk" > "$out/apk.sha256"
+            stat -c '%n %s bytes' "$apk" > "$out/apk.txt"
+
+            # Decode resources separately, then sources. Failures are preserved and do not create false positives.
+            /tmp/jadx/bin/jadx --no-src --show-bad-code --threads-count 4 \
+              --output-dir "$out/resources" "$apk" \
+              > "$out/jadx-resources.stdout.txt" 2> "$out/jadx-resources.stderr.txt" || true
+            /tmp/jadx/bin/jadx --no-res --show-bad-code --threads-count 4 \
+              --output-dir "$out/source" "$apk" \
+              > "$out/jadx-source.stdout.txt" 2> "$out/jadx-source.stderr.txt" || true
+
+            find "$out/resources" "$out/source" -type f | wc -l > "$out/decompiled-file-count.txt" || true
+          done
+
+      - name: Run exact multilingual and euphemistic Halloween search
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/analyse.py <<'PY'
+          from __future__ import annotations
+          import json, re
+          from pathlib import Path
+
+          ROOT=Path('artifacts/yalla-halloween-jadx')
+          explicit=[
+            'halloween','hallowe’en','all hallows','trick or treat','trick-or-treat','jack-o-lantern','jack o lantern','pumpkin','pumpkins',
+            'هالوين','الهالوين','عيد الهالوين','خدعة أم حلوى','اليقطين','قرع العسل',
+            'cadılar bayramı','cadilar bayrami','balkabağı','balkabagi',
+            'dia das bruxas','abóbora','abobora','noche de brujas','calabaza','citrouille',
+            'हैलोवीन','कद्दू','ہالووین','کدو'
+          ]
+          aliases=[
+            'horror night','night of fear','spooky night','ghost night','monster night','monster party','masquerade party','costume party',
+            'haunted house','haunted castle','magic castle','candy party','nightmare carnival','ghost festival','ghost city','ghost castle','witch night','scary night',
+            'ليلة الرعب','ليلة الهلع','ليلة الأشباح','ليلة الوحوش','حفلة الوحوش','حفلة تنكرية','بيت الرعب','قصر الأشباح','مدينة الأشباح','مهرجان الأشباح','القلعة المسحورة','حفلة الحلوى',
+            'korku gecesi','korku evi','hayalet gecesi','canavar partisi','büyülü kale','buyulu kale','kostüm partisi','kostum partisi',
+            'noite do terror','festa à fantasia','festa a fantasia','casa assombrada','noite dos monstros',
+            'noche de terror','fiesta de disfraces','casa embrujada','noche de monstruos',
+            'nuit de l’horreur','nuit de l horreur','maison hantée','maison hantee','fête costumée','fete costumee',
+            'malam horor','rumah hantu','pesta kostum','malam monster'
+          ]
+          motifs=['ghost','witch','candy','haunted','spooky','skeleton','zombie','vampire','bat','monster','skull','coffin','graveyard','cemetery','cauldron','cobweb','costume','masquerade','scary','nightmare',
+                  'شبح','أشباح','ساحرة','ساحر','حلوى','مسكون','مخيف','هيكل عظمي','زومبي','مصاص دماء','خفاش','وحش','وحوش','جمجمة','مقبرة','مرجل','تنكري',
+                  'hayalet','cadı','cadi','şeker','seker','perili','canavar','iskelet','zombi','vampir','yarasa','kafatası','mezarlık','mezarlik',
+                  'fantasma','bruxa','bruja','doces','dulces','assombrado','embrujado','esqueleto','vampiro','morcego','murciélago','murcielago','calavera',
+                  'fantôme','fantome','sorcière','sorciere','bonbon','hanté','hante','squelette','chauve-souris','cimetière','cimetiere']
+          activity_signals=['activity2.','file.yalla','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl','templateactivity','getactivitylistforcenter','activitycenter','eventcenter','targeturl','actionurl','webview','roomtheme','themeurl','gifturl']
+          url_re=re.compile(r'https?://[^\s"\'<>\\)]+',re.I)
+
+          def exact_hit(text, term):
+              low=text.casefold(); t=term.casefold()
+              if re.fullmatch(r"[a-z0-9 '\-’]+",t):
+                  return re.search(r'(?<![a-z])'+re.escape(t)+r'(?![a-z])',low) is not None
+              return t in low
+          def terms(text, values): return [v for v in values if exact_hit(text,v)]
+
+          combined=[]
+          for version in ['2.18.1','2.23.0','2.23.2']:
+              folder=ROOT/version
+              result={'version':version,'explicit':[],'aliases':[],'motifClusters':[],'activityContexts':[],'roomThemeFiles':[],'urls':[]}
+              urls=set()
+              files=[p for p in folder.rglob('*') if p.is_file() and p.stat().st_size<25_000_000 and p.suffix.lower() in {'.java','.xml','.json','.txt','.js','.html','.css','.properties','.smali'}]
+              for path in files:
+                  rel=path.relative_to(folder).as_posix()
+                  try:text=path.read_text(errors='ignore')
+                  except Exception:continue
+                  path_hits=terms(rel,explicit+aliases+motifs)
+                  if path_hits: result['roomThemeFiles'].append({'file':rel,'pathHits':path_hits})
+                  lines=text.splitlines()
+                  for i,line in enumerate(lines):
+                      eh=terms(line,explicit); ah=terms(line,aliases); mh=terms(line,motifs)
+                      signal=any(x in line.casefold() for x in activity_signals)
+                      if not (eh or ah or mh or signal): continue
+                      context='\n'.join(lines[max(0,i-12):min(len(lines),i+13)])[:20000]
+                      adjacent=any(x in context.casefold() for x in activity_signals)
+                      item={'file':rel,'line':i+1,'text':line[:4000],'context':context,'activityAdjacent':adjacent}
+                      if eh:result['explicit'].append({**item,'terms':eh})
+                      if ah:
+                          ctx_m=terms(context,motifs);result['aliases'].append({**item,'terms':ah,'contextMotifs':ctx_m})
+                      if mh:
+                          ctx_m=terms(context,motifs)
+                          if adjacent or len({x.casefold() for x in ctx_m})>=3: result['motifClusters'].append({**item,'terms':mh,'contextMotifs':ctx_m})
+                      if signal:result['activityContexts'].append(item)
+                  for u in url_re.findall(text):
+                      u=u.rstrip(',.;:)]}')
+                      if any(x in u.casefold() for x in activity_signals) or terms(u,explicit+aliases+motifs): urls.add(u)
+              # de-duplicate exact source lines
+              for key in ['explicit','aliases','motifClusters','activityContexts','roomThemeFiles']:
+                  seen=set(); rows=[]
+                  for item in result[key]:
+                      marker=(item.get('file'),item.get('line'),item.get('text'),tuple(item.get('pathHits',[])))
+                      if marker not in seen:seen.add(marker);rows.append(item)
+                  result[key]=rows
+              result['urls']=sorted(urls)
+              (folder/'analysis.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+              lines=[f'# Yalla {version} JADX Halloween Deep Scan','',f"- Decompiled searchable files: {len(files)}",f"- Explicit Halloween hits: {len(result['explicit'])}",f"- Euphemistic title hits: {len(result['aliases'])}",f"- Multi-motif clusters: {len(result['motifClusters'])}",f"- Activity/theme contexts: {len(result['activityContexts'])}",f"- Relevant URLs: {len(result['urls'])}",'']
+              for title,key in [('Explicit Halloween','explicit'),('Euphemistic titles','aliases'),('Motif clusters','motifClusters')]:
+                  lines += [f'## {title}','']
+                  for item in result[key][:160]:lines += [f"### `{item['file']}:{item.get('line','')}` · {', '.join(item.get('terms',[]))}",'```',item['context'][:6500],'```','']
+              lines += ['## Relevant URLs','']+[f'- `{u}`' for u in result['urls']]
+              (folder/'REPORT.md').write_text('\n'.join(lines))
+              combined.append(result)
+          summary={'versions':[{'version':x['version'],'explicit':len(x['explicit']),'aliases':len(x['aliases']),'motifClusters':len(x['motifClusters']),'activityContexts':len(x['activityContexts']),'urls':len(x['urls'])} for x in combined]}
+          (ROOT/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween JADX Deep Scan','', '| Version | Explicit | Euphemistic | Motif clusters | Activity/theme contexts | URLs |','|---|---:|---:|---:|---:|---:|']
+          for x in summary['versions']:lines.append(f"| {x['version']} | {x['explicit']} | {x['aliases']} | {x['motifClusters']} | {x['activityContexts']} | {x['urls']} |")
+          (ROOT/'REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          PY
+          python /tmp/analyse.py 2>&1 | tee "$OUT_DIR/analysis.log"
+
+      - name: Extract room-theme and activity-center source subsets
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          for version in 2.18.1 2.23.0 2.23.2; do
+            src="$OUT_DIR/$version/source/sources"
+            subset="$OUT_DIR/$version/subset"
+            mkdir -p "$subset"
+            if [[ -d "$src" ]]; then
+              find "$src" -type f -print0 | xargs -0 -r grep -IlE 'RoomTheme|roomTheme|ThemeStore|GetActivityListForCenter|ActivityCenter|activityUrl|h5EntranceUrl|jumpUrl|shareUrl|redirectUrl|templateActivity|eventId|campaignId' | sort > "$OUT_DIR/$version/subset-files.txt" || true
+              i=0
+              while IFS= read -r file; do
+                [[ -f "$file" ]] || continue; i=$((i+1)); rel="${file#$src/}"; safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr '$' '@' | tr -cd '[:alnum:]_.@-')"; cp "$file" "$subset/${i}-${safe}"
+              done < "$OUT_DIR/$version/subset-files.txt"
+              rg -n -i -C 45 'RoomTheme|ThemeStore|GetActivityListForCenter|ActivityCenter|activityUrl|h5EntranceUrl|jumpUrl|shareUrl|redirectUrl|templateActivity|eventId|campaignId' "$subset" > "$OUT_DIR/$version/subset-contexts.txt" || true
+            fi
+          done
+
+      - name: Publish compact JADX findings
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-jadx-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md summary.json analysis.log apk-inventory.txt; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for version in 2.18.1 2.23.0 2.23.2; do
+            mkdir -p "$stage/$version"
+            for f in REPORT.md analysis.json subset-contexts.txt subset-files.txt apk.txt apk.sha256 decompiled-file-count.txt; do cp "$OUT_DIR/$version/$f" "$stage/$version/" 2>/dev/null || true; done
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween JADX scan ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete JADX archaeology artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-jadx-deep-scan
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
