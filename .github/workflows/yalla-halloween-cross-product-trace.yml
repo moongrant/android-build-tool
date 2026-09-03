@@ -1,0 +1,241 @@
+name: Yalla Halloween cross-product gift and H5 trace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-cross-product-trace.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  OUT_DIR: artifacts/yalla-halloween-cross-product
+  RESULT_BRANCH: pro-yalla-halloween-cross-product-results
+
+jobs:
+  trace:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install analysis dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep jq
+          mkdir -p "$OUT_DIR" /tmp/yalla-cross-product
+
+      - name: Download exact Yalla Live October-window APKs from prior verified artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/yalla-cross-product/live-artifact
+          gh run download 33710703624 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name yalla-halloween-apkmirror-gap-scan \
+            --dir /tmp/yalla-cross-product/live-artifact
+          find /tmp/yalla-cross-product/live-artifact -type f -name '*.apk' -printf '%s %p\n' | sort -nr | tee "$OUT_DIR/live-apks.txt"
+
+      - name: Enumerate and download public Yalla Ludo versions near Halloween 2024
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/cross_trace.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, re, shutil, subprocess, time, zipfile
+          from collections import Counter, defaultdict
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.parse import urlparse
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-cross-product')
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'application/json,text/html,*/*','Accept-Language':'en-US,en;q=.9,ar;q=.7'})
+          LIVE_DIR=TMP/'live-artifact'
+          LUDO_DIR=TMP/'ludo';LUDO_DIR.mkdir(parents=True,exist_ok=True)
+          EXACT=['halloween','happy halloween','هالوين','عيد هالووين','pumpkin','pumpkins','اليقطين','قرع','trick or treat','trick-or-treat','خدعة أم حلوى','magic hat','القبعة السحرية','candy','candies','الحلوى','حلوى']
+          THEME=['ghost','ghosts','witch','witches','haunted','spooky','skeleton','zombie','vampire','bat','bats','grave','graveyard']
+          ACTIVITY=['activity','event','campaign','h5','webview','jumpurl','shareurl','redirecturl','activityurl','activityid','eventid','campaignid','gift','roomgift','giftlist','activitycenter','actshare','onelink']
+          URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          LATIN=set(EXACT+THEME)
+
+          def dump(path,obj):path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf-8')
+          def exact_hits(text,terms=EXACT):
+            low=text.casefold();out=[]
+            for term in terms:
+              t=term.casefold()
+              if re.fullmatch(r'[A-Za-z][A-Za-z -]*',term):
+                if re.search(r'(?<![A-Za-z])'+re.escape(t)+r'(?![A-Za-z])',low):out.append(term)
+              elif t in low:out.append(term)
+            return out
+          def strings_all(path):
+            blocks=[]
+            for cmd in (['strings','-a','-n','4'],['strings','-a','-el','-n','4'],['strings','-a','-eb','-n','4']):
+              try:
+                p=subprocess.run(cmd+[str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=150)
+                blocks.append(p.stdout.decode('utf-8','ignore'))
+              except Exception:pass
+            return '\n'.join(blocks)
+          def scan_package(label,package):
+            root=TMP/'decoded'/re.sub(r'[^A-Za-z0-9._-]+','_',label);shutil.rmtree(root,ignore_errors=True);root.mkdir(parents=True)
+            with zipfile.ZipFile(package) as z:z.extractall(root)
+            files=0;exact=[];theme=[];urls=set();activity_context=[];host_counter=Counter();path_hits=[]
+            for path in root.rglob('*'):
+              if not path.is_file() or path.stat().st_size>300_000_000:continue
+              files+=1;rel=path.relative_to(root).as_posix();ph=exact_hits(rel,EXACT+THEME)
+              if ph:path_hits.append({'file':rel,'hits':ph})
+              text=strings_all(path)
+              if not text:continue
+              lines=text.splitlines()
+              for i,line in enumerate(lines):
+                e=exact_hits(line,EXACT);t=exact_hits(line,THEME)
+                if e or t:
+                  context='\n'.join(lines[max(0,i-8):min(len(lines),i+9)])[:22000]
+                  item={'file':rel,'line':line[:5000],'exactHits':e,'themeHits':t,'activityAdjacent':any(x in context.casefold() for x in ACTIVITY),'context':context}
+                  (exact if e else theme).append(item)
+                if any(x in line.casefold() for x in ACTIVITY):
+                  context='\n'.join(lines[max(0,i-4):min(len(lines),i+5)])[:12000]
+                  if exact_hits(context,EXACT+THEME):activity_context.append({'file':rel,'line':line[:4000],'context':context,'hits':exact_hits(context,EXACT+THEME)})
+                for url in URL_RE.findall(line):
+                  url=url.rstrip(',.;:)]}')
+                  try:host_counter[urlparse(url).hostname or '']+=1
+                  except Exception:pass
+                  if any(x in url.casefold() for x in ACTIVITY+EXACT+THEME):urls.add(url)
+            shutil.rmtree(root,ignore_errors=True)
+            return {'label':label,'package':str(package),'bytes':package.stat().st_size,'sha256':hashlib.sha256(package.read_bytes()).hexdigest(),'filesScanned':files,'exactMatches':exact,'themeMatches':theme,'activityAdjacentMatches':activity_context,'pathMatches':path_hits,'interestingUrls':sorted(urls),'topHosts':host_counter.most_common(80)}
+
+          # Enumerate Aptoide package history. The API walks backwards by max_vercode.
+          API='https://ws2.aptoide.com/api/7/app/getMeta';PACKAGE='com.yalla.yallagames';versions=[];trace=[];seen=set();max_code=None
+          for _ in range(260):
+            url=f'{API}/package_name={PACKAGE}'+(f'/max_vercode={max_code}' if max_code is not None else '')
+            try:r=S.get(url,timeout=(15,90));payload=r.json();data=payload.get('data') or {};file=data.get('file') or {};code=file.get('vercode')
+            except Exception as exc:trace.append({'url':url,'error':repr(exc)});break
+            trace.append({'url':url,'status':r.status_code,'bytes':len(r.content),'infoStatus':(payload.get('info') or {}).get('status')})
+            if not code or int(code) in seen:break
+            seen.add(int(code));versions.append({'appId':data.get('id'),'name':data.get('name'),'package':data.get('package'),'store':(data.get('store') or {}).get('name'),'vername':file.get('vername'),'vercode':int(code),'filesize':file.get('filesize'),'added':file.get('added'),'path':file.get('path') or file.get('path_alt'),'md5sum':file.get('md5sum'),'signatureSha1':(file.get('signature') or {}).get('sha1')})
+            max_code=int(code)-1
+            time.sleep(.08)
+          dump(OUT/'ludo-aptoide-api-trace.json',trace);dump(OUT/'ludo-versions.json',versions)
+
+          def date_score(meta):
+            try:d=datetime.fromisoformat(str(meta.get('added')).replace('Z','+00:00'));target=datetime(2024,10,31,tzinfo=d.tzinfo or timezone.utc);return abs((d-target).total_seconds())
+            except Exception:return 10**20
+          in_window=[]
+          for meta in versions:
+            added=str(meta.get('added') or '')
+            if added.startswith('2024-09') or added.startswith('2024-10') or added.startswith('2024-11'):in_window.append(meta)
+          selected=sorted(in_window,key=date_score)[:5]
+          if not selected:selected=sorted(versions,key=date_score)[:5]
+          dump(OUT/'ludo-selected-versions.json',selected)
+
+          ludo_scans=[]
+          for meta in selected:
+            url=meta.get('path');label=f"ludo-{meta.get('vername')}-{meta.get('vercode')}";result={'meta':meta,'downloaded':False}
+            if not url:ludo_scans.append(result);continue
+            target=LUDO_DIR/f'{label}.apk'
+            try:
+              r=S.get(url,timeout=(20,480),stream=True);size=0
+              with target.open('wb') as f:
+                for chunk in r.iter_content(1024*1024):
+                  if not chunk:continue
+                  if size==0 and chunk[:2]!=b'PK':break
+                  f.write(chunk);size+=len(chunk)
+              if r.status_code==200 and size>10_000_000 and zipfile.is_zipfile(target):result={'meta':meta,'downloaded':True,'scan':scan_package(label,target)}
+              else:target.unlink(missing_ok=True);result.update(error='invalid package',http=r.status_code,bytes=size)
+            except Exception as exc:target.unlink(missing_ok=True);result.update(error=repr(exc))
+            ludo_scans.append(result)
+          dump(OUT/'ludo-scans.json',ludo_scans)
+
+          live_scans=[]
+          for apk in sorted(LIVE_DIR.rglob('*.apk')):
+            live_scans.append(scan_package('live-'+apk.parent.name+'-'+apk.stem,apk))
+          dump(OUT/'live-scans.json',live_scans)
+
+          # Official 2024 Halloween post. Capture text, media URL and outbound links without treating it as an H5.
+          post_url='https://t.me/s/official_yallaludo/803'
+          post={'url':post_url}
+          try:
+            r=S.get(post_url,timeout=(20,90));post.update(http=r.status_code,bytes=len(r.content));text=r.text;soup=BeautifulSoup(text,'html.parser')
+            block=None
+            for candidate in soup.select('.tgme_widget_message_wrap'):
+              raw=' '.join(candidate.get_text(' ',strip=True).split())
+              if 'Happy Halloween' in raw or 'عيد هالووين' in raw:block=candidate;break
+            if block:
+              post['text']=' '.join(block.get_text(' ',strip=True).split())
+              post['permalink']=(block.select_one('[data-post]') or {}).get('data-post') if hasattr((block.select_one('[data-post]') or {}),'get') else None
+              media=[]
+              for node in block.select('[style*="background-image"], img, video, source, a[href]'):
+                style=node.get('style','');media += re.findall(r"url\(['\"]?([^'\")]+)",style)
+                for attr in ['src','href','poster']:
+                  if node.get(attr):media.append(node.get(attr))
+              post['mediaAndLinks']=list(dict.fromkeys(media))
+            (OUT/'official-yalla-ludo-halloween-post.html').write_bytes(r.content)
+          except Exception as exc:post['error']=repr(exc)
+          dump(OUT/'official-yalla-ludo-halloween-post.json',post)
+
+          # Compare exact gift strings and infrastructure hosts across products.
+          def summarize(scans):
+            exact=[];adj=[];urls=[];hosts=Counter()
+            for scan in scans:
+              exact += [{'label':scan.get('label'),**x} for x in scan.get('exactMatches',[])]
+              adj += [{'label':scan.get('label'),**x} for x in scan.get('activityAdjacentMatches',[])]
+              urls += [{'label':scan.get('label'),'url':u} for u in scan.get('interestingUrls',[])]
+              hosts.update(dict(scan.get('topHosts',[])))
+            return {'exact':exact,'activityAdjacent':adj,'urls':urls,'topHosts':hosts.most_common(100)}
+          ludo_valid=[x['scan'] for x in ludo_scans if x.get('downloaded')]
+          ludo_summary=summarize(ludo_valid);live_summary=summarize(live_scans)
+          ludo_hosts={h for h,n in ludo_summary['topHosts'] if h};live_hosts={h for h,n in live_summary['topHosts'] if h}
+          shared_hosts=sorted(ludo_hosts & live_hosts)
+          result={'generatedAt':datetime.now(timezone.utc).isoformat(),'officialPost':post,'ludoVersionsEnumerated':len(versions),'ludoPackagesScanned':len(ludo_valid),'livePackagesScanned':len(live_scans),'ludoSummary':ludo_summary,'liveSummary':live_summary,'sharedHosts':shared_hosts,'status':{'YALLA_GROUP_HALLOWEEN_CONFIRMED':bool(post.get('text')),'YALLA_LUDO_HALLOWEEN_CONTENT_CONFIRMED':bool(post.get('text')),'YALLA_LIVE_HALLOWEEN_STRING_OR_ASSET_CONFIRMED':bool(live_summary['exact']),'YALLA_LIVE_HALLOWEEN_SPA_CONFIRMED':False}}
+          dump(OUT/'cross-product-result.json',result)
+
+          lines=['# Yalla Halloween Cross-Product Trace','', '## Status','']+[f"- `{k}`: **{v}**" for k,v in result['status'].items()]
+          lines += ['', '## Official Yalla Ludo evidence','',post.get('text','No official post body captured.'),'',f"- Media/links: {len(post.get('mediaAndLinks',[]))}",'']
+          lines += ['## Package coverage','',f"- Yalla Ludo versions enumerated: {len(versions)}",f"- Yalla Ludo packages scanned: {len(ludo_valid)}",f"- Yalla Live packages scanned: {len(live_scans)}",f"- Shared network hosts: {len(shared_hosts)}",'']
+          lines += ['## Yalla Ludo exact Halloween/gift matches','']
+          for item in ludo_summary['exact'][:200]:lines += [f"### {item['label']} · `{item['file']}` · {', '.join(item.get('exactHits',[]))}",'```',item.get('context','')[:6000],'```','']
+          lines += ['## Yalla Live exact Halloween/gift matches','']
+          for item in live_summary['exact'][:200]:lines += [f"### {item['label']} · `{item['file']}` · {', '.join(item.get('exactHits',[]))}",'```',item.get('context','')[:6000],'```','']
+          lines += ['## Shared hosts','']+[f'- `{h}`' for h in shared_hosts]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'statuses':result['status'],'ludoVersions':len(versions),'ludoScanned':len(ludo_valid),'liveScanned':len(live_scans),'ludoExact':len(ludo_summary['exact']),'liveExact':len(live_summary['exact']),'sharedHosts':shared_hosts},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/cross_trace.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-cross-product-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md cross-product-result.json official-yalla-ludo-halloween-post.json ludo-versions.json ludo-selected-versions.json ludo-scans.json live-scans.json run.log; do
+            cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween cross-product trace ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-cross-product-trace
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
