@@ -1,0 +1,269 @@
+name: Pro Falla Halloween-adaptable mechanics discovery
+
+on:
+  pull_request:
+    branches: [research/pro-falla-halloween-20260902]
+    paths:
+      - '.github/workflows/pro-falla-halloween-adaptable-discovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-halloween-adaptable-20260903
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+      - name: Scan public Falla configs and capture Halloween-adaptable candidates
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-halloween-adaptable-discovery
+          START_ID: '1'
+          END_ID: '5200'
+          HTTP_CONCURRENCY: '80'
+          CAPTURE_LIMIT: '36'
+        run: |
+          set -Eeuo pipefail
+          mkdir -p "$OUT_DIR"
+          python - <<'PY'
+          import asyncio, aiohttp, json, os, re, math, hashlib
+          from pathlib import Path
+          from urllib.parse import urlparse
+          from playwright.async_api import async_playwright
+          from PIL import Image, ImageDraw, ImageFont
+
+          OUT=Path(os.environ['OUT_DIR'])
+          START=int(os.environ.get('START_ID','1')); END=int(os.environ.get('END_ID','5200'))
+          LIMIT=int(os.environ.get('CAPTURE_LIMIT','36'))
+          CONC=int(os.environ.get('HTTP_CONCURRENCY','80'))
+          UA='Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 Chrome/139 Mobile Safari/537.36 ProFallaHalloweenAdaptable/1.0'
+          API_HOSTS=['https://api.apifalla.com/api/web/activities_config/act','https://apihk.falla.live/api/web/activities_config/act']
+          SITE_URLS=['https://campaigns-collected.jekae.chatgpt.site/data/activities.js','https://campaigns-collected.jekae.chatgpt.site/data/falla-hierarchy.json']
+          CONF_URLS=['https://web.fallaweb.com/lang_conf/h5_{tid}.json','https://web.falla.live/lang_conf/pre/h5_{tid}.json']
+          PROJECT_RE=re.compile(r'(?:act-[A-Za-z0-9][A-Za-z0-9-]{2,}|21-10-halloween)',re.I)
+
+          # Already investigated and rejected/merged in prior batches. Exact current-site
+          # projects are fetched separately and always excluded.
+          REVIEWED_EXCLUDE={
+            'act-ball-party','act-lovers-cp-2510','act-harvest-festival','act-lottery-skiing','act-pubg',
+            'act-slots-party','act-lottery-navigation','act-scratch-off-25','act-eid-al-adha','act-qurban-26',
+            'act-fruit-party','act-game-tournament','act-sahara','act-gulf-nations-cup','act-oil-tycoon-25',
+            'act-space-ship','act-spaceship','act-ramadan-food','act-ramadan-wealthy-pk','act-holi-26',
+            'act-super-car-club-v3','act-king-of-rocket-2510','act-game-competition-2512'
+          }
+
+          THEME={
+            'haunted': ['halloween','hallowmas','ghost','haunted','spooky','horror','vampire','zombie','monster','skeleton','phantom','devil','demon','nightmare','dark castle','dungeon'],
+            'magic': ['magic','magical','wizard','witch','spell','potion','alchemy','genie','awakening','crystal','mystic','sorcer'],
+            'costume_party': ['mask','masked','masquerade','costume','ball party','carnival','circus','party','dance'],
+            'exploration': ['hunt','treasure','adventure','journey','explore','exploring','map','maze','puzzle','quest','expedition','island','forest','castle','cave','dungeon'],
+            'collect_craft': ['collect','collection','fragment','piece','card','album','badge','medal','lantern','candy','pumpkin','gem','star','egg','hatch','merge','combine','craft','exchange','build','upgrade','unlock','light up'],
+            'battle_survival': ['battle','fight','war','boss','survival','king','lord','fighter','challenge','competition','championship','tournament','pk'],
+            'mystery_reward': ['blind box','mystery box','surprise','lucky bag','scratch','lottery','draw','roulette','wheel','treasure box','chest'],
+            'social': ['friend','team','family','lover','cp','room','group','invite','support','send','receive','help','recall']
+          }
+          MODULES={
+            'task':['task','mission','quest'],
+            'rank':['rank','ranking','leaderboard'],
+            'reward':['reward','prize','award'],
+            'draw':['lottery','draw','roulette','scratch','blind box','lucky bag','wheel'],
+            'collect':['collect','collection','fragment','piece','card','album','badge','medal','candy','pumpkin','lantern','gem','star'],
+            'progress':['progress','level','stage','unlock','upgrade','light up','grow','evolve'],
+            'map':['map','journey','adventure','explore','island','castle','dungeon','maze'],
+            'exchange':['exchange','mall','market','shop','redeem'],
+            'team':['team','family','room','group','friend','cp','lover'],
+            'battle':['battle','fight','boss','pk','competition','tournament','championship'],
+            'record':['record','history','received list','my rewards'],
+            'gift':['gift','send','receive']
+          }
+
+          def obj(v):
+            if isinstance(v,dict): return v
+            if isinstance(v,str):
+              try:
+                o=json.loads(v); return o if isinstance(o,dict) else {}
+              except: return {}
+            return {}
+          def flatten(v):
+            out=[]
+            if isinstance(v,dict):
+              for k,x in v.items(): out.append(str(k)); out.extend(flatten(x))
+            elif isinstance(v,list):
+              for x in v: out.extend(flatten(x))
+            elif v is not None: out.append(str(v))
+            return out
+          def title_from(conf,project):
+            for lang in ['en','zh','tr','es','ar','id','ms','pt','hi','ur']:
+              d=conf.get(lang) if isinstance(conf,dict) else None
+              if isinstance(d,dict):
+                for k in ['title','activityTitle','eventTitle','activityName','eventName','bannerTitle']:
+                  if d.get(k): return str(d[k]).strip()
+            return project
+          def project_from(res,ext):
+            web=ext.get('web') if isinstance(ext.get('web'),dict) else {}
+            corpus=' '.join([str(web.get('activityUrl') or ''),json.dumps(ext,ensure_ascii=False)])
+            m=PROJECT_RE.search(corpus)
+            return m.group(0) if m else ''
+          def score_candidate(x,conf):
+            pieces=[x['project'],x.get('activityUrl',''),x.get('serverConfig',''),json.dumps(x.get('extConfig',{}),ensure_ascii=False),json.dumps(conf,ensure_ascii=False)]
+            corpus=' '.join(pieces).lower()
+            theme_hits={k:[t for t in terms if t in corpus] for k,terms in THEME.items()}
+            module_hits={k:[t for t in terms if t in corpus] for k,terms in MODULES.items()}
+            modules=[k for k,v in module_hits.items() if v]
+            score=0
+            weights={'haunted':14,'magic':7,'costume_party':6,'exploration':7,'collect_craft':8,'battle_survival':5,'mystery_reward':4,'social':4}
+            for k,h in theme_hits.items(): score += min(len(h),4)*weights[k]
+            score += min(len(modules),10)*5
+            # Reward interaction-rich candidates and demote rank-only shells.
+            if len(modules)>=5: score += 15
+            if {'task','reward','progress'}.issubset(modules): score += 12
+            if {'collect','progress','exchange'}.issubset(modules): score += 15
+            if {'map','task','reward'}.issubset(modules): score += 12
+            if {'team','task','reward'}.issubset(modules): score += 10
+            if modules and set(modules).issubset({'rank','reward','gift'}): score -= 50
+            if x['project'].lower() in ('act-template','act-tpl','act-task-template-interim'): score -= 35
+            title=title_from(conf,x['project'])
+            if re.search(r'halloween|ghost|haunted|witch|monster|dungeon|magic|masked|mystery|treasure|island|castle|puzzle|adventure|journey',title,re.I): score += 18
+            return score,title,theme_hits,module_hits,modules,corpus
+
+          async def main():
+            connector=aiohttp.TCPConnector(limit=CONC,ssl=False)
+            headers={'User-Agent':UA,'Accept':'application/json,text/plain,*/*','Content-Type':'application/json;charset=UTF-8','Origin':'https://web.fallaweb.com','Referer':'https://web.fallaweb.com/'}
+            async with aiohttp.ClientSession(connector=connector,headers=headers) as s:
+              site_text=''; fetches=[]
+              for url in SITE_URLS:
+                try:
+                  async with s.get(url,timeout=40) as r:
+                    data=await r.read(); fetches.append({'url':url,'status':r.status,'bytes':len(data)})
+                    (OUT/url.rsplit('/',1)[-1]).write_bytes(data); site_text+=data.decode('utf-8','replace')
+                except Exception as e: fetches.append({'url':url,'status':0,'error':repr(e)})
+              site_projects=set(m.group(0).lower() for m in PROJECT_RE.finditer(site_text))
+              sem=asyncio.Semaphore(CONC)
+              async def fetch_activity(aid):
+                for api in API_HOSTS:
+                  try:
+                    async with sem:
+                      async with s.post(api,json={'activitiesId':aid},timeout=22) as r:
+                        if r.status!=200: continue
+                        o=await r.json(content_type=None)
+                  except: continue
+                  res=o.get('res') if isinstance(o,dict) and o.get('code')==0 else None
+                  if not isinstance(res,dict) or not res.get('id'): continue
+                  ext=obj(res.get('extConfig')); web=ext.get('web') if isinstance(ext.get('web'),dict) else {}; pc=web.get('pageConfig') if isinstance(web.get('pageConfig'),dict) else {}
+                  project=project_from(res,ext)
+                  if not project:return None
+                  return {'activityId':int(res['id']),'project':project,'translateId':pc.get('translateId'),'activityUrl':web.get('activityUrl') or '', 'startTime':res.get('startTime'),'endTime':res.get('endTime'),'regions':res.get('regionList') or [],'giftCount':len(res.get('giftInfoList') or []),'serverConfig':res.get('serverConfig') or '', 'extConfig':ext}
+                return None
+              activities=[x for x in await asyncio.gather(*(fetch_activity(i) for i in range(START,END+1))) if x]
+              tids=sorted({int(x['translateId']) for x in activities if str(x.get('translateId') or '').isdigit()})
+              confs={}; sem2=asyncio.Semaphore(64)
+              async def fetch_conf(tid):
+                for tpl in CONF_URLS:
+                  try:
+                    async with sem2:
+                      async with s.get(tpl.format(tid=tid),timeout=25) as r:
+                        if r.status!=200:continue
+                        o=await r.json(content_type=None)
+                  except:continue
+                  if isinstance(o,dict): confs[tid]=o; return
+                confs[tid]={}
+              await asyncio.gather(*(fetch_conf(t) for t in tids))
+
+            scored=[]
+            for x in activities:
+              p=x['project'].lower()
+              if p in site_projects or p in REVIEWED_EXCLUDE: continue
+              tid=int(x['translateId']) if str(x.get('translateId') or '').isdigit() else None
+              conf=confs.get(tid,{})
+              score,title,theme_hits,module_hits,modules,corpus=score_candidate(x,conf)
+              if score<55 or len(modules)<4: continue
+              scored.append({**x,'title':title,'score':score,'themes':{k:v for k,v in theme_hits.items() if v},'modules':modules,'moduleEvidence':{k:v for k,v in module_hits.items() if v},'knownOnSite':False,'previouslyReviewed':False,'conf':conf})
+            # One best config per project. Prefer higher score then newer activity ID.
+            best={}
+            for x in scored:
+              k=x['project'].lower(); cur=best.get(k)
+              if cur is None or (x['score'],x['activityId'])>(cur['score'],cur['activityId']): best[k]=x
+            ranked=sorted(best.values(),key=lambda x:(x['score'],x['activityId']),reverse=True)
+            (OUT/'ranked-candidates-full.json').write_text(json.dumps(ranked,ensure_ascii=False,indent=2),encoding='utf-8')
+            slim=[]
+            for x in ranked:
+              slim.append({k:v for k,v in x.items() if k not in ['conf','extConfig','moduleEvidence']})
+            (OUT/'ranked-candidates.json').write_text(json.dumps(slim,ensure_ascii=False,indent=2),encoding='utf-8')
+
+            capture=ranked[:LIMIT]
+            async with async_playwright() as pw:
+              browser=await pw.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+              sem3=asyncio.Semaphore(5)
+              async def capture_one(i,c):
+                async with sem3:
+                  context=await browser.new_context(viewport={'width':390,'height':844},device_scale_factor=1,is_mobile=True,has_touch=True,locale='en-US',ignore_https_errors=True,service_workers='block',user_agent=UA)
+                  page=await context.new_page(); url=c.get('activityUrl') or ''
+                  if not url: return None
+                  if c.get('activityId') and 'activityId=' not in url:
+                    sep='&' if '?' in url else '?'; url=f"{url}{sep}activityId={c['activityId']}" + (f"&translateId={c['translateId']}" if c.get('translateId') else '')
+                  errors=[]; page.on('pageerror',lambda e:errors.append({'type':'pageerror','text':str(e)})); page.on('requestfailed',lambda r:errors.append({'type':'requestfailed','url':r.url,'reason':(r.failure or {}).get('errorText','') if isinstance(r.failure,dict) else ''}))
+                  nav=None
+                  try:
+                    await page.goto(url,wait_until='domcontentloaded',timeout=80000); await page.wait_for_timeout(6500)
+                    await page.evaluate("""async()=>{const w=ms=>new Promise(r=>setTimeout(r,ms));let y=0;for(let i=0;i<120;i++){const h=Math.max(document.body?.scrollHeight||0,document.documentElement?.scrollHeight||0);scrollTo(0,y);await w(100);if(y+innerHeight>=h-8)break;y+=500}scrollTo(0,0);await w(350)}""")
+                  except Exception as e: nav=repr(e)
+                  metrics=await page.evaluate("""()=>({title:document.title,href:location.href,text:(document.body?.innerText||'').slice(0,40000),htmlLength:document.documentElement?.outerHTML?.length||0,scrollHeight:Math.max(document.body?.scrollHeight||0,document.documentElement?.scrollHeight||0),imageCount:document.images.length,loadedImages:[...document.images].filter(i=>i.complete&&i.naturalWidth>0).length,brokenImages:[...document.images].filter(i=>i.complete&&(i.currentSrc||i.src)&&i.naturalWidth===0).map(i=>i.currentSrc||i.src),visibleError:/error request|please try again later|page.*doesn.t exist|activity not found|404/i.test(document.body?.innerText||'')})""")
+                  slug=f"{i+1:02d}-{c['activityId']}-{re.sub(r'[^a-z0-9-]+','-',c['project'].lower()).strip('-')}"
+                  d=OUT/'captures'/slug; d.mkdir(parents=True,exist_ok=True)
+                  await page.screenshot(path=str(d/'full.png'),full_page=True,animations='disabled')
+                  (d/'dom.html').write_text(await page.content(),encoding='utf-8')
+                  (d/'result.json').write_text(json.dumps({'candidate':{k:v for k,v in c.items() if k not in ['conf','extConfig','moduleEvidence']},'url':url,'navError':nav,'errors':errors,'metrics':metrics},ensure_ascii=False,indent=2),encoding='utf-8')
+                  await context.close()
+                  return {'slug':slug,'title':c['title'],'project':c['project'],'activityId':c['activityId'],'score':c['score'],'modules':c['modules'],'themes':c['themes'],'metrics':metrics,'navError':nav}
+              captures=[x for x in await asyncio.gather(*(capture_one(i,c) for i,c in enumerate(capture))) if x]
+              await browser.close()
+            (OUT/'captures.json').write_text(json.dumps(captures,ensure_ascii=False,indent=2),encoding='utf-8')
+
+            # Contact sheet with first-page thumbnails, useful for mobile review.
+            thumbs=[]
+            for x in captures:
+              p=OUT/'captures'/x['slug']/'full.png'
+              try:
+                im=Image.open(p).convert('RGB'); w=300; h=max(300,min(1500,round(im.height*w/im.width))); im.thumbnail((w,h)); canvas=Image.new('RGB',(320,h+78),(17,22,31)); canvas.paste(im,((320-im.width)//2,58)); d=ImageDraw.Draw(canvas); d.text((10,10),x['title'][:42],fill=(245,245,245)); d.text((10,32),f"{x['score']} · {x['project']}",fill=(83,225,176)); thumbs.append(canvas)
+              except: pass
+            if thumbs:
+              cols=4; rows=math.ceil(len(thumbs)/cols); row_heights=[]
+              for r in range(rows): row_heights.append(max(x.height for x in thumbs[r*cols:(r+1)*cols]))
+              sheet=Image.new('RGB',(cols*330,sum(row_heights)+rows*10),(7,11,17)); y=0
+              for r in range(rows):
+                for cidx,x in enumerate(thumbs[r*cols:(r+1)*cols]): sheet.paste(x,(cidx*330,y))
+                y+=row_heights[r]+10
+              sheet.save(OUT/'overview.png',quality=92)
+
+            report=['# Falla Halloween-Adaptable Mechanics Discovery','',f'- Site projects excluded: {len(site_projects)}',f'- Previously reviewed exclusions: {len(REVIEWED_EXCLUDE)}',f'- Valid activity configs scanned: {len(activities)}',f'- Ranked unique projects: {len(ranked)}',f'- Captured candidates: {len(captures)}','', '## Top candidates','']
+            for i,x in enumerate(ranked[:60],1):
+              report.append(f"{i}. **{x['title']}** — `{x['project']}` — activity `{x['activityId']}` — score {x['score']} — modules: {', '.join(x['modules'])}")
+            (OUT/'REPORT.md').write_text('\n'.join(report),encoding='utf-8')
+            (OUT/'run-summary.json').write_text(json.dumps({'siteProjectCount':len(site_projects),'reviewedExcludeCount':len(REVIEWED_EXCLUDE),'validActivityConfigs':len(activities),'rankedProjects':len(ranked),'captured':len(captures),'siteFetches':fetches},ensure_ascii=False,indent=2),encoding='utf-8')
+            print(json.dumps({'top':[{'title':x['title'],'project':x['project'],'activityId':x['activityId'],'score':x['score'],'modules':x['modules']} for x in ranked[:20]],'counts':{'site':len(site_projects),'valid':len(activities),'ranked':len(ranked),'captured':len(captures)}},ensure_ascii=False,indent=2))
+          asyncio.run(main())
+          PY
+      - name: Print report
+        if: always()
+        run: |
+          cat artifacts/pro-falla-halloween-adaptable-discovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-halloween-adaptable-discovery || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-halloween-adaptable-discovery
+          path: artifacts/pro-falla-halloween-adaptable-discovery
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
