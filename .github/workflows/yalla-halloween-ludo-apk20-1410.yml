@@ -1,0 +1,257 @@
+name: Yalla Ludo 1.4.1.0 Halloween exact APK20 recovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-ludo-apk20-1410.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+env:
+  OUT_DIR: artifacts/yalla-ludo-1410-halloween
+  RESULT_BRANCH: pro-yalla-ludo-1410-halloween-results
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install browser and analysis tools
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip p7zip-full ripgrep jq
+          python -m pip install requests beautifulsoup4 lxml playwright==1.55.0
+          python -m playwright install --with-deps chromium
+          mkdir -p "$OUT_DIR" /tmp/yalla-ludo-1410
+
+      - name: Resolve exact APK20 binary and extract Halloween evidence
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/recover.py <<'PY'
+          from __future__ import annotations
+          import asyncio, hashlib, json, os, re, shutil, subprocess, time, zipfile
+          from collections import Counter
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-ludo-1410');OUT.mkdir(parents=True,exist_ok=True);TMP.mkdir(parents=True,exist_ok=True)
+          PAGE='https://www.apk20.com/apk/com.yalla.yallagames/1040110'
+          DOWNLOAD='https://www.apk20.com/apk/com.yalla.yallagames/download/1040110'
+          APK=TMP/'com.yalla.yallagames.1040110.apk'
+          EXACT=['happy halloween','halloween','هالوين','عيد هالووين','magic hat','القبعة السحرية','قبعة سحرية','candy','candies','الحلوى','حلوى','pumpkin','pumpkins','اليقطين','قرع','trick or treat','trick-or-treat','خدعة أم حلوى']
+          THEME=['ghost','ghosts','witch','witches','haunted','spooky','skeleton','zombie','vampire','graveyard','bat','bats','شبح','أشباح','ساحرة','ساحر','مسكون','مخيف','هيكل عظمي']
+          H5=['activity2.','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','activityurl','h5entranceurl','templateactivity','webview','onelink','deeplink']
+          GIFT=['giftid','gift_id','giftlist','gifturl','giftname','gift_name','roomgift','giftmall','giftstore','backpackgift','sendgift']
+          URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I);NUM_RE=re.compile(r'(?<!\d)(\d{3,12})(?!\d)')
+          LATIN={x for x in EXACT+THEME if re.fullmatch(r'[A-Za-z][A-Za-z -]*',x)}
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','Accept':'*/*','Accept-Language':'en-US,en;q=.9,ar;q=.7'})
+          def dump(name,obj):p=OUT/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf-8')
+          def hits(text,terms):
+            low=text.casefold();out=[]
+            for term in terms:
+              t=term.casefold()
+              if term in LATIN:
+                if re.search(r'(?<![A-Za-z])'+re.escape(t)+r'(?![A-Za-z])',low):out.append(term)
+              elif t in low:out.append(term)
+            return out
+          def valid(path):return path.exists() and path.stat().st_size>40_000_000 and zipfile.is_zipfile(path)
+          def sha(path):
+            h=hashlib.sha256()
+            with path.open('rb') as f:
+              for chunk in iter(lambda:f.read(1024*1024),b''):h.update(chunk)
+            return h.hexdigest()
+          trace=[]
+          def request_attempt(url,referer=PAGE):
+            APK.unlink(missing_ok=True)
+            try:
+              r=S.get(url,headers={'Referer':referer},timeout=(20,480),stream=True,allow_redirects=True);size=0;first=b''
+              with APK.open('wb') as f:
+                for chunk in r.iter_content(1024*1024):
+                  if not chunk:continue
+                  if size==0:
+                    first=chunk[:32]
+                    if chunk[:2]!=b'PK':break
+                  f.write(chunk);size+=len(chunk)
+              trace.append({'kind':'requests','url':url,'status':r.status_code,'finalUrl':r.url,'headers':dict(r.headers),'bytes':size,'first':first.hex()})
+              if r.status_code==200 and valid(APK):return {'source':'requests','url':r.url,'bytes':size}
+            except Exception as e:trace.append({'kind':'requests-error','url':url,'error':repr(e)})
+            APK.unlink(missing_ok=True);return None
+          page_candidates=[]
+          try:
+            r=S.get(PAGE,timeout=(20,90),allow_redirects=True);trace.append({'kind':'page','status':r.status_code,'url':PAGE,'finalUrl':r.url,'bytes':len(r.content),'headers':dict(r.headers)});(OUT/'page-requests.html').write_bytes(r.content)
+            soup=BeautifulSoup(r.text,'html.parser')
+            for node in soup.select('[href],[src],[action]'):
+              for attr in ['href','src','action']:
+                value=node.get(attr)
+                if value:page_candidates.append(urljoin(r.url,value))
+            page_candidates += URL_RE.findall(r.text)
+          except Exception as e:trace.append({'kind':'page-error','error':repr(e)})
+          resolved=request_attempt(DOWNLOAD)
+          if not resolved:
+            for url in list(dict.fromkeys(page_candidates)):
+              if re.search(r'download|\.apk(?:\?|$)|file',url,re.I):
+                resolved=request_attempt(url)
+                if resolved:break
+          async def browser_attempt():
+            nonlocal resolved
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+              context=await browser.new_context(accept_downloads=True,viewport={'width':1280,'height':900},locale='en-US',user_agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36')
+              page=await context.new_page();captured=[]
+              page.on('request',lambda req:captured.append(req.url) if re.search(r'apk20|download|\.apk(?:\?|$)|file',req.url,re.I) else None)
+              async def on_response(res):
+                headers=await res.all_headers()
+                if re.search(r'apk20|download|\.apk(?:\?|$)|file',res.url,re.I) or re.search(r'android|octet-stream|zip',headers.get('content-type','')+headers.get('content-disposition',''),re.I):
+                  trace.append({'kind':'browser-response','url':res.url,'status':res.status,'headers':headers});captured.append(res.url)
+              page.on('response',lambda res:asyncio.create_task(on_response(res)))
+              try:await page.goto(PAGE,wait_until='domcontentloaded',timeout=90000)
+              except Exception as e:trace.append({'kind':'browser-page-error','error':repr(e)})
+              # Wait through any scripted redirects before touching the execution context.
+              for _ in range(8):
+                await page.wait_for_timeout(1200)
+                try:
+                  state=await page.evaluate("""() => ({url:location.href,title:document.title,body:(document.body?.innerText||'').replace(/\\s+/g,' ').trim().slice(0,40000),links:[...document.querySelectorAll('a[href]')].map((a,i)=>({i,text:(a.innerText||a.getAttribute('aria-label')||'').replace(/\\s+/g,' ').trim(),href:a.href,html:a.outerHTML.slice(0,2500)})),buttons:[...document.querySelectorAll('button,input[type=button],input[type=submit],[role=button]')].map((b,i)=>({i,text:(b.innerText||b.value||b.getAttribute('aria-label')||'').replace(/\\s+/g,' ').trim(),html:b.outerHTML.slice(0,2500)})),forms:[...document.forms].map((f,i)=>({i,action:f.action,method:f.method,html:f.outerHTML.slice(0,5000)})),scripts:[...document.scripts].map(s=>s.src||s.textContent||'').filter(Boolean).map(x=>x.slice(0,50000))})""")
+                  break
+                except Exception as e:
+                  state=None;trace.append({'kind':'evaluate-retry','url':page.url,'error':repr(e)})
+              if state:
+                dump('browser-inventory.json',state);(OUT/'page-browser.html').write_text(await page.content(),encoding='utf-8');await page.screenshot(path=str(OUT/'page-browser.png'),full_page=True)
+                for item in state['links']:captured.append(item['href'])
+                for script in state['scripts']:captured.extend(URL_RE.findall(script))
+              # Directly assigning the known download endpoint is the most reliable path when the anchor is ad-wrapped.
+              if not resolved:
+                try:
+                  async with page.expect_download(timeout=30000) as info:
+                    await page.evaluate('(url)=>{location.href=url}',DOWNLOAD)
+                  dl=await info.value;await dl.save_as(str(APK));trace.append({'kind':'browser-direct-download','url':dl.url,'suggested':dl.suggested_filename,'bytes':APK.stat().st_size})
+                  if valid(APK):resolved={'source':'browser-direct-download','url':dl.url,'bytes':APK.stat().st_size}
+                  else:APK.unlink(missing_ok=True)
+                except Exception as e:trace.append({'kind':'browser-direct-error','error':repr(e),'url':page.url})
+              if not resolved:
+                try:
+                  if page.is_closed():raise RuntimeError('page closed')
+                  await page.goto(PAGE,wait_until='domcontentloaded',timeout=90000);await page.wait_for_timeout(2500)
+                  nodes=page.locator('a,button,input[type=button],input[type=submit],[role=button]');count=await nodes.count()
+                  for i in range(min(count,120)):
+                    node=nodes.nth(i)
+                    try:text=((await node.inner_text(timeout=1500)) or (await node.get_attribute('value')) or '');href=await node.get_attribute('href') or '';html=await node.evaluate('(n)=>n.outerHTML.slice(0,2500)')
+                    except Exception:continue
+                    if not re.search(r'download|apk|تنزيل|baixar|descargar|indir',text+' '+href+' '+html,re.I):continue
+                    try:
+                      async with page.expect_download(timeout=25000) as info:await node.click(force=True,timeout=10000)
+                      dl=await info.value;await dl.save_as(str(APK));trace.append({'kind':'browser-click-download','text':text[:500],'href':href,'url':dl.url,'bytes':APK.stat().st_size})
+                      if valid(APK):resolved={'source':'browser-click-download','url':dl.url,'bytes':APK.stat().st_size};break
+                      APK.unlink(missing_ok=True)
+                    except Exception as e:trace.append({'kind':'browser-click-error','text':text[:500],'href':href,'error':repr(e)})
+                    try:await page.goto(PAGE,wait_until='domcontentloaded',timeout=60000);await page.wait_for_timeout(1800)
+                    except Exception:pass
+                except Exception as e:trace.append({'kind':'browser-click-loop-error','error':repr(e)})
+              candidates=list(dict.fromkeys([DOWNLOAD]+captured))
+              dump('browser-candidate-urls.json',candidates)
+              if not resolved:
+                for url in candidates[:180]:
+                  if not re.search(r'apk20|download|\.apk(?:\?|$)|file',url,re.I):continue
+                  try:
+                    response=await context.request.get(url,headers={'Referer':PAGE},timeout=240000);body=await response.body();trace.append({'kind':'browser-fetch','url':url,'status':response.status,'headers':response.headers,'bytes':len(body),'first':body[:32].hex()})
+                    if response.ok and len(body)>40_000_000 and body[:2]==b'PK':APK.write_bytes(body);resolved={'source':'browser-fetch','url':url,'bytes':len(body)};break
+                  except Exception as e:trace.append({'kind':'browser-fetch-error','url':url,'error':repr(e)})
+              await browser.close()
+          if not resolved:asyncio.run(browser_attempt())
+          dump('download-trace.json',trace);dump('download-result.json',{'resolved':resolved,'validPackage':valid(APK),'bytes':APK.stat().st_size if APK.exists() else 0,'sha256':sha(APK) if valid(APK) else None})
+          if not valid(APK):raise SystemExit('Full APK20 package was not recovered')
+
+          # Recursively extract APK/APKM/XAPK containers.
+          root=TMP/'decoded';shutil.rmtree(root,ignore_errors=True);root.mkdir(parents=True);queue=[APK];archives=set();idx=0
+          while queue and idx<100:
+            archive=queue.pop(0);key=str(archive.resolve())
+            if key in archives or not zipfile.is_zipfile(archive):continue
+            archives.add(key);target=root/f'archive-{idx:03d}-{re.sub(r"[^A-Za-z0-9._-]+","_",archive.name)}';target.mkdir(parents=True)
+            try:zipfile.ZipFile(archive).extractall(target)
+            except Exception:idx+=1;continue
+            for nested in target.rglob('*'):
+              if nested.is_file() and nested.suffix.lower() in {'.apk','.apkm','.xapk','.zip'} and zipfile.is_zipfile(nested):queue.append(nested)
+            idx+=1
+          files=[p for p in root.rglob('*') if p.is_file() and p.stat().st_size<=350_000_000]
+          def strings_all(path):
+            blocks=[]
+            for cmd in (['strings','-a','-n','4'],['strings','-a','-el','-n','4'],['strings','-a','-eb','-n','4']):
+              try:p=subprocess.run(cmd+[str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=180);blocks.append(p.stdout.decode('utf-8','ignore'))
+              except Exception:pass
+            return '\n'.join(blocks)
+          exact=[];theme=[];gift_adj=[];h5_adj=[];urls=set();paths=[];hosts=Counter();numbers=Counter();asset_index=[]
+          for path in files:
+            rel=path.relative_to(root).as_posix();ph=hits(rel,EXACT+THEME)
+            if ph:paths.append({'file':rel,'hits':ph})
+            if path.stat().st_size<=50_000_000:
+              try:asset_index.append({'file':rel,'bytes':path.stat().st_size,'sha256':sha(path)})
+              except Exception:pass
+            text=strings_all(path)
+            if not text:continue
+            lines=text.splitlines()
+            for i,line in enumerate(lines):
+              eh=hits(line,EXACT);th=hits(line,THEME);low=line.casefold()
+              if eh or th:
+                context='\n'.join(lines[max(0,i-10):min(len(lines),i+11)])[:26000];item={'file':rel,'line':line[:6000],'exactHits':eh,'themeHits':th,'giftAdjacent':any(x in context.casefold() for x in GIFT),'h5Adjacent':any(x in context.casefold() for x in H5),'nearbyNumbers':NUM_RE.findall(context)[:100],'context':context};numbers.update(item['nearbyNumbers']);(exact if eh else theme).append(item)
+              if any(x in low for x in GIFT):
+                context='\n'.join(lines[max(0,i-6):min(len(lines),i+7)])[:18000];hh=hits(context,EXACT+THEME)
+                if hh:gift_adj.append({'file':rel,'line':line[:5000],'hits':hh,'context':context,'numbers':NUM_RE.findall(context)[:100]})
+              if any(x in low for x in H5):
+                context='\n'.join(lines[max(0,i-6):min(len(lines),i+7)])[:18000];hh=hits(context,EXACT+THEME)
+                if hh:h5_adj.append({'file':rel,'line':line[:5000],'hits':hh,'context':context})
+              for url in URL_RE.findall(line):
+                url=url.rstrip(',.;:)]}')
+                try:hosts[urlparse(url).hostname or '']+=1
+                except Exception:pass
+                if any(x in url.casefold() for x in H5+GIFT) or hits(url,EXACT+THEME):urls.add(url)
+          result={'version':'1.4.1.0','versionCode':1040110,'versionDate':'2024-09-10','packageBytes':APK.stat().st_size,'packageSha256':sha(APK),'filesScanned':len(files),'exactMatches':exact,'themeMatches':theme,'giftAdjacentMatches':gift_adj,'h5AdjacentMatches':h5_adj,'pathMatches':paths,'interestingUrls':sorted(urls),'topHosts':hosts.most_common(200),'nearbyNumberCandidates':numbers.most_common(300),'assetIndex':asset_index,'status':{'OFFICIAL_YALLA_LUDO_HALLOWEEN_POST_CONFIRMED':True,'FULL_HALLOWEEN_WINDOW_PACKAGE_RECOVERED':True,'EXACT_HALLOWEEN_OR_GIFT_STRING_FOUND':bool(exact),'GIFT_ID_OR_CONFIG_CONTEXT_FOUND':bool(gift_adj),'H5_OR_ACTIVITY_URL_CONTEXT_FOUND':bool(h5_adj or urls)}}
+          dump('scan-result.json',result)
+          lines=['# Yalla Ludo 1.4.1.0 Halloween Exact Trace','', '## Status','']+[f"- `{k}`: **{v}**" for k,v in result['status'].items()]+['',f"- Package bytes: {result['packageBytes']}",f"- Files scanned: {result['filesScanned']}",f"- Exact matches: {len(exact)}",f"- Gift-adjacent matches: {len(gift_adj)}",f"- H5-adjacent matches: {len(h5_adj)}",f"- Interesting URLs: {len(urls)}",'']
+          for item in exact[:400]:lines += [f"## `{item['file']}` · {', '.join(item['exactHits'])}",f"Gift-adjacent: `{item['giftAdjacent']}` · H5-adjacent: `{item['h5Adjacent']}` · Numbers: `{', '.join(item['nearbyNumbers'][:30])}`",'```',item['context'][:10000],'```','']
+          lines += ['## Gift-adjacent contexts','']
+          for item in gift_adj[:300]:lines += [f"### `{item['file']}` · {', '.join(item['hits'])} · IDs `{', '.join(item['numbers'][:30])}`",'```',item['context'][:8000],'```','']
+          lines += ['## H5 and activity URLs','']+[f'- `{u}`' for u in sorted(urls)]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'download':resolved,'packageBytes':result['packageBytes'],'files':len(files),'exact':len(exact),'giftAdjacent':len(gift_adj),'h5Adjacent':len(h5_adj),'urls':len(urls),'status':result['status']},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/recover.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact evidence branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-ludo-1410-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md scan-result.json download-result.json download-trace.json browser-inventory.json browser-candidate-urls.json page-browser.png run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Ludo 1.4.1.0 Halloween trace ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload full evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-ludo-1410-halloween-trace
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
