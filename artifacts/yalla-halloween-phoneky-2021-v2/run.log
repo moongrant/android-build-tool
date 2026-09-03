@@ -1,0 +1,16 @@
+/tmp/phoneky_v2.py:36: SyntaxWarning: invalid escape sequence '\s'
+  inv=await page.evaluate("""()=>({url:location.href,title:document.title,body:(document.body?.innerText||'').replace(/\s+/g,' ').trim().slice(0,30000),links:[...document.querySelectorAll('a[href]')].map((a,i)=>({i,text:(a.innerText||a.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(),href:a.href,html:a.outerHTML.slice(0,2000)})),buttons:[...document.querySelectorAll('button,input[type=button],input[type=submit],[role=button]')].map((b,i)=>({i,text:(b.innerText||b.value||b.getAttribute('aria-label')||'').replace(/\s+/g,' ').trim(),html:b.outerHTML.slice(0,2000)})),forms:[...document.forms].map((f,i)=>({i,action:f.action,method:f.method,html:f.outerHTML.slice(0,5000)})),scripts:[...document.scripts].map(s=>s.src||s.textContent||'').filter(Boolean).map(x=>x.slice(0,20000))})""")
+/tmp/phoneky_v2.py:38: SyntaxWarning: invalid escape sequence '\s'
+  candidates=await page.locator('a,button,input[type=button],input[type=submit],[role=button]').evaluate_all("""nodes=>nodes.map((n,i)=>({i,text:(n.innerText||n.value||n.getAttribute('aria-label')||n.title||'').replace(/\s+/g,' ').trim(),href:n.href||'',html:n.outerHTML.slice(0,3000)})).filter(x=>/download|डाउनलोड|скачать|telecharger|baixar|descargar|indir/i.test(x.text+' '+x.href+' '+x.html))""")
+{
+  "saved": {
+    "source": "download-event",
+    "url": "https://phoneky.com/zimg/phonekyapp.apk",
+    "suggestedFilename": "phonekyapp.apk",
+    "bytes": 1220341
+  },
+  "downloaded": true,
+  "files": 459,
+  "meaningful": 0,
+  "urls": 0
+}

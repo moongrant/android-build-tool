@@ -1,0 +1,139 @@
+{
+  "version": "2.11.16",
+  "published": "2021-08-18",
+  "downloaded": true,
+  "apkBytes": 1220341,
+  "apkSha256": "b5ecb8651c74deabc732a478a02e5dc10185794c997e18ef893b02cb1a9e32fd",
+  "filesScanned": 459,
+  "rawMatches": [],
+  "meaningfulMatches": [],
+  "pathMatches": [],
+  "h5Contexts": [
+    {
+      "file": "classes.dex",
+      "line": "Landroid/webkit/WebView;",
+      "context": "3Landroid/webkit/WebChromeClient$CustomViewCallback;\n Landroid/webkit/WebChromeClient;\n#Landroid/webkit/WebResourceRequest;\nLandroid/webkit/WebSettings;\nLandroid/webkit/WebView;\nLandroid/webkit/WebViewClient;\n-Landroid/widget/AbsListView$OnScrollListener;\n4Landroid/widget/AbsListView$SelectionBoundsAdjuster;\nLandroid/widget/AbsListView;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "Landroid/webkit/WebViewClient;",
+      "context": " Landroid/webkit/WebChromeClient;\n#Landroid/webkit/WebResourceRequest;\nLandroid/webkit/WebSettings;\nLandroid/webkit/WebView;\nLandroid/webkit/WebViewClient;\n-Landroid/widget/AbsListView$OnScrollListener;\n4Landroid/widget/AbsListView$SelectionBoundsAdjuster;\nLandroid/widget/AbsListView;\nLandroid/widget/Adapter;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "'Landroidx/activity/ComponentActivity$4;",
+      "context": "Landroid/widget/TextView;\nLandroid/widget/Toast;\n&Landroid/window/OnBackInvokedCallback;\n(Landroid/window/OnBackInvokedDispatcher;\n'Landroidx/activity/ComponentActivity$4;\n%Landroidx/activity/ImmLeaksCleaner$a;\n%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "%Landroidx/activity/ImmLeaksCleaner$a;",
+      "context": "Landroid/widget/Toast;\n&Landroid/window/OnBackInvokedCallback;\n(Landroid/window/OnBackInvokedDispatcher;\n'Landroidx/activity/ComponentActivity$4;\n%Landroidx/activity/ImmLeaksCleaner$a;\n%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "%Landroidx/activity/ImmLeaksCleaner$b;",
+      "context": "&Landroid/window/OnBackInvokedCallback;\n(Landroid/window/OnBackInvokedDispatcher;\n'Landroidx/activity/ComponentActivity$4;\n%Landroidx/activity/ImmLeaksCleaner$a;\n%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "%Landroidx/activity/ImmLeaksCleaner$c;",
+      "context": "(Landroid/window/OnBackInvokedDispatcher;\n'Landroidx/activity/ComponentActivity$4;\n%Landroidx/activity/ImmLeaksCleaner$a;\n%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "%Landroidx/activity/ImmLeaksCleaner$d;",
+      "context": "'Landroidx/activity/ComponentActivity$4;\n%Landroidx/activity/ImmLeaksCleaner$a;\n%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "%Landroidx/activity/ImmLeaksCleaner$e;",
+      "context": "%Landroidx/activity/ImmLeaksCleaner$a;\n%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;\nLandroidx/activity/b$a;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "#Landroidx/activity/ImmLeaksCleaner;",
+      "context": "%Landroidx/activity/ImmLeaksCleaner$b;\n%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;\nLandroidx/activity/b$a;\nLandroidx/activity/b;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "MLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;",
+      "context": "%Landroidx/activity/ImmLeaksCleaner$c;\n%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;\nLandroidx/activity/b$a;\nLandroidx/activity/b;\n8Landroidx/appcompat/app/AlertController$RecycleListView;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "Landroidx/activity/a;",
+      "context": "%Landroidx/activity/ImmLeaksCleaner$d;\n%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;\nLandroidx/activity/b$a;\nLandroidx/activity/b;\n8Landroidx/appcompat/app/AlertController$RecycleListView;\n3Landroidx/appcompat/view/menu/ActionMenuItemView$a;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "Landroidx/activity/b$a;",
+      "context": "%Landroidx/activity/ImmLeaksCleaner$e;\n#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;\nLandroidx/activity/b$a;\nLandroidx/activity/b;\n8Landroidx/appcompat/app/AlertController$RecycleListView;\n3Landroidx/appcompat/view/menu/ActionMenuItemView$a;\n3Landroidx/appcompat/view/menu/ActionMenuItemView$b;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "Landroidx/activity/b;",
+      "context": "#Landroidx/activity/ImmLeaksCleaner;\nMLandroidx/activity/OnBackPressedDispatcher$LifecycleOnBackPressedCancellable;\nLandroidx/activity/a;\nLandroidx/activity/b$a;\nLandroidx/activity/b;\n8Landroidx/appcompat/app/AlertController$RecycleListView;\n3Landroidx/appcompat/view/menu/ActionMenuItemView$a;\n3Landroidx/appcompat/view/menu/ActionMenuItemView$b;\n1Landroidx/appcompat/view/menu/ActionMenuItemView;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "CLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$a;",
+      "context": "HLcom/google/androidbrowserhelper/trusted/ManageDataLauncherActivity$c$a;\nFLcom/google/androidbrowserhelper/trusted/ManageDataLauncherActivity$c;\nDLcom/google/androidbrowserhelper/trusted/ManageDataLauncherActivity;\nOLcom/google/androidbrowserhelper/trusted/NotificationPermissionRequestActivity;\nCLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$a;\nCLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$b;\nALcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity;\n#Lcom/phoneky/ringtones/Application;\n)Lcom/phoneky/ringtones/DelegationService;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "CLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$b;",
+      "context": "FLcom/google/androidbrowserhelper/trusted/ManageDataLauncherActivity$c;\nDLcom/google/androidbrowserhelper/trusted/ManageDataLauncherActivity;\nOLcom/google/androidbrowserhelper/trusted/NotificationPermissionRequestActivity;\nCLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$a;\nCLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$b;\nALcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity;\n#Lcom/phoneky/ringtones/Application;\n)Lcom/phoneky/ringtones/DelegationService;\n(Lcom/phoneky/ringtones/LauncherActivity;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "ALcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity;",
+      "context": "DLcom/google/androidbrowserhelper/trusted/ManageDataLauncherActivity;\nOLcom/google/androidbrowserhelper/trusted/NotificationPermissionRequestActivity;\nCLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$a;\nCLcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity$b;\nALcom/google/androidbrowserhelper/trusted/WebViewFallbackActivity;\n#Lcom/phoneky/ringtones/Application;\n)Lcom/phoneky/ringtones/DelegationService;\n(Lcom/phoneky/ringtones/LauncherActivity;\nLd/a;"
+    },
+    {
+      "file": "classes.dex",
+      "line": "WebViewFallbackActivity",
+      "context": "\tWILD_CARD\nWINDING\nWRITE_SKIP_FILE\nWaited \nWebViewFallbackActivity\nWindowInsetsCompat\nZCCZ\nZFFF\nZFFLZ"
+    },
+    {
+      "file": "classes.dex",
+      "line": "Xcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_EXTRA_ORIGINS",
+      "context": "com.chrome.canary\ncom.chrome.dev\ncom.google.android.apps.chrome\ncom.google.androidbrowserhelper\nXcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_EXTRA_ORIGINS\n_com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_NAVIGATION_BAR_COLOR\n[com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_STATUS_BAR_COLOR\nQcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.LAUNCH_URL\ncom.google.common.base.Strings"
+    },
+    {
+      "file": "classes.dex",
+      "line": "_com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_NAVIGATION_BAR_COLOR",
+      "context": "com.chrome.dev\ncom.google.android.apps.chrome\ncom.google.androidbrowserhelper\nXcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_EXTRA_ORIGINS\n_com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_NAVIGATION_BAR_COLOR\n[com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_STATUS_BAR_COLOR\nQcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.LAUNCH_URL\ncom.google.common.base.Strings\ncombineMeasuredStates"
+    },
+    {
+      "file": "classes.dex",
+      "line": "[com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_STATUS_BAR_COLOR",
+      "context": "com.google.android.apps.chrome\ncom.google.androidbrowserhelper\nXcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_EXTRA_ORIGINS\n_com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_NAVIGATION_BAR_COLOR\n[com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_STATUS_BAR_COLOR\nQcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.LAUNCH_URL\ncom.google.common.base.Strings\ncombineMeasuredStates\ncommit"
+    },
+    {
+      "file": "classes.dex",
+      "line": "Qcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.LAUNCH_URL",
+      "context": "com.google.androidbrowserhelper\nXcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_EXTRA_ORIGINS\n_com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_NAVIGATION_BAR_COLOR\n[com.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.KEY_STATUS_BAR_COLOR\nQcom.google.browser.examples.twawebviewfallback.WebViewFallbackActivity.LAUNCH_URL\ncom.google.common.base.Strings\ncombineMeasuredStates\ncommit\ncompare"
+    },
+    {
+      "file": "classes.dex",
+      "line": "setWebViewClient",
+      "context": "setVisibility\n*setVisibility called on un-referenced view\nsetVisible\nsetWebChromeClient\nsetWebViewClient\n\tsetWeight\nsetWeightSum\nsetWidth\nsetWillNotDraw"
+    },
+    {
+      "file": "classes.dex",
+      "line": "webview",
+      "context": "versionCode\nviewportHeight\nviewportWidth\nwatcherClass cannot be null\nwebview\nweight\nwidth\nwidthPixels\nwindow"
+    },
+    {
+      "file": "AndroidManifest.xml",
+      "line": "?com.google.androidbrowserhelper.trusted.WebViewFallbackActivity",
+      "context": "category\n5com.google.androidbrowserhelper.trusted.FocusActivity\nBcom.google.androidbrowserhelper.trusted.ManageDataLauncherActivity\nMcom.google.androidbrowserhelper.trusted.NotificationPermissionRequestActivity\n?com.google.androidbrowserhelper.trusted.WebViewFallbackActivity\ncom.phoneky.ringtones\n!com.phoneky.ringtones.Application\n>com.phoneky.ringtones.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\n'com.phoneky.ringtones.DelegationService"
+    },
+    {
+      "file": "AndroidManifest.xml",
+      "line": "?com.google.androidbrowserhelper.trusted.WebViewFallbackActivity",
+      "context": "category\n5com.google.androidbrowserhelper.trusted.FocusActivity\nBcom.google.androidbrowserhelper.trusted.ManageDataLauncherActivity\nMcom.google.androidbrowserhelper.trusted.NotificationPermissionRequestActivity\n?com.google.androidbrowserhelper.trusted.WebViewFallbackActivity\ncom.phoneky.ringtones\n!com.phoneky.ringtones.Application\n>com.phoneky.ringtones.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\n'com.phoneky.ringtones.DelegationService"
+    }
+  ],
+  "activityUrls": []
+}
