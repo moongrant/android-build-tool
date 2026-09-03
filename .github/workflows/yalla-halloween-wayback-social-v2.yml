@@ -1,0 +1,153 @@
+name: Yalla Halloween Wayback official social scan v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-wayback-social-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-wayback-social-v2-results
+      OUT_DIR: artifacts/yalla-halloween-wayback-social-v2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Query Wayback for official social handles and inspect captures
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR/raw"
+          cat > /tmp/scan.py <<'PY'
+          from __future__ import annotations
+          import concurrent.futures, hashlib, json, re, time
+          from collections import defaultdict
+          from pathlib import Path
+          from urllib.parse import quote
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path('artifacts/yalla-halloween-wayback-social-v2'); RAW=OUT/'raw'; RAW.mkdir(parents=True,exist_ok=True)
+          S=requests.Session(); S.headers.update({'User-Agent':'Mozilla/5.0 Chrome/127 Safari/537.36','Accept':'*/*'})
+          HANDLES={
+            'facebook-current':'www.facebook.com/YallaVoiceChatRooms/*',
+            'facebook-current-mobile':'m.facebook.com/YallaVoiceChatRooms/*',
+            'facebook-legacy':'www.facebook.com/yalla2016/*',
+            'facebook-legacy-mobile':'m.facebook.com/yalla2016/*',
+            'facebook-alt':'www.facebook.com/YallaLiveApp/*',
+            'instagram-current':'www.instagram.com/yallavoicechatrooms/*',
+            'instagram-alt':'www.instagram.com/yallaliveapp/*',
+            'twitter-legacy':'twitter.com/yalladotlive/status/*',
+            'x-current':'x.com/YallaDotLive/status/*',
+            'youtube-channel':'www.youtube.com/*YallaVoiceChatRooms*',
+          }
+          EXPLICIT=['halloween','hallowe’en','all hallows','trick or treat','trick-or-treat','jack-o-lantern','jack o lantern','pumpkin','pumpkins','هالوين','الهالوين','عيد الهالوين','خدعة أم حلوى','اليقطين','قرع','cadılar bayramı','cadilar bayrami','balkabağı','balkabagi','dia das bruxas','abóbora','abobora','noche de brujas','calabaza','citrouille','हैलोवीन','کدو']
+          ALIASES=['horror night','night of fear','spooky night','ghost night','monster night','monster party','masquerade party','costume party','haunted house','haunted castle','magic castle','candy party','nightmare carnival','ghost festival','ghost city','ghost castle','witch night','scary night','ليلة الرعب','ليلة الهلع','ليلة الأشباح','ليلة الوحوش','حفلة الوحوش','حفلة تنكرية','بيت الرعب','قصر الأشباح','مدينة الأشباح','مهرجان الأشباح','القلعة المسحورة','حفلة الحلوى','korku gecesi','korku evi','hayalet gecesi','canavar partisi','büyülü kale','buyulu kale','kostüm partisi','kostum partisi','noite do terror','festa à fantasia','festa a fantasia','casa assombrada','noite dos monstros','noche de terror','fiesta de disfraces','casa embrujada','noche de monstruos']
+          MOTIFS=['ghost','witch','candy','haunted','spooky','skeleton','zombie','vampire','bat','monster','skull','coffin','graveyard','cemetery','cauldron','cobweb','costume','masquerade','scary','nightmare','شبح','أشباح','ساحرة','ساحر','حلوى','مسكون','مخيف','هيكل عظمي','زومبي','مصاص دماء','خفاش','وحش','وحوش','جمجمة','مقبرة','مرجل','تنكري','hayalet','cadı','cadi','şeker','seker','perili','canavar','iskelet','zombi','vampir','yarasa','kafatası','mezarlık','fantasma','bruxa','bruja','doces','dulces','assombrado','embrujado','esqueleto','vampiro','morcego','calavera']
+          URL_RE=re.compile(r'https?://[^\s"\'<>\\)]+',re.I)
+
+          def get(url,timeout=(20,120),tries=4):
+              for i in range(tries):
+                  try:
+                      r=S.get(url,timeout=timeout,allow_redirects=True)
+                      if r.status_code in {429,500,502,503,504} and i+1<tries:time.sleep(1.5*(i+1));continue
+                      return r
+                  except Exception:
+                      if i+1<tries:time.sleep(1.5*(i+1))
+              return None
+          def exact(text,term):
+              low=text.casefold(); t=term.casefold()
+              if re.fullmatch(r"[a-z0-9 '\-’]+",t): return re.search(r'(?<![a-z])'+re.escape(t)+r'(?![a-z])',low) is not None
+              return t in low
+          def hits(text,terms): return [x for x in terms if exact(text,x)]
+          def cdx(label,pattern):
+              params=[('url',pattern),('output','json'),('fl','timestamp,original,statuscode,mimetype,digest,length'),('filter','statuscode:200'),('collapse','digest'),('from','2018'),('to','2025'),('limit','10000')]
+              url='https://web.archive.org/cdx/search/cdx?'+'&'.join(f'{quote(k,safe="")}={quote(v,safe="*:/.()[]|^$+-_")}' for k,v in params)
+              r=get(url,timeout=(30,180),tries=3); rows=[]
+              if r and r.status_code==200:
+                  try:
+                      data=r.json()
+                      if isinstance(data,list) and data:
+                          head=data[0]; rows=[dict(zip(head,x))|{'label':label} for x in data[1:] if isinstance(x,list)]
+                  except Exception:pass
+              return {'label':label,'pattern':pattern,'endpoint':url,'http':r.status_code if r else None,'bytes':len(r.content) if r else 0,'rows':rows}
+
+          queries=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+              futures=[ex.submit(cdx,label,pattern) for label,pattern in HANDLES.items()]
+              for f in concurrent.futures.as_completed(futures):queries.append(f.result())
+          rows=[]
+          for q in queries:rows.extend(q['rows'])
+          # unique capture URL/time
+          unique={}
+          for row in rows:unique[(row.get('timestamp'),row.get('original'),row.get('digest'))]=row
+          rows=list(unique.values())
+          (OUT/'query-summary.json').write_text(json.dumps([{k:v for k,v in q.items() if k!='rows'}|{'rowCount':len(q['rows'])} for q in queries],ensure_ascii=False,indent=2))
+          (OUT/'records.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+
+          # Prefer October-November captures, but also inspect all unique page/post captures up to 3000.
+          rows.sort(key=lambda x:(0 if str(x.get('timestamp',''))[4:8] in {'1001','1002','1003','1004','1005','1006','1007','1008','1009','1010','1011','1012','1013','1014','1015','1016','1017','1018','1019','1020','1021','1022','1023','1024','1025','1026','1027','1028','1029','1030','1031','1101','1102','1103','1104','1105','1106','1107','1108','1109','1110','1111','1112','1113','1114','1115'} else 1,str(x.get('timestamp',''))),reverse=False)
+
+          def inspect(row):
+              ts=str(row.get('timestamp','')); original=str(row.get('original','')); replay=f'https://web.archive.org/web/{ts}id_/{original}'
+              item={'label':row.get('label'),'timestamp':ts,'original':original,'replay':replay}
+              r=get(replay,timeout=(30,150),tries=2)
+              if not r or r.status_code!=200: item['http']=r.status_code if r else None; return item
+              data=r.content; text=data[:15_000_000].decode('utf-8','ignore'); soup=BeautifulSoup(text,'html.parser'); visible=' '.join(soup.get_text(' ',strip=True).split()); combined=text+' '+visible
+              explicit=hits(combined,EXPLICIT); aliases=hits(combined,ALIASES); motifs=hits(combined,MOTIFS)
+              item.update(http=r.status_code,bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),title=soup.title.get_text(' ',strip=True) if soup.title else '',visible=visible[:20000],explicit=explicit,aliases=aliases,motifs=motifs,urls=[u.rstrip(',.;:)]}') for u in sorted(set(URL_RE.findall(text)))][:1000])
+              if explicit or aliases or len(motifs)>=2:
+                  name=re.sub(r'[^A-Za-z0-9._-]+','_',f"{item['label']}-{ts}-{original}")[:180]+'.html'; (RAW/name).write_bytes(data); item['file']='raw/'+name
+              return item
+
+          inspected=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as ex:
+              for item in ex.map(inspect,rows[:3000]):inspected.append(item)
+          candidates=[x for x in inspected if x.get('explicit') or x.get('aliases') or len(x.get('motifs',[]))>=2]
+          strong=[x for x in candidates if x.get('explicit') or x.get('aliases')]
+          (OUT/'inspected.json').write_text(json.dumps(inspected,ensure_ascii=False,indent=2)); (OUT/'candidates.json').write_text(json.dumps(candidates,ensure_ascii=False,indent=2)); (OUT/'strong-candidates.json').write_text(json.dumps(strong,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween Wayback Official Social Scan v2','',f'- Official handle patterns: {len(HANDLES)}',f'- CDX records: {len(rows)}',f'- Captures inspected: {len(inspected)}',f'- Theme-family candidates: {len(candidates)}',f'- Explicit/euphemistic strong candidates: {len(strong)}','', '| # | Handle | Capture | Title | Explicit | Alias | Motifs | URL |','|---:|---|---|---|---|---|---|---|']
+          for i,x in enumerate(strong,1):lines.append(f"| {i} | {x.get('label')} | `{x.get('timestamp')}` | {str(x.get('title','')).replace('|','/')} | {', '.join(x.get('explicit',[])[:8])} | {', '.join(x.get('aliases',[])[:8])} | {', '.join(x.get('motifs',[])[:10])} | `{x.get('original')}` |")
+          lines += ['','## Candidate details','']
+          for x in candidates[:300]:lines += [f"### {x.get('label')} · `{x.get('timestamp')}` · `{x.get('original')}`",f"Explicit: {', '.join(x.get('explicit',[]))}",f"Aliases: {', '.join(x.get('aliases',[]))}",f"Motifs: {', '.join(x.get('motifs',[]))}",'',x.get('visible','')[:5000],'']
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'patterns':len(HANDLES),'records':len(rows),'inspected':len(inspected),'candidates':len(candidates),'strong':len(strong)},ensure_ascii=False,indent=2))
+          PY
+          python /tmp/scan.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact Wayback social results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-wayback-social-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md query-summary.json records.json candidates.json strong-candidates.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween Wayback social scan v2 ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload full Wayback social artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-wayback-social-v2
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
