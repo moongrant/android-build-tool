@@ -1,0 +1,196 @@
+name: Yalla Halloween Downzen 2021 exact APK scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-downzen-2021-scan.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-downzen-2021-results
+      OUT_DIR: artifacts/yalla-halloween-downzen-2021
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download live Downzen APKS builds and scan exact Halloween evidence
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR" /tmp/yalla-downzen
+          cat > /tmp/downzen_scan.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, re, shutil, subprocess, urllib.parse, zipfile
+          from pathlib import Path
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-downzen')
+          BUILDS={
+            '2.11.16':{'date':'2021-08-23','page':'https://downzen.com/en/android/yalla-free-voice-chat-rooms/download/21116/'},
+            '2.12.0': {'date':'2021-11-03','page':'https://downzen.com/en/android/yalla-free-voice-chat-rooms/download/2120/'},
+            '2.12.1': {'date':'2021-12-06','page':'https://downzen.com/en/android/yalla-free-voice-chat-rooms/download/2121/'},
+          }
+          SESSION=requests.Session();SESSION.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','Accept-Language':'en-US,en;q=.9','Accept':'text/html,application/xhtml+xml,application/xml;q=.9,*/*;q=.8'})
+          TERMS=['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى','ghost','ghosts','شبح','أشباح','hayalet','fantasma','fantôme','fantome','witch','witches','ساحرة','ساحر','cadı','cadi','bruxa','bruja','sorcière','sorciere','candy','candies','حلوى','şeker','seker','doces','dulces','bonbon','haunted','مسكون','perili','assombrado','embrujado','hanté','hante','spooky','مخيف','seram','skeleton','هيكل عظمي','zombie','vampire']
+          STRONG={x.casefold() for x in ['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى']}
+          H5=['activity2.','file.yalla.live/activity/','/activity/','activityid','campaignid','eventid','jumpurl','shareurl','redirecturl','h5entranceurl','activityurl','templateactivity','webview']
+          URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          LATIN={x for x in TERMS if re.fullmatch(r'[A-Za-z][A-Za-z -]*',x)}
+
+          def dump(path,obj):path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf-8')
+          def term_hits(text):
+            low=text.casefold();hits=[]
+            for term in TERMS:
+              t=term.casefold()
+              if term in LATIN:
+                if re.search(r'(?<![A-Za-z])'+re.escape(t)+r'(?![A-Za-z])',low):hits.append(term)
+              elif t in low:hits.append(term)
+            return hits
+          def links_from(html,base):
+            soup=BeautifulSoup(html,'html.parser');links=[]
+            for a in soup.find_all('a',href=True):
+              href=urllib.parse.urljoin(base,a['href']).replace('&amp;','&')
+              if '/download/get/?u=' in href or 'apps.downzen.com/' in href or href.lower().endswith(('.apk','.apks','.xapk','.zip')):links.append(href)
+            for raw in re.findall(r'https?://[^\"\'<>\s]+',html):
+              raw=raw.replace('&amp;','&')
+              if '/download/get/?u=' in raw or 'apps.downzen.com/' in raw or raw.lower().endswith(('.apk','.apks','.xapk','.zip')):links.append(raw)
+            out=[]
+            for link in links:
+              if '/download/get/?u=' in link:
+                try:
+                  u=urllib.parse.parse_qs(urllib.parse.urlparse(link).query).get('u',[None])[0]
+                  if u:out.append(urllib.parse.unquote(u))
+                except Exception:pass
+              out.append(link)
+            ded=[]
+            for link in out:
+              if link not in ded:ded.append(link)
+            return sorted(ded,key=lambda x:(0 if 'apps.downzen.com/' in x else 1 if x.lower().endswith(('.apks','.apk','.xapk')) else 2,len(x)))
+          def obtain(version,meta):
+            out=OUT/version;out.mkdir(parents=True,exist_ok=True);queue=[(meta['page'],meta['page'])];seen=set();trace=[];step=0
+            while queue and step<40:
+              url,referer=queue.pop(0);step+=1
+              if url in seen:continue
+              seen.add(url)
+              try:r=SESSION.get(url,headers={'Referer':referer},timeout=(20,360),allow_redirects=True,stream=True)
+              except Exception as e:trace.append({'url':url,'error':repr(e)});continue
+              ctype=r.headers.get('content-type','');row={'url':url,'status':r.status_code,'finalUrl':r.url,'contentType':ctype,'contentLength':r.headers.get('content-length'),'contentDisposition':r.headers.get('content-disposition')}
+              # Stream binary to disk without loading 100MB into memory.
+              if r.status_code==200 and ('zip' in ctype.lower() or 'octet-stream' in ctype.lower() or 'android' in ctype.lower() or 'apps.downzen.com' in r.url):
+                file=TMP/f'yalla-{version}.apks';size=0;h=hashlib.sha256();first=b''
+                with file.open('wb') as f:
+                  for chunk in r.iter_content(1024*1024):
+                    if not chunk:continue
+                    if not first:first=chunk[:100]
+                    f.write(chunk);h.update(chunk);size+=len(chunk)
+                    if size>300_000_000:break
+                row.update(downloadedBytes=size,sha256=h.hexdigest(),firstBytes=first[:30].hex());trace.append(row)
+                if size>10_000_000 and zipfile.is_zipfile(file):dump(out/'download-trace.json',trace);return file,trace
+                file.unlink(missing_ok=True);continue
+              body=r.content;row['bytes']=len(body);trace.append(row)
+              if 'html' in ctype.lower() or body.lstrip().startswith(b'<'):
+                (out/f'step-{step:02d}.html').write_bytes(body)
+                for nxt in links_from(body.decode('utf-8','ignore'),r.url):
+                  if nxt not in seen:queue.append((nxt,r.url))
+            dump(out/'download-trace.json',trace);return None,trace
+          def strings_all(path):
+            blocks=[]
+            for cmd in (['strings','-a','-n','4'],['strings','-a','-el','-n','4'],['strings','-a','-eb','-n','4']):
+              try:
+                p=subprocess.run(cmd+[str(path)],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=120);blocks.append(p.stdout.decode('utf-8','ignore'))
+              except Exception:pass
+            return '\n'.join(blocks)
+          def scan(version,package):
+            decoded=TMP/f'decoded-{version}';shutil.rmtree(decoded,ignore_errors=True);decoded.mkdir(parents=True)
+            with zipfile.ZipFile(package) as z:z.extractall(decoded/'outer')
+            # APKS files contain one or more APKs. Expand every APK to preserve split resources.
+            apks=list((decoded/'outer').rglob('*.apk'))
+            if not apks and zipfile.is_zipfile(package):apks=[package]
+            for i,apk in enumerate(apks,1):
+              try:
+                with zipfile.ZipFile(apk) as z:z.extractall(decoded/f'apk-{i}')
+              except Exception:pass
+            files=0;raw=[];meaningful=[];paths=[];urls=set();h5=[]
+            for path in decoded.rglob('*'):
+              if not path.is_file() or path.stat().st_size>300_000_000:continue
+              # Skip nested APK/zip containers after expanding to avoid duplicate compressed-byte noise.
+              if path.suffix.lower() in {'.apk','.apks','.zip','.xapk'}:continue
+              files+=1;rel=path.relative_to(decoded).as_posix();ph=term_hits(rel)
+              if ph:paths.append({'file':rel,'terms':ph})
+              text=strings_all(path)
+              if not text:continue
+              lines=text.splitlines()
+              for i,line in enumerate(lines):
+                hits=term_hits(line)
+                if hits:
+                  context='\n'.join(lines[max(0,i-7):min(len(lines),i+8)])[:18000];adjacent=any(sig in context.casefold() for sig in H5)
+                  item={'file':rel,'line':line[:4000],'terms':hits,'strong':bool({x.casefold() for x in hits}&STRONG),'activityAdjacent':adjacent,'context':context};raw.append(item)
+                  if item['strong'] or adjacent or len(hits)>=2:meaningful.append(item)
+                if any(sig in line.casefold() for sig in H5):h5.append({'file':rel,'line':line[:4000],'context':'\n'.join(lines[max(0,i-4):min(len(lines),i+5)])[:12000]})
+                for u in URL_RE.findall(line):
+                  u=u.rstrip(',.;:)]}')
+                  if any(sig in u.casefold() for sig in H5) or term_hits(u):urls.add(u)
+            shutil.rmtree(decoded,ignore_errors=True)
+            return {'expandedApkCount':len(apks),'filesScanned':files,'pathMatches':paths,'rawMatches':raw,'meaningfulMatches':meaningful,'h5Contexts':h5[:3000],'activityUrls':sorted(urls)}
+
+          results=[]
+          for version,meta in BUILDS.items():
+            out=OUT/version;out.mkdir(parents=True,exist_ok=True);package,trace=obtain(version,meta)
+            if not package:
+              result={'version':version,'date':meta['date'],'downloaded':False,'page':meta['page'],'trace':trace};dump(out/'result.json',result);results.append(result);continue
+            size=package.stat().st_size;sha=hashlib.sha256(package.read_bytes()).hexdigest();result={'version':version,'date':meta['date'],'downloaded':True,'page':meta['page'],'packageBytes':size,'packageSha256':sha,**scan(version,package)};dump(out/'result.json',result);results.append(result);package.unlink(missing_ok=True)
+          all_urls=sorted({u for x in results for u in x.get('activityUrls',[])})
+          payload={'generatedAt':__import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),'requested':len(results),'downloaded':sum(bool(x.get('downloaded')) for x in results),'meaningfulMatchCount':sum(len(x.get('meaningfulMatches',[])) for x in results),'activityUrls':all_urls,'results':results};dump(OUT/'consolidated.json',payload)
+          lines=['# Yalla Halloween Downzen 2021 Exact APK Scan','',f"- Requested: {payload['requested']}",f"- Downloaded and scanned: {payload['downloaded']}",f"- Exact/meaningful Halloween matches: {payload['meaningfulMatchCount']}",f"- H5/activity URLs: {len(all_urls)}",'', '| Version | Date | Downloaded | Package bytes | APK splits | Files | Raw exact | Meaningful | H5 URLs |','|---|---|---|---:|---:|---:|---:|---:|---:|']
+          for x in results:lines.append(f"| {x['version']} | {x['date']} | {x.get('downloaded')} | {x.get('packageBytes',0)} | {x.get('expandedApkCount',0)} | {x.get('filesScanned',0)} | {len(x.get('rawMatches',[]))} | {len(x.get('meaningfulMatches',[]))} | {len(x.get('activityUrls',[]))} |")
+          for x in results:
+            lines+=['',f"## {x['version']} · {x['date']}",'']
+            for m in x.get('meaningfulMatches',[])[:180]:lines += [f"### `{m['file']}` · {', '.join(m['terms'])}",'```',m['context'][:6000],'```','']
+            if x.get('activityUrls'):lines += ['### Activity URLs','']+[f'- `{u}`' for u in x['activityUrls']]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'requested':payload['requested'],'downloaded':payload['downloaded'],'meaningfulMatches':payload['meaningfulMatchCount'],'activityUrls':len(all_urls)},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/downzen_scan.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact 2021 results
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-downzen-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md consolidated.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for d in "$OUT_DIR"/*; do
+            [[ -d "$d" ]] || continue
+            mkdir -p "$stage/$(basename "$d")"
+            for f in result.json download-trace.json; do cp "$d/$f" "$stage/$(basename "$d")/" 2>/dev/null || true; done
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween Downzen 2021 scan ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete 2021 scan artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-downzen-2021-scan
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
