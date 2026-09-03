@@ -1,0 +1,459 @@
+name: Yalla Halloween archived API response archaeology
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-archived-api-responses.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 240
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-archived-api-results
+      OUT_DIR: artifacts/yalla-halloween-archived-api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Recover public historical activity, banner, event and room-theme API responses
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml warcio
+          mkdir -p "$OUT_DIR/raw"
+          cat > /tmp/recover_api.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import contextlib
+          import hashlib
+          import io
+          import json
+          import re
+          import time
+          from collections import defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+          from warcio.archiveiterator import ArchiveIterator
+
+          OUT = Path('artifacts/yalla-halloween-archived-api')
+          RAW = OUT / 'raw'
+          RAW.mkdir(parents=True, exist_ok=True)
+          SESSION = requests.Session()
+          SESSION.headers.update({
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36',
+              'Accept': '*/*',
+              'Accept-Language': 'en-US,en;q=.9,ar;q=.7,tr;q=.6',
+          })
+
+          HOSTS = [
+              'apiv2.yalla.live',
+              'api.yalla.live',
+              'apiv2.yallalive.net',
+              'api2.yalla.live',
+              'api.yallalive.net',
+          ]
+          ENDPOINTS = [
+              '/Webservers/Messages/ActivityList',
+              '/Webservers/Messages/GetActivityListForCenter',
+              '/Webservers/Messages/GetActivityList',
+              '/Webservers/Bar/GetBannerList',
+              '/Webservers/Moment/GetBannerList',
+              '/Webservers/Event/GetList',
+              '/Webservers/Event/GetHistoryList',
+              '/Webservers/Event/GetInfo',
+              '/Webservers/Event/GetListByRoom',
+              '/Webservers/Event/GetTop5',
+              '/Webservers/Shop/ShopRoomThemeList',
+              '/Webservers/Shop/ShopRoomThemeListV2',
+              '/Webservers/Shop/GetRoomThemeList',
+              '/Webservers/Bar/RoomThemeEdit',
+              '/Webservers/User/GetNewUserPopup',
+          ]
+          TERMS = [
+              'halloween', 'هالوين', 'cadılar bayramı', 'cadilar bayrami',
+              'dia das bruxas', 'noche de brujas', 'pumpkin', 'pumpkins',
+              'اليقطين', 'قرع', 'balkabağı', 'balkabagi', 'abóbora', 'abobora',
+              'calabaza', 'citrouille', 'trick or treat', 'trick-or-treat',
+              'خدعة أم حلوى', 'ghost', 'ghosts', 'شبح', 'أشباح', 'hayalet',
+              'fantasma', 'fantôme', 'fantome', 'witch', 'witches', 'ساحرة',
+              'ساحر', 'cadı', 'cadi', 'bruxa', 'bruja', 'sorcière', 'sorciere',
+              'candy', 'candies', 'حلوى', 'şeker', 'seker', 'doces', 'dulces',
+              'bonbon', 'haunted', 'مسكون', 'perili', 'assombrado', 'embrujado',
+              'hanté', 'hante', 'spooky', 'مخيف', 'seram', 'skeleton',
+              'هيكل عظمي', 'zombie', 'vampire', 'bat', 'bats', 'monster',
+          ]
+          STRONG_TERMS = {
+              x.casefold() for x in [
+                  'halloween', 'هالوين', 'cadılar bayramı', 'cadilar bayrami',
+                  'dia das bruxas', 'noche de brujas', 'pumpkin', 'pumpkins',
+                  'اليقطين', 'قرع', 'balkabağı', 'balkabagi', 'abóbora', 'abobora',
+                  'calabaza', 'citrouille', 'trick or treat', 'trick-or-treat',
+                  'خدعة أم حلوى',
+              ]
+          }
+          FIELD_TERMS = [
+              'activityurl', 'activityid', 'campaignid', 'eventid', 'jumpurl',
+              'shareurl', 'redirecturl', 'h5entranceurl', 'imageurl', 'activityimage',
+              'activitytext', 'activitymsg', 'eventname', 'eventimageurl',
+              'eventstarttime', 'eventendtime', 'themebgname', 'themebgimgurl',
+              'themevideourl', 'themeexpiretime', 'themegiv', 'roomtheme',
+          ]
+          URL_RE = re.compile(r'https?://[^\s\"\'<>\\)]+', re.I)
+
+          def get(url: str, timeout=(20, 120), tries=3, headers=None):
+              for attempt in range(tries):
+                  try:
+                      response = SESSION.get(url, timeout=timeout, allow_redirects=True, headers=headers)
+                      if response.status_code in {429, 500, 502, 503, 504} and attempt + 1 < tries:
+                          time.sleep(1.4 * (attempt + 1))
+                          continue
+                      return response
+                  except Exception:
+                      if attempt + 1 < tries:
+                          time.sleep(1.4 * (attempt + 1))
+              return None
+
+          def exact_hits(text: str):
+              low = text.casefold()
+              hits = []
+              for term in TERMS:
+                  token = term.casefold()
+                  if re.fullmatch(r'[A-Za-z][A-Za-z -]*', term):
+                      if re.search(r'(?<![A-Za-z])' + re.escape(token) + r'(?![A-Za-z])', low):
+                          hits.append(term)
+                  elif token in low:
+                      hits.append(term)
+              return sorted(set(hits), key=lambda x: (len(x), x.casefold()))
+
+          def json_candidates(value, path='$', out=None):
+              if out is None:
+                  out = []
+              if isinstance(value, dict):
+                  for key, item in value.items():
+                      next_path = path + '.' + str(key)
+                      lower = str(key).casefold()
+                      if any(term in lower for term in FIELD_TERMS):
+                          out.append({'path': next_path, 'key': str(key), 'value': item})
+                      json_candidates(item, next_path, out)
+              elif isinstance(value, list):
+                  for index, item in enumerate(value):
+                      json_candidates(item, f'{path}[{index}]', out)
+              elif isinstance(value, str):
+                  if exact_hits(value) or any(term in value.casefold() for term in FIELD_TERMS):
+                      out.append({'path': path, 'value': value})
+              return out
+
+          coll = get('https://index.commoncrawl.org/collinfo.json', timeout=(20, 60))
+          indexes = []
+          if coll and coll.status_code == 200:
+              by_year = defaultdict(list)
+              for item in coll.json():
+                  match = re.search(r'CC-MAIN-(20\d{2})-', str(item.get('id', '')))
+                  if match and 2018 <= int(match.group(1)) <= 2026:
+                      by_year[int(match.group(1))].append(item)
+              for year, items in sorted(by_year.items()):
+                  ordered = sorted(items, key=lambda x: x['id'], reverse=True)
+                  indexes.extend(ordered[::2])
+                  if ordered and ordered[0] not in indexes:
+                      indexes.append(ordered[0])
+          (OUT / 'commoncrawl-indexes.json').write_text(json.dumps([x['id'] for x in indexes], indent=2))
+
+          def cc_query(index, host, endpoint):
+              pattern = host + endpoint
+              base = index['cdx-api'] + '?url=' + quote(pattern, safe='') + '&matchType=prefix&output=json&filter=status:200&collapse=digest'
+              response = get(base, timeout=(25, 160), tries=2)
+              rows = []
+              if response and response.status_code == 200:
+                  for line in response.text.splitlines():
+                      with contextlib.suppress(Exception):
+                          item = json.loads(line)
+                          if isinstance(item, dict):
+                              item['_index'] = index['id']
+                              item['_host'] = host
+                              item['_endpoint'] = endpoint
+                              rows.append(item)
+              return {
+                  'source': 'commoncrawl', 'index': index['id'], 'host': host,
+                  'endpoint': endpoint, 'query': base,
+                  'http': response.status_code if response else None,
+                  'bytes': len(response.content) if response else 0,
+                  'rows': rows,
+              }
+
+          def wayback_query(host, endpoint):
+              pattern = host + endpoint + '*'
+              params = [
+                  ('url', pattern), ('output', 'json'),
+                  ('fl', 'timestamp,original,statuscode,mimetype,digest,length'),
+                  ('filter', 'statuscode:200'), ('collapse', 'digest'), ('limit', '10000'),
+              ]
+              query = 'https://web.archive.org/cdx/search/cdx?' + '&'.join(
+                  f'{quote(k, safe="")}={quote(v, safe="*:/.()[]|^$+-_")}' for k, v in params
+              )
+              response = get(query, timeout=(30, 180), tries=3)
+              rows = []
+              if response and response.status_code == 200:
+                  with contextlib.suppress(Exception):
+                      data = response.json()
+                      if isinstance(data, list) and data:
+                          header = data[0]
+                          for raw in data[1:]:
+                              if isinstance(raw, list):
+                                  item = dict(zip(header, raw))
+                                  item['_host'] = host
+                                  item['_endpoint'] = endpoint
+                                  rows.append(item)
+              return {
+                  'source': 'wayback', 'host': host, 'endpoint': endpoint,
+                  'query': query, 'http': response.status_code if response else None,
+                  'bytes': len(response.content) if response else 0,
+                  'rows': rows,
+              }
+
+          queries = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=18) as executor:
+              futures = []
+              for index in indexes:
+                  for host in HOSTS:
+                      for endpoint in ENDPOINTS:
+                          futures.append(executor.submit(cc_query, index, host, endpoint))
+              for host in HOSTS:
+                  for endpoint in ENDPOINTS:
+                      futures.append(executor.submit(wayback_query, host, endpoint))
+              for future in concurrent.futures.as_completed(futures):
+                  with contextlib.suppress(Exception):
+                      queries.append(future.result())
+
+          query_summary = []
+          cc_rows = []
+          wb_rows = []
+          for query in queries:
+              query_summary.append({k: v for k, v in query.items() if k != 'rows'} | {'rowCount': len(query.get('rows', []))})
+              if query['source'] == 'commoncrawl':
+                  cc_rows.extend(query.get('rows', []))
+              else:
+                  wb_rows.extend(query.get('rows', []))
+          (OUT / 'query-summary.json').write_text(json.dumps(query_summary, ensure_ascii=False, indent=2))
+
+          cc_unique = {}
+          for row in cc_rows:
+              cc_unique[(row.get('_index'), row.get('url'), row.get('timestamp'), row.get('digest'))] = row
+          wb_unique = {}
+          for row in wb_rows:
+              wb_unique[(row.get('timestamp'), row.get('original'), row.get('digest'))] = row
+          cc_rows = list(cc_unique.values())
+          wb_rows = list(wb_unique.values())
+          (OUT / 'commoncrawl-records.json').write_text(json.dumps(cc_rows, ensure_ascii=False, indent=2))
+          (OUT / 'wayback-records.json').write_text(json.dumps(wb_rows, ensure_ascii=False, indent=2))
+
+          def cc_body(row, max_bytes=20_000_000):
+              try:
+                  length = int(row.get('length') or 0)
+                  offset = int(row.get('offset') or 0)
+                  filename = row.get('filename')
+                  if not filename or length <= 0 or length > max_bytes:
+                      return None
+                  response = get(
+                      'https://data.commoncrawl.org/' + filename,
+                      timeout=(35, 180), tries=2,
+                      headers={'Range': f'bytes={offset}-{offset + length - 1}'},
+                  )
+                  if not response or response.status_code not in {200, 206}:
+                      return None
+                  for record in ArchiveIterator(io.BytesIO(response.content)):
+                      if record.rec_type == 'response':
+                          body = record.content_stream().read(max_bytes + 1)
+                          if len(body) > max_bytes:
+                              return None
+                          content_type = record.http_headers.get_header('Content-Type') if record.http_headers else ''
+                          return body, content_type or ''
+              except Exception:
+                  return None
+              return None
+
+          def wb_body(row, max_bytes=20_000_000):
+              timestamp = str(row.get('timestamp', ''))
+              original = str(row.get('original', ''))
+              if not timestamp or not original:
+                  return None
+              replay = f'https://web.archive.org/web/{timestamp}id_/{original}'
+              response = get(replay, timeout=(30, 180), tries=2)
+              if not response or response.status_code != 200 or len(response.content) > max_bytes:
+                  return None
+              return response.content, response.headers.get('content-type', ''), replay
+
+          def inspect_cc(row):
+              fetched = cc_body(row)
+              item = {
+                  'source': 'commoncrawl', 'index': row.get('_index'),
+                  'timestamp': row.get('timestamp'), 'url': row.get('url'),
+                  'host': row.get('_host'), 'endpoint': row.get('_endpoint'),
+              }
+              if not fetched:
+                  return item
+              body, content_type = fetched
+              return inspect_payload(item, body, content_type)
+
+          def inspect_wb(row):
+              fetched = wb_body(row)
+              item = {
+                  'source': 'wayback', 'timestamp': row.get('timestamp'),
+                  'url': row.get('original'), 'host': row.get('_host'),
+                  'endpoint': row.get('_endpoint'),
+              }
+              if not fetched:
+                  return item
+              body, content_type, replay = fetched
+              item['replay'] = replay
+              return inspect_payload(item, body, content_type)
+
+          def inspect_payload(item, body, content_type):
+              text = body.decode('utf-8', 'ignore')
+              item.update({
+                  'bytes': len(body), 'sha256': hashlib.sha256(body).hexdigest(),
+                  'contentType': content_type, 'exactHits': exact_hits(text),
+                  'fieldHits': sorted({term for term in FIELD_TERMS if term in text.casefold()}),
+                  'urls': sorted(set(u.rstrip(',.;:)]}') for u in URL_RE.findall(text)))[:1000],
+              })
+              parsed = None
+              with contextlib.suppress(Exception):
+                  parsed = json.loads(text)
+              if parsed is not None:
+                  item['json'] = True
+                  item['jsonCandidates'] = json_candidates(parsed)[:2000]
+              else:
+                  soup = BeautifulSoup(text, 'html.parser')
+                  visible = ' '.join(soup.get_text(' ', strip=True).split())
+                  item['json'] = False
+                  item['visible'] = visible[:12000]
+              october = []
+              for pattern in [
+                  r'20(?:18|19|2[0-6])[-/.](?:10|11)[-/.]\d{1,2}',
+                  r'20(?:18|19|2[0-6])(?:10|11)\d{2}',
+                  r'1[0-1]/\d{1,2}/20(?:18|19|2[0-6])',
+                  r'\b(?:Oct(?:ober)?|Nov(?:ember)?)\s+\d{1,2}(?:,\s*)?20(?:18|19|2[0-6])\b',
+              ]:
+                  october.extend(re.findall(pattern, text, re.I))
+              item['octoberDates'] = sorted(set(october))[:200]
+              if item['exactHits'] or item['fieldHits'] or item['octoberDates']:
+                  filename = hashlib.sha1((str(item.get('source')) + str(item.get('timestamp')) + str(item.get('url'))).encode()).hexdigest() + '.bin'
+                  path = RAW / filename
+                  path.write_bytes(body)
+                  item['file'] = path.relative_to(OUT).as_posix()
+              return item
+
+          # Inspect the most promising records first, but keep broad enough coverage.
+          cc_rows = sorted(cc_rows, key=lambda x: int(x.get('length') or 0), reverse=True)[:3000]
+          wb_rows = sorted(wb_rows, key=lambda x: int(x.get('length') or 0), reverse=True)[:3000]
+          inspected = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+              futures = [executor.submit(inspect_cc, row) for row in cc_rows] + [executor.submit(inspect_wb, row) for row in wb_rows]
+              for future in concurrent.futures.as_completed(futures):
+                  with contextlib.suppress(Exception):
+                      inspected.append(future.result())
+
+          useful = [x for x in inspected if x.get('bytes') and (x.get('json') or x.get('fieldHits') or x.get('exactHits'))]
+          explicit = [x for x in useful if STRONG_TERMS.intersection({h.casefold() for h in x.get('exactHits', [])})]
+          seasonal = [x for x in useful if x.get('octoberDates') or x.get('exactHits')]
+
+          # Extract every Yalla activity/deep link from recovered bodies.
+          roots = []
+          for item in useful:
+              for url in item.get('urls', []):
+                  parsed = urlparse(url)
+                  parts = [x for x in parsed.path.split('/') if x]
+                  if parsed.hostname and ('yalla' in parsed.hostname or 'peakxyz' in parsed.hostname):
+                      if len(parts) >= 3 and parts[0].casefold() == 'activity':
+                          roots.append({
+                              'source': item['source'], 'timestamp': item.get('timestamp'),
+                              'sourceUrl': item.get('url'), 'url': url,
+                              'host': parsed.hostname, 'parts': parts,
+                          })
+          unique_roots = {}
+          for root in roots:
+              unique_roots[(root['source'], root.get('timestamp'), root['url'])] = root
+          roots = list(unique_roots.values())
+
+          (OUT / 'inspected-responses.json').write_text(json.dumps(inspected, ensure_ascii=False, indent=2))
+          (OUT / 'useful-responses.json').write_text(json.dumps(useful, ensure_ascii=False, indent=2))
+          (OUT / 'explicit-halloween-responses.json').write_text(json.dumps(explicit, ensure_ascii=False, indent=2))
+          (OUT / 'seasonal-october-responses.json').write_text(json.dumps(seasonal, ensure_ascii=False, indent=2))
+          (OUT / 'recovered-activity-urls.json').write_text(json.dumps(roots, ensure_ascii=False, indent=2))
+
+          lines = [
+              '# Yalla Halloween Archived API Response Archaeology', '',
+              f'- Common Crawl indexes queried: {len(indexes)}',
+              f'- Host × endpoint combinations: {len(HOSTS) * len(ENDPOINTS)}',
+              f'- Common Crawl records: {len(cc_rows)}',
+              f'- Wayback records: {len(wb_rows)}',
+              f'- Payloads inspected: {len(inspected)}',
+              f'- Useful API/field payloads: {len(useful)}',
+              f'- Explicit Halloween/pumpkin responses: {len(explicit)}',
+              f'- October/seasonal response candidates: {len(seasonal)}',
+              f'- Recovered Yalla activity URLs: {len(roots)}', '',
+              '| # | Source | Capture | Endpoint | Bytes | Explicit hits | October dates | JSON fields |',
+              '|---:|---|---|---|---:|---|---|---:|',
+          ]
+          for index, item in enumerate(explicit + [x for x in seasonal if x not in explicit], 1):
+              lines.append(
+                  f"| {index} | {item.get('source')} | `{item.get('timestamp')}` | `{item.get('endpoint')}` | {item.get('bytes', 0)} | {', '.join(item.get('exactHits', [])[:10])} | {', '.join(item.get('octoberDates', [])[:5])} | {len(item.get('jsonCandidates', []))} |"
+              )
+          lines += ['', '## Recovered activity URLs', '']
+          for item in roots:
+              lines.append(f"- `{item.get('timestamp')}` · `{item['url']}` · source `{item.get('sourceUrl')}`")
+          lines += ['', '## Explicit Halloween response excerpts', '']
+          for item in explicit:
+              lines += [
+                  f"### {item.get('source')} · `{item.get('timestamp')}` · `{item.get('url')}`",
+                  f"Hits: {', '.join(item.get('exactHits', []))}", '',
+                  '```json', json.dumps(item.get('jsonCandidates', [])[:80], ensure_ascii=False, indent=2), '```', '',
+              ]
+          (OUT / 'REPORT.md').write_text('\n'.join(lines), encoding='utf-8')
+          print(json.dumps({
+              'indexes': len(indexes), 'commoncrawlRecords': len(cc_rows),
+              'waybackRecords': len(wb_rows), 'inspected': len(inspected),
+              'useful': len(useful), 'explicitHalloween': len(explicit),
+              'seasonalCandidates': len(seasonal), 'activityUrls': len(roots),
+          }, ensure_ascii=False, indent=2))
+          PY
+          python /tmp/recover_api.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact archived API evidence
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-halloween-api-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md query-summary.json commoncrawl-indexes.json commoncrawl-records.json wayback-records.json useful-responses.json explicit-halloween-responses.json seasonal-october-responses.json recovered-activity-urls.json run.log; do
+            cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween archived API archaeology ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload archived API archaeology artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-archived-api-archaeology
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
