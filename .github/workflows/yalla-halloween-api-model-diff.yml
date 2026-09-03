@@ -1,0 +1,224 @@
+name: Yalla Halloween historical API and model diff
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-api-model-diff.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  diff:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 300
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-api-model-diff-results
+      OUT_DIR: artifacts/yalla-halloween-api-model-diff
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Free runner disk and install dependencies
+        run: |
+          set -Eeuo pipefail
+          sudo rm -rf /opt/ghc /usr/share/dotnet /usr/local/share/boost || true
+          python -m pip install requests beautifulsoup4 lxml
+          mkdir -p "$OUT_DIR" /tmp/yalla-api-model-diff /tmp/jadx
+          url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' https://api.github.com/repos/skylot/jadx/releases/latest | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          /tmp/jadx/bin/jadx --version | tee "$OUT_DIR/jadx-version.txt"
+
+      - name: Download signed Halloween-window Yalla APKs from APKMirror
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/download_apks.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, os, re, zipfile
+          from pathlib import Path
+          from urllib.parse import urljoin
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-api-model-diff');TMP.mkdir(parents=True,exist_ok=True)
+          RELEASES={
+            '2.17.0':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-17-0-release/yalla-group-voice-chat-rooms-2-17-0-android-apk-download/',
+            '2.18.0':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-18-0-release/yalla-group-voice-chat-rooms-2-18-0-android-apk-download/',
+            '2.18.1':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-18-1-release/yalla-group-voice-chat-rooms-2-18-1-android-apk-download/',
+            '2.23.0':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-23-0-release/yalla-group-voice-chat-rooms-2-23-0-android-apk-download/',
+            '2.23.1':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-23-1-release/yalla-group-voice-chat-rooms-2-23-1-android-apk-download/',
+            '2.23.2':'https://www.apkmirror.com/apk/yalla-technology-fz-llc/yalla-group-voice-chat-rooms/yalla-group-voice-chat-rooms-2-23-2-release/yalla-group-voice-chat-rooms-2-23-2-android-apk-download/',
+          }
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/127 Safari/537.36','Accept-Language':'en-US,en;q=.9','Accept':'text/html,application/xhtml+xml,application/xml;q=.9,*/*;q=.8'})
+          def fetch(url,referer=None):return S.get(url,headers={'Referer':referer} if referer else {},timeout=(20,180),allow_redirects=True)
+          def links(text,base):
+            soup=BeautifulSoup(text,'html.parser');out=[]
+            for a in soup.find_all('a',href=True):
+              u=urljoin(base,a['href'])
+              if any(x in u for x in ['/download/?','download.php','downloadr','/wp-content/uploads/']) or u.lower().endswith(('.apk','.apkm','.xapk')):out.append(u)
+            for u in re.findall(r'https?://[^\"\'<>\s]+',text):
+              u=u.replace('&amp;','&')
+              if any(x in u for x in ['downloadr','download.php','/download/?']) or u.lower().endswith(('.apk','.apkm','.xapk')):out.append(u)
+            ded=[]
+            for u in out:
+              if u not in ded:ded.append(u)
+            return sorted(ded,key=lambda u:(0 if 'forcebaseapk' in u else 1 if 'downloadr' in u else 2,len(u)))
+          def obtain(version,page):
+            trace=[]
+            try:first=fetch(page)
+            except Exception as e:return None,[{'url':page,'error':repr(e)}]
+            trace.append({'url':page,'status':first.status_code,'finalUrl':first.url,'bytes':len(first.content),'contentType':first.headers.get('content-type')})
+            queue=[(u,first.url) for u in links(first.text,first.url)[:25]];seen=set()
+            while queue and len(seen)<55:
+              url,ref=queue.pop(0)
+              if url in seen:continue
+              seen.add(url)
+              try:r=fetch(url,ref)
+              except Exception as e:trace.append({'url':url,'error':repr(e)});continue
+              ctype=r.headers.get('content-type','');trace.append({'url':url,'status':r.status_code,'finalUrl':r.url,'bytes':len(r.content),'contentType':ctype})
+              if r.status_code==200 and len(r.content)>20_000_000 and r.content[:2]==b'PK':
+                path=TMP/f'yalla-{version}.apk';path.write_bytes(r.content)
+                if zipfile.is_zipfile(path):return path,trace
+                path.unlink(missing_ok=True)
+              if 'html' in ctype.lower() or r.content.lstrip().startswith(b'<'):
+                for nxt in links(r.text,r.url):
+                  if nxt not in seen:queue.append((nxt,r.url))
+            return None,trace
+          results=[]
+          for version,page in RELEASES.items():
+            apk,trace=obtain(version,page);vout=OUT/version;vout.mkdir(parents=True,exist_ok=True);(vout/'download-trace.json').write_text(json.dumps(trace,ensure_ascii=False,indent=2))
+            row={'version':version,'page':page,'downloaded':bool(apk)}
+            if apk:row.update(apk=str(apk),bytes=apk.stat().st_size,sha256=hashlib.sha256(apk.read_bytes()).hexdigest())
+            (vout/'download.json').write_text(json.dumps(row,ensure_ascii=False,indent=2));results.append(row);print(json.dumps(row),flush=True)
+          (OUT/'downloads.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
+          if not any(x['downloaded'] for x in results):raise SystemExit(3)
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/download_apks.py | tee "$OUT_DIR/download.log"
+
+      - name: Decompile endpoint interfaces and server-delivered activity/theme/event models
+        run: |
+          set -Eeuo pipefail
+          cat > /tmp/decompile_diff.py <<'PY'
+          from __future__ import annotations
+          import json, os, re, shutil, subprocess
+          from collections import defaultdict
+          from pathlib import Path
+
+          OUT=Path(os.environ['OUT_DIR']);TMP=Path('/tmp/yalla-api-model-diff');JADX=Path('/tmp/jadx/bin/jadx')
+          downloads=json.loads((OUT/'downloads.json').read_text())
+          ENDPOINT_PATTERNS=[
+            'ActivityList','GetActivityListForCenter','GetActivityList','GetBannerList',
+            'GetHistoryList','GetListByRoom','GetTop5','ShopRoomThemeList',
+            'GetRoomThemeList','RoomThemeEdit','GetNewUserPopup','Webservers/Event/GetList',
+          ]
+          FIELD_PATTERNS=[
+            'activityUrl','activityImage','activityText1','activityText2','activityMsg',
+            'activityId','campaignId','eventId','jumpUrl','shareUrl','redirectUrl',
+            'h5EntranceUrl','eventName','eventImageUrl','eventStartTime','eventEndTime',
+            'eventRoomId','themeBgName','themeBgImgUrl','themeVideoUrl','themeDayLimit',
+            'themeExpireTime','themeGiveId','roomTheme','roomThemeUrl','themeName',
+          ]
+          ACTIVITY_TERMS=['Halloween','halloween','هالوين','pumpkin','Pumpkin','ghost','Ghost','witch','Witch','candy','Candy','haunted','spooky']
+          API_RE=re.compile(r'/(?:Webservers|api)/[A-Za-z0-9_./?=&${}-]{4,240}')
+          URL_RE=re.compile(r'https?://[^\s\"\'<>\\)]+',re.I)
+          summaries=[];all_api=defaultdict(dict);all_fields=defaultdict(dict);all_urls=defaultdict(set)
+          for item in downloads:
+            version=item['version'];apk=Path(item.get('apk',''));vout=OUT/version
+            if not item.get('downloaded') or not apk.exists():
+              summaries.append({'version':version,'downloaded':False});continue
+            decomp=TMP/f'jadx-{version}';shutil.rmtree(decomp,ignore_errors=True)
+            cmd=[str(JADX),'--no-res','--show-bad-code','--threads-count','4','--output-dir',str(decomp),str(apk)]
+            proc=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=900)
+            (vout/'jadx.stdout.txt').write_bytes(proc.stdout);(vout/'jadx.stderr.txt').write_bytes(proc.stderr)
+            source=decomp/'sources';matches=[];api_paths=set();field_files=[];term_files=[];urls=set();model_classes=set();imports=set()
+            if source.exists():
+              for path in source.rglob('*.java'):
+                try:text=path.read_text(errors='ignore')
+                except Exception:continue
+                rel=path.relative_to(source).as_posix();lower=text.casefold()
+                endpoint_hits=[x for x in ENDPOINT_PATTERNS if x.casefold() in lower]
+                field_hits=[x for x in FIELD_PATTERNS if x.casefold() in lower]
+                term_hits=[x for x in ACTIVITY_TERMS if x.casefold() in lower]
+                if endpoint_hits or field_hits or term_hits:
+                  entry={'file':rel,'endpointHits':endpoint_hits,'fieldHits':field_hits,'termHits':term_hits}
+                  contexts=[]
+                  for token in endpoint_hits+field_hits+term_hits:
+                    for m in re.finditer(re.escape(token),text,re.I):contexts.append(text[max(0,m.start()-900):min(len(text),m.end()+1800)])
+                  entry['contexts']=contexts[:80];matches.append(entry)
+                  if field_hits:field_files.append(rel)
+                  if term_hits:term_files.append(rel)
+                  for m in re.finditer(r'import\s+([A-Za-z0-9_.$]+);',text):imports.add(m.group(1))
+                  for m in re.finditer(r'\b(?:class|interface|enum)\s+([A-Za-z0-9_$]+)',text):model_classes.add(m.group(1))
+                for api in API_RE.findall(text):api_paths.add(api.rstrip('\"\');,}'))
+                for url in URL_RE.findall(text):
+                  if 'yalla' in url.casefold() or 'peakxyz' in url.casefold():urls.add(url.rstrip(',.;:)]}'))
+            # Copy exact matched files only.
+            copied=vout/'matched-source';copied.mkdir(parents=True,exist_ok=True)
+            for entry in matches:
+              src=source/entry['file'];dst=copied/entry['file'];dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
+            payload={'version':version,'apkBytes':item.get('bytes'),'apkSha256':item.get('sha256'),'jadxReturnCode':proc.returncode,'matchedFiles':matches,'apiPaths':sorted(api_paths),'fieldFiles':sorted(set(field_files)),'halloweenTermFiles':sorted(set(term_files)),'urls':sorted(urls),'imports':sorted(imports),'modelClasses':sorted(model_classes)}
+            (vout/'analysis.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2));summaries.append({'version':version,'downloaded':True,'matchedFiles':len(matches),'apiPaths':len(api_paths),'fieldFiles':len(set(field_files)),'halloweenTermFiles':len(set(term_files)),'urls':len(urls)})
+            for path in api_paths:all_api[path][version]=True
+            for field in FIELD_PATTERNS:
+              all_fields[field][version]=any(field in x.get('fieldHits',[]) for x in matches)
+            for url in urls:all_urls[url].add(version)
+            shutil.rmtree(decomp,ignore_errors=True)
+            apk.unlink(missing_ok=True)
+          versions=[x['version'] for x in downloads]
+          api_matrix=[]
+          for path,seen in sorted(all_api.items()):api_matrix.append({'path':path,**{v:bool(seen.get(v)) for v in versions}})
+          field_matrix=[]
+          for field,seen in sorted(all_fields.items()):field_matrix.append({'field':field,**{v:bool(seen.get(v)) for v in versions}})
+          url_matrix=[{'url':url,'versions':sorted(vs)} for url,vs in sorted(all_urls.items())]
+          result={'versions':versions,'summaries':summaries,'apiMatrix':api_matrix,'fieldMatrix':field_matrix,'urlMatrix':url_matrix}
+          (OUT/'api-model-diff.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween Historical API / Model Diff','',f'- Requested versions: {len(versions)}',f"- Decompiled versions: {sum(x.get('downloaded',False) for x in summaries)}",'','| Version | Matched source | API paths | Field/model files | Halloween term files | Yalla URLs |','|---|---:|---:|---:|---:|---:|']
+          for x in summaries:lines.append(f"| {x['version']} | {x.get('matchedFiles',0)} | {x.get('apiPaths',0)} | {x.get('fieldFiles',0)} | {x.get('halloweenTermFiles',0)} | {x.get('urls',0)} |")
+          lines+=['','## Activity, banner, event and room-theme API surface','', '| API path | '+' | '.join(versions)+' |','|---|'+'|'.join(['---']*len(versions))+'|']
+          for row in api_matrix:
+            if any(row[v] for v in versions):lines.append('| `'+row['path']+'` | '+' | '.join('✓' if row[v] else '' for v in versions)+' |')
+          lines+=['','## Server-delivered activity/theme/event fields','', '| Field | '+' | '.join(versions)+' |','|---|'+'|'.join(['---']*len(versions))+'|']
+          for row in field_matrix:lines.append('| `'+row['field']+'` | '+' | '.join('✓' if row[v] else '' for v in versions)+' |')
+          lines+=['','## Extracted Yalla URLs','']+[f"- `{x['url']}` · {', '.join(x['versions'])}" for x in url_matrix]
+          (OUT/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
+          print(json.dumps({'decompiled':sum(x.get('downloaded',False) for x in summaries),'apiRows':len(api_matrix),'fieldRows':len(field_matrix),'urls':len(url_matrix),'halloweenTermFiles':sum(x.get('halloweenTermFiles',0) for x in summaries)},ensure_ascii=False,indent=2))
+          PY
+          OUT_DIR="$OUT_DIR" python /tmp/decompile_diff.py 2>&1 | tee "$OUT_DIR/decompile.log"
+
+      - name: Publish compact API/model diff
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-api-model-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md downloads.json api-model-diff.json jadx-version.txt download.log decompile.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          for d in "$OUT_DIR"/*; do
+            [[ -d "$d" ]] || continue
+            mkdir -p "$stage/$(basename "$d")"
+            for f in download.json download-trace.json analysis.json; do cp "$d/$f" "$stage/$(basename "$d")/" 2>/dev/null || true; done
+            if [[ -d "$d/matched-source" ]]; then cp -R "$d/matched-source" "$stage/$(basename "$d")/"; fi
+          done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween API model diff ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload complete API/model diff artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-api-model-diff
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
