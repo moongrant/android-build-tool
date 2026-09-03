@@ -1,0 +1,212 @@
+name: Yalla Halloween archived Apple in-app event archaeology
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/yalla-halloween-apple-event-archive.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  recover:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 210
+    env:
+      RESULT_BRANCH: pro-yalla-halloween-apple-event-results
+      OUT_DIR: artifacts/yalla-halloween-apple-event
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Recover archived Apple storefront and event metadata for Yalla
+        run: |
+          set -Eeuo pipefail
+          python -m pip install requests beautifulsoup4 lxml warcio
+          mkdir -p "$OUT_DIR/raw"
+          cat > /tmp/apple_archive.py <<'PY'
+          from __future__ import annotations
+          import concurrent.futures, contextlib, hashlib, io, json, re, time
+          from collections import defaultdict
+          from pathlib import Path
+          from urllib.parse import quote, urlparse
+          import requests
+          from bs4 import BeautifulSoup
+          from warcio.archiveiterator import ArchiveIterator
+
+          OUT=Path('artifacts/yalla-halloween-apple-event');RAW=OUT/'raw';RAW.mkdir(parents=True,exist_ok=True)
+          S=requests.Session();S.headers.update({'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Version/17.0 Mobile/15E148 Safari/604.1','Accept':'*/*','Accept-Language':'en-US,en;q=.9,ar;q=.7,tr;q=.6'})
+          APP_ID='1091902866'
+          STORES=['us','ae','sa','eg','tr','gb','fr','de','es','pt','br','in','id','vn','pk','ma','dz','iq','jo','kw','qa','om','bh']
+          PREFIXES=[]
+          for store in STORES:
+            PREFIXES += [
+              ('storefront',f'apps.apple.com/{store}/app/yalla-play-game-voice-chat/id{APP_ID}'),
+              ('storefront-old',f'apps.apple.com/{store}/app/yalla-group-voice-chat-rooms/id{APP_ID}'),
+              ('amp-api',f'amp-api.apps.apple.com/v1/catalog/{store}/apps/{APP_ID}'),
+              ('amp-edge',f'amp-api-edge.apps.apple.com/v1/catalog/{store}/apps/{APP_ID}'),
+            ]
+          PREFIXES += [('itunes-lookup',f'itunes.apple.com/lookup?id={APP_ID}'),('legacy-itunes',f'itunes.apple.com/*/app/id{APP_ID}')]
+          TERMS=['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى','ghost','ghosts','شبح','أشباح','hayalet','fantasma','fantôme','fantome','witch','witches','ساحرة','ساحر','cadı','cadi','bruxa','bruja','sorcière','sorciere','candy','candies','حلوى','şeker','seker','doces','dulces','bonbon','haunted','مسكون','perili','assombrado','embrujado','hanté','hante','spooky','مخيف','skeleton','هيكل عظمي','zombie','vampire']
+          STRONG={x.casefold() for x in ['halloween','هالوين','cadılar bayramı','cadilar bayrami','dia das bruxas','noche de brujas','pumpkin','pumpkins','اليقطين','قرع','balkabağı','balkabagi','abóbora','abobora','calabaza','citrouille','trick or treat','trick-or-treat','خدعة أم حلوى']}
+          EVENT_FIELDS=['eventid','event_id','inappevent','in-app-event','eventname','eventtitle','eventdescription','eventstart','eventend','deeplink','deep-link','actionurl','targeturl','customurl','artwork','editorialartwork','promotionaltext']
+          URL_RE=re.compile(r'(?:https?|[A-Za-z][A-Za-z0-9+.-]{1,20})://[^\s\"\'<>\\)]+',re.I)
+          def get(url,timeout=(20,150),tries=3,headers=None):
+            for i in range(tries):
+              try:
+                r=S.get(url,timeout=timeout,headers=headers,allow_redirects=True)
+                if r.status_code in {429,500,502,503,504} and i+1<tries:time.sleep(1.3*(i+1));continue
+                return r
+              except Exception:
+                if i+1<tries:time.sleep(1.3*(i+1))
+            return None
+          def hits(text):
+            low=text.casefold();out=[]
+            for term in TERMS:
+              t=term.casefold()
+              if re.fullmatch(r'[A-Za-z][A-Za-z -]*',term):
+                if re.search(r'(?<![A-Za-z])'+re.escape(t)+r'(?![A-Za-z])',low):out.append(term)
+              elif t in low:out.append(term)
+            return sorted(set(out),key=lambda x:(len(x),x.casefold()))
+          coll=get('https://index.commoncrawl.org/collinfo.json',timeout=(20,60));indexes=[]
+          if coll and coll.status_code==200:
+            by=defaultdict(list)
+            for item in coll.json():
+              m=re.search(r'CC-MAIN-(20\d{2})-',str(item.get('id','')))
+              if m and 2021<=int(m.group(1))<=2025:by[int(m.group(1))].append(item)
+            for year,items in sorted(by.items()):
+              ordered=sorted(items,key=lambda x:x['id'],reverse=True);indexes.extend(ordered[::2]);
+              if ordered and ordered[0] not in indexes:indexes.append(ordered[0])
+          (OUT/'indexes.json').write_text(json.dumps([x['id'] for x in indexes],indent=2))
+          def cc(index,label,prefix):
+            # Prefix searches preserve eventid query variants and AMP API parameter variants.
+            url=index['cdx-api']+'?url='+quote(prefix,safe='')+'&matchType=prefix&output=json&filter=status:200&collapse=digest'
+            r=get(url,timeout=(25,160),tries=2);rows=[]
+            if r and r.status_code==200:
+              for line in r.text.splitlines():
+                with contextlib.suppress(Exception):
+                  item=json.loads(line)
+                  if isinstance(item,dict):item.update(_index=index['id'],_label=label,_prefix=prefix);rows.append(item)
+            return {'source':'cc','index':index['id'],'label':label,'prefix':prefix,'query':url,'http':r.status_code if r else None,'bytes':len(r.content) if r else 0,'rows':rows}
+          def wb(label,prefix):
+            pattern=prefix+'*'
+            params=[('url',pattern),('output','json'),('fl','timestamp,original,statuscode,mimetype,digest,length'),('filter','statuscode:200'),('collapse','digest'),('limit','20000')]
+            url='https://web.archive.org/cdx/search/cdx?'+'&'.join(f'{quote(k,safe="")}={quote(v,safe="*:/.?&=()[]|^$+-_")}' for k,v in params)
+            r=get(url,timeout=(30,180),tries=3);rows=[]
+            if r and r.status_code==200:
+              with contextlib.suppress(Exception):
+                data=r.json()
+                if isinstance(data,list) and data:
+                  head=data[0]
+                  for raw in data[1:]:
+                    if isinstance(raw,list):item=dict(zip(head,raw));item.update(_label=label,_prefix=prefix);rows.append(item)
+            return {'source':'wb','label':label,'prefix':prefix,'query':url,'http':r.status_code if r else None,'bytes':len(r.content) if r else 0,'rows':rows}
+          queries=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=18) as ex:
+            fut=[ex.submit(cc,index,label,prefix) for index in indexes for label,prefix in PREFIXES]+[ex.submit(wb,label,prefix) for label,prefix in PREFIXES]
+            for f in concurrent.futures.as_completed(fut):
+              with contextlib.suppress(Exception):queries.append(f.result())
+          rows=[]
+          for q in queries:rows.extend(q['rows'])
+          ded={}
+          for row in rows:ded[(row.get('_index'),row.get('timestamp'),row.get('url') or row.get('original'),row.get('digest'))]=row
+          rows=list(ded.values());(OUT/'query-summary.json').write_text(json.dumps([{k:v for k,v in q.items() if k!='rows'}|{'rowCount':len(q['rows'])} for q in queries],ensure_ascii=False,indent=2));(OUT/'records.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          def cc_body(row,maxb=25_000_000):
+            try:
+              length=int(row.get('length') or 0);offset=int(row.get('offset') or 0);filename=row.get('filename')
+              if not filename or length<=0 or length>maxb:return None
+              r=get('https://data.commoncrawl.org/'+filename,timeout=(35,180),tries=2,headers={'Range':f'bytes={offset}-{offset+length-1}'})
+              if not r or r.status_code not in {200,206}:return None
+              for rec in ArchiveIterator(io.BytesIO(r.content)):
+                if rec.rec_type=='response':return rec.content_stream().read(maxb+1),rec.http_headers.get_header('Content-Type') if rec.http_headers else ''
+            except Exception:return None
+          def wb_body(row,maxb=25_000_000):
+            ts=str(row.get('timestamp',''));url=str(row.get('original',''))
+            if not ts or not url:return None
+            replay=f'https://web.archive.org/web/{ts}id_/{url}';r=get(replay,timeout=(30,180),tries=2)
+            return (r.content,r.headers.get('content-type',''),replay) if r and r.status_code==200 and len(r.content)<=maxb else None
+          def walk(value,path='$',out=None):
+            if out is None:out=[]
+            if isinstance(value,dict):
+              for k,v in value.items():
+                p=path+'.'+str(k);low=str(k).casefold()
+                if any(field in low for field in EVENT_FIELDS):out.append({'path':p,'key':str(k),'value':v})
+                walk(v,p,out)
+            elif isinstance(value,list):
+              for i,v in enumerate(value):walk(v,f'{path}[{i}]',out)
+            elif isinstance(value,str):
+              if hits(value) or APP_ID in value or 'eventid' in value.casefold():out.append({'path':path,'value':value})
+            return out
+          def inspect(row):
+            source='cc' if row.get('_index') else 'wb';fetched=cc_body(row) if source=='cc' else wb_body(row);url=row.get('url') or row.get('original');item={'source':source,'index':row.get('_index'),'label':row.get('_label'),'timestamp':row.get('timestamp'),'url':url}
+            if not fetched:return item
+            body,ctype,*extra=fetched;text=body.decode('utf-8','ignore');item.update(bytes=len(body),sha256=hashlib.sha256(body).hexdigest(),contentType=ctype,hits=hits(text),fieldHits=sorted({f for f in EVENT_FIELDS if f in text.casefold()}),urls=sorted(set(u.rstrip(',.;:)]}') for u in URL_RE.findall(text)))[:2000]);
+            if extra:item['replay']=extra[0]
+            parsed=None
+            with contextlib.suppress(Exception):parsed=json.loads(text)
+            if parsed is not None:item['json']=True;item['eventCandidates']=walk(parsed)[:3000]
+            else:
+              soup=BeautifulSoup(text,'html.parser');visible=' '.join(soup.get_text(' ',strip=True).split());item['json']=False;item['title']=soup.title.get_text(' ',strip=True) if soup.title else '';item['visible']=visible[:20000]
+              contexts=[]
+              for pat in [APP_ID,'eventid','in-app-event','halloween','pumpkin']:
+                for m in re.finditer(re.escape(pat),text,re.I):contexts.append(text[max(0,m.start()-1200):min(len(text),m.end()+3000)])
+              item['contexts']=contexts[:100]
+            # Event IDs in URLs, JSON and HTML.
+            ids=set(re.findall(r'(?i)(?:eventid|event_id)[=:\"\']+([0-9]{8,16})',text))
+            ids.update(re.findall(r'\?eventid=([0-9]{8,16})',str(url),re.I));item['eventIds']=sorted(ids)
+            dates=[]
+            for pat in [r'20(?:21|22|23|24|25)[-/.](?:10|11)[-/.]\d{1,2}',r'20(?:21|22|23|24|25)(?:10|11)\d{2}',r'\b(?:Oct(?:ober)?|Nov(?:ember)?)\s+\d{1,2}(?:,\s*)?20(?:21|22|23|24|25)\b']:
+              dates+=re.findall(pat,text,re.I)
+            item['octoberDates']=sorted(set(dates))[:200]
+            if item['hits'] or item['eventIds'] or item['fieldHits'] or item['octoberDates']:
+              name=hashlib.sha1((source+str(item.get('timestamp'))+str(url)).encode()).hexdigest()+'.bin';(RAW/name).write_bytes(body);item['file']='raw/'+name
+            return item
+          inspected=[]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as ex:
+            for item in ex.map(inspect,rows[:5000]):inspected.append(item)
+          useful=[x for x in inspected if x.get('bytes') and (x.get('eventIds') or x.get('fieldHits') or x.get('hits'))];explicit=[x for x in useful if STRONG & {h.casefold() for h in x.get('hits',[])}];october=[x for x in useful if x.get('octoberDates') or x.get('eventIds')]
+          events={}
+          for item in useful:
+            for eid in item.get('eventIds',[]):
+              events.setdefault(eid,{'eventId':eid,'captures':[]})['captures'].append({'source':item['source'],'timestamp':item.get('timestamp'),'url':item.get('url'),'hits':item.get('hits',[]),'dates':item.get('octoberDates',[]),'fields':item.get('eventCandidates',[])[:200]})
+          (OUT/'inspected.json').write_text(json.dumps(inspected,ensure_ascii=False,indent=2));(OUT/'useful.json').write_text(json.dumps(useful,ensure_ascii=False,indent=2));(OUT/'explicit-halloween.json').write_text(json.dumps(explicit,ensure_ascii=False,indent=2));(OUT/'event-index.json').write_text(json.dumps(sorted(events.values(),key=lambda x:x['eventId']),ensure_ascii=False,indent=2))
+          lines=['# Yalla Halloween Archived Apple In-App Event Archaeology','',f'- Common Crawl indexes: {len(indexes)}',f'- Archived Apple/App Store records: {len(rows)}',f'- Payloads inspected: {len(inspected)}',f'- Event-bearing useful payloads: {len(useful)}',f'- Distinct event IDs: {len(events)}',f'- Explicit Halloween/pumpkin payloads: {len(explicit)}','', '| Event ID | Captures | Halloween hits | October dates |','|---|---:|---|---|']
+          for eid,data in sorted(events.items()):
+            hh=sorted({h for c in data['captures'] for h in c.get('hits',[])});dd=sorted({d for c in data['captures'] for d in c.get('dates',[])})
+            lines.append(f"| `{eid}` | {len(data['captures'])} | {', '.join(hh[:12])} | {', '.join(dd[:8])} |")
+          lines+=['','## Explicit Halloween Apple payloads','']
+          for item in explicit:lines+= [f"### `{item.get('timestamp')}` · `{item.get('url')}`",f"Hits: {', '.join(item.get('hits',[]))}",'```json',json.dumps(item.get('eventCandidates',[])[:100],ensure_ascii=False,indent=2),'```','']
+          (OUT/'REPORT.md').write_text('\n'.join(lines));print(json.dumps({'indexes':len(indexes),'records':len(rows),'inspected':len(inspected),'useful':len(useful),'events':len(events),'explicit':len(explicit)},ensure_ascii=False,indent=2))
+          PY
+          python /tmp/apple_archive.py 2>&1 | tee "$OUT_DIR/run.log"
+
+      - name: Publish compact Apple event evidence
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          stage=/tmp/yalla-apple-halloween-public
+          rm -rf "$stage" && mkdir -p "$stage"
+          for f in REPORT.md indexes.json query-summary.json records.json useful.json explicit-halloween.json event-index.json run.log; do cp "$OUT_DIR/$f" "$stage/" 2>/dev/null || true; done
+          git config user.name 'pro-yalla-halloween-bot'
+          git config user.email '53897102+moongrant@users.noreply.github.com'
+          git switch --orphan "$RESULT_BRANCH"
+          git rm -rf . >/dev/null 2>&1 || true
+          cp -a "$stage"/. .
+          git add .
+          git commit -m "Publish Yalla Halloween Apple event archaeology ${GITHUB_RUN_ID}"
+          git push --force origin "$RESULT_BRANCH"
+
+      - name: Upload Apple event archaeology artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-apple-event-archive
+          path: ${{ env.OUT_DIR }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 30
