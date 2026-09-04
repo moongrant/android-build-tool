@@ -1,0 +1,81 @@
+name: Pro Falla batch 9 deduplicated discovery
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pro-falla-batch9-discovery.yml'
+      - 'tools/pro-falla-batch9/**'
+      - 'tools/pro-falla-batch4/discover.py'
+      - 'tools/pro-falla-batch4/make_fast.py'
+      - 'tools/pro-falla-batch4/contact_sheet.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch9-20260825
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --disable-pip-version-check aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Patch uploaded exclusions and build scanner
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch9/patch_discovery_exclusions.py tools/pro-falla-batch4/make_fast.py
+          python tools/pro-falla-batch9/patch_discovery_exclusions.py
+          python tools/pro-falla-batch4/make_fast.py
+          python -m py_compile tools/pro-falla-batch4/discover_fast.py tools/pro-falla-batch4/contact_sheet.py
+      - name: Scan Falla IDs and capture new candidates
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch9-discovery
+          START_ID: '1'
+          END_ID: '5000'
+          HTTP_CONCURRENCY: '48'
+          CAPTURE_LIMIT: '120'
+          CAPTURE_CONCURRENCY: '6'
+          CAPTURE_WAIT_MS: '5600'
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch4/discover_fast.py
+          python tools/pro-falla-batch4/contact_sheet.py
+      - name: Assert uploaded projects were excluded
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out=Path('artifacts/pro-falla-batch9-discovery')
+          excluded=set(json.loads((out/'batch9-manual-exclusions.json').read_text())['projects'])
+          ranked=json.loads((out/'ranked-new-candidates.json').read_text())
+          leaked=sorted({x['project'] for x in ranked}&excluded)
+          if leaked:
+              raise SystemExit(f'Uploaded projects leaked into candidates: {leaked}')
+          print(f'PASS: {len(excluded)} uploaded SPA projects excluded; ranked candidates contain zero leaks')
+          PY
+      - name: Print report
+        if: always()
+        run: |
+          cat artifacts/pro-falla-batch9-discovery/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-batch9-discovery || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch9-discovery
+          path: artifacts/pro-falla-batch9-discovery
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
