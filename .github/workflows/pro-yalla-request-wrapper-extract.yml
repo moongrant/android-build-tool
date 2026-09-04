@@ -1,0 +1,98 @@
+name: Pro Yalla request wrapper extraction
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-request-wrapper-extract.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download latest public Yalla package
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/apkeep /tmp/xapk /tmp/jadx-out artifacts/yalla-request-wrapper/sources
+          docker pull ghcr.io/efforg/apkeep:stable
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output
+          package="$(find /tmp/apkeep -type f \( -name '*.xapk' -o -name '*.apks' -o -name '*.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla.apk; else
+            unzip -q "$package" -d /tmp/xapk
+            base="$(find /tmp/xapk -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) | head -1)"
+            test -f "$base"; cp "$base" /tmp/yalla.apk
+          fi
+      - name: Install JADX and tools
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep
+          asset_url="$(curl -fsSL -H 'Accept: application/vnd.github+json' https://api.github.com/repos/skylot/jadx/releases/latest | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl -fsSL "$asset_url" -o /tmp/jadx.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+      - name: Decompile and preserve exact request classes
+        run: |
+          set -Eeuo pipefail
+          /tmp/jadx/bin/jadx --no-res --threads-count 4 --deobf --show-bad-code --output-dir /tmp/jadx-out /tmp/yalla.apk >/tmp/jadx.stdout 2>/tmp/jadx.stderr || true
+          root=/tmp/jadx-out/sources
+          test -d "$root"
+          out=artifacts/yalla-request-wrapper
+          cp /tmp/jadx.stdout "$out/jadx.stdout.txt"; cp /tmp/jadx.stderr "$out/jadx.stderr.txt"
+
+          exact=(
+            'com/yalla/yalla/api/call/request/ParamsWrapper.java'
+            'com/yalla/yalla/api/call/OooO.java'
+            'com/yalla/yalla/api/call/OooO0OO.java'
+            'com/yalla/yalla/api/old/Oooo0.java'
+            'com/yalla/yalla/data/repository/OooO0O0.java'
+            'com/yalla/yalla/data/repository/ActivityCenterRepo$getActivityList$$inlined$call$1.java'
+            'p539o0OoOoo/o00.java'
+            'p539o0OoOoo/o00O0000.java'
+            'p539o0OoOoo/o000OOo0.java'
+          )
+          for rel in "${exact[@]}"; do
+            if [[ -f "$root/$rel" ]]; then
+              safe="$(printf '%s' "$rel" | tr '/' '__')"
+              cp "$root/$rel" "$out/sources/$safe"
+            fi
+          done
+
+          # Follow imports/references around ParamsWrapper and HTTP request execution.
+          rg -l -i 'class ParamsWrapper|new ParamsWrapper|ParamsWrapper\(|class o00 |class o00O0000|Request\.Builder|OkHttpClient\.Builder|addHeader|addQueryParameter|HttpUrl\.Builder|CommonRequest|YLApi' "$root" \
+            | sort -u > "$out/relevant-files.txt" || true
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            i=$((i+1)); [[ $i -le 180 ]] || break
+            rel="${file#$root/}"; safe="$(printf '%s' "$rel" | tr '/ ' '__' | tr -cd '[:alnum:]_.-$')"
+            cp "$file" "$out/sources/follow-${i}-${safe}"
+          done < "$out/relevant-files.txt"
+
+          rg -n -i -C 30 'ParamsWrapper|GetActivityListForCenter|CommonRequest|Request\.Builder|addHeader|addQueryParameter|Authorization|token|userId|region|version|language|channel|deviceId|androidId|packageName|timestamp|signature|sign' "$out/sources" \
+            > "$out/request-context.txt" || true
+
+          {
+            echo '# Yalla request wrapper extraction'
+            echo
+            echo "Preserved sources: $(find "$out/sources" -type f | wc -l)"
+            echo
+            echo '## Request context'
+            echo '```'
+            sed -n '1,5000p' "$out/request-context.txt"
+            echo '```'
+          } > "$out/REPORT.md"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-request-wrapper-extraction
+          path: artifacts/yalla-request-wrapper
+          if-no-files-found: error
+          compression-level: 6
+          retention-days: 14
