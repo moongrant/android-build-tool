@@ -1,0 +1,405 @@
+name: Pro Yalla three rich activity discovery
+
+on:
+  push:
+    branches:
+      - research/pro-yalla-three-rich-20260821
+    paths:
+      - .github/workflows/pro-yalla-three-rich-discovery.yml
+      - research/pro-yalla-three-rich-trigger.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install discovery dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml pillow playwright
+          python -m playwright install --with-deps chromium
+      - name: Discover official SPA roots from archive indexes and live hosts
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-three-rich-discovery
+          cat > /tmp/discover.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import hashlib
+          import json
+          import re
+          import time
+          from collections import Counter, defaultdict
+          from pathlib import Path
+          from typing import Any
+          from urllib.parse import parse_qs, urljoin, urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+          from PIL import Image, ImageDraw
+          from playwright.async_api import async_playwright
+
+          OUT = Path('artifacts/pro-yalla-three-rich-discovery')
+          OUT.mkdir(parents=True, exist_ok=True)
+          SHOTS = OUT / 'screenshots'
+          SHOTS.mkdir(exist_ok=True)
+
+          UA = 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/127 Mobile Safari/537.36'
+          SESSION = requests.Session()
+          SESSION.headers.update({'User-Agent': UA, 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.9'})
+
+          ACTIVITIES = {
+              'sweet-love-2024': {
+                  'from': '20240201', 'to': '20240229',
+                  'terms': ['sweet love', 'sweet moment', 'love points', 'valentine', 'cp task', 'cp list', 'team up'],
+                  'path_terms': ['sweetlove', 'sweetmoment', 'valentine', 'lovechallenge', 'couple', 'sweet'],
+              },
+              'lucky-carnival-2024': {
+                  'from': '20241010', 'to': '20241110',
+                  'terms': ['lucky carnival', 'prize pool', 'upgrade the prize pool', 'carnival', 'lottery'],
+                  'path_terms': ['luckycarnival', 'luckymoment', 'carnival', 'prizepool', 'lottery'],
+              },
+              'treasure-tycoon-2026': {
+                  'from': '20260701', 'to': '20260821',
+                  'terms': ['treasure tycoon', 'wealth path', 'lucky treasure hunt', 'treasure hunt ticket', 'treasure'],
+                  'path_terms': ['treasuretycoon', 'wealthpath', 'treasurehunt', 'luckytreasure', 'tycoon', 'treasure'],
+              },
+          }
+
+          HOSTS = [
+              'activity2.yalla.live',
+              'activity.yalla.live',
+              'activity2.windgh.com',
+              'activity.windgh.com',
+          ]
+
+          GENERIC = [
+              'the activity has ended', 'activity has ended', 'more coming soon', '404 not found',
+              'page not found', 'service unavailable', 'temporarily offline', 'cloudflare',
+              'sorry, you have been blocked',
+          ]
+
+          def get(url: str, *, params=None, timeout=(20, 120), attempts=4) -> requests.Response | None:
+              for i in range(attempts):
+                  try:
+                      return SESSION.get(url, params=params, timeout=timeout, allow_redirects=True)
+                  except Exception:
+                      time.sleep(3 + i * 4)
+              return None
+
+          def cdx_prefix(host: str, start: str, end: str) -> dict[str, Any]:
+              params = {
+                  'url': f'{host}/activity/',
+                  'matchType': 'prefix',
+                  'from': start,
+                  'to': end,
+                  'output': 'json',
+                  'fl': 'timestamp,original,mimetype,statuscode,digest,length',
+                  'filter': 'statuscode:200',
+                  'collapse': 'urlkey',
+                  'limit': '50000',
+              }
+              result = {'host': host, 'from': start, 'to': end, 'params': params, 'records': []}
+              r = get('https://web.archive.org/cdx/search/cdx', params=params, timeout=(30, 180), attempts=5)
+              if r is None:
+                  result['error'] = 'request failed'
+                  return result
+              result.update(status=r.status_code, bytes=len(r.content), content_type=r.headers.get('content-type'))
+              result['sample'] = r.text[:2000]
+              if r.status_code == 200:
+                  try:
+                      data = r.json()
+                      if isinstance(data, list) and data:
+                          header = data[0]
+                          result['records'] = [dict(zip(header, row)) for row in data[1:] if len(row) == len(header)]
+                  except Exception as exc:
+                      result['parse_error'] = repr(exc)
+              return result
+
+          def root_of(url: str) -> tuple[str, str, str] | None:
+              p = urlparse(url)
+              m = re.search(r'/activity/([^/?#]+dist)/([^/?#]+)/', p.path, re.I)
+              if not m:
+                  return None
+              return p.netloc, m.group(1), m.group(2)
+
+          def compact(value: str) -> str:
+              return re.sub(r'[^a-z0-9]', '', value.lower())
+
+          def path_score(name: str, terms: list[str]) -> int:
+              c = compact(name)
+              return sum(25 for term in terms if compact(term) and compact(term) in c)
+
+          def text_score(text: str, terms: list[str]) -> int:
+              low = text.lower()
+              score = 0
+              for term in terms:
+                  if term.lower() in low:
+                      score += 18 if ' ' in term else 8
+              return score
+
+          queries = []
+          all_records: dict[str, list[dict[str, str]]] = defaultdict(list)
+          for slug, cfg in ACTIVITIES.items():
+              for host in HOSTS:
+                  result = cdx_prefix(host, cfg['from'], cfg['to'])
+                  records = result.pop('records')
+                  queries.append(result | {'activity': slug, 'record_count': len(records)})
+                  for record in records:
+                      record['activity'] = slug
+                      all_records[slug].append(record)
+
+          (OUT / 'cdx-query-summary.json').write_text(json.dumps(queries, ensure_ascii=False, indent=2))
+          (OUT / 'cdx-records.json').write_text(json.dumps(all_records, ensure_ascii=False, indent=2))
+
+          roots_by_activity: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+          for slug, records in all_records.items():
+              for record in records:
+                  parsed = root_of(record.get('original', ''))
+                  if not parsed:
+                      continue
+                  host, year, name = parsed
+                  key = f'{host}|{year}|{name}'
+                  row = roots_by_activity[slug].setdefault(key, {
+                      'activity': slug, 'host': host, 'year': year, 'name': name,
+                      'root_url': f'https://{host}/activity/{year}/{name}/',
+                      'counts': Counter(), 'records': [], 'timestamps': [],
+                  })
+                  row['counts']['all'] += 1
+                  mime = record.get('mimetype', '').lower()
+                  original = record.get('original', '').lower().split('?', 1)[0]
+                  if 'html' in mime or original.endswith(('/', '.html', '.htm')):
+                      row['counts']['html'] += 1
+                  if 'javascript' in mime or original.endswith(('.js', '.mjs')):
+                      row['counts']['js'] += 1
+                  if 'css' in mime or original.endswith('.css'):
+                      row['counts']['css'] += 1
+                  if 'image' in mime or re.search(r'\.(png|jpe?g|gif|webp|svg|avif)$', original):
+                      row['counts']['images'] += 1
+                  row['timestamps'].append(record.get('timestamp', ''))
+                  if len(row['records']) < 100:
+                      row['records'].append(record)
+
+          root_rows = []
+          for slug, roots in roots_by_activity.items():
+              cfg = ACTIVITIES[slug]
+              for row in roots.values():
+                  counts = row['counts']
+                  row['counts'] = dict(counts)
+                  row['first_capture'] = min(row['timestamps']) if row['timestamps'] else None
+                  row['last_capture'] = max(row['timestamps']) if row['timestamps'] else None
+                  row['archive_score'] = (
+                      path_score(row['name'], cfg['path_terms']) +
+                      min(counts['all'], 30) + min(counts['js'] * 3, 30) +
+                      min(counts['css'] * 2, 10) + min(counts['images'], 20) +
+                      min(counts['html'] * 5, 20)
+                  )
+                  root_rows.append(row)
+
+          root_rows.sort(key=lambda row: (-row['archive_score'], row['activity'], row['root_url']))
+          (OUT / 'archive-root-inventory.json').write_text(json.dumps(root_rows, ensure_ascii=False, indent=2))
+
+          def replay_url(timestamp: str, original: str) -> str:
+              return f'https://web.archive.org/web/{timestamp}id_/{original}'
+
+          def inspect_candidate(row: dict[str, Any]) -> dict[str, Any]:
+              result = {k: v for k, v in row.items() if k != 'records'}
+              cfg = ACTIVITIES[row['activity']]
+
+              # Inspect live root.
+              live = get(row['root_url'], timeout=(15, 60), attempts=3)
+              if live is not None:
+                  text = live.text[:500000]
+                  soup = BeautifulSoup(text, 'html.parser')
+                  visible = re.sub(r'\s+', ' ', soup.get_text(' ', strip=True))
+                  refs = []
+                  for tag, attr in [('script', 'src'), ('link', 'href'), ('img', 'src'), ('source', 'src')]:
+                      for el in soup.find_all(tag):
+                          value = el.get(attr)
+                          if value:
+                              refs.append(urljoin(live.url, value))
+                  low = text.lower()
+                  result['live'] = {
+                      'status': live.status_code, 'final_url': live.url, 'bytes': len(live.content),
+                      'title': soup.title.get_text(strip=True) if soup.title else '',
+                      'visible_text': visible[:2500], 'asset_refs': refs[:300],
+                      'asset_count': len(refs), 'generic': any(x in low for x in GENERIC),
+                      'keyword_score': text_score(text + ' ' + visible, cfg['terms']),
+                      'sha256': hashlib.sha256(live.content).hexdigest(),
+                  }
+
+              # Inspect up to three archived HTML-like captures.
+              html_records = []
+              for rec in row.get('records', []):
+                  original = rec.get('original', '')
+                  mime = rec.get('mimetype', '').lower()
+                  if 'html' in mime or original.lower().split('?', 1)[0].endswith(('/', '.html', '.htm')):
+                      html_records.append(rec)
+              archived = []
+              for rec in html_records[:3]:
+                  r = get(replay_url(rec['timestamp'], rec['original']), timeout=(20, 100), attempts=3)
+                  item = {'timestamp': rec['timestamp'], 'original': rec['original']}
+                  if r is None:
+                      item['error'] = 'request failed'
+                      archived.append(item)
+                      continue
+                  text = r.text[:800000]
+                  soup = BeautifulSoup(text, 'html.parser')
+                  visible = re.sub(r'\s+', ' ', soup.get_text(' ', strip=True))
+                  refs = []
+                  for tag, attr in [('script', 'src'), ('link', 'href'), ('img', 'src')]:
+                      for el in soup.find_all(tag):
+                          value = el.get(attr)
+                          if value:
+                              refs.append(urljoin(rec['original'], value))
+                  item.update({
+                      'status': r.status_code, 'bytes': len(r.content),
+                      'title': soup.title.get_text(strip=True) if soup.title else '',
+                      'visible_text': visible[:2500], 'asset_refs': refs[:300],
+                      'asset_count': len(refs), 'keyword_score': text_score(text + ' ' + visible, cfg['terms']),
+                      'generic': any(x in text.lower() for x in GENERIC),
+                      'sha256': hashlib.sha256(r.content).hexdigest(),
+                  })
+                  archived.append(item)
+              result['archived'] = archived
+
+              live_score = result.get('live', {}).get('keyword_score', 0)
+              archive_kw = max([x.get('keyword_score', 0) for x in archived] or [0])
+              result['final_score'] = row['archive_score'] + live_score * 5 + archive_kw * 6
+              result['candidate_evidence'] = bool(
+                  live_score > 0 or archive_kw > 0 or path_score(row['name'], cfg['path_terms']) > 0
+              )
+              return result
+
+          # Inspect all path-matching roots plus the 80 richest roots per activity.
+          queue = []
+          per_activity = Counter()
+          for row in root_rows:
+              direct = path_score(row['name'], ACTIVITIES[row['activity']]['path_terms']) > 0
+              if direct or per_activity[row['activity']] < 80:
+                  queue.append(row)
+                  if not direct:
+                      per_activity[row['activity']] += 1
+
+          inspected = []
+          for idx, row in enumerate(queue):
+              inspected.append(inspect_candidate(row))
+              if idx and idx % 25 == 0:
+                  (OUT / 'candidate-inspection-partial.json').write_text(json.dumps(inspected, ensure_ascii=False, indent=2))
+
+          inspected.sort(key=lambda row: (-row['final_score'], row['activity'], row['root_url']))
+          (OUT / 'candidate-inspection.json').write_text(json.dumps(inspected, ensure_ascii=False, indent=2))
+
+          promising = []
+          for row in inspected:
+              live = row.get('live', {})
+              archived = row.get('archived', [])
+              live_real = live.get('status') == 200 and live.get('bytes', 0) > 800 and not live.get('generic') and live.get('asset_count', 0) >= 2
+              archived_real = any(x.get('status') == 200 and x.get('bytes', 0) > 800 and not x.get('generic') and x.get('asset_count', 0) >= 2 for x in archived)
+              if row.get('candidate_evidence') and (live_real or archived_real):
+                  promising.append(row)
+
+          (OUT / 'promising-candidates.json').write_text(json.dumps(promising, ensure_ascii=False, indent=2))
+
+          async def render_live() -> None:
+              if not promising:
+                  return
+              async with async_playwright() as p:
+                  browser = await p.chromium.launch()
+                  used = Counter()
+                  for row in promising:
+                      slug = row['activity']
+                      live = row.get('live', {})
+                      if used[slug] >= 10 or live.get('status') != 200 or live.get('generic'):
+                          continue
+                      used[slug] += 1
+                      folder = SHOTS / slug
+                      folder.mkdir(parents=True, exist_ok=True)
+                      key = hashlib.sha1(row['root_url'].encode()).hexdigest()[:10]
+                      page = await browser.new_page(viewport={'width': 390, 'height': 844}, device_scale_factor=1, locale='en-US', user_agent=UA)
+                      errors = []
+                      failures = []
+                      responses = []
+                      page.on('pageerror', lambda exc, arr=errors: arr.append(str(exc)))
+                      page.on('requestfailed', lambda req, arr=failures: arr.append({'url': req.url, 'failure': req.failure}))
+                      page.on('response', lambda resp, arr=responses: arr.append({'url': resp.url, 'status': resp.status}) if resp.status >= 400 else None)
+                      try:
+                          await page.goto(row['root_url'], wait_until='domcontentloaded', timeout=90000)
+                          await page.wait_for_timeout(9000)
+                          height = await page.evaluate('document.documentElement.scrollHeight')
+                          for y in range(0, max(height, 844) + 844, 560):
+                              await page.evaluate('(y)=>window.scrollTo(0,y)', y)
+                              await page.wait_for_timeout(100)
+                          await page.evaluate('window.scrollTo(0,0)')
+                          shot = folder / f'{used[slug]:02d}-{key}-full.png'
+                          await page.screenshot(path=str(shot), full_page=True)
+                          (folder / f'{used[slug]:02d}-{key}-dom.html').write_text(await page.content(), errors='ignore')
+                          (folder / f'{used[slug]:02d}-{key}-text.txt').write_text(await page.locator('body').inner_text(), errors='ignore')
+                          row['render'] = {
+                              'screenshot': str(shot.relative_to(OUT)), 'title': await page.title(),
+                              'height': await page.evaluate('document.documentElement.scrollHeight'),
+                              'final_url': page.url, 'page_errors': errors,
+                              'request_failures': failures, 'response_errors': responses,
+                          }
+                      except Exception as exc:
+                          row['render'] = {'error': repr(exc), 'page_errors': errors, 'request_failures': failures, 'response_errors': responses}
+                      await page.close()
+                  await browser.close()
+              (OUT / 'promising-rendered.json').write_text(json.dumps(promising, ensure_ascii=False, indent=2))
+
+          asyncio.run(render_live())
+
+          for slug in ACTIVITIES:
+              folder = SHOTS / slug
+              images = sorted(folder.glob('*-full.png')) if folder.exists() else []
+              if not images:
+                  continue
+              cell_w, preview_h, caption_h, cols = 430, 900, 48, 2
+              rows = (len(images) + cols - 1) // cols
+              sheet = Image.new('RGB', (cols * cell_w, rows * (preview_h + caption_h + 20)), (241, 238, 231))
+              draw = ImageDraw.Draw(sheet)
+              for i, path in enumerate(images):
+                  im = Image.open(path).convert('RGB')
+                  scale = min((cell_w - 24) / im.width, preview_h / im.height)
+                  preview = im.resize((max(1, int(im.width * scale)), max(1, int(im.height * scale))))
+                  col, row = i % cols, i // cols
+                  x0, y0 = col * cell_w, row * (preview_h + caption_h + 20)
+                  sheet.paste(preview, (x0 + (cell_w - preview.width) // 2, y0 + caption_h))
+                  draw.text((x0 + 12, y0 + 15), path.stem.replace('-full', ''), fill=(20, 20, 20))
+              sheet.save(OUT / f'{slug}-contact-sheet.jpg', quality=92)
+
+          report = ['# Pro-Yalla three rich activity discovery', '']
+          report += [f'CDX query batches: {len(queries)}', f'Archive roots: {len(root_rows)}', f'Inspected roots: {len(inspected)}', f'Promising candidates: {len(promising)}', '']
+          for slug in ACTIVITIES:
+              rows = [x for x in promising if x['activity'] == slug]
+              report += [f'## {slug}', '']
+              if rows:
+                  report += ['|Score|Root|Live title|Live bytes|Archive captures|', '|---:|---|---|---:|---:|']
+                  for row in rows[:20]:
+                      report.append(f"|{row['final_score']}|`{row['root_url']}`|{row.get('live',{}).get('title','')}|{row.get('live',{}).get('bytes',0)}|{row.get('counts',{}).get('all',0)}|")
+              else:
+                  report.append('No root passed the real-SPA threshold in this pass.')
+              report.append('')
+          report.append('A promotional page, ended shell, 404, or single-page leaderboard is not accepted as a reconstructed H5 activity.')
+          (OUT / 'REPORT.md').write_text('\n'.join(report), encoding='utf-8')
+          PY
+          python /tmp/discover.py
+      - name: Upload discovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-three-rich-discovery
+          path: artifacts/pro-yalla-three-rich-discovery
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7

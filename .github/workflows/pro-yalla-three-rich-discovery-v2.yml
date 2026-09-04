@@ -1,0 +1,48 @@
+name: Pro Yalla three rich discovery v2
+
+on:
+  push:
+    branches:
+      - research/pro-yalla-three-rich-20260821
+    paths:
+      - .github/workflows/pro-yalla-three-rich-discovery-v2.yml
+      - research/pro-yalla-three-rich-discover.py
+      - research/pro-yalla-three-rich-trigger.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-yalla-three-rich-20260821
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install discovery dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 lxml
+      - name: Run evidence-first discovery
+        run: |
+          set -Eeuo pipefail
+          python research/pro-yalla-three-rich-discover.py
+      - name: Commit discovery evidence to the branch
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research-results/pro-yalla-three-rich-discovery || true
+          if git diff --cached --quiet; then
+            echo 'No discovery files changed.'
+          else
+            git commit -m 'Store Pro-Yalla three-rich discovery evidence'
+            git push origin HEAD:research/pro-yalla-three-rich-20260821
+          fi
