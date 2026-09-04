@@ -1,0 +1,208 @@
+name: Pro Yalla historical APK SPA forensics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pro-yalla-historical-apk-spa-forensics.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '2.25.0'
+            label: sweet-love-window
+          - version: '2.28.0'
+            label: lucky-carnival-window
+          - version: '3.6.2'
+            label: treasure-tycoon-window
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install analysis tools
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ripgrep unzip apktool imagemagick binutils default-jre-headless
+          python -m pip install --upgrade pip
+          python -m pip install pillow
+          asset_url="$(curl --fail --silent --show-error -H 'Accept: application/vnd.github+json' \
+            https://api.github.com/repos/skylot/jadx/releases/latest \
+            | jq -r '.assets[] | select(.name | test("^jadx-[0-9].*\\.zip$")) | .browser_download_url' | head -1)"
+          curl --fail --location --retry 5 --retry-all-errors -o /tmp/jadx.zip "$asset_url"
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          docker pull ghcr.io/efforg/apkeep:stable
+
+      - name: Download exact historical APK version
+        env:
+          VERSION: ${{ matrix.version }}
+          LABEL: ${{ matrix.label }}
+        run: |
+          set -Eeuo pipefail
+          out="artifacts/$LABEL-$VERSION"
+          mkdir -p "$out" /tmp/apkeep /tmp/pkg
+          docker run --rm -v /tmp/apkeep:/output ghcr.io/efforg/apkeep:stable \
+            -a "com.weieyu.yalla@$VERSION" -d apk-pure /output \
+            > "$out/apkeep.stdout.txt" 2> "$out/apkeep.stderr.txt"
+          package="$(find /tmp/apkeep -type f \( -name '*.apk' -o -name '*.xapk' -o -name '*.apks' -o -name '*.zip' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          cp "$package" "$out/downloaded-package${package##*.}"
+          if [[ "$package" == *.apk ]]; then
+            cp "$package" /tmp/base.apk
+          else
+            unzip -q "$package" -d /tmp/pkg
+            base="$(find /tmp/pkg -type f \( -name 'com.weieyu.yalla.apk' -o -name 'base.apk' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+            test -n "$base"
+            cp "$base" /tmp/base.apk
+          fi
+          sha256sum /tmp/base.apk > "$out/base.apk.sha256"
+          stat -c '%s' /tmp/base.apk > "$out/base.apk.size"
+          apksigner_bin="$(find "$ANDROID_HOME/build-tools" -type f -name apksigner | sort -V | tail -1 || true)"
+          if [[ -n "$apksigner_bin" ]]; then
+            "$apksigner_bin" verify --print-certs /tmp/base.apk > "$out/apksigner.txt" 2>&1 || true
+          fi
+
+      - name: Decompile sources and resources
+        env:
+          VERSION: ${{ matrix.version }}
+          LABEL: ${{ matrix.label }}
+        run: |
+          set -Eeuo pipefail
+          out="artifacts/$LABEL-$VERSION"
+          mkdir -p /tmp/jadx-out /tmp/apktool-out "$out/sources" "$out/target-assets"
+          /tmp/jadx/bin/jadx --threads-count 4 --show-bad-code --deobf \
+            -d /tmp/jadx-out /tmp/base.apk \
+            > "$out/jadx.stdout.txt" 2> "$out/jadx.stderr.txt" || true
+          apktool d -f -o /tmp/apktool-out /tmp/base.apk \
+            > "$out/apktool.stdout.txt" 2> "$out/apktool.stderr.txt" || true
+
+          roots=(/tmp/jadx-out /tmp/apktool-out)
+          pattern='sweet[ _-]?love|sweet[ _-]?moment|love[ _-]?points|lucky[ _-]?carnival|prize[ _-]?pool|treasure[ _-]?tycoon|wealth[ _-]?path|lucky[ _-]?treasure|6475700703|6737220863|1021917730722093|activityUrl|h5EntranceUrl|GetActivityListForCenter|ActivityCenterItemModel|OfficialActionModel|RoomActivityModel'
+          for root in "${roots[@]}"; do
+            rg -n -i -C 8 "$pattern" "$root" \
+              >> "$out/target-context.txt" || true
+            rg -l -i "$pattern" "$root" \
+              >> "$out/target-files.txt" || true
+          done
+          sort -u -o "$out/target-files.txt" "$out/target-files.txt" || true
+
+          # Preserve all exact source files involved in dynamic activity discovery and network construction.
+          include_patterns=(
+            'ActivityCenterRepo' 'ActivityCenterVM' 'ActivityCenterItemModel' 'ActivityListModel'
+            'OfficialActionModel' 'RoomActivityModel' 'ParamsWrapper' 'GetActivityListForCenter'
+            'activityUrl' 'h5EntranceUrl' 'RSA' 'xsignature' 'xtimestamp'
+          )
+          : > "$out/relevant-source-files.txt"
+          for term in "${include_patterns[@]}"; do
+            rg -l -i "$term" /tmp/jadx-out/sources >> "$out/relevant-source-files.txt" || true
+          done
+          sort -u -o "$out/relevant-source-files.txt" "$out/relevant-source-files.txt" || true
+          i=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            i=$((i+1)); [[ $i -le 250 ]] || break
+            rel="${file#/tmp/jadx-out/sources/}"
+            dest="$out/sources/$rel"
+            mkdir -p "$(dirname "$dest")"
+            cp "$file" "$dest"
+          done < "$out/relevant-source-files.txt"
+
+          # Extract all URL-like strings and likely API/controller names.
+          rg -o -N 'https?://[^"[:space:]<>)]+' /tmp/jadx-out /tmp/apktool-out \
+            | sed 's#^[^:]*:##' | sort -u > "$out/all-urls.txt" || true
+          rg -o -N '/?(?:api|Api|Webservers)/[A-Za-z0-9_./?=&-]+' /tmp/jadx-out/sources \
+            | sed 's#^[^:]*:##' | sort -u > "$out/api-routes.txt" || true
+          rg -n -i -C 12 'GetActivityListForCenter|ActivityCenterRepo|ParamsWrapper|addHeader|addQueryParameter|xsignature|xtimestamp|userId|token|region|version|platform' \
+            /tmp/jadx-out/sources/com/yalla/yalla \
+            > "$out/request-construction-context.txt" || true
+
+          # Preserve candidate embedded web files, JSON configs and target-matching visual assets.
+          find /tmp/apktool-out -type f \( -iname '*.html' -o -iname '*.htm' -o -iname '*.js' -o -iname '*.css' -o -iname '*.json' -o -iname '*.xml' \) \
+            -printf '%p\n' > "$out/web-config-files.txt"
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            rel="${file#/tmp/apktool-out/}"
+            # Keep target-matching configs plus all small web files under assets/res/raw.
+            if rg -qi "$pattern" "$file" 2>/dev/null || [[ "$rel" == assets/* ]] || [[ "$rel" == res/raw*/* ]]; then
+              if [[ $(stat -c '%s' "$file") -le 5000000 ]]; then
+                dest="$out/target-assets/$rel"; mkdir -p "$(dirname "$dest")"; cp "$file" "$dest"
+              fi
+            fi
+          done < "$out/web-config-files.txt"
+
+          # Match image filenames and nearby XML/string references; build a contact sheet if any images are relevant.
+          find /tmp/apktool-out -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \) \
+            | grep -Ei 'sweet|love|valentine|carnival|lucky|treasure|tycoon|wealth|prize|lottery' \
+            > "$out/target-image-files.txt" || true
+          j=0
+          while IFS= read -r file; do
+            [[ -f "$file" ]] || continue
+            j=$((j+1)); [[ $j -le 300 ]] || break
+            rel="${file#/tmp/apktool-out/}"
+            dest="$out/target-assets/$rel"; mkdir -p "$(dirname "$dest")"; cp "$file" "$dest"
+          done < "$out/target-image-files.txt"
+
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw
+          import json, os, re, hashlib
+          version=os.environ['VERSION']; label=os.environ['LABEL']
+          out=Path('artifacts')/f'{label}-{version}'
+          imgs=[]
+          for p in (out/'target-assets').rglob('*'):
+              if p.suffix.lower() not in {'.png','.jpg','.jpeg','.webp'}: continue
+              try:
+                  im=Image.open(p).convert('RGB')
+              except Exception:
+                  continue
+              if im.width < 80 or im.height < 80: continue
+              imgs.append((p,im))
+          imgs=imgs[:60]
+          if imgs:
+              cell_w,cell_h,cols=320,260,3
+              rows=(len(imgs)+cols-1)//cols
+              sheet=Image.new('RGB',(cell_w*cols,cell_h*rows),(242,242,242))
+              draw=ImageDraw.Draw(sheet)
+              for i,(p,im) in enumerate(imgs):
+                  im.thumbnail((cell_w-20,cell_h-45))
+                  x=(i%cols)*cell_w+(cell_w-im.width)//2
+                  y=(i//cols)*cell_h+30
+                  sheet.paste(im,(x,y))
+                  draw.text(((i%cols)*cell_w+8,(i//cols)*cell_h+7),p.name[:45],fill=(20,20,20))
+              sheet.save(out/'target-images-contact-sheet.jpg',quality=92)
+          summary={
+              'version':version,
+              'label':label,
+              'target_hit_files':len((out/'target-files.txt').read_text(errors='ignore').splitlines()) if (out/'target-files.txt').exists() else 0,
+              'relevant_source_files':len((out/'relevant-source-files.txt').read_text(errors='ignore').splitlines()) if (out/'relevant-source-files.txt').exists() else 0,
+              'target_images':len(imgs),
+              'urls':len((out/'all-urls.txt').read_text(errors='ignore').splitlines()) if (out/'all-urls.txt').exists() else 0,
+              'api_routes':len((out/'api-routes.txt').read_text(errors='ignore').splitlines()) if (out/'api-routes.txt').exists() else 0,
+          }
+          (out/'summary.json').write_text(json.dumps(summary,indent=2))
+          report=[f'# Yalla historical APK forensics — {version}', '', f"Window: {label}", '']
+          for k,v in summary.items(): report.append(f'- {k}: {v}')
+          report += ['', '## Target context', '```', (out/'target-context.txt').read_text(errors='ignore')[:60000] if (out/'target-context.txt').exists() else '', '```']
+          (out/'REPORT.md').write_text('\n'.join(report))
+          PY
+
+      - name: Upload historical APK evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-yalla-historical-apk-${{ matrix.version }}
+          path: artifacts/${{ matrix.label }}-${{ matrix.version }}
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 14
