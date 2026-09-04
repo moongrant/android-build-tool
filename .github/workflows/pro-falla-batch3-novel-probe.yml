@@ -1,0 +1,52 @@
+name: Pro Falla batch 3 novel engine probe
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/pro-falla-batch3-novel-probe.yml'
+      - 'tools/pro-falla-batch3/probe_novel.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch3-20260819
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Capture targeted novel candidates
+        env:
+          PYTHONUNBUFFERED: '1'
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-novel-probe
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch3/probe_novel.py
+          python tools/pro-falla-batch3/probe_novel.py
+      - name: Print summary
+        if: always()
+        run: du -sh artifacts/pro-falla-batch3-novel-probe || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-novel-probe
+          path: artifacts/pro-falla-batch3-novel-probe
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6

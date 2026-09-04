@@ -1,0 +1,83 @@
+name: Pro Falla batch 3 original SPA localization
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/pro-falla-batch3-archive.yml'
+      - 'tools/pro-falla-batch3/archive_selected.mjs'
+      - 'tools/pro-falla-batch3/repair_archive.py'
+      - 'tools/pro-falla-batch3/contact_sheets.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch3-20260819
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install archive dependencies
+        run: |
+          set -Eeuo pipefail
+          npm install playwright@1.54.2 --no-save
+          npx playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Build repaired archiver
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch3/repair_archive.py
+          python tools/pro-falla-batch3/repair_archive.py
+          node --check tools/pro-falla-batch3/archive_selected_repaired.mjs
+      - name: Capture original responses and verify zero-remote replay
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-original-spa
+          ONLINE_WAIT_MS: '5200'
+          OFFLINE_WAIT_MS: '3600'
+          ROUTE_LIMIT: '9'
+          PAGE_CONCURRENCY: '3'
+        run: |
+          set -Eeuo pipefail
+          node tools/pro-falla-batch3/archive_selected_repaired.mjs
+      - name: Build campaign contact sheets
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-original-spa
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch3/contact_sheets.py
+          python tools/pro-falla-batch3/contact_sheets.py
+      - name: Print QA summary
+        if: always()
+        run: |
+          if [[ -f artifacts/pro-falla-batch3-original-spa/QA-FINAL.md ]]; then
+            cat artifacts/pro-falla-batch3-original-spa/QA-FINAL.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ -f artifacts/pro-falla-batch3-original-spa/manifest.json ]]; then
+            python - <<'PY'
+          import json
+          p=json.load(open('artifacts/pro-falla-batch3-original-spa/manifest.json'))
+          print({k:p.get(k) for k in ['campaignCount','unitCount','pageCount','originalFileCount','originalBytes','historicalApiFixtureCount','originalStaticByteComplete','offlineReplayComplete','rawByteComplete']})
+          PY
+          fi
+          du -sh artifacts/pro-falla-batch3-original-spa || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-original-spa-repaired
+          path: artifacts/pro-falla-batch3-original-spa
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6

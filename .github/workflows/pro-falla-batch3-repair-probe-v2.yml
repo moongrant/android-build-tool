@@ -1,0 +1,47 @@
+name: Pro Falla batch 3 repair probe v2
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/pro-falla-batch3-repair-probe-v2.yml'
+      - 'tools/pro-falla-batch3/repair_probe_v2.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch3-20260819
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install probe dependency
+        run: python -m pip install --disable-pip-version-check aiohttp
+      - name: Probe source maps, release assets, translations and historical APIs
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch3-repair-probe-v2
+        run: |
+          set -Eeuo pipefail
+          python -m py_compile tools/pro-falla-batch3/repair_probe_v2.py
+          python tools/pro-falla-batch3/repair_probe_v2.py
+      - name: Print report
+        if: always()
+        run: |
+          cat artifacts/pro-falla-batch3-repair-probe-v2/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-batch3-repair-probe-v2 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch3-repair-probe-v2
+          path: artifacts/pro-falla-batch3-repair-probe-v2
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
