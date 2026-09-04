@@ -1,0 +1,57 @@
+name: Pro Falla batch 4 discovery fast
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pro-falla-batch4-discovery-fast.yml'
+      - 'tools/pro-falla-batch4/make_fast.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch4-20260820
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --disable-pip-version-check aiohttp playwright pillow
+          python -m playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Build and run fast discovery
+        env:
+          OUT_DIR: ${{ github.workspace }}/artifacts/pro-falla-batch4-discovery-fast
+          START_ID: '1'
+          END_ID: '2600'
+          HTTP_CONCURRENCY: '40'
+          CAPTURE_LIMIT: '48'
+          CAPTURE_CONCURRENCY: '5'
+          CAPTURE_WAIT_MS: '5200'
+        run: |
+          set -Eeuo pipefail
+          python tools/pro-falla-batch4/make_fast.py
+          python -m py_compile tools/pro-falla-batch4/discover_fast.py tools/pro-falla-batch4/contact_sheet.py
+          python tools/pro-falla-batch4/discover_fast.py
+          python tools/pro-falla-batch4/contact_sheet.py
+      - if: always()
+        run: |
+          cat artifacts/pro-falla-batch4-discovery-fast/REPORT.md >> "$GITHUB_STEP_SUMMARY" || true
+          du -sh artifacts/pro-falla-batch4-discovery-fast || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-falla-batch4-discovery-fast
+          path: artifacts/pro-falla-batch4-discovery-fast
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6
