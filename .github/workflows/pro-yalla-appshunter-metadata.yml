@@ -1,0 +1,183 @@
+name: Pro Yalla AppsHunter event metadata probe
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/pro-yalla-appshunter-metadata.yml
+      - research-trigger/pro-yalla-appshunter.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser dependencies
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
+      - name: Capture public event source and network JSON
+        run: |
+          set -Eeuo pipefail
+          mkdir -p artifacts/pro-yalla-appshunter
+          cat > /tmp/probe.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import hashlib
+          import json
+          import re
+          from pathlib import Path
+          from typing import Any
+          from urllib.parse import urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT=Path('artifacts/pro-yalla-appshunter')
+          OUT.mkdir(parents=True,exist_ok=True)
+          EVENTS={
+            'sweet-love-2024':'6475700703',
+            'lucky-carnival-2024':'6737220863',
+          }
+          UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/127 Safari/537.36'
+
+          def walk(value:Any,path='$'):
+            if isinstance(value,dict):
+              for k,v in value.items(): yield from walk(v,f'{path}.{k}')
+            elif isinstance(value,list):
+              for i,v in enumerate(value): yield from walk(v,f'{path}[{i}]')
+            elif isinstance(value,str): yield path,value
+
+          s=requests.Session(); s.headers.update({'User-Agent':UA,'Accept-Language':'en-US,en;q=.9'})
+          direct=[]
+          for slug,event_id in EVENTS.items():
+            folder=OUT/slug; folder.mkdir(exist_ok=True)
+            url=f'https://appshunter.io/events/{event_id}'
+            row={'slug':slug,'event_id':event_id,'url':url}
+            try:
+              r=s.get(url,timeout=(15,60),allow_redirects=True)
+              row.update(status=r.status_code,final_url=r.url,bytes=len(r.content),content_type=r.headers.get('content-type'),sha256=hashlib.sha256(r.content).hexdigest())
+              (folder/'page.html').write_bytes(r.content)
+              text=r.text
+              row['url_strings']=sorted(set(re.findall(r'(?:https?://|[a-z][a-z0-9+.-]*://)[^"\'<>\s)]+',text,re.I)))[:2000]
+              row['target_occurrences']={
+                'event_id':text.count(event_id),
+                'deepLink':len(re.findall(r'deep.?link',text,re.I)),
+                'activity2':text.lower().count('activity2.yalla'),
+                'yalla_scheme':len(re.findall(r'yalla(?:app)?://',text,re.I)),
+              }
+              scripts=[]
+              soup=BeautifulSoup(text,'html.parser')
+              for script in soup.find_all('script'):
+                src=script.get('src')
+                if src: scripts.append(src)
+                content=script.string or script.get_text() or ''
+                if content.strip():
+                  key=hashlib.sha1(content.encode(errors='ignore')).hexdigest()[:10]
+                  (folder/f'inline-{key}.js').write_text(content,errors='ignore')
+              row['script_srcs']=scripts
+            except Exception as exc:
+              row['error']=repr(exc)
+            direct.append(row)
+          (OUT/'direct.json').write_text(json.dumps(direct,ensure_ascii=False,indent=2))
+
+          async def main():
+            network=[]; interesting=[]
+            async with async_playwright() as p:
+              browser=await p.chromium.launch()
+              context=await browser.new_context(viewport={'width':1280,'height':900},user_agent=UA,locale='en-US')
+              for slug,event_id in EVENTS.items():
+                folder=OUT/slug
+                page=await context.new_page()
+                async def capture(response,slug=slug,event_id=event_id):
+                  url=response.url
+                  request=response.request
+                  rec={'slug':slug,'event_id':event_id,'url':url,'status':response.status,'method':request.method,'resource_type':request.resource_type}
+                  try:
+                    body=await response.body()
+                    rec['bytes']=len(body); rec['sha256']=hashlib.sha256(body).hexdigest(); rec['content_type']=response.headers.get('content-type')
+                    low=body[:10_000_000].lower()
+                    keep=(event_id.encode() in body or b'deeplink' in low or b'activity2.yalla' in low or b'yalla://' in low or b'event' in low or b'api' in low)
+                    if keep:
+                      nfolder=folder/'network'; nfolder.mkdir(exist_ok=True)
+                      key=hashlib.sha1(url.encode()).hexdigest()[:12]
+                      path=nfolder/f'{key}.body'; path.write_bytes(body); rec['saved_body']=str(path.relative_to(OUT))
+                      try:
+                        data=json.loads(body)
+                        matches=[]
+                        for jp,value in walk(data):
+                          lv=value.lower(); lp=jp.lower()
+                          if event_id in value or any(t in lp for t in ['deep','url','link','event','activity']) or 'activity2.yalla' in lv or lv.startswith(('yalla://','yallaapp://','http://','https://')):
+                            matches.append({'path':jp,'value':value[:5000]})
+                        interesting.append({'slug':slug,'url':url,'matches':matches[:3000]})
+                      except Exception:
+                        text=body.decode('utf-8','ignore')
+                        matches=sorted(set(re.findall(r'(?:https?://|[a-z][a-z0-9+.-]*://)[^"\'<>\s)]+',text,re.I)))
+                        if matches:
+                          interesting.append({'slug':slug,'url':url,'raw_urls':matches[:3000]})
+                  except Exception as exc:
+                    rec['error']=repr(exc)
+                  network.append(rec)
+                page.on('response',lambda response: asyncio.create_task(capture(response)))
+                try:
+                  await page.goto(f'https://appshunter.io/events/{event_id}',wait_until='domcontentloaded',timeout=90000)
+                  await page.wait_for_timeout(12000)
+                  await page.screenshot(path=str(folder/'page-full.png'),full_page=True)
+                  (folder/'page-dom.html').write_text(await page.content(),errors='ignore')
+                  (folder/'page-text.txt').write_text(await page.locator('body').inner_text(),errors='ignore')
+                  storage=await page.evaluate('''() => ({localStorage:{...localStorage},sessionStorage:{...sessionStorage},globals:Object.keys(window).filter(k=>/next|nuxt|event|api/i.test(k)).slice(0,500)})''')
+                  (folder/'browser-storage.json').write_text(json.dumps(storage,ensure_ascii=False,indent=2))
+                except Exception as exc:
+                  network.append({'slug':slug,'page_error':repr(exc)})
+                await page.close()
+              await context.close(); await browser.close()
+            await asyncio.sleep(3)
+            (OUT/'network.json').write_text(json.dumps(network,ensure_ascii=False,indent=2))
+            (OUT/'interesting.json').write_text(json.dumps(interesting,ensure_ascii=False,indent=2))
+          asyncio.run(main())
+
+          # Scan every saved text/body for likely raw Apple/Yalla fields.
+          hits=[]
+          pattern=re.compile(r'deep.?link|activity.?url|h5.?url|event.?url|yalla(?:app)?://|activity2\.yalla|6475700703|6737220863|sweet.?love|lucky.?carnival',re.I)
+          for path in OUT.rglob('*'):
+            if not path.is_file() or path.suffix.lower() in {'.png','.jpg','.jpeg','.gif','.webp'}: continue
+            try: text=path.read_text(errors='ignore')
+            except Exception: continue
+            matches=[]
+            for match in pattern.finditer(text):
+              start=max(0,match.start()-500); end=min(len(text),match.end()+1000)
+              matches.append(text[start:end])
+              if len(matches)>=100: break
+            if matches: hits.append({'file':str(path.relative_to(OUT)),'matches':matches})
+          (OUT/'raw-field-hits.json').write_text(json.dumps(hits,ensure_ascii=False,indent=2))
+
+          report=['# AppsHunter Yalla event metadata probe','']
+          report += [f'Direct pages: {len(direct)}','']
+          interesting_path=OUT/'interesting.json'
+          if interesting_path.exists():
+            rows=json.loads(interesting_path.read_text())
+            report += [f'Interesting network groups: {len(rows)}',f'Network match entries: {sum(len(r.get("matches",[]))+len(r.get("raw_urls",[])) for r in rows)}','']
+          report += ['AppsHunter event IDs remain App Store catalog IDs unless a stored deep link or Yalla H5 URL proves otherwise.']
+          (OUT/'REPORT.md').write_text('\n'.join(report),encoding='utf-8')
+          PY
+          python /tmp/probe.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pro-yalla-appshunter-metadata
+          path: artifacts/pro-yalla-appshunter
+          if-no-files-found: warn
+          retention-days: 7
