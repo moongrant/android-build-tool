@@ -1,0 +1,23 @@
+{
+  "label": "kainy-suggest-1",
+  "method": "GET",
+  "url": "https://open.kainy.cn/api/weapp-suggest",
+  "status": 403,
+  "finalUrl": "https://open.kainy.cn/api/weapp-suggest?appid=%E6%B3%9B%E6%80%9D%E5%8D%9A%E7%89%B9%E7%BD%91%E7%90%83%E8%AE%A2%E5%9C%BA",
+  "elapsedMs": 1054,
+  "responseHeaders": {
+    "Server": "nginx",
+    "Date": "Mon, 24 Aug 2026 09:07:44 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Origin",
+    "Access-Control-Allow-Origin": "*",
+    "X-RateLimit-Limit": "100",
+    "X-RateLimit-Remaining": "95"
+  },
+  "bodyText": "{\"error\":\"此API需注册后访问，请前往 https://open.kainy.cn/ 处理。\"}",
+  "bodyJson": {
+    "error": "此API需注册后访问，请前往 https://open.kainy.cn/ 处理。"
+  }
+}

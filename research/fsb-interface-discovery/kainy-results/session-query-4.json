@@ -1,0 +1,23 @@
+{
+  "label": "session-query-4",
+  "method": "POST",
+  "url": "https://open.kainy.cn/api/AppidQuery",
+  "statusCode": 403,
+  "finalUrl": "https://open.kainy.cn/api/AppidQuery",
+  "elapsedMs": 269,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 24 Aug 2026 09:08:16 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Origin",
+    "Access-Control-Allow-Origin": "*",
+    "X-RateLimit-Limit": "50",
+    "X-RateLimit-Remaining": "44"
+  },
+  "bodyText": "{\"error\":\"此API需注册后访问，请前往 https://open.kainy.cn/ 处理。\"}",
+  "bodyJson": {
+    "error": "此API需注册后访问，请前往 https://open.kainy.cn/ 处理。"
+  }
+}

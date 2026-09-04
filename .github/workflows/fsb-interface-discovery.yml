@@ -1,0 +1,51 @@
+name: FSB Interface Discovery
+
+on:
+  push:
+    branches:
+      - research/fsb-interface-discovery-20260824
+    paths:
+      - 'research/fsb-interface-discovery/**'
+      - '.github/workflows/fsb-interface-discovery.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'research/fsb-interface-discovery/**'
+      - '.github/workflows/fsb-interface-discovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependency
+        run: python -m pip install --disable-pip-version-check requests==2.32.5
+      - name: Query public mini-program filing record
+        env:
+          FSB_FILING_QUERY_OUT: research/fsb-interface-discovery/filing-query-results
+        run: python research/fsb-interface-discovery/query_filing.py | tee research/fsb-interface-discovery/filing-query-run.log
+      - name: Probe evidence-derived FSB store candidate
+        env:
+          FSB_CANDIDATE_OUT: research/fsb-interface-discovery/candidate-results
+        run: python research/fsb-interface-discovery/probe_evidence_candidates.py | tee research/fsb-interface-discovery/candidate-run.log
+      - name: Upload focused results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsb-interface-discovery
+          path: |
+            research/fsb-interface-discovery/filing-query-results
+            research/fsb-interface-discovery/candidate-results
+            research/fsb-interface-discovery/filing-query-run.log
+            research/fsb-interface-discovery/candidate-run.log
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,44 @@
+name: FSB Public Page Asset Scrape
+
+on:
+  push:
+    branches:
+      - research/fsb-interface-discovery-20260824
+    paths:
+      - 'tools/fsb-page-scrape/**'
+      - '.github/workflows/fsb-page-scrape.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/fsb-page-scrape/**'
+      - '.github/workflows/fsb-page-scrape.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests==2.32.5 beautifulsoup4==4.13.5
+      - name: Scrape public pages and assets
+        env:
+          FSB_PAGE_OUT: fsb-page-scrape-output
+        run: python tools/fsb-page-scrape/scrape.py | tee fsb-page-scrape.log
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fsb-page-scrape
+          path: |
+            fsb-page-scrape-output
+            fsb-page-scrape.log
+          if-no-files-found: error
+          retention-days: 7

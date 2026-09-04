@@ -1,0 +1,20 @@
+{
+  "query": "context:global patternType:literal \"PSPLVISITORID\"",
+  "statusCode": 200,
+  "elapsedMs": 180,
+  "finalUrl": "https://sourcegraph.com/.api/search/stream?q=context%3Aglobal+patternType%3Aliteral+%22PSPLVISITORID%22&v=V3&display=short",
+  "result": {
+    "matches": [],
+    "progress": [],
+    "alerts": [
+      {
+        "event": "error",
+        "data": {
+          "message": "display must be an integer, got \"short\": strconv.Atoi: parsing \"short\": invalid syntax"
+        }
+      }
+    ],
+    "matchCount": 0
+  },
+  "rawPreview": "event: error\ndata: {\"message\":\"display must be an integer, got \\\"short\\\": strconv.Atoi: parsing \\\"short\\\": invalid syntax\"}\n\nevent: done\ndata: {}\n\n"
+}

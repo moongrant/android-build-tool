@@ -1,0 +1,19 @@
+{
+  "label": "docs-03",
+  "method": "GET",
+  "path": "/swagger.json",
+  "requestBody": null,
+  "storeHeader": null,
+  "statusCode": 404,
+  "elapsedMs": 241,
+  "responseHeaders": {
+    "Server": "openresty",
+    "Date": "Mon, 24 Aug 2026 09:08:11 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Cache-Control": "private",
+    "Content-Encoding": "gzip"
+  },
+  "bodyText": "<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <title>无法找到资源。</title>\r\n        <meta name=\"viewport\" content=\"width=device-width\" />\r\n        <style>\r\n         body {font-family:\"Verdana\";font-weight:normal;font-size: .7em;color:black;} \r\n         p {font-family:\"Verdana\";font-weight:normal;color:black;margin-top: -5px}\r\n         b {font-family:\"Verdana\";font-weight:bold;color:black;margin-top: -5px}\r\n         H1 { font-family:\"Verdana\";font-weight:normal;font-size:18pt;color:red }\r\n         H2 { font-family:\"Verdana\";font-weight:normal;font-size:14pt;color:maroon }\r\n         pre {font-family:\"Consolas\",\"Lucida Console\",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}\r\n         .marker {font-weight: bold; color: black;text-decoration: none;}\r\n         .version {color: gray;}\r\n         .error {margin-bottom: 10px;}\r\n         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }\r\n         @media screen and (max-width: 639px) {\r\n          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }\r\n         }\r\n         @media screen and (max-width: 479px) {\r\n          pre { width: 280px; }\r\n         }\r\n        </style>\r\n    </head>\r\n\r\n    <body bgcolor=\"white\">\r\n\r\n            <span><H1>“/”应用程序中的服务器错误。<hr width=100% size=1 color=silver></H1>\r\n\r\n            <h2> <i>无法找到资源。</i> </h2></span>\r\n\r\n            <font face=\"Arial, Helvetica, Geneva, SunSans-Regular, sans-serif \">\r\n\r\n            <b> 说明: </b>HTTP 404。您正在查找的资源(或者它的一个依赖项)可能已被移除，或其名称已更改，或暂时不可用。请检查以下 URL 并确保其拼写正确。\r\n            <br><br>\r\n\r\n            <b> 请求的 URL: </b>/swagger.json<br><br>\r\n\r\n    </body>\r\n</html>\r\n"
+}
