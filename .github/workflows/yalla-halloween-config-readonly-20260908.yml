@@ -1,0 +1,113 @@
+name: Yalla Halloween readonly configuration trace 20260908
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-halloween-config-readonly-20260908.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read exact discovered endpoints without credentials or write actions
+        run: |
+          python -m pip install requests beautifulsoup4
+          cat > /tmp/read_config.py <<'PY'
+          import collections,hashlib,json,re,time
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse,urlencode
+          import requests
+          from bs4 import BeautifulSoup
+          out=Path('yalla-halloween-config-readonly-20260908');out.mkdir()
+          original=out/'original-responses';original.mkdir()
+          s=requests.Session();s.headers.update({'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36','Accept-Language':'en-US,en;q=0.9'})
+          logs=[];manifest=[];links=[];api=[];scan_summaries=[];start=time.monotonic()
+          def get(u,label,headers=None):
+            if time.monotonic()-start>520:return None
+            rec={'url':u,'purpose':label};logs.append(rec)
+            try:
+              r=s.get(u,headers=headers or {},timeout=(10,30),allow_redirects=True)
+              rec.update(status=r.status_code,finalUrl=r.url,bytes=len(r.content),contentType=r.headers.get('content-type',''))
+              h=hashlib.sha256(r.content).hexdigest();p=original/h;p.write_bytes(r.content)
+              manifest.append({**rec,'file':str(p.relative_to(out)),'sha256':h})
+              return r
+            except Exception as e:rec['error']=str(e);return None
+          def save(n,d):(out/n).write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf8')
+          root='https://activity2.yalla.live/activity/2024dist/templateActivity/'
+          r=get(root,'original-template-not-halloween-activity')
+          if r is not None and r.status_code==200:
+            soup=BeautifulSoup(r.text,'html.parser')
+            for el in soup.select('script[src],link[href]'):
+              u=urljoin(root,el.get('src') or el.get('href'))
+              if '.js' not in u and '.css' not in u:continue
+              rr=get(u,'exact-html-asset-reference')
+              if rr is None or rr.status_code!=200:continue
+              if '/js/app.' in u:
+                text=rr.text
+                fields=['GeneralTemplateActivityName','GeneralTemplateActivityContent','materialConfigs','imageUrl','themeId','progressConfigs','lotteryConfigs','vipLotteryConfigs','rankConfigs','appInfo','xsignature','xtimestamp']
+                excerpts=[]
+                for f in fields:
+                  m=re.search(re.escape(f),text)
+                  if m:excerpts.append({'field':f,'context':text[max(0,m.start()-160):m.end()+450]})
+                endpoints=sorted(set(re.findall(r'/(?:api|Api)/GeneralTemplate/[A-Za-z0-9]+',text)))
+                save('original-template-contract.json',{'sourceUrl':u,'sha256':hashlib.sha256(rr.content).hexdigest(),'endpoints':endpoints,'fields':excerpts,'claim':'This is a generic official activity engine, not evidence of a Halloween activity.'})
+                # Only public campaign/reward configuration readers. Do not call personal data, login, lottery, claim, or exchange endpoints.
+                for endpoint in ['/api/GeneralTemplate/GetActivityInfo','/api/GeneralTemplate/GetRewardInfo','/api/GeneralTemplate/GetProcessReward']:
+                  if endpoint not in endpoints:continue
+                  url='https://activity2.yalla.live'+endpoint+'?activityId=241022&region=0'
+                  q=get(url,'unverified-date-anchor-readonly-config',{'activityId':'241022','region':'0','Referer':root})
+                  if q is not None:api.append({'url':url,'status':q.status_code,'body':q.text[:20000],'credentialState':'none','activityIdEvidence':'DATE_HYPOTHESIS_ONLY_NOT_CONFIRMED'})
+          # Inspect all result captures instead of discarding nonstandard /tickes/ paths at search time.
+          r=get('https://urlscan.io/api/v1/search/?'+urlencode({'q':'domain:file.yalla.live','size':100}),'public-capture-index')
+          candidates=[]
+          if r is not None and r.status_code==200:
+            for item in r.json().get('results',[]):
+              uid=item.get('_id')
+              if not uid:continue
+              data=get('https://urlscan.io/api/v1/result/'+uid+'/','existing-public-capture-network')
+              if data is None or data.status_code!=200:continue
+              try:d=data.json()
+              except Exception:continue
+              found=[]
+              for n in d.get('data',{}).get('requests',[]):
+                req=n.get('request',{}).get('request',{});u=req.get('url','')
+                if 'yalla' in (urlparse(u).hostname or ''):found.append(u)
+              found+= [u for u in d.get('data',{}).get('links',[]) if isinstance(u,str) and 'yalla' in u]
+              scan_summaries.append({'id':uid,'page':d.get('page'),'urls':sorted(set(found))})
+              for u in found:
+                links.append({'sourceScan':uid,'url':u})
+                if re.search(r'halloween|pumpkin|trick.?or.?treat',u,re.I):candidates.append(u)
+              time.sleep(0.7)
+          # Preserve the known explicit Halloween announcement under the correct product label, Yalla Ludo.
+          post=get('https://t.me/s/official_yallaludo/803','official-ludo-halloween-announcement-not-live')
+          posts=[]
+          if post is not None and post.status_code==200:
+            soup=BeautifulSoup(post.text,'html.parser')
+            for el in soup.select('.tgme_widget_message'):
+              text=el.get_text(' ',strip=True)
+              if 'Halloween' not in text:continue
+              images=[]
+              for node in el.select('[style]'):
+                m=re.search(r"background-image:url\('([^']+)'\)",node.get('style',''))
+                if m and m.group(1).startswith('https://'):images.append(m.group(1))
+              posts.append({'product':'Yalla Ludo','notYallaLive':True,'post':el.get('data-post'),'text':text,'dates':[n.get('datetime') for n in el.select('time')],'images':images,'h5Links':[]})
+              for u in images[:2]:
+                q=get(u,'official-ludo-promo-image-not-spa')
+                if q is not None and q.status_code==200:(out/'yalla-ludo-halloween-2024-promo.jpg').write_bytes(q.content)
+          save('config-readonly-responses.json',api);save('public-capture-network-summaries.json',scan_summaries);save('observed-links.json',links);save('theme-url-candidates.json',candidates);save('ludo-product-separated-proof.json',posts);save('requests.json',logs);save('manifest.json',manifest)
+          result={'requests':len(logs),'capturedResponses':len(manifest),'publicScanNetworks':len(scan_summaries),'explicitHalloweenUrlCandidates':len(candidates),'metadataEndpointResults':[{k:x[k] for k in ['url','status']} for x in api],'confirmedLiveHalloweenSpa':0,'note':'No synthetic credentials or successful response fixtures were used. A source archive is not an activity increment.'}
+          save('SUMMARY.json',result);print(json.dumps(result,indent=2))
+          PY
+          python /tmp/read_config.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-halloween-config-readonly-20260908
+          path: yalla-halloween-config-readonly-20260908
+          if-no-files-found: error
+          retention-days: 14
