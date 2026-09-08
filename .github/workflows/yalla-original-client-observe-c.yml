@@ -1,0 +1,163 @@
+name: Yalla original client public activity observation C
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-original-client-observe-c.yml]
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare original public package and observer
+        run: |
+          set -Eeuo pipefail
+          mkdir -p client-observation /tmp/yalla-package /tmp/yalla-splits /tmp/yalla-observer
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          docker run --rm -v /tmp/yalla-package:/output ghcr.io/efforg/apkeep:stable -a com.weieyu.yalla -d apk-pure /output >/tmp/package-download.log 2>&1
+          package="$(find /tmp/yalla-package -type f \( -name '*.apk' -o -name '*.xapk' -o -name '*.apks' \) -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          test -n "$package"
+          sha256sum "$package" > client-observation/original-package.sha256
+          if [[ "$package" == *.apk ]]; then cp "$package" /tmp/yalla-splits/base.apk; else unzip -q "$package" -d /tmp/yalla-splits; fi
+          find /tmp/yalla-splits -type f -name '*.apk' -printf '%f %s bytes\n' > client-observation/original-splits.txt
+          pip -q install frida-tools
+          version=$(python -c 'import frida;print(frida.__version__)')
+          echo "$version" > client-observation/frida-version.txt
+          curl -fsSL --retry 2 -o /tmp/frida-server.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86_64.xz"
+          xz -df /tmp/frida-server.xz
+          cd /tmp/yalla-observer
+          npm install --silent frida-java-bridge
+          cat > observer.js <<'JS'
+          import Java from 'frida-java-bridge';
+          function sanitize(url) {
+            try {
+              const raw=String(url);const parts=raw.split('#');const left=parts[0].split('?');
+              const allowed=/^(activityId|campaignId|eventId|translateId|project|projectSlug|themeId|lang|language|region|page|type|fromH5)$/i;
+              const qs=(left[1]||'').split('&').filter(x=>allowed.test(x.split('=')[0])).join('&');
+              const hash=(parts[1]||'').split('?')[0];
+              return left[0]+(qs?'?'+qs:'')+(hash?'#'+hash:'');
+            } catch(_){return '[invalid-url]'}
+          }
+          const interesting=/activity|halloween|pumpkin|GetNewUserPopup|GetDomain|GetCopywriting|medal.*config/i;
+          const sent=new Set();
+          function emit(kind,u){
+            if(!u || !/^https?:\/\//i.test(String(u)) || !interesting.test(String(u)))return;
+            const url=sanitize(u);if(sent.has(kind+url))return;sent.add(kind+url);send({kind,url});
+          }
+          Java.perform(function(){
+            try{
+              const C=Java.use('okhttp3.OkHttpClient');const method=C.newCall.overload('okhttp3.Request');
+              method.implementation=function(req){try{emit('original-client-request',req.url().toString())}catch(_){}return method.call(this,req)};
+              send({kind:'observer-installed',className:'okhttp3.OkHttpClient.newCall'});
+            }catch(e){send({kind:'observer-unavailable',className:'okhttp3.OkHttpClient',error:String(e)})}
+            try{
+              const B=Java.use('okhttp3.ResponseBody');const method=B.string.overload();
+              method.implementation=function(){
+                const text=method.call(this);
+                try{
+                  if(text.length<3000000 && /activityUrl|jumpUrl|h5EntranceUrl|activity2\.|Halloween|halloween|pumpkin/.test(text)){
+                    const matches=text.replace(/\\\//g,'/').match(/https?:\/\/[^\s"'<>\\]+/g)||[];
+                    for(const u of matches)emit('original-response-public-link',u);
+                  }
+                }catch(_){}return text;
+              };
+              send({kind:'observer-installed',className:'okhttp3.ResponseBody.string'});
+            }catch(e){send({kind:'observer-unavailable',className:'okhttp3.ResponseBody',error:String(e)})}
+            try{
+              const W=Java.use('android.webkit.WebView');const method=W.loadUrl.overload('java.lang.String');
+              method.implementation=function(u){emit('original-webview-navigation',u);return method.call(this,u)};
+              send({kind:'observer-installed',className:'WebView.loadUrl'});
+            }catch(e){send({kind:'observer-unavailable',className:'WebView',error:String(e)})}
+          });
+          JS
+          frida-compile observer.js -o observer.bundle.js
+          cat > observe.py <<'PY'
+          import frida,json,re,subprocess,time,xml.etree.ElementTree as ET
+          from pathlib import Path
+          OUT=Path.cwd()/'client-observation';OUT.mkdir(exist_ok=True)
+          data=[];actions=[];texts=[];device=frida.get_usb_device(timeout=30)
+          def cb(message,binary):
+              if message.get('type')=='send':data.append(message.get('payload',{}))
+              elif message.get('type')=='error':data.append({'kind':'observer-error','description':message.get('description','')})
+          def adb(*args,timeout=20):return subprocess.run(['adb',*args],capture_output=True,timeout=timeout)
+          pid=device.spawn(['com.weieyu.yalla']);session=device.attach(pid);script=session.create_script(Path('/tmp/yalla-observer/observer.bundle.js').read_text());script.on('message',cb);script.load();device.resume(pid)
+          seen=set()
+          # UI navigation only. Do not submit login, accept contracts, send gifts, join voice rooms or claim rewards.
+          nav=re.compile(r'^(skip|not now|maybe later|later|activities|activity center|events|explore|discover|collections|illustrated cards|more)$',re.I)
+          for i in range(8):
+              time.sleep(18)
+              adb('shell','uiautomator','dump','/sdcard/yalla-window.xml')
+              xml=adb('shell','cat','/sdcard/yalla-window.xml').stdout.decode('utf8','replace')
+              if '<hierarchy' not in xml:
+                  actions.append({'step':i,'state':'UI_XML_UNAVAILABLE'});continue
+              try:tree=ET.fromstring(xml[xml.index('<hierarchy'):])
+              except Exception:continue
+              nodes=list(tree.iter('node'));words=[n.get('text') or n.get('content-desc') or '' for n in nodes]
+              # Remove identifiers from text evidence. No raw auth/network body is persisted.
+              clean=[re.sub(r'\b\d{6,}\b','[ID]',w) for w in words if w]
+              texts.append({'step':i,'labels':clean})
+              if i in (0,3,7):
+                  # Screenshots document the pristine guest/login UI only, never a restored Halloween SPA.
+                  shot=adb('exec-out','screencap','-p').stdout
+                  if shot.startswith(b'\x89PNG'):(OUT/f'client-ui-{i:02d}-not-campaign.png').write_bytes(shot)
+              target=None
+              for n in nodes:
+                  label=(n.get('text') or n.get('content-desc') or '').strip()
+                  if nav.fullmatch(label) and label.lower() not in seen:
+                      bounds=re.findall(r'\d+',n.get('bounds',''))
+                      if len(bounds)==4:
+                          x1,y1,x2,y2=map(int,bounds)
+                          if x2>x1 and y2>y1:target=(label,(x1+x2)//2,(y1+y2)//2);break
+              if target:
+                  label,x,y=target;seen.add(label.lower());actions.append({'step':i,'action':'visible-public-navigation','label':label});adb('shell','input','tap',str(x),str(y))
+          (OUT/'observed-public-urls.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
+          (OUT/'ui-labels-redacted.json').write_text(json.dumps(texts,ensure_ascii=False,indent=2))
+          (OUT/'actions.json').write_text(json.dumps(actions,ensure_ascii=False,indent=2))
+          (OUT/'SUMMARY.json').write_text(json.dumps({'observedItems':len(data),'navigationActions':len(actions),'screenshotsAreCampaignPages':False,'credentialsCollected':False,'authenticationBypassed':False,'syntheticApiCalls':0,'notes':'Only original normal startup and visible safe navigation were observed. HTTP payloads, account credentials and raw private API bodies were not saved.'},indent=2))
+          session.detach()
+          PY
+      - name: Run the original ARM app through API 35 native translation
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_5
+          cores: 2
+          ram-size: 4096M
+          disk-size: 6G
+          emulator-boot-timeout: 420
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: |
+            set -Eeuo pipefail
+            adb shell getprop ro.product.cpu.abilist > client-observation/emulator-abis.txt
+            adb shell getprop ro.dalvik.vm.native.bridge > client-observation/native-bridge.txt
+            mapfile -t apks < <(find /tmp/yalla-splits -name '*.apk' ! -iname '*armeabi*' ! -iname '*x86*' | sort)
+            test "${#apks[@]}" -gt 0
+            adb install-multiple -r "${apks[@]}" > client-observation/install-result.txt 2>&1
+            adb root
+            adb wait-for-device
+            adb push /tmp/frida-server /data/local/tmp/frida-server >/dev/null
+            adb shell chmod 755 /data/local/tmp/frida-server
+            adb shell '/data/local/tmp/frida-server >/data/local/tmp/frida-observer.log 2>&1 &'
+            sleep 4
+            python /tmp/yalla-observer/observe.py
+            adb shell am force-stop com.weieyu.yalla
+      - name: Upload sanitized public observation only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-original-client-observe-c
+          path: client-observation
+          if-no-files-found: error
+          retention-days: 14
