@@ -1,24 +1,24 @@
-name: BIGO Halloween Source Discovery
+name: BIGO 05 Public Halloween Assets
 on:
   push:
-    branches: [pro-bigo-halloween-20260908]
+    branches: [pro-bigo-05-public-assets-20260908]
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  discover:
+  archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install requests beautifulsoup4
-      - run: python discover.py
+      - run: python archive_public.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: bigo-halloween-discovery
+          name: bigo-05-public-assets
           path: output/
           retention-days: 14
