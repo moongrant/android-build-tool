@@ -1,0 +1,92 @@
+name: Yalla original anonymous public metadata E3
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-public-metadata-standalone-e3.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          pip -q install playwright
+          python -m playwright install --with-deps chromium >/dev/null
+      - name: Capture unsent original initialization, then read public metadata
+        run: |
+          cat > /tmp/meta.py <<'PY'
+          import asyncio,hashlib,json,re
+          from pathlib import Path
+          from urllib.parse import urlparse,parse_qsl,urlencode
+          from playwright.async_api import async_playwright
+          out=Path('yalla-public-metadata-e3');out.mkdir();(out/'original').mkdir()
+          rows=[];notes=[];clues=[]
+          host='https://activity2.yalla.live'
+          root=host+'/activity/2024dist/templateActivity/'
+          readers=['/api/Buried/GetCopywritingAddress','/api/Buried/GetDomainV2','/api/GeneralTemplate/GetActivityInfo']
+          def store(url,status,headers,body):
+              sha=hashlib.sha256(body).hexdigest();(out/'original'/sha).write_bytes(body)
+              rows.append({'url':url,'status':status,'contentType':headers.get('content-type',''),'bytes':len(body),'sha256':sha,'file':'original/'+sha})
+              try:
+                  d=json.loads(body);s=json.dumps(d,ensure_ascii=False)
+                  if isinstance(d,dict) and isinstance(d.get('data'),str):
+                      try:s+='\n'+json.dumps(json.loads(d['data']),ensure_ascii=False)
+                      except Exception:pass
+                  clues.append({'url':url,'themeMatch':bool(re.search(r'halloween|pumpkin|万圣|萬聖|هالووين|هالوين',s,re.I)),'json':d})
+              except Exception:pass
+          async def main():
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True,args=['--no-sandbox'])
+                  for uid in ['', '0']:
+                      prepared=[];errors=[]
+                      ctx=await browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,locale='en-US',user_agent='Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/130 Mobile Safari/537.36')
+                      # Only dismisses the unavailable native loading spinner. getInfo is deliberately absent so ORIGINAL code uses its own anonymous query fallback.
+                      await ctx.add_init_script('window.Yalla = {closeLoading:function(){}};')
+                      async def intercept(route):
+                          request=route.request;path=urlparse(request.url).path.lower()
+                          if '/api/' in path and 'generaltemplate/init' in path:
+                              try:
+                                  body=request.post_data_json or {};body=body if isinstance(body,dict) else {}
+                                  prepared.append({'url':request.url,'headers':await request.all_headers(),'data':body})
+                              except Exception as e:errors.append(str(e))
+                          if request.method not in ['GET','HEAD','OPTIONS']:return await route.abort()
+                          if '/api/' in path and path not in [r.lower() for r in readers]:return await route.abort()
+                          return await route.continue_()
+                      await ctx.route('**/*',intercept)
+                      page=await ctx.new_page();page.on('pageerror',lambda e:errors.append(str(e)))
+                      url=root+'?region=0&activityId=26072103&s=3&v=30620'+('&userid=0' if uid else '')
+                      try:
+                          await page.goto(url,wait_until='domcontentloaded',timeout=35000);await page.wait_for_timeout(4000)
+                          notes.append({'anonymousUserId':uid,'preparedInitRequests':len(prepared),'pageErrors':errors,'text':(await page.locator('body').inner_text())[:1500]})
+                          if prepared:
+                              original=prepared[0];params=dict(parse_qsl(urlparse(original['url']).query,keep_blank_values=True));params.update(original['data'])
+                              headers={k:v for k,v in original['headers'].items() if k.lower() in ['region','userid','token','v','s','activityid','xtimestamp','xsignature','referer']}
+                              if headers.get('token','') not in ['', 'undefined'] or params.get('token','') not in ['', 'undefined']:raise RuntimeError('Unexpected token; stopped')
+                              for reader in readers:
+                                  u=host+reader+'?'+urlencode(params)
+                                  try:
+                                      res=await ctx.request.get(u,headers=headers,timeout=18000);store(res.url,res.status,res.headers,await res.body())
+                                  except Exception as e:notes.append({'url':u,'error':str(e)})
+                      except Exception as e:notes.append({'error':str(e)})
+                      await ctx.close()
+                  await browser.close()
+          asyncio.run(main())
+          for n,d in [('responses.json',rows),('notes.json',notes),('parsed-public-metadata.json',clues)]:
+              (out/n).write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf8')
+          summary={'metadataResponses':len(rows),'statuses':[x['status'] for x in rows],'explicitThemeMatches':sum(x['themeMatch'] for x in clues),'transmittedInitializationPosts':0,'credentialsUsed':False,'activityIdSource':'Original YallaSeason National Day link 26072103; not claimed as Halloween.','verifiedHalloweenSpa':0}
+          (out/'SUMMARY.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary,indent=2))
+          PY
+          python /tmp/meta.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-public-metadata-e3
+          path: yalla-public-metadata-e3
+          if-no-files-found: error
+          retention-days: 14
