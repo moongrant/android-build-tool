@@ -1,0 +1,114 @@
+name: Yalla original asynchronous chunk graph C
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-original-async-graph-c.yml]
+permissions:
+  contents: read
+jobs:
+  graph:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download original runtime-declared chunks and discover referenced campaigns
+        run: |
+          pip -q install requests beautifulsoup4
+          cat > /tmp/graph.py <<'PY'
+          import concurrent.futures,hashlib,json,re,threading,time
+          from pathlib import Path
+          from urllib.parse import urlparse,urljoin,urldefrag
+          import requests
+          from bs4 import BeautifulSoup
+          OUT=Path('yalla-original-async-graph-c');OUT.mkdir();(OUT/'original').mkdir()
+          deadline=time.monotonic()+1200;lock=threading.Lock();ledger=[];records={};edges=[];texts={};chunk_rows=[];hints=[];new_roots={};known_roots=set()
+          seeds=[('2024dist','8thAnniversary','app.a0aac9ae.js'),('2025dist','9thAnniversary','app.ed270ac2.js'),('2026dist','10thAnniversary','app.a0036d25.js'),('2025dist','yallaSeason','app.e67a3439.js'),('2024dist','activityMap','app.aee03e93.js'),('2024dist','ferrisWheel','app.f6227294.js'),('2024dist','rollerCoaster','app.b2b08e47.js'),('2024dist','seaDominator','app.9e942358.js'),('2024dist','2025NewYear','app.d24d1eaa.js'),('2025dist','RoyalVictory','app.1b84794c.js'),('2026dist','Ramadan','app.af7f26b1.js'),('2024dist','recallAndRecruit','app.c2bd2755.js'),('2024dist','adha','app.6cd63f7d.js'),('2023dist','footballCarnival','app.a069a643.js'),('2026dist','carKing','app.b8ed9f0f.js')]
+          themes=re.compile(r'\bhalloween\b|\bpumpkin\b|trick[ _-]*or[ _-]*treat|هالو(?:وي|ي)ن|万圣|萬聖|cadılar bayramı|dia das bruxas|noche de brujas',re.I)
+          relatives=re.compile(r'\bghost\b|\bwitch\b|\bcandy\b|\bhaunted\b|\bspooky\b|\bvampire\b|\bmonster\b',re.I)
+          runtime=re.compile(r'\{([^{}]+)\}\[[A-Za-z_$][\w$]*\]\+"\.(js|css)"')
+          pair=re.compile(r'(?:"([^"\n]+)"|([A-Za-z0-9_$~.-]+))\s*:\s*"([A-Za-z0-9_-]{6,30})"')
+          strings=re.compile(r'["\']([^"\'\s]{1,500}\.(?:js|css|json|map)(?:\?[^"\'\s]*)?)["\']')
+          extension=re.compile(r'\.(js|css|json|map)(?:[?#]|$)',re.I)
+          def write(n,d):(OUT/n).write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf8')
+          def get(url,source,root):
+            if time.monotonic()>deadline:return None
+            row={'url':url,'source':source,'spaRoot':root}
+            try:
+              r=requests.get(url,timeout=(8,24),headers={'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36','Accept-Language':'en-US,en;q=0.9'},stream=True)
+              b=bytearray()
+              for c in r.iter_content(65536):
+                b.extend(c)
+                if len(b)>12000000:raise ValueError('response exceeds 12MB safety bound')
+              r.close();body=bytes(b);sha=hashlib.sha256(body).hexdigest();ct=r.headers.get('content-type','')
+              row.update(status=r.status_code,finalUrl=r.url,bytes=len(body),sha256=sha,contentType=ct,file='original/'+sha)
+              with lock:(OUT/row['file']).write_bytes(body);records[url]=dict(row)
+              if r.status_code==200 and any(t in ct for t in ['javascript','text','json','xml']):return row,body.decode('utf8','replace')
+            except Exception as e:row['error']=str(e)
+            finally:
+              with lock:ledger.append(row)
+            return None
+          def batch(jobs):
+            with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:return list(ex.map(lambda a:get(*a),jobs))
+          def extract(item):
+            if not item:return []
+            row,text=item;url=row['finalUrl'];root=row['spaRoot'];texts[url]=text;found=set()
+            normalized=text.replace('\\/','/')
+            for m in re.finditer(r'(?:https?://[^/\s"\'`<>]+)?/activity/(20\d{2}dist|YallaActivity20\d{2})/([A-Za-z0-9_.-]+)',normalized):
+              new='https://activity2.yalla.live/activity/'+m.group(1)+'/'+m.group(2)+'/'
+              if new not in known_roots:new_roots.setdefault(new,[]).append({'sourceUrl':url,'context':normalized[max(0,m.start()-120):m.end()+300]})
+            if 'vendor' not in url and not url.endswith('vue.runtime.global.min.js'):
+              for label,pattern in [('explicit-halloween',themes),('adjacent-theme-only',relatives)]:
+                for m in pattern.finditer(text):hints.append({'classification':label,'sourceUrl':url,'sha256':row['sha256'],'context':text[max(0,m.start()-180):m.end()+450]})
+            if '<html' in text[:3000].lower() or '<!doctype' in text[:3000].lower():
+              soup=BeautifulSoup(text,'html.parser')
+              for e in soup.select('script[src],link[href]'):
+                v=e.get('src') or e.get('href')
+                if v and extension.search(v):found.add(urljoin(root,v))
+            for obj,ext in runtime.findall(text):
+              for a,b,h in pair.findall(obj):
+                key=a or b
+                if h=='31d6cfe0':continue
+                u=urljoin(root,ext+'/'+key+'.'+h+'.'+ext)
+                found.add(u);chunk_rows.append({'url':u,'sourceUrl':url,'sourceSha256':row['sha256'],'chunkKey':key,'contentHash':h,'kind':ext})
+            for v in strings.findall(text):
+              if '${' in v or 'base64' in v or v.startswith(('http:','https:','//')):continue
+              if v.startswith(('js/','css/','lang/','data/','static/')):found.add(urljoin(root,v))
+            for v in re.findall(r'https?://[^\s"\'`<>\\)]+',normalized):
+              v=v.rstrip('.,;')
+              if extension.search(v) and not any(t in v.lower() for t in ['analytics','facebook','google','w3.org','telemetry','tracking']):found.add(v)
+            # The languages are finite explicit enums in the original bundle, not numeric activity-ID guesses.
+            if 'lang/' in text:
+              langs=set(re.findall(r':"(en|ar|tr|pt|es|id|hi|ur)"',text))
+              if '"en"' in text:langs.add('en')
+              for lang in langs:found.add(urljoin(root,'lang/'+lang+'.json'))
+            return [(u,url,root) for u in sorted(found) if u.startswith(('https://','http://'))]
+          jobs=[]
+          for year,slug,main in seeds:
+            root='https://activity2.yalla.live/activity/'+year+'/'+slug+'/';known_roots.add(root)
+            jobs.extend([(root,'known-official-SPA-root',root),(urljoin(root,'js/'+main),'historically-observed-original-main-filename',root)])
+          known_roots.add('https://activity2.yalla.live/activity/2026dist/ramadanBless/')
+          seen=set();rounds=[]
+          for depth in range(7):
+            unique=[]
+            for job in jobs:
+              if job[0] not in seen:seen.add(job[0]);unique.append(job)
+            unique=unique[:500]
+            if not unique:break
+            results=batch(unique);jobs=[]
+            for item in results:jobs.extend(extract(item))
+            rounds.append({'depth':depth,'requested':len(unique),'textResponses':sum(r is not None for r in results)})
+          original_scan={'source':'original-production-responses-only','knownRootCount':len(known_roots),'rounds':rounds,'fetched':len(records),'runtimeChunkRefs':len({x['url'] for x in chunk_rows}),'explicitHalloweenMatches':sum(x['classification']=='explicit-halloween' for x in hints),'uncollectedRootRefs':len(new_roots),'verifiedHalloweenSpa':0}
+          write('SUMMARY.json',original_scan);write('response-manifest.json',list(records.values()));write('requests.json',ledger);write('runtime-chunk-provenance.json',chunk_rows);write('theme-matches.json',hints);write('uncollected-root-references.json',new_roots);write('exclusion-roots.json',sorted(known_roots))
+          print(json.dumps(original_scan,indent=2))
+          PY
+          python /tmp/graph.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-original-async-graph-c
+          path: yalla-original-async-graph-c
+          if-no-files-found: error
+          retention-days: 14
