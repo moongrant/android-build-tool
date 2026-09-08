@@ -1,0 +1,214 @@
+name: Yalla Halloween public capture graph 20260908
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-halloween-public-captures-20260908.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install capture dependencies
+        run: |
+          python -m pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
+      - name: Trace only evidence-backed URLs and collect original responses
+        run: |
+          mkdir -p /tmp/yalla-public
+          cat > /tmp/yalla-public/capture.py <<'PY'
+          import asyncio, collections, hashlib, json, re, time
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse, urlencode
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          OUT=Path('yalla-halloween-public-capture-20260908')
+          OUT.mkdir(exist_ok=True)
+          S=requests.Session()
+          S.headers.update({'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36','Accept-Language':'en-US,en;q=0.8'})
+          deadline=time.monotonic()+1050
+          ledger=[]; edges=[]; blobs={}; roots={}; source_pages=[]
+          strong=re.compile(r'halloween|pumpkin|trick[\s_-]*(?:or|and)[\s_-]*treat|هالو(?:وي|ي)ن|万圣|萬聖',re.I)
+          rawdir=OUT/'original-responses'; rawdir.mkdir(exist_ok=True)
+          suffixes=('yalla.live','yallalive.net','qrsshine.com','windgh.com','peakxyz.com')
+          def owned(u):
+            try:
+              h=(urlparse(u).hostname or '').lower()
+              return any(h==x or h.endswith('.'+x) for x in suffixes)
+            except Exception:return False
+          def write(name,obj):
+            p=OUT/name;p.parent.mkdir(parents=True,exist_ok=True)
+            p.write_text(json.dumps(obj,ensure_ascii=False,indent=2),encoding='utf-8')
+          def preserve(url,body,ct,status=200,source='http-get'):
+            key=hashlib.sha256(body).hexdigest();p=rawdir/key
+            if not p.exists():p.write_bytes(body)
+            rec={'url':url,'sha256':key,'bytes':len(body),'contentType':ct,'status':status,'source':source,'file':str(p.relative_to(OUT))}
+            blobs[url]=rec;return rec
+          def get(u,context='source',maxbytes=10000000):
+            if time.monotonic()>deadline:return None
+            item={'url':u,'context':context};ledger.append(item)
+            try:
+              r=S.get(u,timeout=(10,28),allow_redirects=True,stream=True)
+              body=b''
+              for chunk in r.iter_content(65536):
+                body+=chunk
+                if len(body)>maxbytes:break
+              r.close()
+              item.update(status=r.status_code,finalUrl=r.url,bytes=len(body),contentType=r.headers.get('content-type',''))
+              if len(body)>maxbytes:item['oversize']=True;return None
+              preserve(r.url,body,item['contentType'],r.status_code,context)
+              return r.status_code,r.url,body,item['contentType']
+            except Exception as e:item['error']=str(e);return None
+          def canonical(u):
+            p=urlparse(u)
+            m=re.search(r'(/activity/(?:20\d{2}dist/[^/?#]+|YallaActivity20\d{2}/[^/?#]+/(?:build|dist)))(?:/|$)',p.path,re.I)
+            return p.scheme+'://'+p.netloc+m.group(1)+'/' if m else None
+          def notice(u,source):
+            if not owned(u):return
+            r=canonical(u)
+            if r:
+              roots.setdefault(r,{'root':r,'sources':[],'keywordUrls':[]})
+              if source not in roots[r]['sources']:roots[r]['sources'].append(source)
+              if strong.search(u) and u not in roots[r]['keywordUrls']:roots[r]['keywordUrls'].append(u)
+            edges.append({'from':source,'to':u,'type':'observed-link'})
+          def refs(text,base):
+            text=text.replace('\\/','/').replace('\\u002F','/')
+            out=set(re.findall(r'https?://[^\s\"\'<>`\\)]+',text))
+            if '<' in text[:2000]:
+              soup=BeautifulSoup(text,'html.parser')
+              for tag,attr in [('script','src'),('link','href'),('a','href'),('img','src')]:
+                for el in soup.find_all(tag):
+                  if el.get(attr):out.add(urljoin(base,el[attr]))
+            for value in re.findall(r'url\(\s*[\"\']?([^\"\')\s]+)',text,re.I):out.add(urljoin(base,value))
+            for value in re.findall(r'[\"\']([^\"\'\s]{1,400}\.(?:js|css|json|png|webp|jpg|svg|woff2?|gif|mp3|map)(?:\?[^\"\'\s]*)?)[\"\']',text,re.I):out.add(urljoin(base,value))
+            return {u.rstrip('.,;') for u in out if u.startswith(('https://','http://'))}
+          sources=[
+            ('collection','https://campaigns-collected.jekae.chatgpt.site/data/activities.js'),
+            ('official-home','https://www.yalla.live/'),
+            ('lucky-event-metadata','https://appshunter.io/events/6737220863'),
+            ('apple-event-us','https://apps.apple.com/us/app/id1091902866?eventid=6737220863'),
+            ('apple-event-ae','https://apps.apple.com/ae/app/id1091902866?eventid=6737220863'),
+            ('ludo-not-live-official-post','https://t.me/s/official_yallaludo/803'),
+            ('known-template-engine','https://activity2.yalla.live/activity/2024dist/templateActivity/'),
+            ('prior-unverified-date-hypothesis','https://activity2.yalla.live/activity/2024dist/templateActivity/?activityId=241022')]
+          source_assets=set()
+          for label,u in sources:
+            res=get(u,label)
+            if not res:continue
+            status,final,body,ct=res;text=body.decode('utf-8','replace');soup=BeautifulSoup(text,'html.parser')
+            visible=soup.get_text(' ',strip=True)
+            links=refs(text,final)
+            for link in links:notice(link,final)
+            for tag in soup.select('script[src],link[href]'):
+              link=urljoin(final,tag.get('src') or tag.get('href'))
+              if owned(link) and re.search(r'\.(js|css|json)(\?|$)',link):source_assets.add(link)
+            hints=[]
+            for m in re.finditer(r'(?i)(?:deep.?link|jumpUrl|shareUrl|activityId|campaignId|Halloween|هالووين)',text):
+              hints.append(text[max(0,m.start()-130):m.end()+450])
+            posts=[]
+            if 't.me/' in final:
+              for el in soup.select('.tgme_widget_message'):
+                txt=el.get_text(' ',strip=True)
+                if strong.search(txt):posts.append({'post':el.get('data-post'),'text':txt,'time':[(n.get('datetime')) for n in el.select('time')],'links':[n.get('href') for n in el.select('a[href]')],'styles':[n.get('style') for n in el.select('[style]')]})
+            source_pages.append({'label':label,'url':final,'status':status,'title':soup.title.get_text() if soup.title else '', 'text':visible[:18000],'hints':hints[:30],'posts':posts})
+          for u in sorted(source_assets)[:25]:
+            res=get(u,'source-bundle')
+            if res:
+              text=res[2].decode('utf-8','replace')
+              for link in refs(text,res[1]):notice(link,res[1])
+              write('bundle-inspection/'+hashlib.sha256(u.encode()).hexdigest()[:16]+'.json',{'url':u,'themeMatches':[text[max(0,m.start()-150):m.end()+350] for m in strong.finditer(text)],'routes':sorted(set(re.findall(r'path\s*:\s*[\"\']([^\"\']+)',text)))})
+          queries=['domain:activity2.yalla.live','domain:file.yalla.live','domain:yallalive.net','domain:qrsshine.com','domain:windgh.com','domain:peakxyz.com']
+          scans={};query_log=[]
+          for q in queries:
+            res=get('https://urlscan.io/api/v1/search/?'+urlencode({'q':q,'size':'100'}),'urlscan-search')
+            if not res:continue
+            try:d=json.loads(res[2])
+            except Exception:continue
+            query_log.append({'query':q,'status':res[0],'total':d.get('total'),'hasMore':d.get('has_more'),'results':len(d.get('results',[]))})
+            for item in d.get('results',[]):
+              uid=item.get('_id');page=item.get('page',{});task=item.get('task',{});u=page.get('url') or task.get('url') or ''
+              notice(u,'urlscan:'+str(uid))
+              if uid and (canonical(u) or strong.search(str(item))):scans[uid]=item
+            time.sleep(1)
+          for uid,item in list(scans.items())[:35]:
+            res=get('https://urlscan.io/api/v1/result/'+uid+'/','urlscan-result')
+            if res and res[0]==200:
+              try:
+                d=json.loads(res[2])
+                for req in d.get('data',{}).get('requests',[]):
+                  u=req.get('request',{}).get('request',{}).get('url','')
+                  notice(u,'urlscan:'+uid)
+                for u in d.get('data',{}).get('links',[]):
+                  if isinstance(u,str):notice(u,'urlscan:'+uid)
+              except Exception:pass
+            time.sleep(1)
+          candidates=[r for r in roots.values() if r['keywordUrls'] or strong.search(r['root'])]
+          write('source-pages.json',source_pages);write('urlscan-query-results.json',query_log)
+          write('observed-roots.json',list(roots.values()));write('url-graph.json',{'edges':edges});write('candidate-roots.json',candidates)
+          # Download static closure only for roots supported by captured Halloween-bearing URLs.
+          for c in candidates[:5]:
+            q=collections.deque([c['root']]);seen=set();c['resources']=[]
+            while q and len(seen)<200 and time.monotonic()<deadline:
+              u=q.popleft()
+              if u in seen or not owned(u):continue
+              seen.add(u);res=get(u,'candidate-static-closure')
+              if not res or res[0]!=200:continue
+              c['resources'].append(res[1])
+              if any(t in res[3] for t in ['text','javascript','json','xml']):
+                for v in refs(res[2].decode('utf-8','replace'),res[1]):
+                  notice(v,res[1])
+                  if owned(v) and (re.search(r'\.(js|css|json|png|jpg|jpeg|gif|webp|svg|woff2?|ttf|mp3|map)(\?|$)',v)) and v not in seen:q.append(v)
+          async def browser_capture():
+            captures=[]
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True,args=['--no-sandbox'])
+              targets=[('lucky-carnival-event-card-not-spa',sources[2][1]),('apple-event-live',sources[3][1])]
+              targets += [(hashlib.sha256(c['root'].encode()).hexdigest()[:16],c['root']) for c in candidates[:5]]
+              for label,url in targets:
+                if time.monotonic()>deadline:break
+                ctx=await browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,locale='en-US')
+                await ctx.route('**/*',lambda r:r.continue_() if r.request.method in ['GET','HEAD'] else r.abort())
+                page=await ctx.new_page();pending=[];errs=[]
+                async def save_response(res):
+                  try:
+                    if owned(res.url) and res.status==200:
+                      b=await res.body()
+                      if len(b)<=10000000:preserve(res.url,b,(await res.all_headers()).get('content-type',''),res.status,'browser-response')
+                  except Exception:pass
+                page.on('response',lambda r:pending.append(asyncio.create_task(save_response(r))))
+                page.on('pageerror',lambda e:errs.append(str(e)))
+                rec={'label':label,'url':url}
+                try:
+                  await page.goto(url,wait_until='domcontentloaded',timeout=45000);await page.wait_for_timeout(3500)
+                  rec.update(title=await page.title(),finalUrl=page.url,text=(await page.locator('body').inner_text())[:20000])
+                  (OUT/'source-screenshots').mkdir(exist_ok=True)
+                  fp=OUT/'source-screenshots'/(label+'.png');await page.screenshot(path=str(fp),full_page=True)
+                  rec['screenshot']=str(fp.relative_to(OUT))
+                except Exception as e:rec['error']=str(e)
+                if pending:await asyncio.gather(*pending,return_exceptions=True)
+                rec['pageErrors']=errs;captures.append(rec);await ctx.close()
+              await browser.close()
+            return captures
+          captures=asyncio.run(browser_capture())
+          write('browser-captures.json',captures);write('candidate-roots.json',candidates);write('response-manifest.json',list(blobs.values()));write('request-ledger.json',ledger)
+          summary={'generatedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'sourcePages':len(source_pages),'observedRoots':len(roots),'themeBearingCandidateRoots':len(candidates),'requests':len(ledger),'responses':len(blobs),'bytes':sum(x['bytes'] for x in blobs.values()),'verifiedHalloweenSpa':0,'status':'MANUAL_REVIEW_REQUIRED' if candidates else 'NO_CONFIRMED_HALLOWEEN_SPA','note':'Source-page screenshots and generic template bundles are evidence, not completed Halloween activities. No synthetic user state, no fabricated fixtures, no remote iframe replay.'}
+          write('SUMMARY.json',summary)
+          print(json.dumps(summary,indent=2))
+          PY
+          python /tmp/yalla-public/capture.py
+      - name: Upload original responses and capture graph for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-halloween-public-capture-20260908
+          path: yalla-halloween-public-capture-20260908
+          if-no-files-found: error
+          retention-days: 14
