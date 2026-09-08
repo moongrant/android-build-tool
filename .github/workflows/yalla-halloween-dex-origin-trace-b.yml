@@ -1,0 +1,133 @@
+name: Yalla original DEX origin discovery B
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-halloween-dex-origin-trace-b.yml]
+permissions:
+  contents: read
+jobs:
+  trace:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read public production origins and archive references
+        run: |
+          pip -q install requests beautifulsoup4
+          cat > /tmp/trace.py <<'PY'
+          import concurrent.futures, hashlib, json, re, threading, time
+          from pathlib import Path
+          from urllib.parse import urlparse,urljoin,urlencode
+          import requests
+          from bs4 import BeautifulSoup
+          OUT=Path('yalla-halloween-dex-origin-trace-b');OUT.mkdir();(OUT/'original').mkdir()
+          manifest=[];ledger=[];lock=threading.Lock();started=time.monotonic();deadline=started+1050
+          terms=re.compile(r'(?i)halloween|pumpkin|trick[ _-]*or[ _-]*treat|هالو(?:وي|ي)ن|万圣|萬聖|cadılar bayramı|dia das bruxas|noche de brujas')
+          hosts=['event.ylapi.cc','shop.ylapi.cc','event.yalla.live','shop.yalla.live','sailfish.yalla.live']
+          stop_suffix=('yallalive.cn',)
+          def write(n,x):(OUT/n).write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding='utf8')
+          def get(url,purpose,maxbytes=12000000):
+            if time.monotonic()>deadline:return None
+            log={'url':url,'purpose':purpose,'at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}
+            try:
+              r=requests.get(url,headers={'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36','Accept-Language':'en-US,en;q=0.9'},timeout=(10,35),stream=True)
+              b=bytearray()
+              for chunk in r.iter_content(65536):
+                b.extend(chunk)
+                if len(b)>maxbytes:break
+              r.close();body=bytes(b);h=hashlib.sha256(body).hexdigest()
+              log.update(status=r.status_code,finalUrl=r.url,bytes=len(body),contentType=r.headers.get('content-type',''),sha256=h,file='original/'+h)
+              with lock:(OUT/log['file']).write_bytes(body);manifest.append(dict(log))
+              return log,body
+            except Exception as e:log['error']=str(e);return None
+            finally:
+              with lock:ledger.append(log)
+          def batch(jobs):
+            with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:return list(ex.map(lambda args:get(*args),jobs))
+          def refs(text,base):
+            t=text.replace('\\/','/');urls=set(re.findall(r'https?://[^\s\"\'<>`\\)]+',t));soup=BeautifulSoup(t,'html.parser')
+            for el in soup.select('script[src],link[href],a[href],img[src]'):
+              v=el.get('src') or el.get('href')
+              if v:urls.add(urljoin(base,v))
+            for v in re.findall(r'[\"\']([^\"\'\s]{1,300}\.(?:js|css|json|png|jpg|webp|svg|gif|woff2?))[\"\']',t):
+              if '${' not in v:urls.add(urljoin(base,v))
+            return {u.rstrip('.,;') for u in urls if u.startswith(('https://','http://'))}
+          jobs=[]
+          for h in hosts:
+            for p in ['/','/robots.txt','/sitemap.xml','/.well-known/apple-app-site-association','/.well-known/assetlinks.json']:
+              jobs.append(('https://'+h+p,'DEX-declared-origin-public-resource'))
+          jobs.extend([('https://activity2.yalla.live/api/Buried/GetCopywritingAddress?region=0','bundle-declared-copywriting-read'),('https://activity2.yalla.live/api/Buried/GetDomainV2?region=0','bundle-declared-domain-read')])
+          seed=batch(jobs);observed={};texts={};pages=[]
+          def inspect(res):
+            if not res:return
+            r,b=res
+            if r['status']!=200:return
+            if not any(t in r['contentType'].lower() for t in ['text','javascript','json','xml']):return
+            text=b.decode('utf8','replace');texts[r['finalUrl']]=text;soup=BeautifulSoup(text,'html.parser');visible=soup.get_text(' ',strip=True)
+            rows=[text[max(0,m.start()-180):m.end()+450] for m in terms.finditer(text)]
+            links=refs(text,r['finalUrl'])
+            for u in links:observed.setdefault(u,[]).append(r['finalUrl'])
+            pages.append({'url':r['finalUrl'],'sha256':r['sha256'],'title':soup.title.get_text() if soup.title else '', 'visibleText':visible[:12000],'themeContexts':rows[:30]})
+          for r in seed:inspect(r)
+          # References can legitimately use other CDN hosts; keep them, but do not scan guessed domains.
+          seen=set(r['url'] for r in manifest)
+          for depth in range(3):
+            assets=[(u,'literal-source-reference') for u in observed if u not in seen and re.search(r'\.(?:js|css|json)(?:[?#]|$)',u) and not any(x in u for x in ['analytics','facebook','google-analytics','googletagmanager'])]
+            assets=assets[:50];seen.update(u for u,p in assets)
+            if not assets:break
+            for r in batch(assets):inspect(r)
+          # CDX searches deliberately cover all capture months, not just the event's October dates.
+          archive=[];archive_results=[]
+          patterns=['*.ylapi.cc/*','event.yalla.live/*','shop.yalla.live/*','sailfish.yalla.live/*','www.yalla.live/*','file.yalla.live/*Halloween*','file.yalla.live/*halloween*','file.yalla.live/*pumpkin*']
+          for pat in patterns:
+            url='https://web.archive.org/cdx/search/cdx?'+urlencode({'url':pat,'output':'json','fl':'timestamp,original,statuscode,mimetype,digest','filter':'statuscode:200','collapse':'urlkey','limit':1500})
+            r=get(url,'all-year-CDX-discovery',maxbytes=16000000)
+            if not r:continue
+            meta,b=r;report={'pattern':pat,'status':meta['status'],'parseOk':False,'rowCount':None}
+            if meta['status']==200:
+              try:
+                d=json.loads(b)
+                if isinstance(d,list):
+                  head=d[0] if d else [];rows=[dict(zip(head,x)) for x in d[1:]];report.update(parseOk=True,rowCount=len(rows));archive.extend(rows)
+              except Exception as e:report['parseError']=str(e)
+            archive_results.append(report);time.sleep(.8)
+          # Public indexed scans: search results are not equivalent to retrievable network data.
+          scan_reports=[]
+          for host in hosts:
+            r=get('https://urlscan.io/api/v1/search/?'+urlencode({'q':'domain:'+host,'size':100}),'URLscan-index-read')
+            if not r:continue
+            meta,b=r;report={'host':host,'http':meta['status']}
+            try:
+              d=json.loads(b);report.update(total=d.get('total'),error=d.get('message'),results=d.get('results',[]))
+              for item in d.get('results',[]):
+                u=item.get('page',{}).get('url') or item.get('task',{}).get('url')
+                if u:observed.setdefault(u,[]).append('urlscan:'+str(item.get('_id')))
+            except Exception:pass
+            scan_reports.append(report);time.sleep(.8)
+          # Resolve archived original HTML, recording snapshot time and source rather than claiming live state.
+          html=[x for x in archive if 'html' in x.get('mimetype','').lower()]
+          by={}
+          for x in html:
+            u=x.get('original','');path=urlparse(u).path
+            if any(t in path.lower() for t in ['privacy','agreement','terms','about','download']):continue
+            by[u]=x
+          ordered=sorted(by.values(),key=lambda x:(not bool(terms.search(x['original'])),x.get('timestamp','')),reverse=False)[:45]
+          snapshot_jobs=[('https://web.archive.org/web/'+x['timestamp']+'id_/'+x['original'],'CDX-evidenced-HTML') for x in ordered]
+          for r in batch(snapshot_jobs):inspect(r)
+          theme_pages=[x for x in pages if x['themeContexts']]
+          strong_urls=[{'url':u,'sources':src} for u,src in observed.items() if terms.search(u)]
+          write('SUMMARY.json',{'capturedResponses':len(manifest),'requests':len(ledger),'allYearArchiveRows':len(archive),'observedUrls':len(observed),'themePageEvidence':len(theme_pages),'themeUrlCandidates':len(strong_urls),'verifiedOfficialHalloweenSpa':0,'note':'All results require product identity and original-SPA validation; HTTP errors are coverage gaps, not negative evidence.'})
+          write('response-manifest.json',manifest);write('request-ledger.json',ledger);write('pages.json',pages);write('theme-pages.json',theme_pages);write('observed-url-graph.json',observed);write('theme-url-candidates.json',strong_urls);write('archive-queries.json',archive_results);write('archive-rows.json',archive);write('urlscan-queries.json',scan_reports)
+          print((OUT/'SUMMARY.json').read_text())
+          PY
+          python /tmp/trace.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-halloween-dex-origin-trace-b
+          path: yalla-halloween-dex-origin-trace-b
+          if-no-files-found: error
+          retention-days: 14
