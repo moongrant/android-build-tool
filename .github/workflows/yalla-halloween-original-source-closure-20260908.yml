@@ -1,0 +1,178 @@
+name: Yalla original source closure and public index trace
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-halloween-original-source-closure-20260908.yml]
+permissions:
+  contents: read
+jobs:
+  trace:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source capture tools
+        run: |
+          pip -q install requests beautifulsoup4 pillow playwright
+          python -m playwright install --with-deps chromium >/dev/null
+      - name: Follow public source references, without login or synthetic fixtures
+        run: |
+          cat > /tmp/trace.py <<'PY'
+          import asyncio, concurrent.futures, hashlib, json, re, threading, time
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          from urllib.parse import urlparse,urljoin,urlencode
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+          OUT=Path('yalla-original-source-trace-20260908');OUT.mkdir(exist_ok=True)
+          (OUT/'original').mkdir(exist_ok=True)
+          manifest={};ledger=[];lock=threading.Lock();start=time.monotonic();limit=630
+          ROOT='https://activity2.yalla.live/activity/2024dist/templateActivity/'
+          strong=re.compile(r'halloween|pumpkin|trick[ _-]*or[ _-]*treat|هالو(?:وي|ي)ن|万圣|萬聖',re.I)
+          extensions=re.compile(r'\.(?:js|css|json|png|jpe?g|svg|gif|webp|woff2?|ttf|mp3|ogg|mp4|map)(?:[?#]|$)',re.I)
+          owned_suffixes=('yalla.live','yallalive.net','yallaludo.com','yalla.social','qrsshine.com','windgh.com','peakxyz.com')
+          def owned(u):
+            h=urlparse(u).hostname or ''
+            return any(h==s or h.endswith('.'+s) for s in owned_suffixes)
+          def save(name,data):
+            (OUT/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+          def get(u,source):
+            if time.monotonic()-start>limit:return None
+            rec={'url':u,'source':source};body=b''
+            try:
+              r=requests.get(u,timeout=(8,22),headers={'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36','Accept-Language':'en-US,en;q=0.9'},stream=True)
+              for chunk in r.iter_content(65536):
+                body+=chunk
+                if len(body)>12000000:break
+              r.close();rec.update(status=r.status_code,finalUrl=r.url,bytes=len(body),contentType=r.headers.get('content-type',''),headers={k:v for k,v in r.headers.items() if k.lower() in ['server','content-type','etag','last-modified','via','x-cache','x-oss-request-id']})
+              sha=hashlib.sha256(body).hexdigest();rec.update(sha256=sha,file='original/'+sha)
+              with lock:
+                (OUT/rec['file']).write_bytes(body);manifest[u]=rec
+              return rec,body
+            except Exception as e:rec['error']=str(e);return None
+            finally:
+              with lock:ledger.append(rec)
+          def refs(text,base):
+            text=text.replace('\\/','/');urls=set()
+            if '<' in text[:4000]:
+              soup=BeautifulSoup(text,'html.parser')
+              for el in soup.select('script[src],link[href],a[href],img[src],source[src]'):
+                u=el.get('src') or el.get('href')
+                if u:urls.add(urljoin(base,u))
+            for u in re.findall(r'https?://[^\s\"\'<>`\\)]+',text):urls.add(u.rstrip(',.;'))
+            for u in re.findall(r'url\(\s*[\"\']?([^\"\')\s]+)',text):
+              if not u.startswith('data:'):urls.add(urljoin(base,u))
+            for u in re.findall(r'[\"\']([^\"\'\s]{1,350}\.(?:js|css|json|png|jpe?g|svg|gif|webp|woff2?|ttf|mp3|map))[\"\']',text):
+              if '${' not in u:urls.add(urljoin(base,u))
+            return {u for u in urls if u.startswith(('http://','https://'))}
+          def run_many(jobs):
+            with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
+              return list(ex.map(lambda j:get(*j),jobs))
+          seeds=[('https://www.yalla.live/','official-live-site'),('https://www.yallaludo.com/','official-ludo-site-product-separated'),(ROOT,'original-template-engine'),('https://file.yalla.live/?'+urlencode({'list-type':2,'prefix':'activity/','delimiter':'/','max-keys':1000}),'public-activity-directory-index'),('https://file.yalla.live/?'+urlencode({'list-type':2,'prefix':'Activity/','delimiter':'/','max-keys':1000}),'public-Activity-directory-index')]
+          for host in ['https://activity2.yalla.live','https://file.yalla.live','https://www.yalla.live','https://www.yallaludo.com']:
+            seeds.extend([(host+'/robots.txt','public-robots'),(host+'/sitemap.xml','public-sitemap')])
+          seed_results=run_many(seeds);observed=set();index_keys=[];theme_candidates=[];texts={}
+          for res in seed_results:
+            if not res:continue
+            rec,body=res
+            if rec['status']!=200:continue
+            text=body.decode('utf8','replace');texts[rec['url']]=text
+            observed|=refs(text,rec['finalUrl'])
+            if 'ListBucketResult' in text:
+              try:
+                xml=ET.fromstring(text)
+                for el in xml.iter():
+                  if el.tag.split('}')[-1] in ['Key','Prefix'] and el.text:
+                    index_keys.append({'indexUrl':rec['url'],'key':el.text})
+                    if strong.search(el.text):theme_candidates.append(urljoin(rec['finalUrl'].split('?')[0],el.text))
+              except Exception:pass
+          # Only literal public references from actual source. Do not guess project names or dates.
+          jsjobs=[(u,'html-declared-source') for u in observed if owned(u) and re.search(r'\.(?:js|css|json)(?:[?#]|$)',u)]
+          results=run_many(jsjobs[:35])
+          for res in results:
+            if not res or res[0]['status']!=200:continue
+            rec,body=res;text=body.decode('utf8','replace');texts[rec['url']]=text;observed|=refs(text,rec['finalUrl'])
+          template_js='\n'.join(v for k,v in texts.items() if k.startswith(ROOT) and '/js/app.' in k)
+          template_css='\n'.join(v for k,v in texts.items() if k.startswith(ROOT) and '/css/app.' in k)
+          theme_ids=sorted(set(re.findall(r'#themeId(\d+)',template_css)))
+          dynamic_refs=[]
+          for m in re.finditer(r'`([^`]*images/[^`]+)`',template_js):
+            raw=m.group(1)
+            match=re.fullmatch(r'\$\{[^}]+\.host\}(images/themeId\$\{[^}]+\.themeId\}/[^${}<>\s]+)',raw)
+            if match:
+              for tid in theme_ids:
+                path=re.sub(r'\$\{[^}]+\}',tid,match.group(1));u=urljoin(ROOT,path)
+                dynamic_refs.append({'url':u,'sourceExpression':raw,'themeId':tid,'enumSource':'Original CSS #themeId selectors'})
+          literal_assets={u for u in observed if owned(u) and extensions.search(u) and u not in manifest and '${' not in u}
+          assetjobs=[(u,'literal-original-resource') for u in sorted(literal_assets)[:110]]
+          assetjobs += [(d['url'],'resolved-original-template-expression') for d in dynamic_refs if d['url'] not in manifest]
+          run_many(list(dict.fromkeys(assetjobs)))
+          # Indexed network filenames can reveal custom domains; only existing public records are searched.
+          query_results=[]
+          queries=['filename:yalla AND filename:halloween','filename:yalla AND filename:pumpkin','domain:yalla.live AND page.title:halloween','domain:yallaludo.com AND filename:halloween','domain:yalla.social AND filename:halloween','hash:b6e777499f8ae0a1aa0aae4e15c3aac4d80fe910bfd3deac6772f89d48886468']
+          for q in queries:
+            res=get('https://urlscan.io/api/v1/search/?'+urlencode({'q':q,'size':100}),'existing-public-network-index')
+            if not res:continue
+            rec,body=res;item={'query':q,'http':rec['status']}
+            try:
+              d=json.loads(body);item.update(total=d.get('total'),results=d.get('results',[]),error=d.get('message') or d.get('error'))
+              for x in d.get('results',[]):
+                u=x.get('page',{}).get('url') or x.get('task',{}).get('url')
+                if u:observed.add(u)
+                if u and owned(u) and strong.search(u):theme_candidates.append(u)
+            except Exception:pass
+            query_results.append(item);time.sleep(1.5)
+          snippets=[]
+          for u,text in texts.items():
+            if 'vendor' in u:continue
+            for m in strong.finditer(text):snippets.append({'url':u,'context':text[max(0,m.start()-180):m.end()+500]})
+          theme_candidates += [u for u in observed if owned(u) and strong.search(u)]
+          theme_candidates=sorted(set(theme_candidates))
+          # Screenshot only actual candidate pages; never build a page around a promotional image.
+          async def capture_candidates():
+            shots=[]
+            async with async_playwright() as p:
+              b=await p.chromium.launch(headless=True,args=['--no-sandbox'])
+              for u in theme_candidates[:4]:
+                if extensions.search(u):continue
+                c=await b.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,locale='en-US')
+                await c.route('**/*',lambda r:r.continue_() if r.request.method in ['GET','HEAD','OPTIONS'] else r.abort())
+                page=await c.new_page();errors=[];responses=[];tasks=[]
+                async def preserve(res):
+                  if not owned(res.url):return
+                  try:
+                    body=await res.body();h=hashlib.sha256(body).hexdigest()
+                    if len(body)>12000000:return
+                    (OUT/'original'/h).write_bytes(body)
+                    responses.append({'url':res.url,'status':res.status,'sha256':h,'bytes':len(body),'file':'original/'+h})
+                  except Exception:pass
+                page.on('response',lambda r:tasks.append(asyncio.create_task(preserve(r))))
+                page.on('pageerror',lambda e:errors.append(str(e)))
+                item={'url':u}
+                try:
+                  await page.goto(u,wait_until='domcontentloaded',timeout=40000);await page.wait_for_timeout(4000)
+                  text=await page.locator('body').inner_text();item.update(finalUrl=page.url,title=await page.title(),text=text[:16000],themeInVisibleText=bool(strong.search(text)))
+                  if item['themeInVisibleText']:
+                    (OUT/'candidate-page-screenshots').mkdir(exist_ok=True);fp='candidate-page-screenshots/'+hashlib.sha256(u.encode()).hexdigest()[:16]+'.png';await page.screenshot(path=str(OUT/fp),full_page=True);item['screenshot']=fp
+                except Exception as e:item['error']=str(e)
+                if tasks:await asyncio.gather(*tasks,return_exceptions=True)
+                item.update(errors=errors,responses=responses);shots.append(item);await c.close()
+              await b.close()
+            return shots
+          captures=asyncio.run(capture_candidates())
+          summary={'requests':len(ledger),'responses':len(manifest),'originalTemplateThemeIds':theme_ids,'resolvedOriginalDynamicAssets':len(dynamic_refs),'themeBearingPageCandidates':len(theme_candidates),'capturedCandidatePages':len(captures),'confirmedHalloweenLiveSpa':0,'status':'REVIEW_REQUIRED' if captures else 'NO_CONFIRMED_ACTIVITY_PAGE','rule':'Original engine assets are not an event recovery. Error responses are not fixtures. Ludo cannot be counted as Live.'}
+          save('SUMMARY.json',summary);save('request-ledger.json',ledger);save('response-manifest.json',list(manifest.values()));save('public-index-keys.json',index_keys);save('observed-urls.json',sorted(observed));save('dynamic-resource-provenance.json',dynamic_refs);save('theme-source-snippets.json',snippets);save('indexed-network-search.json',query_results);save('candidate-pages.json',captures);save('candidate-urls.json',theme_candidates)
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          PY
+          python /tmp/trace.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-original-source-trace-20260908
+          path: yalla-original-source-trace-20260908
+          if-no-files-found: error
+          retention-days: 14
