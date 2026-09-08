@@ -1,0 +1,108 @@
+name: Yalla public metadata from original anonymous browser E
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-public-config-envelope-e.yml]
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          pip -q install playwright
+          python -m playwright install --with-deps chromium >/dev/null
+      - name: Preserve only original public configuration responses
+        run: |
+          cat > /tmp/meta.py <<'PY'
+          import asyncio,hashlib,json,re
+          from pathlib import Path
+          from urllib.parse import urlparse,parse_qsl,urlencode
+          from playwright.async_api import async_playwright
+          OUT=Path('yalla-public-metadata-e');OUT.mkdir();(OUT/'original').mkdir()
+          root='https://activity2.yalla.live/activity/2024dist/templateActivity/'
+          base='https://activity2.yalla.live'
+          # This exact ID is embedded in the original YallaSeason home.ca1cbf3d.js National Day link. It is not claimed to be Halloween.
+          aid='26072103';allrows=[];notes=[];theme=[];observed=[]
+          allowed={'/api/generaltemplate/init','/api/generaltemplate/getactivityinfo','/api/generaltemplate/getrewardinfo','/api/generaltemplate/getprocessreward','/api/buried/getcopywritingaddress','/api/buried/getdomainv2'}
+          def store(url,status,headers,body,label):
+            sha=hashlib.sha256(body).hexdigest();(OUT/'original'/sha).write_bytes(body)
+            rec={'url':url,'status':status,'contentType':headers.get('content-type',''),'bytes':len(body),'sha256':sha,'file':'original/'+sha,'source':label}
+            allrows.append(rec)
+            try:
+              d=json.loads(body);text=json.dumps(d,ensure_ascii=False)
+              if isinstance(d,dict) and isinstance(d.get('data'),str):
+                try:text+='\n'+json.dumps(json.loads(d['data']),ensure_ascii=False)
+                except Exception:pass
+              if re.search(r'halloween|pumpkin|万圣|萬聖|هالووين|هالوين',text,re.I):theme.append({'sourceUrl':url,'json':d})
+              for u in re.findall(r'https?://[^\s"\'<>\\)]+',text):observed.append({'sourceUrl':url,'url':u})
+            except Exception:pass
+          async def main():
+            async with async_playwright() as p:
+              browser=await p.chromium.launch(headless=True,args=['--no-sandbox'])
+              # Empty native fallback first; zero is an anonymous sentinel, never another user's ID. No token is supplied.
+              for suffix,label in [('', 'original-empty-fallback'),('&userid=0','anonymous-zero-sentinel')]:
+                ctx=await browser.new_context(viewport={'width':390,'height':844},locale='en-US')
+                page=await ctx.new_page();requests=[];tasks=[]
+                async def intercept(route):
+                  req=route.request;path=urlparse(req.url).path.lower()
+                  if req.method not in ['GET','HEAD','OPTIONS']:return await route.abort()
+                  if '/api/' in path and path not in allowed:return await route.abort()
+                  return await route.continue_()
+                await ctx.route('**/*',intercept)
+                async def capture(res):
+                  if urlparse(res.url).path.lower() not in allowed:return
+                  try:
+                    h=await res.request.all_headers();requests.append({'url':res.request.url,'headers':h})
+                    store(res.url,res.status,await res.all_headers(),await res.body(),label)
+                  except Exception:pass
+                page.on('response',lambda res:tasks.append(asyncio.create_task(capture(res))))
+                try:
+                  await page.goto(root+'?region=0&activityId='+aid+'&s=3'+suffix,wait_until='domcontentloaded',timeout=40000)
+                  await page.wait_for_timeout(5000)
+                  if tasks:await asyncio.gather(*tasks,return_exceptions=True)
+                  notes.append({'state':label,'observedMetadataRequests':len(requests),'visibleText':(await page.locator('body').inner_text())[:2000]})
+                  if requests:
+                    sample=requests[0];params=dict(parse_qsl(urlparse(sample['url']).query,keep_blank_values=True))
+                    headers={k:v for k,v in sample['headers'].items() if k.lower() in ['region','userid','token','v','s','activityid','xtimestamp','xsignature','referer']}
+                    # The request uses the published client protocol, not a fabricated credential. Stop if any nonempty token unexpectedly appears.
+                    if headers.get('token','') not in ['', 'undefined']:raise RuntimeError('Unexpected credential; metadata replay stopped')
+                    for endpoint in ['/api/Buried/GetCopywritingAddress','/api/Buried/GetDomainV2','/api/GeneralTemplate/GetActivityInfo']:
+                      url=base+endpoint+'?'+urlencode(params)
+                      try:
+                        res=await ctx.request.get(url,headers=headers,timeout=20000)
+                        body=await res.body();store(res.url,res.status,res.headers,body,'original-anonymous-envelope:'+label)
+                      except Exception as e:notes.append({'url':url,'error':str(e)})
+                except Exception as e:notes.append({'state':label,'error':str(e)})
+                await ctx.close()
+              # Only static non-personal URLs returned by the metadata, and only the established official asset host.
+              ctx=await browser.new_context()
+              seen=set()
+              for item in observed[:40]:
+                u=item['url'];host=urlparse(u).hostname or ''
+                if u in seen or host!='file.yalla.live' or not re.search(r'\.(json|txt)(?:[?#]|$)',u):continue
+                seen.add(u)
+                try:
+                  res=await ctx.request.get(u,timeout=20000);store(res.url,res.status,res.headers,await res.body(),'metadata-declared-static-document')
+                except Exception as e:notes.append({'url':u,'error':str(e)})
+              await ctx.close();await browser.close()
+          asyncio.run(main())
+          for name,data in [('responses.json',allrows),('notes.json',notes),('theme-matches.json',theme),('metadata-declared-urls.json',observed)]:
+            (OUT/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
+          summary={'responses':len(allrows),'statuses':[r['status'] for r in allrows],'themeMatches':len(theme),'verifiedHalloweenSpa':0,'credentialsUsed':False,'privateEndpointsRequested':False,'note':'National Day ID is only a protocol calibration source, never a Halloween completion.'}
+          (OUT/'SUMMARY.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary,indent=2))
+          PY
+          python /tmp/meta.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-public-metadata-e
+          path: yalla-public-metadata-e
+          if-no-files-found: error
+          retention-days: 14
