@@ -1,0 +1,53 @@
+name: Yalla original prepared anonymous metadata envelope E2
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-public-config-prepared-envelope-e2.yml]
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          pip -q install playwright pyyaml
+          python -m playwright install --with-deps chromium >/dev/null
+      - name: Reuse original browser harness with request-preparation capture
+        run: |
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+          w=yaml.safe_load(Path('.github/workflows/yalla-public-config-envelope-e.yml').read_text())
+          run=next(s['run'] for s in w['jobs']['metadata']['steps'] if 'run' in s and "cat > /tmp/meta.py" in s['run'])
+          text=run.split("<<'PY'\n",1)[1].split('\nPY\n',1)[0]
+          text=text.replace("Path('yalla-public-metadata-e')","Path('yalla-public-metadata-e2')")
+          old="if req.method not in ['GET','HEAD','OPTIONS']:return await route.abort()"
+          new="""if path in allowed:
+            prepared={}
+            try:prepared=req.post_data_json or {}
+            except Exception:pass
+            requests.append({'url':req.url,'headers':await req.all_headers(),'preparedData':prepared if isinstance(prepared,dict) else {}})
+          if req.method not in ['GET','HEAD','OPTIONS']:return await route.abort()"""
+          assert old in text
+          text=text.replace(old,new)
+          old="params=dict(parse_qsl(urlparse(sample['url']).query,keep_blank_values=True))"
+          new="params=dict(parse_qsl(urlparse(sample['url']).query,keep_blank_values=True));params.update(sample.get('preparedData') or {})"
+          assert old in text
+          text=text.replace(old,new).replace("+'&s=3'+suffix","+'&s=3&v=30620'+suffix")
+          compile(text,'/tmp/meta.py','exec')
+          Path('/tmp/meta.py').write_text(text)
+          PY
+          python /tmp/meta.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-public-metadata-e2
+          path: yalla-public-metadata-e2
+          if-no-files-found: error
+          retention-days: 14
