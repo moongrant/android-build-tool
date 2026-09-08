@@ -1,0 +1,72 @@
+name: Yalla original client observation C2 shell fix
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-original-client-observe-c2.yml]
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare original client and extract bash scripts
+        run: |
+          set -e
+          pip -q install pyyaml
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+          workflow=yaml.safe_load(Path('.github/workflows/yalla-original-client-observe-c.yml').read_text())
+          steps=workflow['jobs']['observe']['steps']
+          prep=next(s['run'] for s in steps if s.get('name')=='Prepare original public package and observer')
+          script=next(s['with']['script'] for s in steps if 'android-emulator-runner' in s.get('uses',''))
+          Path('/tmp/prepare-client.sh').write_text(prep)
+          Path('/tmp/run-client.sh').write_text(script)
+          PY
+          bash /tmp/prepare-client.sh
+          cat > /tmp/run-client-wrapped.sh <<'SH'
+          #!/usr/bin/env bash
+          set -u
+          bash /tmp/run-client.sh > /tmp/client-run-private.log 2>&1
+          code=$?
+          printf '{"scriptExitCode":%s,"shell":"bash","notes":"Failed execution is not evidence that an activity is absent."}\n' "$code" > client-observation/execution-status.json
+          if [ "$code" -ne 0 ]; then
+            tail -n 12 /tmp/client-run-private.log | sed -E 's/((token|userid|authorization|signature)[=:][ ]*)[^ &]+/\1[REDACTED]/Ig' > client-observation/execution-error-redacted.txt
+            if adb shell pm path com.weieyu.yalla | grep -q package:; then
+              adb shell monkey -p com.weieyu.yalla -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
+              sleep 20
+              adb exec-out screencap -p > client-observation/fallback-client-ui-not-campaign.png
+              adb shell am force-stop com.weieyu.yalla || true
+            fi
+          fi
+          exit 0
+          SH
+      - name: Observe ordinary original-client startup and safe public UI navigation
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_5
+          cores: 2
+          ram-size: 4096M
+          disk-size: 6G
+          emulator-boot-timeout: 420
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: bash /tmp/run-client-wrapped.sh
+      - name: Upload sanitized actual observation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yalla-original-client-observe-c2
+          path: client-observation
+          if-no-files-found: error
+          retention-days: 14
