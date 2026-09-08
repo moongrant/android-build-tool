@@ -1,0 +1,157 @@
+name: Yalla original visual asset archaeology D
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-original-visual-asset-closure-d.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve already-captured original source responses
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api /repos/moongrant/android-build-tool/actions/artifacts/10045054362/zip > /tmp/source.zip
+          mkdir -p /tmp/yalla-source
+          unzip -q /tmp/source.zip -d /tmp/yalla-source
+          pip -q install requests beautifulsoup4 pillow
+      - name: Close image and animation references and create inspection sheets
+        run: |
+          cat > /tmp/visual.py <<'PY'
+          import base64,concurrent.futures,hashlib,io,json,re,threading,time
+          from pathlib import Path
+          from urllib.parse import urljoin,urlparse,urldefrag
+          import requests
+          from PIL import Image,ImageDraw,ImageFont,ImageOps
+          from bs4 import BeautifulSoup
+          SRC=Path('/tmp/yalla-source');OUT=Path('yalla-original-visual-assets-d');OUT.mkdir();(OUT/'original').mkdir();(OUT/'inspection').mkdir()
+          mf=json.loads((SRC/'response-manifest.json').read_text());sources=[r for r in mf if r['status']==200 and urlparse(r['url']).hostname=='activity2.yalla.live']
+          root_re=re.compile(r'(https?://[^/]+/activity/[^/]+/[^/]+/)')
+          media=re.compile(r'\.(png|jpe?g|webp|gif|svg|svga|json|atlas|skel|mp4|mp3|webm)(?:[?#]|$)',re.I)
+          urlpat=re.compile(r'https?://[^\s"\'`<>\\)]+')
+          refs={};embedded=[];results=[];lock=threading.Lock();began=time.monotonic();limit=1100
+          def write(n,d):(OUT/n).write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf8')
+          def add(u,src,kind,context=''):
+            u=u.rstrip('.,;');u=urldefrag(u)[0]
+            if not u.startswith(('https://','http://')) or any(x in u for x in ['${','\\','base64,','%7B']):return
+            if not media.search(u):return
+            h=(urlparse(u).hostname or '')
+            if h in ['github.com','github.githubassets.com','www.w3.org','esotericsoftware.com']:return
+            if h.endswith('.yallalive.cn'):return
+            refs.setdefault(u,[]).append({'sourceUrl':src['url'],'sourceSha256':src['sha256'],'kind':kind,'context':context[:300]})
+          def parse(src,text):
+            match=root_re.match(src['url'])
+            if not match:return
+            root=match.group(1);s=text.replace('\\/','/')
+            for m in urlpat.finditer(s):add(m.group(),src,'absolute-url',s[max(0,m.start()-40):m.end()+30])
+            for m in re.finditer(r'url\(\s*["\']?([^"\')\s]+)',s):
+              u=m.group(1)
+              if not u.startswith('data:'):add(urljoin(src['url'],u),src,'css-url',m.group())
+            for m in re.finditer(r'["\']([^"\'\s]{1,400}\.(?:png|jpe?g|webp|gif|svg|svga|json|atlas|skel|mp4|mp3|webm)(?:\?[^"\'\s]*)?)["\']',s,re.I):
+              u=m.group(1)
+              if u.startswith(('img/','images/','assets/','static/','lang/')):add(urljoin(root,u),src,'root-relative-resource',m.group())
+              elif u.startswith(('../','./','/')):add(urljoin(src['url'],u),src,'relative-resource',m.group())
+            for m in re.finditer(r'data:image/(png|jpeg|webp|gif);base64,([A-Za-z0-9+/=]+)',s):
+              try:
+                b=base64.b64decode(m.group(2));sha=hashlib.sha256(b).hexdigest();(OUT/'original'/sha).write_bytes(b)
+                embedded.append({'url':'embedded:'+sha,'status':200,'bytes':len(b),'sha256':sha,'file':'original/'+sha,'contentType':'image/'+m.group(1),'sources':[{'sourceUrl':src['url'],'sourceSha256':src['sha256'],'kind':'embedded-original-image'}]})
+              except Exception:pass
+            # Only finite language values declared in existing original files. No event IDs or slug guessing.
+            language_ids=['0','1','2','3','4','5','6','7','8'] if any(x in s for x in ['region','language']) else []
+            for m in re.finditer(r'`([^`]*\$\{[^}]*language\}[^`]*\.(?:png|jpg|webp|gif))`',s):
+              expr=m.group(1)
+              if expr.startswith('https://file.yalla.live/'):
+                for lang in language_ids:
+                  u=re.sub(r'\$\{[^}]*language\}',lang,expr)
+                  add(u,src,'declared-language-resource',expr)
+          for src in sources:
+            try:
+              text=(SRC/src['file']).read_text(errors='replace')
+              if 'json' in src['contentType']:
+                try:text=json.dumps(json.loads(text),ensure_ascii=False)
+                except Exception:pass
+              parse(src,text)
+            except Exception:pass
+          # One newly observed root, kept as a discovery source and not counted as a Halloween activity.
+          newroot='https://activity2.yalla.live/activity/2025dist/limitRecharge/'
+          new_source=[]
+          def fetch_source(u):
+            try:
+              r=requests.get(u,timeout=(8,25),headers={'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36'})
+              b=r.content;sha=hashlib.sha256(b).hexdigest();(OUT/'original'/sha).write_bytes(b)
+              row={'url':u,'status':r.status_code,'contentType':r.headers.get('content-type',''),'bytes':len(b),'sha256':sha,'file':'original/'+sha};new_source.append(row)
+              if r.status_code==200:return row,r.text
+            except Exception as e:new_source.append({'url':u,'error':str(e)})
+          r=fetch_source(newroot)
+          if r:
+            src,text=r;soup=BeautifulSoup(text,'html.parser');urls=[]
+            for el in soup.select('script[src],link[href]'):
+              u=urljoin(newroot,el.get('src') or el.get('href'))
+              if re.search(r'\.(js|css)(?:[?#]|$)',u):urls.append(u)
+            for u in urls:
+              item=fetch_source(u)
+              if item:parse(*item)
+          def fetch(u):
+            if time.monotonic()-began>limit:return {'url':u,'skipped':'time-budget'}
+            row={'url':u,'sources':refs[u]}
+            try:
+              r=requests.get(u,timeout=(8,25),headers={'User-Agent':'Mozilla/5.0 Chrome/130 Safari/537.36'},stream=True)
+              body=bytearray()
+              for chunk in r.iter_content(65536):
+                body.extend(chunk)
+                if len(body)>25000000:raise ValueError('resource exceeds 25MB')
+              r.close();b=bytes(body);row.update(status=r.status_code,bytes=len(b),contentType=r.headers.get('content-type',''))
+              if r.status_code==200:
+                h=hashlib.sha256(b).hexdigest();row.update(sha256=h,file='original/'+h)
+                with lock:(OUT/row['file']).write_bytes(b)
+                try:
+                  im=Image.open(io.BytesIO(b));row.update(imageWidth=im.width,imageHeight=im.height,frames=getattr(im,'n_frames',1),format=im.format)
+                except Exception:pass
+            except Exception as e:row['error']=str(e)
+            return row
+          # All records preserve provenance; only pictures with real image bytes appear on inspection sheets.
+          urls=sorted(refs)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+            for row in ex.map(fetch,urls[:1800]):results.append(row)
+          for row in embedded:
+            try:
+              im=Image.open(OUT/row['file']);row.update(imageWidth=im.width,imageHeight=im.height,format=im.format)
+            except Exception:pass
+          unique={}
+          for row in results+embedded:
+            if row.get('status')==200 and row.get('imageWidth',0)>=80 and row.get('imageHeight',0)>=80:unique.setdefault(row['sha256'],row)
+          images=sorted(unique.values(),key=lambda r:(r['sources'][0]['sourceUrl'].split('/')[5] if len(r['sources'][0]['sourceUrl'].split('/'))>5 else '',-r.get('imageHeight',0)*r.get('imageWidth',0)))
+          index=[];tw,th,gap,cols=190,230,10,6
+          font=ImageFont.load_default()
+          for sheetno in range((len(images)+35)//36):
+            page=images[sheetno*36:(sheetno+1)*36];rows=(len(page)+cols-1)//cols
+            canvas=Image.new('RGB',(cols*(tw+gap)+gap,rows*(th+gap)+gap),(235,235,235));draw=ImageDraw.Draw(canvas)
+            for i,row in enumerate(page):
+              num=sheetno*36+i+1;x=gap+(i%cols)*(tw+gap);y=gap+(i//cols)*(th+gap)
+              im=Image.open(OUT/row['file']).convert('RGBA');im.thumbnail((tw,th-45))
+              bg=Image.new('RGB',(tw,th-45),(220,220,220));bg.paste(im,((tw-im.width)//2,0),im);canvas.paste(bg,(x,y))
+              label=urlparse(row['url']).path.split('/')[-1] if not row['url'].startswith('embedded:') else 'embedded'
+              draw.text((x+3,y+th-42),f'{num}  {label[:26]}',fill='black',font=font)
+              draw.text((x+3,y+th-24),f'{row["imageWidth"]} x {row["imageHeight"]}',fill='black',font=font)
+              index.append({'number':num,'sheet':f'inspection/sheet-{sheetno+1:02d}.jpg',**row})
+            canvas.save(OUT/'inspection'/f'sheet-{sheetno+1:02d}.jpg',quality=90)
+          summary={'sourceFilesParsed':len(sources),'observedMediaUrls':len(urls),'requestedMediaUrls':len(results),'successResponses':sum(r.get('status')==200 for r in results),'uniqueInspectionImages':len(images),'inspectionSheets':(len(images)+35)//36,'verifiedHalloweenSpa':0,'note':'Sheets are internal original-asset inspection aids, not restored activity-page screenshots. No old activity is counted as new.'}
+          write('SUMMARY.json',summary);write('image-manifest.json',results+embedded);write('inspection-index.json',index);write('limitRecharge-original-sources.json',new_source)
+          print(json.dumps(summary,indent=2))
+          PY
+          python /tmp/visual.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-original-visual-assets-d
+          path: yalla-original-visual-assets-d
+          if-no-files-found: error
+          retention-days: 14
