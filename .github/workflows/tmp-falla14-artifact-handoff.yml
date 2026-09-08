@@ -1,0 +1,36 @@
+name: Temporary Falla14 Artifact Handoff
+on:
+  push:
+    branches: ['main']
+    paths: ['.github/workflows/tmp-falla14-artifact-handoff.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read short-lived handoff ticket and verify archive
+        run: |
+          URL="$(python3 - <<'PY'
+          import re
+          s=open('tmp-falla14-chat-handoff.md').read()
+          m=re.search(r'\((https://release-assets\.githubusercontent\.com/[^)]+)\)',s)
+          if not m: raise SystemExit('handoff ticket missing')
+          print(m.group(1))
+          PY
+          )"
+          curl -L --fail --retry 3 "$URL" -o pro-falla-sites-increment-14-rebuilt.zip
+          test "$(stat -c%s pro-falla-sites-increment-14-rebuilt.zip)" = "60493760"
+          echo 'def450d9a3f3be3d9a7851134f257a9bcf60e7d7c72177dc406901bb79821bc7  pro-falla-sites-increment-14-rebuilt.zip' | sha256sum -c -
+          unzip -tq pro-falla-sites-increment-14-rebuilt.zip
+      - name: Upload temporary artifact for chat transfer
+        uses: actions/upload-artifact@v4
+        with:
+          name: pro-falla-sites-increment-14-rebuilt-direct
+          path: pro-falla-sites-increment-14-rebuilt.zip
+          retention-days: 1
+          compression-level: 0
+          if-no-files-found: error
