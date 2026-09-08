@@ -1,24 +1,23 @@
-name: BIGO 05 Public Halloween Assets
+name: BIGO 05 Original Renderer Dependencies
 on:
   push:
-    branches: [pro-bigo-05-public-assets-20260908]
-  workflow_dispatch:
+    branches: [pro-bigo-05-renderer-assets-20260908]
 permissions:
   contents: read
 jobs:
-  archive:
+  download:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install requests beautifulsoup4
-      - run: python archive_public.py
+      - run: pip install requests
+      - run: python renderer_assets.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: bigo-05-public-assets
+          name: bigo-05-renderer-dependencies
           path: output/
           retention-days: 14
