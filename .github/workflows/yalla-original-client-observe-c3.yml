@@ -1,0 +1,113 @@
+name: Yalla original client C3 complete ARM64 package
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-original-client-observe-c3.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  observe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Retrieve previously acquired unmodified ARM64 public package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -Eeuo pipefail
+          mkdir -p client-observation /tmp/yalla-splits /tmp/yalla-observer /tmp/yalla-previous
+          gh run download 33710703624 --repo "$GITHUB_REPOSITORY" --name yalla-halloween-apkmirror-gap-scan --dir /tmp/yalla-previous
+          apk=$(find /tmp/yalla-previous -name yalla-2.23.2.apk | head -1)
+          test -n "$apk"
+          cp "$apk" /tmp/yalla-splits/base.apk
+          sha256sum /tmp/yalla-splits/base.apk > client-observation/original-package.sha256
+          echo 'Version 2.23.2, original APKMirror acquisition, package bytes unchanged, no native library replacement.' > client-observation/package-source.txt
+          python - <<'PY'
+          import zipfile,json
+          from pathlib import Path
+          with zipfile.ZipFile('/tmp/yalla-splits/base.apk') as z:
+            names=[n for n in z.namelist() if n.startswith('lib/') and n.endswith('.so')]
+            assert any(n.startswith('lib/arm64-v8a/') for n in names)
+          Path('client-observation/package-native-libraries.json').write_text(json.dumps(names,indent=2))
+          PY
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+          pip -q install frida-tools pyyaml
+          version=$(python -c 'import frida;print(frida.__version__)')
+          echo "$version" > client-observation/frida-version.txt
+          curl -fsSL --retry 2 -o /tmp/frida-server.xz "https://github.com/frida/frida/releases/download/${version}/frida-server-${version}-android-x86_64.xz"
+          xz -df /tmp/frida-server.xz
+          cd /tmp/yalla-observer
+          npm install --silent frida-java-bridge
+      - name: Use existing read-only observer without bypassing app logic
+        run: |
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+          w=yaml.safe_load(Path('.github/workflows/yalla-original-client-observe-c.yml').read_text())
+          prep=next(s['run'] for s in w['jobs']['observe']['steps'] if s.get('name')=='Prepare original public package and observer')
+          js=prep.split("cat > observer.js <<'JS'\n",1)[1].split('\nJS\n',1)[0]
+          py=prep.split("cat > observe.py <<'PY'\n",1)[1].split('\nPY',1)[0]
+          Path('/tmp/yalla-observer/observer.js').write_text(js)
+          Path('/tmp/yalla-observer/observe.py').write_text(py)
+          PY
+          cd /tmp/yalla-observer
+          frida-compile observer.js -o observer.bundle.js
+          cat > /tmp/run-client-c3.sh <<'SH'
+          #!/usr/bin/env bash
+          set -u
+          adb shell getprop ro.product.cpu.abilist > client-observation/emulator-abis.txt
+          adb shell getprop ro.dalvik.vm.native.bridge > client-observation/native-bridge.txt
+          adb install -r /tmp/yalla-splits/base.apk > client-observation/install-result.txt 2>&1
+          install=$?
+          if [ "$install" -ne 0 ]; then
+            printf '{"stage":"install","exitCode":%s}\n' "$install" > client-observation/execution-status.json
+            exit 0
+          fi
+          adb root >/dev/null
+          adb wait-for-device
+          adb push /tmp/frida-server /data/local/tmp/frida-server >/dev/null
+          adb shell chmod 755 /data/local/tmp/frida-server
+          adb shell '/data/local/tmp/frida-server >/data/local/tmp/observer-private.log 2>&1 &'
+          sleep 4
+          python /tmp/yalla-observer/observe.py >/tmp/observer-private.log 2>&1
+          code=$?
+          printf '{"stage":"observe","exitCode":%s}\n' "$code" > client-observation/execution-status.json
+          if [ "$code" -ne 0 ]; then
+            tail -n 12 /tmp/observer-private.log | sed -E 's/((token|userid|authorization|signature)[=:][ ]*)[^ &]+/\1[REDACTED]/Ig' > client-observation/execution-error-redacted.txt
+            adb shell monkey -p com.weieyu.yalla -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1 || true
+            sleep 25
+            adb exec-out screencap -p > client-observation/fallback-client-ui-not-campaign.png
+          fi
+          adb shell am force-stop com.weieyu.yalla
+          exit 0
+          SH
+      - name: Execute original ARM64 app in native translation
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_5
+          cores: 2
+          ram-size: 4096M
+          disk-size: 6G
+          emulator-boot-timeout: 420
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: bash /tmp/run-client-c3.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-original-client-observe-c3
+          path: client-observation
+          if-no-files-found: error
+          retention-days: 14
