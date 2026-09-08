@@ -1,0 +1,82 @@
+name: Yalla domain-wide original code inventory E
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-public-code-domain-inventory-e.yml]
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read public code and configuration archive indexes
+        run: |
+          pip -q install requests
+          cat > /tmp/inventory.py <<'PY'
+          import concurrent.futures,hashlib,json,re,time
+          from pathlib import Path
+          from urllib.parse import urlencode,urlparse
+          import requests
+          OUT=Path('yalla-public-code-domain-inventory-e');OUT.mkdir();(OUT/'original').mkdir()
+          rows=[];ledger=[];manifest=[];deadline=time.monotonic()+570
+          def get(url,purpose):
+            if time.monotonic()>deadline:return None
+            rec={'url':url,'purpose':purpose};ledger.append(rec)
+            try:
+              r=requests.get(url,timeout=(12,45),headers={'User-Agent':'Mozilla/5.0'},stream=True)
+              data=bytearray()
+              for c in r.iter_content(65536):
+                data.extend(c)
+                if len(data)>18000000:break
+              r.close();data=bytes(data);sha=hashlib.sha256(data).hexdigest();p='original/'+sha;(OUT/p).write_bytes(data)
+              rec.update(status=r.status_code,bytes=len(data),contentType=r.headers.get('content-type',''),sha256=sha,file=p);manifest.append(dict(rec));return rec,data
+            except Exception as e:rec['error']=str(e);return None
+          def query(pattern,mime):
+            params=[('url',pattern),('output','json'),('fl','timestamp,original,statuscode,mimetype,digest,length'),('filter','statuscode:200'),('filter','mimetype:'+mime),('filter','!original:.*[Rr]oom[Ss]hare.*'),('collapse','urlkey'),('limit','6000')]
+            r=get('https://web.archive.org/cdx/search/cdx?'+urlencode(params),'all-subdomain-public-code-index')
+            out={'pattern':pattern,'mime':mime,'validIndex':False,'records':None}
+            if not r:return out
+            out['http']=r[0]['status']
+            if r[0]['status']==200:
+              try:
+                d=json.loads(r[1]);head=d[0] if d else [];found=[dict(zip(head,a)) for a in d[1:]];rows.extend(found);out.update(validIndex=True,records=len(found),possibleTruncation=len(found)>=6000)
+              except Exception as e:out['parseError']=str(e)
+            return out
+          jobs=[('*.yalla.live/*','(?:application|text)/(?:javascript|json|css)'),('*.ylapi.cc/*','(?:application|text)/(?:javascript|json|css)'),('*.yallalive.net/*','(?:application|text)/(?:javascript|json|css)'),('activity2.yalla.live/*','text/html'),('file.yalla.live/*','(?:application|text)/(?:javascript|json|css)')]
+          with concurrent.futures.ThreadPoolExecutor(max_workers=2) as e:queries=list(e.map(lambda a:query(*a),jobs))
+          rows=list({x['original']:x for x in rows}.values());roots={};theme=re.compile(r'halloween|hallowmas|wansheng|pumpkin|jack.?o.?lantern|万圣|萬聖|هالو(?:وي|ي)ن',re.I)
+          for x in rows:
+            p=urlparse(x['original']);k=p.netloc+'/'+'/'.join(p.path.strip('/').split('/')[:3]);roots.setdefault(k,[]).append(x)
+          priority=[]
+          for x in rows:
+            u=x['original']
+            if any(s in u.lower() for s in ['jquery','vendor','bootstrap','privacy','agreement','terms','roomshare','vonders','vue.min']):continue
+            priority.append(x)
+          priority=sorted(priority,key=lambda x:(not bool(theme.search(x['original'])),not bool(re.search(r'activity|event|config|copywriting|h5',x['original'],re.I)),x['original']))[:45]
+          inspected=[]
+          def inspect(x):
+            u=x['original'];r=get('https://web.archive.org/web/'+x['timestamp']+'id_/'+u,'CDX-evidenced-original-code')
+            out={'url':u,'capture':x['timestamp']}
+            if r:
+              out['http']=r[0]['status']
+              if r[0]['status']==200:
+                t=r[1].decode('utf8','replace');out.update(file=r[0]['file'],themeContexts=[t[max(0,m.start()-180):m.end()+450] for m in theme.finditer(t)][:40],activityLinks=sorted(set(re.findall(r'https?://[^\s\"\'<>`\\)]+',t.replace('\\/','/'))))[:200])
+            return out
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as e:inspected=list(e.map(inspect,priority))
+          def save(n,d):(OUT/n).write_text(json.dumps(d,ensure_ascii=False,indent=2),encoding='utf8')
+          save('query-results.json',queries);save('archive-records.json',rows);save('prefix-groups.json',{k:len(v) for k,v in roots.items()});save('source-inspections.json',inspected);save('theme-evidence.json',[x for x in inspected if x.get('themeContexts')]);save('requests.json',ledger);save('manifest.json',manifest)
+          summary={'validQueries':sum(x['validIndex'] for x in queries),'archivedCodeUrls':len(rows),'prefixGroups':len(roots),'sourceCandidatesInspected':len(inspected),'themeEvidence':sum(bool(x.get('themeContexts')) for x in inspected),'verifiedHalloweenActivity':0};save('SUMMARY.json',summary);print(json.dumps(summary,indent=2))
+          PY
+          python /tmp/inventory.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-public-code-domain-inventory-e
+          path: yalla-public-code-domain-inventory-e
+          if-no-files-found: error
+          retention-days: 14
