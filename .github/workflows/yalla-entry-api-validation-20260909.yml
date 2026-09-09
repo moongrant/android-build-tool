@@ -1,0 +1,83 @@
+name: Yalla entry API validation 20260909
+on:
+  push:
+    branches: [research/yalla-halloween-public-captures-20260908]
+    paths: [.github/workflows/yalla-entry-api-validation-20260909.yml]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+      - name: Read only exact source-evidenced API addresses
+        shell: bash
+        run: |
+          mkdir -p yalla-entry-api-validation
+          cat > /tmp/validate.py <<'PY'
+          import datetime, hashlib, json, re, time, urllib.request, urllib.error
+          from pathlib import Path
+          from urllib.parse import urlencode,urlsplit,urlunsplit,parse_qsl
+          out=Path('yalla-entry-api-validation')
+          def redact(x):
+            if isinstance(x,dict):return {k:('[REDACTED]' if re.search(r'token|authorization|cookie|secret|password|signature|userid|deviceid',k,re.I) else redact(v)) for k,v in x.items()}
+            if isinstance(x,list):return [redact(v) for v in x]
+            return x
+          def safe_url(s):
+            p=urlsplit(s);q=[(k,'[REDACTED]' if re.search(r'token|auth|secret|signature|userid|deviceid',k,re.I) else v) for k,v in parse_qsl(p.query,keep_blank_values=True)]
+            return urlunsplit((p.scheme,p.netloc,p.path,urlencode(q),p.fragment))
+          def find_links(x,at='$',links=None):
+            if links is None:links=[]
+            if isinstance(x,dict):
+              for k,v in x.items():find_links(v,at+'.'+k,links)
+            elif isinstance(x,list):
+              for i,v in enumerate(x):find_links(v,at+'['+str(i)+']',links)
+            elif isinstance(x,str) and x.startswith(('https://','http://')):links.append({'field':at,'url':safe_url(x)})
+            return links
+          base='https://apiv2.yalla.live'
+          h5='https://activity2.yalla.live'
+          jobs=[
+            ('entry-center-0',base+'/Webservers/Messages/GetActivityListForCenter?isExploreIndex=0','APK ActivityCenterRepo, parameter isExploreIndex'),
+            ('entry-center-1',base+'/Webservers/Messages/GetActivityListForCenter?isExploreIndex=1','APK ActivityCenterRepo, parameter isExploreIndex'),
+            ('bootstrap-config',base+'/Webservers/Api/GetConfigV2','APK LoginRepo.loadLoginConfig; baseline without optional locale'),
+            ('bootstrap-config-us',base+'/Webservers/Api/GetConfigV2?'+urlencode({'SimCountryCode':'US','DeviceCountryCode':'US','isHuawei':'false'}),'APK LoginRepo.loadLoginConfig; documented source field names; US is a test locale, not a claimed user location'),
+            ('h5-domain',h5+'/api/Buried/GetDomainV2?region=0','Captured original H5 network request; no credentials'),
+            ('h5-copywriting',h5+'/api/Buried/GetCopywritingAddress?region=0','Captured original H5 network request; no credentials'),
+            ('template-config-known-link-id',h5+'/api/GeneralTemplate/GetActivityInfo?activityId=26072103&region=0','Activity ID observed in earlier YallaSeason bundle; not a Halloween claim'),
+            ('static-control',h5+'/activity/2024dist/templateActivity/lang/en.json','Exact original SPA language resource; connectivity control, not activity discovery')
+          ]
+          rows=[]
+          for label,url,evidence in jobs:
+            row={'id':label,'method':'GET','url':url,'sourceEvidence':evidence,'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'credentials':'NONE','purpose':'ENTRY_API_VALIDATION_NOT_ACTIVITY_DELIVERY'}
+            start=time.monotonic()
+            req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json,text/plain,*/*','Accept-Language':'en-US,en;q=0.8'})
+            try:
+              try:r=urllib.request.urlopen(req,timeout=18)
+              except urllib.error.HTTPError as e:r=e
+              b=r.read(2_000_001);ct=r.headers.get('content-type','');status=r.code;r.close()
+              row.update(httpStatus=status,contentType=ct,bytes=len(b),bodySha256=hashlib.sha256(b).hexdigest(),finalUrl=r.url)
+              try:
+                body=json.loads(b);row['json']=redact(body)
+                if isinstance(body,dict):
+                  row['businessCode']=body.get('code',body.get('Code'));row['message']=body.get('message',body.get('Message',body.get('title')));data=body.get('data',body.get('Data'));row['dataType']=type(data).__name__;row['dataCount']=len(data) if isinstance(data,(list,dict)) else None
+                row['responseUrls']=find_links(body)
+                if label!='static-control':row['hasActivityUrl']=any('/activity/' in x['url'] or re.search(r'activityUrl|h5EntranceUrl|jumpUrl',x['field'],re.I) for x in row['responseUrls'])
+              except Exception:row['textSample']=b[:2500].decode('utf8','replace');row['jsonParseOk']=False
+            except Exception as e:row['transportError']=str(e)
+            row['elapsedSeconds']=round(time.monotonic()-start,3);rows.append(row)
+            (out/(label+'.json')).write_text(json.dumps(row,ensure_ascii=False,indent=2))
+            brief={k:row.get(k) for k in ['id','httpStatus','businessCode','message','dataType','dataCount','hasActivityUrl','transportError']}
+            print('API_RESULT '+json.dumps(brief,ensure_ascii=False),flush=True)
+            time.sleep(.6)
+          summary={'generatedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'requests':len(rows),'nonemptyActivityResponses':sum(bool(r.get('hasActivityUrl')) for r in rows),'rows':[{k:v for k,v in r.items() if k not in ['json','textSample']} for r in rows],'note':'HTTP 200 with an error business code is not API success. Configuration endpoints do not establish historical catalogue completeness. No guest accounts, signature generation, synthetic credentials, private-data requests, or write endpoints were used.'}
+          (out/'SUMMARY.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2))
+          print('SUMMARY '+json.dumps(summary,ensure_ascii=False),flush=True)
+          PY
+          python3 /tmp/validate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yalla-entry-api-validation-20260909
+          path: yalla-entry-api-validation
+          if-no-files-found: error
+          retention-days: 14
