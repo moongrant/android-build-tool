@@ -1,0 +1,83 @@
+name: Probe Falla Room Tournament gift config
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/probe-falla-room-gift-config.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/pro-falla-batch4-20260820
+      - name: Probe direct and archived URLs
+        run: |
+          set -Eeuo pipefail
+          mkdir -p probe
+          python - <<'PY'
+          import json, os, requests, hashlib
+          from urllib.parse import quote
+          urls=[]
+          hosts=[
+            'https://web.fallaweb.com',
+            'https://web.falla.live',
+            'https://web-test.falla.live',
+            'https://static.fallaweb.com',
+            'https://webf.fallalive.com',
+          ]
+          paths=[]
+          for aid in [827,828,829,830,832,833]:
+            for prefix in ['', 'pre/', 'prod/', 'test/pre/', 'hk/']:
+              paths.append(f'/activity_gift_config_v3/{prefix}h5_{aid}_ALL.json')
+              paths.append(f'/activity_gift_config_v2/{prefix}h5_{aid}_ALL.json')
+          for h in hosts:
+            for p in paths: urls.append(h+p)
+          rows=[]
+          s=requests.Session(); s.headers.update({'User-Agent':'Mozilla/5.0 Chrome/126','Accept':'application/json,*/*'})
+          for u in urls:
+            try:
+              r=s.get(u,timeout=12,allow_redirects=True)
+              row={'url':u,'status':r.status_code,'finalUrl':r.url,'contentType':r.headers.get('content-type',''),'bytes':len(r.content),'sha256':hashlib.sha256(r.content).hexdigest(),'preview':r.text[:300]}
+              rows.append(row)
+              if r.status_code==200 and len(r.content)>2:
+                name=hashlib.sha256(u.encode()).hexdigest()[:12]+'.json'
+                open('probe/'+name,'wb').write(r.content)
+            except Exception as e: rows.append({'url':u,'error':repr(e)})
+          # Wayback CDX and snapshot fetch for the exact URL.
+          exact='https://web.fallaweb.com/activity_gift_config_v3/h5_833_ALL.json'
+          try:
+            cdx='https://web.archive.org/cdx/search/cdx?url='+quote(exact,safe='')+'&output=json&fl=timestamp,original,statuscode,mimetype,digest&filter=statuscode:200&collapse=digest'
+            r=s.get(cdx,timeout=30)
+            rows.append({'url':cdx,'status':r.status_code,'bytes':len(r.content),'preview':r.text[:1000]})
+            if r.status_code==200:
+              data=r.json()
+              open('probe/wayback-cdx.json','w').write(json.dumps(data,indent=2))
+              for item in data[1:6]:
+                ts=item[0]; snap=f'https://web.archive.org/web/{ts}id_/{exact}'
+                rr=s.get(snap,timeout=30)
+                rows.append({'url':snap,'status':rr.status_code,'bytes':len(rr.content),'contentType':rr.headers.get('content-type',''),'sha256':hashlib.sha256(rr.content).hexdigest(),'preview':rr.text[:300]})
+                if rr.status_code==200 and len(rr.content)>2:
+                  open(f'probe/wayback-{ts}.json','wb').write(rr.content)
+          except Exception as e: rows.append({'url':'wayback','error':repr(e)})
+          open('probe/results.json','w').write(json.dumps(rows,indent=2))
+          useful=[x for x in rows if x.get('status')==200 and x.get('bytes',0)>2]
+          lines=['# Room Tournament Gift Config Probe','',f'- attempts: {len(rows)}',f'- useful 200 responses: {len(useful)}','']
+          for x in useful: lines.append(f"- {x['url']} — {x.get('bytes')} bytes — {x.get('contentType','')}")
+          open('probe/REPORT.md','w').write('\n'.join(lines))
+          print('\n'.join(lines))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: falla-room-gift-config-probe
+          path: probe
+          if-no-files-found: error
+          retention-days: 7
